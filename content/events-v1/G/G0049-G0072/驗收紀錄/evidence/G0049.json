@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "df8d4aee5fdc4dfa5ce2bc002d63061249ba16418cf1a9a19627f2bcc8e4a914",
+      "checkedAt": "2026-11-27T02:53:29.795Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按時歸還，協助詢問當日安靜空間。",
+            "action": "導師已按時歸還，協助詢問當日安靜空間。",
+            "tradeoff": "守預約但未必有空間。"
+          },
+          {
+            "id": 2,
+            "text": "經對方同意，依正式流程協商輪借時段。",
+            "action": "導師已經對方同意，依正式流程協商輪借時段。",
+            "tradeoff": "有彈性但需協調。"
+          },
+          {
+            "id": 3,
+            "text": "協助確認私人設備可否合規使用。",
+            "action": "導師已協助確認私人設備可否合規使用。",
+            "tradeoff": "自主可用但有搬運成本。"
+          },
+          {
+            "id": 4,
+            "text": "先改用無設備的短段備課安排。",
+            "action": "導師已先改用無設備的短段備課安排。",
+            "tradeoff": "不依賴器材但習慣受擾。"
+          },
+          {
+            "id": 5,
+            "text": "請管理窗口提供正確預約資訊及替代清單。",
+            "action": "導師已請管理窗口提供正確預約資訊及替代清單。",
+            "tradeoff": "制度可查但回覆需等。"
+          },
+          {
+            "id": 6,
+            "text": "協助將本人合法備品登記可借，不交換他人已預約物。",
+            "action": "導師已協助將本人合法備品登記可借，不交換他人已預約物。",
+            "tradeoff": "增加資源但要保管。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "陪他把最後一段備課移到你可用的安靜位，自己另找地方。",
+          "action": "導師已陪他把最後一段備課移到你可用的安靜位，自己另找地方。",
+          "tradeoff": "照顧當下但犧牲自己的環境。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2553246490
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "b42031c7e801eb8e650169a7269b44973e59c5d32c54d4f021f60f1350389530"
+      },
+      "consequenceDirections": {
+        "A": "同事可試新節奏；效率未必相同。",
+        "B": "同事可接受或拒絕；只限當次授權空間。",
+        "C": "同事可能轉用自有物；場地仍須核准。",
+        "D": "同事有提供出口；不能要求回報借用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "284be53b958b458c5f16e9e14c897b6df40d226796a0d4ac3fd3529b436bfa08",
+    "draftSha256": "df8d4aee5fdc4dfa5ce2bc002d63061249ba16418cf1a9a19627f2bcc8e4a914",
     "seedAssignmentVersion": 1
   }
 }

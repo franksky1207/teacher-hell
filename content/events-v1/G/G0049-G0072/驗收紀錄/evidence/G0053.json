@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "603b740b861296469b00222201ae2424b9c09d79cfa5fd277f668d56f9ca7969",
+      "checkedAt": "2026-11-27T02:53:29.799Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "示範如何修正自己的錯誤。",
+            "action": "導師已示範如何修正自己的錯誤。",
+            "tradeoff": "接回學習但多花課時。"
+          },
+          {
+            "id": 2,
+            "text": "明說笑例子與笑人不同，停止個人模仿。",
+            "action": "導師已明說笑例子與笑人不同，停止個人模仿。",
+            "tradeoff": "界線清楚但氣氛降溫。"
+          },
+          {
+            "id": 3,
+            "text": "改用虛構作品作共同診斷。",
+            "action": "導師已改用虛構作品作共同診斷。",
+            "tradeoff": "降低暴露但少真人感。"
+          },
+          {
+            "id": 4,
+            "text": "提供不公開的半成品回饋入口。",
+            "action": "導師已提供不公開的半成品回饋入口。",
+            "tradeoff": "安全較高但教師多看。"
+          },
+          {
+            "id": 5,
+            "text": "與同事共同設計可停損的短示範。",
+            "action": "導師已與同事共同設計可停損的短示範。",
+            "tradeoff": "分攤判斷但需備課。"
+          },
+          {
+            "id": 6,
+            "text": "保留已完成的練習，私下詢問學生哪裡降低壓力。",
+            "action": "導師已保留已完成的練習，私下詢問學生哪裡降低壓力。",
+            "tradeoff": "看真效果但需個別時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "收起自己討笑的衝動，這輪不再故意錯第二次。",
+          "action": "導師已收起自己討笑的衝動，這輪不再故意錯第二次。",
+          "tradeoff": "放下掌聲但節奏較平。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 579220725
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "427d862c0963c5e588238af93f2d70cae6ddfb7dcf71d710b685ff892c062708"
+      },
+      "consequenceDirections": {
+        "A": "學生可自願交；公開示範較少。",
+        "B": "學生可能轉回作品；同事能看收束方式。",
+        "C": "學生可看歷程；同事能評估適用。",
+        "D": "同事可能願試；不要求硬撐。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29dda607504176b841d0e544317691096bbe2174c2ed5ff5e2db7e1a146a14a0",
+    "draftSha256": "603b740b861296469b00222201ae2424b9c09d79cfa5fd277f668d56f9ca7969",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "34b7f83b91b82274de3e6e9098ff7623966293181e20206f20483e00c8aef312",
+      "checkedAt": "2026-11-27T02:53:29.799Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "自然問好後各自離開。",
+            "action": "導師已自然問好後各自離開。",
+            "tradeoff": "界線清楚但少互動。"
+          },
+          {
+            "id": 2,
+            "text": "讓同事自行決定要介紹到哪裡。",
+            "action": "導師已讓同事自行決定要介紹到哪裡。",
+            "tradeoff": "尊重主導但可能冷場。"
+          },
+          {
+            "id": 3,
+            "text": "經同意陪他移到不妨通行處再談界線。",
+            "action": "導師已經同意陪他移到不妨通行處再談界線。",
+            "tradeoff": "降低壓力但多停留。"
+          },
+          {
+            "id": 4,
+            "text": "只說兩人下班各有安排，不代講私事。",
+            "action": "導師已只說兩人下班各有安排，不代講私事。",
+            "tradeoff": "自然收束但資訊有限。"
+          },
+          {
+            "id": 5,
+            "text": "詢問同事以後偶遇希望怎樣招呼。",
+            "action": "導師已詢問同事以後偶遇希望怎樣招呼。",
+            "tradeoff": "可長期合作但得另談。"
+          },
+          {
+            "id": 6,
+            "text": "由你與學生簡短寒暄，讓同事自選是否加入。",
+            "action": "導師已由你與學生簡短寒暄，讓同事自選是否加入。",
+            "tradeoff": "緩衝現場但自己多應對。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己想看道具的八卦壓下去，拉開話題聊今天便當。",
+          "action": "導師已把自己想看道具的八卦壓下去，拉開話題聊今天便當。",
+          "tradeoff": "保住私事但對話可能尷尬。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2260544242
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "66edf99f516c293ff667ce0c5d721874f96f9fc4cd4e1d8a6eb012599e986ea8"
+      },
+      "consequenceDirections": {
+        "A": "界線較明確；不能要求學生裝不認識。",
+        "B": "學生可能不介意；同事需自行收尾。",
+        "C": "同事可說需要；不讓學生背錯。",
+        "D": "同事可鬆口氣；學生可能笑成人轉話題太明顯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "754a23490f77f0f25ae2488ae9bf0fc1cc7891a0138ccdbbd6669c182f05358e",
+    "draftSha256": "34b7f83b91b82274de3e6e9098ff7623966293181e20206f20483e00c8aef312",
     "seedAssignmentVersion": 1
   }
 }

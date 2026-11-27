@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d1d8a90a40b324e014713e3135a4d9c2835ddad8703ff06d883550bc9d2fb9f5",
+      "checkedAt": "2026-11-27T02:53:29.813Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下轉達孩子希望暫停，不批評家裡唱歌。",
+            "action": "導師已私下轉達孩子希望暫停，不批評家裡唱歌。",
+            "tradeoff": "界線清楚但家長可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "將聯繫拉回交物事項，結束當次停留。",
+            "action": "導師已將聯繫拉回交物事項，結束當次停留。",
+            "tradeoff": "快速收尾但心情未談。"
+          },
+          {
+            "id": 3,
+            "text": "邀孩子日後自行選分享方式。",
+            "action": "導師已邀孩子日後自行選分享方式。",
+            "tradeoff": "自主保留但未必有分享。"
+          },
+          {
+            "id": 4,
+            "text": "請家長先詢問再向他人提孩子的興趣。",
+            "action": "導師已請家長先詢問再向他人提孩子的興趣。",
+            "tradeoff": "可預防但需改習慣。"
+          },
+          {
+            "id": 5,
+            "text": "對聽見的同學只提醒不追問私事。",
+            "action": "導師已對聽見的同學只提醒不追問私事。",
+            "tradeoff": "保護範圍但可能引好奇。"
+          },
+          {
+            "id": 6,
+            "text": "經孩子同意安排親子短談分享界線。",
+            "action": "導師已經孩子同意安排親子短談分享界線。",
+            "tradeoff": "能直接說但需雙方願意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "忍住跟唱的衝動，改用一句謝謝把家長送到門口。",
+          "action": "導師已忍住跟唱的衝動，改用一句謝謝把家長送到門口。",
+          "tradeoff": "失去熱鬧但不再擴大。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 409496561
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "21f642fca8e0b0c89393d5c7f7ed013dbca70e37481f799143286301a110be55"
+      },
+      "consequenceDirections": {
+        "A": "家長可能察覺冷場；需另說明孩子界線。",
+        "B": "家長可能理解；孩子仍可能尷尬。",
+        "C": "家長可停止；孩子不必當面反駁。",
+        "D": "家長需接受拒絕；不承諾新表演。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fd0bef0f26c46eeaac1b8b63d1dd2661fefcc10b3f0e466a8d24b3c1e23d40d7",
+    "draftSha256": "d1d8a90a40b324e014713e3135a4d9c2835ddad8703ff06d883550bc9d2fb9f5",
     "seedAssignmentVersion": 1
   }
 }

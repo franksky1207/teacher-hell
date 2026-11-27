@@ -15,14 +15,82 @@
     "G05",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c8c8d6fe11a460a6fb9e41c3041715228d989afa4b9e1e8d683cb914d153dd13",
+      "checkedAt": "2026-11-27T02:53:29.801Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協調由辦公室按既有程序轉達急件。",
+            "action": "導師已協調由辦公室按既有程序轉達急件。",
+            "tradeoff": "路徑明確但多一層。"
+          },
+          {
+            "id": 2,
+            "text": "申請符合規定的個別限時核對安排。",
+            "action": "導師已申請符合規定的個別限時核對安排。",
+            "tradeoff": "可預期但須授權。"
+          },
+          {
+            "id": 3,
+            "text": "維持設備規則，向家庭說明正式緊急聯絡方式。",
+            "action": "導師已維持設備規則，向家庭說明正式緊急聯絡方式。",
+            "tradeoff": "一致清楚但需轉換習慣。"
+          },
+          {
+            "id": 4,
+            "text": "將紅標只留私人辨識，不作全班分級依據。",
+            "action": "導師已將紅標只留私人辨識，不作全班分級依據。",
+            "tradeoff": "避免誤解但需說明。"
+          },
+          {
+            "id": 5,
+            "text": "私下和本人區分哪些訊息可等下課。",
+            "action": "導師已私下和本人區分哪些訊息可等下課。",
+            "tradeoff": "減少干擾但涉及細節。"
+          },
+          {
+            "id": 6,
+            "text": "邀本人自願協助寫不含家事的用機通則提醒。",
+            "action": "導師已邀本人自願協助寫不含家事的用機通則提醒。",
+            "tradeoff": "保留參與但增加任務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "先收回自己「又找理由」的口氣，陪他把那則訊息交正式窗口核對。",
+          "action": "導師已先收回自己「又找理由」的口氣，陪他把那則訊息交正式窗口核對。",
+          "tradeoff": "承擔誤讀但占課間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4193926475
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "8c1af1058ffb3be6f074c02a1ef8fe90df72c521dd6c7b4fd0d59d456e56afbd"
+      },
+      "consequenceDirections": {
+        "A": "家庭可配合；學生可能仍焦慮。",
+        "B": "學生可安心；不能自行放寬。",
+        "C": "學生可能願合作；不保證訊息屬急件。",
+        "D": "學生少盯手機；窗口需承接。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "10e263c864e77f67c7346f6109ecd8c8f8036aafa08bdc5b2e938ae1fc94efed",
+    "draftSha256": "c8c8d6fe11a460a6fb9e41c3041715228d989afa4b9e1e8d683cb914d153dd13",
     "seedAssignmentVersion": 1
   }
 }

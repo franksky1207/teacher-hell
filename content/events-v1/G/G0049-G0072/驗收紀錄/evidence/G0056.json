@@ -15,14 +15,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3d3d6f53ab1c2f8dca880365f0ff1fbc538851db1cbbcad587ba4987b64e14f",
+      "checkedAt": "2026-11-27T02:53:29.801Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請合法支援成人個別陪伴目擊者。",
+            "action": "導師已請合法支援成人個別陪伴目擊者。",
+            "tradeoff": "照顧直接但需交班。"
+          },
+          {
+            "id": 2,
+            "text": "由你陪目擊者，協調他人接續原工作。",
+            "action": "導師已由你陪目擊者，協調他人接續原工作。",
+            "tradeoff": "支持明確但影響排程。"
+          },
+          {
+            "id": 3,
+            "text": "向班上只說可公開的安全及求援資訊。",
+            "action": "導師已向班上只說可公開的安全及求援資訊。",
+            "tradeoff": "降低猜測但內容有限。"
+          },
+          {
+            "id": 4,
+            "text": "請權責方評估接續課程是否調整。",
+            "action": "導師已請權責方評估接續課程是否調整。",
+            "tradeoff": "兼顧狀態但非你逕定。"
+          },
+          {
+            "id": 5,
+            "text": "與職員回顧僵住時可用的具體引導語。",
+            "action": "導師已與職員回顧僵住時可用的具體引導語。",
+            "tradeoff": "改善應對但需時間。"
+          },
+          {
+            "id": 6,
+            "text": "提供目擊者自願輔導入口，不強迫重述。",
+            "action": "導師已提供目擊者自願輔導入口，不強迫重述。",
+            "tradeoff": "有後續支持但未必使用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "先讓職員坐下喝水，自己接起下一通非醫療聯繫。",
+          "action": "導師已先讓職員坐下喝水，自己接起下一通非醫療聯繫。",
+          "tradeoff": "分擔耗竭但你加工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 893221553
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "5e7dda08709a7faa67eff9135e6aff54108e97de168268b7bedb0fa26cfce8db"
+      },
+      "consequenceDirections": {
+        "A": "職員可喘氣；專業照護仍由原窗口處理。",
+        "B": "學生不再獨自羞愧；需確認代接。",
+        "C": "班級可獲緩衝；進度有代價。",
+        "D": "下次可能更易讓路；不追責目擊者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eded24abc72903ab77ceb82198ce8904074f78d466a547f6085ad16a98a3583a",
+    "draftSha256": "c3d3d6f53ab1c2f8dca880365f0ff1fbc538851db1cbbcad587ba4987b64e14f",
     "seedAssignmentVersion": 1
   }
 }

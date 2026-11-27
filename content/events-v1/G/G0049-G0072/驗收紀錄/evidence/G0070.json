@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "71440bc725422aeab44e22e9c07a7fc933d4aa0ffa0335a48af097548db5a719",
+      "checkedAt": "2026-11-27T02:53:29.823Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在自己合法授課時段補一輪各自解釋。",
+            "action": "導師已在自己合法授課時段補一輪各自解釋。",
+            "tradeoff": "可看理解但占課時。"
+          },
+          {
+            "id": 2,
+            "text": "把副歌改成無聲節奏提示供自選。",
+            "action": "導師已把副歌改成無聲節奏提示供自選。",
+            "tradeoff": "少干擾但效果不同。"
+          },
+          {
+            "id": 3,
+            "text": "保留一輪合唱上限，之後轉書面例題。",
+            "action": "導師已保留一輪合唱上限，之後轉書面例題。",
+            "tradeoff": "有收束但熱度中斷。"
+          },
+          {
+            "id": 4,
+            "text": "請編唱者自願說明一個詞對應的概念。",
+            "action": "導師已請編唱者自願說明一個詞對應的概念。",
+            "tradeoff": "承認創作但不逼全教。"
+          },
+          {
+            "id": 5,
+            "text": "與下一堂教師交接干擾已停止，不要求對方沿用。",
+            "action": "導師已與下一堂教師交接干擾已停止，不要求對方沿用。",
+            "tradeoff": "場景界線清楚但需聯絡。"
+          },
+          {
+            "id": 6,
+            "text": "請同學將記得的詞配回題目，不再重唱。",
+            "action": "導師已請同學將記得的詞配回題目，不再重唱。",
+            "tradeoff": "診斷具體但教師需看。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己嘴邊也在哼的副歌停掉，示意今天你也得練收尾。",
+          "action": "導師已把自己嘴邊也在哼的副歌停掉，示意今天你也得練收尾。",
+          "tradeoff": "承認上癮但少了熱鬧。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3146981698
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "6680f337e1789eb2490913a9d72bdc64d3a1540c20fc86c955d98d9f31ed57fd"
+      },
+      "consequenceDirections": {
+        "A": "學生可能笑著停；仍須確認理解。",
+        "B": "旋律可保留；學生未必都懂。",
+        "C": "可找到只記笑點處；需要補教。",
+        "D": "學生可安靜使用；需重新練習。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a291e8dc4b589bd31da8a0c76cd317b9c1a1205ba93d79cdba80be5907671a0f",
+    "draftSha256": "71440bc725422aeab44e22e9c07a7fc933d4aa0ffa0335a48af097548db5a719",
     "seedAssignmentVersion": 1
   }
 }

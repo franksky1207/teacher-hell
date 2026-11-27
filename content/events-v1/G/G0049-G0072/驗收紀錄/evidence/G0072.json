@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ef6dbcb247a95d5e47b3c595072cb419ececb17dedfc7dd0996c94035543d437",
+      "checkedAt": "2026-11-27T02:53:29.824Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協調任課改為個人可達成目標。",
+            "action": "導師已協調任課改為個人可達成目標。",
+            "tradeoff": "保留活動但不再靠快者領隊。"
+          },
+          {
+            "id": 2,
+            "text": "讓隊伍在任課監督下重談分工。",
+            "action": "導師已讓隊伍在任課監督下重談分工。",
+            "tradeoff": "自主較多但花練習時間。"
+          },
+          {
+            "id": 3,
+            "text": "依任課安全判斷提供低強度替代。",
+            "action": "導師已依任課安全判斷提供低強度替代。",
+            "tradeoff": "照顧負荷但本人可能怕被看低。"
+          },
+          {
+            "id": 4,
+            "text": "私下詢問近期負荷是否需校內協助。",
+            "action": "導師已私下詢問近期負荷是否需校內協助。",
+            "tradeoff": "有支持但不立刻修復隊伍。"
+          },
+          {
+            "id": 5,
+            "text": "改為無團隊輸贏的共同練習並請任課決定。",
+            "action": "導師已改為無團隊輸贏的共同練習並請任課決定。",
+            "tradeoff": "減少期待但原活動改動。"
+          },
+          {
+            "id": 6,
+            "text": "徵詢本人願否只給一次跑步策略，不要求領跑。",
+            "action": "導師已徵詢本人願否只給一次跑步策略，不要求領跑。",
+            "tradeoff": "保留強項但仍須意願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "站到隊伍旁說今天不替任何人喊「再拼一下」，先聽他想怎麼參加。",
+          "action": "導師已站到隊伍旁說今天不替任何人喊「再拼一下」，先聽他想怎麼參加。",
+          "tradeoff": "放下催勵習慣但可能冷場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3523840034
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "2afe41b007693e610f6d95e3be7e3be0ad9807c4d85e3edd2882f7cb4a53a92c"
+      },
+      "consequenceDirections": {
+        "A": "大家可各自跑；隊友可能失望。",
+        "B": "同伴可承擔；不能逼本人再當隊長。",
+        "C": "學生可說界線；任課仍掌安全與課程。",
+        "D": "學生可選強度；同伴需調整期待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d35237f1e50c534208b28dfaef2c9c013d7157955ebff2e2495d6923f3d72b64",
+    "draftSha256": "ef6dbcb247a95d5e47b3c595072cb419ececb17dedfc7dd0996c94035543d437",
     "seedAssignmentVersion": 1
   }
 }

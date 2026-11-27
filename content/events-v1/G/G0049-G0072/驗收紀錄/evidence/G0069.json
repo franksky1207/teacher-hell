@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7baeb809d29fc2a031dec7bc6421a3d84ddf94e514e6dba2d7618ccedc1cdda4",
+      "checkedAt": "2026-11-27T02:53:29.822Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受撤回，記錄不需公開內容的完成方式。",
+            "action": "導師已接受撤回，記錄不需公開內容的完成方式。",
+            "tradeoff": "尊重決定但展示少一份。"
+          },
+          {
+            "id": 2,
+            "text": "提供私人遞送選項，由本人決定是否使用。",
+            "action": "導師已提供私人遞送選項，由本人決定是否使用。",
+            "tradeoff": "保留感謝但仍可能有期待。"
+          },
+          {
+            "id": 3,
+            "text": "將展示改為自願追加，不再標空格。",
+            "action": "導師已將展示改為自願追加，不再標空格。",
+            "tradeoff": "降低辨識但版面需改。"
+          },
+          {
+            "id": 4,
+            "text": "私下向任課說明未交不等於沒參與，不提作者細節。",
+            "action": "導師已私下向任課說明未交不等於沒參與，不提作者細節。",
+            "tradeoff": "修正誤認但資訊有限。"
+          },
+          {
+            "id": 5,
+            "text": "允許本人留存，只分享一段願意公開的句子。",
+            "action": "導師已允許本人留存，只分享一段願意公開的句子。",
+            "tradeoff": "保留部分聲音但需範圍確認。"
+          },
+          {
+            "id": 6,
+            "text": "停止集中展示，改開個別可選感謝方式。",
+            "action": "導師已停止集中展示，改開個別可選感謝方式。",
+            "tradeoff": "自主較多但共同呈現落空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把想偷看內容的好奇收起，親手把信封完整還回去。",
+          "action": "導師已把想偷看內容的好奇收起，親手把信封完整還回去。",
+          "tradeoff": "放棄被感謝的滿足但守承諾。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3871559306
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "82b266bc5fc74290518f7d93a63367cc4acde2341b50a5dff4b172d524ff0ed6"
+      },
+      "consequenceDirections": {
+        "A": "學生可能安心；整理者需更新認知。",
+        "B": "學生可各選；熱心整理者可能失望。",
+        "C": "學生可能更信任；導師不保證因此不失落。",
+        "D": "學生可不送；不追問內容。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dad2dcf21a0af9f960e2c9a947ed7baadf59c3e0f6b434f4e5ad7ae6bace735d",
+    "draftSha256": "7baeb809d29fc2a031dec7bc6421a3d84ddf94e514e6dba2d7618ccedc1cdda4",
     "seedAssignmentVersion": 1
   }
 }

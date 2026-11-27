@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6d74b53145111d6f0e02ce555a9f49ac741be5042828200d474d581ac249516f",
+      "checkedAt": "2026-11-27T02:53:29.819Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "清楚標出遊戲只適用原課。",
+            "action": "導師已清楚標出遊戲只適用原課。",
+            "tradeoff": "界線明確但學生失望。"
+          },
+          {
+            "id": 2,
+            "text": "邀相關任課自願討論共同試行。",
+            "action": "導師已邀相關任課自願討論共同試行。",
+            "tradeoff": "可能一致但需協調。"
+          },
+          {
+            "id": 3,
+            "text": "維持各課不同規則，提供進課前提示。",
+            "action": "導師已維持各課不同規則，提供進課前提示。",
+            "tradeoff": "尊重差異但記憶負擔高。"
+          },
+          {
+            "id": 4,
+            "text": "將活動玩法與共同安全底線分兩層說明。",
+            "action": "導師已將活動玩法與共同安全底線分兩層說明。",
+            "tradeoff": "概念清楚但較難懂。"
+          },
+          {
+            "id": 5,
+            "text": "請發起教師分享實測條件而非成功口號。",
+            "action": "導師已請發起教師分享實測條件而非成功口號。",
+            "tradeoff": "較可評估但增加準備。"
+          },
+          {
+            "id": 6,
+            "text": "撤回自己通用的說法，逐一核對已受影響課堂。",
+            "action": "導師已撤回自己通用的說法，逐一核對已受影響課堂。",
+            "tradeoff": "修正期待但要聯繫。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "請學生幫你抓一次「老師又說太滿」，把自己的口誤寫進提醒。",
+          "action": "導師已請學生幫你抓一次「老師又說太滿」，把自己的口誤寫進提醒。",
+          "tradeoff": "自嘲但面子受損。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2333099640
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "8c6cf98e9c728e61b5336fd783aed5794e26f1d590ebc76da8154058fabc5bd1"
+      },
+      "consequenceDirections": {
+        "A": "同事可判斷適用；不保證採用。",
+        "B": "學生可能不再類推；需示例確認。",
+        "C": "學生可預期；教師需持續提示。",
+        "D": "學生可能願意核對；規則仍需成人確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1c0a961b9bdd186ac13a4ced4903ee2795b6597314ad0a514921a119066cbc86",
+    "draftSha256": "6d74b53145111d6f0e02ce555a9f49ac741be5042828200d474d581ac249516f",
     "seedAssignmentVersion": 1
   }
 }

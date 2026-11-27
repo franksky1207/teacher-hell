@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2761fd71edea87ad221eb98ff6b07d1d8b51fa778e7c04b2d186df96e2315455",
+      "checkedAt": "2026-11-27T02:53:29.797Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請學生提供親見路線給權責窗口。",
+            "action": "導師已請學生提供親見路線給權責窗口。",
+            "tradeoff": "資訊有用但需整理。"
+          },
+          {
+            "id": 2,
+            "text": "協助學生查詢合規且不接觸動物的關心途徑。",
+            "action": "導師已協助學生查詢合規且不接觸動物的關心途徑。",
+            "tradeoff": "善意有出口但回饋較遠。"
+          },
+          {
+            "id": 3,
+            "text": "在班內說清不以靠近動物證明勇敢。",
+            "action": "導師已在班內說清不以靠近動物證明勇敢。",
+            "tradeoff": "保護怕者但需談同儕壓力。"
+          },
+          {
+            "id": 4,
+            "text": "讓相關學生各述自己的害怕與牽掛，不討論抓捕法。",
+            "action": "導師已讓相關學生各述自己的害怕與牽掛，不討論抓捕法。",
+            "tradeoff": "可互相理解但占用時間。"
+          },
+          {
+            "id": 5,
+            "text": "請家庭只在願意時協助提供可合法取得的專業資訊。",
+            "action": "導師已請家庭只在願意時協助提供可合法取得的專業資訊。",
+            "tradeoff": "增加支持但不能要求出錢。"
+          },
+          {
+            "id": 6,
+            "text": "約定由校方窗口統一回傳可公開進度。",
+            "action": "導師已約定由校方窗口統一回傳可公開進度。",
+            "tradeoff": "減少傳言但可能等候。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把想趕快安撫大家的話收住，先陪怕狗的學生等安全通行。",
+          "action": "導師已把想趕快安撫大家的話收住，先陪怕狗的學生等安全通行。",
+          "tradeoff": "先接住恐懼但愛狗者可能失落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 655333282
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "28cabbd035619b2bb96ae12578c7cc97236992f69a5348b2ff7a8006d0876209"
+      },
+      "consequenceDirections": {
+        "A": "學生可安心離開；仍須回應餵食者善意。",
+        "B": "同學可能不再互嘲；共識未必一致。",
+        "C": "專業方可評估；學生不能跟去處理。",
+        "D": "學生可選參與；不得私下收容。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2123d7bfc3319fea074c090210dcaa83c8f8010c53107214b9893d8a87f61189",
+    "draftSha256": "2761fd71edea87ad221eb98ff6b07d1d8b51fa778e7c04b2d186df96e2315455",
     "seedAssignmentVersion": 1
   }
 }

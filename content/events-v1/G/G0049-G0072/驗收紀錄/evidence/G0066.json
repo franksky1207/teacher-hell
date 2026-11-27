@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a41b75e7c2285fd1530f5cf9a0a1e755c57ff4f630eb5c2ac46c1309cf6474cb",
+      "checkedAt": "2026-11-27T02:53:29.820Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分別聽本人與家長的具體需求。",
+            "action": "導師已分別聽本人與家長的具體需求。",
+            "tradeoff": "資訊完整但需時間。"
+          },
+          {
+            "id": 2,
+            "text": "協助依校規試行較少自習天數。",
+            "action": "導師已協助依校規試行較少自習天數。",
+            "tradeoff": "兼顧彈性但需核對程序。"
+          },
+          {
+            "id": 3,
+            "text": "請家庭先討論可遵守的共餐作息。",
+            "action": "導師已請家庭先討論可遵守的共餐作息。",
+            "tradeoff": "重視陪伴但非教師代排。"
+          },
+          {
+            "id": 4,
+            "text": "核對課後自習真正提供的學習支持。",
+            "action": "導師已核對課後自習真正提供的學習支持。",
+            "tradeoff": "避免只看留多久但需查詢。"
+          },
+          {
+            "id": 5,
+            "text": "安排家長在合意時段與學生談退出理由。",
+            "action": "導師已安排家長在合意時段與學生談退出理由。",
+            "tradeoff": "可面對面但需雙方願意。"
+          },
+          {
+            "id": 6,
+            "text": "提供不留校也能取得的本科提問入口。",
+            "action": "導師已提供不留校也能取得的本科提問入口。",
+            "tradeoff": "支持不斷但教師多回覆。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "向家長補上認真的長回覆，今天不再用一句自願打發不滿。",
+          "action": "導師已向家長補上認真的長回覆，今天不再用一句自願打發不滿。",
+          "tradeoff": "承擔溝通但占私人時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3630271822
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "a1c971e3d74db8641d562915fb350f569bcf51145b2f95dd2a3749410f1ec0aa"
+      },
+      "consequenceDirections": {
+        "A": "家長可能感到被理解；仍不能要求強留。",
+        "B": "家長可比較替代；未必適合孩子。",
+        "C": "家人可協商；學習另安排。",
+        "D": "雙方可保有聲音；不保證一致。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ce7bb6ca8a84c3bc2d5883869b2eec58d4b9ebd30b59849c6cf956e1071d69aa",
+    "draftSha256": "a41b75e7c2285fd1530f5cf9a0a1e755c57ff4f630eb5c2ac46c1309cf6474cb",
     "seedAssignmentVersion": 1
   }
 }

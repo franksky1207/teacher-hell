@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "47552b2c40fed0c7dc8e81e74006857c94a5340a0100e0c2801d0cd06d7a1384",
+      "checkedAt": "2026-11-27T02:53:29.818Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改用已獲同意的不具名短件。",
+            "action": "導師已改用已獲同意的不具名短件。",
+            "tradeoff": "降低人情壓力但仍可能猜作者。"
+          },
+          {
+            "id": 2,
+            "text": "由教師先示範一段具體回饋。",
+            "action": "導師已由教師先示範一段具體回饋。",
+            "tradeoff": "有語言支架但占用時間。"
+          },
+          {
+            "id": 3,
+            "text": "保留自評，讓他人自願補充。",
+            "action": "導師已保留自評，讓他人自願補充。",
+            "tradeoff": "自主較高但觀點有限。"
+          },
+          {
+            "id": 4,
+            "text": "經雙方同意換件，不把換件當逃避。",
+            "action": "導師已經雙方同意換件，不把換件當逃避。",
+            "tradeoff": "可保練習但需重新配對。"
+          },
+          {
+            "id": 5,
+            "text": "將回饋改為私下交教師，不直接交好友。",
+            "action": "導師已將回饋改為私下交教師，不直接交好友。",
+            "tradeoff": "減低當面壓力但教師多轉譯。"
+          },
+          {
+            "id": 6,
+            "text": "改談虛構示例的判準，不評本班作品。",
+            "action": "導師已改談虛構示例的判準，不評本班作品。",
+            "tradeoff": "風險低但真實性較少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己最怕評熟人，今天先把第一張回饋寫給自己的教案。",
+          "action": "導師已承認自己最怕評熟人，今天先把第一張回饋寫給自己的教案。",
+          "tradeoff": "接住焦慮但教師暴露不足。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3417585349
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "67dce7e070352761ec938ced69ca8f092a3642fa4f580bd285dc8c19dda30071"
+      },
+      "consequenceDirections": {
+        "A": "本人可展示判斷；同學未必響應。",
+        "B": "友誼壓力減少；其他人也需同意。",
+        "C": "學生可能願意嘗試；不能要求以感動換參與。",
+        "D": "學生可練判斷；需選不可回指片段。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9f189eaaad569220fc5465cf9643eea41ab33dc59afbcd947793602557e3e516",
+    "draftSha256": "47552b2c40fed0c7dc8e81e74006857c94a5340a0100e0c2801d0cd06d7a1384",
     "seedAssignmentVersion": 1
   }
 }

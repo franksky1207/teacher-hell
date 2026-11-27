@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "12202985c167d71d536e785344f8177030bcb113a7264550e95a9d0f83b5b985",
+      "checkedAt": "2026-11-27T02:53:29.824Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明說今天只需要安靜，約定下次可聊時再主動找他。",
+            "action": "導師已明說今天只需要安靜，約定下次可聊時再主動找他。",
+            "tradeoff": "界線清楚但對方可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "另約短暫的非個案午餐聊天。",
+            "action": "導師已另約短暫的非個案午餐聊天。",
+            "tradeoff": "保留關係但需排時。"
+          },
+          {
+            "id": 3,
+            "text": "請他只協助其職權內的非急事項分流。",
+            "action": "導師已請他只協助其職權內的非急事項分流。",
+            "tradeoff": "互助具體但需確認授權。"
+          },
+          {
+            "id": 4,
+            "text": "說明便條已循流程處理，今天不再延長工作。",
+            "action": "導師已說明便條已循流程處理，今天不再延長工作。",
+            "tradeoff": "降低掛心但不能交代細節。"
+          },
+          {
+            "id": 5,
+            "text": "詢問他今天是否也想早點離開。",
+            "action": "導師已詢問他今天是否也想早點離開。",
+            "tradeoff": "互相關照但可能被當轉移。"
+          },
+          {
+            "id": 6,
+            "text": "約定以簡單訊號表示能聊或需獨處。",
+            "action": "導師已約定以簡單訊號表示能聊或需獨處。",
+            "tradeoff": "減少誤讀但需磨合。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接說「今天我想當一個不會聊天的人」，背起包道別。",
+          "action": "導師已直接說「今天我想當一個不會聊天的人」，背起包道別。",
+          "tradeoff": "保留幽默但略倉促。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1094892268
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "0f9a4dcdccc420f6692ff4ebf40d467d4f35233745f9a8a81f7318f4997af169"
+      },
+      "consequenceDirections": {
+        "A": "親近可保留；不是隨時可打擾。",
+        "B": "同事可能理解或受傷；需日後適度回應。",
+        "C": "同事可理解；不能空約不履行。",
+        "D": "同事可說需求；不逼表達。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c849002ac9715ea5adfc1bb1025f0c2b5303dbc08538c2c16daad67109bce564",
+    "draftSha256": "12202985c167d71d536e785344f8177030bcb113a7264550e95a9d0f83b5b985",
     "seedAssignmentVersion": 1
   }
 }

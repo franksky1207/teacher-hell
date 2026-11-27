@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf3beb176fe430e1dde6dface92614e24807923483a1a77765cab425a29f1260",
+      "checkedAt": "2026-11-27T02:53:29.800Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "縮減當節教具範圍，確認餘件保管。",
+            "action": "導師已縮減當節教具範圍，確認餘件保管。",
+            "tradeoff": "安全省力但內容減少。"
+          },
+          {
+            "id": 2,
+            "text": "協調成人一次完成合法搬運。",
+            "action": "導師已協調成人一次完成合法搬運。",
+            "tradeoff": "教材較完整但需等支援。"
+          },
+          {
+            "id": 3,
+            "text": "改用借室現有材料。",
+            "action": "導師已改用借室現有材料。",
+            "tradeoff": "不再折返但教法要改。"
+          },
+          {
+            "id": 4,
+            "text": "由教師分段示範，不讓學生來回取物。",
+            "action": "導師已由教師分段示範，不讓學生來回取物。",
+            "tradeoff": "保留教具但教師多移動。"
+          },
+          {
+            "id": 5,
+            "text": "延後搬用，改在原合法空間完成當節。",
+            "action": "導師已延後搬用，改在原合法空間完成當節。",
+            "tradeoff": "不再搬但需重問場地。"
+          },
+          {
+            "id": 6,
+            "text": "請學生整理已搬清單，交回搬運責任。",
+            "action": "導師已請學生整理已搬清單，交回搬運責任。",
+            "tradeoff": "交接清楚但占短時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己捨不得刪教材，直接把今天用不到的一半鎖回原處。",
+          "action": "導師已承認自己捨不得刪教材，直接把今天用不到的一半鎖回原處。",
+          "tradeoff": "面對備課落空但減少耗損。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3100862280
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "f4e1372028830662aa908d1ea820cdf354e849f7fd4cb63c9d43d30cb8dc7b8a"
+      },
+      "consequenceDirections": {
+        "A": "學生不承擔重物；上課可能延遲。",
+        "B": "學生少搬；教師需補後段。",
+        "C": "學生可投入；效果未必同原案。",
+        "D": "學生可能放心；教師需處理課程缺口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "610bc2871487153d99c4928a5a4590f303536b9df12b77e19888a665d1664662",
+    "draftSha256": "bf3beb176fe430e1dde6dface92614e24807923483a1a77765cab425a29f1260",
     "seedAssignmentVersion": 1
   }
 }

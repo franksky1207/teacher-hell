@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "52aeea6a445edc014c4520937770ec06c88607188957ac4a7a036ecec2ee3469",
+      "checkedAt": "2026-11-27T02:53:29.818Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請家庭合意完成當日接送，再談日後自主。",
+            "action": "導師已請家庭合意完成當日接送，再談日後自主。",
+            "tradeoff": "先有安全安排但孩子可能失望。"
+          },
+          {
+            "id": 2,
+            "text": "提供短暫私談空間，讓三人自行討論。",
+            "action": "導師已提供短暫私談空間，讓三人自行討論。",
+            "tradeoff": "減少公開尷尬但需等候。"
+          },
+          {
+            "id": 3,
+            "text": "在合法及安全條件均確認後，協助家庭討論自主返程。",
+            "action": "導師已在合法及安全條件均確認後，協助家庭討論自主返程。",
+            "tradeoff": "尊重需要但核對較多。"
+          },
+          {
+            "id": 4,
+            "text": "請兩位成人各說今天可提供的範圍，不替對方承諾。",
+            "action": "導師已請兩位成人各說今天可提供的範圍，不替對方承諾。",
+            "tradeoff": "資訊清楚但可能暴露誤會。"
+          },
+          {
+            "id": 5,
+            "text": "與家長建立每次出發前確認接送者的簡單約定。",
+            "action": "導師已與家長建立每次出發前確認接送者的簡單約定。",
+            "tradeoff": "預防重疊但多一個步驟。"
+          },
+          {
+            "id": 6,
+            "text": "請孩子列出想自主的那一段，另循正式條件評估。",
+            "action": "導師已請孩子列出想自主的那一段，另循正式條件評估。",
+            "tradeoff": "需求具體但不即時實現。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把想幫忙一指決定的手收回，明說這次不替任何人選。",
+          "action": "導師已把想幫忙一指決定的手收回，明說這次不替任何人選。",
+          "tradeoff": "卸下裁判角色但家長可能不快。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1096232388
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "6a606e5c180f4660adb433efef5fcbd40f1348e2f50e5a98c148b83bf07ce7c0"
+      },
+      "consequenceDirections": {
+        "A": "可能有可行方案；不能先放行再補。",
+        "B": "家庭須面對協商；導師仍守離校安全。",
+        "C": "可找到單一安排；需控制公開內容。",
+        "D": "孩子可表達；未必立即有共識。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "87afb578723cbe168c4c56dbd9a3dcfaad6c3248d4552a4c84a113c2d74c13cf",
+    "draftSha256": "52aeea6a445edc014c4520937770ec06c88607188957ac4a7a036ecec2ee3469",
     "seedAssignmentVersion": 1
   }
 }

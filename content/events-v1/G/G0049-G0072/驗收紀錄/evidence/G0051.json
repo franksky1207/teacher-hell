@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "47f07495ec62e7a0faceacf84d4be5c41d29c012bebf88c998afb70cdcf60b1c",
+      "checkedAt": "2026-11-27T02:53:29.798Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助本人向平台詢問署名來源。",
+            "action": "導師已協助本人向平台詢問署名來源。",
+            "tradeoff": "能查證但需等待。"
+          },
+          {
+            "id": 2,
+            "text": "僅向已確認收件者發短訊更正。",
+            "action": "導師已僅向已確認收件者發短訊更正。",
+            "tradeoff": "範圍小但仍需確認接收。"
+          },
+          {
+            "id": 3,
+            "text": "教學生核對寄件與轉寄欄，僅看本人同意部分。",
+            "action": "導師已教學生核對寄件與轉寄欄，僅看本人同意部分。",
+            "tradeoff": "增加能力但占用時間。"
+          },
+          {
+            "id": 4,
+            "text": "請平台撤除錯用名義，保留本人課外提問。",
+            "action": "導師已請平台撤除錯用名義，保留本人課外提問。",
+            "tradeoff": "權威界線清楚但處理較慢。"
+          },
+          {
+            "id": 5,
+            "text": "讓學生自行列出想保留與停止的往來內容。",
+            "action": "導師已讓學生自行列出想保留與停止的往來內容。",
+            "tradeoff": "自主較高但需思考。"
+          },
+          {
+            "id": 6,
+            "text": "透過既有校內管道提醒課外信件不等於班務。",
+            "action": "導師已透過既有校內管道提醒課外信件不等於班務。",
+            "tradeoff": "通則可用但可能引好奇。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把「又冒我的名字」的火氣留給平台，先回學生一封明確的非作業確認。",
+          "action": "導師已把「又冒我的名字」的火氣留給平台，先回學生一封明確的非作業確認。",
+          "tradeoff": "讓本人安心但教師需寫信。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2856538605
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "8d887b0cb07c3f92a9434f1b71101b7bd274eccd6a5eff4b791f91ea170ed25c"
+      },
+      "consequenceDirections": {
+        "A": "學生可能辨識來源；不要求交密碼。",
+        "B": "學生可調整探索；教師不代選讀物。",
+        "C": "學生可自由決定；名義誤用另依程序處理。",
+        "D": "往來可繼續；平台未必即應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e814f56fad09c4141d46c2028f152665a98a7020dca318cb9fec0456771c3ed7",
+    "draftSha256": "47f07495ec62e7a0faceacf84d4be5c41d29c012bebf88c998afb70cdcf60b1c",
     "seedAssignmentVersion": 1
   }
 }

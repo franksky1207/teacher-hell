@@ -16,14 +16,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0dfd0b6bc38745be7c585a896d0e53da0c3b5367dba31277fc93a7584494fb0f",
+      "checkedAt": "2026-11-27T02:53:29.821Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請本人明確收回剛才可跟做的示範。",
+            "action": "導師已請本人明確收回剛才可跟做的示範。",
+            "tradeoff": "影響可被修正但本人難堪。"
+          },
+          {
+            "id": 2,
+            "text": "私下談踩空與後方跟隨的實際風險。",
+            "action": "導師已私下談踩空與後方跟隨的實際風險。",
+            "tradeoff": "少公開對立但需另約。"
+          },
+          {
+            "id": 3,
+            "text": "由另一位自願同學協助依指示重排。",
+            "action": "導師已由另一位自願同學協助依指示重排。",
+            "tradeoff": "分散帶頭壓力但要交接。"
+          },
+          {
+            "id": 4,
+            "text": "由你帶隊走完安全路段。",
+            "action": "導師已由你帶隊走完安全路段。",
+            "tradeoff": "直接可行但需放下其他工作。"
+          },
+          {
+            "id": 5,
+            "text": "將事實回報既有安全窗口，不加未查證評語。",
+            "action": "導師已將事實回報既有安全窗口，不加未查證評語。",
+            "tradeoff": "留下風險資訊但可能引不滿。"
+          },
+          {
+            "id": 6,
+            "text": "在班內用路線圖說明距離，不點名重演。",
+            "action": "導師已在班內用路線圖說明距離，不點名重演。",
+            "tradeoff": "可教通則但較費時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直說剛才你也嚇到了，先帶他在安全平台站穩再走。",
+          "action": "導師已直說剛才你也嚇到了，先帶他在安全平台站穩再走。",
+          "tradeoff": "不逞冷靜但耽擱片刻。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2583825261
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "1d6ad82b087fafc345262f4934eaca44e65526a5f483ef4088963526452c9ab6"
+      },
+      "consequenceDirections": {
+        "A": "同學有示範；不能靠威嚇維持。",
+        "B": "同學理解風險；個人責任仍另談。",
+        "C": "本人可能承認害怕；隊伍仍先安全移動。",
+        "D": "本人可能放下面子；仍須完成安全交接。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0e5fea44fb719e34449340770c25c16660247ff6bae97b829db673a0bb11e0bb",
+    "draftSha256": "0dfd0b6bc38745be7c585a896d0e53da0c3b5367dba31277fc93a7584494fb0f",
     "seedAssignmentVersion": 1
   }
 }

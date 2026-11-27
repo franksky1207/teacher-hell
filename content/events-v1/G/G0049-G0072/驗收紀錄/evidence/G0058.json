@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f384773fa417a2f74a17d9540b75ccfb9d0820622a7b8c913d4abd868387c797",
+      "checkedAt": "2026-11-27T02:53:29.806Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "優先向本科確認實際交件窗口。",
+            "action": "導師已優先向本科確認實際交件窗口。",
+            "tradeoff": "取得依據但仍需等。"
+          },
+          {
+            "id": 2,
+            "text": "只承諾你已能提供的收件範圍，明說非本科核准。",
+            "action": "導師已只承諾你已能提供的收件範圍，明說非本科核准。",
+            "tradeoff": "有限可靠但選擇較少。"
+          },
+          {
+            "id": 3,
+            "text": "協調合法不需到場的交件方式。",
+            "action": "導師已協調合法不需到場的交件方式。",
+            "tradeoff": "節省照顧替班但需確認規範。"
+          },
+          {
+            "id": 4,
+            "text": "請家長列可用時段供本科比較。",
+            "action": "導師已請家長列可用時段供本科比較。",
+            "tradeoff": "較合實況但涉及排程。"
+          },
+          {
+            "id": 5,
+            "text": "撤回備選表，改逐項標已確認與待定。",
+            "action": "導師已撤回備選表，改逐項標已確認與待定。",
+            "tradeoff": "減少誤讀但重整費工。"
+          },
+          {
+            "id": 6,
+            "text": "安排簡短三方聯繫直接核對交件需求。",
+            "action": "導師已安排簡短三方聯繫直接核對交件需求。",
+            "tradeoff": "資訊一致但時段難配。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己其他非急待辦放後，今天先追到一個明確回覆時間。",
+          "action": "導師已把自己其他非急待辦放後，今天先追到一個明確回覆時間。",
+          "tradeoff": "補償拖延但導師加負荷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2031818807
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "f76348d2cd3dcd91e8ca74db234c5ea7014d16910ce3ee658ff5c291327d6b71"
+      },
+      "consequenceDirections": {
+        "A": "家長可預期下一步；不等於保證核准。",
+        "B": "家庭可衡量；仍需本科認可。",
+        "C": "學生可表達；家庭支援未必仍有空。",
+        "D": "家長可重新排班；未必保住原時段。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5b34decf7f9634df55464f2617387861ecda73bccec9e22039332a9b1d114090",
+    "draftSha256": "f384773fa417a2f74a17d9540b75ccfb9d0820622a7b8c913d4abd868387c797",
     "seedAssignmentVersion": 1
   }
 }

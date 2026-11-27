@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8ee0135dadd4c88918c32c8484b470864057751a5224e76f529f40df7a749287",
+      "checkedAt": "2026-11-27T02:53:29.820Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "將個人物品移回本人可合法保管處。",
+            "action": "導師已將個人物品移回本人可合法保管處。",
+            "tradeoff": "歸屬清楚但共用仍缺。"
+          },
+          {
+            "id": 2,
+            "text": "請器材窗口統一管理經核可的共用件。",
+            "action": "導師已請器材窗口統一管理經核可的共用件。",
+            "tradeoff": "安全可控但借用較慢。"
+          },
+          {
+            "id": 3,
+            "text": "經管理者同意分設自用與核可共用區。",
+            "action": "導師已經管理者同意分設自用與核可共用區。",
+            "tradeoff": "容易辨識但增加維護。"
+          },
+          {
+            "id": 4,
+            "text": "向全班說明擺放不等於可用，不提家庭價格。",
+            "action": "導師已向全班說明擺放不等於可用，不提家庭價格。",
+            "tradeoff": "停止類推但占課時。"
+          },
+          {
+            "id": 5,
+            "text": "請本人自願列出願借範圍，再交專業方確認。",
+            "action": "導師已請本人自願列出願借範圍，再交專業方確認。",
+            "tradeoff": "尊重資源但程序較多。"
+          },
+          {
+            "id": 6,
+            "text": "暫停需護具的實作，改做不需該物的合法內容。",
+            "action": "導師已暫停需護具的實作，改做不需該物的合法內容。",
+            "tradeoff": "守安全但進度改動。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "先向學生道歉沒講清櫃子用途，自己接下重新標示的活。",
+          "action": "導師已先向學生道歉沒講清櫃子用途，自己接下重新標示的活。",
+          "tradeoff": "承擔疏漏但多工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1220425031
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "a9f87c829251a872aef4e8364d866d6b3c5d992c262e74e473532441e6a4fdd0"
+      },
+      "consequenceDirections": {
+        "A": "學生不必獨背誤會；核可仍由窗口負責。",
+        "B": "可拒絕共享；不能以願意取代適配。",
+        "C": "誤拿較少；不可只靠顏色核可。",
+        "D": "學生有正式管道；需等確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4851e8579dbadabc3d54935d5e7bfcd3c7aeaa63dcaf62c49399f21e8f3d716c",
+    "draftSha256": "8ee0135dadd4c88918c32c8484b470864057751a5224e76f529f40df7a749287",
     "seedAssignmentVersion": 1
   }
 }

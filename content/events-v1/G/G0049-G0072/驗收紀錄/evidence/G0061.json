@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "240c064c716217a2a4a7c47083ef549c192225c20080234f31a65653c5779511",
+      "checkedAt": "2026-11-27T02:53:29.817Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "完成這輪自願遊戲，下一輪改無道具。",
+            "action": "導師已完成這輪自願遊戲，下一輪改無道具。",
+            "tradeoff": "保留準備但轉換較晚。"
+          },
+          {
+            "id": 2,
+            "text": "改用教室合法可取的共同物件。",
+            "action": "導師已改用教室合法可取的共同物件。",
+            "tradeoff": "降低成本但需重設規則。"
+          },
+          {
+            "id": 3,
+            "text": "以兩人輪流聽說的無道具活動接續。",
+            "action": "導師已以兩人輪流聽說的無道具活動接續。",
+            "tradeoff": "人人可用但有人害羞。"
+          },
+          {
+            "id": 4,
+            "text": "讓學生自選有道具或純口述小組。",
+            "action": "導師已讓學生自選有道具或純口述小組。",
+            "tradeoff": "自主較多但管理複雜。"
+          },
+          {
+            "id": 5,
+            "text": "請暖場者自願設計不購買也能玩的版本。",
+            "action": "導師已請暖場者自願設計不購買也能玩的版本。",
+            "tradeoff": "保留主導但增加工作。"
+          },
+          {
+            "id": 6,
+            "text": "先問全班何種參與方式比較自在，不問誰買不起。",
+            "action": "導師已先問全班何種參與方式比較自在，不問誰買不起。",
+            "tradeoff": "資訊較真但耗班會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把你原本準備的漂亮道具也收起來，今天陪大家試一次笨拙的安靜。",
+          "action": "導師已把你原本準備的漂亮道具也收起來，今天陪大家試一次笨拙的安靜。",
+          "tradeoff": "放下表現欲但氣氛可能冷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 734764553
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "c94c5ae6b5cb3cbd6551fff4c9cac1b1def2f38f52f5c667b0611154e40b55de"
+      },
+      "consequenceDirections": {
+        "A": "大家有相近材料；趣味可能不同。",
+        "B": "學生可看到成人也適應；需留不參與選擇。",
+        "C": "學生可提需求；不保證當節成案。",
+        "D": "他可能有新點子；可以拒絕加做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9e64f7aa5a7dccfe53dc9ced38cb43bb48a05cc317d42e20d8f6d436a2c3420d",
+    "draftSha256": "240c064c716217a2a4a7c47083ef549c192225c20080234f31a65653c5779511",
     "seedAssignmentVersion": 1
   }
 }

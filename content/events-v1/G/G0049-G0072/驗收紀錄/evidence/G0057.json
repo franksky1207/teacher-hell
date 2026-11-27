@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "08f090fddf488cf510667c9c462e2f64edcc978460bbcc9953e9c60bfe1df54d",
+      "checkedAt": "2026-11-27T02:53:29.805Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向本科個別查核本人事項，再私下回家長。",
+            "action": "導師已向本科個別查核本人事項，再私下回家長。",
+            "tradeoff": "權限清楚但需等候。"
+          },
+          {
+            "id": 2,
+            "text": "請家長自行向已收者更正尚未核實。",
+            "action": "導師已請家長自行向已收者更正尚未核實。",
+            "tradeoff": "修復傳播但可能難堪。"
+          },
+          {
+            "id": 3,
+            "text": "由學校既有渠道說明無姓名的查詢程序。",
+            "action": "導師已由學校既有渠道說明無姓名的查詢程序。",
+            "tradeoff": "通則可用但不回答個案。"
+          },
+          {
+            "id": 4,
+            "text": "協助孩子自願核對自己的交件痕跡。",
+            "action": "導師已協助孩子自願核對自己的交件痕跡。",
+            "tradeoff": "保留本人聲音但需時間。"
+          },
+          {
+            "id": 5,
+            "text": "請本科按原授權回覆渠道處理。",
+            "action": "導師已請本科按原授權回覆渠道處理。",
+            "tradeoff": "責任一致但導師較少即時掌握。"
+          },
+          {
+            "id": 6,
+            "text": "與家長確認往後截圖先限縮收件範圍。",
+            "action": "導師已與家長確認往後截圖先限縮收件範圍。",
+            "tradeoff": "預防再傳但需改習慣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接說今天不能拿別人的紀錄安撫你，暫停越界追問。",
+          "action": "導師已直接說今天不能拿別人的紀錄安撫你，暫停越界追問。",
+          "tradeoff": "守住界線但可能激怒家長。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2924040201
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "80869a62f22a83b14ab39a1c6ef232edf33192a4e97c6e2f29b8f6e531ccd29d"
+      },
+      "consequenceDirections": {
+        "A": "群組可能降溫；家長仍須個別查。",
+        "B": "家長知道找誰；等待可能延長。",
+        "C": "家長可能不滿；合法個案查核仍持續。",
+        "D": "可找到資料；不能逼交私人對話。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7e5570a2c6237b63968a4928d38e05e86d2dcbf886b7ee053c107cc97207b8b8",
+    "draftSha256": "08f090fddf488cf510667c9c462e2f64edcc978460bbcc9953e9c60bfe1df54d",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "685d9df1e3a53a2b9290ffe4e719c61f9bcf096408f09123b265d799d6279847",
+      "checkedAt": "2026-11-27T02:48:23.012Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下確認修補可行時間並記必要例外。",
+            "action": "導師已私下確認修補可行時間並記必要例外。",
+            "tradeoff": "可追蹤但本人需回報。"
+          },
+          {
+            "id": 2,
+            "text": "提供可借合用外套供本人選擇。",
+            "action": "導師已提供可借合用外套供本人選擇。",
+            "tradeoff": "減少識別但可能不合身。"
+          },
+          {
+            "id": 3,
+            "text": "向值勤窗口確認合法暫行方式，只傳必要資訊。",
+            "action": "導師已向值勤窗口確認合法暫行方式，只傳必要資訊。",
+            "tradeoff": "依據一致但需等覆。"
+          },
+          {
+            "id": 4,
+            "text": "請本人取下高識別紙條，改由成人私下交接。",
+            "action": "導師已請本人取下高識別紙條，改由成人私下交接。",
+            "tradeoff": "保護隱私但教師多聯絡。"
+          },
+          {
+            "id": 5,
+            "text": "向全班說明個別故障另循程序，不公布本人細節。",
+            "action": "導師已向全班說明個別故障另循程序，不公布本人細節。",
+            "tradeoff": "停止傳聞但可能引好奇。"
+          },
+          {
+            "id": 6,
+            "text": "協助聯繫家長確認可行修補資源。",
+            "action": "導師已協助聯繫家長確認可行修補資源。",
+            "tradeoff": "有具體支持但多一方知情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己想說的「一顆扣子而已」吞回去，陪他走一趟窗口。",
+          "action": "導師已把自己想說的「一顆扣子而已」吞回去，陪他走一趟窗口。",
+          "tradeoff": "承接焦慮但占用課間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3838313650
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "5832d4656a81d7d5710036146539118050f6a1d89eb3ab60e92440ef096460ef"
+      },
+      "consequenceDirections": {
+        "A": "學生可免當例子；仍需防追問。",
+        "B": "旁人少類推；不能自行抹掉校規。",
+        "C": "家庭可提方案；不推定故意不修。",
+        "D": "學生可能信任程序；結果未必立即。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "db9ff2fd727598052de92a0a06f7cb494b2307df9a3e04bd8d2329d139b12441",
+    "draftSha256": "685d9df1e3a53a2b9290ffe4e719c61f9bcf096408f09123b265d799d6279847",
     "seedAssignmentVersion": 1
   }
 }

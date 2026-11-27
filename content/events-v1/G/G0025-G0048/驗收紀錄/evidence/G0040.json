@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90366bf69af6583e7d2b5de281d406ed93b54db22f3a82027a9f2ed680143a00",
+      "checkedAt": "2026-11-27T02:48:23.011Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拒絕重演，只分享教師引導步驟。",
+            "action": "導師已拒絕重演，只分享教師引導步驟。",
+            "tradeoff": "保留真實但少現場。"
+          },
+          {
+            "id": 2,
+            "text": "另約成人研討，用假設例題演示。",
+            "action": "導師已另約成人研討，用假設例題演示。",
+            "tradeoff": "不占學生但增加準備。"
+          },
+          {
+            "id": 3,
+            "text": "徵得同意後提供不具名課後反思。",
+            "action": "導師已徵得同意後提供不具名課後反思。",
+            "tradeoff": "看得到歷程但資訊有限。"
+          },
+          {
+            "id": 4,
+            "text": "等自然有討論課時再循程序邀觀課。",
+            "action": "導師已等自然有討論課時再循程序邀觀課。",
+            "tradeoff": "保留現場但不可保證成功。"
+          },
+          {
+            "id": 5,
+            "text": "請同事先說清欲觀察的學習證據再安排。",
+            "action": "導師已請同事先說清欲觀察的學習證據再安排。",
+            "tradeoff": "目標清楚但邀約延後。"
+          },
+          {
+            "id": 6,
+            "text": "只轉交合法可分享的既有教案。",
+            "action": "導師已只轉交合法可分享的既有教案。",
+            "tradeoff": "快速可用但少互動細節。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己很想再被稱讚一次，仍把教室門輕輕帶上讓學生休息。",
+          "action": "導師已承認自己很想再被稱讚一次，仍把教室門輕輕帶上讓學生休息。",
+          "tradeoff": "拒絕誘惑但錯過即時掌聲。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3166073976
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "9a910b0816c62827f309cadf4a03d8b15d43f6449c7e8ab12d2593a25bcce3d6"
+      },
+      "consequenceDirections": {
+        "A": "同事能自行參考；需自行判斷適用性。",
+        "B": "學生可能信任界線；行政期待需回應。",
+        "C": "行政可能願等；學生不必演好。",
+        "D": "同事可學做法；未必重現原效果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "11986c5519d22ee56392f3067e49ed96e61b08e87bc1c8140c3bc4305614b11b",
+    "draftSha256": "90366bf69af6583e7d2b5de281d406ed93b54db22f3a82027a9f2ed680143a00",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c1d410a8d51157e8a43dda18725520955d765e752d2add5995c2c56fa1b56d92",
+      "checkedAt": "2026-11-27T02:48:23.017Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪移物者說明經過並承認未留線索。",
+            "action": "導師已陪移物者說明經過並承認未留線索。",
+            "tradeoff": "兼顧善意與影響但需面對不快。"
+          },
+          {
+            "id": 2,
+            "text": "訂安全移物後就近留無個資標示的做法。",
+            "action": "導師已訂安全移物後就近留無個資標示的做法。",
+            "tradeoff": "低成本但標示可能掉。"
+          },
+          {
+            "id": 3,
+            "text": "將無法當場找物主的物品依校規移交失物窗口。",
+            "action": "導師已將無法當場找物主的物品依校規移交失物窗口。",
+            "tradeoff": "可追查但路程增加。"
+          },
+          {
+            "id": 4,
+            "text": "教本班區分需立即清除與應先問物主的情況。",
+            "action": "導師已教本班區分需立即清除與應先問物主的情況。",
+            "tradeoff": "判斷更清楚但占班務時間。"
+          },
+          {
+            "id": 5,
+            "text": "與物主確認可接受的暫放點再向班上說明通則。",
+            "action": "導師已與物主確認可接受的暫放點再向班上說明通則。",
+            "tradeoff": "尊重需求但需一致安全限制。"
+          },
+          {
+            "id": 6,
+            "text": "請移物者只回報值勤成人，由成人完成後續通知。",
+            "action": "導師已請移物者只回報值勤成人，由成人完成後續通知。",
+            "tradeoff": "減少學生負荷但增加成人工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "先陪委屈的學生坐一會，不急著把他教成完美幫手。",
+          "action": "導師已先陪委屈的學生坐一會，不急著把他教成完美幫手。",
+          "tradeoff": "接住情緒但修復需另做。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1004760621
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "033a92a00dc46775105b857548efffd8f47ee3924e13e51c0d4c61dbce3f70d1"
+      },
+      "consequenceDirections": {
+        "A": "善意有出口；通知可能較慢。",
+        "B": "學生知道去處；窗口需接手。",
+        "C": "學生可能願再說明；物主的困擾仍須回應。",
+        "D": "學生可避免過度移物；仍有例外。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "72343463e952227b18be6899331aeba9365df0cb8ce3725cf7fb6af915853b4b",
+    "draftSha256": "c1d410a8d51157e8a43dda18725520955d765e752d2add5995c2c56fa1b56d92",
     "seedAssignmentVersion": 1
   }
 }

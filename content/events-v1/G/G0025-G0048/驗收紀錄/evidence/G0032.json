@@ -16,14 +16,82 @@
     "G06",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ec12357fa12c09294f15d909b661a5f76d4ba59920e6a3d8204a02149484a5b7",
+      "checkedAt": "2026-11-27T02:48:23.004Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "簡短接住問候，立即送兩人離開。",
+            "action": "導師已簡短接住問候，立即送兩人離開。",
+            "tradeoff": "不再延誤但衝突未談。"
+          },
+          {
+            "id": 2,
+            "text": "另約不影響接送的自願寒暄時間。",
+            "action": "導師已另約不影響接送的自願寒暄時間。",
+            "tradeoff": "保留關係但需另排。"
+          },
+          {
+            "id": 3,
+            "text": "請兩人先私下確認返家時點，只回報學校需配合處。",
+            "action": "導師已請兩人先私下確認返家時點，只回報學校需配合處。",
+            "tradeoff": "尊重家庭但資訊有限。"
+          },
+          {
+            "id": 4,
+            "text": "向祖母明說你會自行安排午餐，不必等候確認。",
+            "action": "導師已向祖母明說你會自行安排午餐，不必等候確認。",
+            "tradeoff": "減少掛心但可能掃興。"
+          },
+          {
+            "id": 5,
+            "text": "詢問孩子是否有願意私下談的就學需求。",
+            "action": "導師已詢問孩子是否有願意私下談的就學需求。",
+            "tradeoff": "留求助入口但不逼揭露。"
+          },
+          {
+            "id": 6,
+            "text": "將接送交流限定為必要校務，非急話題另約。",
+            "action": "導師已將接送交流限定為必要校務，非急話題另約。",
+            "tradeoff": "時間可預期但少人情互動。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "笑說今天你要先衝去買飯，向兩人道別就離開。",
+          "action": "導師已笑說今天你要先衝去買飯，向兩人道別就離開。",
+          "tradeoff": "用自己的飢餓收尾但略顯倉促。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1663654248
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "5c3962b025e1db841b1eb244c216091f1dd15ed316350889f04659638dcebbb1"
+      },
+      "consequenceDirections": {
+        "A": "孩子可能鬆口氣；祖母或覺得被冷落。",
+        "B": "祖母可選是否來；孩子少等待。",
+        "C": "家庭可自行協商；導師不能代分家事。",
+        "D": "兩人不再等老師；家庭爭執仍須自行處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b05324289433752235d0218ed0eab7d2f42a9d541428bc876d2361544dff2d22",
+    "draftSha256": "ec12357fa12c09294f15d909b661a5f76d4ba59920e6a3d8204a02149484a5b7",
     "seedAssignmentVersion": 1
   }
 }

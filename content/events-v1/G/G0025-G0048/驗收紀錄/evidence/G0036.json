@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "33550995f432d340517b2c66d61751b20dda0dc9319c62b0371b9e2ebabc24fd",
+      "checkedAt": "2026-11-27T02:48:23.008Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由教師接讀，讓本人自行決定是否旁聽。",
+            "action": "導師已由教師接讀，讓本人自行決定是否旁聽。",
+            "tradeoff": "立即卸壓但少學生示範。"
+          },
+          {
+            "id": 2,
+            "text": "改成全班各自低聲練習。",
+            "action": "導師已改成全班各自低聲練習。",
+            "tradeoff": "不再聚焦但教師難逐一聽。"
+          },
+          {
+            "id": 3,
+            "text": "提供本人自願錄音的選擇，當節不公開。",
+            "action": "導師已提供本人自願錄音的選擇，當節不公開。",
+            "tradeoff": "保留表達但需設備及意願。"
+          },
+          {
+            "id": 4,
+            "text": "邀本人轉做自願的時間提示協助。",
+            "action": "導師已邀本人轉做自願的時間提示協助。",
+            "tradeoff": "保留參與但可能像安撫安排。"
+          },
+          {
+            "id": 5,
+            "text": "暫停示範，先分別釐清笑聲造成的影響。",
+            "action": "導師已暫停示範，先分別釐清笑聲造成的影響。",
+            "tradeoff": "回應傷害但課程延後。"
+          },
+          {
+            "id": 6,
+            "text": "讓全班自選默讀或兩人練讀。",
+            "action": "導師已讓全班自選默讀或兩人練讀。",
+            "tradeoff": "自主較多但教室組織複雜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把書接回自己手上，說今天換老師承擔卡詞的尷尬。",
+          "action": "導師已把書接回自己手上，說今天換老師承擔卡詞的尷尬。",
+          "tradeoff": "願意補位但仍占課時。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2256666907
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "80d5db4201505a8829d4d496f9ba77caf0d59bffa89140f2774948825bb8e2db"
+      },
+      "consequenceDirections": {
+        "A": "本人可拒絕；不能以錄音補償退出。",
+        "B": "笑點可能轉回成人；不能用自嘲掩過取笑。",
+        "C": "學生可退下；笑鬧者仍需另處理。",
+        "D": "本人不再被孤立；教師需維持學習。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a549f004f80e0e85a2861d8ed8588641b60a8794d0212846f7b1f8528d80cb89",
+    "draftSha256": "33550995f432d340517b2c66d61751b20dda0dc9319c62b0371b9e2ebabc24fd",
     "seedAssignmentVersion": 1
   }
 }

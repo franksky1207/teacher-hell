@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ceae94f95128f5e512134f185ce8d77336179ee7bc51bea43628816befbaad4f",
+      "checkedAt": "2026-11-27T02:48:23.013Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "約定應急須取得接手確認與結束時間。",
+            "action": "導師已約定應急須取得接手確認與結束時間。",
+            "tradeoff": "責任清楚但多一步。"
+          },
+          {
+            "id": 2,
+            "text": "依校內程序請可支援教師接續照看。",
+            "action": "導師已依校內程序請可支援教師接續照看。",
+            "tradeoff": "分工正式但需聯絡。"
+          },
+          {
+            "id": 3,
+            "text": "你承接當次，將自己下一項工作另行協調。",
+            "action": "導師已你承接當次，將自己下一項工作另行協調。",
+            "tradeoff": "當場可行但自己有成本。"
+          },
+          {
+            "id": 4,
+            "text": "請同事與權責方確認固定照顧突發的備援。",
+            "action": "導師已請同事與權責方確認固定照顧突發的備援。",
+            "tradeoff": "較持續但需正式安排。"
+          },
+          {
+            "id": 5,
+            "text": "把臨時交接限為照看，不自動代帶本科教學。",
+            "action": "導師已把臨時交接限為照看，不自動代帶本科教學。",
+            "tradeoff": "範圍明確但進度需處理。"
+          },
+          {
+            "id": 6,
+            "text": "另約私下短談雙方可承擔的分鐘數。",
+            "action": "導師已另約私下短談雙方可承擔的分鐘數。",
+            "tradeoff": "避免吵給學生聽但延後修復。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接說自己剛才很火，先停止互相評專業，改寫當次交接事實。",
+          "action": "導師已直接說自己剛才很火，先停止互相評專業，改寫當次交接事實。",
+          "tradeoff": "情緒有出口但談話較冷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 873331083
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "ffa5ff291b3fb6c664a5993cd622c32c8764e2e29b87e856e13214c1262764c0"
+      },
+      "consequenceDirections": {
+        "A": "雙方可能降溫；紀錄不能當報復。",
+        "B": "同事可預期支援；不能未確認即走。",
+        "C": "同事可安頓家庭；不能默認日常代班。",
+        "D": "同事可能獲支持；導師不保證核准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d4e9bc1180dabd9f8bf6950c06d0307186de801f42e219ab8f84b4fddcc4c863",
+    "draftSha256": "ceae94f95128f5e512134f185ce8d77336179ee7bc51bea43628816befbaad4f",
     "seedAssignmentVersion": 1
   }
 }

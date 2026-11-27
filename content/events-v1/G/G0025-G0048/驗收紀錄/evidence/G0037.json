@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "27d22eaff9b862bbd199e3b145a05306ec6ba6fef84d320b22bb6fa74367eabe",
+      "checkedAt": "2026-11-27T02:48:23.009Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先與家長核對時間線，不推定孩子動機。",
+            "action": "導師已先與家長核對時間線，不推定孩子動機。",
+            "tradeoff": "減少誤認但需耐心。"
+          },
+          {
+            "id": 2,
+            "text": "等學生願意時另約個別陳述。",
+            "action": "導師已等學生願意時另約個別陳述。",
+            "tradeoff": "保有自主但修復延後。"
+          },
+          {
+            "id": 3,
+            "text": "先分開處理班級笑鬧及本科教學需求。",
+            "action": "導師已先分開處理班級笑鬧及本科教學需求。",
+            "tradeoff": "工作可推進但親子仍等待。"
+          },
+          {
+            "id": 4,
+            "text": "說明自己已做的當眾行動及理由，接受家長追問。",
+            "action": "導師已說明自己已做的當眾行動及理由，接受家長追問。",
+            "tradeoff": "回應問責但氣氛可能緊。"
+          },
+          {
+            "id": 5,
+            "text": "徵得各方意願後安排有限範圍修復談話。",
+            "action": "導師已徵得各方意願後安排有限範圍修復談話。",
+            "tradeoff": "可直接對話但協調難。"
+          },
+          {
+            "id": 6,
+            "text": "請家長只協助可行返校支持，不要求回報家庭對話。",
+            "action": "導師已請家長只協助可行返校支持，不要求回報家庭對話。",
+            "tradeoff": "減少侵犯但資訊較少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把原想辯解的話收住，先寫下家長最要你回答的一題。",
+          "action": "導師已把原想辯解的話收住，先寫下家長最要你回答的一題。",
+          "tradeoff": "壓住委屈但不能立即反駁。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 456962796
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "111120e54f1c2e81ff50d37d1413efb21760a9b9339a977754e5f61248b8a31f"
+      },
+      "consequenceDirections": {
+        "A": "家庭可自主支持；學校仍負責校內行為。",
+        "B": "孩子可定界線；未必當場和解。",
+        "C": "孩子可拒絕共同談；教師需維持支持。",
+        "D": "家長可能感到被聽見；導師須實際回覆。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eb527b46d3884fb963c9c2b2bc440196f71e1ac110cc60320def3e2be68ebcee",
+    "draftSha256": "27d22eaff9b862bbd199e3b145a05306ec6ba6fef84d320b22bb6fa74367eabe",
     "seedAssignmentVersion": 1
   }
 }

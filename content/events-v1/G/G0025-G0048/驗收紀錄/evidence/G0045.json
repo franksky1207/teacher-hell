@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "277a2c1e47d279946426fb00ea6d95212f4f00bbfb01213dd3a5743167d7f228",
+      "checkedAt": "2026-11-27T02:48:23.015Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改用現有授權工具記最少必要待辦。",
+            "action": "導師已改用現有授權工具記最少必要待辦。",
+            "tradeoff": "可追蹤但需登入。"
+          },
+          {
+            "id": 2,
+            "text": "保留當面談，當場在校內確認責任與期限。",
+            "action": "導師已保留當面談，當場在校內確認責任與期限。",
+            "tradeoff": "自然直接但需停下記錄。"
+          },
+          {
+            "id": 3,
+            "text": "約每日短交接時段，急件另循程序。",
+            "action": "導師已約每日短交接時段，急件另循程序。",
+            "tradeoff": "可預期但不即時。"
+          },
+          {
+            "id": 4,
+            "text": "將需正式回覆事項交回權責窗口。",
+            "action": "導師已將需正式回覆事項交回權責窗口。",
+            "tradeoff": "責任清楚但流程較慢。"
+          },
+          {
+            "id": 5,
+            "text": "只接受有明確接手確認的口頭任務。",
+            "action": "導師已只接受有明確接手確認的口頭任務。",
+            "tradeoff": "降低漏失但彈性減少。"
+          },
+          {
+            "id": 6,
+            "text": "先核對當前未完待辦，關閉已失效提醒。",
+            "action": "導師已先核對當前未完待辦，關閉已失效提醒。",
+            "tradeoff": "減少堆積但要花一段時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天準時收包，請同事把非急話留到明天校內再談。",
+          "action": "導師已今天準時收包，請同事把非急話留到明天校內再談。",
+          "tradeoff": "守私人時間但對方可能不快。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 513835931
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "7de54cf9c7c4eb4da74a4957c0156918bb1e46b5193b5438b757c8ca6c7cdd94"
+      },
+      "consequenceDirections": {
+        "A": "同事有追蹤出口；導師少臨時代辦。",
+        "B": "同事可確認；不得擴大知情。",
+        "C": "同事需接受等待；急件仍走合法窗口。",
+        "D": "同事可集中；非急事需等待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "73275811a8e71b4bdeafbe1a38c41d89d23ec80d845372814186635946af16e3",
+    "draftSha256": "277a2c1e47d279946426fb00ea6d95212f4f00bbfb01213dd3a5743167d7f228",
     "seedAssignmentVersion": 1
   }
 }

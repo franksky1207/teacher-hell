@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9861d6e262599e56fe80abe9a49400c3d5cdda3c7908edef4ca3ee49612ea533",
+      "checkedAt": "2026-11-27T02:48:23.000Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "將本次改為不計分診斷。",
+            "action": "導師已將本次改為不計分診斷。",
+            "tradeoff": "能留學習資訊但原評量撤回。"
+          },
+          {
+            "id": 2,
+            "text": "提供等量替代練習供自願補證據。",
+            "action": "導師已提供等量替代練習供自願補證據。",
+            "tradeoff": "有新機會但多花時間。"
+          },
+          {
+            "id": 3,
+            "text": "收存原稿並分別問親見事實。",
+            "action": "導師已收存原稿並分別問親見事實。",
+            "tradeoff": "保留證據但需個別時間。"
+          },
+          {
+            "id": 4,
+            "text": "請值日生收回指控，再開放原件正常交回。",
+            "action": "導師已請值日生收回指控，再開放原件正常交回。",
+            "tradeoff": "修復交件但信任未必恢復。"
+          },
+          {
+            "id": 5,
+            "text": "改由學生自評一個能解釋的步驟。",
+            "action": "導師已改由學生自評一個能解釋的步驟。",
+            "tradeoff": "看理解但少完整作答比較。"
+          },
+          {
+            "id": 6,
+            "text": "徵得本科同意，延後當次練習評量。",
+            "action": "導師已徵得本科同意，延後當次練習評量。",
+            "tradeoff": "程序較穩但回饋晚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己也差點用重做省事，先把紙團攤平放回本人桌上。",
+          "action": "導師已坦白自己也差點用重做省事，先把紙團攤平放回本人桌上。",
+          "tradeoff": "接住挫折但不能立刻結案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1981117617
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "5a8205e7a659692cd85960630431ab83cf4f0838d715265dafa4039d70e72190"
+      },
+      "consequenceDirections": {
+        "A": "推測與所見分開；未必釐清所有情況。",
+        "B": "學生可能願交；已認真作答者或失落。",
+        "C": "答案資訊影響較小；教師需聽說明。",
+        "D": "本人可選是否交；值日生仍需收回推測。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a1b9ba83b88e0a5d222c412c416dc937663dbfa73c4766d3c4b6085dd4db50f4",
+    "draftSha256": "9861d6e262599e56fe80abe9a49400c3d5cdda3c7908edef4ca3ee49612ea533",
     "seedAssignmentVersion": 1
   }
 }

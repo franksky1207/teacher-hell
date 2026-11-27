@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e1a6a6d48a43ab08a9e692e10e361d85d246d489a92ecce283369286634dfbfc",
+      "checkedAt": "2026-11-27T02:48:23.014Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下徵詢本人需求再介紹既有早餐支持。",
+            "action": "導師已私下徵詢本人需求再介紹既有早餐支持。",
+            "tradeoff": "有選擇但可能拒絕。"
+          },
+          {
+            "id": 2,
+            "text": "先與家長核對費用與時間哪個是主要限制。",
+            "action": "導師已先與家長核對費用與時間哪個是主要限制。",
+            "tradeoff": "找準原因但需談細節。"
+          },
+          {
+            "id": 3,
+            "text": "在全班停止針對他人餐食的連番追問。",
+            "action": "導師已在全班停止針對他人餐食的連番追問。",
+            "tradeoff": "保護界線但可能仍被聯想。"
+          },
+          {
+            "id": 4,
+            "text": "經同意協助使用一般可選的校內購餐管道。",
+            "action": "導師已經同意協助使用一般可選的校內購餐管道。",
+            "tradeoff": "自然可用但仍有成本。"
+          },
+          {
+            "id": 5,
+            "text": "請家長與孩子先討論可接受的協助範圍。",
+            "action": "導師已請家長與孩子先討論可接受的協助範圍。",
+            "tradeoff": "尊重家庭但處理較慢。"
+          },
+          {
+            "id": 6,
+            "text": "安排本人自願與輔導人員個別談生活需要。",
+            "action": "導師已安排本人自願與輔導人員個別談生活需要。",
+            "tradeoff": "資源較全但多一方知情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "忍住想立刻買一袋早餐的衝動，先讓孩子挑他願意接受的方式。",
+          "action": "導師已忍住想立刻買一袋早餐的衝動，先讓孩子挑他願意接受的方式。",
+          "tradeoff": "少了快速助人滿足但保住自主。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3864067018
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "8823daf96b522f7c222016adab94b0e8b4f8ff00d4c12aa65384c354d67f55e7"
+      },
+      "consequenceDirections": {
+        "A": "同學可學尊重；不揭露個案。",
+        "B": "孩子可能願求助；教師仍需確認當天吃足。",
+        "C": "孩子可能願意；需確認可負擔。",
+        "D": "孩子可決定；家長須接受等待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "19a97ae885741a672879b0eed1d76496a9d532d6f93b79e2f9ba7cca9362ae92",
+    "draftSha256": "e1a6a6d48a43ab08a9e692e10e361d85d246d489a92ecce283369286634dfbfc",
     "seedAssignmentVersion": 1
   }
 }

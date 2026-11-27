@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9a9162afd25fc3da600b832c396fa38bad8458d891e834824027d9e2de868913",
+      "checkedAt": "2026-11-27T02:48:23.018Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓本班先回教室等候，延後非急材料交接。",
+            "action": "導師已讓本班先回教室等候，延後非急材料交接。",
+            "tradeoff": "動線清楚但任務較晚。"
+          },
+          {
+            "id": 2,
+            "text": "依值勤指引分小組走安全路線。",
+            "action": "導師已依值勤指引分小組走安全路線。",
+            "tradeoff": "維持移動但需帶隊。"
+          },
+          {
+            "id": 3,
+            "text": "請權責窗口協調另一個合法遮雨等候點。",
+            "action": "導師已請權責窗口協調另一個合法遮雨等候點。",
+            "tradeoff": "空間較足但未必可用。"
+          },
+          {
+            "id": 4,
+            "text": "安排有需要者優先慢行，其餘先在班內等。",
+            "action": "導師已安排有需要者優先慢行，其餘先在班內等。",
+            "tradeoff": "照顧差異但時間不齊。"
+          },
+          {
+            "id": 5,
+            "text": "由你接回非急材料，讓學生先完成課間移動。",
+            "action": "導師已由你接回非急材料，讓學生先完成課間移動。",
+            "tradeoff": "減輕負荷但導師加做。"
+          },
+          {
+            "id": 6,
+            "text": "在班內說明轉角保持淨空，雨勢轉弱再放行。",
+            "action": "導師已在班內說明轉角保持淨空，雨勢轉弱再放行。",
+            "tradeoff": "避免再擠但可用課間縮短。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己也想搶乾地的腳收回來，站在安全處陪最後一批等。",
+          "action": "導師已把自己也想搶乾地的腳收回來，站在安全處陪最後一批等。",
+          "tradeoff": "示範等待但自己被雨濺濕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3551339999
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "0f559ff1fb7682da9e24fcfb5ac548c30ad737ede091cfb499436022beb8064b"
+      },
+      "consequenceDirections": {
+        "A": "學生可分流；不能自行占用。",
+        "B": "學生可能願跟隨；不能以陪等取代分流。",
+        "C": "學生可能抱怨；須配合值勤規定。",
+        "D": "學生可能接受等待；不可公開貼弱勢標籤。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e198f915955158a2ab7e10c5492a131f90e1005af284e0914be0ff2332906244",
+    "draftSha256": "9a9162afd25fc3da600b832c396fa38bad8458d891e834824027d9e2de868913",
     "seedAssignmentVersion": 1
   }
 }

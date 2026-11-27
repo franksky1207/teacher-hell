@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "19845edccebec4abc13019e777b51f71732e8478f02dfb91ded6d1efaeb8fbe6",
+      "checkedAt": "2026-11-27T02:48:23.004Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向場地窗口確認最小可行時段後再提案。",
+            "action": "導師已向場地窗口確認最小可行時段後再提案。",
+            "tradeoff": "有明確依據但仍待核准。"
+          },
+          {
+            "id": 2,
+            "text": "先保留原回饋時段，撤下未核准試行日期。",
+            "action": "導師已先保留原回饋時段，撤下未核准試行日期。",
+            "tradeoff": "減少落空但改善延後。"
+          },
+          {
+            "id": 3,
+            "text": "改提無須新場地的書面回饋試行。",
+            "action": "導師已改提無須新場地的書面回饋試行。",
+            "tradeoff": "較易安排但文字負擔高。"
+          },
+          {
+            "id": 4,
+            "text": "將試行縮至一組並申請既有合法空間。",
+            "action": "導師已將試行縮至一組並申請既有合法空間。",
+            "tradeoff": "負荷較小但代表性有限。"
+          },
+          {
+            "id": 5,
+            "text": "協助同事向家人說清校內未定狀態，不帶學生資料。",
+            "action": "導師已協助同事向家人說清校內未定狀態，不帶學生資料。",
+            "tradeoff": "便於重排但需再麻煩家人。"
+          },
+          {
+            "id": 6,
+            "text": "先停試辦，只整理學生真正需要的回饋類型。",
+            "action": "導師已先停試辦，只整理學生真正需要的回饋類型。",
+            "tradeoff": "不再加班但成果較晚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己原定的非急工作挪後，陪他當天把申請問清楚。",
+          "action": "導師已把自己原定的非急工作挪後，陪他當天把申請問清楚。",
+          "tradeoff": "不願再拖欠但犧牲自己時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3872804297
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "fd68660b09a03ff30038cf34ddeb1528300edc645e116c4f5005dbc9f2b33da2"
+      },
+      "consequenceDirections": {
+        "A": "需求可更清楚；同事可能失望。",
+        "B": "同事感到有人承擔；仍不可承諾核准。",
+        "C": "可取得初步經驗；核准仍不保證。",
+        "D": "同事可能接受縮小；家庭排班成本尚在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3ac520afeff7a99c21a4887ef15f425459f9f02ca1d0dea237dc9d88546f887c",
+    "draftSha256": "19845edccebec4abc13019e777b51f71732e8478f02dfb91ded6d1efaeb8fbe6",
     "seedAssignmentVersion": 1
   }
 }

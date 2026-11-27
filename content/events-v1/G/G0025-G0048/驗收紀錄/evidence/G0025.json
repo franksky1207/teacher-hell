@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "10c07e107916c816a4c4aed59877593171716f5b5abb3e125c26d78edb1d46fe",
+      "checkedAt": "2026-11-27T02:48:22.998Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留原件，協助找校內替代教具。",
+            "action": "導師已保留原件，協助找校內替代教具。",
+            "tradeoff": "護住作品但需另找。"
+          },
+          {
+            "id": 2,
+            "text": "徵詢作者可逆拆借範圍，再依保管流程登記。",
+            "action": "導師已徵詢作者可逆拆借範圍，再依保管流程登記。",
+            "tradeoff": "可共享但需測試復原。"
+          },
+          {
+            "id": 3,
+            "text": "只借作品照片作原理說明。",
+            "action": "導師已只借作品照片作原理說明。",
+            "tradeoff": "不損原件但失去操作。"
+          },
+          {
+            "id": 4,
+            "text": "協助用同事自有零件組替代示範。",
+            "action": "導師已協助用同事自有零件組替代示範。",
+            "tradeoff": "保留操作但要加工時。"
+          },
+          {
+            "id": 5,
+            "text": "經授權另約兩班拆裝交流，不動今天原件。",
+            "action": "導師已經授權另約兩班拆裝交流，不動今天原件。",
+            "tradeoff": "拓展學習但排程複雜。"
+          },
+          {
+            "id": 6,
+            "text": "提供模型製作步驟供同事自行重製。",
+            "action": "導師已提供模型製作步驟供同事自行重製。",
+            "tradeoff": "能長期使用但準備較久。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己也捨不得拆，直接替作者擋下當節借用。",
+          "action": "導師已坦白自己也捨不得拆，直接替作者擋下當節借用。",
+          "tradeoff": "保留心血但承受同事火氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 196389019
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "6a4f4a6051a61fa60549be1f8a1a781e15ef35766e523bd2abdf15ff6c5109d3"
+      },
+      "consequenceDirections": {
+        "A": "作者可能安心；導師仍需提供後續協調。",
+        "B": "同事可能肯定成果；短缺暫仍存在。",
+        "C": "同事可能改教法；學習效果需另判。",
+        "D": "同事可能失望；備課時間增加。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4a7dbed47807c402789fb5d0d1d5aa7d3f1e9752e533072c0a00a1c6709968f6",
+    "draftSha256": "10c07e107916c816a4c4aed59877593171716f5b5abb3e125c26d78edb1d46fe",
     "seedAssignmentVersion": 1
   }
 }

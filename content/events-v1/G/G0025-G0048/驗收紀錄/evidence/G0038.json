@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "be12de9d574e322d6c338029b7d482dd187aa0cb4f08014a6c2eeed7ea9f4475",
+      "checkedAt": "2026-11-27T02:48:23.010Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在剩餘合法時間內分成兩件明確工作，由兩人確認能做範圍。",
+            "action": "導師已在剩餘合法時間內分成兩件明確工作，由兩人確認能做範圍。",
+            "tradeoff": "可收尾但需同意。"
+          },
+          {
+            "id": 2,
+            "text": "由你完成剩餘收尾，另約班務時間談交接。",
+            "action": "導師已由你完成剩餘收尾，另約班務時間談交接。",
+            "tradeoff": "不延誤離校但自己加做。"
+          },
+          {
+            "id": 3,
+            "text": "詢問在場自願者接手，不把拒絕算態度。",
+            "action": "導師已詢問在場自願者接手，不把拒絕算態度。",
+            "tradeoff": "保留互助但未必有人。"
+          },
+          {
+            "id": 4,
+            "text": "先結束當日額外工作，依校內清潔交接處理餘項。",
+            "action": "導師已先結束當日額外工作，依校內清潔交接處理餘項。",
+            "tradeoff": "守時但需協調支援。"
+          },
+          {
+            "id": 5,
+            "text": "讓兩人各列已完成項，確認誤會不追算人情。",
+            "action": "導師已讓兩人各列已完成項，確認誤會不追算人情。",
+            "tradeoff": "事實清楚但關係仍僵。"
+          },
+          {
+            "id": 6,
+            "text": "試行「離開前口頭確認接手」的新班務步驟。",
+            "action": "導師已試行「離開前口頭確認接手」的新班務步驟。",
+            "tradeoff": "預防下次但增加確認。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "嘆口氣把垃圾袋提起，今天先不把兩個人的好意判輸贏。",
+          "action": "導師已嘆口氣把垃圾袋提起，今天先不把兩個人的好意判輸贏。",
+          "tradeoff": "放下裁判衝動但自己勞累。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1642707597
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "4449fc93438d63fd61dbbb07ec06da054bdcad3903f84771461665be3abaf33c"
+      },
+      "consequenceDirections": {
+        "A": "學生可離開；後續不可省略。",
+        "B": "兩人可能鬆動；導師需日後釐清交接。",
+        "C": "可有新接手；不能轉嫁無關者。",
+        "D": "雙方可看見貢獻；需另談未完項。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0c5f1389fc37e93b41a7ce51e3b66af15163fcbeebb327376fb36e337f66d94",
+    "draftSha256": "be12de9d574e322d6c338029b7d482dd187aa0cb4f08014a6c2eeed7ea9f4475",
     "seedAssignmentVersion": 1
   }
 }

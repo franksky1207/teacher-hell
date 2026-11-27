@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c488ab158f79cd0aa9f3c148d0cc348bef101e1e3ac4767a8b8dd3e9e3cc3fca",
+      "checkedAt": "2026-11-27T02:48:23.002Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受同事代帶一段，明訂終點。",
+            "action": "導師已接受同事代帶一段，明訂終點。",
+            "tradeoff": "保留活動但要交接。"
+          },
+          {
+            "id": 2,
+            "text": "改為書面分組操作，由你低聲巡看。",
+            "action": "導師已改為書面分組操作，由你低聲巡看。",
+            "tradeoff": "減少用嗓但互動不同。"
+          },
+          {
+            "id": 3,
+            "text": "將口頭活動延至合法授課時段。",
+            "action": "導師已將口頭活動延至合法授課時段。",
+            "tradeoff": "護住健康但進度延後。"
+          },
+          {
+            "id": 4,
+            "text": "由同事帶示範，你負責書面回饋。",
+            "action": "導師已由同事帶示範，你負責書面回饋。",
+            "tradeoff": "分工互補但雙方都忙。"
+          },
+          {
+            "id": 5,
+            "text": "徵詢同事可否協助錄一段教師指令供當節使用。",
+            "action": "導師已徵詢同事可否協助錄一段教師指令供當節使用。",
+            "tradeoff": "減少重說但要準備。"
+          },
+          {
+            "id": 6,
+            "text": "依校內流程申請必要代課支援。",
+            "action": "導師已依校內流程申請必要代課支援。",
+            "tradeoff": "正式處理但不保證即時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己不是撐得住，是怕看起來沒用，接受一次幫忙。",
+          "action": "導師已承認自己不是撐得住，是怕看起來沒用，接受一次幫忙。",
+          "tradeoff": "說出脆弱但不能無限索取。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3895073119
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "bb56f44133fb710867ebf32d52273c29a6842ef683cfbe5ade77d0844e5fe62c"
+      },
+      "consequenceDirections": {
+        "A": "同事可能緩和；學生不再負責哄老師。",
+        "B": "教學責任清楚；需協調判讀。",
+        "C": "學生可練習；同事可能失落。",
+        "D": "學生可重聽；同事未必有空。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16940321bc79a736914e4da18e27bc9051a537c7828cef8e3b63397a2f824284",
+    "draftSha256": "c488ab158f79cd0aa9f3c148d0cc348bef101e1e3ac4767a8b8dd3e9e3cc3fca",
     "seedAssignmentVersion": 1
   }
 }

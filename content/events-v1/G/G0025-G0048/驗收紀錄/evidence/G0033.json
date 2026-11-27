@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3b12396bd4169b862751501dc46246357725a51d040b383f820083786c351d14",
+      "checkedAt": "2026-11-27T02:48:23.005Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "重新開放自願交換，保留本人原班。",
+            "action": "導師已重新開放自願交換，保留本人原班。",
+            "tradeoff": "尊重限制但需找人。"
+          },
+          {
+            "id": 2,
+            "text": "在合法班內時段重新拆分受影響工作。",
+            "action": "導師已在合法班內時段重新拆分受影響工作。",
+            "tradeoff": "不超時但占用班務時間。"
+          },
+          {
+            "id": 3,
+            "text": "請班務小組只收可用時段重排。",
+            "action": "導師已請班務小組只收可用時段重排。",
+            "tradeoff": "不露原因但增加行政量。"
+          },
+          {
+            "id": 4,
+            "text": "維持既有輪值，撤回未經確認的交換。",
+            "action": "導師已維持既有輪值，撤回未經確認的交換。",
+            "tradeoff": "規則明確但別人便利落空。"
+          },
+          {
+            "id": 5,
+            "text": "邀相關者私下談一次交換確認方式。",
+            "action": "導師已邀相關者私下談一次交換確認方式。",
+            "tradeoff": "修復默契但協調費時。"
+          },
+          {
+            "id": 6,
+            "text": "提供學生自行回報不可交換時段的私密入口。",
+            "action": "導師已提供學生自行回報不可交換時段的私密入口。",
+            "tradeoff": "可預防但教師需維護。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接把重排工作接到自己手上，今天不想再聽誰逼他解釋。",
+          "action": "導師已直接把重排工作接到自己手上，今天不想再聽誰逼他解釋。",
+          "tradeoff": "護住隱私但導師多做。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3811534890
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "d96bed2b9c0c519aba71c369a0b5f4655fbef088271acf89ccebedcaf061c644"
+      },
+      "consequenceDirections": {
+        "A": "同學可拒絕；排班可能較慢。",
+        "B": "本人較敢拒絕；不能視作永久限制。",
+        "C": "同學可能不滿；不由本人背責。",
+        "D": "學生可能感到支持；需防止依賴教師救排班。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "078782ca78f15222ab963cb942cff83b657fc822c86c979ee6dfe64240495cb7",
+    "draftSha256": "3b12396bd4169b862751501dc46246357725a51d040b383f820083786c351d14",
     "seedAssignmentVersion": 1
   }
 }

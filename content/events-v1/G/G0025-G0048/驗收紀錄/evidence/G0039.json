@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d597152ef8b62e38ea372d5b1d5fbda6c55a8ce7913685817f1b355d3f8636e5",
+      "checkedAt": "2026-11-27T02:48:23.010Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "試行一週精簡追蹤表，保留核心項目。",
+            "action": "導師已試行一週精簡追蹤表，保留核心項目。",
+            "tradeoff": "負擔較輕但資料較少。"
+          },
+          {
+            "id": 2,
+            "text": "提供校內可取得的共用材料。",
+            "action": "導師已提供校內可取得的共用材料。",
+            "tradeoff": "改善取得但需保管安排。"
+          },
+          {
+            "id": 3,
+            "text": "維持表格，另標材料未取得與未完成。",
+            "action": "導師已維持表格，另標材料未取得與未完成。",
+            "tradeoff": "保留可比性但欄位較多。"
+          },
+          {
+            "id": 4,
+            "text": "協助與本科協調材料領取時點。",
+            "action": "導師已協助與本科協調材料領取時點。",
+            "tradeoff": "直接處理前提但需等回覆。"
+          },
+          {
+            "id": 5,
+            "text": "請本人選一項新裝袋提醒先試。",
+            "action": "導師已請本人選一項新裝袋提醒先試。",
+            "tradeoff": "自主可行但效果有限。"
+          },
+          {
+            "id": 6,
+            "text": "把每天核對改為固定短回顧。",
+            "action": "導師已把每天核對改為固定短回顧。",
+            "tradeoff": "減少打擾但漏項發現較晚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己原準備的長叮嚀刪掉，今天只陪他拿齊一份材料。",
+          "action": "導師已把自己原準備的長叮嚀刪掉，今天只陪他拿齊一份材料。",
+          "tradeoff": "少說教但自己多走一趟。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2260495245
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "1c3e5fe08aa4ba6073f160487c3b6d5c3be19c16a890904b935fcc75f564b7fe"
+      },
+      "consequenceDirections": {
+        "A": "原因能區分；書寫負擔可能增加。",
+        "B": "學生可能感到被尊重；制度問題仍待協調。",
+        "C": "學生有準備機會；授課安排未必可改。",
+        "D": "學生能調整策略；不把失敗當不努力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d238e35060a7ce43a24606a0d9c9100fbdefe7111b5a65d9248d0a438a01a58e",
+    "draftSha256": "d597152ef8b62e38ea372d5b1d5fbda6c55a8ce7913685817f1b355d3f8636e5",
     "seedAssignmentVersion": 1
   }
 }

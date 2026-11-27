@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b22f743aebc892e33c6dfb86c2988c1c04af3cf848e256ef67399af12a57d28",
+      "checkedAt": "2026-11-27T02:48:23.003Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只回饋加練中真正卡住的一題。",
+            "action": "導師已只回饋加練中真正卡住的一題。",
+            "tradeoff": "肯定學習但不計頁數。"
+          },
+          {
+            "id": 2,
+            "text": "協助列出各科期限，請本科確認可調整處。",
+            "action": "導師已協助列出各科期限，請本科確認可調整處。",
+            "tradeoff": "看總負荷但協調費時。"
+          },
+          {
+            "id": 3,
+            "text": "以課內限時示範取代你額外要求的加練。",
+            "action": "導師已以課內限時示範取代你額外要求的加練。",
+            "tradeoff": "降低耗損但練習量減少。"
+          },
+          {
+            "id": 4,
+            "text": "私下詢問作息困難，只收最少必要資訊。",
+            "action": "導師已私下詢問作息困難，只收最少必要資訊。",
+            "tradeoff": "保護隱私但不即時解題。"
+          },
+          {
+            "id": 5,
+            "text": "請帶頭者自願分享一項有效策略，不報時數。",
+            "action": "導師已請帶頭者自願分享一項有效策略，不報時數。",
+            "tradeoff": "能改同儕焦點但需他願意。"
+          },
+          {
+            "id": 6,
+            "text": "提供校內學習與健康支持入口。",
+            "action": "導師已提供校內學習與健康支持入口。",
+            "tradeoff": "有資源但使用需意願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己也曾把熬夜當努力，今天不再稱讚誰最晚睡。",
+          "action": "導師已坦白自己也曾把熬夜當努力，今天不再稱讚誰最晚睡。",
+          "tradeoff": "撤回舊暗示但可能尷尬。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 131992810
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "761e33e3d1c9f7014a806ed3f499c0f486b38b81e11ed7e4d9f4fe12c2d4866a"
+      },
+      "consequenceDirections": {
+        "A": "學生可學取捨；仍有其他科負擔。",
+        "B": "同學可能仿效方法；不能逼當示範。",
+        "C": "學生可能鬆口氣；教師須用新回饋承接。",
+        "D": "學生可另求協助；教師需跟進必要事項。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7dfaa97ed6a4ea3575d3c64631c13427a8ad1cff37f054c273722e5673da84da",
+    "draftSha256": "5b22f743aebc892e33c6dfb86c2988c1c04af3cf848e256ef67399af12a57d28",
     "seedAssignmentVersion": 1
   }
 }

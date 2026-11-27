@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "922c05a028cc737957b533285bb0f0ff2d5ed9d29fce823877822acf6a175a52",
+      "checkedAt": "2026-11-27T02:48:23.016Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀學生自願提出告別及清理方式。",
+            "action": "導師已邀學生自願提出告別及清理方式。",
+            "tradeoff": "容納感情但花班務時間。"
+          },
+          {
+            "id": 2,
+            "text": "依現有紀錄回顧照護條件，不先找責任人。",
+            "action": "導師已依現有紀錄回顧照護條件，不先找責任人。",
+            "tradeoff": "可學經驗但不立即補綠意。"
+          },
+          {
+            "id": 3,
+            "text": "暫不補植，結束這項班務。",
+            "action": "導師已暫不補植，結束這項班務。",
+            "tradeoff": "減輕負擔但教室少一株。"
+          },
+          {
+            "id": 4,
+            "text": "經班級同意選低維護替代物。",
+            "action": "導師已經班級同意選低維護替代物。",
+            "tradeoff": "保留角落但新承諾仍需確認。"
+          },
+          {
+            "id": 5,
+            "text": "保留空盆及自願寫的照護心得。",
+            "action": "導師已保留空盆及自願寫的照護心得。",
+            "tradeoff": "記住歷程但可能延長難過。"
+          },
+          {
+            "id": 6,
+            "text": "請願意者重提新照護計畫，先列終止條件。",
+            "action": "導師已請願意者重提新照護計畫，先列終止條件。",
+            "tradeoff": "更可持續但準備較多。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把水壺收回架上，陪他說一句「今天不用再證明你有做」。",
+          "action": "導師已把水壺收回架上，陪他說一句「今天不用再證明你有做」。",
+          "tradeoff": "回應愧疚但教師多停留。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1859442051
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "cd93cf12e944b54b224d6d529e934a1a76f8fcbc0535b6c6adef80c5a5e9936c"
+      },
+      "consequenceDirections": {
+        "A": "學生可能理解原因；資訊可能不足。",
+        "B": "學生可能放下例行動作；仍可對失去難過。",
+        "C": "學生可決定是否留下；不能強迫紀念。",
+        "D": "新責任可自願承擔；未必成案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e044faa76c2727e0b67da6648ad424737b12111048a93100f15863b322302308",
+    "draftSha256": "922c05a028cc737957b533285bb0f0ff2d5ed9d29fce823877822acf6a175a52",
     "seedAssignmentVersion": 1
   }
 }

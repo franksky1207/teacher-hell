@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "af384d5357510d47d6a90255dd54674de24647bf0ae90973bc50a358c3ccdd38",
+      "checkedAt": "2026-11-27T02:48:23.002Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先給親子私談空間。",
+            "action": "導師已先給親子私談空間。",
+            "tradeoff": "能回應傷害但調查稍後。"
+          },
+          {
+            "id": 2,
+            "text": "分別詢問相關學生親見的踢椅情況。",
+            "action": "導師已分別詢問相關學生親見的踢椅情況。",
+            "tradeoff": "釐清原因但耗時。"
+          },
+          {
+            "id": 3,
+            "text": "試行調整座位並約本人回報。",
+            "action": "導師已試行調整座位並約本人回報。",
+            "tradeoff": "立即可用但全班須適應。"
+          },
+          {
+            "id": 4,
+            "text": "邀父親只重述剛才坐下的發現。",
+            "action": "導師已邀父親只重述剛才坐下的發現。",
+            "tradeoff": "具體承認但不強迫煽情。"
+          },
+          {
+            "id": 5,
+            "text": "徵得孩子同意提供校內個別關懷。",
+            "action": "導師已徵得孩子同意提供校內個別關懷。",
+            "tradeoff": "有支持但可能不願。"
+          },
+          {
+            "id": 6,
+            "text": "與父親約定只回報孩子願說的後續需要。",
+            "action": "導師已與父親約定只回報孩子願說的後續需要。",
+            "tradeoff": "保留界線但資訊較少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也曾把擠當成小事，先向孩子道歉。",
+          "action": "導師已承認自己也曾把擠當成小事，先向孩子道歉。",
+          "tradeoff": "教師面子受損但責任明確。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2822889415
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "bc09e14e238889cfc3702fcf1dbf87d94e84b1788514c6a6c0de4cd6808fd9ea"
+      },
+      "consequenceDirections": {
+        "A": "孩子可能感到被理解；父親須放下原判斷。",
+        "B": "孩子可能安心；座距成效仍待看。",
+        "C": "行為可能有不同解釋；不先定性。",
+        "D": "孩子可能願意補述；父親可能重新理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "30b40a7694c1095b2db0f48b9bc38e96a0ec8f2847d70b4d5e811c8bd09f9757",
+    "draftSha256": "af384d5357510d47d6a90255dd54674de24647bf0ae90973bc50a358c3ccdd38",
     "seedAssignmentVersion": 1
   }
 }

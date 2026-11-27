@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "44f86dec3d05d3bc6caa094cf19822119679939fb4a514ba20866da0af4f5e6d",
+      "checkedAt": "2026-11-27T02:48:22.999Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由你接續介紹平日課堂。",
+            "action": "導師已由你接續介紹平日課堂。",
+            "tradeoff": "保護學生但成人多說。"
+          },
+          {
+            "id": 2,
+            "text": "詢問是否有自願者，只接受主動回應。",
+            "action": "導師已詢問是否有自願者，只接受主動回應。",
+            "tradeoff": "保留學生聲音但可能無人。"
+          },
+          {
+            "id": 3,
+            "text": "請接待同事帶往下一個核准參訪點。",
+            "action": "導師已請接待同事帶往下一個核准參訪點。",
+            "tradeoff": "結束尷尬但少看本班。"
+          },
+          {
+            "id": 4,
+            "text": "轉為靜態觀察既有作品，不要求現場演出。",
+            "action": "導師已轉為靜態觀察既有作品，不要求現場演出。",
+            "tradeoff": "保留內容但互動減少。"
+          },
+          {
+            "id": 5,
+            "text": "先留時間由來訪者向教師提問。",
+            "action": "導師已先留時間由來訪者向教師提問。",
+            "tradeoff": "能交流但休息空間受影響。"
+          },
+          {
+            "id": 6,
+            "text": "與同事約定往後接待前確認自願名單。",
+            "action": "導師已與同事約定往後接待前確認自願名單。",
+            "tradeoff": "改善流程但今天仍需收束。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也曾想靠學生熱情撐場，今天讓冷場留給成人。",
+          "action": "導師已承認自己也曾想靠學生熱情撐場，今天讓冷場留給成人。",
+          "tradeoff": "放下面子但現場安靜。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1870314099
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "2bdf2744b734f5b24e37051e4f2e32730d796447dc296b9647d9ffc8b3be1425"
+      },
+      "consequenceDirections": {
+        "A": "同事需調整動線；學生可休息。",
+        "B": "參訪可繼續；同事可能難堪。",
+        "C": "問題可被回應；須控制音量及時長。",
+        "D": "學生可能感到被尊重；接待期待需調整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5a0826927dcb6b61b77ac7ce350d983d522893d07384613b06efba28e63b395d",
+    "draftSha256": "44f86dec3d05d3bc6caa094cf19822119679939fb4a514ba20866da0af4f5e6d",
     "seedAssignmentVersion": 1
   }
 }

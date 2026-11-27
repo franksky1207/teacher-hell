@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "215e62e1c4ebf970fa82cf65c8ac44dfbde1a83cd7a2a875fcd55450586cdad0",
+      "checkedAt": "2026-11-27T06:15:38.953Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問學生願不願意接受這位家長陪到門口，不分享他的私事。",
+            "action": "導師已先問學生願不願意接受這位家長陪到門口，不分享他的私事。",
+            "tradeoff": "尊重當事人，也可能得到拒絕"
+          },
+          {
+            "id": 2,
+            "text": "請學校可接手的熟悉成人過來，讓這位家長照原定安排離開。",
+            "action": "導師已請學校可接手的熟悉成人過來，讓這位家長照原定安排離開。",
+            "tradeoff": "不占用家庭時間，但得確認有人真的能接上"
+          },
+          {
+            "id": 3,
+            "text": "讓學生先用紙寫想找誰，不急著踏進辦公室。",
+            "action": "導師已讓學生先用紙寫想找誰，不急著踏進辦公室。",
+            "tradeoff": "保留表達方式，事情暫時不會完整說清楚"
+          },
+          {
+            "id": 4,
+            "text": "問學生想在附近安靜處先說第一句，還是約好時間再來。",
+            "action": "導師已問學生想在附近安靜處先說第一句，還是約好時間再來。",
+            "tradeoff": "給他較小的起步，但不能把急事延後"
+          },
+          {
+            "id": 5,
+            "text": "陪學生走到辦公室外，請家長只等自己的孩子辦完原來的事。",
+            "action": "導師已陪學生走到辦公室外，請家長只等自己的孩子辦完原來的事。",
+            "tradeoff": "界線清楚，但我要親自挪出時間"
+          },
+          {
+            "id": 6,
+            "text": "先把學生要找的老師請到門外打招呼，不要求立刻進去談。",
+            "action": "導師已先把學生要找的老師請到門外打招呼，不要求立刻進去談。",
+            "tradeoff": "降低進門壓力，也會打斷對方原有工作"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再讓一件事拖成全家晚歸，把她孩子不急的自習問題改約電話，讓他們先走。",
+          "action": "導師已與家長及其孩子確認原詢問無立即性、同意改約工作時段回電，必要學生安全及校內接手仍依共同前提完成，不以讓家長離開代替處理。",
+          "tradeoff": "我要另排回電時間，也可能讓家長白跑的感受加重"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2861948279
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "5f4b8b7276b02e851c7f068351940bbd639036ed81a729c222ce83aa3657a17d"
+      },
+      "consequenceDirections": {
+        "A": "家長不必承擔陌生學生的後續，學生則直接接上校內協助。",
+        "B": "他可在兩種方式中選擇，教師須按實際需求銜接。",
+        "C": "短暫碰面可能促成後續，也可能只是先認得彼此。",
+        "D": "家長能趕回家庭安排，導師之後須確實補上原本的詢問"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3ecd062a83efcbeb7064f9cc4a1d27df364afc9c4c9bf3318b8bf7d92a625ff8",
+    "draftSha256": "215e62e1c4ebf970fa82cf65c8ac44dfbde1a83cd7a2a875fcd55450586cdad0",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3f2e53354ee4aaae6539c9cb12558f004baef6407b0f872106d3e60916eba920",
+      "checkedAt": "2026-11-27T06:15:38.943Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤下舊比較榜並向接收者說明，不再公布個人退出",
+            "action": "導師已撤下舊比較榜並向接收者說明，不再公布個人退出",
+            "tradeoff": "少了刺激參與的數字，也要尊重必要正式紀錄"
+          },
+          {
+            "id": 2,
+            "text": "由校方正式窗口接收自願物品，不讓他代替全班催捐",
+            "action": "導師已由校方正式窗口接收自願物品，不讓他代替全班催捐",
+            "tradeoff": "交接要有同意與紀錄，也可能不全收"
+          },
+          {
+            "id": 3,
+            "text": "改做不需出資的班會內容，不再要求交作品",
+            "action": "導師已改做不需出資的班會內容，不再要求交作品",
+            "tradeoff": "少了實物成果，也可能令已準備者可惜"
+          },
+          {
+            "id": 4,
+            "text": "請各人重新確認只願提供多少，允許未成立部分撤回",
+            "action": "導師已請各人重新確認只願提供多少，允許未成立部分撤回",
+            "tradeoff": "可能大幅縮量，教師要接受辦不成原規模"
+          },
+          {
+            "id": 5,
+            "text": "讓他保留剩餘自用材料，不因發起就得用完家裡資源",
+            "action": "導師已讓他保留剩餘自用材料，不因發起就得用完家裡資源",
+            "tradeoff": "其他人可能覺得不夠大方，教師需處理具體壓力"
+          },
+          {
+            "id": 6,
+            "text": "和承辦談本次最小可完成範圍，缺的就縮小，不請家長再補",
+            "action": "導師已和承辦談本次最小可完成範圍，缺的就縮小，不請家長再補",
+            "tradeoff": "成品沒那麼熱鬧，也不保證都期待這版"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想給一份，但不想再當帶頭招牌，按規定私下把自己的作品交正式窗口，不帶全班喊加碼",
+          "action": "導師已依校方既有規範提出本人自願作品捐贈，不作非必要對外具名宣傳、不刪正式紀錄或以捐贈影響學生對待",
+          "tradeoff": "只能捐本人有權提供且窗口願收的作品，必要紀錄如實留存"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2925738831
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "3d8a4321b4a984d389fa4b08933c81fb70b56c60ef83fe9c1e9ee6776ecddfce"
+      },
+      "consequenceDirections": {
+        "A": "善意有正式去處，發起者不必一直做提款機。",
+        "B": "每人可按能力參與，已同意捐的物件仍須按原授權處理。",
+        "C": "教師有自己的善意，學生卻不因此負跟上的義務；若被知道，也不能把你的捐贈拿回來比較。",
+        "D": "承諾有清楚邊界，但不能把重新確認變再勸一次。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f6043137603b5e1251bc01b65e70620eb22f2fe5e04e41c26fc11660910cdd70",
+    "draftSha256": "3f2e53354ee4aaae6539c9cb12558f004baef6407b0f872106d3e60916eba920",
     "seedAssignmentVersion": 1
   }
 }

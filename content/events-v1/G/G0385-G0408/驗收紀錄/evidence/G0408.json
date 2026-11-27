@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "47c0c7ee1b1e476431769e9d389064e6c52ac195b8b9fabd14f029a592749345",
+      "checkedAt": "2026-11-27T06:15:38.958Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把這袋還給他自己保管，各組先用原本準備的材料。",
+            "action": "導師已把這袋還給他自己保管，各組先用原本準備的材料。",
+            "tradeoff": "私人東西不被默認共享，但有些組眼前會缺料"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意只分出一小部分，數量與用途由他決定。",
+            "action": "導師已問他願不願意只分出一小部分，數量與用途由他決定。",
+            "tradeoff": "可以有限幫忙，也要接受他一樣都不借"
+          },
+          {
+            "id": 3,
+            "text": "問學校能否提供替代材料，沒有確認前不先答應大家。",
+            "action": "導師已問學校能否提供替代材料，沒有確認前不先答應大家。",
+            "tradeoff": "不把負擔推給家庭，但可能得等或改做法"
+          },
+          {
+            "id": 4,
+            "text": "讓各組自行列缺少的數量，再決定要縮小哪個部分。",
+            "action": "導師已讓各組自行列缺少的數量，再決定要縮小哪個部分。",
+            "tradeoff": "每組自己取捨，成品不會整齊一致"
+          },
+          {
+            "id": 5,
+            "text": "把分類工作交回各組，他只需處理自己那組的份量。",
+            "action": "導師已把分類工作交回各組，他只需處理自己那組的份量。",
+            "tradeoff": "減少他被默認包辦，現場會慢一些"
+          },
+          {
+            "id": 6,
+            "text": "先停做需要這批材料的部分，改完成今天不缺料的步驟。",
+            "action": "導師已先停做需要這批材料的部分，改完成今天不缺料的步驟。",
+            "tradeoff": "保留原計畫，但後續進度必須重排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己的抽屜有些一直沒用的材料，拿出願意送的那一份。",
+          "action": "導師已確認自有材料安全適用，無條件提供自身願意割捨的有限數量，不挪用公物、不補成全班必然足量、不要求學生家庭相同付出。",
+          "tradeoff": "動用自己的收藏，不能要求誰因此跟著捐"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1649925040
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "38a03b4e63f1149694008039227fdfda2cd00e73e6861a5c49ff94b7fad138d5"
+      },
+      "consequenceDirections": {
+        "A": "學生可按有限數量另作安排，教師得接受材料送出去後不再由自己控制",
+        "B": "其他組開始學著辨認材料，他也可能想念剛才被需要的感覺。",
+        "C": "缺料會轉成設計選擇，而非由一個家庭補齊。",
+        "D": "各組得面對自己的準備情況，原本期待的便利暫時消失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7a0f3cc3df3f9193590635adcfc6f4ef5cba1c4fae248e1cc5b15be1783d107f",
+    "draftSha256": "47c0c7ee1b1e476431769e9d389064e6c52ac195b8b9fabd14f029a592749345",
     "seedAssignmentVersion": 1
   }
 }

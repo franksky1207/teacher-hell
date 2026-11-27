@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "87d594316c2b4a9d10278aad338c4e5a3a4ffc15aec305de1e0d5053b259acce",
+      "checkedAt": "2026-11-27T06:15:38.952Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他照自己的稿子開場，不預先安排觀眾反應。",
+            "action": "導師已讓他照自己的稿子開場，不預先安排觀眾反應。",
+            "tradeoff": "保留原意，也可能真的出現一段安靜"
+          },
+          {
+            "id": 2,
+            "text": "先請他向同學簡單介紹這段想做什麼，再正式開始。",
+            "action": "導師已先請他向同學簡單介紹這段想做什麼，再正式開始。",
+            "tradeoff": "降低誤會，但原本的突然效果會少一些"
+          },
+          {
+            "id": 3,
+            "text": "給他一次只對我試講的機會，再由他決定要不要上。",
+            "action": "導師已給他一次只對我試講的機會，再由他決定要不要上。",
+            "tradeoff": "多占一點時間，也可能讓臨場興致消退"
+          },
+          {
+            "id": 4,
+            "text": "讓全班各自自願試一句開場，最後再決定這次用哪種方式。",
+            "action": "導師已讓全班各自自願試一句開場，最後再決定這次用哪種方式。",
+            "tradeoff": "多了參與機會，原講者須接受不一定採用自己的版本"
+          },
+          {
+            "id": 5,
+            "text": "把這次介紹改成直接說明，不一定要有笑話。",
+            "action": "導師已把這次介紹改成直接說明，不一定要有笑話。",
+            "tradeoff": "少了表演壓力，也犧牲他原本期待的效果"
+          },
+          {
+            "id": 6,
+            "text": "請他選一位願意的同學搭話，兩人先把接話處談好。",
+            "action": "導師已請他選一位願意的同學搭話，兩人先把接話處談好。",
+            "tradeoff": "現場比較有支點，但得尊重對方願不願意加入"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想知道那句到底多冷，問他可不可以讓我用自己的版本試一次。",
+          "action": "導師已徵詢原講者及班級活動安排，在不取代學生正式開場下，自願以自己寫的一句短開場試講；不要求學生笑或配合救場。",
+          "tradeoff": "得承受全班沒反應的尷尬，也不能搶走他的正式開場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2924255435
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "4a97d9d2f0358b879851b57ae94e0d1e4f1073eb189e7f6b4b0dc697baf614ea"
+      },
+      "consequenceDirections": {
+        "A": "雙人互動可能自然，也可能因接話方式而需要重練。",
+        "B": "教師先試的結果可能讓學生更敢講，也可能證明大人比較不會講",
+        "C": "不同開場會暴露班上的喜好，也可能引出新的分工。",
+        "D": "他能先感受句子出口的效果，最後仍可選擇不講。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f55b8903c0697b092c7de868df3705905a38ab8503927411dbae6f0597128984",
+    "draftSha256": "87d594316c2b4a9d10278aad338c4e5a3a4ffc15aec305de1e0d5053b259acce",
     "seedAssignmentVersion": 1
   }
 }

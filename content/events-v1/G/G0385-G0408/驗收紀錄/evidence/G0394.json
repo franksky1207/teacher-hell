@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c1fdf32b0fa335b1db36a8381ad2fa5d8d830d467da2635eaa55e6e570a1b0b9",
+      "checkedAt": "2026-11-27T06:15:38.947Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只收課堂確實用得到、學校也同意收下的那幾本。",
+            "action": "導師已只收課堂確實用得到、學校也同意收下的那幾本。",
+            "tradeoff": "用途明確，但大部分書仍要由家長帶走"
+          },
+          {
+            "id": 2,
+            "text": "這次先不收書，把能詢問的捐書單位資料給家長。",
+            "action": "導師已這次先不收書，把能詢問的捐書單位資料給家長。",
+            "tradeoff": "不把整理壓力轉給學校，家長得另外聯繫"
+          },
+          {
+            "id": 3,
+            "text": "請家長先帶回去，等我問清楚學校收書方式再回覆。",
+            "action": "導師已請家長先帶回去，等我問清楚學校收書方式再回覆。",
+            "tradeoff": "避免先收後退，但家長得多搬一次"
+          },
+          {
+            "id": 4,
+            "text": "先列出課堂需要的書種，請他只帶符合的幾本再來。",
+            "action": "導師已先列出課堂需要的書種，請他只帶符合的幾本再來。",
+            "tradeoff": "先說清楚需求，家長要再整理一次"
+          },
+          {
+            "id": 5,
+            "text": "問家長是否願意借其中幾本用一次，約好歸還時間。",
+            "action": "導師已問家長是否願意借其中幾本用一次，約好歸還時間。",
+            "tradeoff": "不急著變成永久捐贈，借還要有人負責"
+          },
+          {
+            "id": 6,
+            "text": "請學校負責收書的人直接和家長談，我不先代收。",
+            "action": "導師已請學校負責收書的人直接和家長談，我不先代收。",
+            "tradeoff": "減少轉述，但家長可能要另約時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了自己桌上那疊了，約個時間整理自己的書，沒人要的就自己帶走。",
+          "action": "導師已決定在私人可安排時間清理自有書籍，依學校空間規定帶離或另循適當去處，不接收家長不適用的書。",
+          "tradeoff": "花自己的時間，不能順便把家長的書混進去"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2757055495
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "9496d69cde74ac17a67141dfb0ecb0baf08b867a10fbb3178818cfd202ff1280"
+      },
+      "consequenceDirections": {
+        "A": "正式管道的答覆會決定能留下哪些，不能保證全收。",
+        "B": "教師動手處理自己的堆積物，可能發現捨不得的反而最多",
+        "C": "留下的書能進入課堂，其餘如何處理仍回到家庭決定。",
+        "D": "試用能看出是否真的合適，家長仍保有書的去向決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d132784bbd18bc19da96d071406e7a28e8e0c1e34ea4c65758da8b42888871f7",
+    "draftSha256": "c1fdf32b0fa335b1db36a8381ad2fa5d8d830d467da2635eaa55e6e570a1b0b9",
     "seedAssignmentVersion": 1
   }
 }

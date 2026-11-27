@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a213a9ef126a4197fe423f5e7965217a063ab5c4711e1d856ff5028527374818",
+      "checkedAt": "2026-11-27T06:15:38.953Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這一輪不列時間成績，保留各組已完成的內容。",
+            "action": "導師已這一輪不列時間成績，保留各組已完成的內容。",
+            "tradeoff": "不必重演，也少了一次可比較的紀錄"
+          },
+          {
+            "id": 2,
+            "text": "依原先規則，給受影響的一組補足確實少掉的時間。",
+            "action": "導師已依原先規則，給受影響的一組補足確實少掉的時間。",
+            "tradeoff": "維持這一輪，但得釐清少掉的時間範圍"
+          },
+          {
+            "id": 3,
+            "text": "讓這一組重新開始一次，前一段不計。",
+            "action": "導師已讓這一組重新開始一次，前一段不計。",
+            "tradeoff": "給完整機會，也會占用全班後面的時間"
+          },
+          {
+            "id": 4,
+            "text": "後面的回合改用全班看得到的計時器。",
+            "action": "導師已後面的回合改用全班看得到的計時器。",
+            "tradeoff": "減少口頭交接，得調整現場操作"
+          },
+          {
+            "id": 5,
+            "text": "後面幾輪由我計時，學生暫時只參與活動。",
+            "action": "導師已後面幾輪由我計時，學生暫時只參與活動。",
+            "tradeoff": "流程較好接上，我就不能同時照看所有組的內容"
+          },
+          {
+            "id": 6,
+            "text": "活動後私下和他談，是否需要協助把家庭聯繫時間安排得比較能負荷。",
+            "action": "導師已活動後私下和他談，是否需要協助把家庭聯繫時間安排得比較能負荷。",
+            "tradeoff": "不公開私事，也得另外約談而非只追究交接"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再為了湊滿流程趕大家，刪掉自己原本加的加碼賽。",
+          "action": "導師已取消自身額外提出、非必要且尚未開始的加碼回合，不影響原任務應有的公平處理，不延長法定休息或放學安排。",
+          "tradeoff": "少了我期待的熱鬧，但保住原定結束時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3668873943
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "fa1caf5733f995eb0320f75b4f81e2f885f82273490cad4df803faa443209ee8"
+      },
+      "consequenceDirections": {
+        "A": "必要回合能處理完，想再比的人得接受今天到此為止",
+        "B": "教師的注意力被計時占去，回饋可能變少。",
+        "C": "補時可完成原任務，其他組可能追問計算方式。",
+        "D": "重來不保證表現更好，組員須接受新的結果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d4801231d4112424787b82ba4b331ec5b74c4a0daf16966096f8e435d99707e",
+    "draftSha256": "a213a9ef126a4197fe423f5e7965217a063ab5c4711e1d856ff5028527374818",
     "seedAssignmentVersion": 1
   }
 }

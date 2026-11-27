@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6540eee555ff07b58878ea021df5e63a00d23dba9f23df9f97ec36ce804a5410",
+      "checkedAt": "2026-11-27T06:15:38.945Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原來的學習目標看這段影片，不把剪接當成必備條件。",
+            "action": "導師已按原來的學習目標看這段影片，不把剪接當成必備條件。",
+            "tradeoff": "保留選擇拍法的空間，作品外觀不會整齊一致"
+          },
+          {
+            "id": 2,
+            "text": "讓這組保留兩種構想，先比較各自還缺什麼。",
+            "action": "導師已讓這組保留兩種構想，先比較各自還缺什麼。",
+            "tradeoff": "不急著淘汰方案，但要多做一次小規模比較"
+          },
+          {
+            "id": 3,
+            "text": "替想剪接的人查學校現有的場地與借用時間。",
+            "action": "導師已替想剪接的人查學校現有的場地與借用時間。",
+            "tradeoff": "提供家外選項，但時間和設備不由我保證"
+          },
+          {
+            "id": 4,
+            "text": "先請每個人說自己願意做哪一項工作，再決定拍法。",
+            "action": "導師已先請每個人說自己願意做哪一項工作，再決定拍法。",
+            "tradeoff": "分工較實在，但可能發現沒人願意負責剪接"
+          },
+          {
+            "id": 5,
+            "text": "請他們交一段短試拍，先看一鏡到底最容易卡在哪裡。",
+            "action": "導師已請他們交一段短試拍，先看一鏡到底最容易卡在哪裡。",
+            "tradeoff": "用小範圍測試降低重拍風險，仍要挪出試拍時間"
+          },
+          {
+            "id": 6,
+            "text": "讓各組自行選拍法，課堂只留共同的內容檢查時間。",
+            "action": "導師已讓各組自行選拍法，課堂只留共同的內容檢查時間。",
+            "tradeoff": "不替這組特別安排資源，有需要的人得自己提出"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己倒是想剪看看，拿自己的素材試一段，別把我的興趣算進他們的作業。",
+          "action": "導師已決定用自有、無學生個資且有使用權的素材私下試剪，不加派學生工作、不作為指定範本。",
+          "tradeoff": "花的是我的私人時間，成品也可能很普通"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1569524626
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "497865ed862341570213a9296dd1af4be6a3da4fb9225e5a19f7ad72224fff76"
+      },
+      "consequenceDirections": {
+        "A": "能借到的時段會限制剪接規模，組內得重新分工。",
+        "B": "學生須說明內容如何完成目標，漂亮剪接不再自動占優勢。",
+        "C": "組員能看見重拍與剪接各要投入多少工作，再決定版本。",
+        "D": "教師的試作暴露剪接所需工夫，學生作品仍由學生決定"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ff76bade97d3c51d32619afc228cb92e23e7263eb026101b255f1c93948c8ae",
+    "draftSha256": "6540eee555ff07b58878ea021df5e63a00d23dba9f23df9f97ec36ce804a5410",
     "seedAssignmentVersion": 1
   }
 }

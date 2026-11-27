@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "63df5f41b3feac118486bd2eb4d86784d36000e440f309a41e75675f29ffba02",
+      "checkedAt": "2026-11-27T06:15:38.941Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由適任且自願成人重演短段，不再借原組學生",
+            "action": "導師已由適任且自願成人重演短段，不再借原組學生",
+            "tradeoff": "成人要備課與排時間，也不能強派同仁"
+          },
+          {
+            "id": 2,
+            "text": "取消本次非必要觀摩，正常課程照上",
+            "action": "導師已取消本次非必要觀摩，正常課程照上",
+            "tradeoff": "少了交流機會，也要向受邀者解釋"
+          },
+          {
+            "id": 3,
+            "text": "只接受另有自願與核准條件的一次分享，容許完全不參加",
+            "action": "導師已只接受另有自願與核准條件的一次分享，容許完全不參加",
+            "tradeoff": "要重新徵詢，不能把原組當理所當然候選"
+          },
+          {
+            "id": 4,
+            "text": "使用已獲准的既有教材說明，不錄新學生片段",
+            "action": "導師已使用已獲准的既有教材說明，不錄新學生片段",
+            "tradeoff": "內容較靜態，也需核對授權與隱私"
+          },
+          {
+            "id": 5,
+            "text": "如實向同事說明你當時的決定，聽他指出超出部分",
+            "action": "導師已如實向同事說明你當時的決定，聽他指出超出部分",
+            "tradeoff": "要接受批評，也不能只說學生會喜歡"
+          },
+          {
+            "id": 6,
+            "text": "請交流承辦重新核對時段、參與與工作量，不用你一句可以就排滿",
+            "action": "導師已請交流承辦重新核對時段、參與與工作量，不用你一句可以就排滿",
+            "tradeoff": "會慢下來，也未必辦得成"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也捨不得這招只剩取消，拿自己的備課原稿給同事拆看，不再讓孩子演給大人評",
+          "action": "導師已自願提供本人可合法分享且不含學生個資的備課原稿作有限教師交流，不作新學生演出、不強派同事或宣稱完整實境觀摩",
+          "tradeoff": "要攤開自己的不成熟設計，也花一段正常工作空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2602397469
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "e3b1505d4dd3e42dc3438e4a29c157c4f95335e502fb6d2fae95dffe19185c95"
+      },
+      "consequenceDirections": {
+        "A": "教法仍可示範，效果卻不會和學生真實反應完全一樣。",
+        "B": "學生不用反覆交付同一場表現，教師仍須面對原先為何先承諾。",
+        "C": "同事可看見教法如何形成，卻可能指出你原稿也有盲點；這不能再變成要學生補拍的理由。",
+        "D": "安排有正式範圍，學生和同仁都不被當預設人力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4d5d6459c61f802febffe83732e021007b865b2ff05a21e3bc0e9228698237fc",
+    "draftSha256": "63df5f41b3feac118486bd2eb4d86784d36000e440f309a41e75675f29ffba02",
     "seedAssignmentVersion": 1
   }
 }

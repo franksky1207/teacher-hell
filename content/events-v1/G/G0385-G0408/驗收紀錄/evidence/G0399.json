@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0fdf56e0c1b581078638171cacfe62db2673d8084bb64c1f64da662c3b9c5542",
+      "checkedAt": "2026-11-27T06:15:38.951Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照已說好的方式抽完，之後再受理學生私下提出的實際困難。",
+            "action": "導師已照已說好的方式抽完，之後再受理學生私下提出的實際困難。",
+            "tradeoff": "維持既定程序，但得處理抽完後的調整"
+          },
+          {
+            "id": 2,
+            "text": "先問那兩位學生是否真的希望換位，不替他們猜。",
+            "action": "導師已先問那兩位學生是否真的希望換位，不替他們猜。",
+            "tradeoff": "可能少做無用調整，也要避免讓朋友的私事傳開"
+          },
+          {
+            "id": 3,
+            "text": "讓有意願的人提出互換，再由我確認是否影響原本限制。",
+            "action": "導師已讓有意願的人提出互換，再由我確認是否影響原本限制。",
+            "tradeoff": "保留協商空間，但不能保證每個人都換到想坐的地方"
+          },
+          {
+            "id": 4,
+            "text": "請他把兩張方案留下，今天的叫號交給沒有提出方案的同學。",
+            "action": "導師已請他把兩張方案留下，今天的叫號交給沒有提出方案的同學。",
+            "tradeoff": "減少角色混在一起，原叫號者可能覺得被懷疑"
+          },
+          {
+            "id": 5,
+            "text": "先把全班已知的座位限制寫清楚，再繼續抽籤。",
+            "action": "導師已先把全班已知的座位限制寫清楚，再繼續抽籤。",
+            "tradeoff": "程序會慢一點，但不會邊抽邊加條件"
+          },
+          {
+            "id": 6,
+            "text": "不採用私下畫好的方案，請相關學生分別向我提出自己的申請。",
+            "action": "導師已不採用私下畫好的方案，請相關學生分別向我提出自己的申請。",
+            "tradeoff": "避免代替別人決定，也多了幾次談話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想一邊處理求情一邊盯著盒子，今天我自己叫號。",
+          "action": "導師已接回本次叫號工作，仍依既定抽法且讓程序可見，不自行指定結果或替朋友安排位置。",
+          "tradeoff": "多一道工作，也少了學生練習主持的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3290964419
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "79bb2cff8bcc3b2dd4d8038ed975854fc375cc431828dbad492d568f4b87de39"
+      },
+      "consequenceDirections": {
+        "A": "互換案可能成串出現，需要逐一確認而非只比次數。",
+        "B": "方案可以被討論，執行抽籤則另有人負責。",
+        "C": "學生能退回參與抽籤的位置，導師得承擔現場催促與抱怨",
+        "D": "當事人的意願可能與叫號者想的不一樣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4238ed1d8dee5700012d3362d4c6d85e4b44a36e17cf36187a993c8a7fb2bab1",
+    "draftSha256": "0fdf56e0c1b581078638171cacfe62db2673d8084bb64c1f64da662c3b9c5542",
     "seedAssignmentVersion": 1
   }
 }

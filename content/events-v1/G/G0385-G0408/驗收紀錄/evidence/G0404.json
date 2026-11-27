@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7263320d212f252181d574aa14f1679916e1bfef72929a3d95360242adf5364b",
+      "checkedAt": "2026-11-27T06:15:38.954Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先分清楚哪些原本必須交、哪些只是額外練習，再重新說明繳交安排。",
+            "action": "導師已先分清楚哪些原本必須交、哪些只是額外練習，再重新說明繳交安排。",
+            "tradeoff": "把要求講明白，但可能得承認先前交代不清"
+          },
+          {
+            "id": 2,
+            "text": "請任課老師一起檢視練習量，必要時調整由其負責的作業。",
+            "action": "導師已請任課老師一起檢視練習量，必要時調整由其負責的作業。",
+            "tradeoff": "不越權替別人減作業，但得等到討論結果"
+          },
+          {
+            "id": 3,
+            "text": "把這份練習縮成幾題能看出問題的題目，由有權決定者確認後再交代。",
+            "action": "導師已把這份練習縮成幾題能看出問題的題目，由有權決定者確認後再交代。",
+            "tradeoff": "減少機械抄寫，仍須確認能涵蓋原目標"
+          },
+          {
+            "id": 4,
+            "text": "先看他已完成的部分，不要求因為寫得亂就全部重抄。",
+            "action": "導師已先看他已完成的部分，不要求因為寫得亂就全部重抄。",
+            "tradeoff": "避免無效重作，但批閱時要花心力辨認"
+          },
+          {
+            "id": 5,
+            "text": "約在正常課內補講共同卡住的題目，今天不另占午休。",
+            "action": "導師已約在正常課內補講共同卡住的題目，今天不另占午休。",
+            "tradeoff": "把協助放回課程，會壓縮原先新進度"
+          },
+          {
+            "id": 6,
+            "text": "往後把額外練習另外放，不和正式必交作業混成一疊。",
+            "action": "導師已往後把額外練習另外放，不和正式必交作業混成一疊。",
+            "tradeoff": "要求較清楚，但想多練的人得自己取用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累了，今天不再加那段自願性的午間解題，照原定安排去吃飯。",
+          "action": "導師已取消自己另加、可自由參加且非必要的午間解題安排，在必要照顧與校內值勤已妥善安排下使用原有休息時間；學生休息權及錯誤說法補正不以此選項為條件。",
+          "tradeoff": "少了一次額外指導，得另排正常工作時間回覆"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 64213132
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "4b42053f7baafe2e3e07c4be79656b223d00b2d3971e7f574b20ea00651b3f87"
+      },
+      "consequenceDirections": {
+        "A": "學生能按真正要求處理作業，不再靠猜測犧牲休息。",
+        "B": "教師停止用額外活動塞滿休息，尚未解決的問題要明確接到後續",
+        "C": "學生能休息後再理解，課程須接受進度調整。",
+        "D": "學生可能不再全拿，也可能開始按需求選題。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fcd76b4b6538247743cdb20a27af104844edf14af2dc63f1a5e3f0e23df68f69",
+    "draftSha256": "7263320d212f252181d574aa14f1679916e1bfef72929a3d95360242adf5364b",
     "seedAssignmentVersion": 1
   }
 }

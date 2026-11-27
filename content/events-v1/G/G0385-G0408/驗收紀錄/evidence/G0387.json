@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b8dc6bd2b66e32c176f83a2c79056de978956be5d249318cae60c86057c94b7",
+      "checkedAt": "2026-11-27T06:15:38.939Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先私下聽孩子怎麼看接送與評論，不讓成人代答",
+            "action": "導師已先私下聽孩子怎麼看接送與評論，不讓成人代答",
+            "tradeoff": "要另留時間，也不保證本人想多說"
+          },
+          {
+            "id": 2,
+            "text": "陪家長練一句把道謝與接受評論分開的說法",
+            "action": "導師已陪家長練一句把道謝與接受評論分開的說法",
+            "tradeoff": "她要自己開口，親屬也可能不接受"
+          },
+          {
+            "id": 3,
+            "text": "請家長自己先向親屬說明感謝，不借孩子替成人證明家教",
+            "action": "導師已請家長自己先向親屬說明感謝，不借孩子替成人證明家教",
+            "tradeoff": "可能要面對親人的不滿"
+          },
+          {
+            "id": 4,
+            "text": "提供可自願使用的家庭溝通支持，不替家庭開命令",
+            "action": "導師已提供可自願使用的家庭溝通支持，不替家庭開命令",
+            "tradeoff": "需要後續時間，也未必想使用"
+          },
+          {
+            "id": 5,
+            "text": "若各方真願意，只協助確認可談的範圍，不主持誰孝順的評比",
+            "action": "導師已若各方真願意，只協助確認可談的範圍，不主持誰孝順的評比",
+            "tradeoff": "多一段協調，也要尊重本人拒絕"
+          },
+          {
+            "id": 6,
+            "text": "請家長先和親屬確認支援做到哪裡，再由家庭決定如何致意",
+            "action": "導師已請家長先和親屬確認支援做到哪裡，再由家庭決定如何致意",
+            "tradeoff": "可能發現時間本來就需重排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被最乖這種話弄得煩，這次只寫你親眼看到的在校表現，不替家庭打分",
+          "action": "導師已依本人親見且依法可向該家長提供的在校事實製作有限書面回覆，不評家庭道德、不記無關他人私事或代命孩子道謝",
+          "tradeoff": "要整理真實觀察，也可能被拿回去當另一張背書"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4203776289
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "75204eadecd7d1e36b586c0f12d03324eb389763355d41ec0d78dee8f411d57c"
+      },
+      "consequenceDirections": {
+        "A": "直接溝通有機會成立，卻不能以坐下談當作已和好。",
+        "B": "家長有較完整協助，這次仍須得到你明確的校內回應。",
+        "C": "支援能被承認，孩子卻不必先答應所有評論才配得接送。",
+        "D": "家長有具體資料，卻不能把教師記錄解讀成對孩子或家長的好壞認證，你仍須說清用途。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bdf706d36659a3b99179e6e91b6fd1e3fac814b9206ad200efd4c79fd62dcea5",
+    "draftSha256": "2b8dc6bd2b66e32c176f83a2c79056de978956be5d249318cae60c86057c94b7",
     "seedAssignmentVersion": 1
   }
 }

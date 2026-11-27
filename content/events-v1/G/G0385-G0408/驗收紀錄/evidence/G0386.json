@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c6627cd0ff538bc89a41230b75895fa8a867d7d55162df81e7be20b98c79aabd",
+      "checkedAt": "2026-11-27T06:15:38.938Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天暫不使用這間室，必要課程依原正常安排進行",
+            "action": "導師已今天暫不使用這間室，必要課程依原正常安排進行",
+            "tradeoff": "少了原想要的空間，也不能讓學生無課可上"
+          },
+          {
+            "id": 2,
+            "text": "請場地管理者在允許時帶看可用區與限制",
+            "action": "導師已請場地管理者在允許時帶看可用區與限制",
+            "tradeoff": "需要人員與時間，也不保證今天能進"
+          },
+          {
+            "id": 3,
+            "text": "取消尚未成立的當日借用意向，不以門開當已預約",
+            "action": "導師已取消尚未成立的當日借用意向，不以門開當已預約",
+            "tradeoff": "原計畫要重排，也須向相關人說清"
+          },
+          {
+            "id": 4,
+            "text": "把可確認的進出規則交給全班，不點名兩人",
+            "action": "導師已把可確認的進出規則交給全班，不點名兩人",
+            "tradeoff": "要核對最新資訊，也不能取代個別房間現場限制"
+          },
+          {
+            "id": 5,
+            "text": "請他只說自己親見的經過，不代朋友認錯或作證",
+            "action": "導師已請他只說自己親見的經過，不代朋友認錯或作證",
+            "tradeoff": "資訊可能不完整，也要另聽其他人"
+          },
+          {
+            "id": 6,
+            "text": "向管理者提出借用前有明確確認人的需求，不先承諾制度已改",
+            "action": "導師已向管理者提出借用前有明確確認人的需求，不先承諾制度已改",
+            "tradeoff": "要等正式回覆，也可能有其他可行方式"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再為自己的非必要展示找空房，撤掉這次額外展示申請，先不追那個場面",
+          "action": "導師已撤回本人未成立的非必要專科室展示意向，保留正常課務與必要場地確認，不取消學生合法申請空間的機會",
+          "tradeoff": "少一次你想做的呈現，正常教學仍要安排好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4254088055
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "7d628694074fe1a3749e996233419ba7e1ed7fe97a387b27818bdc40987a6e43"
+      },
+      "consequenceDirections": {
+        "A": "學生不必替教師的展示需求到處探門，教師卻要接受成果普通，不再私下請人先進去看看。",
+        "B": "學生的提議有承接，卻不能拿正在討論就自行進入。",
+        "C": "人不再站在搬運區等，後續仍要回覆可用場地。",
+        "D": "不會一直靠未核實的空房安排課程，學生卻可能失望白等。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "adbccee1a936ae2ca0db4f54d36c023295c70abb59fb035fcd82a4ae6fcfd1cc",
+    "draftSha256": "c6627cd0ff538bc89a41230b75895fa8a867d7d55162df81e7be20b98c79aabd",
     "seedAssignmentVersion": 1
   }
 }

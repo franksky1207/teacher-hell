@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8bddf8a012dfe26515ba20b1ad2c0369259fc2d67e4a989dfd297fd44d350d06",
+      "checkedAt": "2026-11-27T06:15:38.942Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依實際交易規則處理他尚可撤回的份額，不替全團取消",
+            "action": "導師已依實際交易規則處理他尚可撤回的份額，不替全團取消",
+            "tradeoff": "退換未必全成立，也須本人與家長確認"
+          },
+          {
+            "id": 2,
+            "text": "讓仍願購買者自行接受新價格，不逼退出者補折扣",
+            "action": "導師已讓仍願購買者自行接受新價格，不逼退出者補折扣",
+            "tradeoff": "可能少更多人，不能由教師代店家定價"
+          },
+          {
+            "id": 3,
+            "text": "請家長與賣方核對已付與未成立的部分，教師不代收",
+            "action": "導師已請家長與賣方核對已付與未成立的部分，教師不代收",
+            "tradeoff": "需要時間，也不先判誰欠誰"
+          },
+          {
+            "id": 4,
+            "text": "停止本班未核准的集體訂單安排，各家庭自行處理既有交易",
+            "action": "導師已停止本班未核准的集體訂單安排，各家庭自行處理既有交易",
+            "tradeoff": "少了集體方便，也不能一停就不管已付款"
+          },
+          {
+            "id": 5,
+            "text": "支持他用不揭露家計的方式說明退出，不要求公開證明",
+            "action": "導師已支持他用不揭露家計的方式說明退出，不要求公開證明",
+            "tradeoff": "同學仍可能不高興，也要處理實際施壓"
+          },
+          {
+            "id": 6,
+            "text": "若大家都同意，向賣方詢問較小規模方案，不保證保持原折扣",
+            "action": "導師已若大家都同意，向賣方詢問較小規模方案，不保證保持原折扣",
+            "tradeoff": "賣方可拒絕，也不能為湊數再拉不願的人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己也想穿，照正常價格買自己的，不拿學生折扣湊數",
+          "action": "導師已自行向正常來源購買本人私人份額，不加入未核准班內交易、不補貼折扣差額或要求學生參加，既有爭議正常承接",
+          "tradeoff": "花你的私人預算，也可能被誤當成替團單補洞"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 143878875
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "e4432f95e97776fb1de068c644875b9977f662be398d9d9d5972d6f5652f03c2"
+      },
+      "consequenceDirections": {
+        "A": "學生不必為教師喜歡的球衣留下，你得自己承擔消費，不拿買一件換全班繼續。",
+        "B": "費用有真實依據，不能一律說尚未拿到衣服就都可退。",
+        "C": "班級不再當收款平台，當事人仍有正常協助管道。",
+        "D": "留下者有另一種選擇，退出者不再是唯一被怪的原因。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ffc550db19c37f7f038d78bd6d2bc45ee489bf8623b1dbc13786e1683aedaa19",
+    "draftSha256": "8bddf8a012dfe26515ba20b1ad2c0369259fc2d67e4a989dfd297fd44d350d06",
     "seedAssignmentVersion": 1
   }
 }

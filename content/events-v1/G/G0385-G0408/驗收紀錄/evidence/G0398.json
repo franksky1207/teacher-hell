@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bc16270c8a68ad3f2b89d9d4534dc8b1018dd86cae2ba4708f9251f2060a934c",
+      "checkedAt": "2026-11-27T06:15:38.950Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只改漏掉條件的那一段，請他說明改前改後差在哪裡。",
+            "action": "導師已只改漏掉條件的那一段，請他說明改前改後差在哪裡。",
+            "tradeoff": "保留其餘成果，但要仔細核對關鍵句"
+          },
+          {
+            "id": 2,
+            "text": "留到課內，用原文和這頁做一次不署名的比較。",
+            "action": "導師已留到課內，用原文和這頁做一次不署名的比較。",
+            "tradeoff": "全班能練習辨認省略，但得先取得同意並挪課程時間"
+          },
+          {
+            "id": 3,
+            "text": "先把這頁收回給他私人修訂，暫不繼續分享。",
+            "action": "導師已先把這頁收回給他私人修訂，暫不繼續分享。",
+            "tradeoff": "降低再傳錯的機會，也中斷了他的分享興致"
+          },
+          {
+            "id": 4,
+            "text": "請已用過這頁的那一組示範他們怎麼理解，找出誤會從哪開始。",
+            "action": "導師已請已用過這頁的那一組示範他們怎麼理解，找出誤會從哪開始。",
+            "tradeoff": "能看到實際影響，但要避免把示範變成究責"
+          },
+          {
+            "id": 5,
+            "text": "讓他保留這一版，下一次只試改一小段再請我看。",
+            "action": "導師已讓他保留這一版，下一次只試改一小段再請我看。",
+            "tradeoff": "縮小試作範圍，整頁成品得慢慢累積"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意把改寫當成自用筆記，不再負責幫全組整理。",
+            "action": "導師已問他願不願意把改寫當成自用筆記，不再負責幫全組整理。",
+            "tradeoff": "減輕提供正確版本的壓力，也少了公開被稱讚的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也來改一段，和他交換挑漏字，看看誰先被抓包。",
+          "action": "導師已提議在可安排的課內短時間，以自己有權使用的另一小段文字各自試改並交換指出遺漏；學生可拒絕，不取代既有錯誤補正。",
+          "tradeoff": "花我的準備時間，也可能是我先改壞"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3558271743
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "ace738054e66e2fd774cd55e0ce8a48669fafe8bdb379c6d7bc6a3747530dc5d"
+      },
+      "consequenceDirections": {
+        "A": "教師的試寫讓檢查變成互相抓漏，但學生不必替正式教材把關",
+        "B": "他有較安靜的修改空間，之後是否重傳仍可選擇。",
+        "C": "分段確認可降低大幅返工，也可能讓熱情冷卻。",
+        "D": "同學可能發現簡單不等於完整，作者也可能不願被辨認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0a245fe49a69df3c802a13b22b8e5268a6a29ebd24ddc6abddaecf734ead55f",
+    "draftSha256": "bc16270c8a68ad3f2b89d9d4534dc8b1018dd86cae2ba4708f9251f2060a934c",
     "seedAssignmentVersion": 1
   }
 }

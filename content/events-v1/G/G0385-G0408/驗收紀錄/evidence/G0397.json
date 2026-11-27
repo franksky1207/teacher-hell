@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8dbf720db13489f4253d57b32ad934edfce5db6ef54fc2401caac661c347c619",
+      "checkedAt": "2026-11-27T06:15:38.950Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先收回「救場」那句評語，分開聽兩個人把經過說完。",
+            "action": "導師已先收回「救場」那句評語，分開聽兩個人把經過說完。",
+            "tradeoff": "不急著判誰好誰壞，清掃安排會暫時放慢"
+          },
+          {
+            "id": 2,
+            "text": "請原負責的學生檢查自己的區域，有哪裡還沒完成由他自己處理。",
+            "action": "導師已請原負責的學生檢查自己的區域，有哪裡還沒完成由他自己處理。",
+            "tradeoff": "保留原本工作，不要求為了證明自己再弄髒重掃"
+          },
+          {
+            "id": 3,
+            "text": "今天不再加派清掃，另約兩人談以後要怎麼開口幫忙。",
+            "action": "導師已今天不再加派清掃，另約兩人談以後要怎麼開口幫忙。",
+            "tradeoff": "不以多做勞務補償情緒，但問題要延後談"
+          },
+          {
+            "id": 4,
+            "text": "請幫忙者說明自己做了哪些，讓負責者決定是否還需要協助。",
+            "action": "導師已請幫忙者說明自己做了哪些，讓負責者決定是否還需要協助。",
+            "tradeoff": "把決定權交還，但幫忙者可能覺得好意被拒"
+          },
+          {
+            "id": 5,
+            "text": "把今天已完成的工作如實記下，不把多做的部分當成評比加分。",
+            "action": "導師已把今天已完成的工作如實記下，不把多做的部分當成評比加分。",
+            "tradeoff": "避免擴大比較，但想獲得肯定的人會失望"
+          },
+          {
+            "id": 6,
+            "text": "先讓兩人各做原本還沒完成的其他工作，談話等情緒下來再約。",
+            "action": "導師已先讓兩人各做原本還沒完成的其他工作，談話等情緒下來再約。",
+            "tradeoff": "保持日常運作，但不能因此忘記後續談話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我嘴巴闖的禍先不叫別人幫我圓，親自去跟聽見那句話的人說清楚。",
+          "action": "導師已決定向確實聽見其評語的在場者說明自己未了解分工便褒貶失當，不擴大公開學生私下陳述、不強迫學生接受道歉。",
+          "tradeoff": "得當眾承認自己說得草率，也不能代兩人宣布和好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 288004865
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ba3b3f54feedc7a31dcf59b597170edf077c65556bdca613d7446ff1a148ea4e"
+      },
+      "consequenceDirections": {
+        "A": "他能用自己的判斷收尾，也可能認為這仍沒處理被比較的感受。",
+        "B": "暫時分開可降低爭吵，回談時仍須面對那句評語。",
+        "C": "旁觀者不再只留下「誰救了誰」的版本，兩人的關係仍要自己談",
+        "D": "各自的想法可能與旁人猜測不同，之後才有辦法談分工。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "95659d1a0a60745e4212cf9589e5c5af70c3c8b68c9fcf30c77fe97cc359ef4e",
+    "draftSha256": "8dbf720db13489f4253d57b32ad934edfce5db6ef54fc2401caac661c347c619",
     "seedAssignmentVersion": 1
   }
 }

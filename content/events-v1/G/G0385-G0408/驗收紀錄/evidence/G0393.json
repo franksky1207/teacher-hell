@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dfc3fbf73019f188abd804d48c613e85fc54bd836f84de31f227a612e1cbc391",
+      "checkedAt": "2026-11-27T06:15:38.946Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先挑最容易漏聽的兩段放慢，其他部分照原來節奏。",
+            "action": "導師已先挑最容易漏聽的兩段放慢，其他部分照原來節奏。",
+            "tradeoff": "變動較小，但仍有人需要額外協助"
+          },
+          {
+            "id": 2,
+            "text": "建議先講完整段，再補一次較慢的重點說明。",
+            "action": "導師已建議先講完整段，再補一次較慢的重點說明。",
+            "tradeoff": "兼顧整體與重聽，會壓縮後面的練習時間"
+          },
+          {
+            "id": 3,
+            "text": "請老師把幾個固定停點標在講義上，讓學生知道何時能問。",
+            "action": "導師已請老師把幾個固定停點標在講義上，讓學生知道何時能問。",
+            "tradeoff": "節奏較可預期，臨時疑問仍可能累積"
+          },
+          {
+            "id": 4,
+            "text": "先聽老師說哪些步驟不能拆，再一起找能留白的位置。",
+            "action": "導師已先聽老師說哪些步驟不能拆，再一起找能留白的位置。",
+            "tradeoff": "尊重授課判斷，但今天不會立刻得到完整新版本"
+          },
+          {
+            "id": 5,
+            "text": "邀請老師在自己同意的一小段試兩種速度，課後再看反應。",
+            "action": "導師已邀請老師在自己同意的一小段試兩種速度，課後再看反應。",
+            "tradeoff": "多一次試教準備，結果也未必明顯"
+          },
+          {
+            "id": 6,
+            "text": "維持老師原本的講課方式，另約願意的學生在允許的時間補問。",
+            "action": "導師已維持老師原本的講課方式，另約願意的學生在允許的時間補問。",
+            "tradeoff": "不改整堂節奏，補問者須另外安排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我先坐著聽完一段，不急著插話給建議。",
+          "action": "導師已徵得任課老師同意，在不影響授課且可安排的時段旁聽一段，不錄下學生、不承諾替老師評課。",
+          "tradeoff": "要忍住指導衝動，也占掉自己的空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 941103976
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "799c32341a93eea931185a9c4cb1b76d9f879eafa138909337c745ba929af7a0"
+      },
+      "consequenceDirections": {
+        "A": "親自跟聽可能讓導師發現原先建議不切實際，之後得重新開口",
+        "B": "補問需求可能集中在少數步驟，也可能超過可安排的範圍。",
+        "C": "老師能根據同一內容的表現決定是否保留調整。",
+        "D": "雙方可釐清真正影響理解的環節，而非只爭快慢。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4eb19a75f6cacf94837fd3e1f43245345c8a85725afb58f581960932eecc1547",
+    "draftSha256": "dfc3fbf73019f188abd804d48c613e85fc54bd836f84de31f227a612e1cbc391",
     "seedAssignmentVersion": 1
   }
 }

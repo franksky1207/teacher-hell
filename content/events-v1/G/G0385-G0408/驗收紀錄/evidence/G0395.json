@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2fca12a91a2993c486542fc178df0ffd94067e0ff8e7bde43827fb15675e90b7",
+      "checkedAt": "2026-11-27T06:15:38.948Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原先說好的聽完這一句，然後去搭車。",
+            "action": "導師已照原先說好的聽完這一句，然後去搭車。",
+            "tradeoff": "守住回程安排，也可能錯過他最想吹的段落"
+          },
+          {
+            "id": 2,
+            "text": "請他挑最想吹的那一小段，今天不從頭來。",
+            "action": "導師已請他挑最想吹的那一小段，今天不從頭來。",
+            "tradeoff": "把有限時間留給重點，整首曲子仍聽不完整"
+          },
+          {
+            "id": 3,
+            "text": "另外約一個彼此有空的時間，今天先各自回家。",
+            "action": "導師已另外約一個彼此有空的時間，今天先各自回家。",
+            "tradeoff": "不必趕著演奏，但改約可能一直喬不攏"
+          },
+          {
+            "id": 4,
+            "text": "請他說說口琴怎麼找回來的，今天先不續吹。",
+            "action": "導師已請他說說口琴怎麼找回來的，今天先不續吹。",
+            "tradeoff": "換成聊天，仍要明確控制離開時間"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意日後錄一小段傳給我，不用特地等我有空。",
+            "action": "導師已問他願不願意日後錄一小段傳給我，不用特地等我有空。",
+            "tradeoff": "給他自己安排的餘地，也把聆聽延到之後"
+          },
+          {
+            "id": 6,
+            "text": "問旁邊也正要離開的熟同事有沒有空接著聽，不替人答應。",
+            "action": "導師已問旁邊也正要離開的熟同事有沒有空接著聽，不替人答應。",
+            "tradeoff": "我能準時走，老師則要重新確認對方意願"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想聽完，先確認還有車可搭，改搭下一班。",
+          "action": "導師已確認後續安全交通與私人安排可調整，自願放棄原班次聽完這首，不要求同事延後自己的行程。",
+          "tradeoff": "晚一點到家，等車時間由自己承擔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1689961704
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "dc381f22d4c531ad1a615f98451d9cc25a817b341a14a3ff00eb43d9df706f91"
+      },
+      "consequenceDirections": {
+        "A": "完整曲子可能勾起更多聊天，導師得自己守住下一個離開時間",
+        "B": "老師可能慢慢錄，也可能一直覺得沒吹好而沒傳。",
+        "C": "短短的演奏停在約定處，老師可決定下次是否還拿出來。",
+        "D": "能否再碰上空檔，決定這次興致會不會延續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "14d691cd7a2863168d1ec4a479d45ff0acad3998a139318c247dd64fed087371",
+    "draftSha256": "2fca12a91a2993c486542fc178df0ffd94067e0ff8e7bde43827fb15675e90b7",
     "seedAssignmentVersion": 1
   }
 }

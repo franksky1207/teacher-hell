@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "818393ea33384701e7e01cbe481b4be9f1a2cdab8ab933eaef71f4da1fb9b17f",
+      "checkedAt": "2026-11-27T06:15:38.956Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先向承辦問清楚申請必填哪些資料，再請家長提供。",
+            "action": "導師已先向承辦問清楚申請必填哪些資料，再請家長提供。",
+            "tradeoff": "不多收無關資訊，但答覆會多一道往返"
+          },
+          {
+            "id": 2,
+            "text": "請家長遮去住處等無關地點，只留下確實需要討論的路段。",
+            "action": "導師已請家長遮去住處等無關地點，只留下確實需要討論的路段。",
+            "tradeoff": "保留圖面便利，刪減後仍可能不足以判斷"
+          },
+          {
+            "id": 3,
+            "text": "不收圖，請家長直接向負責接送安排的人說明需求。",
+            "action": "導師已不收圖，請家長直接向負責接送安排的人說明需求。",
+            "tradeoff": "少一道轉交，也少了我能代為協助的部分"
+          },
+          {
+            "id": 4,
+            "text": "和家長另畫一張只有校門周邊的簡圖，原圖帶回。",
+            "action": "導師已和家長另畫一張只有校門周邊的簡圖，原圖帶回。",
+            "tradeoff": "不留全程資訊，但要再花時間確認局部位置"
+          },
+          {
+            "id": 5,
+            "text": "先維持原本已准許的離校方式，等新方案確認後再更動。",
+            "action": "導師已先維持原本已准許的離校方式，等新方案確認後再更動。",
+            "tradeoff": "避免先試再補手續，家庭眼前的不便仍在"
+          },
+          {
+            "id": 6,
+            "text": "經家長同意，只把一項確定的接送需求轉給必要承辦。",
+            "action": "導師已經家長同意，只把一項確定的接送需求轉給必要承辦。",
+            "tradeoff": "減少揭露，但細節不夠時仍須再問本人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道放學那邊到底塞成怎樣，找有空的一天自己到校門旁看。",
+          "action": "導師已決定在校內允許且不影響值勤的工作時段，於可停留的校門周邊觀察一般動線，不追查住址、不帶學生試走，僅作後續詢問參考。",
+          "tradeoff": "占自己的工作空檔，觀察也不能代替正式核准"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2215132501
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "7a4c8bd3c567ebf69b0ba3c7ad6daab4b39fc63a2bd29cf2e46799e82e7aa666"
+      },
+      "consequenceDirections": {
+        "A": "實際車流可能推翻對圖面的猜測，仍須由承辦決定安排",
+        "B": "家長可按實際需求補件，不必整張圖交出去。",
+        "C": "若新方案無法通過，家長還需另想接送辦法。",
+        "D": "承辦若需補充，得明說原因再徵求提供。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c8ef7d6e8698a13b0b521f01d44cb7314ddc161d8daab62e7d153498db2a0627",
+    "draftSha256": "818393ea33384701e7e01cbe481b4be9f1a2cdab8ab933eaef71f4da1fb9b17f",
     "seedAssignmentVersion": 1
   }
 }

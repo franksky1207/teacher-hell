@@ -15,14 +15,82 @@
     "G11",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f42a20eefe0397a597308ae16dca7459a4872b8d82f4f890da4653f79c38d2c7",
+      "checkedAt": "2026-11-27T06:15:38.936Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收回沒問就否定的評語，不再替她選家具",
+            "action": "導師已收回沒問就否定的評語，不再替她選家具",
+            "tradeoff": "要承認口快，也可能一時沒話可接"
+          },
+          {
+            "id": 2,
+            "text": "若她願意，一起只看可見狀況，不試坐或保證安全",
+            "action": "導師已若她願意，一起只看可見狀況，不試坐或保證安全",
+            "tradeoff": "觀察有限，也不能代替專業檢查"
+          },
+          {
+            "id": 3,
+            "text": "請她自行詢問修繕者的正常評估與費用，不代下單",
+            "action": "導師已請她自行詢問修繕者的正常評估與費用，不代下單",
+            "tradeoff": "要花時間或費用，也可能得知不值得修"
+          },
+          {
+            "id": 4,
+            "text": "建議先妥善暫存、不急著使用，由本人決定是否採用",
+            "action": "導師已建議先妥善暫存、不急著使用，由本人決定是否採用",
+            "tradeoff": "占家中空間，不能把暫存拖成無限負擔"
+          },
+          {
+            "id": 5,
+            "text": "問她實際想用在哪裡，先聽完，不急著改成買新的",
+            "action": "導師已問她實際想用在哪裡，先聽完，不急著改成買新的",
+            "tradeoff": "你要放下提建議習慣，也可能發現原先根本沒懂需求"
+          },
+          {
+            "id": 6,
+            "text": "若她已決定不留，只提供正常回收資訊，不替她處分",
+            "action": "導師已若她已決定不留，只提供正常回收資訊，不替她處分",
+            "tradeoff": "仍要本人核對條件，也不保證當天能收"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實也想換把舒服的，轉去問攤商你自己要買的椅子，別再替她挑",
+          "action": "導師已向攤商提出本人私人購椅詢價，僅依店家安全可試條件選看，不購買家長物件、不代其判定或處分",
+          "tradeoff": "花你的私人預算與時間，家長可能覺得你仍愛插嘴"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4141496947
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "0f474ce43a4eaa44562ddfead93ab506232b78670c5161c08c18e92844acde57"
+      },
+      "consequenceDirections": {
+        "A": "各人處理各自的消費，你得自己承擔試選不準，而不是把她家那張當教學反例。",
+        "B": "家長能保有選擇，卻不必因此接受你原先的好意。",
+        "C": "她有時間確認，卻可能覺得你仍想干涉自己的生活。",
+        "D": "兩人能把所見與猜測分開，最後是否使用仍由家庭依安全確認決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "34daa59a69166604a2551e6c6c2466abbf442edfa612b70676bd1236dbaa9a28",
+    "draftSha256": "f42a20eefe0397a597308ae16dca7459a4872b8d82f4f890da4653f79c38d2c7",
     "seedAssignmentVersion": 1
   }
 }

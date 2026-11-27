@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b513cabd3c62ab9a5950cb724dc769b8ef57e63478d3a34008e1e2c72d50bec2",
+      "checkedAt": "2026-11-27T06:15:38.944Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先把整盒還給家長，今天用教室原有的筆。",
+            "action": "導師已先把整盒還給家長，今天用教室原有的筆。",
+            "tradeoff": "先完成課程，學生想試的效果暫時做不到"
+          },
+          {
+            "id": 2,
+            "text": "請家長挑一支適合的筆，示範用途後再讓有需要的學生輪用。",
+            "action": "導師已請家長挑一支適合的筆，示範用途後再讓有需要的學生輪用。",
+            "tradeoff": "借用範圍清楚，能試的人次較少"
+          },
+          {
+            "id": 3,
+            "text": "先問各組要畫哪一段，再請家長決定願意借哪幾支。",
+            "action": "導師已先問各組要畫哪一段，再請家長決定願意借哪幾支。",
+            "tradeoff": "讓需求決定借用，但要花時間逐組說明"
+          },
+          {
+            "id": 4,
+            "text": "把想試的效果記下來，改問學校有沒有可借的同類工具。",
+            "action": "導師已把想試的效果記下來，改問學校有沒有可借的同類工具。",
+            "tradeoff": "不再動用私人收藏，但未必能立刻借到"
+          },
+          {
+            "id": 5,
+            "text": "只留下家長同意的兩支，由我保管、課內借還。",
+            "action": "導師已只留下家長同意的兩支，由我保管、課內借還。",
+            "tradeoff": "減少遺失機會，借還工作落在我身上"
+          },
+          {
+            "id": 6,
+            "text": "請各組先畫一小塊試色，再決定要不要申請借筆。",
+            "action": "導師已請各組先畫一小塊試色，再決定要不要申請借筆。",
+            "tradeoff": "先辨認問題是否真在筆，會多耗一點材料"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想知道差在哪，另外買一支自己用的筆來試。",
+          "action": "導師已自行決定以私人預算購買一支自用畫筆，向家長問一般選購建議，不借走收藏、不列為學生必備用品。",
+          "tradeoff": "自己付錢，也可能發現不是換筆就能畫好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 280246123
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "e268f9fe8b1f40ec04c90475f6d649f01517e8f4aded4f9886c5faa8e242a17c"
+      },
+      "consequenceDirections": {
+        "A": "輪用時看得出哪些步驟真的需要這支筆，也會出現等待。",
+        "B": "使用紀錄會顯出熱門工具與保管負擔，無法每組一直留著。",
+        "C": "教師的私人試畫成為後續請教家長的話題，不增加家長借物義務",
+        "D": "試色可能發現顏料或手法才是原因，借筆需求因此改變。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9780d528527ae03e79b00806ff2ff5e287bf5989ab9f27cf76e33c6cb889b89b",
+    "draftSha256": "b513cabd3c62ab9a5950cb724dc769b8ef57e63478d3a34008e1e2c72d50bec2",
     "seedAssignmentVersion": 1
   }
 }

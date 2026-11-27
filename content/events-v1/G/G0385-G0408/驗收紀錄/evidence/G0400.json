@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe564dc203a0511bd10f6805da4e7eaf7957bb56dfb3a169066243a473434ca7",
+      "checkedAt": "2026-11-27T06:15:38.951Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先改掉那張提醒，把目前確定的解題條件寫給他。",
+            "action": "導師已先改掉那張提醒，把目前確定的解題條件寫給他。",
+            "tradeoff": "能交付承諾，但不能保證一張紙就解決理解問題"
+          },
+          {
+            "id": 2,
+            "text": "約好下次能完整講解的時間，今天先讓他休息。",
+            "action": "導師已約好下次能完整講解的時間，今天先讓他休息。",
+            "tradeoff": "不硬撐教完，但必須準時履約"
+          },
+          {
+            "id": 3,
+            "text": "下次課內用這題當反例，請全班檢查三題練習沒涵蓋什麼。",
+            "action": "導師已下次課內用這題當反例，請全班檢查三題練習沒涵蓋什麼。",
+            "tradeoff": "把問題帶回共同教學，須調整課程時間"
+          },
+          {
+            "id": 4,
+            "text": "請他在有精神時只標出第一個不確定的步驟，不要求再重算一頁。",
+            "action": "導師已請他在有精神時只標出第一個不確定的步驟，不要求再重算一頁。",
+            "tradeoff": "減少無效練習，暫時不會得到完整答案"
+          },
+          {
+            "id": 5,
+            "text": "徵得同意後，請任課老師一起看這張說明是否漏了前提。",
+            "action": "導師已徵得同意後，請任課老師一起看這張說明是否漏了前提。",
+            "tradeoff": "多一位專業判斷，也要等對方有空"
+          },
+          {
+            "id": 6,
+            "text": "先給他一題條件不同的簡短例子，留到清醒時自行比較。",
+            "action": "導師已先給他一題條件不同的簡短例子，留到清醒時自行比較。",
+            "tradeoff": "保留自主嘗試，但不能把延後協助都推給他"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服這題，找個自己的空檔，從頭寫一遍給他抓錯。",
+          "action": "導師已承諾在自身可安排的工作時間獨立寫出此題完整試解供後續對照，不延長疲累學生當下停留，不再以三題答對作保證。",
+          "tradeoff": "花我的時間，也可能被抓到根本沒講清楚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2738103367
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "c6181cbe814eb40e8f57d06b6fd13ae2e8bf7af19e6c32e2923931f33f156893"
+      },
+      "consequenceDirections": {
+        "A": "學生暫時放下題目，下一次是否接得上會很重要。",
+        "B": "教師的完整試解會留下可對照的步驟，學生不必替我圓場",
+        "C": "不同講法可能補足缺口，也可能需要再統一說明。",
+        "D": "新的說明若仍有盲點，學生可以指出具體卡住之處。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92e5412b838f4abe503c054f26e5c33b3b0f00d82c8448f15e21829daeaea385",
+    "draftSha256": "fe564dc203a0511bd10f6805da4e7eaf7957bb56dfb3a169066243a473434ca7",
     "seedAssignmentVersion": 1
   }
 }

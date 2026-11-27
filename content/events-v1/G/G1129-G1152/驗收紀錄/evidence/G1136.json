@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3f0ab58942c88220232e49a4675cc3169cf0e6302f8cac5144ada6be33e978d9",
+      "checkedAt": "2026-11-27T17:35:17.190Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵詢不含住址的一般通勤困難，學生可不答。",
+            "action": "提出自願去識別通勤經驗徵詢，不以填表才可合法退出。",
+            "tradeoff": "要整理，可能資料不足。"
+          },
+          {
+            "id": 2,
+            "text": "向校方提一般交通時刻與晚自習時段協調建議。",
+            "action": "提出額外制度協調意見，不代變更全校時段。",
+            "tradeoff": "需準備，可能不採用。"
+          },
+          {
+            "id": 3,
+            "text": "提供正式交通資訊來源，供各家自行查。",
+            "action": "額外整理公開交通入口，不定位學生或保證班次。",
+            "tradeoff": "資訊可能變動。"
+          },
+          {
+            "id": 4,
+            "text": "邀願意的學生討論返家後如何保留休息。",
+            "action": "提出一般自願生活安排交流，不干預家庭或加作業。",
+            "tradeoff": "花課間，學生可拒。"
+          },
+          {
+            "id": 5,
+            "text": "不額外主持跨戶協商，讓各家保有私下選擇。",
+            "action": "婉拒額外家庭集體會談，不停止必要告知與個案送辦。",
+            "tradeoff": "家長可能覺得不積極。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內可公開的交通支持資源資訊。",
+            "action": "查詢既有資源，不取得接駁車或補助。",
+            "tradeoff": "可能沒有。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說住近才有餘裕，我有點被說中，想在自己的下一次可用放學空檔，另問願意的人帶我看公開站牌路線，不跟到住家。",
+          "action": "提出經權責可行、安全與學生自願的公開交通資訊交流邀請，未取得同意或帶隊，不取代必要照看。",
+          "tradeoff": "本人要多花時間，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3141927645
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "f1d1de9617da9eecb0a887e7968193ec3fa3b52d8e3f2f911e381dcc483dab90"
+      },
+      "consequenceDirections": {
+        "A": "未交流不影響退出資格。",
+        "B": "不把家長觀察當他戶已同意。",
+        "C": "個別合法申請不等制度改完。",
+        "D": "不得夜間臨時跟隨學生，若無合規安排則不成立；看站牌不證通勤已安全。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7267e3fb2f576d20de0694e0bb2f9e4d21f0d90411eae301e7d91d416a628572",
+    "draftSha256": "3f0ab58942c88220232e49a4675cc3169cf0e6302f8cac5144ada6be33e978d9",
     "seedAssignmentVersion": 1
   }
 }

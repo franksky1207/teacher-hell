@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c65c6b18831101c11a96d6cf82ec196c9ca9c18f6b67ca117678cbe832c123e3",
+      "checkedAt": "2026-11-27T17:35:17.182Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另查一條合法開放的替代騎乘路線，不回原河濱入口。",
+            "action": "停穩後查詢正式可核實的其他合法騎乘路線，未查明前不出發，不宣稱必有替代路。",
+            "tradeoff": "可能找不到，再耗時間。"
+          },
+          {
+            "id": 2,
+            "text": "今晚改安全步行一小段，牽車離開工區。",
+            "action": "放棄原騎乘目標，於合法安全人行路線步行並合規牽車。",
+            "tradeoff": "少運動強度。"
+          },
+          {
+            "id": 3,
+            "text": "直接回家，今天不補運動量。",
+            "action": "結束私人運動計畫，循合法安全路線返家。",
+            "tradeoff": "期待落空。"
+          },
+          {
+            "id": 4,
+            "text": "到確認可到的公開休息處坐一下，晚點再回。",
+            "action": "選擇合法休憩地點短暫休息，不假定有店或座位。",
+            "tradeoff": "多花時間，可能沒位。"
+          },
+          {
+            "id": 5,
+            "text": "停穩後把圖卡日期回覆給原社群，標明可核實來源。",
+            "action": "額外提供真實日期更正資訊，不揭他人身分或宣稱全路段通暢。",
+            "tradeoff": "要打字，可能引爭辯。"
+          },
+          {
+            "id": 6,
+            "text": "詢問現場人員公開可說的通行資訊，再自行選路。",
+            "action": "在不干擾作業的安全位置詢問一般管制資訊，不要求放行。",
+            "tradeoff": "可能沒人可答。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是不服今晚被毀一半，願意把碼表關掉，回安全入口慢慢騎，不再算公里，今天只看河。",
+          "action": "選擇經已確認路線至合法開放河濱，以不計距離的低負擔騎乘取代原訓練目標。",
+          "tradeoff": "再花路程，放掉原本里程成就。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 821788171
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "53dc011bfa77c1dd73535ef1df230981e1e4df177d84c5cd1c4397f997195ddd"
+      },
+      "consequenceDirections": {
+        "A": "可能仍心煩，現場若變更管制即調整，不保證散心有效。",
+        "B": "不把休息當失敗或冒險補足時間。",
+        "C": "無路就不冒險；查詢不等已騎完，與情緒回河濱放棄里程目標區分。",
+        "D": "未答不視作可通行，不能代交通判斷。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1與情緒均回同河濱騎乘，僅記不記里程不足區分，改為其他路線查詢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "沿確認可通行路段回原入口，騎短一點。",
+                "action": "依正式可知安全路線返回合法入口，縮短私人運動。",
+                "tradeoff": "再繞一段，時間更少。"
+              },
+              {
+                "id": 2,
+                "text": "今晚改安全步行一小段，牽車離開工區。",
+                "action": "放棄原騎乘目標，於合法安全人行路線步行並合規牽車。",
+                "tradeoff": "少運動強度。"
+              },
+              {
+                "id": 3,
+                "text": "直接回家，今天不補運動量。",
+                "action": "結束私人運動計畫，循合法安全路線返家。",
+                "tradeoff": "期待落空。"
+              },
+              {
+                "id": 4,
+                "text": "到確認可到的公開休息處坐一下，晚點再回。",
+                "action": "選擇合法休憩地點短暫休息，不假定有店或座位。",
+                "tradeoff": "多花時間，可能沒位。"
+              },
+              {
+                "id": 5,
+                "text": "停穩後把圖卡日期回覆給原社群，標明可核實來源。",
+                "action": "額外提供真實日期更正資訊，不揭他人身分或宣稱全路段通暢。",
+                "tradeoff": "要打字，可能引爭辯。"
+              },
+              {
+                "id": 6,
+                "text": "詢問現場人員公開可說的通行資訊，再自行選路。",
+                "action": "在不干擾作業的安全位置詢問一般管制資訊，不要求放行。",
+                "tradeoff": "可能沒人可答。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我就是不服今晚被毀一半，願意把碼表關掉，回安全入口慢慢騎，不再算公里，今天只看河。",
+              "action": "選擇經已確認路線至合法開放河濱，以不計距離的低負擔騎乘取代原訓練目標。",
+              "tradeoff": "再花路程，放掉原本里程成就。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1258845338
+            },
+            "selectedIds": [
+              1,
+              6,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 2,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "be9a6572cff47cf4abf208d63451b235746586ad2118992fc8a2be830dc89d0f"
+          },
+          "previousConsequenceDirections": {
+            "A": "未答不視作可通行，不能代交通判斷。",
+            "B": "路線若不適合就不走，不自行穿越車陣。",
+            "C": "可能仍心煩，現場若變更管制即調整，不保證散心有效。",
+            "D": "可仍不盡興，不以熟悉就忽略現場管制。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "148c13325679cc456f9eb47e5b620191ae37982885f1498ca855e6ac2788e162",
+    "draftSha256": "c65c6b18831101c11a96d6cf82ec196c9ca9c18f6b67ca117678cbe832c123e3",
     "seedAssignmentVersion": 1
   }
 }

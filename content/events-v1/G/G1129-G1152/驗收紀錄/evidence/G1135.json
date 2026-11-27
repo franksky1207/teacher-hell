@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "46e57ee99fe0f28aa973c967ce36d8f25aef754516f9f6383744d48b026cdc1a",
+      "checkedAt": "2026-11-27T17:35:17.189Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他練一段簡短的『我傳早了』，不再替水質背保證。",
+            "action": "提出額外自願溝通演練，不取代必要真實更正。",
+            "tradeoff": "要面對面子，花課間。"
+          },
+          {
+            "id": 2,
+            "text": "請總務評估是否能辦一次自願的檢驗表閱讀說明。",
+            "action": "提出額外專業說明邀請，未安排人力或新檢驗。",
+            "tradeoff": "可能無空。"
+          },
+          {
+            "id": 3,
+            "text": "另做一張看日期與範圍的資料閱讀卡。",
+            "action": "自製一般原創資訊識讀工具，不改原報告或宣稱新檢驗。",
+            "tradeoff": "占備課，可能不用。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生用虛構案例區分轉傳提醒和已知事實。",
+            "action": "提出去識別自願媒體討論，不讓當事人公開認錯表演。",
+            "tradeoff": "占班務，可能被猜。"
+          },
+          {
+            "id": 5,
+            "text": "不加跨班說明活動，依既有正式資訊接續。",
+            "action": "婉拒額外跨班教師代言，必要更正、支持與安全訊息照辦。",
+            "tradeoff": "學生可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內是否有正式水質資料公開入口可自查。",
+            "action": "查詢既有公開管道，未建新平台或取得檢驗。",
+            "tradeoff": "可能不完整。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點只看大字就信了，願意公開示範讀一張去識別的資料，讓大家看我也得找日期，不把他一人叫上台。",
+          "action": "提出教師本人參與的自願資料閱讀示例，使用合法一般素材，不以示範證水質。",
+          "tradeoff": "自己可能找錯，占班務。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 852006212
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "11915b01e8baf13d780b6fca4254a0ae840032bf122fad8ddb6c27c28b936e42"
+      },
+      "consequenceDirections": {
+        "A": "學生可不參加，示例不買到當事人的信任或免必要更正。",
+        "B": "他可拒，不能代全體宣布從此安全。",
+        "C": "說明不延長原檢驗效力。",
+        "D": "卡片不能替代合法正式資料。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "91bbd7b0b4cd78d58beb1305613b440d675e0c4987947da8d80ad32137dd9c58",
+    "draftSha256": "46e57ee99fe0f28aa973c967ce36d8f25aef754516f9f6383744d48b026cdc1a",
     "seedAssignmentVersion": 1
   }
 }

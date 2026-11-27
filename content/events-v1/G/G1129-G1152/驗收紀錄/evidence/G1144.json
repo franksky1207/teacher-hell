@@ -16,14 +16,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89189c849fd492495c964cfcf2d8ec506ba4cf008b06c09c1aa10639a6195263",
+      "checkedAt": "2026-11-27T17:35:17.203Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議下次取消由學生私人代收，改走正式收款。",
+            "action": "提出未來合規成人收款方式協調，不假定新窗口已成立。",
+            "tradeoff": "便利減少，教師需協調。"
+          },
+          {
+            "id": 2,
+            "text": "讓他自選是否交回非必要收款工作。",
+            "action": "提出自願職務範圍調整，不因求助撤其所有幹部職務。",
+            "tradeoff": "要重新分工。"
+          },
+          {
+            "id": 3,
+            "text": "提供既有學生生活支持資訊讓他私下自選。",
+            "action": "額外提供合法支持入口，不以申請補助代原墊款返還。",
+            "tradeoff": "可能不想用。"
+          },
+          {
+            "id": 4,
+            "text": "邀他用虛構情境練習『這個不能由我先付』。",
+            "action": "提出自願界線演練，不要求去向同學催款。",
+            "tradeoff": "花課間，可能尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一份不記名的未來付款核對範本。",
+            "action": "自製一般收費流程工具，不倒填憑證或公開欠款者。",
+            "tradeoff": "花備課。"
+          },
+          {
+            "id": 6,
+            "text": "不追加班級金錢教育活動，先讓他回自己的課務。",
+            "action": "拒絕非必要延伸安排，不停止必要返還與支持。",
+            "tradeoff": "擔心習慣未改。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說零用錢全沒我很惱，想陪他把一筆虛構班費做成不碰現金的桌上模擬，讓我也練一次說不能先墊。",
+          "action": "提出教師共同參與的虛構金錢決策模擬，學生可拒，不再整理已接妥的真實帳、不用真錢或追討同學。",
+          "tradeoff": "本人花休息，也可能把模擬算錯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1207901697
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "d94ffce168f7bf3eacfd5767867d52ea80f7461fae8e9e79187a8c4c93bc3b3b"
+      },
+      "consequenceDirections": {
+        "A": "範本不代正式帳務或必要真實告知。",
+        "B": "學生可覺得幼稚，活動不代原款合法返還，與普通4一句界線演練區分為完整資源配置試算。",
+        "C": "未准前仍須合法保障學生，不逼其續墊。",
+        "D": "資訊不等已取得補助或退款。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒接回剩餘對帳接近已完成與共同必要工作，改成明確非必要虛構金錢配置互動。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議下次取消由學生私人代收，改走正式收款。",
+                "action": "提出未來合規成人收款方式協調，不假定新窗口已成立。",
+                "tradeoff": "便利減少，教師需協調。"
+              },
+              {
+                "id": 2,
+                "text": "讓他自選是否交回非必要收款工作。",
+                "action": "提出自願職務範圍調整，不因求助撤其所有幹部職務。",
+                "tradeoff": "要重新分工。"
+              },
+              {
+                "id": 3,
+                "text": "提供既有學生生活支持資訊讓他私下自選。",
+                "action": "額外提供合法支持入口，不以申請補助代原墊款返還。",
+                "tradeoff": "可能不想用。"
+              },
+              {
+                "id": 4,
+                "text": "邀他用虛構情境練習『這個不能由我先付』。",
+                "action": "提出自願界線演練，不要求去向同學催款。",
+                "tradeoff": "花課間，可能尷尬。"
+              },
+              {
+                "id": 5,
+                "text": "我願做一份不記名的未來付款核對範本。",
+                "action": "自製一般收費流程工具，不倒填憑證或公開欠款者。",
+                "tradeoff": "花備課。"
+              },
+              {
+                "id": 6,
+                "text": "不追加班級金錢教育活動，先讓他回自己的課務。",
+                "action": "拒絕非必要延伸安排，不停止必要返還與支持。",
+                "tradeoff": "擔心習慣未改。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "看他還說可以做，我有點惱，願意自己接這次剩餘合法對帳的額外整理，今天讓他真的把空信封交出來。",
+              "action": "在本人權限內提出接回非必要帳務整理的協助，學生可保留其他合意職務，不代專業付款核定或宣稱款項已回。",
+              "tradeoff": "自己多工作，可能被期待往後包辦。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 675225712
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 3,
+              "D": 5
+            },
+            "optionsDigest": "90ce88351747b046e532c9f79bd15587441b95fee742cde1cb23eab54e7fc5a0"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師不能假定他同意或別人已接手。",
+            "B": "他可不願交手，教師仍須免其必要不當金錢負擔，不以合意代權益處理。",
+            "C": "資訊不等已取得補助或退款。",
+            "D": "範本不代正式帳務或必要真實告知。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "49d13d282d61f859bd2d6512a39d67ec584cbe1bddaefc0b40df2316594b5fc2",
+    "draftSha256": "89189c849fd492495c964cfcf2d8ec506ba4cf008b06c09c1aa10639a6195263",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d8fbc1cfd96e718b1c97f226cd1a9f047f4c6a1a398b8567a88395c0d4161b29",
+      "checkedAt": "2026-11-27T17:35:17.193Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒私人貴重物固定代管，和他談校規允許的自管方式。",
+            "action": "拒絕非必要個人物品寄管，提供一般保管選擇，不免必要失物處理。",
+            "tradeoff": "他可能覺得被推開。"
+          },
+          {
+            "id": 2,
+            "text": "詢問校內是否有合規暫寄管道。",
+            "action": "查詢既有資訊，不取得櫃位或代簽保管責任。",
+            "tradeoff": "可能沒有。"
+          },
+          {
+            "id": 3,
+            "text": "邀全班自願設計不寫名字的物品辨識符號。",
+            "action": "提出原創識別創作，不蒐物品價值或公開持有人。",
+            "tradeoff": "要準備，可能不用。"
+          },
+          {
+            "id": 4,
+            "text": "我做一張失物籃位置小圖，讓大家知道怎麼找。",
+            "action": "額外製作一般位置與詢問資訊，不公開物品清單。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 5,
+            "text": "另邀他自願談想被大人看顧到哪裡。",
+            "action": "提出有界限一般安全感交流，不診斷或要求信任教師。",
+            "tradeoff": "花課間，可能沉默。"
+          },
+          {
+            "id": 6,
+            "text": "提議將失物籃移到經校方允許、較易詢問的位置。",
+            "action": "提出合規位置調整建議，未搬移、不公開展示私人物品。",
+            "tradeoff": "要協調，可能更占空間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被他吼我很不高興，還是願意陪他走一次校內合規寄物的申請，讓他自己問，不再把我的抽屜當保險箱。",
+          "action": "提出合意的一次額外校內寄物申請陪同邀請，須有合法入口且不占必要課務，未取得寄物空間或許可。",
+          "tradeoff": "多花課間，也可能兩人一起碰壁。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3275949858
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "bc58620b571e29560a2ae1ed7f2b8e92724999eb88a12ce3f6765a005816755a"
+      },
+      "consequenceDirections": {
+        "A": "未有資源不能宣稱已妥善保管。",
+        "B": "學生可拒，無管道則不成立；不因陪同讓教師負無限物品保證。",
+        "C": "不承諾零遺失，不以拒代管處罰學生。",
+        "D": "未准維持原妥善保管，不視為新制度已成。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒只是帶怒拒代管，與普通1相同；改額外實際陪同申請意願，區分普通2僅查資訊。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "婉拒私人貴重物固定代管，和他談校規允許的自管方式。",
+                "action": "拒絕非必要個人物品寄管，提供一般保管選擇，不免必要失物處理。",
+                "tradeoff": "他可能覺得被推開。"
+              },
+              {
+                "id": 2,
+                "text": "詢問校內是否有合規暫寄管道。",
+                "action": "查詢既有資訊，不取得櫃位或代簽保管責任。",
+                "tradeoff": "可能沒有。"
+              },
+              {
+                "id": 3,
+                "text": "邀全班自願設計不寫名字的物品辨識符號。",
+                "action": "提出原創識別創作，不蒐物品價值或公開持有人。",
+                "tradeoff": "要準備，可能不用。"
+              },
+              {
+                "id": 4,
+                "text": "我做一張失物籃位置小圖，讓大家知道怎麼找。",
+                "action": "額外製作一般位置與詢問資訊，不公開物品清單。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 5,
+                "text": "另邀他自願談想被大人看顧到哪裡。",
+                "action": "提出有界限一般安全感交流，不診斷或要求信任教師。",
+                "tradeoff": "花課間，可能沉默。"
+              },
+              {
+                "id": 6,
+                "text": "提議將失物籃移到經校方允許、較易詢問的位置。",
+                "action": "提出合規位置調整建議，未搬移、不公開展示私人物品。",
+                "tradeoff": "要協調，可能更占空間。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "被他吼我其實很不高興，今天不想再替他額外收東西；把自己的抽屜關上，明講我不是他的保險箱。",
+              "action": "明確拒絕本人非必要私人代管並停止當次額外物品代收，不拒必要校內保管程序或支持。",
+              "tradeoff": "親近關係可能受挫。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3309910164
+            },
+            "selectedIds": [
+              5,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "d689bdcb5fdbfa02f0d621ed3194782ab1f4307f8b7b6638b74bf897cf84688a"
+          },
+          "previousConsequenceDirections": {
+            "A": "拒談不影響必要求助。",
+            "B": "未准維持原妥善保管，不視為新制度已成。",
+            "C": "符號不能防盜或證明物權，必要核對仍照辦。",
+            "D": "學生可生氣，教師須接受而不影響公平待遇；必要失物處理仍共同維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6aa9e60a663b2c2cd8209a725fcee629e70ebdce62c10b75719759fbc960e221",
+    "draftSha256": "d8fbc1cfd96e718b1c97f226cd1a9f047f4c6a1a398b8567a88395c0d4161b29",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,226 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bb2536efe025948cda22282f6a715a1b633d5303d697890c9c7009a008c57d3c",
+      "checkedAt": "2026-11-27T17:35:44.265Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他自選保留哪些合宜幹部工作，另談調整。",
+            "action": "提出自願職務範圍調整討論，不以卸任作求助代價。",
+            "tradeoff": "需重新分工。"
+          },
+          {
+            "id": 2,
+            "text": "提議分工以完成可核實任務為主，不互相盯人。",
+            "action": "提出未來公平任務導向安排，不免成人必要督導。",
+            "tradeoff": "要重排，可能不易確認。"
+          },
+          {
+            "id": 3,
+            "text": "我願做一份簡明掃具與區域配置圖。",
+            "action": "自製合規一般工具圖，不新增危險工作。",
+            "tradeoff": "花備課，可能用不到。"
+          },
+          {
+            "id": 4,
+            "text": "徵詢全班自願說工作分配哪裡不清楚。",
+            "action": "提出一般需求檢視，不讓當事人對質或公開自責。",
+            "tradeoff": "占班務，可能有爭。"
+          },
+          {
+            "id": 5,
+            "text": "詢問校方能否調整非必要評比分數呈現。",
+            "action": "查詢額外制度改善管道，不保證取消競賽或回補分數。",
+            "tradeoff": "可能不採用。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加額外檢討，讓他去做自己的功課。",
+            "action": "停止非必要追加會談，必要事件與支持由成人接續。",
+            "tradeoff": "未必立即安心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被他問得心虛，我發現自己也老是吞著，想自費詢問一堂成人溝通課，別再拿我不會拒絕當理由。",
+          "action": "另向合法公開成人溝通課提出本人自費參與的資訊與報名條件詢問，不假定有名額、未付款或上課，不將學生個案交外部。",
+          "tradeoff": "花私人查詢時間，若參加另付費與休息，可能覺得沒用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1657496226
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "a919af5452b42b8edbf098af26a7cc9a460ebec484e53cb4e8407862c0fb75c2"
+      },
+      "consequenceDirections": {
+        "A": "不以制度未改讓股長繼續過勞。",
+        "B": "可能沒有合適課或不接受報名；即使報名也不保證會拒絕，必要學生負擔處理仍先做好，不等教師學完。",
+        "C": "不得要求定位、跟蹤上廁所或學生蒐證。",
+        "D": "可再求助，不將離開當原諒教師。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒取消未建立走廊美化；改教師自己實際可取消成人邀約，補正文建立原有安排，不創學生假活動。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他自選保留哪些合宜幹部工作，另談調整。",
+                "action": "提出自願職務範圍調整討論，不以卸任作求助代價。",
+                "tradeoff": "需重新分工。"
+              },
+              {
+                "id": 2,
+                "text": "提議分工以完成可核實任務為主，不互相盯人。",
+                "action": "提出未來公平任務導向安排，不免成人必要督導。",
+                "tradeoff": "要重排，可能不易確認。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一份簡明掃具與區域配置圖。",
+                "action": "自製合規一般工具圖，不新增危險工作。",
+                "tradeoff": "花備課，可能用不到。"
+              },
+              {
+                "id": 4,
+                "text": "徵詢全班自願說工作分配哪裡不清楚。",
+                "action": "提出一般需求檢視，不讓當事人對質或公開自責。",
+                "tradeoff": "占班務，可能有爭。"
+              },
+              {
+                "id": 5,
+                "text": "詢問校方能否調整非必要評比分數呈現。",
+                "action": "查詢額外制度改善管道，不保證取消競賽或回補分數。",
+                "tradeoff": "可能不採用。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加額外檢討，讓他去做自己的功課。",
+                "action": "停止非必要追加會談，必要事件與支持由成人接續。",
+                "tradeoff": "未必立即安心。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被他問得心虛，也真的累；想把自己原要加做的走廊美化先放掉，今天只做必要工作，不再讓漂亮吃掉誰的休息。",
+              "action": "決定教師本人不新增尚在考慮的非必要走廊美化投入，不假定已有學生計畫可取消；必要整潔照常。",
+              "tradeoff": "少了教師想呈現的效果。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3923092581
+            },
+            "selectedIds": [
+              5,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 2,
+              "D": 5
+            },
+            "optionsDigest": "846ea8b68f9b8d3b2c48c96d7fc9fbf794a7f8cddff5857ec6e2e8dfecb7257c"
+          },
+          "previousConsequenceDirections": {
+            "A": "可再求助，不將離開當原諒教師。",
+            "B": "他可仍不滿，停止本人新投入不等必要責任已履行，亦不撤他人權益。",
+            "C": "不得要求定位、跟蹤上廁所或學生蒐證。",
+            "D": "不以制度未改讓股長繼續過勞。"
+          }
+        },
+        {
+          "reason": "再核讀發現前次仍補造成人邀約再取消，撤去該補造前提，改為教師自己有關工作界線的實際課程詢問，不取消不存在安排。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他自選保留哪些合宜幹部工作，另談調整。",
+                "action": "提出自願職務範圍調整討論，不以卸任作求助代價。",
+                "tradeoff": "需重新分工。"
+              },
+              {
+                "id": 2,
+                "text": "提議分工以完成可核實任務為主，不互相盯人。",
+                "action": "提出未來公平任務導向安排，不免成人必要督導。",
+                "tradeoff": "要重排，可能不易確認。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一份簡明掃具與區域配置圖。",
+                "action": "自製合規一般工具圖，不新增危險工作。",
+                "tradeoff": "花備課，可能用不到。"
+              },
+              {
+                "id": 4,
+                "text": "徵詢全班自願說工作分配哪裡不清楚。",
+                "action": "提出一般需求檢視，不讓當事人對質或公開自責。",
+                "tradeoff": "占班務，可能有爭。"
+              },
+              {
+                "id": 5,
+                "text": "詢問校方能否調整非必要評比分數呈現。",
+                "action": "查詢額外制度改善管道，不保證取消競賽或回補分數。",
+                "tradeoff": "可能不採用。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加額外檢討，讓他去做自己的功課。",
+                "action": "停止非必要追加會談，必要事件與支持由成人接續。",
+                "tradeoff": "未必立即安心。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被問得心虛，今天想把自己的非必要課後討論邀約退掉一次，準時休息，也明講肯做不等於全吞。",
+              "action": "取消本人已提出但尚未獲接受的非必要成人課後一般交流邀請，不撤必要工作、不涉及學生既有安排。",
+              "tradeoff": "少一次同事交流，可能失情面。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3252410550
+            },
+            "selectedIds": [
+              1,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "c648e08b4755093a37aa475fa084e7edcf63d1f928744512d94cd7738d56314c"
+          },
+          "previousConsequenceDirections": {
+            "A": "須以真實可取消邀約為前提，未有邀約不得虛構；取消不取代學生負擔的必要處理。",
+            "B": "他可想留任，不當已撤職。",
+            "C": "不以制度未改讓股長繼續過勞。",
+            "D": "不得要求定位、跟蹤上廁所或學生蒐證。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者定向核讀G1145七候選、共同前提及新映射方向；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +255,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "03754124e73d5dee986614dae9cd5ca3d5e041f3b27de4688f9a3dfe7532fda3",
+    "draftSha256": "bb2536efe025948cda22282f6a715a1b633d5303d697890c9c7009a008c57d3c",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d8d1f48eca763662dd759d5f20b8243ea1397b5492f43ab3140639a3d3e300b",
+      "checkedAt": "2026-11-27T17:35:17.184Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問出納能否提供本戶可知的下一次更新時間。",
+            "action": "額外協調有界限進度回覆時點，不承諾退款或越權調序。",
+            "tradeoff": "要追蹤，可能無日期。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式退費詢問窗口讓家長自選聯繫。",
+            "action": "給已知合法入口，不代申訴或外傳他戶資訊。",
+            "tradeoff": "可能被認為推卸。"
+          },
+          {
+            "id": 3,
+            "text": "協助整理一份只含本戶問題的書面詢問草稿。",
+            "action": "額外起草真實詢問內容，是否送出由家長自決。",
+            "tradeoff": "花備課，可能不用。"
+          },
+          {
+            "id": 4,
+            "text": "詢問現有急難支持資訊，供家長私下選看。",
+            "action": "查詢並提供既有合法支持入口，不以收入證明換退費或取得補助。",
+            "tradeoff": "可能不適用且冒犯。"
+          },
+          {
+            "id": 5,
+            "text": "不接額外每日私人催款，維持正式必要進度回覆。",
+            "action": "拒絕非必要無限頻率追催，說明實際工作回覆安排，不延誤必要通知。",
+            "tradeoff": "家長可能更不滿。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長另談舊留校爭議，與退款分開。",
+            "action": "提出成人自願舊事交流，不拿退費換和解。",
+            "tradeoff": "占空堂，可能被拒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他把兩件事串起來我很想辯，卻想直接陪他打一通正式窗口電話，讓我也聽一次回答，不再替制度說一堆漂亮話。",
+          "action": "提出經家長同意的有限共同正式電話詢問邀請，僅處理本戶可知資訊，未接通或取得結果。",
+          "tradeoff": "占工作時間，可能等線很久。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1383743594
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "c2d3bbedaa17f237d0929b484e41f971e7b84f4783177cdfee9faa0c4dc049d6"
+      },
+      "consequenceDirections": {
+        "A": "對方可拒或窗口無人，不能把共同詢問當保證加速。",
+        "B": "不以界線阻止合法申訴，必要送辦不慢下來。",
+        "C": "窗口資訊不等家長已得到答覆。",
+        "D": "未談成不影響本戶金錢權益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b51d4c3aa7d64b14ef73664c23e768040641cc9d243bcf8ad334550a55eba239",
+    "draftSha256": "5d8d1f48eca763662dd759d5f20b8243ea1397b5492f43ab3140639a3d3e300b",
     "seedAssignmentVersion": 1
   }
 }

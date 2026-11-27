@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f1f3822c4efae3c99a95da90057d666dc35833a161f2c76d88623eebcb9d61c6",
+      "checkedAt": "2026-11-27T17:35:17.197Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問各科是否有合法可行的精簡教材選擇。",
+            "action": "提出成人課程資源協調，不代科任撤教材或承諾免費重寫。",
+            "tradeoff": "要聯繫，未必有替代。"
+          },
+          {
+            "id": 2,
+            "text": "提議白紙只用在學生自願原創作品，教材另議。",
+            "action": "提出合規且物主同意的捐贈用途方案，未移交或交換決策。",
+            "tradeoff": "少替代印刷費的期待。"
+          },
+          {
+            "id": 3,
+            "text": "我願為本人授課另寫一份短練習，先試內容是否夠用。",
+            "action": "自願製作合法原創補充練習，不代正式教材全數替換。",
+            "tradeoff": "花備課，可能不適用。"
+          },
+          {
+            "id": 4,
+            "text": "請採購端提供可公開的價格與授權比較。",
+            "action": "查詢既有合法資訊，不揭其他家庭付款狀況。",
+            "tradeoff": "要等，可能不完整。"
+          },
+          {
+            "id": 5,
+            "text": "婉拒本次額外白紙捐贈，避免儲放負擔。",
+            "action": "拒絕未成立的自願資源接收，不妨礙家長合法教材意見。",
+            "tradeoff": "少物資，可能傷好意。"
+          },
+          {
+            "id": 6,
+            "text": "徵詢學生對已用講義哪部分實際有幫助。",
+            "action": "提出去識別自願一般教材使用感受徵詢，不蒐家計或票決教學真偽。",
+            "tradeoff": "整理耗時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不喜歡厚本堆著，這次想自己花錢做一個可重複夾紙的樣本，邀科任看收納能不能減少浪費，不先叫誰重寫整科。",
+          "action": "提出本人預算的低價合法收納樣本展示，不複製受限教材或承諾全班購買。",
+          "tradeoff": "花錢和準備，可能無人採用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1150990539
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "2e38190cc908345ae6a35dd38aaa6a8b41ea36d7b2aa28721b4665e5d83fe8ca"
+      },
+      "consequenceDirections": {
+        "A": "沒有替代仍須公平取得必要教材。",
+        "B": "樣本可不實用，收納改進不取代教材與經濟支持。",
+        "C": "價格低不等內容適合，資訊不等可退訂。",
+        "D": "家長可不捐，不能因此不處理教材負擔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a2b4a4ab9b1bbb701053846d27249718dcbde5fe2d5dc7cfaa95a7f385b0392f",
+    "draftSha256": "f1f3822c4efae3c99a95da90057d666dc35833a161f2c76d88623eebcb9d61c6",
     "seedAssignmentVersion": 1
   }
 }

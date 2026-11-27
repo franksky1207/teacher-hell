@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "846fb353a0ca0ef48ed01623cb5a22a14f6adf65d8bc3ac9a71741533753a465",
+      "checkedAt": "2026-11-27T17:35:17.199Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問處室是否有可行的簡易借還標記。",
+            "action": "查詢合規低負擔制度，不延誤必要緊急遮雨或假定名單已成。",
+            "tradeoff": "需協調，可能無工具。"
+          },
+          {
+            "id": 2,
+            "text": "提議只在處室既有窗口借還，不由本班集中領。",
+            "action": "提出未來合法借用方式調整，不剝奪學生合理使用。",
+            "tradeoff": "取用較遠，便利下降。"
+          },
+          {
+            "id": 3,
+            "text": "我願做一張不含姓名的還傘位置提醒圖。",
+            "action": "額外製作一般借還資訊，不公開推測持有人。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 4,
+            "text": "邀同學自願說早上借傘最不方便的環節。",
+            "action": "徵詢一般使用經驗，不把發言當承認拿傘。",
+            "tradeoff": "花班務，可能沉默。"
+          },
+          {
+            "id": 5,
+            "text": "詢問校方補充公用傘的現有資源條件。",
+            "action": "查詢額外補充資源，不取得新傘或抹消原五把追蹤。",
+            "tradeoff": "可能沒預算。"
+          },
+          {
+            "id": 6,
+            "text": "提議增設一個合規還傘架，先問處室是否願意接。",
+            "action": "提出新還傘存放工具的空間與需求協商，未取得許可、人力或完成採購，不增加學生點傘值勤。",
+            "tradeoff": "可能占空間，需準備方案。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他一排排數也煩，想自己出錢提供兩把確認可用的公用傘，先問處室收不收，不拿來補掉他的責任。",
+          "action": "提出教師本人合規無交換條件的額外傘捐贈，未移交或認定學生應賠。",
+          "tradeoff": "花私人錢，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1617037221
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "7c1e616126bd05a91465223aecb3539cd7e2f2beea4f611e6fa2ee91af616ed3"
+      },
+      "consequenceDirections": {
+        "A": "不能據沉默推定誰拿走。",
+        "B": "新傘不頂替原尋還紀錄，也不買到特殊待遇。",
+        "C": "未准不放，傘架不能保證五把已還，也不取代安全返程。",
+        "D": "無資源不轉嫁個人賠償或冒雨風險。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6拒未有前提的點傘值勤，改為具體新工具提案，與情緒補兩把傘的容量投入區分。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問處室是否有可行的簡易借還標記。",
+                "action": "查詢合規低負擔制度，不延誤必要緊急遮雨或假定名單已成。",
+                "tradeoff": "需協調，可能無工具。"
+              },
+              {
+                "id": 2,
+                "text": "提議只在處室既有窗口借還，不由本班集中領。",
+                "action": "提出未來合法借用方式調整，不剝奪學生合理使用。",
+                "tradeoff": "取用較遠，便利下降。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一張不含姓名的還傘位置提醒圖。",
+                "action": "額外製作一般借還資訊，不公開推測持有人。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 4,
+                "text": "邀同學自願說早上借傘最不方便的環節。",
+                "action": "徵詢一般使用經驗，不把發言當承認拿傘。",
+                "tradeoff": "花班務，可能沉默。"
+              },
+              {
+                "id": 5,
+                "text": "詢問校方補充公用傘的現有資源條件。",
+                "action": "查詢額外補充資源，不取得新傘或抹消原五把追蹤。",
+                "tradeoff": "可能沒預算。"
+              },
+              {
+                "id": 6,
+                "text": "不加學生點傘值勤，下次仍由成人處理必要交接。",
+                "action": "拒絕新增學生非必要管理勞務，必要借還由合適成人依法接續。",
+                "tradeoff": "教師多工作。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看他一排排數也煩，想自己出錢提供兩把確認可用的公用傘，先問處室收不收，不拿來補掉他的責任。",
+              "action": "提出教師本人合規無交換條件的額外傘捐贈，未移交或認定學生應賠。",
+              "tradeoff": "花私人錢，可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3591293387
+            },
+            "selectedIds": [
+              4,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 4,
+              "D": 3
+            },
+            "optionsDigest": "7d0f2cd8e333e9ffa43f6e6135f4281627c535182a60622d1380173f08a858b7"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能當已有其他成人代班，須實際可行。",
+            "B": "新傘不頂替原尋還紀錄，也不買到特殊待遇。",
+            "C": "不能據沉默推定誰拿走。",
+            "D": "圖不代必要尋還或回報。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f4bac7ef455f9d0af3843b008b2e9376c336b7b3dda4b1290a9290f38ed107a",
+    "draftSha256": "846fb353a0ca0ef48ed01623cb5a22a14f6adf65d8bc3ac9a71741533753a465",
     "seedAssignmentVersion": 1
   }
 }

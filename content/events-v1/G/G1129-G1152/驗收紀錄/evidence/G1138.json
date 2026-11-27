@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8443ca411c3d9d5a53583913f0eabe45ff2eb26da4b3e3ed2575b7a8b9575566",
+      "checkedAt": "2026-11-27T17:35:17.194Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議暫把非必要排名追蹤交回教師，不再由他盯。",
+            "action": "提出本人可承接的額外追蹤調整，尊重學生與班務規則，不免必要更正。",
+            "tradeoff": "教師增加工作。"
+          },
+          {
+            "id": 2,
+            "text": "邀全班另議要不要自願投入額外競賽布置。",
+            "action": "徵詢額外爭冠投入意願，不讓少數拒絕者受責怪。",
+            "tradeoff": "可能放掉名次。"
+          },
+          {
+            "id": 3,
+            "text": "給他一張訊息送出前可自用的查證提示。",
+            "action": "自製一般原創溝通工具，不查他私人手機或要求打卡。",
+            "tradeoff": "花準備，可能不用。"
+          },
+          {
+            "id": 4,
+            "text": "邀值日生自願另談班群受責的感受。",
+            "action": "提出額外被誤指者感受交流，不以出席換更正。",
+            "tradeoff": "花時間，對方可能不想談。"
+          },
+          {
+            "id": 5,
+            "text": "提出班群非急迫班務改由固定時段整理的方案。",
+            "action": "協商未來非急迫訊息節奏，不關閉必要求助或代全部成員同意。",
+            "tradeoff": "可能不方便。"
+          },
+          {
+            "id": 6,
+            "text": "我願用虛構訊息做一次不指人的標題改寫練習。",
+            "action": "額外準備一般媒體語氣活動，不重貼本案截圖。",
+            "tradeoff": "占班務，可能被猜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他還在問第一名我很火，今晚想把自己的非緊急班群提示靜音，明早工作時段再接，不陪著一直刷排名。",
+          "action": "設定本人私人夜間非急迫訊息免打擾，明示回覆時段並保留必要緊急聯繫及已約義務，不代修改全班群規。",
+          "tradeoff": "可能被說不關心，自己也得忍住看。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2325570612
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "8faa6fe9f9c7e53ebea120e95e18ac1b16b4ea646332b0053c2a064c41f99479"
+      },
+      "consequenceDirections": {
+        "A": "不能用多數逼少數熬夜。",
+        "B": "學生可不滿，必要處理與更正不因靜音停下；不假定已有宣傳版位可拒。",
+        "C": "須防影射，活動不取代必要支持。",
+        "D": "拒談不當已原諒。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒拒申請未存在宣傳版位，改為本人實際訊息界線，區分普通5全群節奏協商。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議暫把非必要排名追蹤交回教師，不再由他盯。",
+                "action": "提出本人可承接的額外追蹤調整，尊重學生與班務規則，不免必要更正。",
+                "tradeoff": "教師增加工作。"
+              },
+              {
+                "id": 2,
+                "text": "邀全班另議要不要自願投入額外競賽布置。",
+                "action": "徵詢額外爭冠投入意願，不讓少數拒絕者受責怪。",
+                "tradeoff": "可能放掉名次。"
+              },
+              {
+                "id": 3,
+                "text": "給他一張訊息送出前可自用的查證提示。",
+                "action": "自製一般原創溝通工具，不查他私人手機或要求打卡。",
+                "tradeoff": "花準備，可能不用。"
+              },
+              {
+                "id": 4,
+                "text": "邀值日生自願另談班群受責的感受。",
+                "action": "提出額外被誤指者感受交流，不以出席換更正。",
+                "tradeoff": "花時間，對方可能不想談。"
+              },
+              {
+                "id": 5,
+                "text": "提出班群非急迫班務改由固定時段整理的方案。",
+                "action": "協商未來非急迫訊息節奏，不關閉必要求助或代全部成員同意。",
+                "tradeoff": "可能不方便。"
+              },
+              {
+                "id": 6,
+                "text": "我願用虛構訊息做一次不指人的標題改寫練習。",
+                "action": "額外準備一般媒體語氣活動，不重貼本案截圖。",
+                "tradeoff": "占班務，可能被猜。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他還在問第一名我很火，這次想拒絕替班級申請額外競賽宣傳版位，少一個把名次掛滿牆的地方。",
+              "action": "決定本人不另申請尚未成立的非必要競賽宣傳版位，不撤既有權益或校定獎勵，不懲罰學生。",
+              "tradeoff": "少宣傳機會，也可能被說掃興。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 422123936
+            },
+            "selectedIds": [
+              3,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "3586ebc6cba5032caed3c94d26ba0fb18450f5cebdf1b37fef62a2c9508bfa05"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能用多數逼少數熬夜。",
+            "B": "須防影射，活動不取代必要支持。",
+            "C": "不用不免必要誠實，提示不保證少衝突。",
+            "D": "學生可不認同，教師不以私人價值取消必要合法參賽程序。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eb360a913b05e0e2a7f2af2fce33290d4e32e1bd8f3a79d842acf60b0feb7742",
+    "draftSha256": "8443ca411c3d9d5a53583913f0eabe45ff2eb26da4b3e3ed2575b7a8b9575566",
     "seedAssignmentVersion": 1
   }
 }

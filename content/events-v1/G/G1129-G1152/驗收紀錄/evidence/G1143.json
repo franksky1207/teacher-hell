@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0eadb86743eb93140d41f54f7d57982288b515c3d7fef83053ed6e05e7ea1c5c",
+      "checkedAt": "2026-11-27T17:35:17.202Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出公開班務異動摘要，供相關成人自選查閱。",
+            "action": "額外整理合法可公開的一般調整資訊，不揭學生個資或代校方建平台。",
+            "tradeoff": "多整理，可能沒人看。"
+          },
+          {
+            "id": 2,
+            "text": "邀他自選是否收到非必要的班務副本。",
+            "action": "提出自願額外抄送邀請，不將私人手機當必讀渠道。",
+            "tradeoff": "訊息增加。"
+          },
+          {
+            "id": 3,
+            "text": "我不加非必要抄送，維持既有正式課務聯繫。",
+            "action": "拒絕額外訊息工作，不拒必要知情與真實說明。",
+            "tradeoff": "他可能仍感被排除。"
+          },
+          {
+            "id": 4,
+            "text": "陪他做一張只含本人授課的可核對時段表。",
+            "action": "提出成人自願個人排課工具協作，不代其核定正式課表。",
+            "tradeoff": "花空堂。"
+          },
+          {
+            "id": 5,
+            "text": "提議下次外班問起不確定的事，先約定一句『我查一下』。",
+            "action": "提出成人自願溝通演練，不要求背台詞或保證不尷尬。",
+            "tradeoff": "可能像說教。"
+          },
+          {
+            "id": 6,
+            "text": "詢問教務有沒有合法公開的班務異動查詢方式。",
+            "action": "查詢既有一般資訊入口，不取得其他班敏感紀錄。",
+            "tradeoff": "可能沒有。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被問得很想笑又有點氣，想把今天的非必要草稿先收起來，準時去吃午餐，不讓每個茶水間版本都拖掉我的休息。",
+          "action": "結束當次額外非急迫解說，保留必要工作及已約回覆，按合法休息安排離開。",
+          "tradeoff": "對方可能覺得被晾。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2136449445
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "64b774e22408c47b633c550c151ae691447fc0ce26f5b894035fd749540e116c"
+      },
+      "consequenceDirections": {
+        "A": "可拒收，必要本科通知仍照辦。",
+        "B": "未讀不能取代必要正式告知。",
+        "C": "對方可拒，不以答應作正常合作條件。",
+        "D": "不能以吃飯拒絕實際緊急課務，私人草稿收起不影響必要公告。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4771437c89216bf378d5657dd932e1be4454e972aa575fca37fd19a7ed3eca77",
+    "draftSha256": "0eadb86743eb93140d41f54f7d57982288b515c3d7fef83053ed6e05e7ea1c5c",
     "seedAssignmentVersion": 1
   }
 }

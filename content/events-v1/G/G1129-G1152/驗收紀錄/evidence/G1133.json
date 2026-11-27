@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "21231ebf5acfc8cac731bc0d7f5241e60f1a696e17b96530242287c7048b7f39",
+      "checkedAt": "2026-11-27T17:35:17.186Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出按核准工項分區搬物，不一次清空全室。",
+            "action": "建議經專業同意的分區工作協調，不自行縮減隔離範圍。",
+            "tradeoff": "需細排，可能不適合。"
+          },
+          {
+            "id": 2,
+            "text": "向教務詢問合規借教室的可行性。",
+            "action": "提出臨時場地需求，未取得新教室。",
+            "tradeoff": "可能無空間，需搬教材。"
+          },
+          {
+            "id": 3,
+            "text": "我願先整理本人教具，減少非必要搬移。",
+            "action": "整理本人可處置物品，不讓學生搬危險設備或丟他人物件。",
+            "tradeoff": "占空堂，拿取不便。"
+          },
+          {
+            "id": 4,
+            "text": "邀科任提出這週不能中斷的器材需求。",
+            "action": "徵詢成人額外課務需求，不代其調課或免必要授課。",
+            "tradeoff": "聯繫耗時，可能互相衝突。"
+          },
+          {
+            "id": 5,
+            "text": "請總務提供可公開的工項進度格式供班級參照。",
+            "action": "查詢額外施工資訊呈現方式，不要求專業人員保證完成日。",
+            "tradeoff": "可能要等。"
+          },
+          {
+            "id": 6,
+            "text": "不另加教師私人搬運班，按校方合規安排配合。",
+            "action": "婉拒非必要額外搬運邀約，必要清場及安全交接仍照辦。",
+            "tradeoff": "可能較慢，需協調人力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "七張紙看得我很煩，又知道他不是找碴；願意自己出一段休息時間，和他把門上的便條做成不擋公告的整理板。",
+          "action": "提出本人額外製作一般工項資訊整理板的協作，不改技術結論或移除必要安全標示。",
+          "tradeoff": "花休息，可能做完仍滿牆。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 238078148
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "1c5768a46cea7a1fe375f1130b6cbd98332614f616462a09c620999c5e8e25b0"
+      },
+      "consequenceDirections": {
+        "A": "他可不需要，板不代必要書面報修及專業認定。",
+        "B": "有衝突仍由權責協調，不能票決安全。",
+        "C": "若無場地仍維持必要安全接續。",
+        "D": "進度可能變動，不能用表格當已修好證明。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "905c611f53d0ad4c1beb6b444934331e0e91bbf5e9481c94b66e91224848d4d8",
+    "draftSha256": "21231ebf5acfc8cac731bc0d7f5241e60f1a696e17b96530242287c7048b7f39",
     "seedAssignmentVersion": 1
   }
 }

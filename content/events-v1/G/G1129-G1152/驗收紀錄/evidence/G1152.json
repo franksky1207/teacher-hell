@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ac3f543a4cd6c5bd62e2c31854eb56f0f5054ab6d9fea18ee108e86e89d42b3b",
+      "checkedAt": "2026-11-27T17:35:17.215Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問總務未來是否有固定雨天備援聯繫表。",
+            "action": "查詢一般備援資訊，不代主管排人或視為已有班表。",
+            "tradeoff": "可能沒有，要再議。"
+          },
+          {
+            "id": 2,
+            "text": "我願整理一般安全通道的小圖供班級參考。",
+            "action": "額外製作依權責確認的通行資訊，不移動安全標示或宣稱地面已乾。",
+            "tradeoff": "花備課，資訊會變。"
+          },
+          {
+            "id": 3,
+            "text": "邀他日後自願談工作有哪些最怕臨時沒人接。",
+            "action": "提出未來成人一般任務交流，不問家中病情。",
+            "tradeoff": "要另約，他可不想談。"
+          },
+          {
+            "id": 4,
+            "text": "提供校內既有照顧支持資訊，讓他自選。",
+            "action": "額外提供合法成人支持入口，不代請假或取得照護人力。",
+            "tradeoff": "資訊未必有用。"
+          },
+          {
+            "id": 5,
+            "text": "不額外留守做清潔，回到本人課務準備。",
+            "action": "在必要現場已由合適成人接管後結束非必要協助，不自行棄守未交接風險。",
+            "tradeoff": "可能內疚，少同事情面。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校方能否改善一般雨傘收納設施。",
+            "action": "提出額外資源改善建議，不取得新設施或以此延後清理。",
+            "tradeoff": "可能無預算。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他走前還回頭我看得難受，願意問他需不需要我合規代送一份已同意的普通物品到校門，不碰病歷或私密包。",
+          "action": "提出本人可行時段的一次成人自願小物運送協助，不擅取物或代醫療運送，未取得同意。",
+          "tradeoff": "多跑一趟，可能耽誤備課。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1277286979
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "45a23101f8d47390de11e6d40f61715eae0ee6a9621df2f8b10de6edf1b3dbbb"
+      },
+      "consequenceDirections": {
+        "A": "對方可拒，不拿協助換感謝，必要安全已共同接續。",
+        "B": "交流不代正式人力配置。",
+        "C": "接管未實際成立就先完成必要安全，不以選項才交接。",
+        "D": "當日必要接管不等表建立。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b3fac90a4468999cb4d8cd15471e6c7df2aa3fa5fc2ad8bd5c7af049985bbc1b",
+    "draftSha256": "ac3f543a4cd6c5bd62e2c31854eb56f0f5054ab6d9fea18ee108e86e89d42b3b",
     "seedAssignmentVersion": 1
   }
 }

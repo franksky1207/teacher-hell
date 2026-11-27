@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f1e67b23a157a776453eaef99f94d8ee7098965350d248fe2f9d6fcd9953c04a",
+      "checkedAt": "2026-11-27T17:35:17.210Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明天延伸成反思比較，不再裝作第一次玩。",
+            "action": "重編本人可調課程，承認學生已有經驗，不保證學習成效。",
+            "tradeoff": "增加備課，少新鮮感。"
+          },
+          {
+            "id": 2,
+            "text": "詢問學生自願提供哪個環節卡住，不只聽成功。",
+            "action": "徵詢一般活動回饋，不蒐成績或強迫稱讚。",
+            "tradeoff": "需整理，可能零散。"
+          },
+          {
+            "id": 3,
+            "text": "邀同事共同做第二版，先談清楚分工與使用。",
+            "action": "提出新合意共同設計邀請，未成立合作或取得署名。",
+            "tradeoff": "耗時間，可能談不攏。"
+          },
+          {
+            "id": 4,
+            "text": "提議學生自願把教具操作說明改寫成一張給新手看的圖。",
+            "action": "提出本人課程內新自願原創操作說明圖活動，不再重跑同一角色遊戲，不保證圖正確。",
+            "tradeoff": "少操作樂趣，需要核對。"
+          },
+          {
+            "id": 5,
+            "text": "換成本人已有合法授權的其他教材，暫緩這個教具。",
+            "action": "使用本已可合法使用的替代材料重編本人課程，不擅丟同事教具。",
+            "tradeoff": "放掉原心血，要調流程。"
+          },
+          {
+            "id": 6,
+            "text": "另邀同事談以後茶水間構想怎麼轉實作。",
+            "action": "提出成人自願創作合作界線交流，不封鎖必要教學合作。",
+            "tradeoff": "可能傷熱情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很吃味，明天想把自己也放進新角色，讓學生出題考我，不再搶第一次亮相。",
+          "action": "提出本人課程內自願原創問答變式，教師參與承擔被挑戰，不代學生同意或預稱有效。",
+          "tradeoff": "暴露自己失誤，重做費時。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1521007109
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "576552bad534b6532c5925aa5d3aa0297ef50178ef4997dfa5082330997bcf4e"
+      },
+      "consequenceDirections": {
+        "A": "學生可沒興趣，不能因重玩不熱烈責怪。",
+        "B": "學生可不願參與額外部分，不能用表現買原諒或課程待遇。",
+        "C": "不能以原構想自動決定全部作品權利。",
+        "D": "可拒額外創作，圖不等成效證據或改寫他人著作授權。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4換角色重玩包含情緒教師入新角色，改成不同的說明圖產物。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "明天延伸成反思比較，不再裝作第一次玩。",
+                "action": "重編本人可調課程，承認學生已有經驗，不保證學習成效。",
+                "tradeoff": "增加備課，少新鮮感。"
+              },
+              {
+                "id": 2,
+                "text": "詢問學生自願提供哪個環節卡住，不只聽成功。",
+                "action": "徵詢一般活動回饋，不蒐成績或強迫稱讚。",
+                "tradeoff": "需整理，可能零散。"
+              },
+              {
+                "id": 3,
+                "text": "邀同事共同做第二版，先談清楚分工與使用。",
+                "action": "提出新合意共同設計邀請，未成立合作或取得署名。",
+                "tradeoff": "耗時間，可能談不攏。"
+              },
+              {
+                "id": 4,
+                "text": "保留原活動，但讓學生自選不同角色再試。",
+                "action": "調整本人合法課內活動變式，不迫學生公開先前表現。",
+                "tradeoff": "需重編角色，仍可能膩。"
+              },
+              {
+                "id": 5,
+                "text": "換成本人已有合法授權的其他教材，暫緩這個教具。",
+                "action": "使用本已可合法使用的替代材料重編本人課程，不擅丟同事教具。",
+                "tradeoff": "放掉原心血，要調流程。"
+              },
+              {
+                "id": 6,
+                "text": "另邀同事談以後茶水間構想怎麼轉實作。",
+                "action": "提出成人自願創作合作界線交流，不封鎖必要教學合作。",
+                "tradeoff": "可能傷熱情。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實很吃味，明天想把自己也放進新角色，讓學生出題考我，不再搶第一次亮相。",
+              "action": "提出本人課程內自願原創問答變式，教師參與承擔被挑戰，不代學生同意或預稱有效。",
+              "tradeoff": "暴露自己失誤，重做費時。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1347702248
+            },
+            "selectedIds": [
+              4,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "d78092057cb4b138bc7354cf0bd3bd3cdc3d4ec47bafecd294e61e4dd926d16e"
+          },
+          "previousConsequenceDirections": {
+            "A": "替代材料須真有可用權，不假定他人已提供。",
+            "B": "學生可不願參與額外部分，不能用表現買原諒或課程待遇。",
+            "C": "學生可沒興趣，不能因重玩不熱烈責怪。",
+            "D": "未執行不稱已有效，必要學習維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d4e8864ea13edad18d331a6822ffe03674ed55030c39ae7ccc5cbbf54c5a51a3",
+    "draftSha256": "f1e67b23a157a776453eaef99f94d8ee7098965350d248fe2f9d6fcd9953c04a",
     "seedAssignmentVersion": 1
   }
 }

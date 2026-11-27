@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "adf5311d0c4f90d12dc9c37a578a9b4c0ac5d9fc1e0147733d5d9bd2797a37c0",
+      "checkedAt": "2026-11-27T17:35:17.206Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒挑選與轉介，讓他依合規私人管道自行邀約。",
+            "action": "拒絕教師非必要私人招募，不交個資、不阻合法家庭自主。",
+            "tradeoff": "可能錯失機會。"
+          },
+          {
+            "id": 2,
+            "text": "詢問校方是否允許提供不背書的公開一般訊息。",
+            "action": "查詢合規資訊呈現條件，未發布或取得許可。",
+            "tradeoff": "要等，可能不准。"
+          },
+          {
+            "id": 3,
+            "text": "提議將私人課程改作家庭自行索取公開說明。",
+            "action": "提出由有意願家庭自取資訊的建議，不提供名單或代同意。",
+            "tradeoff": "可能無人詢問。"
+          },
+          {
+            "id": 4,
+            "text": "我願整理校內既有寫作學習入口，給全班自選。",
+            "action": "額外提供正式校內資源資訊，不暗示免費私課同等品質。",
+            "tradeoff": "花整理，資源可能有限。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長將可合法公開的課程範圍與限制寫清楚供自存。",
+            "action": "提供一般資訊完整性建議，不審核或背書私人教師。",
+            "tradeoff": "家長要重寫，可能嫌麻煩。"
+          },
+          {
+            "id": 6,
+            "text": "向課程端提出一般寫作交流需求，不接私人四名額。",
+            "action": "提出合法校內學習需求協調，不取得人力或用私人課補學校義務。",
+            "tradeoff": "可能無資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想偷偷去聽那位老師怎麼教，但不想拿挑學生換座位；以成人身分另問是否有合法付費公開課，自己負擔。",
+          "action": "另查成人可合法參與的公開寫作課資訊，不占學生四名額或接受有條件利益，未報名。",
+          "tradeoff": "私人花費與時間，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1248667653
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "5fb641ea661bd09df92ca2f98333d609defd279e8d6bebe76c91ffcc5aebc499"
+      },
+      "consequenceDirections": {
+        "A": "不保證全班有新增課，必要支持維持。",
+        "B": "若不合校規或利益衝突就不參與，不以成人興趣背書私人旁聽。",
+        "C": "資訊不等已取得寫作指導。",
+        "D": "未准不發，不把查詢當活動已成校方認可。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "46985317be746418a48f759f9ef5bd2e84f5062de9c32bb3d2ba3f1fd0515948",
+    "draftSha256": "adf5311d0c4f90d12dc9c37a578a9b4c0ac5d9fc1e0147733d5d9bd2797a37c0",
     "seedAssignmentVersion": 1
   }
 }

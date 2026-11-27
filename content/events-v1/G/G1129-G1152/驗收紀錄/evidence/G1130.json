@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4ae934a7001f45d1d021ce65f0101baa7a4b0841f8b9a41eee19c749edb0cedf",
+      "checkedAt": "2026-11-27T17:35:17.180Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒本班額外預演，維持原晨間安排。",
+            "action": "拒絕非必要樣板演出，不取消必要安全教育。",
+            "tradeoff": "可能傷對方期待。"
+          },
+          {
+            "id": 2,
+            "text": "提出縮成一次成人桌上流程推演。",
+            "action": "提議由合適成人用虛構資料討論，不占學生晨讀或拍學生。",
+            "tradeoff": "須另約，缺實地畫面。"
+          },
+          {
+            "id": 3,
+            "text": "詢問教務是否有不排擠必要課務的時段。",
+            "action": "提出額外時段協調請求，未取得許可。",
+            "tradeoff": "可能沒有時段。"
+          },
+          {
+            "id": 4,
+            "text": "我願幫忙畫一張不含學生影像的流程圖。",
+            "action": "自製原創流程草圖交專業者審視，未認證正確。",
+            "tradeoff": "占備課，可能重改。"
+          },
+          {
+            "id": 5,
+            "text": "請他先提供訪視真正要求，再看是否需學生參與。",
+            "action": "查詢正式要求，不以未查到當可以不做必要安全。",
+            "tradeoff": "要等待。"
+          },
+          {
+            "id": 6,
+            "text": "提議開放學生自願提供一般器材收納使用感受。",
+            "action": "徵詢不涉個資的一般需求，不讓學生負安全專業判定責任。",
+            "tradeoff": "整理耗時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被說最穩我也有點飄，想改由我自己接受成人流程提問，學生不必替我的帶班名聲排演。",
+          "action": "提出教師本人參與合宜成人口頭流程交流的自願邀約，不代全班答應演出或聲稱已合格。",
+          "tradeoff": "要準備，也可能答不出。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3042051718
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "c169f7ba2b84a6be724646ddac5e0ec7d566a92a826342df7b690e0e165109f2"
+      },
+      "consequenceDirections": {
+        "A": "職員可不採用，個人答題不替代依法必要演練。",
+        "B": "意見不等安全驗證或出鏡同意。",
+        "C": "可發現不需樣板，或仍須權責另安排。",
+        "D": "不因拒演降低本班應有資源。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e3e501e43f133bc02600539ce7362d14d75ac173da234210b3d0ec11efeb3d43",
+    "draftSha256": "4ae934a7001f45d1d021ce65f0101baa7a4b0841f8b9a41eee19c749edb0cedf",
     "seedAssignmentVersion": 1
   }
 }

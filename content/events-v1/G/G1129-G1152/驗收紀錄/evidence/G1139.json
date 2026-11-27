@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0fa3d72b818a0889717bb62acb96e8a305d9dcf5d7a6dee1df70c244da565214",
+      "checkedAt": "2026-11-27T17:35:17.196Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀孩子自願談原課和想換課各卡在哪裡。",
+            "action": "提出一般學習經驗交流，不以談話取代本人必要選課意願。",
+            "tradeoff": "占課間，可能與家長不同。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式課程介紹的合法公開入口。",
+            "action": "額外整理可知課程資訊，不承諾可換或有名額。",
+            "tradeoff": "可能仍看不懂。"
+          },
+          {
+            "id": 3,
+            "text": "我願做一張不含個資的下次選課提醒清單。",
+            "action": "自製未來流程工具，不假定這次可重開系統。",
+            "tradeoff": "花備課，可能不用。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長將自己的可行聯絡時段先列出，再選正式窗口。",
+            "action": "提出成人自願行程整理建議，不預約主任或占校方時段。",
+            "tradeoff": "可能找不到可行時間。"
+          },
+          {
+            "id": 5,
+            "text": "不額外陪同到教務處，提供既有正式申請方式。",
+            "action": "婉拒教師非必要私人陪辦，不拒必要送辦與說明。",
+            "tradeoff": "家長可能覺得信任落空。"
+          },
+          {
+            "id": 6,
+            "text": "詢問有沒有一般選課說明會資料可參考。",
+            "action": "查詢既有公共資源，未取得專人諮詢。",
+            "tradeoff": "可能沒資料。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一直說相信我，我有點想躲，決定工作後不再幫他私排下週一行程，今天只把我能回覆的時間說清楚。",
+          "action": "設定本人非必要私人行程協助界線，告知實際工作回覆時段，不關閉緊急必要聯絡。",
+          "tradeoff": "可能得罪家長，須忍住再補一句包辦。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2801264713
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "393c6b2a44e79b6672026abf2b3e40b4c235e7239537ecc4544ac3492eea7044"
+      },
+      "consequenceDirections": {
+        "A": "不能拖必要文件作為拒陪代價。",
+        "B": "未排定不讓家長誤認可逕來辦理。",
+        "C": "可拒交流，基本意願與權利仍須尊重。",
+        "D": "家長可不滿，教師仍須履行必要補救資訊與支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d00d97cb99f9a6bb48f94ead5ac0c82cef9b527fe8080bf94dbb9479d2bb460d",
+    "draftSha256": "0fa3d72b818a0889717bb62acb96e8a305d9dcf5d7a6dee1df70c244da565214",
     "seedAssignmentVersion": 1
   }
 }

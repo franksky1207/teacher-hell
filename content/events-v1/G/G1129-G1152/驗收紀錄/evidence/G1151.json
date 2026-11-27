@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6e6ed5b6f8d008b0f3e2a78199ae8d5fa5b4fc1ed172cb2b2b3d5b140b67467f",
+      "checkedAt": "2026-11-27T17:35:17.214Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓有意願家庭自行另約校外，教師不代揪全班。",
+            "action": "提供合法私人自主原則並拒絕教師額外組團，不代同意或背書場地。",
+            "tradeoff": "少了班級一起慶祝。"
+          },
+          {
+            "id": 2,
+            "text": "查詢未來合規班級慶祝的申請條件。",
+            "action": "詢問正式活動規範，未准留校或取得餐點。",
+            "tradeoff": "可能過了興頭。"
+          },
+          {
+            "id": 3,
+            "text": "提議改成隔日自願的一句比賽心得分享。",
+            "action": "提出有權時段內新自願交流，不宣稱全班參賽或強迫發言。",
+            "tradeoff": "少熱鬧，需安排。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願做一張原創團隊紀念圖，不排名。",
+            "action": "提出新原創視覺紀念合作，未取得影像或作者同意。",
+            "tradeoff": "要創作，可能沒人做。"
+          },
+          {
+            "id": 5,
+            "text": "詢問物主是否願意依規把剩餘禮物留作日後自願交流。",
+            "action": "提出合法自願資源保管與用途協商，未移交或變校產。",
+            "tradeoff": "需保管，可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "我不另主持慶功，但提供已知公開賽事資訊給家庭保存。",
+            "action": "婉拒額外主持，提供真實合法公開資料，不替家長製作宣傳。",
+            "tradeoff": "家長可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也餓得想吃，願意下班後另問店家能不能按一般條件自費買一小份帶走，別讓全班替我的饞留下。",
+          "action": "提出本人私人正常購買詢問，不占學生資源或代學生訂餐，不將校內留校變私人活動。",
+          "tradeoff": "花自己的錢，可能等很久。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3156142161
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "207fdbd6e486b7ce2ed047b4d1cb59ad8b0857e2402471fa78c5f3a237e62b62"
+      },
+      "consequenceDirections": {
+        "A": "店家可無貨，私人消費不改必要返程與校規。",
+        "B": "未准不得先訂再逼核准。",
+        "C": "家庭可不參與，學生權益不受影響。",
+        "D": "不把贈品當參與或贏球獎勵權利。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "524201ffe602b3c16d1b007326e5bf39d5444724e3abe9bbef3ebe55558f9145",
+    "draftSha256": "6e6ed5b6f8d008b0f3e2a78199ae8d5fa5b4fc1ed172cb2b2b3d5b140b67467f",
     "seedAssignmentVersion": 1
   }
 }

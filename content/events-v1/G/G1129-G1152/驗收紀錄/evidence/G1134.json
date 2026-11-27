@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f3aa77ee4e44375b63bed873f1679ba96d813ef927e079ce3ccb810ac1d5e509",
+      "checkedAt": "2026-11-27T17:35:17.187Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "同意大家各自決定要不要另點，不再包辦甜點。",
+            "action": "放棄本次本人統一供甜點的角色，尊重各自合意消費，不供疑似未熟品。",
+            "tradeoff": "沒了表現機會。"
+          },
+          {
+            "id": 2,
+            "text": "詢問附近合規店家有沒有現成品，我自願負擔一份。",
+            "action": "提出本人預算的替代甜點購買詢問，未取得品項或代朋友同意食用。",
+            "tradeoff": "可能多花錢又沒貨。"
+          },
+          {
+            "id": 3,
+            "text": "問朋友願不願意改聊其他事，今天不談配方。",
+            "action": "提出成人自願話題界線，不強迫大家稱讚。",
+            "tradeoff": "可能被認為輸不起。"
+          },
+          {
+            "id": 4,
+            "text": "拍下不含他人的成品狀態，之後請專業課程解惑。",
+            "action": "保存本人作品紀錄並提出合法專業資訊詢問，不試吃測熟或保證能救回。",
+            "tradeoff": "花時間，可能需付費。"
+          },
+          {
+            "id": 5,
+            "text": "查正式食譜來源，下次先做小份，不再帶未確認作品。",
+            "action": "提出本人未來低規模烘焙準備計畫，不宣稱已成功試作。",
+            "tradeoff": "少驚豔感，仍花時間。"
+          },
+          {
+            "id": 6,
+            "text": "這陣子不再答應供應聚會手作，先當客人。",
+            "action": "停止本人未來非必要手作供應意願，不擅撤已成立他人承諾。",
+            "tradeoff": "少舞台，可能不甘心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想贏一次，但今晚不拿別人的胃賭；邀朋友改比畫甜點，連我那盒也畫進去當笑話。",
+          "action": "提出成人自願原創繪畫趣味交流，不要求吃或拍人、不宣稱食品可救。",
+          "tradeoff": "自己要當笑點，花聚會時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1303439669
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "54bc73885e4f695b0b853844c96933f93769157d5dceb6e908b0393e6182a85d"
+      },
+      "consequenceDirections": {
+        "A": "朋友可不想玩，幽默不等大家已原諒或喜歡。",
+        "B": "朋友可不同意，教師須承受玩笑但可表明不適。",
+        "C": "朋友可不點，聚會不必補滿甜點。",
+        "D": "須尊重過敏及意願，不把購買當原品已安全處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "542dfc30f1696bd5e8f91fc83bd40862b76745f21094857240a4e1d2cb8c94fb",
+    "draftSha256": "f3aa77ee4e44375b63bed873f1679ba96d813ef927e079ce3ccb810ac1d5e509",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6703251ec23687f3e816ba5eaadbb236d98306d7e116172d23f8f723e5473f3f",
+      "checkedAt": "2026-11-27T17:35:17.211Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議縮小作品規模，在既有合規時間內完成。",
+            "action": "提出減量原創作品方案，不減必要課務或逼人加班。",
+            "tradeoff": "可能不夠華麗。"
+          },
+          {
+            "id": 2,
+            "text": "查詢正式自願課後製作申請條件。",
+            "action": "詢問未來合法留校條件，未核准或取得同意。",
+            "tradeoff": "可能趕不上。"
+          },
+          {
+            "id": 3,
+            "text": "邀願意的人各自選可在校內合法時間完成的小項。",
+            "action": "提出自願微任務協作，不逼家庭帶材料或加夜工。",
+            "tradeoff": "整合困難。"
+          },
+          {
+            "id": 4,
+            "text": "這次只交目前符合規則的完成部分。",
+            "action": "選擇本人有權協調的低完成度參賽提案，不虛報成果或代全組同意。",
+            "tradeoff": "可能低分。"
+          },
+          {
+            "id": 5,
+            "text": "我願協助原創版面整合一次，但只到明確時間。",
+            "action": "提出本人額外有限編排協助，不替學生署名創作或承諾獲獎。",
+            "tradeoff": "花休息，可能仍不完。"
+          },
+          {
+            "id": 6,
+            "text": "邀幹部另談哪些事不用全班同一個目標。",
+            "action": "提出自願一般班務價值交流，不以願談免原責任。",
+            "tradeoff": "花課間，可能反感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想贏，願意自費申請合法的大幅輸出報價，先讓大家知道錢和時間各要付多少，不承諾一定印。",
+          "action": "另向合法輸出服務提出本人預算的原創作品放大印製詢價，未取得報價、付款或代作者授權，不取代必要用品。",
+          "tradeoff": "花聯絡時間，若採用多私人支出。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3041460922
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "fcbfc14c6361b15457d2c259b18de75f8f9b1595970192ce906fffb6044704e7"
+      },
+      "consequenceDirections": {
+        "A": "要依賽規可行，不合法就另循正常處理。",
+        "B": "可拒，必要更正仍共同維持。",
+        "C": "賽規或作者可不允許，則不印；不能以自費逼學生加班或買署名。",
+        "D": "未准不得沿用原強制通知。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒拒未建立私人資源投入，改成明確新詢價與預算取捨，非憑空取消安排。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議縮小作品規模，在既有合規時間內完成。",
+                "action": "提出減量原創作品方案，不減必要課務或逼人加班。",
+                "tradeoff": "可能不夠華麗。"
+              },
+              {
+                "id": 2,
+                "text": "查詢正式自願課後製作申請條件。",
+                "action": "詢問未來合法留校條件，未核准或取得同意。",
+                "tradeoff": "可能趕不上。"
+              },
+              {
+                "id": 3,
+                "text": "邀願意的人各自選可在校內合法時間完成的小項。",
+                "action": "提出自願微任務協作，不逼家庭帶材料或加夜工。",
+                "tradeoff": "整合困難。"
+              },
+              {
+                "id": 4,
+                "text": "這次只交目前符合規則的完成部分。",
+                "action": "選擇本人有權協調的低完成度參賽提案，不虛報成果或代全組同意。",
+                "tradeoff": "可能低分。"
+              },
+              {
+                "id": 5,
+                "text": "我願協助原創版面整合一次，但只到明確時間。",
+                "action": "提出本人額外有限編排協助，不替學生署名創作或承諾獲獎。",
+                "tradeoff": "花休息，可能仍不完。"
+              },
+              {
+                "id": 6,
+                "text": "邀幹部另談哪些事不用全班同一個目標。",
+                "action": "提出自願一般班務價值交流，不以願談免原責任。",
+                "tradeoff": "花課間，可能反感。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看那句『不算出力』就火，這次不想再用自己的錢替作品加料；願意明講我只負責必要工作，讓想贏的人也看見資源有邊。",
+              "action": "拒絕本次作品非必要私人資源投入的邀請可能，不撤已承諾支出或必要班務，不懲罰拒留校者。",
+              "tradeoff": "作品少資源，可能被說不挺班。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2901077840
+            },
+            "selectedIds": [
+              6,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 1,
+              "D": 6
+            },
+            "optionsDigest": "c3ab86d510d5b1870968980a3debc54e4d22e13b7d9176a8fa7002d15606e6ae"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能假定教師原有付款承諾可撤，必要用品仍由合規方式保障。",
+            "B": "人數可能不足，須接受不完美。",
+            "C": "組員可不接受，不能用規模補不了就強留。",
+            "D": "可拒，必要更正仍共同維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3a309a60c3392376b0f7fee18b02c9c5ad9cd8e8e439c01a07c8b169df3195bc",
+    "draftSha256": "6703251ec23687f3e816ba5eaadbb236d98306d7e116172d23f8f723e5473f3f",
     "seedAssignmentVersion": 1
   }
 }

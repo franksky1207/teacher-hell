@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "453b8bac97bf0b9935128c6fe5ef01dfd7fe0c0805599b997ce0ecbd2521f925",
+      "checkedAt": "2026-11-27T17:35:17.208Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出取消本人明天步行私約，讓朋友自行決定行程。",
+            "action": "通知本人不參加非必要步行約，不代取消他人安排。",
+            "tradeoff": "錯過聚會，可能有已成立費用。"
+          },
+          {
+            "id": 2,
+            "text": "詢問朋友是否願另改成日後不需移動的交流。",
+            "action": "提出新成人自願替代邀約，未取得同意或醫療可行結論。",
+            "tradeoff": "可能約不成。"
+          },
+          {
+            "id": 3,
+            "text": "查詢符合必要評估建議的合法交通服務。",
+            "action": "額外整理私人交通選擇，不預訂或自駕冒險。",
+            "tradeoff": "可能花錢。"
+          },
+          {
+            "id": 4,
+            "text": "請球友自願把本人可安全處理的裝備帶到合意位置。",
+            "action": "提出非必要物品運送協助請求，未讓他負醫療或人身運送責任。",
+            "tradeoff": "欠人情，可能被拒。"
+          },
+          {
+            "id": 5,
+            "text": "暫停未來新增球局邀約，先保留休息。",
+            "action": "停止本人未成立的額外邀賽計畫，不擅撤別人既約。",
+            "tradeoff": "少社交機會。"
+          },
+          {
+            "id": 6,
+            "text": "我願記下真實受傷前安排，供自己下次抓負荷。",
+            "action": "製作私人工作運動負擔備忘，不自行判定傷因或復健處方。",
+            "tradeoff": "花時間，面對逞強。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是還很想贏，今晚願意另邀球友線上棋賽，腳不再上場，嘴還想拚一次。",
+          "action": "提出成人自願低負擔線上棋類邀約，依必要休養限制且不再賭錢，不保證對方接受。",
+          "tradeoff": "花休息，可能連棋也輸。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1604367163
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "265eab28853369e6882d2cd7ee8f6be13ed1d48bb8a816afa43cb6b2b6eaf477"
+      },
+      "consequenceDirections": {
+        "A": "查詢不等車已到，必要安全返程已另接妥。",
+        "B": "若不合休養需要即不進行，遊戲不替代醫療或安全返程。",
+        "C": "不以休息承諾取代專業評估。",
+        "D": "無人同意不把器材當已收好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cff1e3ee359a283ca34a5fcc8bcc9e5b4c58afcafd80ed736797de5dc2e119fb",
+    "draftSha256": "453b8bac97bf0b9935128c6fe5ef01dfd7fe0c0805599b997ce0ecbd2521f925",
     "seedAssignmentVersion": 1
   }
 }

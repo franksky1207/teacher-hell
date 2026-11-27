@@ -15,14 +15,226 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1b82855d857cc4d1bb95e400e5b59307f351673fc362fbdc059327ecfd1f176f",
+      "checkedAt": "2026-11-27T17:35:17.200Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議未來提醒寫明孩子可自行完成的步驟。",
+            "action": "提出後續非急迫聯絡文字協作，不代家長承諾夜間監督。",
+            "tradeoff": "需要改寫，可能仍誤解。"
+          },
+          {
+            "id": 2,
+            "text": "邀孩子自願試一張自己的作業勾選卡。",
+            "action": "提供原創自用工具，不強制上交或轉嫁教學責任。",
+            "tradeoff": "需準備，可能不用。"
+          },
+          {
+            "id": 3,
+            "text": "詢問家長方便的非緊急訊息時段。",
+            "action": "提出成人自願聯絡節奏協商，不推遲必要即時資訊。",
+            "tradeoff": "可能常變。"
+          },
+          {
+            "id": 4,
+            "text": "提供校內現有課業支持資訊。",
+            "action": "額外提供合法入口，不代報名或認定已得到輔導。",
+            "tradeoff": "可能無名額。"
+          },
+          {
+            "id": 5,
+            "text": "問家長偏好核准的文字還是語音聯繫，先選讀得懂的方式。",
+            "action": "提出經校規允許的非急迫聯繫媒介選擇，不代家長同意或把未讀當已知情。",
+            "tradeoff": "本人可能要改工作習慣。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長另談他希望教師看見哪種具體投入。",
+            "action": "提出成人自願一般交流，不索家庭隱私或保證稱讚。",
+            "tradeoff": "花空堂，可能反感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被問得也想找人聽，願意另請合適成人自願陪一次正式交流，讓我也不必假裝每句都接得住。",
+          "action": "提出經權責、必要同意與保密的額外成人協作交流邀請，未取得人力、不逼家長出席或揭家庭資料。",
+          "tradeoff": "承認自己應付不來，多一次協調。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3657082432
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "6cd22a290c098846b8cab0df85b72209192979daf93ec6fc68a6cb773c55c058"
+      },
+      "consequenceDirections": {
+        "A": "拒談不影響公平待遇，不以感謝換合作。",
+        "B": "他人可拒，正常支持與必要更正不等會議才做，不以出席換權益。",
+        "C": "不能只給資訊就免必要教學支持。",
+        "D": "不是允許漏掉真實必要作業事實。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5拒不存在睡前回報要求，改為實際溝通媒介取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議未來提醒寫明孩子可自行完成的步驟。",
+                "action": "提出後續非急迫聯絡文字協作，不代家長承諾夜間監督。",
+                "tradeoff": "需要改寫，可能仍誤解。"
+              },
+              {
+                "id": 2,
+                "text": "邀孩子自願試一張自己的作業勾選卡。",
+                "action": "提供原創自用工具，不強制上交或轉嫁教學責任。",
+                "tradeoff": "需準備，可能不用。"
+              },
+              {
+                "id": 3,
+                "text": "詢問家長方便的非緊急訊息時段。",
+                "action": "提出成人自願聯絡節奏協商，不推遲必要即時資訊。",
+                "tradeoff": "可能常變。"
+              },
+              {
+                "id": 4,
+                "text": "提供校內現有課業支持資訊。",
+                "action": "額外提供合法入口，不代報名或認定已得到輔導。",
+                "tradeoff": "可能無名額。"
+              },
+              {
+                "id": 5,
+                "text": "不另加睡前回報，讓家庭保留自己的作息。",
+                "action": "明確不提出新的非必要夜間監督要求，維持必要課業聯繫。",
+                "tradeoff": "教師少即時資訊。"
+              },
+              {
+                "id": 6,
+                "text": "邀家長另談他希望教師看見哪種具體投入。",
+                "action": "提出成人自願一般交流，不索家庭隱私或保證稱讚。",
+                "tradeoff": "花空堂，可能反感。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被問到有點想辯，但今天不想再當誰家的評審，願意把自己那套制式提醒重寫一版，先給他看哪句又像指責。",
+              "action": "額外重寫本人一般親師聯絡範例並邀自願意見，不逼家長替教師審稿或否認原必要更正。",
+              "tradeoff": "花時間，可能又被挑。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1991260692
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 5,
+              "C": "emotional",
+              "D": 3
+            },
+            "optionsDigest": "9692dec8457cc95eba017eed31c14d6873bb71706c5be6daa3810d205a944dbc"
+          },
+          "previousConsequenceDirections": {
+            "A": "不用不構成不配合，不能保證不缺交。",
+            "B": "不是允許漏掉真實必要作業事實。",
+            "C": "可拒看，範例不保證以後零誤會。",
+            "D": "未約成仍依合理正式方式聯絡。"
+          }
+        },
+        {
+          "reason": "原情緒重寫提醒範例近普通1文字協作，改為不同人力參與的自願交流。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議未來提醒寫明孩子可自行完成的步驟。",
+                "action": "提出後續非急迫聯絡文字協作，不代家長承諾夜間監督。",
+                "tradeoff": "需要改寫，可能仍誤解。"
+              },
+              {
+                "id": 2,
+                "text": "邀孩子自願試一張自己的作業勾選卡。",
+                "action": "提供原創自用工具，不強制上交或轉嫁教學責任。",
+                "tradeoff": "需準備，可能不用。"
+              },
+              {
+                "id": 3,
+                "text": "詢問家長方便的非緊急訊息時段。",
+                "action": "提出成人自願聯絡節奏協商，不推遲必要即時資訊。",
+                "tradeoff": "可能常變。"
+              },
+              {
+                "id": 4,
+                "text": "提供校內現有課業支持資訊。",
+                "action": "額外提供合法入口，不代報名或認定已得到輔導。",
+                "tradeoff": "可能無名額。"
+              },
+              {
+                "id": 5,
+                "text": "問家長偏好核准的文字還是語音聯繫，先選讀得懂的方式。",
+                "action": "提出經校規允許的非急迫聯繫媒介選擇，不代家長同意或把未讀當已知情。",
+                "tradeoff": "本人可能要改工作習慣。"
+              },
+              {
+                "id": 6,
+                "text": "邀家長另談他希望教師看見哪種具體投入。",
+                "action": "提出成人自願一般交流，不索家庭隱私或保證稱讚。",
+                "tradeoff": "花空堂，可能反感。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被問到有點想辯，但今天不想再當誰家的評審，願意把自己那套制式提醒重寫一版，先給他看哪句又像指責。",
+              "action": "額外重寫本人一般親師聯絡範例並邀自願意見，不逼家長替教師審稿或否認原必要更正。",
+              "tradeoff": "花時間，可能又被挑。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 667201732
+            },
+            "selectedIds": [
+              3,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 1,
+              "D": 6
+            },
+            "optionsDigest": "37121503d4ce8ceca001fe299d41d9adb37d423be903bb9fe713c206248aa2e3"
+          },
+          "previousConsequenceDirections": {
+            "A": "未約成仍依合理正式方式聯絡。",
+            "B": "可拒看，範例不保證以後零誤會。",
+            "C": "必要作業支持不以家長接受格式為條件。",
+            "D": "拒談不影響公平待遇，不以感謝換合作。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +255,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a49da2e440c78e256d7971c89031b8fb97e4f05c3626d2cf7b95d9f4deb785d2",
+    "draftSha256": "1b82855d857cc4d1bb95e400e5b59307f351673fc362fbdc059327ecfd1f176f",
     "seedAssignmentVersion": 1
   }
 }

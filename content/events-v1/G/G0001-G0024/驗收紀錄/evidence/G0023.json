@@ -19,49 +19,49 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "7a3663cbd421b6bfaacc10835e0159faf7ed690f7cabf1da4e3401a13d30cfeb",
-      "checkedAt": "2026-11-27T02:43:03.011Z",
+      "sourceVersion": "28e2b586612ab1e6e522a823ef1104c2befa3e3370f753a8055211b7a247268d",
+      "checkedAt": "2026-11-27T03:20:44.967Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
             "id": 1,
-            "text": "刪除這則引文，保留教師自行查核的問題描述。",
+            "text": "刪掉原句，只留下你另行查核過的問題描述。",
             "action": "導師已刪除這則引文，保留教師自行查核的問題描述。",
             "tradeoff": "降低辨識，但原聲音較弱。"
           },
           {
             "id": 2,
-            "text": "邀本人自願共同改寫，逐句確認可公開範圍。",
+            "text": "問他願不願意一起改，一句句確認哪些能公開。",
             "action": "導師已邀本人自願共同改寫，逐句確認可公開範圍。",
             "tradeoff": "保留原意，但增加他的工作。"
           },
           {
             "id": 3,
-            "text": "合併同類問題，只呈現無法回指個人的聚合資訊。",
+            "text": "把同類意見合在一起，不留下能猜出是誰的細節。",
             "action": "導師已合併同類問題，只呈現無法回指個人的聚合資訊。",
             "tradeoff": "降低辨識，但細節損失。"
           },
           {
             "id": 4,
-            "text": "延後整份整理稿，先查明副本接收範圍。",
+            "text": "延後整份稿子，先弄清楚哪些人已經收到。",
             "action": "導師已延後整份整理稿，先查明副本接收範圍。",
             "tradeoff": "控管較完整，但決策延遲。"
           },
           {
             "id": 5,
-            "text": "改用不涉及本人經驗的假設案例談班務。",
+            "text": "改用不涉及本人經驗的假設例子來談班務。",
             "action": "導師已改用不涉及本人經驗的假設案例談班務。",
             "tradeoff": "可討論原則，但真實迫切性變弱。"
           },
           {
             "id": 6,
-            "text": "將本人意見改為只供導師處理的私密回饋。",
+            "text": "他的意見只留給你私下處理，不再公開引用。",
             "action": "導師已將本人意見改為只供導師處理的私密回饋。",
             "tradeoff": "保護程度較高，但公開決策少一份依據。"
           }
         ],
         "emotionalCandidate": {
-          "text": "承認自己為了稿子生動放太多細節，向他道歉並承擔重寫。",
+          "text": "承認自己為了讓稿子好看寫太細，向他道歉，重寫由你來做。",
           "action": "導師已承認自己為了稿子生動放太多細節，向他道歉並承擔重寫。",
           "tradeoff": "減輕學生負擔，但教師工作增加。"
         },
@@ -81,7 +81,7 @@
           "C": "emotional",
           "D": 5
         },
-        "optionsDigest": "8697ae20107c5cf60821f59491442d3070df8c32b70dfceb6f1932a6b2fd4842"
+        "optionsDigest": "cad1c6aee1ccc9635fc82653231e45b534bf1060ef729089aed75dc62b484392"
       },
       "consequenceDirections": {
         "A": "學生可保留不公開權；教師需另找班務證據。",
@@ -90,7 +90,13 @@
         "D": "學生不必認領；同學可能難連結實際問題。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／2026-11-27自然語言品質修正：逐篇核讀、修稿及語意複核（非獨立審查者）",
+      "languageRevision": {
+        "baseline": "141d253f624ae83d27a383367789e9c0c55e9c64",
+        "scope": "自然語言完整核讀；開場敘事與候選顯示文字定向潤飾，實質行動及原抽選維持，另有實質修正時記於抽選歷史。",
+        "reviewer": "Codex／本輪完整核讀開場、人物對話、七候選及最終四選項，對照原客觀行動、知情與代價作語意複核",
+        "reviewedAt": "2026-11-27T03:20:44.967Z"
+      }
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +117,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7a3663cbd421b6bfaacc10835e0159faf7ed690f7cabf1da4e3401a13d30cfeb",
+    "draftSha256": "28e2b586612ab1e6e522a823ef1104c2befa3e3370f753a8055211b7a247268d",
     "seedAssignmentVersion": 1
   }
 }

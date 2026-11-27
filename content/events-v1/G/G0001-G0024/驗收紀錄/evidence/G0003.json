@@ -18,49 +18,49 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "34705575b09d236f59884c5b8a77af5e5969313abc67ac8de9dc57f04939bae1",
-      "checkedAt": "2026-11-27T02:43:02.992Z",
+      "sourceVersion": "c63ffad8b80e4b2ab9defcb442cf97c0d44049bf4a235948f1dd6e8a7680066c",
+      "checkedAt": "2026-11-27T03:20:44.940Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
             "id": 1,
-            "text": "帶學生走一次安全通行線，確認後讓他回班。",
+            "text": "帶他走一次不會碰到櫃子的路，再讓他回班。",
             "action": "導師已帶學生走一次安全通行線，確認後讓他回班。",
             "tradeoff": "具體學會避險，但需占用課間。"
           },
           {
             "id": 2,
-            "text": "與值勤人員確認暫時等候點，向本班說明。",
+            "text": "和值勤人員說好暫時在哪裡等，再告訴班上。",
             "action": "導師已與值勤人員確認暫時等候點，向本班說明。",
             "tradeoff": "減少群聚，但改變原等候習慣。"
           },
           {
             "id": 3,
-            "text": "請學生只口述親見經過，由你補入報修。",
+            "text": "請他說自己看到的經過，由你補進報修內容。",
             "action": "導師已請學生只口述親見經過，由你補入報修。",
             "tradeoff": "保留有用資訊，但學生不能自行決定修法。"
           },
           {
             "id": 4,
-            "text": "經值勤方同意，與學生在不占動線處放簡短警示。",
+            "text": "問過值勤人員後，陪他在不擋路的地方放提醒。",
             "action": "導師已經值勤方同意，與學生在不占動線處放簡短警示。",
             "tradeoff": "讓他參與，但警示仍需有人維護。"
           },
           {
             "id": 5,
-            "text": "私下肯定提醒，明說不公開表揚設障。",
+            "text": "私下謝謝他的提醒，也說清楚不能公開鼓勵大家擋路。",
             "action": "導師已私下肯定提醒，明說不公開表揚設障。",
             "tradeoff": "保護尷尬，但善意不會獲全班掌聲。"
           },
           {
             "id": 6,
-            "text": "和學生約定發現公共危害時先找哪個成人。",
+            "text": "和他說好，下次看到危險先找哪位大人。",
             "action": "導師已和學生約定發現公共危害時先找哪個成人。",
             "tradeoff": "建立通報路徑，但無法立即獲得參與感。"
           }
         ],
         "emotionalCandidate": {
-          "text": "蹲下陪他喘口氣，承認自己也怕好心幫倒忙。",
+          "text": "蹲下陪他緩一緩：「我也怕一幫忙反而弄得更糟。」",
           "action": "導師已蹲下陪他喘口氣，承認自己也怕好心幫倒忙。",
           "tradeoff": "安撫關係，但多花停留時間。"
         },
@@ -80,7 +80,7 @@
           "C": "emotional",
           "D": 5
         },
-        "optionsDigest": "d124b73ae504a8f0a3e2c2aa5b0dd9ed3b1f85eff5dc5e0dc08b21226fea9331"
+        "optionsDigest": "65950b9ba779f2a2076d77c6c87a181e537ea75a9e7f2af06b5b075a46f9a255"
       },
       "consequenceDirections": {
         "A": "警示可能提醒後來者，學生有新的幫忙方式；不得代替修繕。",
@@ -89,7 +89,13 @@
         "D": "學生可能理解善意與作法可分開；仍可能失落，需要觀察。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／2026-11-27自然語言品質修正：逐篇核讀、修稿及語意複核（非獨立審查者）",
+      "languageRevision": {
+        "baseline": "141d253f624ae83d27a383367789e9c0c55e9c64",
+        "scope": "自然語言完整核讀；開場敘事與候選顯示文字定向潤飾，實質行動及原抽選維持，另有實質修正時記於抽選歷史。",
+        "reviewer": "Codex／本輪完整核讀開場、人物對話、七候選及最終四選項，對照原客觀行動、知情與代價作語意複核",
+        "reviewedAt": "2026-11-27T03:20:44.939Z"
+      }
     },
     "stage2": {
       "status": "not_started",
@@ -110,7 +116,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "34705575b09d236f59884c5b8a77af5e5969313abc67ac8de9dc57f04939bae1",
+    "draftSha256": "c63ffad8b80e4b2ab9defcb442cf97c0d44049bf4a235948f1dd6e8a7680066c",
     "seedAssignmentVersion": 1
   }
 }

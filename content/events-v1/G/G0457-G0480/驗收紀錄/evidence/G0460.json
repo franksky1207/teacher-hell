@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "680eb427f5bbd4400bf97b17818ccf6abd2cd29e5c6293771fe6740536940ceb",
+      "checkedAt": "2026-11-27T06:41:18.664Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核對內容後，歸還確實符合本輪規則的部分。",
+            "action": "導師已核對內容後，歸還確實符合本輪規則的部分。",
+            "tradeoff": "不一概收走，但要花時間逐項確認"
+          },
+          {
+            "id": 2,
+            "text": "給全班相同的空白紙，這一輪先不使用自備提示。",
+            "action": "導師已給全班相同的空白紙，這一輪先不使用自備提示。",
+            "tradeoff": "條件單純，也暫時失去個人準備的便利"
+          },
+          {
+            "id": 3,
+            "text": "換成可使用自編記號的下一輪，先說清楚範圍再開始。",
+            "action": "導師已換成可使用自編記號的下一輪，先說清楚範圍再開始。",
+            "tradeoff": "保留工具價值，也改變當節進度"
+          },
+          {
+            "id": 4,
+            "text": "請他保留新找到的圖解法，先講哪一步替代了原提示。",
+            "action": "導師已請他保留新找到的圖解法，先講哪一步替代了原提示。",
+            "tradeoff": "看見方法轉變，也多一次說明負擔"
+          },
+          {
+            "id": 5,
+            "text": "原稿由本人帶回保管，今天不再把它當公用例子。",
+            "action": "導師已原稿由本人帶回保管，今天不再把它當公用例子。",
+            "tradeoff": "保護作品，也失去立即展示的材料"
+          },
+          {
+            "id": 6,
+            "text": "與授課教師重新確認本類練習允許哪些個人筆記，再向全班說明。",
+            "action": "導師已與授課教師重新確認本類練習允許哪些個人筆記，再向全班說明。",
+            "tradeoff": "規則可預期，也需配合權責者時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再憑一眼就當懂了，找空檔自己照他的圖試解另一題。",
+          "action": "導師已以經作者同意可參考的方法自行試解另一例，於自身工作空檔進行，不抄走私有原稿、不追加學生示範責任。",
+          "tradeoff": "要花自己的時間，也可能發現根本跟不上"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3935199116
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "6eab103193b062650f41868d858a8d8aa63a6f163446ad596abafedeae1655eb"
+      },
+      "consequenceDirections": {
+        "A": "可用記號回到學生手上，含答案處仍按原規則處理。",
+        "B": "教師可帶著具體問題再請教，學生不需證明自己沒有作弊",
+        "C": "後續若要討論工具，需重新取得同意。",
+        "D": "學生能繼續練習，自編工具的使用另需明示。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5a848615e3e12ff8ee708f5f909e273a0be9ddd643ee6c51821348bcaae464f0",
+    "draftSha256": "680eb427f5bbd4400bf97b17818ccf6abd2cd29e5c6293771fe6740536940ceb",
     "seedAssignmentVersion": 1
   }
 }

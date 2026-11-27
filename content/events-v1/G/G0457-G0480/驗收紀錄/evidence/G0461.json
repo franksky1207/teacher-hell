@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "59775e447747a0b03fdf0d1194f8b6c680d294e8c4d9db2cae6c06202ed4afdc",
+      "checkedAt": "2026-11-27T06:41:18.665Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用同一項接縫技法檢查，不以顏色一致作完成標準。",
+            "action": "導師已用同一項接縫技法檢查，不以顏色一致作完成標準。",
+            "tradeoff": "保留自選，也增加辨認不同線色的工夫"
+          },
+          {
+            "id": 2,
+            "text": "同意先做他圈的一小段，確認後再決定是否擴大。",
+            "action": "導師已同意先做他圈的一小段，確認後再決定是否擴大。",
+            "tradeoff": "縮小重作成本，也少了完整裝飾效果"
+          },
+          {
+            "id": 3,
+            "text": "讓他選擇不做裝飾，只完成必要接縫。",
+            "action": "導師已讓他選擇不做裝飾，只完成必要接縫。",
+            "tradeoff": "減少額外負擔，也放棄想展示的花色"
+          },
+          {
+            "id": 4,
+            "text": "請他比較兩次試縫的實際差別，先不再換第三種顏色。",
+            "action": "導師已請他比較兩次試縫的實際差別，先不再換第三種顏色。",
+            "tradeoff": "把注意力留在技法，暫緩新花樣"
+          },
+          {
+            "id": 5,
+            "text": "提供學校已有的中性色作可選材料，不要求大家購買同款。",
+            "action": "導師已提供學校已有的中性色作可選材料，不要求大家購買同款。",
+            "tradeoff": "降低配色難度，也可能沒人想用"
+          },
+          {
+            "id": 6,
+            "text": "安排正常課內的同技法示範，不以這名學生的家庭陪練當全班前提。",
+            "action": "導師已安排正常課內的同技法示範，不以這名學生的家庭陪練當全班前提。",
+            "tradeoff": "讓沒練過的人有起點，也用掉課程時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏愛的那個顏色留給自己，另外縫一塊自己的樣布。",
+          "action": "導師已於自身可用時間用自有安全材料縫個人樣布，不要求學生照色、代工或把樣布當唯一評量樣式。",
+          "tradeoff": "自己花材料與時間，也可能縫得不好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1471428440
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "2167eb5bdf6770259b5f50910ce76de85da3b6b5caf25f624720a14b9159f7cb"
+      },
+      "consequenceDirections": {
+        "A": "作品外觀不一樣，教師須按實際技法回饋。",
+        "B": "差異可以被教學接住，不把熟手直接升成免費助教。",
+        "C": "教師能保留品味，不必讓學生作品替自己完成偏好",
+        "D": "選擇增加但不保證統一，學生不必為教師方便買線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b7c70de6c69ffb9fbeed0ca6abc5c4bfa5dda5eea4ec1d6adc610ff7170593eb",
+    "draftSha256": "59775e447747a0b03fdf0d1194f8b6c680d294e8c4d9db2cae6c06202ed4afdc",
     "seedAssignmentVersion": 1
   }
 }

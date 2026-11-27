@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d17b5c4471d227545f38c56383342e0587501a63c9839381eea66b4614f851b3",
+      "checkedAt": "2026-11-27T06:41:18.683Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把突然切換造成的困擾反映給廣播負責人，詢問可否先預告變更。",
+            "action": "導師已把突然切換造成的困擾反映給廣播負責人，詢問可否先預告變更。",
+            "tradeoff": "有可預期的可能，也不保證校方照辦"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願意在班內採一段安靜開始，不依賴特定音樂。",
+            "action": "導師已問他是否願意在班內採一段安靜開始，不依賴特定音樂。",
+            "tradeoff": "多一種安定方式，也可能沒有熟歌那麼舒服"
+          },
+          {
+            "id": 3,
+            "text": "請負責人說明現有播放與更換規則，再向有需要者交代。",
+            "action": "導師已請負責人說明現有播放與更換規則，再向有需要者交代。",
+            "tradeoff": "先用既有資訊，也可能發現規則本來就不固定"
+          },
+          {
+            "id": 4,
+            "text": "在校規允許下詢問全班是否願意提出輪用建議，不保證採用。",
+            "action": "導師已在校規允許下詢問全班是否願意提出輪用建議，不保證採用。",
+            "tradeoff": "有參與管道，也可能意見很多難統整"
+          },
+          {
+            "id": 5,
+            "text": "讓他自行選一個不需設備、也不干擾人的早到小習慣作備用。",
+            "action": "導師已讓他自行選一個不需設備、也不干擾人的早到小習慣作備用。",
+            "tradeoff": "保留個人控制，也需要試到合適方式"
+          },
+          {
+            "id": 6,
+            "text": "邀他在可用時間把想要的轉場寫成短建議，由本人決定是否送出。",
+            "action": "導師已邀他在可用時間把想要的轉場寫成短建議，由本人決定是否送出。",
+            "tradeoff": "能清楚表意，也多一道整理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很喜歡新那首，自己記下歌名，回家用正常來源聽完。",
+          "action": "導師已自行記下公開歌名，在私人時間以有權使用的來源聆聽，不下載侵權音檔、不要求學生提供或改動校方廣播。",
+          "tradeoff": "占自己的私人時間，不保證班級廣播再播"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2322636843
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "3164c680c92c9da0c758812204c49fa4a0f64ffd953e5089a1a922d7af5ee6ae"
+      },
+      "consequenceDirections": {
+        "A": "教師保留個人喜好，不把它升成全班往後必聽曲目",
+        "B": "班內安排仍須全班可接受，不讓安靜變成替他特設標籤。",
+        "C": "音樂變動時可多一條路，不以成功適應作強制評量。",
+        "D": "負責人可讀懂具體要求，學生仍可選擇不提出。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f283220ce246c27c72d1dc002c7549caeba2ac12ecf18a8585f1fc1fd27b7043",
+    "draftSha256": "d17b5c4471d227545f38c56383342e0587501a63c9839381eea66b4614f851b3",
     "seedAssignmentVersion": 1
   }
 }

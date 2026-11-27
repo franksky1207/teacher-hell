@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e8de701c411b483514361599d48ba120cf466c7eb3a369a4fe75f40246350a8f",
+      "checkedAt": "2026-11-27T06:41:18.678Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只做他同意的短交接，說完即結束。",
+            "action": "導師已只做他同意的短交接，說完即結束。",
+            "tradeoff": "保住必要資訊，也要放下順便多問的習慣"
+          },
+          {
+            "id": 2,
+            "text": "把我能依法接回的待辦接回，讓他照原安排走。",
+            "action": "導師已把我能依法接回的待辦接回，讓他照原安排走。",
+            "tradeoff": "教師工作增加，也要確認真的有能力接手"
+          },
+          {
+            "id": 3,
+            "text": "非急事改到正常工作窗口，不再用放學門口補討論。",
+            "action": "導師已非急事改到正常工作窗口，不再用放學門口補討論。",
+            "tradeoff": "時間較可預期，決定會延後"
+          },
+          {
+            "id": 4,
+            "text": "以最短必要文字留下未決事項，讓他在下個工作時段回覆。",
+            "action": "導師已以最短必要文字留下未決事項，讓他在下個工作時段回覆。",
+            "tradeoff": "不當場硬談，也不能靠長訊息偷加整晚工作"
+          },
+          {
+            "id": 5,
+            "text": "若需其他職權者才能接手，立即聯繫正式窗口，不擅替同事代答。",
+            "action": "導師已若需其他職權者才能接手，立即聯繫正式窗口，不擅替同事代答。",
+            "tradeoff": "有合法銜接，但可能找不到當下可用的人"
+          },
+          {
+            "id": 6,
+            "text": "和他確認未來一週可談的工作空檔，不再憑我方便留人。",
+            "action": "導師已和他確認未來一週可談的工作空檔，不再憑我方便留人。",
+            "tradeoff": "減少臨時挽留，也可能可選時間很少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得丟的加碼構想先刪掉，今天不再用它占任何人的時間。",
+          "action": "導師已取消自身非必要、尚未成正式課務的加碼構想及相關臨時討論，不把取消轉成同事日後補做的責任。",
+          "tradeoff": "少了我想推的成果，也得向期待者說明取消"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3999873719
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "4cada66fa00ed3d7cb8d8702989122b4abe1c73cfae5c621ea5c233f482cbc93"
+      },
+      "consequenceDirections": {
+        "A": "下次是否準時處理，會影響他是否再信一句明天談。",
+        "B": "真正急事能留下位置，教師不再把熱情當對方待命理由",
+        "C": "同事不必一路遠端回訊，後續責任須明確。",
+        "D": "同事能照約離開，教師須自己接續未完工作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2676c6d2ed38b79f5045e3419446cf69a732ec40dda452594c7de82b31518101",
+    "draftSha256": "e8de701c411b483514361599d48ba120cf466c7eb3a369a4fe75f40246350a8f",
     "seedAssignmentVersion": 1
   }
 }

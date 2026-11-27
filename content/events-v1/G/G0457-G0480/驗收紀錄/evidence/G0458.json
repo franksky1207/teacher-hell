@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "18e0e22a96f24486f95d2f32e6680b4c930c48be3b544365f7faf60bb325c45c",
+      "checkedAt": "2026-11-27T06:41:18.661Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵得同意後保留講義，清楚標示原圖與修改者。",
+            "action": "導師已徵得同意後保留講義，清楚標示原圖與修改者。",
+            "tradeoff": "可接續試教，也得接受對方不願再提供"
+          },
+          {
+            "id": 2,
+            "text": "把兩版並排，經雙方同意再說明各自補了哪裡。",
+            "action": "導師已把兩版並排，經雙方同意再說明各自補了哪裡。",
+            "tradeoff": "讓修改過程可見，也多一份整理"
+          },
+          {
+            "id": 3,
+            "text": "停止使用這份共同材料，歸還或依權利人要求處理既有副本。",
+            "action": "導師已停止使用這份共同材料，歸還或依權利人要求處理既有副本。",
+            "tradeoff": "尊重收回意願，也會失去現成講義"
+          },
+          {
+            "id": 4,
+            "text": "只用我自己有權使用的部分重備，不複製他的原圖。",
+            "action": "導師已只用我自己有權使用的部分重備，不複製他的原圖。",
+            "tradeoff": "界線清楚，也可能做不成原效果"
+          },
+          {
+            "id": 5,
+            "text": "請他決定願意保留的片段，再重談後續合作範圍。",
+            "action": "導師已請他決定願意保留的片段，再重談後續合作範圍。",
+            "tradeoff": "不必全有全無，但要花時間逐項確認"
+          },
+          {
+            "id": 6,
+            "text": "將這次非必要試教延後，先用既有正式教材完成正常課程。",
+            "action": "導師已將這次非必要試教延後，先用既有正式教材完成正常課程。",
+            "tradeoff": "不趕著在爭議中發講義，也少一次當下試法"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再拿「改得比較好」護臉，自己的那段成果投稿也先撤回。",
+          "action": "導師已撤回自身尚未公開、非必要且涉及共同板圖的成果分享稿，依既有權利及程序處理，不擅替同事撤其他作品。",
+          "tradeoff": "少了對外分享機會，必須自己向收稿者交代"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3072776993
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "f16a8843e0c9ee4c8ddfb2f08b4173d85f419b2b0df92429617d6ea375e8599c"
+      },
+      "consequenceDirections": {
+        "A": "來源明確後仍要談使用範圍，不能用署名買斷同意。",
+        "B": "教師得另備課，不能把準備損失算成同事故意不合作。",
+        "C": "材料不再因投稿時程逼人同意，教師仍要另補正已發生的說法",
+        "D": "雙方可再談，延期不等於默認材料權利消失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5f34c40a548ab5724bc93231b92c0bba9ae0ca5b0184bd26d31eb30efc879b48",
+    "draftSha256": "18e0e22a96f24486f95d2f32e6680b4c930c48be3b544365f7faf60bb325c45c",
     "seedAssignmentVersion": 1
   }
 }

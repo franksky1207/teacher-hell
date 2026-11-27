@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "539a9a1075e204a3c69343115dc9de9ed2a09c391cf9e46d4cf2c80fd726e352",
+      "checkedAt": "2026-11-27T06:41:18.682Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按本人願意說的漏項開始談，陪同者不代答。",
+            "action": "導師已按本人願意說的漏項開始談，陪同者不代答。",
+            "tradeoff": "尊重當事人，也可能進展較慢"
+          },
+          {
+            "id": 2,
+            "text": "把全班通用的補交方式在正常課內說明，不提是哪一位來問。",
+            "action": "導師已把全班通用的補交方式在正常課內說明，不提是哪一位來問。",
+            "tradeoff": "其他人也拿得到資訊，也占一點課程時間"
+          },
+          {
+            "id": 3,
+            "text": "讓本人選擇改約私下談，陪同者先回去休息。",
+            "action": "導師已讓本人選擇改約私下談，陪同者先回去休息。",
+            "tradeoff": "降低當下壓力，也會延後處理"
+          },
+          {
+            "id": 4,
+            "text": "請本人先用簡短文字標出想問的那一項，再安排回覆。",
+            "action": "導師已請本人先用簡短文字標出想問的那一項，再安排回覆。",
+            "tradeoff": "起步較容易，也可能需要再口頭釐清"
+          },
+          {
+            "id": 5,
+            "text": "在本人同意的範圍讓朋友只陪坐，不參與內容回答。",
+            "action": "導師已在本人同意的範圍讓朋友只陪坐，不參與內容回答。",
+            "tradeoff": "保留支持，也需確認陪同者有合法可用時間"
+          },
+          {
+            "id": 6,
+            "text": "依實際權責聯繫需要確認的任課老師，不請朋友逐科打聽。",
+            "action": "導師已依實際權責聯繫需要確認的任課老師，不請朋友逐科打聽。",
+            "tradeoff": "資訊較準確，教師多做聯繫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再靠課間硬塞長談，取消自己原想加的額外檢討。",
+          "action": "導師已取消自身非必要的延伸檢討段落，保留必要作業確認、合法回覆與後續安排，不放棄應辦事項。",
+          "tradeoff": "少了我想講完的話，也得只抓真正必要事項"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4040376265
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "20d42b66d55e85ea5da283e829f1b8dc343fc24c1b54eb6ade2fa9f117068228"
+      },
+      "consequenceDirections": {
+        "A": "教師能接住具體需求，不要求一次交代全部原因。",
+        "B": "朋友可在場卻不是發言代理，雙方都能隨時改變意願。",
+        "C": "學生不需為教師說完教育意義繼續等待，未決內容仍有明確去處",
+        "D": "學生能自己選擇透露範圍，必要作業要求仍須說清楚。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "008c9c94311498636cd87033bbb5268829b82cf2d61efbc7ee4754cc3e5d00b0",
+    "draftSha256": "539a9a1075e204a3c69343115dc9de9ed2a09c391cf9e46d4cf2c80fd726e352",
     "seedAssignmentVersion": 1
   }
 }

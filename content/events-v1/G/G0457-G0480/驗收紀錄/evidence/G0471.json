@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a47b4d90b3d7cd29240a0d3bfb21924703a0bd79cb0deac6cb005857d4fcaacd",
+      "checkedAt": "2026-11-27T06:41:18.677Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在已確認安全的範圍重排座位，封閉區保持不用。",
+            "action": "導師已在已確認安全的範圍重排座位，封閉區保持不用。",
+            "tradeoff": "能留在原教室，但空間會擁擠"
+          },
+          {
+            "id": 2,
+            "text": "向課務申請可用的替代教室，等核准與接手確認再移動。",
+            "action": "導師已向課務申請可用的替代教室，等核准與接手確認再移動。",
+            "tradeoff": "有較完整空間，也會打亂班級與場地安排"
+          },
+          {
+            "id": 3,
+            "text": "取消靠窗的非必要活動，改做安全區可完成的課內工作。",
+            "action": "導師已取消靠窗的非必要活動，改做安全區可完成的課內工作。",
+            "tradeoff": "不用等檢修完成才上課，但原活動延後"
+          },
+          {
+            "id": 4,
+            "text": "由我向班上說明目前哪些區域可用，不讓他一再阻止別人。",
+            "action": "導師已由我向班上說明目前哪些區域可用，不讓他一再阻止別人。",
+            "tradeoff": "減少學生當警察，也要反覆確認大家知道"
+          },
+          {
+            "id": 5,
+            "text": "把已完成移置與仍待檢修項目交給承辦確認，請對方回覆實際進度。",
+            "action": "導師已把已完成移置與仍待檢修項目交給承辦確認，請對方回覆實際進度。",
+            "tradeoff": "資訊有區分，但不能保證何時修好"
+          },
+          {
+            "id": 6,
+            "text": "請值勤與相關授課老師確認換課時的照看交接。",
+            "action": "導師已請值勤與相關授課老師確認換課時的照看交接。",
+            "tradeoff": "避免下一節誤用，也多一道成人聯繫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想今天放學後還辦那場可取消的小聚，自己先退出，留空檔整理後續工作。",
+          "action": "導師已取消自身非必要私人聚會，於正常工作與合法可用時間整理必要交接，不擅修設備、不以自願留下取代依法應有值勤安排。",
+          "tradeoff": "少了一次私人放鬆，也可能仍無法等到修好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1899287869
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "22626227733de0487c0bb5fefbaa7a7082550584dea0a5b783a096f1fb14d44d"
+      },
+      "consequenceDirections": {
+        "A": "部分工作需縮小範圍，不能為了容納全班越過隔離。",
+        "B": "不同老師都知道隔離仍有效，不把提醒工作交回學生。",
+        "C": "教師調整自己的行程，但檢修仍由有權人員做，不要求學生陪等",
+        "D": "課程內容需調整，不能把取消歸咎提醒風險者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "73d7d3e466062c73af20a8ab101cb03036eb5f75edb57c4573ad3fb02c08e85f",
+    "draftSha256": "a47b4d90b3d7cd29240a0d3bfb21924703a0bd79cb0deac6cb005857d4fcaacd",
     "seedAssignmentVersion": 1
   }
 }

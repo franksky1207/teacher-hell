@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eda4ef6742d2cfd247523467d5f1cdfd949054500f310420902e538a39ed6129",
+      "checkedAt": "2026-11-27T06:41:18.659Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這輪名次，保留各組已完成的推理供回看。",
+            "action": "導師已取消這輪名次，保留各組已完成的推理供回看。",
+            "tradeoff": "公平條件較清楚，也讓原本贏的人失去名次"
+          },
+          {
+            "id": 2,
+            "text": "換一題重新練，不以新結果倒推原先有沒有違約。",
+            "action": "導師已換一題重新練，不以新結果倒推原先有沒有違約。",
+            "tradeoff": "有新的獨立機會，也多占課內時間"
+          },
+          {
+            "id": 3,
+            "text": "請各人自行標出用過哪些提示，不由一人代全組回答。",
+            "action": "導師已請各人自行標出用過哪些提示，不由一人代全組回答。",
+            "tradeoff": "責任分開，也可能聽見不同版本"
+          },
+          {
+            "id": 4,
+            "text": "讓他先說明那兩個步驟怎麼分，再核對其他組員的實際參與。",
+            "action": "導師已讓他先說明那兩個步驟怎麼分，再核對其他組員的實際參與。",
+            "tradeoff": "保留具體學習內容，不能只問最願意說的人"
+          },
+          {
+            "id": 5,
+            "text": "由我向原先聽見表揚的人更正依據，不讓他自己收回所有評價。",
+            "action": "導師已由我向原先聽見表揚的人更正依據，不讓他自己收回所有評價。",
+            "tradeoff": "承認教師表揚過早，也要避免公開個人私下說法"
+          },
+          {
+            "id": 6,
+            "text": "後續改採不排名的合作解題，先講清楚何種資料可共享。",
+            "action": "導師已後續改採不排名的合作解題，先講清楚何種資料可共享。",
+            "tradeoff": "少了競賽刺激，也可能增加交流"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被第一名哄得太開心，這次自己把錯誇的經過記進備課本。",
+          "action": "導師已自行記錄本次表揚依據不足與可改善步驟，僅保存必要工作資訊、不公開學生自述或拿筆記代替公平處理。",
+          "tradeoff": "留下自己的判斷失誤，也多一道回看工作"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 132513235
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "fba59209a44b9c5c9e7faa858fa3b9291d1b844439a7ab191e02e7c654578ea3"
+      },
+      "consequenceDirections": {
+        "A": "之後表揚能對照實際依據，不把反省工作再丟回學生",
+        "B": "理解與使用外組資料可分開看，不抹掉其中一邊。",
+        "C": "學生能共同推理，但原承諾的違反不因改玩法消失。",
+        "D": "學生可承認做對的步驟，不再拿整體勝利證明沒用提示。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "621ed514cf7a9308e2a091cb260134776ed44482477665ecd220ca0a0e284261",
+    "draftSha256": "eda4ef6742d2cfd247523467d5f1cdfd949054500f310420902e538a39ed6129",
     "seedAssignmentVersion": 1
   }
 }

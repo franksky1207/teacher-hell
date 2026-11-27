@@ -14,14 +14,155 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "57645afd5fd89a099e15a56cd773eaa46d8a0e812be27e2513b4a287ac37abd0",
+      "checkedAt": "2026-11-27T06:41:18.677Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只記他本人確定看到的部分，推測另外標明不作事實。",
+            "action": "導師已只記他本人確定看到的部分，推測另外標明不作事實。",
+            "tradeoff": "範圍清楚，也可能還不足以完整判斷"
+          },
+          {
+            "id": 2,
+            "text": "由我聯繫真正需要詢問的人，不透過他傳話。",
+            "action": "導師已由我聯繫真正需要詢問的人，不透過他傳話。",
+            "tradeoff": "減輕學生角色壓力，教師工作量增加"
+          },
+          {
+            "id": 3,
+            "text": "若涉及其他承辦職權，按必要範圍交由適當窗口接續。",
+            "action": "導師已若涉及其他承辦職權，按必要範圍交由適當窗口接續。",
+            "tradeoff": "由有權者處理，也可能多一次交接"
+          },
+          {
+            "id": 4,
+            "text": "先修正已有確實依據的不當批評，其餘保持待查。",
+            "action": "導師已先修正已有確實依據的不當批評，其餘保持待查。",
+            "tradeoff": "及時止住已知錯誤，也會留下尚未釐清部分"
+          },
+          {
+            "id": 5,
+            "text": "另約他回談公開後的擔心，不要求再增加證詞。",
+            "action": "導師已另約他回談公開後的擔心，不要求再增加證詞。",
+            "tradeoff": "能處理參與後的壓力，也占額外時間"
+          },
+          {
+            "id": 6,
+            "text": "向相關人說明調查由成人負責，不透露是哪個學生先來找。",
+            "action": "導師已向相關人說明調查由成人負責，不透露是哪個學生先來找。",
+            "tradeoff": "減少同儕猜測，但仍不能保證大家完全不猜"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想找人替我跑腿，另找同事談自己的煩，不丟給他接。",
+          "action": "導師已在雙方可用時間向適當同事表達自己想把查核轉給熟悉學生的挫折，不透露可識別事件或證詞，不延誤必要辦理、不求對方代查",
+          "tradeoff": "用掉自己的空檔，也得接受同事未必有空聽"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 810934534
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "73afa29121b6aa85ec4818e106094c87ddde05180e5edd42d1788faf65332247"
+      },
+      "consequenceDirections": {
+        "A": "教師可能得到情緒支持，也可能發現仍得自己做；目擊學生不必安撫成人或增加證詞，正式核查照原責任接續。",
+        "B": "教師須持續避免不必要揭露，不能要求學生自行保證沉默。",
+        "C": "學生可能需要其他支持，不必以持續幫查作交換。",
+        "D": "各人可自行表達，不能以誰不願回覆就直接判定。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意複核發現投影片拆頁、資料整理交接及非校務代傳界線被其他候選涵蓋。分別改為可讀教材問答、教師向同事談自身挫折、合法接收者各自確認收件，保留必要前提與四碼因果。各依原工具真實重抽一次，完整保留舊證據與理由。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只記他本人確定看到的部分，推測另外標明不作事實。",
+                "action": "導師已只記他本人確定看到的部分，推測另外標明不作事實。",
+                "tradeoff": "範圍清楚，也可能還不足以完整判斷"
+              },
+              {
+                "id": 2,
+                "text": "由我聯繫真正需要詢問的人，不透過他傳話。",
+                "action": "導師已由我聯繫真正需要詢問的人，不透過他傳話。",
+                "tradeoff": "減輕學生角色壓力，教師工作量增加"
+              },
+              {
+                "id": 3,
+                "text": "若涉及其他承辦職權，按必要範圍交由適當窗口接續。",
+                "action": "導師已若涉及其他承辦職權，按必要範圍交由適當窗口接續。",
+                "tradeoff": "由有權者處理，也可能多一次交接"
+              },
+              {
+                "id": 4,
+                "text": "先修正已有確實依據的不當批評，其餘保持待查。",
+                "action": "導師已先修正已有確實依據的不當批評，其餘保持待查。",
+                "tradeoff": "及時止住已知錯誤，也會留下尚未釐清部分"
+              },
+              {
+                "id": 5,
+                "text": "另約他回談公開後的擔心，不要求再增加證詞。",
+                "action": "導師已另約他回談公開後的擔心，不要求再增加證詞。",
+                "tradeoff": "能處理參與後的壓力，也占額外時間"
+              },
+              {
+                "id": 6,
+                "text": "向相關人說明調查由成人負責，不透露是哪個學生先來找。",
+                "action": "導師已向相關人說明調查由成人負責，不透露是哪個學生先來找。",
+                "tradeoff": "減少同儕猜測，但仍不能保證大家完全不猜"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我想替他省掉再跑一次的麻煩，自己在工作時間把現有資料整理好交接。",
+              "action": "導師已自行整理已取得且依法可移交的必要資料與未決問題，於適當權限內交接，不捏造補齊、不加派學生蒐證。",
+              "tradeoff": "占我的備課空檔，也得承認資料仍有缺口"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3504788212
+            },
+            "selectedIds": [
+              5,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "c2e525eb39dfb844164230c2393ebfe0fe10f7e6e93ccb80dc22a8744f2fdc42"
+          },
+          "previousConsequenceDirections": {
+            "A": "後續承辦能看見既有事實，不把學生又叫回來重述當作方便",
+            "B": "對已被責怪者可做必要更正，不把未查部分順勢說成全部沒事。",
+            "C": "學生可能需要其他支持，不必以持續幫查作交換。",
+            "D": "各人可自行表達，不能以誰不願回覆就直接判定。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "358b5f676541f68fc584901223a4a6ea2edcd53793e94d71e46795cf5a65e061",
+    "draftSha256": "57645afd5fd89a099e15a56cd773eaa46d8a0e812be27e2513b4a287ac37abd0",
     "seedAssignmentVersion": 1
   }
 }

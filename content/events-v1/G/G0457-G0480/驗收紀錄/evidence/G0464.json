@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c20670d6d75b64269c6c2ebc5a3ac9b048e05435c1e5b21ee308cc6193eed56b",
+      "checkedAt": "2026-11-27T06:41:18.668Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒水壺，這個月不約運動。",
+            "action": "導師已婉拒水壺，這個月不約運動。",
+            "tradeoff": "休息安排清楚，也少了固定碰面的機會"
+          },
+          {
+            "id": 2,
+            "text": "只同意想走時再聯繫，不排每週固定任務。",
+            "action": "導師已只同意想走時再聯繫，不排每週固定任務。",
+            "tradeoff": "保留偶爾同行，也可能整月都沒成行"
+          },
+          {
+            "id": 3,
+            "text": "借下水壺但不承諾同行，先說好歸還時間。",
+            "action": "導師已借下水壺但不承諾同行，先說好歸還時間。",
+            "tradeoff": "物品與行程分開，也可能仍被誤會會一起跑"
+          },
+          {
+            "id": 4,
+            "text": "改約不涉及運動的短碰面，前提是雙方都有空。",
+            "action": "導師已改約不涉及運動的短碰面，前提是雙方都有空。",
+            "tradeoff": "友情可續，也多一項私人排程"
+          },
+          {
+            "id": 5,
+            "text": "請他照原跑團計畫，不為我的休跑更改路線。",
+            "action": "導師已請他照原跑團計畫，不為我的休跑更改路線。",
+            "tradeoff": "不讓一人影響全團，也少了被照顧的方便"
+          },
+          {
+            "id": 6,
+            "text": "先把自己的休跑訊息告知需要知道的跑團聯絡人，不請同事代為說服。",
+            "action": "導師已先把自己的休跑訊息告知需要知道的跑團聯絡人，不請同事代為說服。",
+            "tradeoff": "減少轉述，也得自己面對勸說"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天連散步都不想談，先回家睡，水壺也不拿。",
+          "action": "導師已在無後續必要職務、交通安全可行且無未完私人承諾下結束今日聚談返家休息，未承諾整月與人斷聯或由同事代辦。",
+          "tradeoff": "放棄這段聊天，也可能被覺得太直接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2451212099
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "08ab9bfc1f1557e39ec1a7c94f6d8cd987c4f2ac632b447d7abab2205819f411"
+      },
+      "consequenceDirections": {
+        "A": "同事可繼續夜跑，兩人要接受一段各自行動。",
+        "B": "對方可能更想跑步而婉拒，兩種選擇都可保留。",
+        "C": "教師得到當晚的安靜，之後仍要自己處理朋友的失落",
+        "D": "同事不能按固定空檔等人，導師須明說沒有預約。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e3b75f0fe2fa929c20b5e4aefa6fa3159c4557644b3c2ad198aee5dd5eb0e90b",
+    "draftSha256": "c20670d6d75b64269c6c2ebc5a3ac9b048e05435c1e5b21ee308cc6193eed56b",
     "seedAssignmentVersion": 1
   }
 }

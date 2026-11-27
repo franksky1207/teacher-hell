@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e37956e7aacfa38805ccc0f0dca90f41fa3ffbd244fa8335a2ad016461a33f63",
+      "checkedAt": "2026-11-27T06:41:18.679Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消我有權撤回的個人排名，向承辦提出其餘不當比較的更正。",
+            "action": "導師已取消我有權撤回的個人排名，向承辦提出其餘不當比較的更正。",
+            "tradeoff": "不再靠照片排人，也失去現成展示方式"
+          },
+          {
+            "id": 2,
+            "text": "改用課內確實完成且可授權使用的成果，不以留校拍照作條件。",
+            "action": "導師已改用課內確實完成且可授權使用的成果，不以留校拍照作條件。",
+            "tradeoff": "較貼近實際，也多一次選材與核對"
+          },
+          {
+            "id": 3,
+            "text": "把展示限於作品，不附教師投入程度的推論。",
+            "action": "導師已把展示限於作品，不附教師投入程度的推論。",
+            "tradeoff": "減少人身比較，也可能讓校方覺得故事不夠鮮明"
+          },
+          {
+            "id": 4,
+            "text": "讓老師自己選願意提供的一項，不要求為了排名補拍。",
+            "action": "導師已讓老師自己選願意提供的一項，不要求為了排名補拍。",
+            "tradeoff": "保留自主，也可能沒有新素材"
+          },
+          {
+            "id": 5,
+            "text": "請承辦說清楚真正需要哪些資料，取消我自行追加的留校協拍。",
+            "action": "導師已請承辦說清楚真正需要哪些資料，取消我自行追加的留校協拍。",
+            "tradeoff": "減少多餘負擔，也要承認有些要求是我加的"
+          },
+          {
+            "id": 6,
+            "text": "另約正常工作時間聽他說明課內做法，不急著再拿去宣傳。",
+            "action": "導師已另約正常工作時間聽他說明課內做法，不急著再拿去宣傳。",
+            "tradeoff": "能看見專業，也可能暫時沒有可公開成品"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再拿這個當自己的帶班招牌，申請把我的個人介紹也撤下。",
+          "action": "導師已向承辦申請撤下本人可自主拒絕的非必要個人宣傳介紹，依正式程序處理，不擅刪他人作品或學生資料。",
+          "tradeoff": "少一次自我曝光，也不能替全校決定展示內容"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 443260955
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "dc5335dfcd5601a8deb110eed347263d1b04085fa7345bf76b28e0ae9131e70c"
+      },
+      "consequenceDirections": {
+        "A": "成果可另被說明，不能把撤排名當所有工作不需回饋。",
+        "B": "導師退出個人宣傳後仍須完成必要校務，不要求同事跟著撤",
+        "C": "作品可獨立呈現，不能靠暗示再補回誰最認真。",
+        "D": "展示規模可縮小，不能把拒絕提供當不合作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82b2ebf46f2966c8558d903185d036c364ce216ebc4c083812b8a4bbf4b23c3a",
+    "draftSha256": "e37956e7aacfa38805ccc0f0dca90f41fa3ffbd244fa8335a2ad016461a33f63",
     "seedAssignmentVersion": 1
   }
 }

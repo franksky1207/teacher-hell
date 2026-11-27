@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eb06958119bdef558636dae1e4cbb6a6d1a9b025381185cb85271def546106ad",
+      "checkedAt": "2026-11-27T06:41:18.670Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在適當私下場合逐字核對實際說過的內容與來源。",
+            "action": "導師已在適當私下場合逐字核對實際說過的內容與來源。",
+            "tradeoff": "能釐清原話，也得接受自己可能確實說得不當"
+          },
+          {
+            "id": 2,
+            "text": "請原交流主持者提供必要紀錄，對不當可辨識內容按原範圍補正。",
+            "action": "導師已請原交流主持者提供必要紀錄，對不當可辨識內容按原範圍補正。",
+            "tradeoff": "有第三方依據，也會多一道程序"
+          },
+          {
+            "id": 3,
+            "text": "先書面交代我選用該例的理由，讓同事有時間看完再談。",
+            "action": "導師已先書面交代我選用該例的理由，讓同事有時間看完再談。",
+            "tradeoff": "減少當場互搶話，也可能被認為太官樣"
+          },
+          {
+            "id": 4,
+            "text": "經雙方同意邀適當主管協助談話，不請熟人來投票。",
+            "action": "導師已經雙方同意邀適當主管協助談話，不請熟人來投票。",
+            "tradeoff": "有較穩定主持，也增加正式感與排程"
+          },
+          {
+            "id": 5,
+            "text": "停止後續使用這個可辨識案例，改以我自己的教學失誤作素材。",
+            "action": "導師已停止後續使用這個可辨識案例，改以我自己的教學失誤作素材。",
+            "tradeoff": "不再借他人承擔，也要重備分享內容"
+          },
+          {
+            "id": 6,
+            "text": "將教學問題另約工作時間談，今天先處理公開評價造成的影響。",
+            "action": "導師已將教學問題另約工作時間談，今天先處理公開評價造成的影響。",
+            "tradeoff": "把兩件事拆開，也可能談得較久"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想找人評理，但這回先不打給自己的熟同事站台。",
+          "action": "導師已將自己擬給熟同事評理的訊息留在未送草稿，改只依適當當事人範圍談話；不隱匿依法應通報事項或禁止同事尋求合法協助",
+          "tradeoff": "少了情緒支援的快感，得自己承受不自在"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3833938275
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "7179d0fa312792ccd9d30ff813b9839f6fa8384fd1efb7482bb73ebed1ee3f27"
+      },
+      "consequenceDirections": {
+        "A": "談話不再繼續增加旁觀者，教師可另在不洩私事下尋求支持",
+        "B": "更正到達原聽眾，不擴大成全校辯論。",
+        "C": "對方可逐點提出疑問，教師不能只用書面拒絕回應。",
+        "D": "對方不必接受批評才有資格要求尊重，專業疑問亦未消失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "73a1abb09fa1b975f3c7e6e1c5b95a670b6bd3c0733c5cfc650fa1091f20495c",
+    "draftSha256": "eb06958119bdef558636dae1e4cbb6a6d1a9b025381185cb85271def546106ad",
     "seedAssignmentVersion": 1
   }
 }

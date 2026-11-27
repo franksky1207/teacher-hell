@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "10658f3bbdcd0eb4c06a36f474dcfce976a5f23516a1d568fd46d8ced007209b",
+      "checkedAt": "2026-11-27T06:41:18.685Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留成人試教，不讓學生為觀摩增加演出。",
+            "action": "導師已保留成人試教，不讓學生為觀摩增加演出。",
+            "tradeoff": "可利用排好的短段，也少了真實班級互動"
+          },
+          {
+            "id": 2,
+            "text": "取消整班稱號，只保留原來同意範圍內的正常課堂觀摩。",
+            "action": "導師已取消整班稱號，只保留原來同意範圍內的正常課堂觀摩。",
+            "tradeoff": "不包裝成招牌，也要重新確認旁觀是否影響學生"
+          },
+          {
+            "id": 3,
+            "text": "只展示確實自願且取得授權的成品，不安排現場學生表演。",
+            "action": "導師已只展示確實自願且取得授權的成品，不安排現場學生表演。",
+            "tradeoff": "可看見作品，但少了即時問答"
+          },
+          {
+            "id": 4,
+            "text": "把短段縮成教師交流，談既有教案與實際困難。",
+            "action": "導師已把短段縮成教師交流，談既有教案與實際困難。",
+            "tradeoff": "不再需要全班配合，也可能不如預期好看"
+          },
+          {
+            "id": 5,
+            "text": "若原方案無法保住同意範圍，申請取消這次非必要觀摩。",
+            "action": "導師已若原方案無法保住同意範圍，申請取消這次非必要觀摩。",
+            "tradeoff": "不勉強補場，也讓排程工夫無法照原樣使用"
+          },
+          {
+            "id": 6,
+            "text": "請承辦逐項重核對原答應的內容，超出部分先不列入。",
+            "action": "導師已請承辦逐項重核對原答應的內容，超出部分先不列入。",
+            "tradeoff": "避免越排越大，但要多做一次範圍確認"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得那個好看的名號，把自己的額外宣傳簡介先撤掉，別拿學生補我的面子。",
+          "action": "導師已撤回本人非必要且可自主取消的觀摩宣傳簡介，不擅改其他教師資料，必要課務照既有權責安排。",
+          "tradeoff": "少一次曝光，也得自己向邀請方改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1839558124
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "13637e6e0a8112a5e58a816d5917234766026ddca06b07ca74bf9ca70e11a4a4"
+      },
+      "consequenceDirections": {
+        "A": "最後方案可能很小，仍以實際同意與課務可行為準。",
+        "B": "有必要退出安排的學生可受妥善照顧，不因少人補演。",
+        "C": "觀摩若續辦只能按真實範圍，教師不再用整班替個人宣傳撐場",
+        "D": "作者可限制用途，未提供作品者不需解釋。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92fc72c8523c96275f1c45a5f83c83d0459ce2faecd1850b4e2f8c3f50890b89",
+    "draftSha256": "10658f3bbdcd0eb4c06a36f474dcfce976a5f23516a1d568fd46d8ced007209b",
     "seedAssignmentVersion": 1
   }
 }

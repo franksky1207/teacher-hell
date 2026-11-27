@@ -14,14 +14,155 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ce000c4efc8dc809777be844cd3b7902eb1c1cff0dc5b46650fd6dc80103a1cb",
+      "checkedAt": "2026-11-27T06:41:18.676Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "從實際座位確認可讀程度，再調整既有投影。",
+            "action": "導師已從實際座位確認可讀程度，再調整既有投影。",
+            "tradeoff": "根據現況改，不保證設備能再放大到足夠"
+          },
+          {
+            "id": 2,
+            "text": "用學校現有可提供的紙本或檔案，讓各桌能自行看。",
+            "action": "導師已用學校現有可提供的紙本或檔案，讓各桌能自行看。",
+            "tradeoff": "增加取得方式，也要準備與分送"
+          },
+          {
+            "id": 3,
+            "text": "先不用這張投影，拿現有可讀教材帶一段問答。",
+            "action": "導師已停止使用該滿版投影，改以現有可讀教材進行師生問答，必要可及資訊仍依共同前提提供，不依賴學生私機",
+            "tradeoff": "換回可以看清楚的內容，但不能照原滿版安排一口氣講完"
+          },
+          {
+            "id": 4,
+            "text": "讓他收好自己的平板，今天不以個人分享補學校不足。",
+            "action": "導師已讓他收好自己的平板，今天不以個人分享補學校不足。",
+            "tradeoff": "界線清楚，也失去眼前便利"
+          },
+          {
+            "id": 5,
+            "text": "在場地與照看允許下分桌近看，輪替者另有可做的同目標工作。",
+            "action": "導師已在場地與照看允許下分桌近看，輪替者另有可做的同目標工作。",
+            "tradeoff": "能利用有限設備，但要安排等待"
+          },
+          {
+            "id": 6,
+            "text": "向設備與教學承辦反映末排實際看不到，先以可讀替代方式上課。",
+            "action": "導師已向設備與教學承辦反映末排實際看不到，先以可讀替代方式上課。",
+            "tradeoff": "處理長期問題需要等待，當節仍多做準備"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我原本那張漂亮滿版不留了，自己拆成好幾頁重新做。",
+          "action": "導師已自行將有權修改的自製教材版面拆頁重排，保留必要資訊、不要求學生代改或以私機支援。",
+          "tradeoff": "捨掉設計得意作，也多花備課時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2184337845
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "5bc5d86e4de478652d773957f33ecdf881e06d8931f88cb2d4fa852fb98dc1e4"
+      },
+      "consequenceDirections": {
+        "A": "學生不必擠成一圈，進度也會不同步。",
+        "B": "維修或調整結果未定，不能讓等待者漏掉必要課程。",
+        "C": "可讀性有機會改善，仍須讓真正在末排的人驗看",
+        "D": "問答能顯出哪些內容沒被接住，進度會較慢；需要視覺資訊者仍須取得可讀材料，不只叫大家用聽的。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意複核發現投影片拆頁、資料整理交接及非校務代傳界線被其他候選涵蓋。分別改為可讀教材問答、教師向同事談自身挫折、合法接收者各自確認收件，保留必要前提與四碼因果。各依原工具真實重抽一次，完整保留舊證據與理由。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "從實際座位確認可讀程度，再調整既有投影。",
+                "action": "導師已從實際座位確認可讀程度，再調整既有投影。",
+                "tradeoff": "根據現況改，不保證設備能再放大到足夠"
+              },
+              {
+                "id": 2,
+                "text": "用學校現有可提供的紙本或檔案，讓各桌能自行看。",
+                "action": "導師已用學校現有可提供的紙本或檔案，讓各桌能自行看。",
+                "tradeoff": "增加取得方式，也要準備與分送"
+              },
+              {
+                "id": 3,
+                "text": "把本段必要內容分次呈現，不同時塞滿畫面。",
+                "action": "導師已把本段必要內容分次呈現，不同時塞滿畫面。",
+                "tradeoff": "字能較大，也會拉長切換與講解時間"
+              },
+              {
+                "id": 4,
+                "text": "讓他收好自己的平板，今天不以個人分享補學校不足。",
+                "action": "導師已讓他收好自己的平板，今天不以個人分享補學校不足。",
+                "tradeoff": "界線清楚，也失去眼前便利"
+              },
+              {
+                "id": 5,
+                "text": "在場地與照看允許下分桌近看，輪替者另有可做的同目標工作。",
+                "action": "導師已在場地與照看允許下分桌近看，輪替者另有可做的同目標工作。",
+                "tradeoff": "能利用有限設備，但要安排等待"
+              },
+              {
+                "id": 6,
+                "text": "向設備與教學承辦反映末排實際看不到，先以可讀替代方式上課。",
+                "action": "導師已向設備與教學承辦反映末排實際看不到，先以可讀替代方式上課。",
+                "tradeoff": "處理長期問題需要等待，當節仍多做準備"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我原本那張漂亮滿版不留了，自己拆成好幾頁重新做。",
+              "action": "導師已自行將有權修改的自製教材版面拆頁重排，保留必要資訊、不要求學生代改或以私機支援。",
+              "tradeoff": "捨掉設計得意作，也多花備課時間"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1104714337
+            },
+            "selectedIds": [
+              1,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "531f492dfec407e93bd0e8c43f78ae67c695b3ebb9dfa3bf1506687265549359"
+          },
+          "previousConsequenceDirections": {
+            "A": "可讀性有機會改善，仍須讓真正在末排的人驗看",
+            "B": "教師須使用學校可用方式接續，不把未出借說成不合作。",
+            "C": "若仍讀不到，必須換方式提供必要內容。",
+            "D": "學生不必擠成一圈，進度也會不同步。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c983a425006cdaa5ca5208f804e5a48fd5fe300b952616855262fec605c4e9b8",
+    "draftSha256": "ce000c4efc8dc809777be844cd3b7902eb1c1cff0dc5b46650fd6dc80103a1cb",
     "seedAssignmentVersion": 1
   }
 }

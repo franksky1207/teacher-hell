@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1b1e02bbb94f26428d2acdeac7d45efafffb818003f87042bef5bf2a42d8d525",
+      "checkedAt": "2026-11-27T06:41:18.680Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "當場取消我能決定的一件非必要工作，不叫他換形式補回。",
+            "action": "導師已當場取消我能決定的一件非必要工作，不叫他換形式補回。",
+            "tradeoff": "真正減量，也少了原本期待的成品"
+          },
+          {
+            "id": 2,
+            "text": "陪他向組內交回班刊校字，讓實際接手者明確答應。",
+            "action": "導師已陪他向組內交回班刊校字，讓實際接手者明確答應。",
+            "tradeoff": "不再一人扛，但其他人會增加工作"
+          },
+          {
+            "id": 3,
+            "text": "在我有權決定的範圍接受實作補件延後；他科則替他詢問原教師。",
+            "action": "導師已在我有權決定的範圍接受實作補件延後；他科則替他詢問原教師。",
+            "tradeoff": "保住約好的訪談，補件回饋會晚"
+          },
+          {
+            "id": 4,
+            "text": "先收他已完成的部分，不要求為了三份都完整而全部扣著。",
+            "action": "導師已先收他已完成的部分，不要求為了三份都完整而全部扣著。",
+            "tradeoff": "留下實際成果，仍有缺漏要處理"
+          },
+          {
+            "id": 5,
+            "text": "聯繫原訪談對象詢問可否改時，由對方自由決定。",
+            "action": "導師已聯繫原訪談對象詢問可否改時，由對方自由決定。",
+            "tradeoff": "有機會騰出時間，也可能無法配合"
+          },
+          {
+            "id": 6,
+            "text": "在正常工作時間和相關負責者一起重排這次到期項目。",
+            "action": "導師已在正常工作時間和相關負責者一起重排這次到期項目。",
+            "tradeoff": "不是只教他排程，但要多一道成人協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再用一句「快去做」把人送走，自己接下有限的一頁校字。",
+          "action": "導師已在自身可用工作時間、經班刊負責者確認後接下一頁非評量代作的校字，範圍明確，不代學生完成受評實作或訪談。",
+          "tradeoff": "用掉我的備課空檔，也不能讓他默認往後都由我救場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3908811585
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "0e275c3591fdef76cde32558777b40f7cf320c029e89fccbda62f02a56555a75"
+      },
+      "consequenceDirections": {
+        "A": "若改約不成就須取捨其他任務，不把等待成本丟給受訪者。",
+        "B": "學生能保住其他承諾，教師須接受缺少一份成果。",
+        "C": "這次能交出一頁，剩餘份量仍要真實取捨",
+        "D": "延期須有可行新時間，不是把負荷推到下一個滿檔日。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7f7566e9a6c18d2a79117e7da639e62fe0200352616108c0cad46736023a48a1",
+    "draftSha256": "1b1e02bbb94f26428d2acdeac7d45efafffb818003f87042bef5bf2a42d8d525",
     "seedAssignmentVersion": 1
   }
 }

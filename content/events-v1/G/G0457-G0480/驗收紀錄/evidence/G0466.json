@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fef022993fc7ee29ac59009a43f5f33434d81eb0985eafd331746ceeabae1289",
+      "checkedAt": "2026-11-27T06:41:18.672Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請體育老師依全班需求分配可用安全區，不替熟悉的一組先保留。",
+            "action": "導師已請體育老師依全班需求分配可用安全區，不替熟悉的一組先保留。",
+            "tradeoff": "分配有依據，也可能這組輪不到理想位置"
+          },
+          {
+            "id": 2,
+            "text": "在授課老師同意下縮小玩法，只用目前已准許的範圍。",
+            "action": "導師已在授課老師同意下縮小玩法，只用目前已准許的範圍。",
+            "tradeoff": "保留遊戲，動作與人數需調整"
+          },
+          {
+            "id": 3,
+            "text": "改成低速的基本動作練習，由授課老師確認能否進行。",
+            "action": "導師已改成低速的基本動作練習，由授課老師確認能否進行。",
+            "tradeoff": "降低對空間的需求，也少了原玩法的刺激"
+          },
+          {
+            "id": 4,
+            "text": "讓各組依正式分配輪替，不由這名學生代表全班排順序。",
+            "action": "導師已讓各組依正式分配輪替，不由這名學生代表全班排順序。",
+            "tradeoff": "可共享有限場地，但有等待時間"
+          },
+          {
+            "id": 5,
+            "text": "請學生先說哪些規則能改、哪些一定需要大空間，再交授課老師判斷。",
+            "action": "導師已請學生先說哪些規則能改、哪些一定需要大空間，再交授課老師判斷。",
+            "tradeoff": "保留設計參與，也可能發現本玩法當下不可行"
+          },
+          {
+            "id": 6,
+            "text": "若沒有適合空間，這次先改做課程內其他允許活動。",
+            "action": "導師已若沒有適合空間，這次先改做課程內其他允許活動。",
+            "tradeoff": "不為承諾硬擠場地，也會讓原本期待落空"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想玩那個規則，先在紙上排一局，等有空地再決定，不搶今天場地。",
+          "action": "導師已於自身可用時間用紙面自行推演玩法，不進入施工區、不安排未准許實測、不替任何組預約優先使用。",
+          "tradeoff": "只能想像過乾癮，也可能發現設計根本跑不起來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 71839499
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "a3d30a3b3789a9095cb2df3d25498210726445728ec7e122988ea3cfebf1a387"
+      },
+      "consequenceDirections": {
+        "A": "教師可保留自己的好奇，學生不需陪著試或額外留校",
+        "B": "學生會看到規則改動的實際成本，而不是只換地點。",
+        "C": "教師須交代替代內容，不能把暫停說成學生不乖受罰。",
+        "D": "學生須按實際場地改玩法，而非以先開口取得優先。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "df1d53ca9ae96d2e50b658f972798453315a2c7a5a5f6f98ed8798d576255d72",
+    "draftSha256": "fef022993fc7ee29ac59009a43f5f33434d81eb0985eafd331746ceeabae1289",
     "seedAssignmentVersion": 1
   }
 }

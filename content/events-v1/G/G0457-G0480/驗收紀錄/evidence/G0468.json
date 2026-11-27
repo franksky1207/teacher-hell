@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b017c79c8e98f993ae8fcdb5b302ac76eb54d88d29d4fb9ba4c3a872879c4e39",
+      "checkedAt": "2026-11-27T06:41:18.675Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他自己向店員道謝，我不跟著說私人緣由。",
+            "action": "導師已讓他自己向店員道謝，我不跟著說私人緣由。",
+            "tradeoff": "保留界線，也可能錯過共同道別的時刻"
+          },
+          {
+            "id": 2,
+            "text": "只一起聽到他原定離開的時間，不特別致詞。",
+            "action": "導師已只一起聽到他原定離開的時間，不特別致詞。",
+            "tradeoff": "共享最後幾分鐘，歌可能還沒播完"
+          },
+          {
+            "id": 3,
+            "text": "若店家願收，留一句不署名的簡短謝意。",
+            "action": "導師已若店家願收，留一句不署名的簡短謝意。",
+            "tradeoff": "表達心意，也不能保證被保存或辨認"
+          },
+          {
+            "id": 4,
+            "text": "向店員單獨說謝謝，但只說我願意公開的部分。",
+            "action": "導師已向店員單獨說謝謝，但只說我願意公開的部分。",
+            "tradeoff": "有親自告別，也要承受對方可能追問"
+          },
+          {
+            "id": 5,
+            "text": "今天先離開，不為店將停業勉強自己出面。",
+            "action": "導師已今天先離開，不為店將停業勉強自己出面。",
+            "tradeoff": "保住安靜，也可能之後有點遺憾"
+          },
+          {
+            "id": 6,
+            "text": "問店家是否有正常可買的唱片，先看清價格再決定要不要自購。",
+            "action": "導師已問店家是否有正常可買的唱片，先看清價格再決定要不要自購。",
+            "tradeoff": "可帶走音樂，但花錢也留不住試聽場所"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想把這首聽完，自己留下，不叫他陪我晚回家。",
+          "action": "導師已確認店家仍正常開放、自身私人安排與安全返程可行後自願多留，不要求延長營業或透露共同來店原因。",
+          "tradeoff": "用掉自己的晚間空檔，也可能越聽越捨不得走"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1085805642
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "c2368068caa6df57d6ef89d3c8312fb0c31b4bf51f60452716a6dd2882d763f7"
+      },
+      "consequenceDirections": {
+        "A": "教師的消費是私人選擇，不要求店員保留或優惠。",
+        "B": "同事照原時間離開，教師要自己決定真正的告別點",
+        "C": "兩人可各自帶走片段，不用把道別說完整。",
+        "D": "同事可完成心意，不替導師解釋為什麼常來。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5240321507f1b42c89f5ce2f4b4200b4cedab1fa513ecd66f2c8849aa1cb72bf",
+    "draftSha256": "b017c79c8e98f993ae8fcdb5b302ac76eb54d88d29d4fb9ba4c3a872879c4e39",
     "seedAssignmentVersion": 1
   }
 }

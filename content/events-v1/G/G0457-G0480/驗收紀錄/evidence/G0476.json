@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "19f6b26027936b64a8385695f226cda7891e31ac48968e9caabb1f374292fd25",
+      "checkedAt": "2026-11-27T06:41:18.681Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把我能接回的談話接回，不再預設他有空。",
+            "action": "導師已把我能接回的談話接回，不再預設他有空。",
+            "tradeoff": "增加我的工作，也得確認可用時間"
+          },
+          {
+            "id": 2,
+            "text": "只在雙方事先同意的短時段協作，到點確實結束。",
+            "action": "導師已只在雙方事先同意的短時段協作，到點確實結束。",
+            "tradeoff": "時間可預期，也可能接不完原本的人數"
+          },
+          {
+            "id": 3,
+            "text": "向校內支持窗口詢問正式分擔，不用私人熱心補固定缺口。",
+            "action": "導師已向校內支持窗口詢問正式分擔，不用私人熱心補固定缺口。",
+            "tradeoff": "有較可持續安排的可能，也需等人力確認"
+          },
+          {
+            "id": 4,
+            "text": "將非急迫談話改約正常工作時間，不集中在放學前。",
+            "action": "導師已將非急迫談話改約正常工作時間，不集中在放學前。",
+            "tradeoff": "減少臨時等候，也會讓學生多等幾天"
+          },
+          {
+            "id": 5,
+            "text": "和他列出本週我另外請託的工作，先撤回可取消的部分。",
+            "action": "導師已和他列出本週我另外請託的工作，先撤回可取消的部分。",
+            "tradeoff": "看見負荷，也會少掉我原想完成的事情"
+          },
+          {
+            "id": 6,
+            "text": "讓學生知道該依原校內求助方式找人，不把他當我的固定分身。",
+            "action": "導師已讓學生知道該依原校內求助方式找人，不把他當我的固定分身。",
+            "tradeoff": "降低誤認，也要重說可用管道"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得放手的那份教法交流先不辦了，把自己的時段騰出來。",
+          "action": "導師已取消自身非必要、可自主撤回的教法交流安排，將原可用工作時段留給既有職務，不要求同事以感謝為由續留。",
+          "tradeoff": "少了我想分享的成績，也須自己改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2743763918
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "799b6b456b15a6e79a80ec729238a75323364c62ffcded72e4d4ce21aa320ecb"
+      },
+      "consequenceDirections": {
+        "A": "同事能知道哪些真的不用再做，不只得到一句辛苦了。",
+        "B": "明確預約能接續，必要急迫事項仍須即時處理。",
+        "C": "騰出的時間可用於原有工作，不能又偷偷塞進另一個新計畫",
+        "D": "學生不再只找熟悉替代者，導師仍須履行自己的回覆。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a1c6c123ec9af913457f5ddec2906c837200f30777b82ca11ae66b8fbe401017",
+    "draftSha256": "19f6b26027936b64a8385695f226cda7891e31ac48968e9caabb1f374292fd25",
     "seedAssignmentVersion": 1
   }
 }

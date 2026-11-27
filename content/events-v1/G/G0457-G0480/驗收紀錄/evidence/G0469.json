@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "38c3173868219799926ff1fd8ebddad0565e0e5e659cfd259f0eb4d9cd443fc3",
+      "checkedAt": "2026-11-27T06:41:18.675Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先收下他願意交的部分，再私下核對具體經過。",
+            "action": "導師已先收下他願意交的部分，再私下核對具體經過。",
+            "tradeoff": "不逼他當傳話人，也需要後續查證"
+          },
+          {
+            "id": 2,
+            "text": "由適當教師分別聯繫相關學生，不請他把對方拉來。",
+            "action": "導師已由適當教師分別聯繫相關學生，不請他把對方拉來。",
+            "tradeoff": "減少正面衝突，也要協調各人時間"
+          },
+          {
+            "id": 3,
+            "text": "在正常課內重做一輪沒有固定領頭的讀書練習。",
+            "action": "導師已在正常課內重做一輪沒有固定領頭的讀書練習。",
+            "tradeoff": "改變互動方式，也打亂原本分工"
+          },
+          {
+            "id": 4,
+            "text": "請他先選這次最想釐清的一個問題，不要求一次列完所有不滿。",
+            "action": "導師已請他先選這次最想釐清的一個問題，不要求一次列完所有不滿。",
+            "tradeoff": "降低整理負擔，其他問題可能暫留"
+          },
+          {
+            "id": 5,
+            "text": "經相關人同意再談是否安排有成人主持的共同討論，不當場硬湊。",
+            "action": "導師已經相關人同意再談是否安排有成人主持的共同討論，不當場硬湊。",
+            "tradeoff": "保留對話可能，也可能有人不願"
+          },
+          {
+            "id": 6,
+            "text": "暫由教師接回這次必要分工確認，不讓讀書組自行裁定誰能留下。",
+            "action": "導師已暫由教師接回這次必要分工確認，不讓讀書組自行裁定誰能留下。",
+            "tradeoff": "有清楚安排，也減少學生自治空間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再聽人靠音量搶贏，先把自己原本要主持的自由辯論取消。",
+          "action": "導師已取消自身另加、非必要且尚未進行的自由辯論，改用現有課內個別準備，不以此代替必要查證或學生申訴處理。",
+          "tradeoff": "少了我喜歡的熱烈場面，也得另備正常課內活動"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2906717083
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4cf2819a097609ee4b3b1dbb0400764c4a9cd56c4af256c16829b9699cf270fd"
+      },
+      "consequenceDirections": {
+        "A": "不同人能發言，仍須處理先前實際的不當行為。",
+        "B": "談話可有具體起點，不能因此忽略另有急迫事項。",
+        "C": "各自能說明，必要共同談話仍須評估是否合宜。",
+        "D": "課內可回到具體任務，不以沉默處罰整組"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1a34ba807cdd102001b6086c34bfaf2cce4b17c5d53ef9064151cb97793d76d6",
+    "draftSha256": "38c3173868219799926ff1fd8ebddad0565e0e5e659cfd259f0eb4d9cd443fc3",
     "seedAssignmentVersion": 1
   }
 }

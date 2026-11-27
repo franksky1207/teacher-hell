@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eb765d0fd9051c63ca9416cea85738060cf7c0bcb7cb04b56dd49f3e168295ec",
+      "checkedAt": "2026-11-27T06:41:18.667Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留由學生自己決定的欄位，不要求一定寫成人姓名。",
+            "action": "導師已保留由學生自己決定的欄位，不要求一定寫成人姓名。",
+            "tradeoff": "尊重孩子，也可能無法滿足家長被點名的期待"
+          },
+          {
+            "id": 2,
+            "text": "取消成人署名，改讓學生自願描述一種實際幫忙。",
+            "action": "導師已取消成人署名，改讓學生自願描述一種實際幫忙。",
+            "tradeoff": "看得見支持方式，也少了具名肯定"
+          },
+          {
+            "id": 3,
+            "text": "接受一個可自由留白的自填欄，先確認不影響作業成績。",
+            "action": "導師已接受一個可自由留白的自填欄，先確認不影響作業成績。",
+            "tradeoff": "增加彈性，也須向全班說清楚"
+          },
+          {
+            "id": 4,
+            "text": "讓孩子保留原來的圖，不為了成人意見重做。",
+            "action": "導師已讓孩子保留原來的圖，不為了成人意見重做。",
+            "tradeoff": "不抹掉已完成作品，也可能讓家長覺得未被聽見"
+          },
+          {
+            "id": 5,
+            "text": "另與家長談陪讀過程，和孩子的作業評量分開。",
+            "action": "導師已另與家長談陪讀過程，和孩子的作業評量分開。",
+            "tradeoff": "成人能被聽見，也要另安排時間"
+          },
+          {
+            "id": 6,
+            "text": "請負責這份作業的教師確認原欄位真正用途，再決定是否保留。",
+            "action": "導師已請負責這份作業的教師確認原欄位真正用途，再決定是否保留。",
+            "tradeoff": "不憑單次要求改全班，也需等權責者回覆"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再當家庭頒獎人，今天只回覆我看見的陪讀事實，不替誰排第一。",
+          "action": "導師已就自身實際知悉的陪讀協助作有限回覆，拒絕評比家長貢獻，不把孩子作品或未證實家庭說法當排名依據。",
+          "tradeoff": "少了討好家長的話，也可能讓對方失望"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 122781822
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "ce67d032d0b97b26588e1b53bae1def4b451051f2c1d2439c29b9260f426e6fb"
+      },
+      "consequenceDirections": {
+        "A": "圖像能成立，後續要不要補文字由孩子選。",
+        "B": "回饋可具體但有限，成人仍需自行協商家中分工",
+        "C": "家長可能接受，也可能仍追問教師知道是誰做的嗎。",
+        "D": "不同家庭可填不同關係，不再只認單一照顧者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c7dc46527db2b63b1f917825526ac5ff5b284d71d0ce8b150f39b08d510f4cbd",
+    "draftSha256": "eb765d0fd9051c63ca9416cea85738060cf7c0bcb7cb04b56dd49f3e168295ec",
     "seedAssignmentVersion": 1
   }
 }

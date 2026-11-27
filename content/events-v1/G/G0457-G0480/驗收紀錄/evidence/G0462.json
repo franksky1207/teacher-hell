@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b7cb58ecf2dc617e84adaf6704fea1d6bac4270b1315d2be4bbff01efb9e7e4b",
+      "checkedAt": "2026-11-27T06:41:18.666Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受他明確願意的一段，時間與工作到此為止。",
+            "action": "導師已接受他明確願意的一段，時間與工作到此為止。",
+            "tradeoff": "保留投入，也得接受只能完成局部"
+          },
+          {
+            "id": 2,
+            "text": "重新私下詢問每個人的意願，不以同排一起來算同意。",
+            "action": "導師已重新私下詢問每個人的意願，不以同排一起來算同意。",
+            "tradeoff": "資訊較真實，也多花確認時間"
+          },
+          {
+            "id": 3,
+            "text": "讓他今天先退出這次整理，保留日後自願再加入的可能。",
+            "action": "導師已讓他今天先退出這次整理，保留日後自願再加入的可能。",
+            "tradeoff": "降低必須證明真心的壓力，也失去當下參與"
+          },
+          {
+            "id": 4,
+            "text": "把各段拆成明確小工作，讓願意者自行選，不安排整排包辦。",
+            "action": "導師已把各段拆成明確小工作，讓願意者自行選，不安排整排包辦。",
+            "tradeoff": "分工較可選，原先構想可能做不滿"
+          },
+          {
+            "id": 5,
+            "text": "取消非必要試演，只留下正常課內必做的部分。",
+            "action": "導師已取消非必要試演，只留下正常課內必做的部分。",
+            "tradeoff": "解除額外期待，也讓投入者失望"
+          },
+          {
+            "id": 6,
+            "text": "請他先把這段說明交給我，由我自己完成帶領。",
+            "action": "導師已請他先把這段說明交給我，由我自己完成帶領。",
+            "tradeoff": "學生不需上場，但教師多做一次準備"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再只站著挑別人，自己認領一段沒人選的非必要整理。",
+          "action": "導師已在自身可用工作時間認領明確且有限的一段整理，不動用學生未同意作品、不影響必要職務，不以成人付出換取學生自願。",
+          "tradeoff": "增加自己的工作，仍得接受最後不一定用上"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1153699151
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "981ca58596a639cc349d791958c8e42ac0f2dc27b88d887ba7070c54c1cbe57c"
+      },
+      "consequenceDirections": {
+        "A": "實際意願會決定規模，空缺不由最積極者補齊。",
+        "B": "準備好的片段可由本人保留，不能強收來補成果。",
+        "C": "教師承擔自己的選擇，不以親自做逼學生回來幫忙",
+        "D": "學生能做自己選的工作，不自動成為全組代表。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "76a31fa3fbf3c60d0a4e28b6a194f7457cb10186c4927b256fd08b85e73c38e4",
+    "draftSha256": "b7cb58ecf2dc617e84adaf6704fea1d6bac4270b1315d2be4bbff01efb9e7e4b",
     "seedAssignmentVersion": 1
   }
 }

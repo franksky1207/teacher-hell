@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4781feb13543fe26e6706bcf354605df8f8c66a854b436eed9f4ed9e94705cba",
+      "checkedAt": "2026-11-27T06:41:18.662Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把可核對的訊息與到場時點整理給主管，不替主管作考核結論。",
+            "action": "導師已把可核對的訊息與到場時點整理給主管，不替主管作考核結論。",
+            "tradeoff": "資料較完整，也得承認自己未及時轉達的部分"
+          },
+          {
+            "id": 2,
+            "text": "請主管召集真正涉及排課與通知的人確認，不在辦公室口頭互判。",
+            "action": "導師已請主管召集真正涉及排課與通知的人確認，不在辦公室口頭互判。",
+            "tradeoff": "來源能對齊，也會多一次工作協調"
+          },
+          {
+            "id": 3,
+            "text": "由我直接向原收到錯誤說法的人補正，不請他再逐一自證。",
+            "action": "導師已由我直接向原收到錯誤說法的人補正，不請他再逐一自證。",
+            "tradeoff": "承擔傳達，也會暴露先前說得過快"
+          },
+          {
+            "id": 4,
+            "text": "往後只依課務確認的最新版本交接，不由我私下重排。",
+            "action": "導師已往後只依課務確認的最新版本交接，不由我私下重排。",
+            "tradeoff": "減少多頭通知，也可能得等正式回覆"
+          },
+          {
+            "id": 5,
+            "text": "在有權承辦確認前，暫不新增由他單獨承擔的補班安排。",
+            "action": "導師已在有權承辦確認前，暫不新增由他單獨承擔的補班安排。",
+            "tradeoff": "避免錯誤責任擴大，但空缺仍須由校方妥善補上"
+          },
+          {
+            "id": 6,
+            "text": "私下問他疲勞是否需要依校內制度調整，不把關心當責任交換。",
+            "action": "導師已私下問他疲勞是否需要依校內制度調整，不把關心當責任交換。",
+            "tradeoff": "可能接上實際協助，也不能自行減免課務"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再靠記憶說自己有通知，自己把每次交接留成簡短工作紀錄。",
+          "action": "導師已記錄自身負責的必要交接時間與來源，依校規限制存取與保存，不另蒐集同事私人行蹤。",
+          "tradeoff": "增加自己的例行整理，也可能留下對自己不利的時間點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3846771467
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "100cdf3e9c1d8782b45de5b6afabfc699599a49dd0b1ea7834264bda633b60c4"
+      },
+      "consequenceDirections": {
+        "A": "正式釐清後才決定後續，不能以等待為由放任無人授課。",
+        "B": "之後能核對實際送達，不再靠同事反覆截圖證明",
+        "C": "不同版本可被放在一起核實，不能只選對自己有利的訊息。",
+        "D": "誤傳範圍能被縮回，正式紀錄仍由主管處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e702d95945dbd992024f3d5f58e3e910efb9673241bb766d9398a6904a4e5e84",
+    "draftSha256": "4781feb13543fe26e6706bcf354605df8f8c66a854b436eed9f4ed9e94705cba",
     "seedAssignmentVersion": 1
   }
 }

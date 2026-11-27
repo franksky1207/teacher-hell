@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f6714f67607460185205cedeacc3f8a797c031a9044308aa47fe32e361574541",
+      "checkedAt": "2026-11-27T06:23:07.074Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他向兩位同學收回未確認的說法，不再帶人走側門。",
+            "action": "導師已請他向兩位同學收回未確認的說法，不再帶人走側門。",
+            "tradeoff": "把話講清楚，會有點丟臉"
+          },
+          {
+            "id": 2,
+            "text": "替他們問正常開門時間，依確認後的入口取餐。",
+            "action": "導師已替他們問正常開門時間，依確認後的入口取餐。",
+            "tradeoff": "不再猜近路，但可能趕不上這次下課"
+          },
+          {
+            "id": 3,
+            "text": "向負責人反映補貨時間變動造成的購食困難。",
+            "action": "導師已向負責人反映補貨時間變動造成的購食困難。",
+            "tradeoff": "有機會改善，但不能保證立刻改配送"
+          },
+          {
+            "id": 4,
+            "text": "確認校內今天還有哪些准許的購食方式，讓三人自行選。",
+            "action": "導師已確認校內今天還有哪些准許的購食方式，讓三人自行選。",
+            "tradeoff": "多一個選擇，價格與品項未必合意"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意改在前一天自行準備，不再把這扇門當固定辦法。",
+            "action": "導師已問他願不願意改在前一天自行準備，不再把這扇門當固定辦法。",
+            "tradeoff": "減少等待，但增加家庭或個人準備負擔"
+          },
+          {
+            "id": 6,
+            "text": "請值勤窗口處理目前確實未能購食的需要，我不私自帶他們離校。",
+            "action": "導師已請值勤窗口處理目前確實未能購食的需要，我不私自帶他們離校。",
+            "tradeoff": "按現有資源接續，選擇可能有限"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己的早餐也還沒吃，陪他們在正常入口等一次，時間到就一起換辦法。",
+          "action": "導師已在自身可用時間與正常安全等候處陪等，明確不耽誤學生上課；購食與費用各自處理，不把挨餓當測試。",
+          "tradeoff": "占掉我的空檔，也可能什麼都沒買到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3675559455
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "4d39d27a92469eac3395fd492ba65ba9ce01ed9e89ba5ef3e94ab70fe4540cea"
+      },
+      "consequenceDirections": {
+        "A": "窗口能依當日狀況安排，學生不必再靠帶路者猜。",
+        "B": "承辦可能調整資訊或提供其他方式，也可能只能說明限制。",
+        "C": "同行者知道不能照舊走，仍須另想今天怎麼取得食物。",
+        "D": "教師親自遇到等待的不便，之後反映能說出實際情況"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba5e90e95dda97b734168cc2edd3091239b9cf4af3184477011028ef80f4e8dd",
+    "draftSha256": "f6714f67607460185205cedeacc3f8a797c031a9044308aa47fe32e361574541",
     "seedAssignmentVersion": 1
   }
 }

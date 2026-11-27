@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5f4acb6a8a6d81fd0989d834406db105aea41503912d30f8f976568b4906ebce",
+      "checkedAt": "2026-11-27T06:23:07.093Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改看學生能否說明自己做過的一題，不問買了多少。",
+            "action": "導師已改看學生能否說明自己做過的一題，不問買了多少。",
+            "tradeoff": "能看見理解，但口頭確認需要時間"
+          },
+          {
+            "id": 2,
+            "text": "整理學校現有可用材料給全班，不要求家庭補買。",
+            "action": "導師已整理學校現有可用材料給全班，不要求家庭補買。",
+            "tradeoff": "降低取得門檻，但材料不一定合所有人需求"
+          },
+          {
+            "id": 3,
+            "text": "讓學生選擇交一段解題文字或當面說明，內容標準一致。",
+            "action": "導師已讓學生選擇交一段解題文字或當面說明，內容標準一致。",
+            "tradeoff": "照顧不同表達方式，也增加核對工作"
+          },
+          {
+            "id": 4,
+            "text": "邀請願意的學生在課內互相講一題，由我確認關鍵錯誤。",
+            "action": "導師已邀請願意的學生在課內互相講一題，由我確認關鍵錯誤。",
+            "tradeoff": "增加練習機會，卻要挪用原有進度"
+          },
+          {
+            "id": 5,
+            "text": "先問各家庭取得既有材料有沒有困難，只收必要資訊。",
+            "action": "導師已先問各家庭取得既有材料有沒有困難，只收必要資訊。",
+            "tradeoff": "能找出真正障礙，也可能沒有人願意回報"
+          },
+          {
+            "id": 6,
+            "text": "向相關教師說明已更改的參與方式，避免孩子被不同標準來回要求。",
+            "action": "導師已向相關教師說明已更改的參與方式，避免孩子被不同標準來回要求。",
+            "tradeoff": "多一次協調，也不能替其他教師改評量"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我以前那張加購統計做得很得意，乾脆自己重做一張不問購買的紀錄。",
+          "action": "導師已重做自己可決定的班級參與紀錄格式，刪除購買欄，僅留必要課業互動；不新增學生額外作業或蒐集家庭財務資料。",
+          "tradeoff": "要推翻自己的成品，也會多花整理時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1483897537
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "f1968bb5833211b03bbf639230f2e416b55448e56e4c0dcf4ab44ec947088c70"
+      },
+      "consequenceDirections": {
+        "A": "安靜的學生可能需要其他表達方式，不能只獎勵會說的人。",
+        "B": "學生可先用既有資源，有需要再提出具體困難。",
+        "C": "新紀錄可能更難填，導師得檢查是否又換個方式逼人交證明",
+        "D": "共同課務若能對齊，家庭不必在不同說法間猜測。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4de776f9aebac5bc9cf676ca52875effee0bd1b67f25d82988e3ced2984733da",
+    "draftSha256": "5f4acb6a8a6d81fd0989d834406db105aea41503912d30f8f976568b4906ebce",
     "seedAssignmentVersion": 1
   }
 }

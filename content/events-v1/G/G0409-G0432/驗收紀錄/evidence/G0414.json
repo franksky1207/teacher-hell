@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d3700c50dec05677127f1247a909a7cec9db502d3a01d3e47e713267a6b419e9",
+      "checkedAt": "2026-11-27T06:23:07.085Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天先一起看半分鐘，鐘響就各自去上課。",
+            "action": "導師已今天先一起看半分鐘，鐘響就各自去上課。",
+            "tradeoff": "接住邀請，卻不一定等得到鳥"
+          },
+          {
+            "id": 2,
+            "text": "請他把圖帶回，另約不影響休息與上課的短時間同看。",
+            "action": "導師已請他把圖帶回，另約不影響休息與上課的短時間同看。",
+            "tradeoff": "不耽誤當下，也可能錯過今天那隻鳥"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意說是哪一隻，我先聽他怎麼辨認。",
+            "action": "導師已問他願不願意說是哪一隻，我先聽他怎麼辨認。",
+            "tradeoff": "換成學生帶路，留給賞鳥的時間較少"
+          },
+          {
+            "id": 4,
+            "text": "讓他自己選要留在這裡看，還是先回教室，不把陪老師當成任務。",
+            "action": "導師已讓他自己選要留在這裡看，還是先回教室，不把陪老師當成任務。",
+            "tradeoff": "保留自主，也可能讓他覺得邀請落空"
+          },
+          {
+            "id": 5,
+            "text": "徵得同意後只看圖中的辨識特徵，不接走原作。",
+            "action": "導師已徵得同意後只看圖中的辨識特徵，不接走原作。",
+            "tradeoff": "保留作品用途，也可能顯得仍在談畫而沒陪看"
+          },
+          {
+            "id": 6,
+            "text": "直接承認我剛才搶著誇畫，沒聽見他的邀請。",
+            "action": "導師已直接承認我剛才搶著誇畫，沒聽見他的邀請。",
+            "tradeoff": "說清楚誤會，但當下未必還有時間一起看"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想留住那個畫面，自己回去畫一張，畫不像也不借他的交差。",
+          "action": "導師已決定於私人時間自行畫賞鳥速寫，不要求學生贈畫、代畫或保證再次陪看。",
+          "tradeoff": "花自己的時間，也要接受畫得比學生差"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1349634193
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "2558be6f5b4103e4b3b850866fee6b88297e635f4565f879b4abb6646b23c37f"
+      },
+      "consequenceDirections": {
+        "A": "圖能變成辨鳥的小幫手，原件仍由作者帶走。",
+        "B": "下一次能否赴約比作品稱讚更重要。",
+        "C": "之後兩人可交換觀察，教師不再順手把學生作品當紀念品",
+        "D": "共同等待可能什麼也沒發生，學生仍能知道你明白原意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bdcbd8c28824ad8a702cb8b449cc16fb8475b3bca33378ca361cfc9a99011008",
+    "draftSha256": "d3700c50dec05677127f1247a909a7cec9db502d3a01d3e47e713267a6b419e9",
     "seedAssignmentVersion": 1
   }
 }

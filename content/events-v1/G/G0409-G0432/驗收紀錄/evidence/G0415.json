@@ -15,14 +15,82 @@
     "G05",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eba0689eb9c4a66c97cac58fe338a84d14210b1aed8f83639d067ae488a2a8aa",
+      "checkedAt": "2026-11-27T06:23:07.086Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他逐項確認願意公開的內容，再交承辦更換。",
+            "action": "導師已和他逐項確認願意公開的內容，再交承辦更換。",
+            "tradeoff": "留下展示機會，也要再核對一次範圍"
+          },
+          {
+            "id": 2,
+            "text": "請承辦先撤下整件，等學生另有明確意願再談。",
+            "action": "導師已請承辦先撤下整件，等學生另有明確意願再談。",
+            "tradeoff": "最快停止對外使用，也暫時失去作品被看見的機會"
+          },
+          {
+            "id": 3,
+            "text": "只保留不指向個人的作品內容，請承辦確認是否仍可能辨認本人。",
+            "action": "導師已只保留不指向個人的作品內容，請承辦確認是否仍可能辨認本人。",
+            "tradeoff": "降低指認，可能連部分作品也須遮掉"
+          },
+          {
+            "id": 4,
+            "text": "讓他自己寫一段願意對外說的介紹，我只核對事實與必要規定。",
+            "action": "導師已讓他自己寫一段願意對外說的介紹，我只核對事實與必要規定。",
+            "tradeoff": "主導權較多，但寫介紹也增加他的負擔"
+          },
+          {
+            "id": 5,
+            "text": "請承辦直接向他說明展示去向，我陪著確認不超出同意。",
+            "action": "導師已請承辦直接向他說明展示去向，我陪著確認不超出同意。",
+            "tradeoff": "少一道轉述，會多一次談話"
+          },
+          {
+            "id": 6,
+            "text": "另外私下問他是否需要學校協助處理家中轉貼壓力，不與展示交換。",
+            "action": "導師已另外私下問他是否需要學校協助處理家中轉貼壓力，不與展示交換。",
+            "tradeoff": "兩件事分開，也可能聽到不願多說的答覆"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓他單獨像在拆台，把我自己那段宣傳介紹也申請撤下。",
+          "action": "導師已申請撤下本人可自主拒絕的非必要宣傳介紹，不擅改其他教師內容，也不把此舉當學生必須感激的交換。",
+          "tradeoff": "少了一次自我曝光，不能替別人撤稿"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2870335809
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "9dcf6b0a673cbf9f1ade539389e3bc8c71f0695faedd27e90acdec8439a41f62"
+      },
+      "consequenceDirections": {
+        "A": "他可能只留一句，也可能決定作品不需要文字。",
+        "B": "對外版本與期限變得明確，也可能發現原先用途比想像廣。",
+        "C": "如果無法真正避免辨認，還要回頭徵詢是否願意保留。",
+        "D": "教師的個人選擇可與學生不同，但要自己向承辦交代"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e20f26ed22e3d95b711a4ec181ae1c851be4a6583211408c8384e7da81675258",
+    "draftSha256": "eba0689eb9c4a66c97cac58fe338a84d14210b1aed8f83639d067ae488a2a8aa",
     "seedAssignmentVersion": 1
   }
 }

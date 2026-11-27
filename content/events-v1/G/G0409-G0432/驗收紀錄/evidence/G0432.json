@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf07c1ca416720c25eb7b3039ad0608b62ef02aeaca106c53046b91fd623dd27",
+      "checkedAt": "2026-11-27T06:23:07.101Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他在原傳話範圍更正，說明自己未向本人確認。",
+            "action": "導師已請他在原傳話範圍更正，說明自己未向本人確認。",
+            "tradeoff": "得承認搶先下結論，也不保證大家立刻相信"
+          },
+          {
+            "id": 2,
+            "text": "由我向小組說清楚目前確認的名單，不讓他繼續代言。",
+            "action": "導師已由我向小組說清楚目前確認的名單，不讓他繼續代言。",
+            "tradeoff": "減少再次誤傳，也讓學生少一次自行修正的機會"
+          },
+          {
+            "id": 3,
+            "text": "讓每位組員各自確認自己願意承擔的工作，不由朋友替答。",
+            "action": "導師已讓每位組員各自確認自己願意承擔的工作，不由朋友替答。",
+            "tradeoff": "資訊直接，但要留時間逐人回覆"
+          },
+          {
+            "id": 4,
+            "text": "後續重要確認保留簡短文字，不再只靠語音傳達。",
+            "action": "導師已後續重要確認保留簡短文字，不再只靠語音傳達。",
+            "tradeoff": "較容易回看，也需確認每人都能取得"
+          },
+          {
+            "id": 5,
+            "text": "給學生一個課內確認分工的時間，不把夜間上網當必要條件。",
+            "action": "導師已給學生一個課內確認分工的時間，不把夜間上網當必要條件。",
+            "tradeoff": "降低家庭網路差異的影響，也占用課內時間"
+          },
+          {
+            "id": 6,
+            "text": "另約他談害怕被排除的部分，不要求他在組員前解釋家庭設備。",
+            "action": "導師已另約他談害怕被排除的部分，不要求他在組員前解釋家庭設備。",
+            "tradeoff": "保留隱私，也需額外談話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我受不了手機一直響，把自己非值勤時段的非急迫群組提醒關掉。",
+          "action": "導師已設定自身非值勤時段的非急迫群組靜音，依校規明示工作回覆與緊急管道，不退出必要通報或刪除查證所需紀錄。",
+          "tradeoff": "不能隨時知道閒聊進度，也要明確保留正式緊急聯繫方式"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4251148831
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "96b4eac84b1dc13096da8366b25aabba7cc2d2a92445ce301af259ea377d5380"
+      },
+      "consequenceDirections": {
+        "A": "名單不再憑片段語音變動，當事人仍可表達是否參與。",
+        "B": "教師不再以全天在線作榜樣，工作時間仍須回覆該處理的事項",
+        "C": "各人能當面核對，夜間群組不再單獨決定誰算成員。",
+        "D": "小組能先恢復討論，學生之間的不滿另談。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "19a536a38d4601c066a2a62a7c1c35f4960cc3dcbf6902d17d703b1e1f1af5f7",
+    "draftSha256": "bf07c1ca416720c25eb7b3039ad0608b62ef02aeaca106c53046b91fd623dd27",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89733381860d9d0a7e8237fbe71c0878c1eaffb29a8aa78362104df3571532f6",
+      "checkedAt": "2026-11-27T06:23:07.100Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "同意只試一句，試完再各自決定要不要繼續。",
+            "action": "導師已同意只試一句，試完再各自決定要不要繼續。",
+            "tradeoff": "起步較小，也可能仍唱不出來"
+          },
+          {
+            "id": 2,
+            "text": "回到團體暖聲，暫時不做私人對唱。",
+            "action": "導師已回到團體暖聲，暫時不做私人對唱。",
+            "tradeoff": "有共同帶領，但少了個別練習時間"
+          },
+          {
+            "id": 3,
+            "text": "問指揮能否在正式練習中帶過這句，不私下請同事硬教。",
+            "action": "導師已問指揮能否在正式練習中帶過這句，不私下請同事硬教。",
+            "tradeoff": "獲得較適當指導，也需配合全團安排"
+          },
+          {
+            "id": 4,
+            "text": "說明我不接固定搭檔，今天若練也只是一回。",
+            "action": "導師已說明我不接固定搭檔，今天若練也只是一回。",
+            "tradeoff": "界線清楚，可能讓他覺得熱情被擋回"
+          },
+          {
+            "id": 5,
+            "text": "各自先小聲看譜，準備好再決定是否合唱。",
+            "action": "導師已各自先小聲看譜，準備好再決定是否合唱。",
+            "tradeoff": "減少互相拖著的焦慮，也失去即時回饋"
+          },
+          {
+            "id": 6,
+            "text": "今天先聽別人唱這段，記下自己聽不清的起點。",
+            "action": "導師已今天先聽別人唱這段，記下自己聽不清的起點。",
+            "tradeoff": "不必立刻表現，但個人練習延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我乾脆先自願唱那句容易破音的，破了就停，不拉他陪我出糗。",
+          "action": "導師已在團體主持者同意及不傷嗓前提下，自願獨唱一個舒適可嘗試的短句，不強迫同事加入、不以硬撐高音為挑戰。",
+          "tradeoff": "自己承受尷尬，也不能把冒險變成團員必須捧場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1904989582
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "5af2aa263484641970293d5381b73397eb5ec89c9c158e19296bd309ac5008d9"
+      },
+      "consequenceDirections": {
+        "A": "短試能知道彼此適不適合對練，不自動延長。",
+        "B": "對方可選擇接受短練或另找自願伙伴。",
+        "C": "問題可能很快被點出，也可能得等到後面才處理。",
+        "D": "教師的短試可能讓氣氛鬆動，仍須接受指揮調整"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2d37025870a9047f1caaac03c0340b1b0aa376fdd6dec8f68780d00c1a24430b",
+    "draftSha256": "89733381860d9d0a7e8237fbe71c0878c1eaffb29a8aa78362104df3571532f6",
     "seedAssignmentVersion": 1
   }
 }

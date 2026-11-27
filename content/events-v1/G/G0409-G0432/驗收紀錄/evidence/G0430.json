@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "507dd13d4cfeb3a23f0eccd56a37b3ca82447260516aa1964ecae3c5cad5563b",
+      "checkedAt": "2026-11-27T06:23:07.099Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原已核准的方式離校，不替任何人臨時湊車。",
+            "action": "導師已依原已核准的方式離校，不替任何人臨時湊車。",
+            "tradeoff": "責任清楚，部分家庭仍須等待原接送"
+          },
+          {
+            "id": 2,
+            "text": "請值勤窗口聯繫有需要的家庭，確認各自原有安排。",
+            "action": "導師已請值勤窗口聯繫有需要的家庭，確認各自原有安排。",
+            "tradeoff": "由真正負責者協調，也可能要多等一段"
+          },
+          {
+            "id": 3,
+            "text": "先問家長願借的數量與歸還方式，只在確有需要時借出。",
+            "action": "導師已先問家長願借的數量與歸還方式，只在確有需要時借出。",
+            "tradeoff": "使用實際資源，也增加借還整理"
+          },
+          {
+            "id": 4,
+            "text": "若校內有公用雨具，先請值勤方依原規定提供。",
+            "action": "導師已若校內有公用雨具，先請值勤方依原規定提供。",
+            "tradeoff": "不先動用私人備品，但可能數量不足"
+          },
+          {
+            "id": 5,
+            "text": "替家長向在場詢問者說明只借雨具、不提供接駁，不透露其他家庭資訊。",
+            "action": "導師已替家長向在場詢問者說明只借雨具、不提供接駁，不透露其他家庭資訊。",
+            "tradeoff": "避免他重複拒絕，也可能讓現場氣氛尷尬"
+          },
+          {
+            "id": 6,
+            "text": "讓家長照約接走自己的孩子，剩下的需求交回值勤方。",
+            "action": "導師已讓家長照約接走自己的孩子，剩下的需求交回值勤方。",
+            "tradeoff": "不因熱心扣住人，現場也少一份私人資源"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己的傘也借出去，自己等雨小一點再走。",
+          "action": "導師已自願提供安全可用的自有雨傘，確認學生原合法離校方式不變；在自身無後續必要職務且能安全等候下延後私人離開時間。",
+          "tradeoff": "可能多等很久，也不一定能準時照原計畫回家"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3236191374
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "65318625f6ecb7d5c01ddef0884a0cd901574d9181377a48100219b3a1b27a99"
+      },
+      "consequenceDirections": {
+        "A": "學生的借傘照規定登記，教師須自己安排安全返程",
+        "B": "雨具能減少淋雨，不代表原離校條件自動改變。",
+        "C": "學校得依現有能力接續，不能把離開當不合作。",
+        "D": "雨勢與等候會帶來不便，但不由提供雨具者承擔運送。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "da0263d0e268b42daddc795bd4ffed5463a60bbb5be4f6a7e0fd41995f9d8e92",
+    "draftSha256": "507dd13d4cfeb3a23f0eccd56a37b3ca82447260516aa1964ecae3c5cad5563b",
     "seedAssignmentVersion": 1
   }
 }

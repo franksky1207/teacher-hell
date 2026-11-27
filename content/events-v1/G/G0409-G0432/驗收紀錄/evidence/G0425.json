@@ -15,14 +15,82 @@
     "G07",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4b816211e62ac7f481fc1f539c903bfd779744bae555fea24b4052bcb55aa4c0",
+      "checkedAt": "2026-11-27T06:23:07.096Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留一句簡短問候，接著回到原定課堂。",
+            "action": "導師已保留一句簡短問候，接著回到原定課堂。",
+            "tradeoff": "接住好意，但學生準備的熱鬧部分得放下"
+          },
+          {
+            "id": 2,
+            "text": "把歡迎留到雙方同意、不占上課與必要休息的時間。",
+            "action": "導師已把歡迎留到雙方同意、不占上課與必要休息的時間。",
+            "tradeoff": "不干擾開場，也未必喬得到時間"
+          },
+          {
+            "id": 3,
+            "text": "請同事自己把需要說完，我幫忙讓全班安靜聽。",
+            "action": "導師已請同事自己把需要說完，我幫忙讓全班安靜聽。",
+            "tradeoff": "由本人表達，也可能讓他擔心被當掃興"
+          },
+          {
+            "id": 4,
+            "text": "今天取消熱鬧歡迎，另收自願的短紙條交給老師。",
+            "action": "導師已今天取消熱鬧歡迎，另收自願的短紙條交給老師。",
+            "tradeoff": "較安靜，也增加整理紙條的工作"
+          },
+          {
+            "id": 5,
+            "text": "和學生說明原定規範今天仍照常，不用老師笑不笑來判斷。",
+            "action": "導師已和學生說明原定規範今天仍照常，不用老師笑不笑來判斷。",
+            "tradeoff": "標準清楚，也要承擔現場被嫌嚴格"
+          },
+          {
+            "id": 6,
+            "text": "課後再問同事下次希望怎麼被迎接，不替他設一套長期習慣。",
+            "action": "導師已課後再問同事下次希望怎麼被迎接，不替他設一套長期習慣。",
+            "tradeoff": "把選擇留給本人，但今天仍要先按原規則開始"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也餓到不想再主持，今天不加我那段介紹，讓老師直接上課。",
+          "action": "導師已刪去自己非必要且可自主取消的介紹段落，正式課程按任課教師安排進行，不挪用課務擅離照看。",
+          "tradeoff": "少了我的表現機會，也得自行利用原有空檔吃飯"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3489542907
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "21b7c17f8948f72294f7261807fb8158d81b71348f8459c6fb459d0228d5d0f9"
+      },
+      "consequenceDirections": {
+        "A": "同事能按原節奏開始，學生可能有點失落。",
+        "B": "同事不用用親切表情換開場秩序，歡迎可另談。",
+        "C": "好意能換個位置表達，不能以感謝之名要求老師留下。",
+        "D": "學生可能發現省掉的是導師自己的話，並非老師拒絕大家"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "275851fb9e912024f5af59a08b350e91e34a7c87b0f6bf1158ba2b98634f9f77",
+    "draftSha256": "4b816211e62ac7f481fc1f539c903bfd779744bae555fea24b4052bcb55aa4c0",
     "seedAssignmentVersion": 1
   }
 }

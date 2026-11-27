@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0313400a6739fa6fc3619b05e6ea71997bbd6eb44dfbbe100017f4cae6f3a2b8",
+      "checkedAt": "2026-11-27T06:23:07.087Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改由我核對，學生只自行標出想問的題目。",
+            "action": "導師已改由我核對，學生只自行標出想問的題目。",
+            "tradeoff": "責任清楚，但批閱速度會變慢"
+          },
+          {
+            "id": 2,
+            "text": "先公布可核對的答案與步驟，讓各人檢查自己的版本。",
+            "action": "導師已先公布可核對的答案與步驟，讓各人檢查自己的版本。",
+            "tradeoff": "人人能檢查，但錯誤理由仍可能看不出來"
+          },
+          {
+            "id": 3,
+            "text": "讓小組輪流說明不同算法，不安排唯一學生裁判。",
+            "action": "導師已讓小組輪流說明不同算法，不安排唯一學生裁判。",
+            "tradeoff": "增加說理機會，會占用討論時間"
+          },
+          {
+            "id": 4,
+            "text": "先處理最後那題的兩種算法，其餘按原課程稍後核對。",
+            "action": "導師已先處理最後那題的兩種算法，其餘按原課程稍後核對。",
+            "tradeoff": "聚焦爭點，其他答案暫時未回覆"
+          },
+          {
+            "id": 5,
+            "text": "把筆還給他，先用教室現有工具完成今天的討論。",
+            "action": "導師已把筆還給他，先用教室現有工具完成今天的討論。",
+            "tradeoff": "解除捐筆與接受規則的連結，也少了現成材料"
+          },
+          {
+            "id": 6,
+            "text": "請學生各挑一題寫出理由，下次課內再交換提問。",
+            "action": "導師已請學生各挑一題寫出理由，下次課內再交換提問。",
+            "tradeoff": "把回饋延後，但每人都要準備一小段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想知道自己限時會錯幾題，另外做一次同份練習，不把學生當觀眾評分。",
+          "action": "導師已決定在自身工作空檔自行試做這份可使用的練習，另保留正式批閱責任，不安排學生替教師打分或追加競賽。",
+          "tradeoff": "占自己的空檔，也可能做得不比他們快"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2584151447
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "7929d37d6ebb53d8768c23b31405ac43be47d928c1b4ca1fe764a6ad349b69b6"
+      },
+      "consequenceDirections": {
+        "A": "教師可拿實際卡住處回來說明，但不把比快再立成標準",
+        "B": "學生會帶著具體步驟來問，而非只看誰蓋了對勾。",
+        "C": "不同解法能被教師看見，學生須等待回覆。",
+        "D": "有爭議的地方仍由教師確認，快答者不再包辦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fb7db365210fa681e1bc96534024494a9a28103a8f869bcb17bd889bc5565b8b",
+    "draftSha256": "0313400a6739fa6fc3619b05e6ea71997bbd6eb44dfbbe100017f4cae6f3a2b8",
     "seedAssignmentVersion": 1
   }
 }

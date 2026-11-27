@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cf36a5fbc14568f6207aa3e16811aebba38c3434245696e336c6f113533b6b22",
+      "checkedAt": "2026-11-27T06:23:07.072Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分開問兩人各自做了什麼，不讓其中一人替另一人答。",
+            "action": "導師已分開問兩人各自做了什麼，不讓其中一人替另一人答。",
+            "tradeoff": "較能聽清楚，也要另花談話時間"
+          },
+          {
+            "id": 2,
+            "text": "先讓他說完自己承諾幫忙的範圍，再談實際回嘴的部分。",
+            "action": "導師已先讓他說完自己承諾幫忙的範圍，再談實際回嘴的部分。",
+            "tradeoff": "不把好意抹掉，但承諾不能免除自身行為責任"
+          },
+          {
+            "id": 3,
+            "text": "把傳聞的來源限縮查清楚，不在全班追問誰告密。",
+            "action": "導師已把傳聞的來源限縮查清楚，不在全班追問誰告密。",
+            "tradeoff": "避免擴大謠言，也可能無法立刻找到起點"
+          },
+          {
+            "id": 4,
+            "text": "今天先暫停這組討論，改讓兩人各自完成原任務。",
+            "action": "導師已今天先暫停這組討論，改讓兩人各自完成原任務。",
+            "tradeoff": "降低當場爭執，也少了合作機會"
+          },
+          {
+            "id": 5,
+            "text": "在查明後向原先聽見傳聞的人說明目前的處理進度。",
+            "action": "導師已在查明後向原先聽見傳聞的人說明目前的處理進度。",
+            "tradeoff": "減少誤傳，但不能公開個別學生應受何種處置"
+          },
+          {
+            "id": 6,
+            "text": "另約他談下次朋友鬧場時能怎麼退出代言。",
+            "action": "導師已另約他談下次朋友鬧場時能怎麼退出代言。",
+            "tradeoff": "提供往後做法，眼前事件仍須另依規則處理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句話氣到了，先請能接手的同事陪著，我去喝口水再回來談。",
+          "action": "導師已在確認學生安全及有適任成人確實接手後，短暫離開降溫並說明返回時間；無人可接手則不擅離。",
+          "tradeoff": "得承認自己需要停一下，也要配合同事是否有空"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2436911954
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "bb4a0c86ee594b5fc90aff89a97b6aae2607763ab81f310f7b4d09ce3fa559b3"
+      },
+      "consequenceDirections": {
+        "A": "個人作答能留下實際參與情況，關係問題另談。",
+        "B": "短暫分開能避免情緒繼續堆高，回來仍須面對原事件",
+        "C": "學生能區分朋友的事與自己的反應，仍可能不服處理。",
+        "D": "可確認的傳話範圍能得到更正，不用再靠猜測處分。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "986da635b2a04a5086e2cbfd6ef0fff0a96ac5d410a73681c79187e5c309c415",
+    "draftSha256": "cf36a5fbc14568f6207aa3e16811aebba38c3434245696e336c6f113533b6b22",
     "seedAssignmentVersion": 1
   }
 }

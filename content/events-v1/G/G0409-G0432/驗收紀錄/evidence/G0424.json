@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "28459807b87a95034860a0a662874105a9f7cb3beab9a89ad4d94262271974d6",
+      "checkedAt": "2026-11-27T06:23:07.096Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "暫停今天這批借閱，先清點每個人的實際待辦。",
+            "action": "導師已暫停今天這批借閱，先清點每個人的實際待辦。",
+            "tradeoff": "不再靠猜測分工，但全班今天少了借書機會"
+          },
+          {
+            "id": 2,
+            "text": "把他已排的其他工作先逐項核對，再決定哪些應由成人重排。",
+            "action": "導師已把他已排的其他工作先逐項核對，再決定哪些應由成人重排。",
+            "tradeoff": "承認負荷要看內容，不是只數件數"
+          },
+          {
+            "id": 3,
+            "text": "請各人只報自己已做與未做的部分，不評論誰故意害誰。",
+            "action": "導師已請各人只報自己已做與未做的部分，不評論誰故意害誰。",
+            "tradeoff": "有較具體資訊，也暫時無法宣洩不滿"
+          },
+          {
+            "id": 4,
+            "text": "今天由我處理書本上架，之後另談他公開拒做的影響。",
+            "action": "導師已今天由我處理書本上架，之後另談他公開拒做的影響。",
+            "tradeoff": "教師多做一次，不表示以後都接手"
+          },
+          {
+            "id": 5,
+            "text": "在確保工作量合理後，讓原分工繼續，但由我向全班交代分派責任。",
+            "action": "導師已在確保工作量合理後，讓原分工繼續，但由我向全班交代分派責任。",
+            "tradeoff": "保留原安排，也得接受學生可能不同意核對結果"
+          },
+          {
+            "id": 6,
+            "text": "取消可延後的新書展示，只先完成必要借還。",
+            "action": "導師已取消可延後的新書展示，只先完成必要借還。",
+            "tradeoff": "降低眼前份量，也少了原期待的展示效果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再撐那個「班務都很順」的面子，向主管承認這週排太滿。",
+          "action": "導師已主動向適當主管呈報自己安排的同時到期負荷及調整需求，不公開學生私下情緒、不把學生抗議當卸責理由。",
+          "tradeoff": "留下自己的安排問題，也可能被要求重做計畫"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3679581431
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "dd1548989e9b551d59c897c940116c7737e110893b5624d9ad54a0d9c51be04b"
+      },
+      "consequenceDirections": {
+        "A": "分工有理由可問，不再用「人人都輪到」結束討論。",
+        "B": "可爭取協助或刪減，但不能保證主管立刻同意",
+        "C": "借閱可恢復，抗議與對同組的不便仍要分開談。",
+        "D": "工作可能重新分配，也可能需要刪掉非必要項目。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "85cf672e8bc0a9a1fdd8774da2cb5bebe7cb88ea21670895771b722e8c7a73f0",
+    "draftSha256": "28459807b87a95034860a0a662874105a9f7cb3beab9a89ad4d94262271974d6",
     "seedAssignmentVersion": 1
   }
 }

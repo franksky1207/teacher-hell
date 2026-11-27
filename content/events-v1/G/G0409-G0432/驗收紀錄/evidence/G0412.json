@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d55df12a3e87627676e23cb45f1e125056206230dec602e081df6050f6fb1a91",
+      "checkedAt": "2026-11-27T06:23:07.078Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依現場風向試開較小的縫，確認窗扣與通道都安全。",
+            "action": "導師已依現場風向試開較小的縫，確認窗扣與通道都安全。",
+            "tradeoff": "保留通風，涼度可能不如期待"
+          },
+          {
+            "id": 2,
+            "text": "先把鬆散紙張收妥，再依校規調整窗戶。",
+            "action": "導師已先把鬆散紙張收妥，再依校規調整窗戶。",
+            "tradeoff": "減少紙飛走，但整理會用掉部分午休"
+          },
+          {
+            "id": 3,
+            "text": "詢問值勤老師能否讓怕悶者到准許且有人照看的位置休息。",
+            "action": "導師已詢問值勤老師能否讓怕悶者到准許且有人照看的位置休息。",
+            "tradeoff": "照顧個別需要，但位置與安排有限"
+          },
+          {
+            "id": 4,
+            "text": "保留原窗戶安排，先使用校內允許、狀況正常的通風設備。",
+            "action": "導師已保留原窗戶安排，先使用校內允許、狀況正常的通風設備。",
+            "tradeoff": "不再追紙，但設備效果可能有限"
+          },
+          {
+            "id": 5,
+            "text": "請總務協助查看這排窗的擋風或固定方式，暫先用安全開度。",
+            "action": "導師已請總務協助查看這排窗的擋風或固定方式，暫先用安全開度。",
+            "tradeoff": "改善需等待，當下只能採暫時辦法"
+          },
+          {
+            "id": 6,
+            "text": "和在場學生試兩個安全位置，再讓實際坐那裡的人說感受。",
+            "action": "導師已和在場學生試兩個安全位置，再讓實際坐那裡的人說感受。",
+            "tradeoff": "增加共同判斷，也打斷了一小段休息"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也快被悶昏了，先去准許的飲水處裝冷水，回來再處理剩下的紙。",
+          "action": "導師已在必要照看有人接續、自身可休息的前提下短暫去飲水處補水，不延後必要安全處理、不要求學生追紙。",
+          "tradeoff": "占自己的空檔，紙張還須依安全方式收回"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 673566015
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "e9b1f97095c3e9c880eda864496306ada7572679c4c345943dfe7172e196aaec"
+      },
+      "consequenceDirections": {
+        "A": "桌面清空後可重新評估開度，不讓靠窗者一直當看守。",
+        "B": "不只窗邊者的聲音被聽見，仍可能無法全員滿意。",
+        "C": "室內感受能被比較，若仍不適須再處理而非叫人忍耐。",
+        "D": "短暫離開悶熱處後能回來接續，不能藉此把照看丟給學生"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2a2f8cb6f8018049cf44d3ebbc40708d7533cdadf9deedfd320e5d301c3100d7",
+    "draftSha256": "d55df12a3e87627676e23cb45f1e125056206230dec602e081df6050f6fb1a91",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "526c8b4b169c769d9ed1a8f98aee6b10ab664df82112d40dffb2f31c5d9c7b15",
+      "checkedAt": "2026-11-27T06:23:07.098Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請原參與者重新確認是否還願意保留原版，沒有人因先笑就算答應。",
+            "action": "導師已請原參與者重新確認是否還願意保留原版，沒有人因先笑就算答應。",
+            "tradeoff": "尊重改變意願，也可能整段不能留"
+          },
+          {
+            "id": 2,
+            "text": "今天不再拍，讓道具回到不錄影的課間遊戲。",
+            "action": "導師已今天不再拍，讓道具回到不錄影的課間遊戲。",
+            "tradeoff": "保留玩笑，也少了錄下來重看的樂趣"
+          },
+          {
+            "id": 3,
+            "text": "另約自願者重拍小版本，不把全班當背景。",
+            "action": "導師已另約自願者重拍小版本，不把全班當背景。",
+            "tradeoff": "可以重做，但要另找合適時間與範圍"
+          },
+          {
+            "id": 4,
+            "text": "只保留道具的靜物照，先確認作者同意與校規。",
+            "action": "導師已只保留道具的靜物照，先確認作者同意與校規。",
+            "tradeoff": "少了人物演出，也避開被帶入鏡頭的壓力"
+          },
+          {
+            "id": 5,
+            "text": "請有意參與者自己提出想拍的範圍，再由我核對是否可行。",
+            "action": "導師已請有意參與者自己提出想拍的範圍，再由我核對是否可行。",
+            "tradeoff": "主導權較多，也可能談不出共同版本"
+          },
+          {
+            "id": 6,
+            "text": "把拍攝規範用剛才的誤會再講清楚，不展示爭議畫面。",
+            "action": "導師已把拍攝規範用剛才的誤會再講清楚，不展示爭議畫面。",
+            "tradeoff": "避免再犯，也會占一點班務時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想演，把自己的那一段改成只有我入鏡的短片，自己拍自己收。",
+          "action": "導師已決定在校規許可及私人可用時間，以自寫內容、自有道具拍僅本人入鏡的自用短片，不含學生聲音與作品、不在課內加拍。",
+          "tradeoff": "得一個人準備，也可能根本不好笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3623290295
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "b460fefad2c1c24426c8d07de5faa50526ddff803ded59b2652bdb883eab552c"
+      },
+      "consequenceDirections": {
+        "A": "教師可滿足表演慾，不再借全班當配角",
+        "B": "道具能留下紀念，原本互動趣味不一定傳得出來。",
+        "C": "笑、旁觀與同意能被分開，不能拿說明當公開檢討學生。",
+        "D": "每人的限制會直接影響場面，而非由教師一口氣加人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29ee30527a00fe85d51333c4228f185f3c6cdb079bf13fef7438fcefe1f10392",
+    "draftSha256": "526c8b4b169c769d9ed1a8f98aee6b10ab664df82112d40dffb2f31c5d9c7b15",
     "seedAssignmentVersion": 1
   }
 }

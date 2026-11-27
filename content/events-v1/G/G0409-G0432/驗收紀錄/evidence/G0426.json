@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3463ae5fa61b2a94dee025c3cdf795dde514ebd0d815ef11b37973bf3df25895",
+      "checkedAt": "2026-11-27T06:23:07.097Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原樣收進自己的相簿，不把失焦當作必須重拍的理由。",
+            "action": "導師已照原樣收進自己的相簿，不把失焦當作必須重拍的理由。",
+            "tradeoff": "留下想記的光，也接受技術上的缺點"
+          },
+          {
+            "id": 2,
+            "text": "和他各選一張並排，只比較光線，不替彼此打分。",
+            "action": "導師已和他各選一張並排，只比較光線，不替彼此打分。",
+            "tradeoff": "有共同討論，也可能仍對好壞看法不同"
+          },
+          {
+            "id": 3,
+            "text": "請他教我一個下次可試的小調整，但仍由我決定要不要用。",
+            "action": "導師已請他教我一個下次可試的小調整，但仍由我決定要不要用。",
+            "tradeoff": "得到技巧，也可能改變原本隨手拍的感覺"
+          },
+          {
+            "id": 4,
+            "text": "說明我不想共同編相簿，照片各自收回。",
+            "action": "導師已說明我不想共同編相簿，照片各自收回。",
+            "tradeoff": "保住私人興趣，也可能讓他的邀請落空"
+          },
+          {
+            "id": 5,
+            "text": "先把沖洗費用按原先約定結清，今天不再討論照片好壞。",
+            "action": "導師已先把沖洗費用按原先約定結清，今天不再討論照片好壞。",
+            "tradeoff": "把代洗與評論分開，話題暫時停住"
+          },
+          {
+            "id": 6,
+            "text": "只記下這週拍攝時的光與時間，下次再回看要不要重拍。",
+            "action": "導師已只記下這週拍攝時的光與時間，下次再回看要不要重拍。",
+            "tradeoff": "延後判斷，也可能忘掉當時感覺"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每次拿照片都先挨一頓念，往後自己跑店裡洗。",
+          "action": "導師已向同事說明結束往後的私人代洗委託，既有費用按原約結清；後續自行聯繫一般沖洗店，不禁止同事對自己的照片有看法",
+          "tradeoff": "多花自己的時間，可能失去原本順手代辦的便利"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1614304825
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7c9208bfba90ab1a44fd2a3a2a9ba98bd21a57244f1c1fe3479f4116f5637df0"
+      },
+      "consequenceDirections": {
+        "A": "文字與影像並存，之後能比較自己真正想保存什麼。",
+        "B": "兩人可看見各自留意的地方，不一定做成同一本。",
+        "C": "兩人的相處少了交付照片這個環節，教師需自行處理沖洗，可能清靜也可能懷念一起看照片的習慣。",
+        "D": "相簿會呈現自己的選擇，同事未必認同。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意複核發現情緒候選自做私人相簿與普通候選保留照片入相簿的主要行動重疊；改為結束往後私人代洗委託，承擔自行跑店的時間成本，保留原拍攝動機與同事因果。依既有工具真實重抽一次並保留舊證據。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "照原樣收進自己的相簿，不把失焦當作必須重拍的理由。",
+                "action": "導師已照原樣收進自己的相簿，不把失焦當作必須重拍的理由。",
+                "tradeoff": "留下想記的光，也接受技術上的缺點"
+              },
+              {
+                "id": 2,
+                "text": "和他各選一張並排，只比較光線，不替彼此打分。",
+                "action": "導師已和他各選一張並排，只比較光線，不替彼此打分。",
+                "tradeoff": "有共同討論，也可能仍對好壞看法不同"
+              },
+              {
+                "id": 3,
+                "text": "請他教我一個下次可試的小調整，但仍由我決定要不要用。",
+                "action": "導師已請他教我一個下次可試的小調整，但仍由我決定要不要用。",
+                "tradeoff": "得到技巧，也可能改變原本隨手拍的感覺"
+              },
+              {
+                "id": 4,
+                "text": "說明我不想共同編相簿，照片各自收回。",
+                "action": "導師已說明我不想共同編相簿，照片各自收回。",
+                "tradeoff": "保住私人興趣，也可能讓他的邀請落空"
+              },
+              {
+                "id": 5,
+                "text": "先把沖洗費用按原先約定結清，今天不再討論照片好壞。",
+                "action": "導師已先把沖洗費用按原先約定結清，今天不再討論照片好壞。",
+                "tradeoff": "把代洗與評論分開，話題暫時停住"
+              },
+              {
+                "id": 6,
+                "text": "只記下這週拍攝時的光與時間，下次再回看要不要重拍。",
+                "action": "導師已只記下這週拍攝時的光與時間，下次再回看要不要重拍。",
+                "tradeoff": "延後判斷，也可能忘掉當時感覺"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我偏要把這張糊的放封面，先做一本只給自己看的小相簿。",
+              "action": "導師已決定以自有無可辨識路人的照片及私人預算製作自用小相簿，不挪用同事作品、不要求其背書。",
+              "tradeoff": "花自己的印製費，也可能過幾天就覺得太衝動"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3196060476
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 2,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "c559032f2c4fbcf6125e634054286138c1454713fbcff022750cb8ef247b24a3"
+          },
+          "previousConsequenceDirections": {
+            "A": "未談完的歧見仍在，但沒有人因代辦而取得決定權。",
+            "B": "兩人可看見各自留意的地方，不一定做成同一本。",
+            "C": "下一次能比較技術變動，不能保證更喜歡清晰版本。",
+            "D": "私人封面能保留當下偏愛，不需要朋友同意或公開證明"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "20fff9f7f0d7f51c3ee31bc068e82a26852308a2d2066e923a61b6e69d51597d",
+    "draftSha256": "3463ae5fa61b2a94dee025c3cdf795dde514ebd0d815ef11b37973bf3df25895",
     "seedAssignmentVersion": 1
   }
 }

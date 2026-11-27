@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f1eed329a87848ed05ee4c535b5b6531052aabf9b30857e1937f8564f9aef36f",
+      "checkedAt": "2026-11-27T06:23:07.090Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留已完成的分區整理，僅修正不符合供餐規定的部分。",
+            "action": "導師已保留已完成的分區整理，僅修正不符合供餐規定的部分。",
+            "tradeoff": "不推翻整份工作，但要逐項分清楚"
+          },
+          {
+            "id": 2,
+            "text": "請供餐承辦說明未食用餐點的正確去向，再更新班上做法。",
+            "action": "導師已請供餐承辦說明未食用餐點的正確去向，再更新班上做法。",
+            "tradeoff": "來源較明確，當下可能要等回覆"
+          },
+          {
+            "id": 3,
+            "text": "我向值日小組說明自己漏看哪一項，不讓他替我傳話。",
+            "action": "導師已我向值日小組說明自己漏看哪一項，不讓他替我傳話。",
+            "tradeoff": "承認疏漏，也要避免把說明講成找藉口"
+          },
+          {
+            "id": 4,
+            "text": "把轉送工作從學生原分工中拿掉，只做確認可由學生承擔的整理。",
+            "action": "導師已把轉送工作從學生原分工中拿掉，只做確認可由學生承擔的整理。",
+            "tradeoff": "角色較單純，但成人須接回其餘工作"
+          },
+          {
+            "id": 5,
+            "text": "請他把今天實際有效的步驟留下，往後有改動先逐項說明。",
+            "action": "導師已請他把今天實際有效的步驟留下，往後有改動先逐項說明。",
+            "tradeoff": "保留學生經驗，也多一次整理"
+          },
+          {
+            "id": 6,
+            "text": "午餐後另約短時間聽值日生還遇過哪些臨時改口。",
+            "action": "導師已午餐後另約短時間聽值日生還遇過哪些臨時改口。",
+            "tradeoff": "不只處理眼前一件，也會占額外工作時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再靠他提醒，下一次自己跟完一輪正常收桌。",
+          "action": "導師已安排在可用工作時段親自參與一次依規定的收桌流程，不轉嫁必要成人工作給學生、不以此代替本次規則補正。",
+          "tradeoff": "占我的工作時間，也不能站旁邊只挑毛病"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2218095153
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "62d48dff96178a69407898a66791d1c811115db64503c5b4daa4d6e44b195d23"
+      },
+      "consequenceDirections": {
+        "A": "學生能接續原流程，仍須知道哪一步不能照做。",
+        "B": "親自參與會看見指示轉成動作的麻煩，改法得接受實際檢驗",
+        "C": "可能發現其他指示互相矛盾，需定向向相關承辦確認。",
+        "D": "流程能區分既有可用處與待確認處，不再整張重寫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5163b455f9ce653d010d2a0aabe3d32601ce41249781e3a27da55242b45cb7b1",
+    "draftSha256": "f1eed329a87848ed05ee4c535b5b6531052aabf9b30857e1937f8564f9aef36f",
     "seedAssignmentVersion": 1
   }
 }

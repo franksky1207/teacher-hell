@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a293924b24e016eb1646b2172485436503cf4e94a12aa1dc6968173dc5abb2f4",
+      "checkedAt": "2026-11-27T06:23:07.076Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把掃具上的名字拿下來，恢復只標示用途。",
+            "action": "導師已把掃具上的名字拿下來，恢復只標示用途。",
+            "tradeoff": "少了裝飾，也暫時中斷作品被誤讀"
+          },
+          {
+            "id": 2,
+            "text": "徵得作者同意，把圖卡移到不對應個人的展示處。",
+            "action": "導師已徵得作者同意，把圖卡移到不對應個人的展示處。",
+            "tradeoff": "保留作品，但要重新安排位置"
+          },
+          {
+            "id": 3,
+            "text": "讓使用者自願選不影射人的名字，沒選的人保留原樣。",
+            "action": "導師已讓使用者自願選不影射人的名字，沒選的人保留原樣。",
+            "tradeoff": "有參與感，也要花時間確認彼此接受"
+          },
+          {
+            "id": 4,
+            "text": "先把未貼的小卡還給他，由他決定是否私下詢問朋友願不願意收。",
+            "action": "導師已先把未貼的小卡還給他，由他決定是否私下詢問朋友願不願意收。",
+            "tradeoff": "心意回到當事人之間，也可能被拒絕"
+          },
+          {
+            "id": 5,
+            "text": "請值日小組重整掃具標示，只依區域與用途分類。",
+            "action": "導師已請值日小組重整掃具標示，只依區域與用途分類。",
+            "tradeoff": "改善實用性，但得另做標籤"
+          },
+          {
+            "id": 6,
+            "text": "約班上談一次哪些玩笑讓人被指認，不要求那名學生現身說明。",
+            "action": "導師已約班上談一次哪些玩笑讓人被指認，不要求那名學生現身說明。",
+            "tradeoff": "處理旁人的解讀，會占班務時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想要那張還沒貼的，先問他能不能賣個人情送我。",
+          "action": "導師已以可自由拒絕的方式詢問是否願贈未貼且不含個人影射的卡，不要求補畫、不給分或交換待遇。",
+          "tradeoff": "可能被拒絕，也不能把師生關係當成一定要送的理由"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2636100522
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "684c0287a4fef4ccdb5426cfd93afbd144047562f7e6ed627e05cc318c1c9a91"
+      },
+      "consequenceDirections": {
+        "A": "同學可能理解也可能辯解，需要回到具體說法而非猜心。",
+        "B": "圖卡能被看見，不再連到誰掃得快慢。",
+        "C": "卡片若送出會成為教師自己的小物，作者仍能保留原稿或說不",
+        "D": "學生可找到需要的工具，手繪作品另由作者保留。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8deeb731577a149e882e444c16b64672ff8b6e82e4f0a4d671481533f245b663",
+    "draftSha256": "a293924b24e016eb1646b2172485436503cf4e94a12aa1dc6968173dc5abb2f4",
     "seedAssignmentVersion": 1
   }
 }

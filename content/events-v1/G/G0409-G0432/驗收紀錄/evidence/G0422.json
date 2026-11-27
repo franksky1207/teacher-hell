@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4826dcd4d3a3f8c93a836e9daba77a2d53b56e13354866efbfb240cab1915d7e",
+      "checkedAt": "2026-11-27T06:23:07.094Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由我直接向班上說明已確認與待確認的時段，不讓他代答。",
+            "action": "導師已由我直接向班上說明已確認與待確認的時段，不讓他代答。",
+            "tradeoff": "減少學生夾在中間，我得自己面對追問"
+          },
+          {
+            "id": 2,
+            "text": "向有權安排場地的人確認剩餘問題，約好回覆進度的時間。",
+            "action": "導師已向有權安排場地的人確認剩餘問題，約好回覆進度的時間。",
+            "tradeoff": "來源清楚，也可能發現可用段比預期少"
+          },
+          {
+            "id": 3,
+            "text": "重新詢問每人的實際需求，再排可用時段。",
+            "action": "導師已重新詢問每人的實際需求，再排可用時段。",
+            "tradeoff": "比先到先排貼近需要，但得多一次整理"
+          },
+          {
+            "id": 4,
+            "text": "在確定可用的範圍內提出輪替方式，讓學生先看再決定報名。",
+            "action": "導師已在確定可用的範圍內提出輪替方式，讓學生先看再決定報名。",
+            "tradeoff": "分配較可預期，但常用者得讓出部分機會"
+          },
+          {
+            "id": 5,
+            "text": "請他只保留原本查詢任務，名單與分配由我接回。",
+            "action": "導師已請他只保留原本查詢任務，名單與分配由我接回。",
+            "tradeoff": "角色清楚，也減少他練習統整的機會"
+          },
+          {
+            "id": 6,
+            "text": "取消還未核准的加開構想，只安排已確認的合法自習。",
+            "action": "導師已取消還未核准的加開構想，只安排已確認的合法自習。",
+            "tradeoff": "不再讓大家空等，也少了可能的使用機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再把這張表修到深夜，這次不另外加開我自己提的陪讀。",
+          "action": "導師已取消自身自願提出、非必要且未成既定課務的額外陪讀，不取消學生原有合法場地權益或必要照看安排。",
+          "tradeoff": "少了我的額外協助，也得向期待的人改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 841878745
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "245e0aa848ebca4afb195d09b67ce98ae3c1eb14a77d8241b95c0d904d43af89"
+      },
+      "consequenceDirections": {
+        "A": "班上不再把未定內容算到他名下，未確認處仍須接續。",
+        "B": "原已核准自習照常，學生需區分場地可用與教師是否陪讀",
+        "C": "實際核准結果決定可安排人數，不能為兌現期待超借。",
+        "D": "他不必替未授權的安排負責，教師的工作量會增加。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a159e85cddc685f4e64496703f565f17c61ba5c503e6475949f5f6ccfce89cea",
+    "draftSha256": "4826dcd4d3a3f8c93a836e9daba77a2d53b56e13354866efbfb240cab1915d7e",
     "seedAssignmentVersion": 1
   }
 }

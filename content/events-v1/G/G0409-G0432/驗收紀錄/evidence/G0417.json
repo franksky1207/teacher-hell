@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1403204e94a0a8426e315acfd0838960ba0d1199bc18cc4121727bc90e056367",
+      "checkedAt": "2026-11-27T06:23:07.089Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請願意的同學按紙上的說明自行開一局，他不主持。",
+            "action": "導師已請願意的同學按紙上的說明自行開一局，他不主持。",
+            "tradeoff": "能測試是否真的不依賴本人，也可能玩不起來"
+          },
+          {
+            "id": 2,
+            "text": "明說不必等我的評語，讓同學自己選擇要不要另開局。",
+            "action": "導師已明說不必等我的評語，讓同學自己選擇要不要另開局。",
+            "tradeoff": "少了成人背書，也可能沒有人先動"
+          },
+          {
+            "id": 3,
+            "text": "請他先完成今天的離校安排，遊戲留給仍能合法留下的人。",
+            "action": "導師已請他先完成今天的離校安排，遊戲留給仍能合法留下的人。",
+            "tradeoff": "保住接送銜接，今天可能錯過一起玩"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意請一位自願者練習帶局，不承諾每天等誰。",
+            "action": "導師已問他願不願意請一位自願者練習帶局，不承諾每天等誰。",
+            "tradeoff": "有人接棒，卻可能形成另一個被依賴的人"
+          },
+          {
+            "id": 5,
+            "text": "先讓同學各自讀規則，說出第一步會做什麼，再決定是否開始。",
+            "action": "導師已先讓同學各自讀規則，說出第一步會做什麼，再決定是否開始。",
+            "tradeoff": "減少整局試錯，仍需多留閱讀時間"
+          },
+          {
+            "id": 6,
+            "text": "讓大家分成想等人與想先玩的兩桌，不強迫統一。",
+            "action": "導師已讓大家分成想等人與想先玩的兩桌，不強迫統一。",
+            "tradeoff": "保留不同喜好，也可能讓原團體分開"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想解，但先帶自己的那份回去玩，不占他今天的接送時間。",
+          "action": "導師已徵得作者同意借用一份不含私人資訊的遊戲材料於個人時間試玩，不要求即時回覆或改變離校安排。",
+          "tradeoff": "得自己卡關，不能隨時叫學生來提示"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3120991658
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "ede988463578a7708f02f5719e2ca9347cb07ade7740948bff9f5b6981a1d04e"
+      },
+      "consequenceDirections": {
+        "A": "教師的私人試玩可能留下問題清單，也可能沒有玩完",
+        "B": "卡住的位置會顯出說明缺漏，不必靠導師口頭保證。",
+        "C": "同學真正的參與意願會浮現，帶頭者須接受不被等候。",
+        "D": "學生會看到遊戲與陪伴並非每次都能同時滿足。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4a48867169540d8c536c5f8670871aae52bc16fed9aa0bfbba76ca5870413cc4",
+    "draftSha256": "1403204e94a0a8426e315acfd0838960ba0d1199bc18cc4121727bc90e056367",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "820ff2977a0708aa096cb131c08af210bde6f176831886ed132c8fdfc80a374b",
+      "checkedAt": "2026-11-27T06:23:07.083Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消下一節原定試法，讓同事回到自己準備的方案。",
+            "action": "導師已取消下一節原定試法，讓同事回到自己準備的方案。",
+            "tradeoff": "停止代決定，但前一節的嘗試可能接不上"
+          },
+          {
+            "id": 2,
+            "text": "請他選出還願意保留的部分，其餘不要沿用。",
+            "action": "導師已請他選出還願意保留的部分，其餘不要沿用。",
+            "tradeoff": "保住可用片段，也可能得重排銜接"
+          },
+          {
+            "id": 3,
+            "text": "先把第二節交由他主帶，我只做他同意的協助。",
+            "action": "導師已先把第二節交由他主帶，我只做他同意的協助。",
+            "tradeoff": "權限清楚，也必須忍住臨場接管"
+          },
+          {
+            "id": 4,
+            "text": "另找雙方有空的工作時間重新討論，下一節不加新試驗。",
+            "action": "導師已另找雙方有空的工作時間重新討論，下一節不加新試驗。",
+            "tradeoff": "降低疲倦時決定的壓力，但改進會延後"
+          },
+          {
+            "id": 5,
+            "text": "徵得同意後，一起向學生說明流程要調整，不追究誰先點頭。",
+            "action": "導師已徵得同意後，一起向學生說明流程要調整，不追究誰先點頭。",
+            "tradeoff": "讓變動有交代，但要避免公開同事私下疲累"
+          },
+          {
+            "id": 6,
+            "text": "請同事把不同意的兩處直接寫在流程上，我再依授課分工修改自己的部分。",
+            "action": "導師已請同事把不同意的兩處直接寫在流程上，我再依授課分工修改自己的部分。",
+            "tradeoff": "留下可核對的意見，也多一次修稿"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點掛不住臉，先把這份試教分享撤掉，不急著拿去給其他同事看。",
+          "action": "導師已撤回自己提出、非必要且未公開的教法分享安排，依原有課務照常授課，不利用同事不同意作負面說明。",
+          "tradeoff": "少一次展示機會，也得向原本邀請的人改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 263205557
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "e0972ae41330dea63987627d8964779a571b2711efddd70f6e63b23d668d54a0"
+      },
+      "consequenceDirections": {
+        "A": "私下協作暫時不被包裝成成功案例，之後是否分享另需雙方同意",
+        "B": "學生會遇到流程改變，需要簡單交代而非責怪同事。",
+        "C": "精神好時可能談出不同方案，也可能確認彼此確實不合用。",
+        "D": "成人能共同承擔改動，學生不必選邊。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7328dfbe8af4767d7c0a4fb9655519ea7e938bbef3135644f8e26f4198adde1f",
+    "draftSha256": "820ff2977a0708aa096cb131c08af210bde6f176831886ed132c8fdfc80a374b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a5659996df961a48e504f5a7bef9ef5c2e0134d667a03fb09ef75eea0ad69d68",
+      "checkedAt": "2026-11-27T06:23:07.099Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤掉這張榜單，往後不再以公開幫了誰來獎勵。",
+            "action": "導師已撤掉這張榜單，往後不再以公開幫了誰來獎勵。",
+            "tradeoff": "減少比較，也少了他期待的可見肯定"
+          },
+          {
+            "id": 2,
+            "text": "經當事人同意，只留無法回推個人的總數。",
+            "action": "導師已經當事人同意，只留無法回推個人的總數。",
+            "tradeoff": "保留部分成果，也須確認小範圍數字是否仍會指認"
+          },
+          {
+            "id": 3,
+            "text": "請他自選願意公開、又不牽涉他人的成果，確認後重做。",
+            "action": "導師已請他自選願意公開、又不牽涉他人的成果，確認後重做。",
+            "tradeoff": "可重新展示，但要花時間想不同內容"
+          },
+          {
+            "id": 4,
+            "text": "改用個別回饋告訴他哪些地方做得有幫助，不設牆上名次。",
+            "action": "導師已改用個別回饋告訴他哪些地方做得有幫助，不設牆上名次。",
+            "tradeoff": "肯定較具體，卻沒有全班看得到的效果"
+          },
+          {
+            "id": 5,
+            "text": "和借閱小組重談必要紀錄由誰保管，公開牆不再當借用簿。",
+            "action": "導師已和借閱小組重談必要紀錄由誰保管，公開牆不再當借用簿。",
+            "tradeoff": "用途分開，也得整理現有資料"
+          },
+          {
+            "id": 6,
+            "text": "另約他和願意參與的朋友談這次的不滿，不要求朋友當場原諒。",
+            "action": "導師已另約他和願意參與的朋友談這次的不滿，不要求朋友當場原諒。",
+            "tradeoff": "處理關係需要時間，也可能有人拒談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我先把自己那張「班務成果」分享稿收回，不拿這面牆當我的成績。",
+          "action": "導師已撤回自身尚未公開、非必要的班務成果分享構想，不附學生借用名單、不要求學生為教師補做可展示材料。",
+          "tradeoff": "少一次展示機會，也得自己向邀請者改口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3898191033
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "930cd4d529b061e3ec5d8afdedb3da7e8d0fb0c675a75bc95db9274c001cf595"
+      },
+      "consequenceDirections": {
+        "A": "教師不再藉學生互助替自己加分，班級的實際整理仍要做",
+        "B": "他可能改談整理方法，也可能決定這次不公開。",
+        "C": "數字若仍易猜出人，就得進一步拿掉而非假匿名。",
+        "D": "他可能逐漸接受，也可能仍覺得私下說不算數。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c95b73a9da3dc4fd264d18235ea0013a4cbe3117360c0a545c5f0233c274e61b",
+    "draftSha256": "a5659996df961a48e504f5a7bef9ef5c2e0134d667a03fb09ef75eea0ad69d68",
     "seedAssignmentVersion": 1
   }
 }

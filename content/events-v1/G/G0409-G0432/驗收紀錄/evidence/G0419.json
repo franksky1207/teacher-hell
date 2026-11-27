@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "691741d0d28111de9a09e0a35f35971b173b507cbecb7c94a7449cba79b5b30a",
+      "checkedAt": "2026-11-27T06:23:07.092Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "等他自己決定是否署名，確認後再接受代寄。",
+            "action": "導師已等他自己決定是否署名，確認後再接受代寄。",
+            "tradeoff": "心意由本人決定，但我要多留一點時間"
+          },
+          {
+            "id": 2,
+            "text": "陪他走到正常投遞處，讓他自己投。",
+            "action": "導師已陪他走到正常投遞處，讓他自己投。",
+            "tradeoff": "能一起完成，會占用我的私人行程"
+          },
+          {
+            "id": 3,
+            "text": "把明信片還給他，說明今天不方便代寄。",
+            "action": "導師已把明信片還給他，說明今天不方便代寄。",
+            "tradeoff": "守住自己的安排，也可能讓他失望"
+          },
+          {
+            "id": 4,
+            "text": "問他要不要先改那句最不好意思的話，不替他署名。",
+            "action": "導師已問他要不要先改那句最不好意思的話，不替他署名。",
+            "tradeoff": "可能比較敢寄，也多一次斟酌"
+          },
+          {
+            "id": 5,
+            "text": "請他先確認地址與郵資，我只負責照確認好的方式投遞。",
+            "action": "導師已請他先確認地址與郵資，我只負責照確認好的方式投遞。",
+            "tradeoff": "分清實際代辦範圍，也少了陪著猶豫的時間"
+          },
+          {
+            "id": 6,
+            "text": "建議他今天先帶回去，睡過一晚再決定。",
+            "action": "導師已建議他今天先帶回去，睡過一晚再決定。",
+            "tradeoff": "不在疲倦時趕著投，也可能一直擱著"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忽然也想寫一張，自己買張卡和他各寫各的。",
+          "action": "導師已決定於私人可安排時間自行購買明信片、寫自己的收件人與內容，不索取同事鄰居地址、不代替其認領署名。",
+          "tradeoff": "花自己的錢和時間，原本的路程會延後"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3600390485
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "d57e058a17d35387eea971567da7bb6729e88940173aba9c78bd8aca0305264b"
+      },
+      "consequenceDirections": {
+        "A": "文字更像本人願意說的版本，仍不保證署名。",
+        "B": "兩張不同的信可一起投，也可能有人寫完又留下",
+        "C": "他有時間重新讀過，後續可能改寄別種訊息。",
+        "D": "他可能補名，也可能收回明信片重新想。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f68bb35ab0f170de2bcb81639fe856bcdb4382ca88bbaf2773e71868be14948",
+    "draftSha256": "691741d0d28111de9a09e0a35f35971b173b507cbecb7c94a7449cba79b5b30a",
     "seedAssignmentVersion": 1
   }
 }

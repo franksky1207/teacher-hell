@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dbfc5c8d357b3a4379d4ddf405d6db5b46dc382db99d453ae4afb34120851432",
+      "checkedAt": "2026-11-27T06:23:07.094Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他用自己的話重講這一步，只看推理是否接得上。",
+            "action": "導師已請他用自己的話重講這一步，只看推理是否接得上。",
+            "tradeoff": "給他重說的機會，也可能仍然講不完整"
+          },
+          {
+            "id": 2,
+            "text": "拿另一個條件不同的例子，看看相同步驟還能不能用。",
+            "action": "導師已拿另一個條件不同的例子，看看相同步驟還能不能用。",
+            "tradeoff": "避免只重演原題，會多用一點課內時間"
+          },
+          {
+            "id": 3,
+            "text": "今天先把題目帶回原課程，下次另約他談模仿帶來的感受。",
+            "action": "導師已今天先把題目帶回原課程，下次另約他談模仿帶來的感受。",
+            "tradeoff": "不在氣頭上硬談，但需確實另約"
+          },
+          {
+            "id": 4,
+            "text": "請他標出哪些步驟來自我的示範、哪些是自己加的。",
+            "action": "導師已請他標出哪些步驟來自我的示範、哪些是自己加的。",
+            "tradeoff": "來源更清楚，也可能讓他覺得又被查抄襲"
+          },
+          {
+            "id": 5,
+            "text": "徵得同意後，讓他選一小段保留原本說法，其餘換自己習慣的方式。",
+            "action": "導師已徵得同意後，讓他選一小段保留原本說法，其餘換自己習慣的方式。",
+            "tradeoff": "不必整套否定，但需要實際嘗試"
+          },
+          {
+            "id": 6,
+            "text": "改以書面回看這份草稿，暫不要求他當眾重講。",
+            "action": "導師已改以書面回看這份草稿，暫不要求他當眾重講。",
+            "tradeoff": "減少再次難堪，也少了即時對話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再被自己的口頭禪綁住，下節課試著不用那套固定問句。",
+          "action": "導師已決定在自己有授課權的後續教學中調整自身固定問句，不改必要教學內容、不要求學生配合證明或評判。",
+          "tradeoff": "打亂我的熟練節奏，也可能講得更卡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2137310917
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "f421db765674f7acf4b0cbf3bdd6ff8638274b3a959be9e2e275f5d27a2bfa4b"
+      },
+      "consequenceDirections": {
+        "A": "課業與關係可分開處理，學生也可能不願再模仿。",
+        "B": "學生能看到方法可調整，教師得面對自己也會依賴模仿",
+        "C": "教師能分清借用說法與理解內容，不靠口吻判斷。",
+        "D": "教師須在草稿上指出具體錯處，不能只寫態度評語。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7954ec362d152580bd93b9091a19b435a422d78056f80cb66c97825e7af5cdec",
+    "draftSha256": "dbfc5c8d357b3a4379d4ddf405d6db5b46dc382db99d453ae4afb34120851432",
     "seedAssignmentVersion": 1
   }
 }

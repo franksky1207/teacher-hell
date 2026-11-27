@@ -15,14 +15,155 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7decd35cbe73ca53aa769948479b5b0301b1be7f8b6dafa3811730ef36d9d422",
+      "checkedAt": "2026-11-27T12:00:08.503Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只給作者回饋，不拿來教全班。",
+            "action": "導師已婉拒本次全班教材用途，提供作者應有的個別回饋，不擅取照片。",
+            "tradeoff": "少了現成例子"
+          },
+          {
+            "id": 2,
+            "text": "先問孩子願不願意只借一小段，仍可說不。",
+            "action": "導師已向作者提出限片段的可拒絕教材借用詢問，尚未取得授權或播放。",
+            "tradeoff": "要另談使用範圍"
+          },
+          {
+            "id": 3,
+            "text": "我另外做一個例子，這件留在家裡。",
+            "action": "導師已以自有材料製作不同的教學例件，未複製學生作品或借家長名義。",
+            "tradeoff": "教師多花備課時間"
+          },
+          {
+            "id": 4,
+            "text": "問孩子要不要暫把原作留在自己的作品袋，不借出去也不展示。",
+            "action": "導師已提出限定本人既有作品袋的自願保存詢問，尚未取得同意、保管物品或授權教學用途。",
+            "tradeoff": "保管與取回需說清楚，也可能不願留下"
+          },
+          {
+            "id": 5,
+            "text": "邀家長另談怎麼忍住不代改，不討論公開作品。",
+            "action": "導師已發出限定成人支持方法的自願短談邀請，尚未約成或公開家庭資訊。",
+            "tradeoff": "多用一次正常工作短談"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想辦的額外成品人氣票選。",
+            "action": "導師已取消本人非必要成品票選提案，不取代作品必要學習回饋。",
+            "tradeoff": "少了活動話題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看那個歪角我也手癢，回去拿自己的紙折一個，折歪也自己留。",
+          "action": "導師已用自有紙材另作私人折製小物，不取學生原作、圖樣或授權外照片。",
+          "tradeoff": "用自己的材料和空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 918911896
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "2ac08efeaa7b151d6aeadfbeb39a0d4462d0d0b5736f71173ab26cc992cc3354"
+      },
+      "consequenceDirections": {
+        "A": "可以支持家庭放手，但不能把親職心得當必交成果。",
+        "B": "教師能滿足動手欲，不伸手改學生作品或要求家庭再做。",
+        "C": "家長可能失望，作品仍不必靠公開才被肯定。",
+        "D": "若願意可保留作品等待本人後續選擇；若拒絕即帶回，不把保存等同教材授權。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4維持既有教材且不用原作，實際用途決定與普通1只回饋作者過近，改為可拒絕的原件保存詢問。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次只給作者回饋，不拿來教全班。",
+                "action": "導師已婉拒本次全班教材用途，提供作者應有的個別回饋，不擅取照片。",
+                "tradeoff": "少了現成例子"
+              },
+              {
+                "id": 2,
+                "text": "先問孩子願不願意只借一小段，仍可說不。",
+                "action": "導師已向作者提出限片段的可拒絕教材借用詢問，尚未取得授權或播放。",
+                "tradeoff": "要另談使用範圍"
+              },
+              {
+                "id": 3,
+                "text": "我另外做一個例子，這件留在家裡。",
+                "action": "導師已以自有材料製作不同的教學例件，未複製學生作品或借家長名義。",
+                "tradeoff": "教師多花備課時間"
+              },
+              {
+                "id": 4,
+                "text": "用學校已有的教材，不再為這件作品加一堂。",
+                "action": "導師已選用既有可用教材維持原課，不新增本作品專題。",
+                "tradeoff": "少了新鮮感"
+              },
+              {
+                "id": 5,
+                "text": "邀家長另談怎麼忍住不代改，不討論公開作品。",
+                "action": "導師已發出限定成人支持方法的自願短談邀請，尚未約成或公開家庭資訊。",
+                "tradeoff": "多用一次正常工作短談"
+              },
+              {
+                "id": 6,
+                "text": "取消我原想辦的額外成品人氣票選。",
+                "action": "導師已取消本人非必要成品票選提案，不取代作品必要學習回饋。",
+                "tradeoff": "少了活動話題"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "看那個歪角我也手癢，回去拿自己的紙折一個，折歪也自己留。",
+              "action": "導師已用自有紙材另作私人折製小物，不取學生原作、圖樣或授權外照片。",
+              "tradeoff": "用自己的材料和空檔"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1753008667
+            },
+            "selectedIds": [
+              6,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 6,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "8057a093277ccf8e52338d092d3f1cd2445cd7883868909dd86bcebcbf991a8f"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可能失望，作品仍不必靠公開才被肯定。",
+            "B": "不再用票數壓作品作者，原正常回饋照常。",
+            "C": "教師能滿足動手欲，不伸手改學生作品或要求家庭再做。",
+            "D": "原課仍能完成，家長不能以支援換課程決定。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "133b7e643b53d50b23f186ebe7bc4dfb4873df28309d62272491536a1ebb0ead",
+    "draftSha256": "7decd35cbe73ca53aa769948479b5b0301b1be7f8b6dafa3811730ef36d9d422",
     "seedAssignmentVersion": 1
   }
 }

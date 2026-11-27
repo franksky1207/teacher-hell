@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6196229b504b92a08693b1ee5ee90481a99afb583a0065d5a673246c0284dc39",
+      "checkedAt": "2026-11-27T12:00:08.504Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "縮成一條的示範，其他組看完再做不同的紙本練習。",
+            "action": "導師已將本人課程縮為有限示範及可用紙本替代，不剪借物或索取更多材料。",
+            "tradeoff": "少了每組動手的機會"
+          },
+          {
+            "id": 2,
+            "text": "向學校申請這次需要的耗材，先不開做。",
+            "action": "導師已提出依規採購耗材申請，尚未獲核准或領料，未要求同事繼續提供。",
+            "tradeoff": "可能等不到或不獲准"
+          },
+          {
+            "id": 3,
+            "text": "改用教室現有且可用的紙條，緞帶按約歸還。",
+            "action": "導師已以校內既有可支用紙材替換練習媒材，借物依約清理歸還。",
+            "tradeoff": "成品質感不同"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的包裝裝飾，只完成原定學習部分。",
+            "action": "導師已取消本人非必要包裝要求，保留原學習內容及必要回饋。",
+            "tradeoff": "少了漂亮外觀"
+          },
+          {
+            "id": 5,
+            "text": "另邀同事日後講一次用量怎麼估，不請他出料。",
+            "action": "導師已發出限定方法交流的自願成人邀請，未取得答應或要求備料。",
+            "tradeoff": "要另用工作時間"
+          },
+          {
+            "id": 6,
+            "text": "這次停止新的實作，改看先前已完成的例件。",
+            "action": "導師已停止本人當次可取消的新製作，改用既有授權例件進行正常回饋。",
+            "tradeoff": "少一次新作經驗"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想試自己的笨方法，先自費買一小卷，只供我下班玩。",
+          "action": "導師已自費購買本人私人試作緞帶，不以學校名義採購、不要求報帳或同事代做。",
+          "tradeoff": "花自己的錢，也可能做不成"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 886633630
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "b6afc5144dd7280a2ec726b7e2c0587eae9d6679135d6c41db0f5e2f2af70074"
+      },
+      "consequenceDirections": {
+        "A": "資源壓力降低，不把觀摩當人人完成實作。",
+        "B": "可討論真實用量，不要求同事替停課救場。",
+        "C": "學生可繼續原概念，不把替代物冒充相同效果。",
+        "D": "私人試作不成為全班後續必做或耗材來源。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "830ded97f4d31f0e389d2c5508a2bec7ca2b0680444679733af241b9bff3f021",
+    "draftSha256": "6196229b504b92a08693b1ee5ee90481a99afb583a0065d5a673246c0284dc39",
     "seedAssignmentVersion": 1
   }
 }

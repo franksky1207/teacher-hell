@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7fd1d53d0f89a0ac15c9f7e38c8cf87fe313666e0534d1173dddf4ca113c4f4a",
+      "checkedAt": "2026-11-27T12:00:08.514Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原題照常，新題只作自願參考，不加必做量。",
+            "action": "導師已提供本人可用的新題作自願參考，維持原教學及總量，不宣稱已全班採用。",
+            "tradeoff": "新題沒有全班共同討論"
+          },
+          {
+            "id": 2,
+            "text": "在原課內換掉一題試試，其餘不動。",
+            "action": "導師已在自身授課權限內以一題等量替換作有限試行，未增加總量或改他科。",
+            "tradeoff": "要調整原進度"
+          },
+          {
+            "id": 3,
+            "text": "這次維持原題，另邀學生用正常班務管道提建議。",
+            "action": "導師已維持本次原課並提供既有自願建議方式，不以拒用懲罰提案者。",
+            "tradeoff": "提案要等下次考量"
+          },
+          {
+            "id": 4,
+            "text": "先由我示範新題，不要求學生再做。",
+            "action": "導師已於本人可用課內示範新題一段，保留正常理解回饋，不追加學生作業。",
+            "tradeoff": "少了學生實作觀察"
+          },
+          {
+            "id": 5,
+            "text": "只問他願不願意比較新舊題各問什麼，不負責收全班同意。",
+            "action": "導師已提出限定題意比較的個別自願邀請，未授權代選題或要求補名單。",
+            "tradeoff": "需多一段討論"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的換題投票排行，回到學習需要決定。",
+            "action": "導師已取消本人非必要題目人氣排行，不撤除正常提問及公平學習機會。",
+            "tradeoff": "少一次熱鬧投票"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點想玩那題，留到自己的備課空檔解，不再叫全班陪我試。",
+          "action": "導師已在本人可用備課時間以自有可用題目自行試解，未要求學生驗算或宣稱正確結論。",
+          "tradeoff": "自己花時間，可能解不出來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3037646617
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "7306647d38908ab929e52253b33db1feb876d09d554e30d4c711fcd76f09441a"
+      },
+      "consequenceDirections": {
+        "A": "教師有好奇，不以私人興趣加學生份量。",
+        "B": "不會因傳話錯誤自動採用，也不封住未來建議。",
+        "C": "想看的人有入口，不願者不受評罰。",
+        "D": "能運用表達能力，不變成課程表決代理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4ec35ddf53be26a651554914e2e8a337fdc2a50838dda964e059b61216613e66",
+    "draftSha256": "7fd1d53d0f89a0ac15c9f7e38c8cf87fe313666e0534d1173dddf4ca113c4f4a",
     "seedAssignmentVersion": 1
   }
 }

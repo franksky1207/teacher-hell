@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5386007e6e714d25c5323e1aa30f8b1c9b99c8462eb154597d645eafe596b500",
+      "checkedAt": "2026-11-27T12:00:08.508Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請孩子用物件重說一次，家長先看不代答。",
+            "action": "導師已提供有限物件重述與個別回饋機會，未讓家長代做學生作答。",
+            "tradeoff": "要留正常課內時間"
+          },
+          {
+            "id": 2,
+            "text": "把暫放與扣除畫成兩個動作，留作我的課內例子。",
+            "action": "導師已以自有圖示製作兩種操作對照，標示數量是否仍計入，不公開家庭資訊。",
+            "tradeoff": "教師多做一份圖"
+          },
+          {
+            "id": 3,
+            "text": "邀家長自願寫一個家中例子，我核對後才決定用不用。",
+            "action": "導師已提出有限家庭例句詢問，未取得新資料、教材授權或公開同意。",
+            "tradeoff": "要等，也可不提供"
+          },
+          {
+            "id": 4,
+            "text": "先用另一道題看孩子會怎麼做，不重做整份。",
+            "action": "導師已在自身課內提供有限變式診斷與正常回饋，不追加整份練習。",
+            "tradeoff": "只看得到一個新起點"
+          },
+          {
+            "id": 5,
+            "text": "將原自加的用語抄寫取消，改保留必要算式說明。",
+            "action": "導師已取消本人非必要標準用語抄寫要求，保留數學理解及必要回饋。",
+            "tradeoff": "少了整齊文字成果"
+          },
+          {
+            "id": 6,
+            "text": "約一次短的家庭方法交流，只談大人怎麼示範。",
+            "action": "導師已發出限定成人示範方法的自願邀約，尚未約成，不要求孩子再交成果。",
+            "tradeoff": "需另配工作時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那個手勢我也聽岔了，自己畫一張很醜的小圖貼在備課本，免得下次又忘。",
+          "action": "導師已以自有紙材畫製私人操作提醒圖，不含家庭個資或替代學生教材。",
+          "tradeoff": "花自己的備課空檔，也不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3053711866
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "f6880023fc684c9e6c354c650e6ba55ea71ee143a48bd4a6645376ba7871491b"
+      },
+      "consequenceDirections": {
+        "A": "學生不需為口語差異反覆抄，數量關係仍需弄清。",
+        "B": "家長有空再參與，不能把到校變義務。",
+        "C": "可見本人理解，不能因家長演得好就判孩子會。",
+        "D": "教師可留私人提醒，不拿家庭用語當笑話。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d4a7f229903fe7d259c54d2477bfc963b6206a9d7fabeab69d0f2201465a8c7b",
+    "draftSha256": "5386007e6e714d25c5323e1aa30f8b1c9b99c8462eb154597d645eafe596b500",
     "seedAssignmentVersion": 1
   }
 }

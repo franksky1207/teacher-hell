@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "972d601334a39644967f5d197ae3b5b7094b1718ea8b332adf327f1efda66521",
+      "checkedAt": "2026-11-27T12:00:08.499Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這次額外搬動，作品留在原位看。",
+            "action": "導師已取消本人可決定的非必要移展，保留原位安全觀看與必要教學。",
+            "tradeoff": "少了集中展示的效果"
+          },
+          {
+            "id": 2,
+            "text": "等成人核定路線後，再請原作者自願補一張往返圖。",
+            "action": "導師已提出以核定動線為底的自願修圖邀請，尚未取得新圖或宣稱動線核准。",
+            "tradeoff": "要等確認，也可能不願重畫"
+          },
+          {
+            "id": 3,
+            "text": "由我逐組說明，不再請學生製作路線圖。",
+            "action": "導師已接回非必要製圖工作並向各組提供成人核定路線的說明安排，不以說明代替現場照看。",
+            "tradeoff": "教師得多講幾遍"
+          },
+          {
+            "id": 4,
+            "text": "把可移動的小件改成分次展示，不一次集中。",
+            "action": "導師已提出限核定安全條件的分次小件展示方案，尚未移動或取得場地變更同意。",
+            "tradeoff": "觀看要分幾回"
+          },
+          {
+            "id": 5,
+            "text": "不移作品，請有意願的作者用自己的照片介紹。",
+            "action": "導師已提出僅使用作者同意照片的課內介紹邀請，未取得新影像授權或公開。",
+            "tradeoff": "看不到實物細節"
+          },
+          {
+            "id": 6,
+            "text": "這次先用文字索引，標作品原位，不另發路線圖。",
+            "action": "導師已製作經核對的作品位置文字索引，觀看範圍依核定動線，不指派學生帶路。",
+            "tradeoff": "沒有箭頭那麼直觀"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "圖沒畫成，我倒想留那個奇怪的大箭頭，自己另外畫成桌上小卡。",
+          "action": "導師已用自有紙材另畫私人箭頭小卡，不取用學生原稿或代替必要動線說明。",
+          "tradeoff": "花自己的空檔，也不會幫展示變漂亮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 566582093
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "c2124ef53730a039dfde4e89d8490b23884896c89654f614e46088c4fcc9f5e3"
+      },
+      "consequenceDirections": {
+        "A": "學生不必重搬，現地觀看仍須不擋通道。",
+        "B": "願提供的人可分享，未同意者不補拍或被排除學習。",
+        "C": "搬運量下降，仍需核定每次路線及成人交接。",
+        "D": "教師能玩自己的圖案，不拿學生失誤作笑話或要他補製。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4bed2930d8d22b61de06cb83ea7838b0614df4aeeaf2cb6a544ad1829e3e03ba",
+    "draftSha256": "972d601334a39644967f5d197ae3b5b7094b1718ea8b332adf327f1efda66521",
     "seedAssignmentVersion": 1
   }
 }

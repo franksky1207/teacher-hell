@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bc31d27575d6aa5ad1db203783e891b58acc6af69a4744d03d47e8097e982e9b",
+      "checkedAt": "2026-11-27T12:00:08.507Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只交現有真實成果，不另補漂亮畫面。",
+            "action": "導師已整理既有可用成果作有限展示，不新增重演或誤導說明。",
+            "tradeoff": "資料不豐富"
+          },
+          {
+            "id": 2,
+            "text": "撤掉這次額外展示，必要工作紀錄照交。",
+            "action": "導師已撤回本人可取消的非必要展示，不免除共同必要紀錄及回覆。",
+            "tradeoff": "少了一次曝光"
+          },
+          {
+            "id": 3,
+            "text": "我另做概念圖，清楚標成教師說明而非學生實作。",
+            "action": "導師已製作自有概念圖並標明性質，不重建虛假學生過程。",
+            "tradeoff": "教師多花備課時間"
+          },
+          {
+            "id": 4,
+            "text": "請承辦允許縮短這次展示篇幅。",
+            "action": "導師已向正式承辦提出限縮非必要展示篇幅的申請，尚未獲同意。",
+            "tradeoff": "可能不獲准"
+          },
+          {
+            "id": 5,
+            "text": "把我自己的非必要版面美化接回，不讓同事兼做。",
+            "action": "導師已接回本人額外版面美化工作並告知不再請同事處理，未增加學生任務。",
+            "tradeoff": "占用自己的工作空檔"
+          },
+          {
+            "id": 6,
+            "text": "邀同事以自願成人短談回看這次工作量，不再討論展示畫面。",
+            "action": "導師已發出限定工作量回顧的成人邀請，未約成或調整正式課務。",
+            "tradeoff": "要另找工作時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕被說偷懶，私人時間找一位信得過的同事吐槽一下，不把學生照片傳過去。",
+          "action": "導師已向適當成人發出不含個資的私人傾談邀請，未獲答應或轉傳工作證據。",
+          "tradeoff": "得承受對方未必站我這邊"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4007723210
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ab682cf5425f22b8cb689bd0e4e6e152b2cdf560d3fdf2d6e99832440d69bc5a"
+      },
+      "consequenceDirections": {
+        "A": "可辨認未來負擔，不能把談過當主管已減量。",
+        "B": "能減少同事負擔，不把邀他看稿當已分工。",
+        "C": "有情緒出口，必要對主管說明仍按實情。",
+        "D": "主管可看見真實範圍，不能把空白補成未發生過程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "de8431adb9b70017de62b5483db6badbed31690dc5ded9e3727c22aeb318a089",
+    "draftSha256": "bc31d27575d6aa5ad1db203783e891b58acc6af69a4744d03d47e8097e982e9b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe44bf1d22d5b0a7ea3c7d06e2e4352df59d44024a92c392f29a459f2b2cb912",
+      "checkedAt": "2026-11-27T12:00:08.511Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先用同一個輕小物比兩種接角，不評材料貴不貴。",
+            "action": "導師已在核定安全小物條件內安排有限接角比較與正常回饋，不做人體或危險載重。",
+            "tradeoff": "要花課內試測時間"
+          },
+          {
+            "id": 2,
+            "text": "先停新製作，邀兩人各說想接哪一部分。",
+            "action": "導師已發出自願有限分工討論邀請，未代兩人答應合作或要求和好。",
+            "tradeoff": "進度暫緩"
+          },
+          {
+            "id": 3,
+            "text": "改為各做自己的小件，不要求共用同一成品。",
+            "action": "導師已提供原目標內的個別製作替代，不要求學生自費添料。",
+            "tradeoff": "少了合作成果"
+          },
+          {
+            "id": 4,
+            "text": "下一次課內提供相同校用紙材，讓全班只比較接法。",
+            "action": "導師已安排本人可支用的既有紙材作後續有限比較，不新增採購或改其他課。",
+            "tradeoff": "要用校內現有材料"
+          },
+          {
+            "id": 5,
+            "text": "這次只看他畫的接法圖，不要求再做一張。",
+            "action": "導師已以本人作品的有限圖解作本次非正式回饋方式，不要求額外成品。",
+            "tradeoff": "少了實作檢驗"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最豪華材料票選。",
+            "action": "導師已取消自身非必要材料豪華度票選，不替代必要安全與學習判讀。",
+            "tradeoff": "少了票選話題"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就喜歡那種粗粗的紙，自己找一塊做杯墊，不逼它變展示精品。",
+          "action": "導師已以自有包材製作私人杯墊，不取學生材料或宣稱具特殊耐熱性能。",
+          "tradeoff": "花私人材料，也可能不耐用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 61826241
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "a6a04eaae2d0c7f5a26efa4bb62c2c165573821d968e8ffbf068a53db38ddee9"
+      },
+      "consequenceDirections": {
+        "A": "材料仍需公平可得，不把分開當懲罰。",
+        "B": "可看出差異，不把一次撐住宣稱全面安全。",
+        "C": "教師保留自己的偏好，不拿學生家庭條件當風格展示。",
+        "D": "較能排除材料差異，不等於本次原作品無效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bf8f9265751259bca3c3ac00be3922d10c0295de5d7a1cdb5c23871dbbd0c7f8",
+    "draftSha256": "fe44bf1d22d5b0a7ea3c7d06e2e4352df59d44024a92c392f29a459f2b2cb912",
     "seedAssignmentVersion": 1
   }
 }

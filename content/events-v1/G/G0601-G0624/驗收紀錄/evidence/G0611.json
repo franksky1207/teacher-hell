@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "866692ecf7dccaa030f2965bc6f04c5be71b68b60a63ea317d65cf51b2651af6",
+      "checkedAt": "2026-11-27T12:00:08.508Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤掉我加的清掃倒數，原區按實際進度接續。",
+            "action": "導師已取消本人非必要競速倒數，依共同前提處理原區清潔，不改為加罰。",
+            "tradeoff": "少了催快工具"
+          },
+          {
+            "id": 2,
+            "text": "往後取消跨桌競賽，只保留原定個別區域。",
+            "action": "導師已撤回本人非必要跨桌競賽安排，明示原有限區域及必要調整方式。",
+            "tradeoff": "少了熱鬧感"
+          },
+          {
+            "id": 3,
+            "text": "這次不作成果拍照，收好清潔用品就結束額外活動。",
+            "action": "導師已取消自身非必要清掃成果擺拍，沒有以取消照片取代清潔收尾。",
+            "tradeoff": "少一張漂亮紀錄"
+          },
+          {
+            "id": 4,
+            "text": "另邀值日生在正常班務時間談怎麼分區，不占現在休息。",
+            "action": "導師已發出可拒絕的有限分區意見邀請，不要求現在留下或替教師排人。",
+            "tradeoff": "問題要稍後才談"
+          },
+          {
+            "id": 5,
+            "text": "把我自己額外擺在教室的展示雜物收走，不列學生清掃。",
+            "action": "導師已自行收回本人非必要展示雜物，不處置他人物品或減少必要清潔。",
+            "tradeoff": "自己得整理"
+          },
+          {
+            "id": 6,
+            "text": "提供無姓名的區域簡圖，往後只記哪裡需整理。",
+            "action": "導師已製作不記個人成績的簡單區域圖，供成人安排有限班務使用。",
+            "tradeoff": "少了個人績效比較"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也一肚子火，休息時自己買瓶冰茶喝，不再找學生聽我罵。",
+          "action": "導師已在必要清潔交接完成後於本人合法休息時段自費購買個人冰茶，不要求學生跑腿或陪聽。",
+          "tradeoff": "花自己的錢，火氣也未必就消"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1551029078
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "a3f7541ffd3f52ebd822fcc35696df9d2c8dcee1b9cd66b6746d20c697ac00ac"
+      },
+      "consequenceDirections": {
+        "A": "教師用自己的休息消化怒氣，不以買飲料取代必要更正、照看或清掃收尾。",
+        "B": "不需為照片再擦一次，必要紀錄仍如實。",
+        "C": "責任較清楚，不能拿原區名義掩蓋不均工作量。",
+        "D": "可以看工作分布，不能變相重建輸贏排行榜。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒取消最快桌照片與普通3取消清掃成果拍照涵蓋同一行動，改為私人自費飲品與休息取捨。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "撤掉我加的清掃倒數，原區按實際進度接續。",
+                "action": "導師已取消本人非必要競速倒數，依共同前提處理原區清潔，不改為加罰。",
+                "tradeoff": "少了催快工具"
+              },
+              {
+                "id": 2,
+                "text": "往後取消跨桌競賽，只保留原定個別區域。",
+                "action": "導師已撤回本人非必要跨桌競賽安排，明示原有限區域及必要調整方式。",
+                "tradeoff": "少了熱鬧感"
+              },
+              {
+                "id": 3,
+                "text": "這次不作成果拍照，收好清潔用品就結束額外活動。",
+                "action": "導師已取消自身非必要清掃成果擺拍，沒有以取消照片取代清潔收尾。",
+                "tradeoff": "少一張漂亮紀錄"
+              },
+              {
+                "id": 4,
+                "text": "另邀值日生在正常班務時間談怎麼分區，不占現在休息。",
+                "action": "導師已發出可拒絕的有限分區意見邀請，不要求現在留下或替教師排人。",
+                "tradeoff": "問題要稍後才談"
+              },
+              {
+                "id": 5,
+                "text": "把我自己額外擺在教室的展示雜物收走，不列學生清掃。",
+                "action": "導師已自行收回本人非必要展示雜物，不處置他人物品或減少必要清潔。",
+                "tradeoff": "自己得整理"
+              },
+              {
+                "id": 6,
+                "text": "提供無姓名的區域簡圖，往後只記哪裡需整理。",
+                "action": "導師已製作不記個人成績的簡單區域圖，供成人安排有限班務使用。",
+                "tradeoff": "少了個人績效比較"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我現在也火大，原想在群組貼的「最快一桌」照片不貼了，留著空白。",
+              "action": "導師已撤下本人尚未發布的非必要最快桌表揚提案，不刪必要事件紀錄或隱匿錯誤。",
+              "tradeoff": "少了炫耀，也得承認自己起鬨"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1075376290
+            },
+            "selectedIds": [
+              3,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 4,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "9a3fcf3d563e360c431908b864835233838855146c1507dc256079fb58f34081"
+          },
+          "previousConsequenceDirections": {
+            "A": "不再以速度製造輸家，必要清潔仍要有人負責。",
+            "B": "他可提出實際負擔，不被當新監工。",
+            "C": "不需為照片再擦一次，必要紀錄仍如實。",
+            "D": "學生不用再接競賽表揚，教師必要更正已完成。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4760995e100d2c93ee3d790bd55705478405b46e02554ede6ff5c6b82a1d19a7",
+    "draftSha256": "866692ecf7dccaa030f2965bc6f04c5be71b68b60a63ea317d65cf51b2651af6",
     "seedAssignmentVersion": 1
   }
 }

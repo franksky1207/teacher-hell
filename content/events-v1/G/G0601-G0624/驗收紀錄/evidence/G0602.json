@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2e097b52e7246232c89e2cc9dd67bbe313b0d150eac969d8fde6f3b683095b0a",
+      "checkedAt": "2026-11-27T12:00:08.501Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次退出短講，稿子留給他自己決定用途。",
+            "action": "導師已接受本人撤回自願短講參與並處理名單，不對外評價其能力。",
+            "tradeoff": "少一次上台經驗"
+          },
+          {
+            "id": 2,
+            "text": "保留參加，但取消這次我加的名次比較。",
+            "action": "導師已撤除本人平日活動的非必要排名，確認本人仍有意願後才保留參與，不預設其同意。",
+            "tradeoff": "少了競賽刺激"
+          },
+          {
+            "id": 3,
+            "text": "先只對我試講一小段，不算正式上台。",
+            "action": "導師已發出可拒絕的短段個別試講邀請，尚未聽完或要求正式參加。",
+            "tradeoff": "要另用正常工作時間"
+          },
+          {
+            "id": 4,
+            "text": "給他兩種講題，由他換成比較想講的那個。",
+            "action": "導師已提供同等可行的平日短講題目選擇，未代選或另加練習量。",
+            "tradeoff": "原先背的部分可能用不上"
+          },
+          {
+            "id": 5,
+            "text": "改為兩人自願對談，各說自己的部分。",
+            "action": "導師已提出可拒絕的雙人對談方案，未替同伴答應或降低必要尊重。",
+            "tradeoff": "要另找願意的伙伴"
+          },
+          {
+            "id": 6,
+            "text": "這次讓他只寫給自己看，不作口頭展示。",
+            "action": "導師已提供自願私人文字替代，不收作正式口語成績或要求公開。",
+            "tradeoff": "少了口語回饋"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了大家等我講漂亮話，這次我的開場致詞就不加了。",
+          "action": "導師已取消自身非必要開場致詞，保留必要流程說明，不替學生決定參加與否。",
+          "tradeoff": "少一次表現，也可能顯得沒那麼熱鬧"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3580903302
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "d754d777fbd714e4c8079c7c1ffbd421db95e64d9d0117c83e60e6122157d2bf"
+      },
+      "consequenceDirections": {
+        "A": "可看見卡住之處，不能把試講當已完成全場。",
+        "B": "有人接話可能輕鬆些，不能把救場責任丟給伙伴。",
+        "C": "學生不用接教師暖場，教師仍須說明活動規則。",
+        "D": "內容仍有去處，不將文字冒充口語已熟練。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a49499c80244217a96cb8ec3509f1b513c15c7843115337932e44c6b6e3bd5c3",
+    "draftSha256": "2e097b52e7246232c89e2cc9dd67bbe313b0d150eac969d8fde6f3b683095b0a",
     "seedAssignmentVersion": 1
   }
 }

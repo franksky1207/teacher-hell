@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e7f07d750abfacf41298fa5dcd91b510441d0de3bf5413817b3b9cf538da71b2",
+      "checkedAt": "2026-11-27T12:00:08.515Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "兩人各選對應自己的短題，不綁同一份補練。",
+            "action": "導師已依已確認差異提供等量有限的個別補練選擇，不強制兩人同做一份。",
+            "tradeoff": "教師要準備不同回饋"
+          },
+          {
+            "id": 2,
+            "text": "先各自說一個卡住點，由我分別回應。",
+            "action": "導師已提供分開的有限口頭回饋機會，尊重兩人各自意願及合理替代。",
+            "tradeoff": "花較多課內時間"
+          },
+          {
+            "id": 3,
+            "text": "用我另作的兩個例子講清差異，原紙先還本人。",
+            "action": "導師已製作不含個人內容的兩種示例並依約返還原紙，不重複公開匿名原件。",
+            "tradeoff": "少了原件細節"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的雙人綁定補練，回到各自正常作業。",
+            "action": "導師已撤除本人非必要雙人綁定補練，保留正常個別學習回饋。",
+            "tradeoff": "少一次額外練習"
+          },
+          {
+            "id": 5,
+            "text": "給兩人自願的文字提問方式，不再要求當場講。",
+            "action": "導師已提供有限個別書面提問管道，不新增整篇心得或共同署名要求。",
+            "tradeoff": "無法即時追問全部"
+          },
+          {
+            "id": 6,
+            "text": "另邀兩人自願談一次怎麼一起求助又各自選，不做示範學生。",
+            "action": "導師已提出限定求助方式的自願短談邀請，未約成或要求對外分享。",
+            "tradeoff": "要另排正常短談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那疊備課紙也被自己釘得亂七八糟，私人空檔先拆開分兩夾，不再假裝都同一題。",
+          "action": "導師已自行拆分本人私人備課雜紙並分夾收存，不含學生個資或改動其原作。",
+          "tradeoff": "花自己的空檔，桌上又多一夾"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2918104052
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "6e00ff76f7733a948aa0780657cfe4eb72757ccf385eab168eefd4eb508c2433"
+      },
+      "consequenceDirections": {
+        "A": "教師處理自己的習慣，不動學生原紙或求他們整理。",
+        "B": "不必公開本人錯誤，教師仍要追蹤各自理解。",
+        "C": "可核對本人理解，不讓發起者代答同桌。",
+        "D": "害羞者可說清楚，不能用書寫量衡量誠意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5363297d58d48e84cd938d86f3ea4cb724046294b40bc4e65f9bf407e80b6852",
+    "draftSha256": "e7f07d750abfacf41298fa5dcd91b510441d0de3bf5413817b3b9cf538da71b2",
     "seedAssignmentVersion": 1
   }
 }

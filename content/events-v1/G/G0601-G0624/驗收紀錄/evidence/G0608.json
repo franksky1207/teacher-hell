@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "60a813027ce8878bb8eec0fcdeb7a05fc6ee8fc3cef69587c25673b56cc58164",
+      "checkedAt": "2026-11-27T12:00:08.505Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只留給原組自願使用，不升成全班規則。",
+            "action": "導師已將該提案限定原組自願活動，不套用於其他組。",
+            "tradeoff": "各組玩法不一"
+          },
+          {
+            "id": 2,
+            "text": "讓各組自行選現有玩法，先不追求全班一致。",
+            "action": "導師已提供各組可拒絕的多方案選擇，不宣稱全班已同意。",
+            "tradeoff": "教師要同時看不同流程"
+          },
+          {
+            "id": 3,
+            "text": "用我原先準備的玩法，這次不採學生提案。",
+            "action": "導師已選用自身既有可用活動方案，婉拒本次替換，不拿拒用懲罰分享者。",
+            "tradeoff": "可能讓提案者掃興"
+          },
+          {
+            "id": 4,
+            "text": "先作不記名的小範圍意見詢問，今天不改玩法。",
+            "action": "導師已提供自願且不收敏感資訊的玩法意見詢問，未更改現行安排。",
+            "tradeoff": "結果要等，也可能無共識"
+          },
+          {
+            "id": 5,
+            "text": "邀他把規則中最容易誤解的一句改寫給自己組看。",
+            "action": "導師已提出限原組的自願文字改寫邀請，未要求全班採用或代替其他人發言。",
+            "tradeoff": "多一點修改，也可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "這次不玩小活動，各自用回自己的課間休息。",
+            "action": "導師已取消本人非必要課間活動邀請，歸還原可自主休息時段。",
+            "tradeoff": "少一次共同熱鬧"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點不服，私下拿自己的規則玩一次單人版，看看是不是我想得太好。",
+          "action": "導師已以自有材料在私人時間試玩本人單人版本，不更改班級安排或要求回報。",
+          "tradeoff": "花自己的休息，可能根本不好玩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3145624633
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "76d1f5e58650247a85af2eacfce2634b32a7e68e4c615b375aaab8f66eee8d73"
+      },
+      "consequenceDirections": {
+        "A": "教師可試自己的興趣，不拉學生當證明。",
+        "B": "活動仍能進行，教師須說清楚是本次安排而非否定能力。",
+        "C": "原成果可保留，不因能說明就取得代表權。",
+        "D": "自主增加，但共同安全尊重仍一致。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1983b9407997c6425d504e84213a47e833cb5c0019a9b83223914851779b09ee",
+    "draftSha256": "60a813027ce8878bb8eec0fcdeb7a05fc6ee8fc3cef69587c25673b56cc58164",
     "seedAssignmentVersion": 1
   }
 }

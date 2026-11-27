@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a1b8ab28475d4377471102d34a1b0c65888dfe6b59fc76357361bada2b4d6ad8",
+      "checkedAt": "2026-11-27T12:00:08.512Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他共同試解這一題，只比較方法，不排班級高下。",
+            "action": "導師已提出限定成人共同試解邀請，尚未完成試解或宣布共識。",
+            "tradeoff": "要用兩人的工作空檔"
+          },
+          {
+            "id": 2,
+            "text": "各自保留教法，停止我提出的共同成果報告。",
+            "action": "導師已撤回本人非必要共同成果報告提案，不替對方改課或撤正式紀錄。",
+            "tradeoff": "少一份合作成果"
+          },
+          {
+            "id": 3,
+            "text": "請他自願短看我的練習安排，意見只回我本人。",
+            "action": "導師已發出成人個別教材回饋邀請，未取得同意或公開其評語。",
+            "tradeoff": "要承受直接批評"
+          },
+          {
+            "id": 4,
+            "text": "提出一次雙方同意才進行的短段觀課，不先排進他的課。",
+            "action": "導師已提出依校規及授課者同意的有限觀課申請，尚未獲准或進班。",
+            "tradeoff": "需協調也可能被拒"
+          },
+          {
+            "id": 5,
+            "text": "我另做一題不同條件的例子，先檢查自己的判斷。",
+            "action": "導師已以自有內容製作條件不同的成人備課例題，未用學生作未告知實驗。",
+            "tradeoff": "多花備課時間"
+          },
+          {
+            "id": 6,
+            "text": "邀教學承辦安排方法交流，不請他裁定誰比較厲害。",
+            "action": "導師已向正式承辦提出自願方法交流需求，未指定裁決或宣稱他人答應。",
+            "tradeoff": "可能變得較正式"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在就是想贏，把自己的未發辯論長文另存私人草稿，今天不送群組。",
+          "action": "導師已將自身未發私人辯論稿留存不送，不刪必要工作紀錄或延誤更正。",
+          "tradeoff": "忍著沒辯到底，草稿也不一定有用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2391510331
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "b52ee41cfef4e35425b09cc006f7c5d12f00ac62a063a1ed8f9386dc4ef2f591"
+      },
+      "consequenceDirections": {
+        "A": "可獲具體意見，不將未回當默認支持。",
+        "B": "可能發現自己原結論太廣，不以自做題宣稱對方錯。",
+        "C": "教師可保留情緒，不把辯論變對同事公開施壓。",
+        "D": "能看真實教學，但不得干擾學生或把觀課當考核。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eac7b2d50808ca3b806f8d93e5c78e5dab208e553a864d23ae7d5675c19773b3",
+    "draftSha256": "a1b8ab28475d4377471102d34a1b0c65888dfe6b59fc76357361bada2b4d6ad8",
     "seedAssignmentVersion": 1
   }
 }

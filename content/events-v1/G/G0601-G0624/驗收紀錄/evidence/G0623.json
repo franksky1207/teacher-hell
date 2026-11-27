@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "52343b2445ce0f5bcb362218f94346204cfe70863a4ac716cc2b68475cde693c",
+      "checkedAt": "2026-11-27T12:00:08.514Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "同意只合作一張，先把使用與費用問清楚。",
+            "action": "導師已提出限單張私人合作的具體範圍與費用詢問，尚未成交、下單或取得照片使用同意。",
+            "tradeoff": "共同內容很少"
+          },
+          {
+            "id": 2,
+            "text": "我用家裡舊本自己貼，他的小本照他的預算做。",
+            "action": "導師已婉拒本次共製，選用本人既有舊相簿整理個人照片，不另購新冊或替同事下單。",
+            "tradeoff": "舊頁不一定夠放，也少了共同頁面"
+          },
+          {
+            "id": 3,
+            "text": "不沖成冊，只選我自己一張照片自費印出。",
+            "action": "導師已為本人有權使用的單張照片自費下單，不含同事素材或共同費用。",
+            "tradeoff": "沒有整本成果"
+          },
+          {
+            "id": 4,
+            "text": "這次先不花錢，私下用自己的螢幕看原照片。",
+            "action": "導師已停止本次個人沖印消費，僅在自有設備私看本人照片，不代取消他人訂單。",
+            "tradeoff": "沒有實體物可翻"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意各挑一張有權分享的照片，私下交換電子檔。",
+            "action": "導師已提出限本人作品的私人電子分享邀請，未取得對方檔案或授權。",
+            "tradeoff": "有檔案保管與使用限制"
+          },
+          {
+            "id": 6,
+            "text": "另約一次不花錢的散步拍照，今天的相簿各自選。",
+            "action": "導師已發出可拒絕的日後私人攝影散步邀請，未約成或要求同事添購器材。",
+            "tradeoff": "要另喬時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想摸那種厚封面，自己多付差額換一本，不拿他的預算來湊。",
+          "action": "導師已在自身可負擔範圍自費選購較厚封面的私人空相簿，不動用同事款項或要求回禮。",
+          "tradeoff": "自己的花費增加"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 511090312
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "8fd73aee6a4cfda0aadbca7c8cca6a8a144226d6ac46c252cc27d2b275d18482"
+      },
+      "consequenceDirections": {
+        "A": "教師可用既有物成冊，同事仍可完成自己的小本，不將節省要求套到對方。",
+        "B": "教師滿足喜好，同事仍可選小本，不變互送壓力。",
+        "C": "若同意可互看，不等於可再轉送或商用。",
+        "D": "共同興趣不靠買雙份維繫，邀約可被拒。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2自行選相簿方案過廣而涵蓋情緒自費厚封面，改為明確使用既有舊本、不購新冊。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "同意只合作一張，先把使用與費用問清楚。",
+                "action": "導師已提出限單張私人合作的具體範圍與費用詢問，尚未成交、下單或取得照片使用同意。",
+                "tradeoff": "共同內容很少"
+              },
+              {
+                "id": 2,
+                "text": "我自己做自己的，他原本的小本照他的預算。",
+                "action": "導師已婉拒本次共製並依本人預算選擇個人相簿方案，未替同事下單。",
+                "tradeoff": "少了共同頁面"
+              },
+              {
+                "id": 3,
+                "text": "不沖成冊，只選我自己一張照片自費印出。",
+                "action": "導師已為本人有權使用的單張照片自費下單，不含同事素材或共同費用。",
+                "tradeoff": "沒有整本成果"
+              },
+              {
+                "id": 4,
+                "text": "這次先不花錢，私下用自己的螢幕看原照片。",
+                "action": "導師已停止本次個人沖印消費，僅在自有設備私看本人照片，不代取消他人訂單。",
+                "tradeoff": "沒有實體物可翻"
+              },
+              {
+                "id": 5,
+                "text": "問他願不願意各挑一張有權分享的照片，私下交換電子檔。",
+                "action": "導師已提出限本人作品的私人電子分享邀請，未取得對方檔案或授權。",
+                "tradeoff": "有檔案保管與使用限制"
+              },
+              {
+                "id": 6,
+                "text": "另約一次不花錢的散步拍照，今天的相簿各自選。",
+                "action": "導師已發出可拒絕的日後私人攝影散步邀請，未約成或要求同事添購器材。",
+                "tradeoff": "要另喬時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我就是想摸那種厚封面，自己多付差額換一本，不拿他的預算來湊。",
+              "action": "導師已在自身可負擔範圍自費選購較厚封面的私人空相簿，不動用同事款項或要求回禮。",
+              "tradeoff": "自己的花費增加"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 106689856
+            },
+            "selectedIds": [
+              2,
+              6,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 3,
+              "D": 6
+            },
+            "optionsDigest": "f12212821fe2aa30cae29dc5e69af8c7c8682abb225bb169ac76c9024bfe0633"
+          },
+          "previousConsequenceDirections": {
+            "A": "兩人可各保留風格，不要求對方替教師多印。",
+            "B": "教師滿足喜好，同事仍可選小本，不變互送壓力。",
+            "C": "能保留一個畫面，不能要求同事也縮成一張。",
+            "D": "共同興趣不靠買雙份維繫，邀約可被拒。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1f23819768d0430a8e33c3f528c18095f19523edab4311d782e329305c368279",
+    "draftSha256": "52343b2445ce0f5bcb362218f94346204cfe70863a4ac716cc2b68475cde693c",
     "seedAssignmentVersion": 1
   }
 }

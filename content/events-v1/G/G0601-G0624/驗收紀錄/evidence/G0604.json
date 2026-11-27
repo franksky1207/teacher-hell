@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "04e14d2e642aeee4beba0cbb098f160dba72a14cd5505f5a9f1fd80ee9c94199",
+      "checkedAt": "2026-11-27T12:00:08.503Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "兩段都留，只評聽得出的語速與表達。",
+            "action": "導師已在自身授課權限內調整本次評讀項目，區分口語技巧與環境音，不降低必要學習目標。",
+            "tradeoff": "教師得多辨聽"
+          },
+          {
+            "id": 2,
+            "text": "提供原課內同一處錄音機會，不要求重錄整份。",
+            "action": "導師已安排本人可支配課內的有限共同錄音機會，設備及空間依既有核准條件使用。",
+            "tradeoff": "占用課內時間"
+          },
+          {
+            "id": 3,
+            "text": "這次改成面對面短說，由我當場聽。",
+            "action": "導師已在本課提供有限現場口語回饋方式，保留必要調整，不以現場表現取代所有既有成果。",
+            "tradeoff": "少了可回放資料"
+          },
+          {
+            "id": 4,
+            "text": "讓各人選現有錄音或當場短說，不綁同一媒介。",
+            "action": "導師已提供等值錄音或短說的課內選擇，未要求家庭添購設備。",
+            "tradeoff": "比較與紀錄較費工"
+          },
+          {
+            "id": 5,
+            "text": "請他自願協助找出兩段都能聽懂的地方，不公開音檔。",
+            "action": "導師已提出限本人音檔的個別自願比對邀請，不索取家庭影像或同意公開。",
+            "tradeoff": "多一小段討論，他可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "取消我自加的「最佳音質」展示，只回饋學習內容。",
+            "action": "導師已取消本人非必要音質成果展示，不刪原有口語回饋或必要紀錄。",
+            "tradeoff": "少了一份好看的成果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽到自己的鼻音我也煩，私人練習那段就留著，不再花晚上重修。",
+          "action": "導師已停止修飾本人自有私人練習音檔，保留原檔自用，不含學生資料或影響正式教材。",
+          "tradeoff": "得接受不漂亮的聲音"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3462586519
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "4116a576147282615365c393f5873d63c3ac20c036df075d770d00e1d755181e"
+      },
+      "consequenceDirections": {
+        "A": "需要的人有地方錄，原已清楚內容不被迫重做。",
+        "B": "能即時追問，緊張者須有合理替代。",
+        "C": "可改善教師判讀，不把學生當全班評分助手。",
+        "D": "教師把修音時間還給自己，不改學生評量。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75f75cd948f911b4f83fef0173c3b345fa581550376b2412c5af8bea2387355e",
+    "draftSha256": "04e14d2e642aeee4beba0cbb098f160dba72a14cd5505f5a9f1fd80ee9c94199",
     "seedAssignmentVersion": 1
   }
 }

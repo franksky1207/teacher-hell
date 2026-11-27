@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fa1a4885509ac9948ad53f5db490d14315d4a3ed9eb4a64e47a2a5d1a45cb494",
+      "checkedAt": "2026-11-27T12:00:08.509Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只在他提出的工作空檔談一件事，不把其他工作塞進去。",
+            "action": "導師已向同事提出限一事項的工作短談邀請，未約成或擅增其任務。",
+            "tradeoff": "進度較慢"
+          },
+          {
+            "id": 2,
+            "text": "把原請他幫的非必要排版收回，我自己做。",
+            "action": "導師已收回本人額外排版請求，接回自身工作，不改同事正式職務。",
+            "tradeoff": "自己少一段備課空檔"
+          },
+          {
+            "id": 3,
+            "text": "向主管提出這項正式工作需要代理，不先指定人。",
+            "action": "導師已向有權主管提出正式代理需求及實際時限，未指定或宣稱代理成立。",
+            "tradeoff": "需等核定"
+          },
+          {
+            "id": 4,
+            "text": "取消我自己的非必要共同展示提案。",
+            "action": "導師已撤回自身非必要共同展示邀請，不取消必要教學與已成立權益。",
+            "tradeoff": "少一次成果曝光"
+          },
+          {
+            "id": 5,
+            "text": "將不急的討論整理成一封工作訊息，請他有空再看。",
+            "action": "導師已於正常工作管道送出單一非急事項摘要並標明無即答要求，不含未授權資料。",
+            "tradeoff": "無法即時來回"
+          },
+          {
+            "id": 6,
+            "text": "請承辦檢視這類非急訊息能否固定在工作時段發布。",
+            "action": "導師已向適當承辦提出非急通知時段調整建議，未改正式緊急通報管道。",
+            "tradeoff": "未必獲採納"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想吃一頓不看螢幕的早餐，自己的私人群組先靜音，飯吃完再看。",
+          "action": "導師已在合法休息時段關閉本人非公務群組提示並用餐，未關閉必要急迫工作聯繫。",
+          "tradeoff": "晚點才看到閒聊，也少了滑手機時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3889368749
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "f8d863661319d71a779c035e703d6b41b2659e5b7c0fa712696ba6ad850d4f97"
+      },
+      "consequenceDirections": {
+        "A": "不必以夜間換進度，原工作仍正常完成。",
+        "B": "教師有私人空檔，必要急迫職務仍能聯絡到。",
+        "C": "談話可有邊界，急迫公務仍走既有程序。",
+        "D": "可能有人接，也可能須另限縮工作，不能把申請當已排班。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0b672d4f9e317554a2318c04ab90a25f8cdcd435103fd60fccc99954fafad5d9",
+    "draftSha256": "fa1a4885509ac9948ad53f5db490d14315d4a3ed9eb4a64e47a2a5d1a45cb494",
     "seedAssignmentVersion": 1
   }
 }

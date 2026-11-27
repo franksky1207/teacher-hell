@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c51f4bb074ef3da3221662407bcc35f1ec425ef2b7b6b6faf7b403450454e63b",
+      "checkedAt": "2026-11-27T12:00:08.505Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他另談一次只屬於自己的擔心，不請他代傳朋友的話。",
+            "action": "導師已提出目擊者個別支持短談邀請，未約成或要求代問受影響者。",
+            "tradeoff": "多占正常工作時間"
+          },
+          {
+            "id": 2,
+            "text": "取消我原想加的全班輪流說謝謝，不把求助拿來公開表揚。",
+            "action": "導師已取消本人非必要公開感謝環節，不揭露目擊資訊或取消必要支持。",
+            "tradeoff": "少一次正向活動"
+          },
+          {
+            "id": 3,
+            "text": "在班上用不指向個人的例句練習拒絕綽號。",
+            "action": "導師已以自製中性例句進行一般尊重用語練習，不引用可辨認事件細節。",
+            "tradeoff": "可能仍有人聯想"
+          },
+          {
+            "id": 4,
+            "text": "提供可私下找我的方式，不再靠這位學生收集消息。",
+            "action": "導師已向全班說明既有私下求助方式與必要保密限制，不指定學生線人。",
+            "tradeoff": "教師需自己接資訊"
+          },
+          {
+            "id": 5,
+            "text": "暫停我加的同儕互評小活動，改成各自完成原工作。",
+            "action": "導師已撤下本人非必要同儕互評，安排正常個別工作，必要支持照常。",
+            "tradeoff": "少了合作觀察"
+          },
+          {
+            "id": 6,
+            "text": "請校內輔導老師協助安排目擊者支持，先問本人意願。",
+            "action": "導師已依必要知情原則提出自願支持資源詢問，未假定本人或輔導老師同意。",
+            "tradeoff": "要協調時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在很想回嘴，先把自己準備的那串諷刺話刪掉，不拿來對全班說。",
+          "action": "導師已刪除自身未發出的非必要諷刺講稿，不刪證據或略過必要告知處理。",
+          "tradeoff": "少了出口氣的痛快"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2855842921
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "f3141a9872854874ff275ad026f8c764fe6b4364a60f04f5b2fabe790bf75e18"
+      },
+      "consequenceDirections": {
+        "A": "教師不再添羞辱，後續處理不能因此擱置。",
+        "B": "教師須防止猜人，不讓學生當場自白。",
+        "C": "目擊者有地方說，不變成協助者無限待命。",
+        "D": "朋友不用接謝詞，必要處理仍依共同程序。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "126991ed9a12f42e5b1ca96570ade7d6a6def477eebb9b38a2da3c73623fc385",
+    "draftSha256": "c51f4bb074ef3da3221662407bcc35f1ec425ef2b7b6b6faf7b403450454e63b",
     "seedAssignmentVersion": 1
   }
 }

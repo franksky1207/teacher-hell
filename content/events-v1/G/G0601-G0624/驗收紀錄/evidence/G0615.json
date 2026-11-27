@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "12f71ab2a547bdb4652db36b8f0aa8faeb59b06be1265349387bfaabcb801dcb",
+      "checkedAt": "2026-11-27T12:00:08.510Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次請他解釋一頁自己的理解，不重排整份。",
+            "action": "導師已在自身課內提供有限理解說明與回饋，不要求以美編證明學習。",
+            "tradeoff": "只能看有限範圍"
+          },
+          {
+            "id": 2,
+            "text": "撤掉我這科額外的統一筆記版面要求。",
+            "action": "導師已取消本人非必要筆記版式要求，不更動其他科規定或原作者權利。",
+            "tradeoff": "少了整齊比較"
+          },
+          {
+            "id": 3,
+            "text": "把我這科剩下的整理拆成兩個正常課內小段。",
+            "action": "導師已在自身可調整課程分段安排原有限整理工作，不追加份量。",
+            "tradeoff": "要挪原課進度"
+          },
+          {
+            "id": 4,
+            "text": "讓他用一張自己的手寫圖取代本次額外美編頁。",
+            "action": "導師已提供本人自製單頁圖的等值替代方式，不要求購買或借出帳號。",
+            "tradeoff": "看起來不精緻"
+          },
+          {
+            "id": 5,
+            "text": "找學校已有的筆記方法資源給他自行參考。",
+            "action": "導師已提供經核對可用的校內筆記資源入口，不傳付費帳密或未授權作品。",
+            "tradeoff": "資源未必合用"
+          },
+          {
+            "id": 6,
+            "text": "邀他列一件可以停止的額外整理，只談他自加的部分。",
+            "action": "導師已提出限定學生自加工作量的自願短談邀請，未替他刪除他科要求。",
+            "tradeoff": "要花一次正常短談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被排版綁住，自己那份私人讀書筆記不再重排，醜的就留著。",
+          "action": "導師已停止重排本人私人筆記，保存原內容自用，不降低正式教材可讀性。",
+          "tradeoff": "少了好看的頁面"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1839931261
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "f4f96df72fb674f29ec99bc5ea316717c62b3404a22281954019f2595edeab0a"
+      },
+      "consequenceDirections": {
+        "A": "可判斷真正懂哪裡，不能把口頭說一次當授權已解決。",
+        "B": "能看見自主取捨，不代他退出正式他科作業。",
+        "C": "能自選工具，仍需說出圖中關係。",
+        "D": "教師放下自己的裝飾欲，不把私事變班級要求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "123c385195fc2aceb4f1aa612498033bd9e98edeb2ca3c645b553eb8b537214b",
+    "draftSha256": "12f71ab2a547bdb4652db36b8f0aa8faeb59b06be1265349387bfaabcb801dcb",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "997d30ed9524bd1adc2991bb75e767cf3cefca2012a0dd93261c6a78183b137d",
+      "checkedAt": "2026-11-27T12:00:08.510Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不用他的計時器，改由我口頭說明各組的停點。",
+            "action": "導師已婉拒本次借用並接回各組進度提示，不把口頭提示當必要安全程序的替代。",
+            "tradeoff": "教師要逐組確認"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意只借原小組使用，不再擴大全班。",
+            "action": "導師已提出限原用途的可拒絕借用詢問，尚未取得新的使用同意。",
+            "tradeoff": "其他組沒有相同工具"
+          },
+          {
+            "id": 3,
+            "text": "用學校現有可用時鐘，只顯示時間不當發令聲。",
+            "action": "導師已在原課提供現有校用時鐘作無聲時間參照，不用私人器材發令。",
+            "tradeoff": "不如聲音醒目"
+          },
+          {
+            "id": 4,
+            "text": "將我加的同步拍照取消，各組完成後依序收件。",
+            "action": "導師已取消本人非必要同步成果拍照，依共同前提接續原有限收件。",
+            "tradeoff": "成品不能同一刻亮相"
+          },
+          {
+            "id": 5,
+            "text": "請各組自願寫出一個合適停點，由我確認。",
+            "action": "導師已提出有限停點意見詢問，成人仍負核定責任，未讓學生互相發令。",
+            "tradeoff": "需多看幾張說明"
+          },
+          {
+            "id": 6,
+            "text": "把原來新加的最後一輪展示撤掉，不再延長操作。",
+            "action": "導師已取消本人非必要追加展示輪次，不跳過必要收拾與回饋。",
+            "tradeoff": "少一次試給人看"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那聲音讓我也想玩，自己下班用手機計時煮一杯茶，不再借他的。",
+          "action": "導師已於私人時間以自有手機計時沖泡本人飲品，不使用學生器材或占用職務。",
+          "tradeoff": "花自己的時間，還可能泡過頭"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 457427698
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "6742400ddf126f71e5ed64813f5c64e5712fbf31da06ddf14dbfc1fd508bfa7b"
+      },
+      "consequenceDirections": {
+        "A": "私人的興趣不形成全班新規則或借物壓力。",
+        "B": "學生可說明流程，不能以多數投票取代安全判斷。",
+        "C": "學生原成果保留，不因少展示被視為未完成。",
+        "D": "不再為整齊畫面強迫中斷，必要工作仍按實情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4fa5b0d6bc11bc6343ab5665f0ade0b74d076dba8f953c3b1fafd32305248931",
+    "draftSha256": "997d30ed9524bd1adc2991bb75e767cf3cefca2012a0dd93261c6a78183b137d",
     "seedAssignmentVersion": 1
   }
 }

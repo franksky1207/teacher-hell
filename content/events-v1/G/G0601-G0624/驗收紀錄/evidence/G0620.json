@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ac7273fc98a6a85ee3086d0ba2b93fa23afb7db8ea4125b29f1536d2b488aefa",
+      "checkedAt": "2026-11-27T12:00:08.512Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不用原頁，我另外畫一份沒有家庭線索的教學例圖。",
+            "action": "導師已以自有內容另作通用例圖，不取用學生原頁或家庭資料。",
+            "tradeoff": "教師多花備課時間"
+          },
+          {
+            "id": 2,
+            "text": "只給作者個別回饋，這次不另作班級展示。",
+            "action": "導師已婉拒本次原作展示並安排作者正常個別回饋。",
+            "tradeoff": "少了現成範例"
+          },
+          {
+            "id": 3,
+            "text": "詢問他是否願借不含家庭資料的一小段，先說清楚可以拒絕。",
+            "action": "導師已提出限定片段與用途的可拒絕教材詢問，尚未取得授權或再次分發。",
+            "tradeoff": "要另談範圍"
+          },
+          {
+            "id": 4,
+            "text": "改用學校既有例件講方法，不另仿他的圖。",
+            "action": "導師已選用既有可用例件承接原教學，不重畫或複製學生原圖。",
+            "tradeoff": "少了同儕作品的新鮮感"
+          },
+          {
+            "id": 5,
+            "text": "邀作者自願用口頭說一個作圖步驟，不出示原頁。",
+            "action": "導師已提出限方法的一次自願短分享邀請，未取得發言同意或公開原頁。",
+            "tradeoff": "他也可能不想再講"
+          },
+          {
+            "id": 6,
+            "text": "取消我原想加的全班同款成品比美。",
+            "action": "導師已取消本人非必要同款外觀票選提案，不刪作者必要學習紀錄。",
+            "tradeoff": "少一份整齊成果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是捨不得自己排好的版，把空版另存給自己的備課本用，不再塞他的故事。",
+          "action": "導師已以自有不含學生內容的空白版型製作私人備課頁，未留存授權外原作或家事。",
+          "tradeoff": "漂亮版面只能自己欣賞"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2948338877
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "59a29af11ecacbad67a5235a7408522e47d0748599bf66c57975425b7d296414"
+      },
+      "consequenceDirections": {
+        "A": "能保留教學概念，不複製作者具體表達。",
+        "B": "若願意才用，去識別也不能代替同意。",
+        "C": "作品可被認真看待，不必用公開換回饋。",
+        "D": "教師留的是自己的版型，不保留學生及家庭內容。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "044ba0cf7c8c196a9cf47c19241eb8be0bd6d313f9f1f59843652ab4ddfec7a3",
+    "draftSha256": "ac7273fc98a6a85ee3086d0ba2b93fa23afb7db8ea4125b29f1536d2b488aefa",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7eb6e077f04248ae15a68be60e0922573ce31df46e57281e328a4cff276d6580",
+      "checkedAt": "2026-11-27T12:00:08.511Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次由我重新徵詢意願，原邀約不直接算名單。",
+            "action": "導師已重新發出自願短講詢問，未將舊邀約當同意或排定順序。",
+            "tradeoff": "教師多做一次"
+          },
+          {
+            "id": 2,
+            "text": "不排個人短講，改成各自寫一小句給自己看。",
+            "action": "導師已將本人非必要短講改為自願私人短記，不收作正式口語評量。",
+            "tradeoff": "少了口語分享"
+          },
+          {
+            "id": 3,
+            "text": "讓確實願意的人提出一組短對談，再確認伙伴意願。",
+            "action": "導師已發出可拒絕的雙人短對談邀請，未替伙伴答應或排定。",
+            "tradeoff": "可能無人組成"
+          },
+          {
+            "id": 4,
+            "text": "請他自願改寫邀請的第一句，不再替我猜名單。",
+            "action": "導師已提出限定邀請語句的自願練習，不指派其代教師完成更正或蒐集名單。",
+            "tradeoff": "他得承受重寫的尷尬"
+          },
+          {
+            "id": 5,
+            "text": "取消我原加的班務聯絡員代排功能，以後直接找我登記。",
+            "action": "導師已撤回本人非必要學生代排安排，提供教師直接接受意願的方式。",
+            "tradeoff": "教師收件較忙"
+          },
+          {
+            "id": 6,
+            "text": "邀他在正常工作空檔談班務做到哪裡就算完成。",
+            "action": "導師已發出有限班務範圍短談邀請，未約成或增加其工作。",
+            "tradeoff": "要另排時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我找粉筆都能被猜中一排，自己的那套神秘暖場今天就省了。",
+          "action": "導師已取消本人非必要猜題暖場橋段，不以學生誤會作公開笑料。",
+          "tradeoff": "少了一段自己喜歡的橋段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1003366772
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "d2db1ac7f1f078438ed77ef7daa080a23ff94fb0bb788384fdf4dafc4bbba83c"
+      },
+      "consequenceDirections": {
+        "A": "角色較清楚，不把短談變訓話或新任務。",
+        "B": "學生不用靠看教師臉色排人，正常班務仍可有限分工。",
+        "C": "可練清楚的邀請，必要更正仍由成人負責。",
+        "D": "教師放下表演欲，必要短講說明照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4fa171aa06ed12fdeac2c27af1324326048d97df5092b6b77a693f868287d826",
+    "draftSha256": "7eb6e077f04248ae15a68be60e0922573ce31df46e57281e328a4cff276d6580",
     "seedAssignmentVersion": 1
   }
 }

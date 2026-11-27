@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "faa38012eeef443b1ed4242ddad2de7136c9317d187edf0cb8eb65882f3164b1",
+      "checkedAt": "2026-11-27T13:36:30.149Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受他自願獨立批十份，其餘八份我按原權責接。",
+            "action": "導師已提出限十份的合規自願協作確認，未代同事答應或免除本人其餘回饋責任。",
+            "tradeoff": "自己仍多八份"
+          },
+          {
+            "id": 2,
+            "text": "向主管提出正式重新分派需求，不先指定誰接。",
+            "action": "導師已依實際18份提出合法分工申請，未獲核准或擅交第三人。",
+            "tradeoff": "可能不獲准"
+          },
+          {
+            "id": 3,
+            "text": "只邀他共同看兩個匿名錯法，完整批閱仍由原責任者做。",
+            "action": "導師已發出限合法匿名練習的成人共同判讀邀請，未取得答應或移轉批閱責任。",
+            "tradeoff": "少了整批代閱人力"
+          },
+          {
+            "id": 4,
+            "text": "問他是否只願核對客觀答案，我自己寫個別評語。",
+            "action": "導師已提出需權限與本人同意的有限分工方案，未完成批改或保證同事接受。",
+            "tradeoff": "分兩道工序，也可能拒絕"
+          },
+          {
+            "id": 5,
+            "text": "在原規則容許內申請調整我這批非急回覆時點。",
+            "action": "導師已向有權窗口提出本人非急批閱時程申請，未改定期限或削減學生權益。",
+            "tradeoff": "學生可能得等，也可能不准延"
+          },
+          {
+            "id": 6,
+            "text": "我先批，之後只請他自願抽看一份匿名練習的評語是否清楚。",
+            "action": "導師已提出限合法匿名單份的成人後續意見邀請，未取得答應或建立新必辦審核。",
+            "tradeoff": "自己得先完成大部分"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被這張簽名看得很煩，十八份全部先收回自己核再批，別再讓他替我那個亂寫的數字擦屁股。",
+          "action": "導師已撤回本人尚未成立的代閱邀請並接回18份有權批閱原稿，未假稱已批完或免除必要時限。",
+          "tradeoff": "自己負荷大，也可能讓同事覺得我在賭氣拒絕幫忙"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3130279250
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "c77cdbef155f278180a752e98878d409ec61c57a924f131a677e6256351b9118"
+      },
+      "consequenceDirections": {
+        "A": "可看到真實負荷，未核定前原責任仍有人接續。",
+        "B": "有限協助能成立，不能再把重交當新份量塞回去。",
+        "C": "必要及急迫回饋不延誤，未准前仍守原安排。",
+        "D": "教師承擔自己的急躁，必要期限仍須合規協調，不以全收回懲罰學生。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "539d40529da9f1e69d5036d70c605e912a53e57de15e30bddc4fa6169ba661ce",
+    "draftSha256": "faa38012eeef443b1ed4242ddad2de7136c9317d187edf0cb8eb65882f3164b1",
     "seedAssignmentVersion": 1
   }
 }

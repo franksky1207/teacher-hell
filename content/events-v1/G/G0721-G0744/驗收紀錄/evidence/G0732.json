@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "470888d61e83d875a99a27aea37bae7444ef6631c657f268b7f89127a9237882",
+      "checkedAt": "2026-11-27T13:36:30.147Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原約只聽，讓他完整講完，不加即興話。",
+            "action": "導師已依原私人約定停止插話並提供有限聆聽，不錄音或主張對方已演好。",
+            "tradeoff": "自己的插話欲得忍住"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意先看文字節奏，不演出互相比笑。",
+            "action": "導師已發出可拒絕的私人文字回饋邀請，未取得稿件、答應或演出權。",
+            "tradeoff": "少了現場效果"
+          },
+          {
+            "id": 3,
+            "text": "提議各自寫一個完全不同的收尾，先不互接同一段。",
+            "action": "導師已提出自願平行寫作建議，未替對方答應或複製其原稿。",
+            "tradeoff": "要另花各自時間"
+          },
+          {
+            "id": 4,
+            "text": "今天不再試段，照原可行安排提早各自回去。",
+            "action": "導師已婉拒本人本次餘下非必要私人試聽，依約處理自身費用與離場，不替同事決定。",
+            "tradeoff": "難得的練習縮短"
+          },
+          {
+            "id": 5,
+            "text": "只給一個他主動想問的節奏意見，不搶包袱。",
+            "action": "導師已提供本人受邀範圍內的單一私人節奏回應，不改對方稿或索取演出。",
+            "tradeoff": "看不到全稿診斷"
+          },
+          {
+            "id": 6,
+            "text": "我先演自己那段，請他自選只聽或不聽，之後輪回他的獨演。",
+            "action": "導師已提出需雙方同意的私人輪次調整邀請，未定案或開演。",
+            "tradeoff": "他可能覺得被搶先，也可拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是很想接他那一句，乾脆明講想試一次雙人段子；他若不願，我不偷插。",
+          "action": "導師已發出限單次的可拒絕私人雙人即興邀請，尚未取得答應或演出，不破壞原無聲約定。",
+          "tradeoff": "可能當面被拒，也可能害他覺得又成陪襯"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2501464145
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "3f221899e8a33cca1360e2921815089c896a71f9855d3a27843f4c509409636b"
+      },
+      "consequenceDirections": {
+        "A": "可以有限交流，不能把一句意見當全面肯定。",
+        "B": "本人可退出，不能替同事取消場地或要求同行。",
+        "C": "他可試獨演，教師不因守約要求對方不模仿自己。",
+        "D": "教師承認自己的表演欲，不用笑聲偷偷改約。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c8c7997db89106346862c757e8e9263f3b4af937128201509ef96d134692b158",
+    "draftSha256": "470888d61e83d875a99a27aea37bae7444ef6631c657f268b7f89127a9237882",
     "seedAssignmentVersion": 1
   }
 }

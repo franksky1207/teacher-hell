@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bb8e254270c7d46a03c1721ecf052317627ff1134d5dacab1dce30e3173d5a83",
+      "checkedAt": "2026-11-27T13:36:30.149Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這段改成只讀文字，不拍腳或人物。",
+            "action": "導師已在本課選擇可用文字短讀，不拍攝學生或重演傷態。",
+            "tradeoff": "失去動作笑點"
+          },
+          {
+            "id": 2,
+            "text": "用紙偶做虛構角色，作者願意才拍。",
+            "action": "導師已提出安全虛構紙偶方案，未取得製作及拍攝同意或追加必做量。",
+            "tradeoff": "需要另製小物，也可拒絕"
+          },
+          {
+            "id": 3,
+            "text": "改用既有授權動物片段看節奏，不配同學名字。",
+            "action": "導師已選用既有可用動物素材作有限教學，不取學生身體影像。",
+            "tradeoff": "少了班級原創感"
+          },
+          {
+            "id": 4,
+            "text": "本次不再拍這段，已完成部分照實回饋。",
+            "action": "導師已停止本人可取消的新拍攝段，依合法既有成果給有限回饋。",
+            "tradeoff": "影片不完整"
+          },
+          {
+            "id": 5,
+            "text": "只做無人聲的節奏音效，標明虛構，不模仿痛叫。",
+            "action": "導師已提供本課有限虛構音效替代，不錄生理聲響或冒稱真事故。",
+            "tradeoff": "少了人物表演"
+          },
+          {
+            "id": 6,
+            "text": "請願意的人用平面圖安排鏡位，不實際表演。",
+            "action": "導師已提供有限自願鏡位圖記方式，不要求傷者或其他人出鏡。",
+            "tradeoff": "少了拍出來的爽快"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "說我像就像，我自願走正常、穩穩的兩步給他們拍；河馬是我，不是受傷同學。",
+          "action": "導師已提出本人安全正常步態短拍的自願授權邀請，未開拍、模仿傷態或取得旁白同意。",
+          "tradeoff": "可能真的被叫很久，還會搶走學生作品焦點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3829131140
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "0f777bf47ced26417271e6b4c06c1a1d478f4c870c44e1b56a475118fbdca314"
+      },
+      "consequenceDirections": {
+        "A": "有動作可剪，不把紙偶當傷者的替身來嘲笑。",
+        "B": "能看創作構想，不把圖當完成影片。",
+        "C": "教師承受自己的笑點，拍攝用途先說清楚，也不能拿來影射傷者。",
+        "D": "可保留語言趣味，不拿傷勢當比喻。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "93844aad1a24b837e3277f44d75db184ff60d4fd1de1a8344b18348329ee7424",
+    "draftSha256": "bb8e254270c7d46a03c1721ecf052317627ff1134d5dacab1dce30e3173d5a83",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89ca1b4edeac1c0faff563401f7fcf7c655b2a303f3cfa6d0d78eb9e60c7da86",
+      "checkedAt": "2026-11-27T13:36:30.153Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "停在現在的杯型，後續只由他自選要不要修。",
+            "action": "導師已停止本人對原作的改作提議，不接觸他人坯體或保證成品性能。",
+            "tradeoff": "孔可能留著不好處理"
+          },
+          {
+            "id": 2,
+            "text": "問他要不要請現場師傅看可行修法，不替他說一定要救杯。",
+            "action": "導師已提出需本人同意的原課技術詢問，未取得師傅回應或代決作品用途。",
+            "tradeoff": "可能聽到不喜歡的建議"
+          },
+          {
+            "id": 3,
+            "text": "若他仍想試，提議由他自己改成香座，不替他動手。",
+            "action": "導師已提出可拒絕的改作建議，未取得本人同意、改坯或宣稱可燃香。",
+            "tradeoff": "可能失去原杯，也未必成功"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意只留下此刻的私人照片，今天不再修。",
+            "action": "導師已提出限本人私用的拍照及暫停建議，未拍攝、取得同意或延長保管。",
+            "tradeoff": "成品暫停，還要等保存條件"
+          },
+          {
+            "id": 5,
+            "text": "用我自己的餘土做一小塊試孔，不碰他的杯。",
+            "action": "導師已以自有安全餘土在課程允許範圍作有限試孔，不操作他人原作或保證修復。",
+            "tradeoff": "要用自己的材料"
+          },
+          {
+            "id": 6,
+            "text": "我先不再給意見，照原安排去做自己的修底。",
+            "action": "導師已停止本人非必要指導，回到自身原作的安全修整，不代對方停課。",
+            "tradeoff": "少了幫忙救回作品的滿足"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想知道香座會不會更好，拿我自己已成形的杯坯改，改壞算我的，不再勸他犧牲那只歪杯。",
+          "action": "導師已在課程許可及安全條件下改動本人既有杯坯作造型試作，不碰他人作品或宣稱實用性能。",
+          "tradeoff": "自己的杯功能可能沒了，也可能更難看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 88807387
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "6721f288aa323a5d78509bd8d01319e48c035475ca5f4c60fb3ba68912480786"
+      },
+      "consequenceDirections": {
+        "A": "可尊重自主，不能保證原杯功能還能實現。",
+        "B": "教師把偏執落在自己的投入，不用成功逼同事照做。",
+        "C": "選擇仍是他的，實際用途須經課程安全確認。",
+        "D": "專業有入口，本人仍可選不繼續，邀問不等於修好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "47855b99016af633ad0c6bfb1bf9bd1e32a6bdb828238608ee3876ddc2e8fd01",
+    "draftSha256": "89ca1b4edeac1c0faff563401f7fcf7c655b2a303f3cfa6d0d78eb9e60c7da86",
     "seedAssignmentVersion": 1
   }
 }

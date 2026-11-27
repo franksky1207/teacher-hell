@@ -14,14 +14,155 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "548f794e3a305cefffd415f33d97ad36737bbe7088ba480c8173b0601eb97fa8",
+      "checkedAt": "2026-11-27T13:36:30.139Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把他兩種方法的對應步驟列清楚，回給本人留用。",
+            "action": "導師已製作本人兩版方法的有限對照回饋，不追加學生重算。",
+            "tradeoff": "要花自己的批閱時間"
+          },
+          {
+            "id": 2,
+            "text": "不再延長今天談話，原成果依約收件，讓他回自己的休息。",
+            "action": "導師已結束本次額外延伸答疑並依規收件，不省略原必要更正與回饋。",
+            "tradeoff": "可能還覺得沒說完"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意日後只分享一個拆數步驟，不願也不影響回饋。",
+            "action": "導師已提出限正常課內單一步驟的可拒絕分享邀請，未取得答應或新增必做量。",
+            "tradeoff": "可能當面被拒"
+          },
+          {
+            "id": 4,
+            "text": "給一個不用交回的變式參考，他想試再試。",
+            "action": "導師已提供自有可用的有限自願參考例，不收作業或改原完成認定。",
+            "tradeoff": "未必會用"
+          },
+          {
+            "id": 5,
+            "text": "請他自選要保留哪版作這次正式回饋依據，不必再抄成同款。",
+            "action": "導師已在本人評讀權限內提供原成果選版方式，不改正確性或要求重抄。",
+            "tradeoff": "教師少一份整齊格式"
+          },
+          {
+            "id": 6,
+            "text": "我當場以另一組數字做同一轉換，請他只看我哪裡最容易抄錯，不替我校作業。",
+            "action": "導師已以自有變式作有限教師試解並開放自願提問，不移交必要批閱責任。",
+            "tradeoff": "自己可能也卡住"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想保住自己不是硬拗的樣子，自己向全班說這次批閱失手，不說誰，也不叫他幫我解釋。",
+          "action": "導師已對本班主動說明本人一次非敏感批閱失誤與自我改正，不含學生身份、作答或家庭資訊，不要求當事人配合。",
+          "tradeoff": "丟自己的面子，也可能被覺得拿認錯替自己加分"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1858451306
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "dacb0665ed69463532b8f44826ab5fe72a48b7b11ccdf3f6112e7b61e984c922"
+      },
+      "consequenceDirections": {
+        "A": "能看見轉用能力，不將多一張說明當他必須消氣。",
+        "B": "可看教師示範，不能叫他修全班評語或替教師背書。",
+        "C": "學生可能感到教師願承擔，也可能更不想被間接猜到；教師不得補充個案細節或以公開說明換原諒。",
+        "D": "教師不以短談拖掉第四個午休，必要回應已完成。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒憑空新增教師曾邀學生協看其他例題再撤回的前提；改為當場護面子而主動公開本人非敏感失誤，與必要個別更正及普通教師試解不同。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "把他兩種方法的對應步驟列清楚，回給本人留用。",
+                "action": "導師已製作本人兩版方法的有限對照回饋，不追加學生重算。",
+                "tradeoff": "要花自己的批閱時間"
+              },
+              {
+                "id": 2,
+                "text": "不再延長今天談話，原成果依約收件，讓他回自己的休息。",
+                "action": "導師已結束本次額外延伸答疑並依規收件，不省略原必要更正與回饋。",
+                "tradeoff": "可能還覺得沒說完"
+              },
+              {
+                "id": 3,
+                "text": "問他願不願意日後只分享一個拆數步驟，不願也不影響回饋。",
+                "action": "導師已提出限正常課內單一步驟的可拒絕分享邀請，未取得答應或新增必做量。",
+                "tradeoff": "可能當面被拒"
+              },
+              {
+                "id": 4,
+                "text": "給一個不用交回的變式參考，他想試再試。",
+                "action": "導師已提供自有可用的有限自願參考例，不收作業或改原完成認定。",
+                "tradeoff": "未必會用"
+              },
+              {
+                "id": 5,
+                "text": "請他自選要保留哪版作這次正式回饋依據，不必再抄成同款。",
+                "action": "導師已在本人評讀權限內提供原成果選版方式，不改正確性或要求重抄。",
+                "tradeoff": "教師少一份整齊格式"
+              },
+              {
+                "id": 6,
+                "text": "我當場以另一組數字做同一轉換，請他只看我哪裡最容易抄錯，不替我校作業。",
+                "action": "導師已以自有變式作有限教師試解並開放自願提問，不移交必要批閱責任。",
+                "tradeoff": "自己可能也卡住"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點心虛，也不想再裝很會改，把今天原本想請他幫看的其他例題收回，自己重新核。",
+              "action": "導師已撤回本人對該生尚未成立的額外例題協助邀請，接回自身核題工作，不撤學生正常回饋。",
+              "tradeoff": "自己多做，也可能讓他仍然不領情"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 911970023
+            },
+            "selectedIds": [
+              1,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 3,
+              "D": 6
+            },
+            "optionsDigest": "81bd0ded628604e4996229e0dc353c786c97ec9c20573aedf1cf7583944645aa"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師不再用學生的能幹補自己的省事，原個別成果照實保留。",
+            "B": "能看見轉用能力，不將多一張說明當他必須消氣。",
+            "C": "能保留專長，不能把教師批錯換成學生加課。",
+            "D": "可看教師示範，不能叫他修全班評語或替教師背書。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "abcaed3d4440aa129e22584fea606b0b799d8ed2bb6620fd41b678b9dc4eaa0e",
+    "draftSha256": "548f794e3a305cefffd415f33d97ad36737bbe7088ba480c8173b0601eb97fa8",
     "seedAssignmentVersion": 1
   }
 }

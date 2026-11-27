@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e11a8cfb9b018b3715e4228088a814d305bfa4e343edf87fc3dff036f784f25b",
+      "checkedAt": "2026-11-27T13:36:30.151Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只用本人同意的正常朗讀段，不截噴嚏。",
+            "action": "導師已提出限正常聲段的用途確認，未取得新同意或擅剪。",
+            "tradeoff": "少了背詞的熱鬧節點"
+          },
+          {
+            "id": 2,
+            "text": "這次不放音檔，改用同目標的文字停頓練習。",
+            "action": "導師已在自身課程權限內提供有限文字替代，不取用未同意聲音。",
+            "tradeoff": "少了聲音辨識"
+          },
+          {
+            "id": 3,
+            "text": "讓願意的學生各自用自己的聲音試一小段，不錄下來。",
+            "action": "導師已提供有限自願現場試讀及個別替代，不錄音或要求模仿生理聲。",
+            "tradeoff": "表現差異大"
+          },
+          {
+            "id": 4,
+            "text": "只看原有可用的逐字稿，不播也不重演。",
+            "action": "導師已選用既有合法逐字稿作有限文本回饋，不播放或重製聲音。",
+            "tradeoff": "聽不到當年聲線"
+          },
+          {
+            "id": 5,
+            "text": "我用自己有權使用的短文正常示範一次，不比較誰像喇叭。",
+            "action": "導師已以自有短文提供正常教師試讀，不引用同事噴嚏或要求他再錄。",
+            "tradeoff": "教師多帶一段"
+          },
+          {
+            "id": 6,
+            "text": "問同事是否願只向我說一處當年錄得滿意的技巧，不給學生評他的嗓音。",
+            "action": "導師已發出限方法的一次自願成人交流邀請，未取得答應或新錄音。",
+            "tradeoff": "他也可能不想談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還有點不服輸給一個噴嚏，節拍我自己拍給他們跟，原聲只聽他願意給的部分。",
+          "action": "導師已在本課可用短段提供本人適量拍掌節奏供自願跟讀，不播放未同意音軌或製造擾班噪音。",
+          "tradeoff": "自己得持續配合，也可能更像搶鋒頭"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2501627967
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "32d976fdfe7257a66ed9632e9e7a17611d0fa65c26d651bd25410ab115f1d832"
+      },
+      "consequenceDirections": {
+        "A": "可討論文字表達，不拿稿件當重製音檔授權。",
+        "B": "可以承接必要教學，不能以教師示範堵住對教法的合理疑問。",
+        "C": "教師用現場節奏替代生理笑料，同事仍可不提供原檔，學生也可不跟。",
+        "D": "可聽原技巧，使用範圍仍限原課程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "321967d63378f70a36b7db68bf573362a76b3bb302a683a2713540cb480eef5d",
+    "draftSha256": "e11a8cfb9b018b3715e4228088a814d305bfa4e343edf87fc3dff036f784f25b",
     "seedAssignmentVersion": 1
   }
 }

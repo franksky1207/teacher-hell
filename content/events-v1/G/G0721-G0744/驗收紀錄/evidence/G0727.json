@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "603a79f6b9b5f21c413418faf9f4c4d02796aae1235ddc1aef9df7dc5732236f",
+      "checkedAt": "2026-11-27T13:36:30.141Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只拍靜物，等他的手臂離開再按。",
+            "action": "導師已選擇原同意靜物構圖，不拍同事身體或要求重演。",
+            "tradeoff": "失去偶然好畫面"
+          },
+          {
+            "id": 2,
+            "text": "詢問能否公開一張由他先選的影子成品，不直播。",
+            "action": "導師已提出限單張且由本人先選的公開用途詢問，未取得同意、拍攝或發布。",
+            "tradeoff": "可能被拒，公開範圍需說清楚"
+          },
+          {
+            "id": 3,
+            "text": "他若還願按原約打燈，我自己伸手作影，不要他當演員。",
+            "action": "導師已提出本人手影構圖及原有限自願打光協作邀請，未替同事答應或拍到他人。",
+            "tradeoff": "拍攝比較麻煩，也可能不好看"
+          },
+          {
+            "id": 4,
+            "text": "這次不用架燈，改拍現場原有自然光。",
+            "action": "導師已停止本人本次借燈需求，在原允許位置選用自然光，不自行拆帶電設備。",
+            "tradeoff": "畫面效果不同"
+          },
+          {
+            "id": 5,
+            "text": "剩下時間不拍照，只看布光後的靜物，不留檔。",
+            "action": "導師已停止本人餘下拍攝，保留雙方自願的現場觀看，不錄人或延場。",
+            "tradeoff": "沒有可分享的新成果"
+          },
+          {
+            "id": 6,
+            "text": "我畫一張燈位圖留作自己的構圖參考，不描他的身影。",
+            "action": "導師已以自有紙筆記錄無人物的私人構圖示意，不取同事肖像或作設備核准依據。",
+            "tradeoff": "少了成品美感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很失落，不再假裝只是換個構圖；先停我的拍攝，當面說我捨不得那道影，也聽他到底不想被看見什麼。",
+          "action": "導師已停止本人餘下拍攝並直接表達私人創作失落，提出可拒絕的當場交流，不追拍或逼同意。",
+          "tradeoff": "用掉剩餘場租，還可能吵起來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1650077623
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "5ed5f84470807f37cabf971e831aff31071ee112e663c18f0a41af1e84d4c1b7"
+      },
+      "consequenceDirections": {
+        "A": "能減少器材分工，仍須符合場地原同意範圍。",
+        "B": "可以守原分工，不能為重現影子叫他反覆彎腰。",
+        "C": "可以留下方法，不把圖冒充對方作品或正式安全配置。",
+        "D": "成人可把不滿講出來，同事仍可不解釋私事或同意入鏡。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bab3659a448d309d1672323229e230fdaed4ba39b906eea901f08519423b0706",
+    "draftSha256": "603a79f6b9b5f21c413418faf9f4c4d02796aae1235ddc1aef9df7dc5732236f",
     "seedAssignmentVersion": 1
   }
 }

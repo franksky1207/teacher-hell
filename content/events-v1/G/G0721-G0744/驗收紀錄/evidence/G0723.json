@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "049f8a7bedd5df50036d83a481e7835e004c96381a0ff075c6799282f70474e8",
+      "checkedAt": "2026-11-27T13:36:30.138Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把前後兩篇並排，請各人找一處不能照套的線索。",
+            "action": "導師已以可用兩篇安排有限線索比較，保留必要回饋。",
+            "tradeoff": "花掉後段分享時間"
+          },
+          {
+            "id": 2,
+            "text": "回到今天這篇，各組只整理自己的短結論。",
+            "action": "導師已安排本課有限分組結論整理，不追加整篇重寫。",
+            "tradeoff": "少了跨篇比較"
+          },
+          {
+            "id": 3,
+            "text": "讓各人用圖記今天理解，不再搶口頭答案。",
+            "action": "導師已提供本課有限等值圖記方式，保留個別合理替代。",
+            "tradeoff": "教師較難即時追問"
+          },
+          {
+            "id": 4,
+            "text": "由我讀一段新的中性短文，大家只聽到哪裡就問哪裡。",
+            "action": "導師已用自有可用短文作有限聽讀練習，不借學生錯答演戲。",
+            "tradeoff": "原分享進度變慢"
+          },
+          {
+            "id": 5,
+            "text": "提供私下留一個問題的方式，不要求當場說漂亮。",
+            "action": "導師已提供本課有限直接書面提問方式，不新增作業量。",
+            "tradeoff": "答案要等正常回饋"
+          },
+          {
+            "id": 6,
+            "text": "讓願意的兩人互講不同讀法，其他人可個別整理。",
+            "action": "導師已提供有限自願雙人討論及個別替代，不強派原當事人。",
+            "tradeoff": "教師聽不到全部"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我累到不想再聽標準句，剩下這小段乾脆各自安靜讀，不再輪流講。",
+          "action": "導師已在本人可調整的課內改為有限無收件默讀，取消本次額外輪講，不略過已承諾的發言機會。",
+          "tradeoff": "少了能聽見的理解，也可能讓學生覺得我不耐煩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3838302254
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "0a836e9605d4e9a6856e5fda2f1a4b1b69f12f5a79b8010e04d019e54d15d800"
+      },
+      "consequenceDirections": {
+        "A": "閱讀能留下空間，教師仍需完成原必要支持與回饋。",
+        "B": "可以練聽讀，不以教師念完代表學生已會。",
+        "C": "可有另一種表達，不能把畫得好當讀得懂。",
+        "D": "可容不同聲量，不把伙伴當必須教會對方的人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f0b52dc390968438d3cb6c77791ca157501327573513e9814c6a90b808793f18",
+    "draftSha256": "049f8a7bedd5df50036d83a481e7835e004c96381a0ff075c6799282f70474e8",
     "seedAssignmentVersion": 1
   }
 }

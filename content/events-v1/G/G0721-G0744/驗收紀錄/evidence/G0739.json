@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a1eb336c9d8715f1352955455622c94d2067d4187bf35f61a8a856dc7e8ff9ec",
+      "checkedAt": "2026-11-27T13:36:30.151Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只看他已完成的組裝圖與成品，給一個具體回饋。",
+            "action": "導師已在本人合法回饋範圍檢視自願展示的圖與成品，不要求拆重組。",
+            "tradeoff": "看不到即時操作"
+          },
+          {
+            "id": 2,
+            "text": "改用紙上的轉動序列討論，不再碰實物。",
+            "action": "導師已提供自有可用有限序列練習，不取學生私物或新增計時要求。",
+            "tradeoff": "少了手感"
+          },
+          {
+            "id": 3,
+            "text": "請他自願只對願意的伙伴示範一面，不替全班修道具。",
+            "action": "導師已提出限安全單面的自願同儕示範邀請，未取得雙方同意或指派修理。",
+            "tradeoff": "可能無人想看"
+          },
+          {
+            "id": 4,
+            "text": "今天到這裡，各自回原午休，不再加下一面。",
+            "action": "導師已結束本人非必要追加魔方活動，不影響既有合規休息。",
+            "tradeoff": "兩人興頭被截斷"
+          },
+          {
+            "id": 5,
+            "text": "一起核對原可用說明中的適用步驟，不用我的記憶壓過圖。",
+            "action": "導師已在物主自願範圍查閱可用操作說明，不強拆或保證修復。",
+            "tradeoff": "要花時間，也可能仍不熟"
+          },
+          {
+            "id": 6,
+            "text": "讓他只記今天學到的一個調整，私下留著，不交我打分。",
+            "action": "導師已提供有限自願私人步驟短記方式，不收件或要求重做。",
+            "tradeoff": "少了成績感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服被他說中，乾脆拿自己的完整魔方請他教我慢做一面；我做，他願意才指點。",
+          "action": "導師已提出本人實作、學生自願有限指點的邀請，未取得答應或完成一面，不強扭零件。",
+          "tradeoff": "自己可能笨得很明顯，也用掉休息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4085299242
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "7c1c80c9894e0c6303e469c8e1dafb656e3bb210a7e96a56a5aa6f015d974fa8"
+      },
+      "consequenceDirections": {
+        "A": "能分享能力，不把會裝變維修義務。",
+        "B": "教師把專業面子放進現場，不要求學生教到會或修所有道具。",
+        "C": "可談推理，不能把紙上答對當機械操作已會。",
+        "D": "可以停在完成一面，不讓遊戲吞掉休息。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "68bd3b97759018e12403a320de2da5ccf036bfdd4f590002276e10eb830127bc",
+    "draftSha256": "a1eb336c9d8715f1352955455622c94d2067d4187bf35f61a8a856dc7e8ff9ec",
     "seedAssignmentVersion": 1
   }
 }

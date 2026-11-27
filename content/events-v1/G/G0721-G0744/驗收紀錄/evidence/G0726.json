@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c66284e282b2ccf95282697a47bda3aeba5fbd7211bedd660442fad889af2fd0",
+      "checkedAt": "2026-11-27T13:36:30.140Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把兩條成立路線並列，不再選唯一最佳。",
+            "action": "導師已在本課採可成立雙路線並列回饋，不以作者偏好評理解高低。",
+            "tradeoff": "少了揭曉謎底的快感"
+          },
+          {
+            "id": 2,
+            "text": "先各組畫自己的讀法，不再走第二輪。",
+            "action": "導師已安排有限課內路線圖記，停止本人非必要重走，不當已完成所有驗證。",
+            "tradeoff": "少了實地體感"
+          },
+          {
+            "id": 3,
+            "text": "問同事是否願意把初次笑的理由也當讀者反應說清楚。",
+            "action": "導師已提出限本人初讀經驗的自願成人說明邀請，未取得答應或公開評人。",
+            "tradeoff": "他可能覺得被抓包"
+          },
+          {
+            "id": 4,
+            "text": "改用一個不需走動的短對話，只比較兩種指涉。",
+            "action": "導師已以自有可用對話安排有限文字比較，不新增校園走動。",
+            "tradeoff": "原設計少一段"
+          },
+          {
+            "id": 5,
+            "text": "各組自願提出一個仍有疑問的轉折，由我按原文回應。",
+            "action": "導師已提供本課有限自願文本提問，不追加整份重寫。",
+            "tradeoff": "問題可能分散"
+          },
+          {
+            "id": 6,
+            "text": "保留原路線，只用作者註記說明我當初怎麼寫，不稱標準答案。",
+            "action": "導師已提供本人自有創作意圖註記供有限比較，不改多解成立事實。",
+            "tradeoff": "學生可能不買作者的帳"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是不服大家都選他笑的那條，自己走另一條給他們看，只算我的讀法，不判誰懂。",
+          "action": "導師已在核准安全路線及成人照看可接續條件下親自作有限讀者走讀，不追加學生步行或唯一正解。",
+          "tradeoff": "花原課時間，也可能更證明自己想太多"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2033759930
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "fea4116eab5a37606d18b6f9e82cdec1cf761fdf2943c870299334c56cdcad41"
+      },
+      "consequenceDirections": {
+        "A": "可容讀者差異，仍需指出不合文字的地方。",
+        "B": "可回到語句，不讓體力或熟路決定理解。",
+        "C": "教師可當讀者受檢視，不能把走完當別人必須改答案。",
+        "D": "可看判讀起點，不讓同事代全班選讀法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9b065fe251b4fe00c1f2f949d8342c2b0b246a1981958482dd98cb9273279aef",
+    "draftSha256": "c66284e282b2ccf95282697a47bda3aeba5fbd7211bedd660442fad889af2fd0",
     "seedAssignmentVersion": 1
   }
 }

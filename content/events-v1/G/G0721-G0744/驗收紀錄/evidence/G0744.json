@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6904ceae09dfa361dd86aba79c183af08ebb00caf348feeb4341630c6fac8e22",
+      "checkedAt": "2026-11-27T13:36:30.157Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我向主管申請在自己合法可用時段接這項工作，不先頂班。",
+            "action": "導師已提出本人有限接任申請，未排定或省略正式交接。",
+            "tradeoff": "自己的時間減少，也可能不獲准"
+          },
+          {
+            "id": 2,
+            "text": "請他自願只列已有工作與時段，我不代填他說有空。",
+            "action": "導師已發出限職務負荷的自願資訊詢問，未取得答應或替其承諾。",
+            "tradeoff": "可能仍不想當面說"
+          },
+          {
+            "id": 3,
+            "text": "請主管按現有合法課務資料核定，不以我一句推薦決定。",
+            "action": "導師已向有權主管提出依既有資料正式核定的需求，未自行派人或揭學生內容。",
+            "tradeoff": "要等有權人處理"
+          },
+          {
+            "id": 4,
+            "text": "提議把尚未核定的任務分成可清楚交接的小段，再徵詢人力。",
+            "action": "導師已提出有限分段人力方案，未改定正式職務或把必要責任留白。",
+            "tradeoff": "協調比較慢"
+          },
+          {
+            "id": 5,
+            "text": "若權限與時段都可行，只詢問能否協看一份匿名練習，不接整疊。",
+            "action": "導師已提出限合法匿名單份的自願協看邀請，未取走卷子或完成批閱。",
+            "tradeoff": "幫助很有限，也需本人同意"
+          },
+          {
+            "id": 6,
+            "text": "向主管提議先確認這項工作的最低必要內容，不把漂亮格式也算必做。",
+            "action": "導師已提出未定任務的非必要規格限縮建議，未獲核准或停止正式必要工作。",
+            "tradeoff": "可能被認為不積極，也未必採納"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他這疊放得像要我吞下去，我也火了，原封推回：我不接代批來替這口氣收尾，派工的事就在會裡說清。",
+          "action": "導師已將未受託的整疊卷件交還原合法持有人並明確婉拒額外代閱，不展示學生資料或拒絕本人正式職務。",
+          "tradeoff": "可能讓他覺得連你也不幫，還可能發現根本是我誤會他的意思"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2435393403
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "3cd483c1399c7d57e3faceea4c7f123116ebc4f5469e6ea2619bc67e5d8f50d5"
+      },
+      "consequenceDirections": {
+        "A": "可以提出人力，不把申請當原教師已解套。",
+        "B": "教師拒的是未成立私人代閱，不轉交卷給別人或免除必要派工回應。",
+        "C": "資料可限必要範圍，不以拒絕自述當接受新派工。",
+        "D": "可談工作規模，不能自行刪去法定或正式必要事項。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ca9b2f4574054fb00b12fe1ce0867ce77c825f7100f6476cd84b186331f371c3",
+    "draftSha256": "6904ceae09dfa361dd86aba79c183af08ebb00caf348feeb4341630c6fac8e22",
     "seedAssignmentVersion": 1
   }
 }

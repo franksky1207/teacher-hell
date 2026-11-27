@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2c3f8da9c11a434bad481571e544fda1a313056ed4bfe8c6c70f85fb6de73948",
+      "checkedAt": "2026-11-27T13:36:30.143Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按已核對的有限區域各自完成、各自交接，不再看誰最後走。",
+            "action": "導師已安排原合規有限分區及個別成人確認，不延留懲罰或省略必要清潔。",
+            "tradeoff": "看不到整組同進退"
+          },
+          {
+            "id": 2,
+            "text": "問原組是否願意在核定份量內共同收一處，不把責任全給他。",
+            "action": "導師已提出有限自願共同清理方案，未取得全員同意或追加班務量。",
+            "tradeoff": "有人可能不願，也較難協調"
+          },
+          {
+            "id": 3,
+            "text": "讓他先結束這段非必要的公開成果展示，原清潔交接私下確認。",
+            "action": "導師已停止本人可決定的公開清掃成果展示，保留正常有限清潔及個別確認。",
+            "tradeoff": "少了讓大家看誰負責的出口"
+          },
+          {
+            "id": 4,
+            "text": "這次不用學生互記，把真實工作紀錄由我自己寫。",
+            "action": "導師已接回本次成人工作紀錄，不委派同儕互相評判或公開家庭資訊。",
+            "tradeoff": "教師多花時間"
+          },
+          {
+            "id": 5,
+            "text": "請每人自願只說一件以後不再往隔壁丟的實際改法，不寫長反省。",
+            "action": "導師已提供有限自願行動回顧方式，不作取得休息或支持的條件。",
+            "tradeoff": "可能說得不完整"
+          },
+          {
+            "id": 6,
+            "text": "把我可決定的日後借用點改在原有公用區，避免清潔袋再跨班傳。",
+            "action": "導師已在既有核准範圍調整本人清潔用品領取方式，不改他班權限或增加學生工作。",
+            "tradeoff": "自己要整理公用物"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著他掃給人看也有點心軟，拿自己的那把一起掃完這小段，其他人的份照實辦，不陪他罵人。",
+          "action": "導師已自願加入學生可負荷的有限清理段，不替他組免責、不延留或取代必要成人交接。",
+          "tradeoff": "自己多做，還可能被認為特別護他"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3431248526
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "61ee0216e132a5bb1abe78e01154b507005d813b29d40b781b4b26fc7defe474"
+      },
+      "consequenceDirections": {
+        "A": "可保護自己也保護同伴，不代表其他人免責。",
+        "B": "責任可分清，不能以提早交接當偏袒或漏做。",
+        "C": "減少誘因，不把換點當已改好學生行為。",
+        "D": "教師用實際陪做回應委屈，不讓親近或看不下去消掉原責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "392e1e33a85ba17809feec7fa6575c7f709a5c9fd5022a73078927a8e29c9f4d",
+    "draftSha256": "2c3f8da9c11a434bad481571e544fda1a313056ed4bfe8c6c70f85fb6de73948",
     "seedAssignmentVersion": 1
   }
 }

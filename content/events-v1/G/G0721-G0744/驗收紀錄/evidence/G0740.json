@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2f9f603478b9e5f020f1e59abbe209d5934497eadeba432ad47844b278b77648",
+      "checkedAt": "2026-11-27T13:36:30.152Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓本人自願只說味道，不問出自哪個家。",
+            "action": "導師已提供限味覺感受的自願短分享方式，不蒐集家庭來源或強迫開口。",
+            "tradeoff": "同學可能仍會猜"
+          },
+          {
+            "id": 2,
+            "text": "照原份量分完，不再辦當場介紹，各自吃飯。",
+            "action": "導師已結束本人非必要餐食介紹，保留合法自願分食與正常用餐。",
+            "tradeoff": "那句想念沒有人接著聽"
+          },
+          {
+            "id": 3,
+            "text": "問他是否要把自己可留的份量留給自己，不需再供同伴。",
+            "action": "導師已提出限本人可支配份量的意願詢問，未自行分取或替家庭決定。",
+            "tradeoff": "少一份共享"
+          },
+          {
+            "id": 4,
+            "text": "改用我自寫的虛構餐桌短文，日後再談味道與記憶。",
+            "action": "導師已準備不含個案的自有短文供後續正常課內參考，不要求學生提供家事。",
+            "tradeoff": "眼前的情緒未必消失"
+          },
+          {
+            "id": 5,
+            "text": "請幹部只接物品清點，不替誰的味道作說明。",
+            "action": "導師已限縮原自願同儕協作至非敏感有限清點，必要食安與保管由成人負責。",
+            "tradeoff": "分工變小"
+          },
+          {
+            "id": 6,
+            "text": "給本人私下寫一句不收回的方式，不在餐桌上說。",
+            "action": "導師已提供有限自願私人味覺短記方式，不收件或公開家庭資訊。",
+            "tradeoff": "其他人聽不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那一口他捨不得說，我也想陪他好好吃；若他願分享，我換掉自己原來那份，只吃他推薦的少量，不替哪個家打分。",
+          "action": "導師已提出依校規及食安可行的少量自願分食詢問，未取得供食同意或取走食物，不以分享換學習待遇。",
+          "tradeoff": "少了原本想吃的，也可能被讀成老師站邊"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3051375214
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "41e4a97cb45325daf47cc443475cff171aa88157d09bd952c8b1fead6c5d7f93"
+      },
+      "consequenceDirections": {
+        "A": "能保住平靜，不把不說故事當不珍惜。",
+        "B": "物主能收回未承諾部分，不讓退出分享成為家庭立場表態。",
+        "C": "想念可以留下，不必變成一家比另一家好。",
+        "D": "教師參與當場味道而非評家人，學生可拒絕，不能索餐或給利益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "968ee55a0b11a410d2d2b2e895f0c10bb89c1f685ae62aeb53011e8d8be41ff0",
+    "draftSha256": "2f9f603478b9e5f020f1e59abbe209d5934497eadeba432ad47844b278b77648",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eace432d5680ae15f48e29c2dd3cafda44b66e25ab073a4cdc5416613a2c154e",
+      "checkedAt": "2026-11-27T13:36:30.137Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把公共失物袋移到原核准的公用櫃，不和私人桌面混放。",
+            "action": "導師已將依法可移交的公共失物移至既有核准保管點，不開學生抽屜。",
+            "tradeoff": "要另搬整理好的東西"
+          },
+          {
+            "id": 2,
+            "text": "詢問他願不願意自己說一句班務範圍，說完不再解釋私事。",
+            "action": "導師已提出限公共班務的自願說明邀請，未要求揭露用品或取得答應。",
+            "tradeoff": "可能仍感到被注視"
+          },
+          {
+            "id": 3,
+            "text": "這次領取我來接，他只保留已做好的分類成果。",
+            "action": "導師已接回本次失物領取接待，必要認領依規，不交學生裁決。",
+            "tradeoff": "成人多做一段"
+          },
+          {
+            "id": 4,
+            "text": "讓願意的伙伴只處理外觀提示，袋內物件由成人接。",
+            "action": "導師已限縮自願同儕協作至公共外觀提示，保管與認領由成人負責。",
+            "tradeoff": "合作範圍變小"
+          },
+          {
+            "id": 5,
+            "text": "把已確認可公開的失物外觀列在一張簡圖，不再逐桌展示。",
+            "action": "導師已提供無個資的公共失物外觀簡圖，不公開學生桌面。",
+            "tradeoff": "少了當面問的方便"
+          },
+          {
+            "id": 6,
+            "text": "向校方失物窗口提出集中移交，未接收前先由成人保管，不再請他發放。",
+            "action": "導師已依原失物辦法提出集中移交需求，尚未取得窗口接收或完成全數交付，原物先由合法成人保管。",
+            "tradeoff": "領取要改走窗口，也需等待接收"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己的桌面也亂得見不得人，乾脆自願翻開我那格只有雜紙的抽屜，讓大家笑我一次，不再盯他那邊。",
+          "action": "導師已自願展示本人確認無敏感資料的私人雜紙格，不開他人抽屜、不要求學生跟著公開。",
+          "tradeoff": "丟自己的臉，還可能把氣氛帶歪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3151270178
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "bc148e91d337de265437cdf94d785e07614ec374be26d6b3798639758347bf2b"
+      },
+      "consequenceDirections": {
+        "A": "私人桌面可退出公物流程，未接收前仍須有人保管及告知，不能把申請當物件已送到。",
+        "B": "好奇可能轉開，也可能更想翻別人；教師仍須守住他人隱私。",
+        "C": "學生不用面對認領爭執，也不因退開失去肯定。",
+        "D": "能自己設界線，也能拒說，成人保護不以開口為條件。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6將提出、可成立的移交及尚待接收混寫，完成程度不清；改明確為集中移交申請與成人暫管，非宣稱已交付。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "把公共失物袋移到原核准的公用櫃，不和私人桌面混放。",
+                "action": "導師已將依法可移交的公共失物移至既有核准保管點，不開學生抽屜。",
+                "tradeoff": "要另搬整理好的東西"
+              },
+              {
+                "id": 2,
+                "text": "詢問他願不願意自己說一句班務範圍，說完不再解釋私事。",
+                "action": "導師已提出限公共班務的自願說明邀請，未要求揭露用品或取得答應。",
+                "tradeoff": "可能仍感到被注視"
+              },
+              {
+                "id": 3,
+                "text": "這次領取我來接，他只保留已做好的分類成果。",
+                "action": "導師已接回本次失物領取接待，必要認領依規，不交學生裁決。",
+                "tradeoff": "成人多做一段"
+              },
+              {
+                "id": 4,
+                "text": "讓願意的伙伴只處理外觀提示，袋內物件由成人接。",
+                "action": "導師已限縮自願同儕協作至公共外觀提示，保管與認領由成人負責。",
+                "tradeoff": "合作範圍變小"
+              },
+              {
+                "id": 5,
+                "text": "把已確認可公開的失物外觀列在一張簡圖，不再逐桌展示。",
+                "action": "導師已提供無個資的公共失物外觀簡圖，不公開學生桌面。",
+                "tradeoff": "少了當面問的方便"
+              },
+              {
+                "id": 6,
+                "text": "按校規將這批轉交校方失物窗口，不再由班內發放。",
+                "action": "導師已依既有辦法提出並辦理可成立的失物移交，尚待接收部分由成人保管，不假稱全數已收妥。",
+                "tradeoff": "領取要走正式窗口"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我自己的桌面也亂得見不得人，乾脆自願翻開我那格只有雜紙的抽屜，讓大家笑我一次，不再盯他那邊。",
+              "action": "導師已自願展示本人確認無敏感資料的私人雜紙格，不開他人抽屜、不要求學生跟著公開。",
+              "tradeoff": "丟自己的臉，還可能把氣氛帶歪"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2755664508
+            },
+            "selectedIds": [
+              3,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "b168bbdc4247c12e7804205ad92cd8c9fc7eb22ac7d1f9770fb72029d07e5e18"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生不用面對認領爭執，也不因退開失去肯定。",
+            "B": "好奇可能轉開，也可能更想翻別人；教師仍須守住他人隱私。",
+            "C": "可少些圍觀，不能列私人醫療或認領者資訊。",
+            "D": "能自己設界線，也能拒說，成人保護不以開口為條件。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "648a1db410aec2a96aeb63fe0a196bbf8657ead6252df86d848d3cf068df1528",
+    "draftSha256": "eace432d5680ae15f48e29c2dd3cafda44b66e25ab073a4cdc5416613a2c154e",
     "seedAssignmentVersion": 1
   }
 }

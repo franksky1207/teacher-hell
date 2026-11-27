@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bee9e381bb82c6f709d876269252383364e530bc62c010cda40a2f4e9d56036a",
+      "checkedAt": "2026-11-27T13:36:30.155Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只留兩種可用節奏，各人畫出長短，不猜誰家門鈴。",
+            "action": "導師已提供有限合法雙節奏圖記練習，不重播私密來源或強迫公開。",
+            "tradeoff": "少了現場猜人的刺激"
+          },
+          {
+            "id": 2,
+            "text": "手機不用，改用各自適量拍掌作中性節拍。",
+            "action": "導師已在原課內提供適量自願拍掌及個別替代，不擾鄰班或要求模仿門鈴。",
+            "tradeoff": "聲音效果沒那麼像"
+          },
+          {
+            "id": 3,
+            "text": "我把自有節奏寫成簡單長短符號，學生選一種解讀。",
+            "action": "導師已以自有中性節奏提供有限符號練習，不要求學生供手機或家事。",
+            "tradeoff": "少了即時辨聽"
+          },
+          {
+            "id": 4,
+            "text": "改用校內已有可用的節奏教材，不採現場惡作劇聲。",
+            "action": "導師已選用既有可用節奏材料承接本課，不索取學生音檔。",
+            "tradeoff": "學生原創感減少"
+          },
+          {
+            "id": 5,
+            "text": "讓願意的小組自編一個不指人的節拍，私下先試，不放全班。",
+            "action": "導師已提供有限自願中性節奏創作選擇，未取得任何公開或錄音同意。",
+            "tradeoff": "教師聽不到每段"
+          },
+          {
+            "id": 6,
+            "text": "今天不再加新聲音遊戲，原必要回饋完成就結束。",
+            "action": "導師已結束本人非必要新增節奏遊戲，保留正常課內回饋與合規休息。",
+            "tradeoff": "少了翻盤機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還真想知道自己聽不聽得出，請他自願只出兩聲考我；我先寫答案，錯了也不賴他。",
+          "action": "導師已發出限合法中性雙聲的自願教師辨識小試邀請，尚未取得答應或作答，不公開家庭聲源。",
+          "tradeoff": "可能被學生笑，還占一小段原課時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1442909567
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "25e46c0a9bd02050055ebd9c8d1405bfb5cbbe40791cdb4b2e990066f0f4e9fa"
+      },
+      "consequenceDirections": {
+        "A": "可以回平靜，不以停止懲罰合理求助。",
+        "B": "辨聲者可當出題者，但不被要求拿家事證明或帶全班再放。",
+        "C": "可以有新的自主，不能強配或以熱鬧獎勵帶頭。",
+        "D": "能練節奏，須保留不出聲的替代，不再變集體壓聲。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2acfb450aebfa2d4e96950342ecb82dfb81c42ad1667840607d8ee5bfd49986b",
+    "draftSha256": "bee9e381bb82c6f709d876269252383364e530bc62c010cda40a2f4e9d56036a",
     "seedAssignmentVersion": 1
   }
 }

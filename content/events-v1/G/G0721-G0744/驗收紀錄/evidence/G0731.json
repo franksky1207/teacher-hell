@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "374db683ed049cb02278b443bf46ab69decbf50bb8f21a19dcb20e49e03fcf4b",
+      "checkedAt": "2026-11-27T13:36:30.146Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問各權利者是否願意只刪第二聲，原對話順序不動。",
+            "action": "導師已提出限單一聲段的合法修改詢問，未取得全部同意或完成剪輯。",
+            "tradeoff": "少了一個意外笑點"
+          },
+          {
+            "id": 2,
+            "text": "整段彩蛋不用，保留原正常試讀。",
+            "action": "導師已取消本人可決定的非必要彩蛋使用，不刪必要原始紀錄或正常回饋。",
+            "tradeoff": "少了共同出糗的趣味"
+          },
+          {
+            "id": 3,
+            "text": "把兩人聲音分開成各自可同意的單段，不接成對話。",
+            "action": "導師已提出清楚標示剪接性質的分段方案，未取得新用途同意或輸出。",
+            "tradeoff": "失去原來節奏"
+          },
+          {
+            "id": 4,
+            "text": "只用可用文字稿回饋這次表達，不再播聲音。",
+            "action": "導師已提供本課有限文字回饋方式，不播放未同意聲段。",
+            "tradeoff": "聽不到停頓與音色"
+          },
+          {
+            "id": 5,
+            "text": "請作者自願在原稿旁標出要停的位置，不必補錄。",
+            "action": "導師已提供有限自願聲段標記方式，未要求重錄或追加作業。",
+            "tradeoff": "只看到個別選擇"
+          },
+          {
+            "id": 6,
+            "text": "保留原始檔只在原允許的個別回饋範圍，不做新成品。",
+            "action": "導師已停止本次非必要輸出，原檔依既有用途、期限與權利保管，不擴張公開。",
+            "tradeoff": "少了一份可分享作品"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那個節奏我捨不得，自己用嘴做一聲明顯假的轉場給他們選，不再拿他的咳嗽湊笑點。",
+          "action": "導師已以本人聲音製作明示虛構的短轉場供可拒絕選擇，未完成全片錄製或取得他人新聲音授權。",
+          "tradeoff": "老師可能很蠢，聲音也未必被喜歡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3568650978
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "1a38346b1960e9e0379c54983eb47208bea8c8063a115087fd3a292707e9a5a4"
+      },
+      "consequenceDirections": {
+        "A": "可另創效果，不能偽稱原現場或以教師出聲逼人接受。",
+        "B": "可完成必要回饋，不以保留原檔當永久使用授權。",
+        "C": "可去掉誤導，不能用剪接假造另一個人的反應。",
+        "D": "能接內容理解，不能把文字當完整口語成果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e6ddb03bf45153635754255ec5c4e54bdd5f9e5406ca5a1a04dd895637dfc003",
+    "draftSha256": "374db683ed049cb02278b443bf46ab69decbf50bb8f21a19dcb20e49e03fcf4b",
     "seedAssignmentVersion": 1
   }
 }

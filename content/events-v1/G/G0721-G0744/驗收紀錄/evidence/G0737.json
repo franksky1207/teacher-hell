@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "768bcb64b273b560a3a3fce0f7b2892c8789b44075e9174da640cb1951ccc8b6",
+      "checkedAt": "2026-11-27T13:36:30.150Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受只共同看這兩張，不再追完整盤。",
+            "action": "導師已提出限現存兩張的合規共同判讀安排，未假稱原排序已復原。",
+            "tradeoff": "有些錯法這次無人對讀"
+          },
+          {
+            "id": 2,
+            "text": "我從原可用備份核對遺失類型，不擅補便條位置。",
+            "action": "導師已在合法權限內查閱既有匿名備份，不捏造遺失順序或外洩資料。",
+            "tradeoff": "占自己的工作空檔"
+          },
+          {
+            "id": 3,
+            "text": "各自先寫對這兩種錯法的解釋，再看差在哪。",
+            "action": "導師已提供限兩項匿名錯法的平行成人判讀方式，未改正式評語。",
+            "tradeoff": "少了當場對談"
+          },
+          {
+            "id": 4,
+            "text": "問同事願不願意先挑最需要回饋的一類，剩下回原批閱流程。",
+            "action": "導師已提出有限優先類型詢問，未替同事選定或取消原必要批閱。",
+            "tradeoff": "今天看的範圍較小"
+          },
+          {
+            "id": 5,
+            "text": "我畫一張無學生內容的分類空格，讓他願意時再用。",
+            "action": "導師已製作自有一般分類空格供自願參考，不要求重寫遺失資料。",
+            "tradeoff": "框架未必適合"
+          },
+          {
+            "id": 6,
+            "text": "這次不再加共同討論，讓他依原安排先去必要面談。",
+            "action": "導師已婉拒本次額外共同判讀，必要資料與原責任依共同前提接續。",
+            "tradeoff": "少一次互相檢查"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我端走那盤還真像亂收桌的服務生，乾脆拿自己的紙當點單，請他願意就口述兩個錯法，我來記，不再碰他的盤。",
+          "action": "導師已提出限匿名錯法的可拒絕口述記錄協作並接回本人筆記工作，未取得答應或捏造原件。",
+          "tradeoff": "花自己的時間，也可能被嫌拿失誤開玩笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1888813224
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "5bd352586aea366c18a2e0848c68f75b29c49b31ce7b6ceaab70bebc9bada6f1"
+      },
+      "consequenceDirections": {
+        "A": "可找回部分內容，沒有資料的地方仍留未知。",
+        "B": "工作可以接續，不把讓開當已賠回時間或免除失誤處理。",
+        "C": "教師承擔新記錄工作，不能把口述當原順序真的復原。",
+        "D": "能有限協作，原必要回饋仍由責任者接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff8d8d9295fd08890d284ffa09eae7529b7a2410ca0b1d31d2d1df28c6dd5ae0",
+    "draftSha256": "768bcb64b273b560a3a3fce0f7b2892c8789b44075e9174da640cb1951ccc8b6",
     "seedAssignmentVersion": 1
   }
 }

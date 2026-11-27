@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "04a6818fe67e1f39e367dd115da4c14f3048270dceb742d8e34a6669d4b4400a",
+      "checkedAt": "2026-11-27T13:36:30.138Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改成無臉的正確帽位剪影，不再辨得出車主。",
+            "action": "導師已提出需作者同意的無臉剪影方案，未取得改作同意或更動原件。",
+            "tradeoff": "失去最逗的表情"
+          },
+          {
+            "id": 2,
+            "text": "這次不展示原畫，只給作者個別方法回饋。",
+            "action": "導師已婉拒本次本人可決定的肖像展示，保留正常個別回饋。",
+            "tradeoff": "少一次被看見的機會"
+          },
+          {
+            "id": 3,
+            "text": "問車主和作者是否願意保留真實帽位，限這次靜態說明。",
+            "action": "導師已提出限定單次正確帽位展示的雙方意願詢問，未取得授權或公開。",
+            "tradeoff": "可能談不成"
+          },
+          {
+            "id": 4,
+            "text": "只調整非安全部位的誇張表情，帽位不動，先問雙方。",
+            "action": "導師已提出保留正確帽位的非安全圖像修改建議，尚未同意或修改。",
+            "tradeoff": "還是可能不喜歡"
+          },
+          {
+            "id": 5,
+            "text": "我用自有的通用圖說帽位，不用這張漫畫。",
+            "action": "導師已選用本人有權使用的通用正確帽位圖作有限教學，不複製學生肖像。",
+            "tradeoff": "教師要另備圖"
+          },
+          {
+            "id": 6,
+            "text": "請作者自願只談立架怎麼站穩，不出示人臉。",
+            "action": "導師已提出限結構方法的自願短分享邀請，未取得答應或公開原畫。",
+            "tradeoff": "少了人物討論"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有大額頭，想畫就先問我，我自願當下一張的對象，不讓他一個人扛笑點。",
+          "action": "導師已提出以本人自願肖像另作圖的可拒絕邀請，尚未完成畫作或取得新使用授權。",
+          "tradeoff": "得挨畫，也可能像搶戲"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3652977677
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "a0b0d04288a12e86da55713781445536c2765847d7d2b6df3fd30d68d135d1cf"
+      },
+      "consequenceDirections": {
+        "A": "教學不靠特定同學的臉，原作不被判成沒用。",
+        "B": "車主能退開，作者仍可不畫，安全帽位置不能因老師頭大就亂改。",
+        "C": "雙方可以拒絕，不能用安全教育逼交肖像。",
+        "D": "可以談戴法，去識別不等於原作者自動同意改作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0fc5964db52d8e2f9338228cacc3fabff521db3193848ea44ec5490c0d5795bd",
+    "draftSha256": "04a6818fe67e1f39e367dd115da4c14f3048270dceb742d8e34a6669d4b4400a",
     "seedAssignmentVersion": 1
   }
 }

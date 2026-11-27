@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7e636f5847f5239efbc3620278341df89fc932629e03efccc5e4c7bc2141c4c8",
+      "checkedAt": "2026-11-27T13:36:30.156Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只作原範圍內的文字回饋，不另演。",
+            "action": "導師已取消本人可決定的非必要朗讀展示，保留合法原稿及正常文字回饋。",
+            "tradeoff": "少了聽見共同作品的機會"
+          },
+          {
+            "id": 2,
+            "text": "重新詢問其他同學是否願意只讀原已同意的一小段。",
+            "action": "導師已發出限既有授權文本的自願短讀邀請，未排定或取得新演出同意。",
+            "tradeoff": "可能無人願意"
+          },
+          {
+            "id": 3,
+            "text": "改成無聲文字投影，只在原作者同意範圍用。",
+            "action": "導師已提出限原課內的無聲展示方案，未取得新授權或公開。",
+            "tradeoff": "少了現場語氣"
+          },
+          {
+            "id": 4,
+            "text": "若有人已有本人可用的錄音，問是否願意借一小段，不要求新錄。",
+            "action": "導師已提出限本人既有合法音檔的可拒絕借用詢問，未轉傳、播放或要求製作。",
+            "tradeoff": "未必有，也可能不願"
+          },
+          {
+            "id": 5,
+            "text": "只看各版怎麼改，不問誰一定要讀。",
+            "action": "導師已在本課安排有限合法版本差異回饋，不追究已撤回演出意願。",
+            "tradeoff": "少了成品舞台感"
+          },
+          {
+            "id": 6,
+            "text": "展示先不排，日後原正常課內再問有沒有自願讀者。",
+            "action": "導師已暫停本人非必要展示排程，提出未來自願徵詢方式，不變原學習完成事實。",
+            "tradeoff": "需要等，可能最後仍不演"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看不下去那個空位，這段我自願讀，讀爛算老師的，不再找人替我兌現場面。",
+          "action": "導師已提出以本人聲音作有限演讀的自願邀請，尚未取得作者用途同意或完成朗讀。",
+          "tradeoff": "自己占了聲音，也可能讓學生更依賴我救場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2094596705
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "e0742b3649712d5a228091a77058fc2b9807c7ea85bcd5dc48d4c713223ecaf9"
+      },
+      "consequenceDirections": {
+        "A": "教師接表演不接學生的人身同意，作者仍可拒絕新演讀。",
+        "B": "可留未決空間，不能把延後當默認報名。",
+        "C": "版本技能仍有價值，不把紀錄用來綁人。",
+        "D": "稿可留，沒有演員不等於沒完成寫作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d2d966651fdccbe4436dc801aae5cda196010372acee7580fa6d6b97ed1c1646",
+    "draftSha256": "7e636f5847f5239efbc3620278341df89fc932629e03efccc5e4c7bc2141c4c8",
     "seedAssignmentVersion": 1
   }
 }

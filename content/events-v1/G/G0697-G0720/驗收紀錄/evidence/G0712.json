@@ -17,14 +17,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "faa2d65ad06b746a7d6587068b43d96c85f4d56403385e67ad2ad9d679721744",
+      "checkedAt": "2026-11-27T12:32:47.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問物主是否願意依已確認條件自願分食，不連著原輸贏。",
+            "action": "導師已提出限安全可食及物主同意的自願分享詢問，未取得分取權或依下注配餐。",
+            "tradeoff": "份數不夠人人有"
+          },
+          {
+            "id": 2,
+            "text": "這次不另辦集體分食，物主按規決定自己的剩餐。",
+            "action": "導師已取消本人非必要集體分食安排，不強制取走食物、棄餐或免除必要安全處理。",
+            "tradeoff": "原想吃的同伴失望"
+          },
+          {
+            "id": 3,
+            "text": "取消我原加的猜餡料獎勵遊戲。",
+            "action": "導師已撤回本人非必要食物猜獎活動，不以遊戲形式繼續金錢輸贏。",
+            "tradeoff": "少了熱鬧"
+          },
+          {
+            "id": 4,
+            "text": "提供學校既有購餐資訊，想吃的人自己依法依規買，不靠私下分配。",
+            "action": "導師已提供經核對的校內既有購餐方式資訊，未代訂餐、保證供應或要求消費。",
+            "tradeoff": "各自花錢，也未必有想吃的"
+          },
+          {
+            "id": 5,
+            "text": "另用自製虛構例子談「拿食物」與「下注」不同，不重演原局。",
+            "action": "導師已以自有虛構案例作有限一般金錢行為說明，不取代必要依法處理。",
+            "tradeoff": "占少量正常班務時間"
+          },
+          {
+            "id": 6,
+            "text": "邀他另談以後帶多少才不會變成全班期待，不要求家店繼續供餐。",
+            "action": "導師已發出限定本人分享意願的自願短談邀請，未約成或承諾固定供餐。",
+            "tradeoff": "要另配正常時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也餓了，自己去買原本想吃的蛋餅，不從那幾包裡替老師留一份。",
+          "action": "導師已在必要工作接續妥當的合法休息時段自費購買個人早餐，不索取分享餐或要求學生跑腿。",
+          "tradeoff": "自費，還得自己等餐"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1407891087
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "f65d7d4bf465066c54f02ab0c31661e4fdf9e7f1f1724b8f69d1175fe91ddc4e"
+      },
+      "consequenceDirections": {
+        "A": "不把收回當懲罰帶餐者，必要食安處理照常。",
+        "B": "不保證供餐，不要求學生買他家店或補賭款。",
+        "C": "教師不利用職位分到學生私餐，必要處理與照看仍先完成。",
+        "D": "早餐不再是賭注，正常課間仍有合規休息。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -45,7 +113,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1a5b885d157cc7466c0cdebbfb605618333b68dbf5ebef49c67a8579b4f68651",
+    "draftSha256": "faa2d65ad06b746a7d6587068b43d96c85f4d56403385e67ad2ad9d679721744",
     "seedAssignmentVersion": 1
   }
 }

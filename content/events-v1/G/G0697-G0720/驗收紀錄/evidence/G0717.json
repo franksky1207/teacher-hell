@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3b244d5cff772bf5165d9ca3836bdb8426d69cbd1ea5cb8edf3e4fb02b60efe9",
+      "checkedAt": "2026-11-27T12:32:47.298Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "給他自願重新開頭的時間，不要求完整背稿。",
+            "action": "導師已提供有限可停止的自主表達機會，不以流暢度決定責任或取代必要補救。",
+            "tradeoff": "可能又卡住"
+          },
+          {
+            "id": 2,
+            "text": "只問他願不願意先說自己想為哪件具體事負責。",
+            "action": "導師已提出可拒絕的有限具體行動提問，未代學生道歉或保證和解。",
+            "tradeoff": "可能顯得不完整"
+          },
+          {
+            "id": 3,
+            "text": "改讓他自己寫一張具體短訊，是否轉交再問對方。",
+            "action": "導師已提供有限私人書面表達方式，尚未取得受影響者接受或轉交同意。",
+            "tradeoff": "不能立刻得到回應"
+          },
+          {
+            "id": 4,
+            "text": "這次先不繼續雙方談話，必要補救由成人按規接續。",
+            "action": "導師已停止本人非必要即時共同對話，保留必要成人處理及各自支持，不強迫接觸。",
+            "tradeoff": "少了當面說完的機會"
+          },
+          {
+            "id": 5,
+            "text": "我用自有虛構句子示範事實與感謝不同，不讓他再演一次。",
+            "action": "導師已以自有中性例句提供有限一般表達支持，不引用個人受損細節或代作道歉。",
+            "tradeoff": "多一段說明，也可能仍緊張"
+          },
+          {
+            "id": 6,
+            "text": "邀他日後正常工作空檔練一段別的生活短說，不再靠這次道歉破紀錄。",
+            "action": "導師已發出限其他中性生活文本的自願短練邀請，未約成或新增必做量。",
+            "tradeoff": "要另配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那句謝謝我也差點笑出來，自己的得獎式長講不念了，用自己的筆私下記住這個糗。",
+          "action": "導師已取消本人非必要長講，並以自有筆記記下不含學生資料的私人提醒，不取代必要責任處理。",
+          "tradeoff": "少了說教的滿足，還得承受尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3905411181
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "5be098c3bcf5c48bcc3d8a72321b88ce6321044a6536c1fa1a4e6b80b4797359"
+      },
+      "consequenceDirections": {
+        "A": "可從真實行動開始，不把教師提示變替他編好歉詞。",
+        "B": "有另一種表達，對方有權不收。",
+        "C": "能用自己的話，不能以說完就當對方必須原諒。",
+        "D": "教師記的是自己差點笑場，不留學生可辨認細節或拖延補救。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5679cfd631d66c0069f0a5bc91bca84aa8ce9431085b482f5102a07ec51356d6",
+    "draftSha256": "3b244d5cff772bf5165d9ca3836bdb8426d69cbd1ea5cb8edf3e4fb02b60efe9",
     "seedAssignmentVersion": 1
   }
 }

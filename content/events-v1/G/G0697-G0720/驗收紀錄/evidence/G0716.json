@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "02bd22d3d71d734489f08b0cd571aff5d8635079341ba2775a6844e231f7db83",
+      "checkedAt": "2026-11-27T12:32:47.297Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這輪照真實完成情況結束，不另排重跑。",
+            "action": "導師已結束本人非正式本輪遊戲，依實況保留結果，不追加懲罰性運動。",
+            "tradeoff": "有些人沒有參與到"
+          },
+          {
+            "id": 2,
+            "text": "另提一輪不計排名的自願練習，原輪紀錄不重置。",
+            "action": "導師已提出有限安全自願練習邀請，未強制補跑、延時或更動原結果。",
+            "tradeoff": "需原核准時間與場地，也可能無人願意"
+          },
+          {
+            "id": 3,
+            "text": "改成各人自己的短距離步行觀察，不作全隊競速。",
+            "action": "導師已在既有核准範圍提供有限安全個別活動方式，不以運動懲罰或取代必要健康評估。",
+            "tradeoff": "少了比賽刺激"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的最佳隊長票選。",
+            "action": "導師已撤回本人非必要隊長人氣排行，不剝奪學生原參與權或真實完賽紀錄。",
+            "tradeoff": "少了被隊友捧的機會"
+          },
+          {
+            "id": 5,
+            "text": "邀他另談自己原想讓誰看到，不在全隊前對質。",
+            "action": "導師已發出限定本人需求的自願支持短談邀請，未約成或進行公開究責。",
+            "tradeoff": "要另用正常工作時間"
+          },
+          {
+            "id": 6,
+            "text": "用我自編的虛構局面談個人可不跟隊，不拿本輪學生做反面例子。",
+            "action": "導師已以自有虛構案例作有限一般合作說明，不公開個案細節或改寫事實。",
+            "tradeoff": "少了原事件的直接感"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想下去證明自己跑得動，自己的額外示範跑先不加，讓那個真的跑完的人留在畫面中央。",
+          "action": "導師已取消本人非必要額外示範跑，不減必要安全照看、健康調整或正常回饋。",
+          "tradeoff": "少了找回存在感的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3448981022
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "7404a041af375241689c505d8ae8889912e53b4cb4400d8671b672b16c7c9dd0"
+      },
+      "consequenceDirections": {
+        "A": "可重新參與，不以新一輪否定第一次完成。",
+        "B": "教師承受不當主角，不把不加跑當學生必須謝謝他。",
+        "C": "可談不同選擇，不把沉默解讀成效忠誰。",
+        "D": "不抹掉獨自完成者，未參與者仍有正常學習機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0b26367744f69a096345720faf1d12c4438e5d66711c66ce7628b8efbdd3c006",
+    "draftSha256": "02bd22d3d71d734489f08b0cd571aff5d8635079341ba2775a6844e231f7db83",
     "seedAssignmentVersion": 1
   }
 }

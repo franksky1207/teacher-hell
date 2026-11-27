@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e6f6454cf3ba6e17524007574915067227d3c1665e39015b6c2d623e1a52ebbf",
+      "checkedAt": "2026-11-27T12:32:47.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用核對過的字牌只演原有限短段，參與仍自願。",
+            "action": "導師已在原授權及本人可安排範圍確認有限短演與正確字牌，不使用錯版或延長留校。",
+            "tradeoff": "沒有完整放映效果"
+          },
+          {
+            "id": 2,
+            "text": "這次不演，改看已核對的文字短稿。",
+            "action": "導師已提供本課可用正確文字稿作有限回饋，不要求學生補演或重製全部。",
+            "tradeoff": "少了聲音與動作"
+          },
+          {
+            "id": 3,
+            "text": "我用自己準備的中性小例接原概念，不取學生作品。",
+            "action": "導師已以自有可用中性文本承接本課，不複製學生影像或更動其原作。",
+            "tradeoff": "教師多準備"
+          },
+          {
+            "id": 4,
+            "text": "讓作者自願說一個字幕改成字牌的方法，不演原笑話。",
+            "action": "導師已提出限方法的一次自願分享邀請，未取得同意或交付額外校稿工作。",
+            "tradeoff": "少了作品完整性"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的即席改詞競賽。",
+            "action": "導師已撤回本人非必要即席改詞排名，不取消正確可讀材料及必要回饋。",
+            "tradeoff": "少了臨場刺激"
+          },
+          {
+            "id": 6,
+            "text": "向設備承辦查後續正常課內可用的替代投影資訊，不讓今天等檢修。",
+            "action": "導師已詢問既有可用替代設備與借用條件，未取得器材、操作電路或宣稱檢修完成。",
+            "tradeoff": "要等回覆，可能沒有"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那張巨大錯字牌讓我也想躲，自己的額外壓軸獨白乾脆不演，不再把最後一句搶回來。",
+          "action": "導師已取消本人非必要壓軸獨白，不省略必要資訊交付、正確材料或合理支持。",
+          "tradeoff": "少了主角感，也會有點空"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4280493757
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "de470da7601cbe7f1771fb880b79d5b8611f5a6b17581e4c6f805c020339c373"
+      },
+      "consequenceDirections": {
+        "A": "能正常教，不把設備失敗當學生未努力。",
+        "B": "必要理解仍有入口，不能把閱讀當全片已完成。",
+        "C": "教師承受自己的尷尬，必要更正台詞仍已交清。",
+        "D": "不讓聽覺需求靠臨時猜，正常支持仍完整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a9deef92152489831d0f519622436ded3ef2eb79769e054017b8fb8129941a94",
+    "draftSha256": "e6f6454cf3ba6e17524007574915067227d3c1665e39015b6c2d623e1a52ebbf",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc6f1f2228cef34c0720a2a10e8076d4de78a13d64950b3a40b87405761f2456",
+      "checkedAt": "2026-11-27T12:32:47.290Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後我自己的非必要公告串場不再用誇張廣播腔，必要通知平常說清楚。",
+            "action": "導師已取消本人日後非必要誇張廣播串場安排，必要公告仍以清楚可及方式提供，不將學生玩笑當處罰依據。",
+            "tradeoff": "少了自己喜歡的表演，也可能沒那麼熱鬧"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願在日後正常班務時間自選講一小段，不現在加演。",
+            "action": "導師已發出限未來正常時段的可拒絕短分享邀請，未約成或延長午休。",
+            "tradeoff": "要等，可能不願再講"
+          },
+          {
+            "id": 3,
+            "text": "我把自己下一則普通通知寫短一點，不用擴音示範。",
+            "action": "導師已精簡本人可決定的非正式通知文字並保留必要完整資訊，不更動校方正式公告、使用擴音或示範模仿。",
+            "tradeoff": "要自己改稿，也少了現場說話的存在感"
+          },
+          {
+            "id": 4,
+            "text": "改提供不發聲的自願短句紙遊戲，不收件也不猜作者。",
+            "action": "導師已提供有限安靜自願文字遊戲，不收個資、評分或公開作者。",
+            "tradeoff": "少了聲音笑點"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最佳模仿者票選。",
+            "action": "導師已撤回本人非必要聲音模仿排名，不限制合理表達或新增處罰。",
+            "tradeoff": "少了帶頭者的掌聲"
+          },
+          {
+            "id": 6,
+            "text": "邀他另談哪些聲音效果最好笑，不問誰在背後說我什麼。",
+            "action": "導師已發出限一般聲音效果的自願交流邀請，未約成、索取私訊或要求供出同伴。",
+            "tradeoff": "需用正常短談時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想玩本尊忘關麥這個梗，正常班務那段自願短活動我自己演一句，不叫他接。",
+          "action": "導師已在本人可安排的正常班務短段示範自有非敏感播音糗話，不使用擴音、不要求學生笑或參演。",
+          "tradeoff": "可能只有自己覺得好笑，也會有點丟臉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1879011454
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "1dec6d04f718563e2d282b8d11ff3b8efa85c43cf103eee192618ae7b03bbeb2"
+      },
+      "consequenceDirections": {
+        "A": "可以聊技術，不變忠誠測試。",
+        "B": "能保留休息趣味，不逼大家用文句嘲諷老師。",
+        "C": "教師承擔自選小糗，不占午休或讓學生必須捧場。",
+        "D": "可以有幽默，不把被聽見變成人質邀演。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1結束擾班模仿涉及所有分支已完成的必要安靜處置；普通3教師播音示範與情緒自演忘關麥糗話的實質動作過近。分別改為日後取消教師自身額外誇張串場，以及精簡本人非正式通知文字。兩個實質修改合併後由原工具真實重抽洗牌一次，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "結束這次額外集體模仿，各自回原休息。",
+                "action": "導師已撤回本人非必要午間集體聲音活動邀請，保留原合法個人休息，不追查私人嘲笑。",
+                "tradeoff": "笑場收得突然"
+              },
+              {
+                "id": 2,
+                "text": "問他是否願在日後正常班務時間自選講一小段，不現在加演。",
+                "action": "導師已發出限未來正常時段的可拒絕短分享邀請，未約成或延長午休。",
+                "tradeoff": "要等，可能不願再講"
+              },
+              {
+                "id": 3,
+                "text": "我用自己的文字演示一次播音節奏，留正常課內再做。",
+                "action": "導師已準備自有中性播音文本供本人正常課內示範，不錄學生或強制參與。",
+                "tradeoff": "教師多備一段"
+              },
+              {
+                "id": 4,
+                "text": "改提供不發聲的自願短句紙遊戲，不收件也不猜作者。",
+                "action": "導師已提供有限安靜自願文字遊戲，不收個資、評分或公開作者。",
+                "tradeoff": "少了聲音笑點"
+              },
+              {
+                "id": 5,
+                "text": "取消我加的最佳模仿者票選。",
+                "action": "導師已撤回本人非必要聲音模仿排名，不限制合理表達或新增處罰。",
+                "tradeoff": "少了帶頭者的掌聲"
+              },
+              {
+                "id": 6,
+                "text": "邀他另談哪些聲音效果最好笑，不問誰在背後說我什麼。",
+                "action": "導師已發出限一般聲音效果的自願交流邀請，未約成、索取私訊或要求供出同伴。",
+                "tradeoff": "需用正常短談時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想玩本尊忘關麥這個梗，正常班務那段自願短活動我自己演一句，不叫他接。",
+              "action": "導師已在本人可安排的正常班務短段示範自有非敏感播音糗話，不使用擴音、不要求學生笑或參演。",
+              "tradeoff": "可能只有自己覺得好笑，也會有點丟臉"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3484505251
+            },
+            "selectedIds": [
+              1,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 1,
+              "C": "emotional",
+              "D": 6
+            },
+            "optionsDigest": "25e2aa13eebafc36fe2b0259af945a437beca6a0d26134dde44a5d25f9a40329"
+          },
+          "previousConsequenceDirections": {
+            "A": "可以有幽默，不把被聽見變成人質邀演。",
+            "B": "不因聽到自己就懲罰學生，安靜仍照同一規則。",
+            "C": "教師承擔自選小糗，不占午休或讓學生必須捧場。",
+            "D": "可以聊技術，不變忠誠測試。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "883cb96a7e75fc67a429da08cd54206dfc26db8b18cda1a4a625c61fbc28ea38",
+    "draftSha256": "fc6f1f2228cef34c0720a2a10e8076d4de78a13d64950b3a40b87405761f2456",
     "seedAssignmentVersion": 1
   }
 }

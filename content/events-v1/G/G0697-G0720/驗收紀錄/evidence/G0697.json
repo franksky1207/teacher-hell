@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ccbbdecb8e6c352cb9363fe288005d2fca3924686fca026a64e1e27a92f6fc2b",
+      "checkedAt": "2026-11-27T12:32:47.278Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問孩子是否願意不用卡繼續一小段，可以停。",
+            "action": "導師已提出限短段無卡的可拒絕接續詢問，未取得同意或要求演完整場。",
+            "tradeoff": "少了熟悉提示"
+          },
+          {
+            "id": 2,
+            "text": "這次先結束學生示範，由我用自有例子接原內容。",
+            "action": "導師已撤除本人非必要學生示範輪次，以自有教材承接必要教學。",
+            "tradeoff": "少了學生現場表達"
+          },
+          {
+            "id": 3,
+            "text": "詢問孩子與母親是否願意只用原已同意的正式大字卡重來一小段。",
+            "action": "導師已提出限原同意內容與既有時間的自願短試邀請，未開始重演或擴張授權。",
+            "tradeoff": "占用核可時段，也可能被拒"
+          },
+          {
+            "id": 4,
+            "text": "改給個別文字回饋，不作第二次上台。",
+            "action": "導師已提供本人本課有限個別文字回饋，不要求新增公開演出。",
+            "tradeoff": "看不到口語接續"
+          },
+          {
+            "id": 5,
+            "text": "邀母親另談換卡時哪些資訊不能帶上台，不要孩子再示範。",
+            "action": "導師已發出限定成人提示方法的自願交流邀請，未約成或增加家長義務。",
+            "tradeoff": "需另配工作空檔"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的親子同框成果照。",
+            "action": "導師已撤回本人非必要親子擺拍提案，不拍小名卡或影響正常回饋。",
+            "tradeoff": "少一張漂亮紀念"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我剛也笑了，現在不想硬講一段道理救面子，自己的額外暖場笑話先收起來。",
+          "action": "導師已取消本人非必要串場笑話，不省略共同必要更正、尊重與照顧。",
+          "tradeoff": "氣氛可能尷尬，少了圓場快感"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4258909554
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "f6da1d56d2d0af9fca0e615a8b69467ea100f23d73b3f65e8f22b57b6707c5ed"
+      },
+      "consequenceDirections": {
+        "A": "可回應準備，不把文字當完整口語成果。",
+        "B": "能自選接續，不以剛才笑了當繼續同意。",
+        "C": "教師不以說笑掩蓋必要回應，也不要求孩子配合。",
+        "D": "她可處理緊張，不由孩子安慰成人才算結束。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "adeebeb2f7402565a066b2bdca908f91a83f2d3f6113dea29d3ef498e6b59023",
+    "draftSha256": "ccbbdecb8e6c352cb9363fe288005d2fca3924686fca026a64e1e27a92f6fc2b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ecfd29af9e692dd6ff4cc4e47350f55f17482136dbabd7eae18ada16210eb865",
+      "checkedAt": "2026-11-27T12:32:47.282Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供原合規的私下登記方式，不要他在全班面前接話。",
+            "action": "導師已說明既有自願私下提名方式，未替任何人登記或取得本人同意。",
+            "tradeoff": "當場可能仍沒名單"
+          },
+          {
+            "id": 2,
+            "text": "依原收件時間結束，後續按既有補缺程序，不臨時逼人。",
+            "action": "導師已維持校規允許的原提名收件安排，未因玩笑破例指定或強迫公開。",
+            "tradeoff": "可能少一位適合的人"
+          },
+          {
+            "id": 3,
+            "text": "向承辦詢問能否依法提供另一段確認時間，不先承諾延長。",
+            "action": "導師已提出依校規補缺確認時間的可行性詢問，未延長期限或宣布候選人。",
+            "tradeoff": "需要等，也可能被拒"
+          },
+          {
+            "id": 4,
+            "text": "改先介紹班務到底做哪些事，不談誰像粉筆人。",
+            "action": "導師已提供經核對的臨時班務職責資訊，不指定人員或承諾免除原程序。",
+            "tradeoff": "占少量正常班務時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的人氣競選口號票選。",
+            "action": "導師已撤回本人非必要口號人氣投票，不更動正式提名或選任權益。",
+            "tradeoff": "少了趣味競選"
+          },
+          {
+            "id": 6,
+            "text": "邀副班長自願另談交接怎麼讓新人看懂，不請他勸那人報名。",
+            "action": "導師已發出限定交接資訊的自願短談邀請，未約成或要求代徵候選。",
+            "tradeoff": "要另配正常時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那個半顆頭太好笑，我自己另畫一隻粉筆怪留在私人筆記，不讓它再占正式名單。",
+          "action": "導師已以自有不同圖樣繪製私人粉筆怪自存，不用於提名、公開或取代原必要資訊。",
+          "tradeoff": "花自己的空檔，也不能拿去當班級吉祥物"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 463563856
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "5e647e74333739523845bd78cfd4c08d08129d48e1ea4e2fe10f5b92acd67b93"
+      },
+      "consequenceDirections": {
+        "A": "班務能力可用，不成同儕拉票壓力。",
+        "B": "有意願者能自行來，不能把那句玩笑直接算報名。",
+        "C": "時限公平，不能把沒登記解讀成故意鬧。",
+        "D": "教師留自己的笑點，不複製學生原畫或影射未登記的人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8cfb06e52391b6dfeef461e98f8eb69518f81356b4e60f8304b67fb922856066",
+    "draftSha256": "ecfd29af9e692dd6ff4cc4e47350f55f17482136dbabd7eae18ada16210eb865",
     "seedAssignmentVersion": 1
   }
 }

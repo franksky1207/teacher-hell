@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fb19728282d4ef1226d5f801855993ed36770e5a3b573eb83d248a169e7676f6",
+      "checkedAt": "2026-11-27T12:32:47.301Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原有限單句練習，不加全班副歌。",
+            "action": "導師已在本課維持原可用單句發音練習與回饋，不新增集體錄音或正式交件用途。",
+            "tradeoff": "整首的期待落空"
+          },
+          {
+            "id": 2,
+            "text": "問願意的人是否想在原可用短段唱一次，不錄音也不評分。",
+            "action": "導師已提出限既有合法時間及可用曲目的自願短唱邀請，未取得參與同意或錄製聲音。",
+            "tradeoff": "占一點原課彈性，可能沒人願意"
+          },
+          {
+            "id": 3,
+            "text": "讓他用一段自己選的文字說明最難發音，不要求再唱。",
+            "action": "導師已提供本課有限等值發音表達選擇，不追加全份或索取家庭錄音。",
+            "tradeoff": "少了旋律幫忙"
+          },
+          {
+            "id": 4,
+            "text": "我用自有可用短例示範原發音點，不拿家中練唱當教材。",
+            "action": "導師已以自有可用短例承接本課必要回饋，不取家庭音像或擴大原錄音用途。",
+            "tradeoff": "少了學生完整準備"
+          },
+          {
+            "id": 5,
+            "text": "邀他自願另談最想留下的練習部分，不轉述媽媽的私話。",
+            "action": "導師已發出限定本人練習經驗的自願短談邀請，未約成或要求家庭資訊。",
+            "tradeoff": "要另配正常時間"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最用心家庭票選。",
+            "action": "導師已撤回本人非必要家庭投入人氣排名，不限制學生參與或正常回饋。",
+            "tradeoff": "少了被全班稱讚的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把那首唱完，下班自己在不擾人的私人空間唱，不再拉全班替我湊副歌。",
+          "action": "導師已於私人可負荷且不擾人的空間唱本人有權自用歌曲，不錄他人、公開或要求學生陪唱。",
+          "tradeoff": "自己的空檔，還可能走音"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3999211290
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "b31ff8c27d75a0e89a5e132937f6918b3fc0e877835692243bf1383e699271ad"
+      },
+      "consequenceDirections": {
+        "A": "可以享受歌，不以同唱取得未來使用授權。",
+        "B": "有地方珍惜自己的努力，不必說到成人感動才算成功。",
+        "C": "教師享受私人興趣，不取學生錄音或變更作業量。",
+        "D": "能看自己的需要，不把文字說明當完整演唱。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4587928edd80cb10f296ad076b67940f9fda00deca1c2ccb59d7fbe42b0fe94b",
+    "draftSha256": "fb19728282d4ef1226d5f801855993ed36770e5a3b573eb83d248a169e7676f6",
     "seedAssignmentVersion": 1
   }
 }

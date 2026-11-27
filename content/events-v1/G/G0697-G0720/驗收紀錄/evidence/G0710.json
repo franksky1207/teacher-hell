@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bfbcd9a47d6e963857d25296881b73c3c76a4c5508cb774c47f6351fb01d0d4c",
+      "checkedAt": "2026-11-27T12:32:47.293Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出各題按內容編排，另附真實作者索引，不用前後當高下。",
+            "action": "導師已向有權編輯提出保留真實署名的內容編排建議，未改定他人稿或宣稱同意。",
+            "tradeoff": "看姓名沒那麼直接"
+          },
+          {
+            "id": 2,
+            "text": "維持原已確認的編排，不為個人喜惡重印。",
+            "action": "導師已維持本人可決定範圍內的原合法編排，不新增無授權重排或更動署名。",
+            "tradeoff": "同事可能仍不舒服"
+          },
+          {
+            "id": 3,
+            "text": "邀作者自願補一則題目設計說明，不改別人的題。",
+            "action": "導師已發出限本人題意的自願設計說明邀請，未取得新稿或要求評別人。",
+            "tradeoff": "多一點文字，也可能拒絕"
+          },
+          {
+            "id": 4,
+            "text": "我另備一題自己的不同例子，先給有權編輯評估是否需要。",
+            "action": "導師已以自有內容製作不同例題並提出可拒絕採用建議，未替換他人稿或先行印製。",
+            "tradeoff": "教師多備課，也可能不用"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最受歡迎出題老師票選。",
+            "action": "導師已撤回本人非必要教師題目人氣排行，不更動正式署名或原必要回饋。",
+            "tradeoff": "少了被全班認可的機會"
+          },
+          {
+            "id": 6,
+            "text": "邀同事另談上次誤認來源讓他最介意哪件事，不在學生前評人。",
+            "action": "導師已發出限定成人合作感受的自願短談邀請，未約成或要求和解。",
+            "tradeoff": "要承受批評與正常工作時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己的名字不好看，私人那份未發的炫題貼文先撤，不用學生點讚證明我會出題。",
+          "action": "導師已停止發布本人未發的非必要私人自誇題文，不含他人題稿或學生資料。",
+          "tradeoff": "少了曝光，也得忍住比較心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 965679783
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "c7f2ea04c2fc074055db7dc991bb8eb77ee46fb61b29dc53c8c46c6cc27f80c9"
+      },
+      "consequenceDirections": {
+        "A": "能回到本人不滿，不能用談話代替必要署名更正。",
+        "B": "能看見出題考量，不拿說明當比較專業地位。",
+        "C": "教師處理自己的面子，不刪正式教材或混淆出處。",
+        "D": "可保真實合作，不要求他假裝喜歡所有題。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "911a67b83a331e3a4cd736dd3cf7342f2f1cca3ac1ff36ebe9d015c10f92b62a",
+    "draftSha256": "bfbcd9a47d6e963857d25296881b73c3c76a4c5508cb774c47f6351fb01d0d4c",
     "seedAssignmentVersion": 1
   }
 }

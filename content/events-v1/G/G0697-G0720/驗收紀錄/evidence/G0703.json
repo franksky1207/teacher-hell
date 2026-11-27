@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "43ce769778a84cb0cddd71630a16b00df4b7c1d44cafcdd8b581024756e17e9c",
+      "checkedAt": "2026-11-27T12:32:47.286Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "往後只編中性號碼，不再替失物取暱稱。",
+            "action": "導師已取消本人可決定的非必要失物暱稱方式，提供中性編號資訊，不改必要認領規則。",
+            "tradeoff": "少了好玩感"
+          },
+          {
+            "id": 2,
+            "text": "接回額外失物整理，學生這次交接完就結束。",
+            "action": "導師已接回本人非必要學生失物延伸整理安排，依法完成成人保管交接。",
+            "tradeoff": "成人增加工作"
+          },
+          {
+            "id": 3,
+            "text": "用學校既有可用手寫標籤，不再借家庭機器。",
+            "action": "導師已選用校內既有可支用標籤，停止本人額外借用學生家庭機器的需求。",
+            "tradeoff": "標籤沒那麼漂亮"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的失物故事票選。",
+            "action": "導師已撤回本人非必要失物擬人故事排名，不公開認領者或取代成人核對。",
+            "tradeoff": "少了一個班級笑點"
+          },
+          {
+            "id": 5,
+            "text": "邀他自願另畫一張分類示意，不再碰未認領傘。",
+            "action": "導師已提出限一般分類方法的自願圖記邀請，未取得新作品或交其物權判斷。",
+            "tradeoff": "多一點繪圖，也可拒絕"
+          },
+          {
+            "id": 6,
+            "text": "問失物承辦是否已有可用分類圖給大家看。",
+            "action": "導師已詢問校內既有失物分類資訊，不改官方規則或轉移個人資料。",
+            "tradeoff": "需等回覆，未必有"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "小花一到七也太可愛，我自己的雨傘回家另貼一個怪名字，不拿班上的當私寵。",
+          "action": "導師已以自有標籤替本人私人雨傘作非正式暱稱標記，不使用學生機器或失物。",
+          "tradeoff": "花自己的標籤，也可能覺得很蠢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 235935036
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "5cf716163b324c21817087da1ccf1be3c50b3c91c01a97600fd5aabd96a04689"
+      },
+      "consequenceDirections": {
+        "A": "已做的分類可保留，不能讓他成為失主爭議仲裁人。",
+        "B": "教師能玩自己的東西，不改失物資料或誤導認領。",
+        "C": "資源查詢不等於新制度成立，當下認領責任不等待。",
+        "D": "不把暱稱變誰最像失主的投票，必要保管仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "193a45c05716dafc0f09e5b27d31a9750a2909e2c74ebd5765989a778a76e34a",
+    "draftSha256": "43ce769778a84cb0cddd71630a16b00df4b7c1d44cafcdd8b581024756e17e9c",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b561fec056279e79eeca25f79a9d62722300e955a8d85501b32127e09227d00",
+      "checkedAt": "2026-11-27T12:32:47.292Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再重演整套，按已復原的部分給短回饋。",
+            "action": "導師已依真實復原部分提供本課有限正常回饋，不要求延長留校或增加全份重做。",
+            "tradeoff": "看不到完整操作"
+          },
+          {
+            "id": 2,
+            "text": "用我自己準備的步驟圖補關鍵點，不再拆桌面。",
+            "action": "導師已提供自有可用步驟圖作本課有限說明，不要求學生再拆裝。",
+            "tradeoff": "少了動手觀察"
+          },
+          {
+            "id": 3,
+            "text": "下次正常課內再安排自願分段試作，不拿今天下課補。",
+            "action": "導師已明示本人可安排正常課內的有限接續方式，不延長本次下課或承諾他科時段。",
+            "tradeoff": "進度要延後"
+          },
+          {
+            "id": 4,
+            "text": "讓各人自願說一件自己剛才碰過的東西，不作公開究責大會。",
+            "action": "導師已提供有限個別實作回顧方式，不要求互相指控或以發言取代必要查核。",
+            "tradeoff": "可能說不完整"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最快復原小組票選。",
+            "action": "導師已撤回本人非必要復原速度排名，不刪真實實作與必要責任紀錄。",
+            "tradeoff": "少了競賽刺激"
+          },
+          {
+            "id": 6,
+            "text": "邀他另談班內收拾做到哪裡就能停，不問他家誰吵架。",
+            "action": "導師已發出限定本人班內工作範圍的自願短談邀請，未約成或蒐集無關家庭資料。",
+            "tradeoff": "需另配正常時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那套示範也不是多完美，自己下班重搭一個給自己看，不叫他替我還原到漂亮。",
+          "action": "導師已以自有安全零件在私人空檔另搭本人模型，不取學生材料或要求延時協助。",
+          "tradeoff": "自己的時間與材料，可能還搭不好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3228946864
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "d8c28c264e877787e5ae65a6ccb7d0521dba923ffa0000fab010f2aed198613b"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔私人想證明的心，不新增學生工作。",
+        "B": "能認真看成果，不把還原當人人都學會。",
+        "C": "其他學生仍需學習，不能只讓認錯者重做。",
+        "D": "不把復舊當新的表演，正常學習回饋仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60e6cf3ae043e3ca243c16d2e178e9166c8350dd05a616116f74dd99dcb8ac5a",
+    "draftSha256": "5b561fec056279e79eeca25f79a9d62722300e955a8d85501b32127e09227d00",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d419599946e336d1207dbdaee968905474a1ddb022769a403869f8a16c2620ba",
+      "checkedAt": "2026-11-27T12:32:47.302Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "每人只選自己的字，想交換再逐一問，不突襲。",
+            "action": "導師已提供限本人自選及雙方同意的自願試印方式，不使用未同意外號或擴張姓名用途。",
+            "tradeoff": "少了揭曉笑點"
+          },
+          {
+            "id": 2,
+            "text": "尚未輪到的人依原同意各印自己本名一次，然後結束。",
+            "action": "導師已依原本人自願與姓名使用範圍完成有限收尾，不新增互選或延長自習前時段。",
+            "tradeoff": "好玩的提議沒採用"
+          },
+          {
+            "id": 3,
+            "text": "改用我自製的無姓名字卡看字形，不再用私人墨印新張。",
+            "action": "導師已以自有中性字卡提供有限觀察，不使用學生章墨或複製原設計。",
+            "tradeoff": "少了手印質感"
+          },
+          {
+            "id": 4,
+            "text": "問作者願不願意只說一個刻工心得，不再替誰取字。",
+            "action": "導師已提出限方法的一次自願短分享邀請，未取得答應或使用刀具。",
+            "tradeoff": "少了大家動手，也可能拒絕"
+          },
+          {
+            "id": 5,
+            "text": "這次不加新印張，讓原同意範圍的成品各自帶回。",
+            "action": "導師已停止本人非必要追加試印邀請，依原約處理現有合法成品，不扣留物品。",
+            "tradeoff": "少了更多變化"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最好笑外號票選。",
+            "action": "導師已撤回本人非必要外號人氣排名，不使用未同意稱號或加派作品。",
+            "tradeoff": "少了熱鬧排名"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想替自己選個很蠢的字，下班用自己的紙筆畫，不叫他再幫我刻一顆。",
+          "action": "導師已以自有紙筆另畫本人私人自嘲字樣，不複製學生原章、借料或要求代刻。",
+          "tradeoff": "自己的空檔，沒有印章那麼漂亮"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 660491497
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "e800eb12d03f133594f5b886f296159b220ba57cce35008e3e7691d6c0ac62d0"
+      },
+      "consequenceDirections": {
+        "A": "可以享受字意，拒換不受評語或排除。",
+        "B": "教師玩自己的形象，不以職位要求學生補製或借墨。",
+        "C": "可守原同意，不把收尾當批評創作者。",
+        "D": "可看字的變化，不再消耗學生私人材料。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ece4ff2fdc674867a1136a4713e409e96f6a7b1a5796bafdbda8e556e38d4b84",
+    "draftSha256": "d419599946e336d1207dbdaee968905474a1ddb022769a403869f8a16c2620ba",
     "seedAssignmentVersion": 1
   }
 }

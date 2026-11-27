@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d6ca1639b98d379496b89a5c207d95bfb8b3bbfbc699d91a362f697e02e919c2",
+      "checkedAt": "2026-11-27T12:32:47.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問願意的人是否要按原節奏再唱一遍，誰都能不跟。",
+            "action": "導師已提出限一遍的自願重唱邀請，未替壽星、班長或同學答應，不超原休息規定。",
+            "tradeoff": "可能破壞剛才的趣味"
+          },
+          {
+            "id": 2,
+            "text": "讓願意的人保留剛才慢唱的玩法，班長不需再帶。",
+            "action": "導師已提出不含針對嘲笑的有限自願慢唱建議，未取得全員同意或指派班長領唱。",
+            "tradeoff": "原排練沒有派上用場"
+          },
+          {
+            "id": 3,
+            "text": "不再加唱，讓各人自選是否寫一句私人祝福。",
+            "action": "導師已取消本人非必要追加合唱，提供自願不收件的私人短祝福方式。",
+            "tradeoff": "少了集體聲音"
+          },
+          {
+            "id": 4,
+            "text": "我自己說一句普通祝福，不再排學生表演。",
+            "action": "導師已以本人自願有限口頭祝福取代自身非必要追加學生表演，不要求學生回應。",
+            "tradeoff": "少了熱鬧儀式"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的完美起音成果錄影。",
+            "action": "導師已撤回本人非必要完美合唱錄影提案，不取新影像或擴張既有授權。",
+            "tradeoff": "少了整齊紀念"
+          },
+          {
+            "id": 6,
+            "text": "邀班長另談下次想不想再接祝賀班務，不現在續派。",
+            "action": "導師已發出限定未來自願班務意願的短談邀請，未約成或預定下一次主持。",
+            "tradeoff": "需另配正常時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我那個想帶大家唱漂亮的癮也先收，自己的額外高音橋段今天不唱了。",
+          "action": "導師已取消本人非必要生日高音獨唱橋段，不省略共同必要承諾回應及支持。",
+          "tradeoff": "少了炫耀，也可能有人失望"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3623985134
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "aef52d99d5ecb5acd9768230fb92ac20612dea2438284de45e46c8e04a8d423c"
+      },
+      "consequenceDirections": {
+        "A": "教師放下表演欲，不用自己出場蓋過班長需求。",
+        "B": "可以保留信任也能拒絕，不拿委屈換再次表現。",
+        "C": "教師可簡單收束，不把教師說完當大家都開心。",
+        "D": "能有新的自願一次，不把重來當全班被罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2eabef2daa96ebd36f230368115519747b64273899ed9e53c05b1db13be883a9",
+    "draftSha256": "d6ca1639b98d379496b89a5c207d95bfb8b3bbfbc699d91a362f697e02e919c2",
     "seedAssignmentVersion": 1
   }
 }

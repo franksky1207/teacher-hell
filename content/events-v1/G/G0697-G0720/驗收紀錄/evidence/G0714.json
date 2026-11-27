@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e71ece853405880ac2dafce52246b885e8b76cb16ec0bab97fe73382f4128a73",
+      "checkedAt": "2026-11-27T12:32:47.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他願不願意站我的位置，我這張不入鏡。",
+            "action": "導師已提出本人退出單張畫面及讓位邀請，未取得對方拍攝同意或要求重拍全員。",
+            "tradeoff": "下一張仍少一人"
+          },
+          {
+            "id": 2,
+            "text": "詢問大家是否願意在器材主人同意下改用遙控，原位置各自選。",
+            "action": "導師已提出限既有器材與各自同意的遙控拍攝建議，未操作、開拍或取得新使用同意。",
+            "tradeoff": "需要重排也可能有人不願"
+          },
+          {
+            "id": 3,
+            "text": "我也不入鏡，只問是否願意一起在幕後收自己的物件。",
+            "action": "導師已婉拒本人本張入鏡並發出有限自願幕後收物邀請，不接他人保管義務或要求陪伴。",
+            "tradeoff": "少了共同照片"
+          },
+          {
+            "id": 4,
+            "text": "這次不再新增共讀合照，各人依原同意處理已有照片。",
+            "action": "導師已撤回本人非必要追加共讀合照提案，不擅刪他人合法檔案或要求撤同意。",
+            "tradeoff": "少一張完整紀念"
+          },
+          {
+            "id": 5,
+            "text": "改用我自寫的共讀摘記，不用人像作這次非必要紀念。",
+            "action": "導師已以自有閱讀內容製作本人有限紀念短記，不取他人肖像或冒稱共同心得。",
+            "tradeoff": "沒有大家站一起的畫面"
+          },
+          {
+            "id": 6,
+            "text": "另約一次下班私人拍照散步，今天不硬補完。",
+            "action": "導師已發出可拒絕的日後私人攝影散步邀請，未約成或取得他人照片。",
+            "tradeoff": "時間未必喬得成"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想有張沒閉眼的，改天自己自費去照相館拍一張，不把這張團照一直喊重來。",
+          "action": "導師已向正常營業照相館提出本人私人單人照付費預約，尚未約成、拍攝或取得照片，不占同事器材與人力。",
+          "tradeoff": "花自己的錢，還可能嫌照片不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1941166981
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "faf88a9981e6f056a640e13d312b91053182b087a5179dcc89225c56f18b69a5"
+      },
+      "consequenceDirections": {
+        "A": "可以少漏一人，不以全員名義強迫留影。",
+        "B": "不把停拍當對攝影者的責怪，必要影像權益照常。",
+        "C": "教師承擔私人愛美，不要求同事免費服務或替他修到滿意。",
+        "D": "可以留內容，不複製別人發言或私下筆記。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9902dd9152597648f79183b4e76d14da1ff4de3fc198623b5541b78dc4f5f4ef",
+    "draftSha256": "e71ece853405880ac2dafce52246b885e8b76cb16ec0bab97fe73382f4128a73",
     "seedAssignmentVersion": 1
   }
 }

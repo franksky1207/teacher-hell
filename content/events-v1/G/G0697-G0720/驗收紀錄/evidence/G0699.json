@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fa107d16304f7be79496fc270e8db35173d7e88f372f7a37fa8df8b90bf5deb6",
+      "checkedAt": "2026-11-27T12:32:47.281Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先示範對每個人同樣口頭問候，不加身體接觸。",
+            "action": "導師已提供一般無接觸問候示範，不要求觸碰或替任何人判健康狀況。",
+            "tradeoff": "學生原設計改了"
+          },
+          {
+            "id": 2,
+            "text": "取消我加的整隊迎接橋段，原自願球場活動照規定。",
+            "action": "導師已撤除本人非必要迎接安排，不影響正常合規活動或必要支持。",
+            "tradeoff": "少了開場儀式"
+          },
+          {
+            "id": 3,
+            "text": "邀兩人各自自願談想怎麼被招呼，不在球場公開對質。",
+            "action": "導師已提出限本人偏好的分別自願短談邀請，未約成或要求醫療細節。",
+            "tradeoff": "要另配工作空檔"
+          },
+          {
+            "id": 4,
+            "text": "用我另畫的路線圖談原走位，不再重演整套開場。",
+            "action": "導師已以自有一般位置圖提供有限正常回饋，不公開個別身體狀況。",
+            "tradeoff": "少了即時動作觀察"
+          },
+          {
+            "id": 5,
+            "text": "讓學生自選旁觀或正常個別練習，不強迫繼續同一組。",
+            "action": "導師已在原權限及校規內提供有限等值個別或自願旁觀方式，不將分開作懲罰。",
+            "tradeoff": "合作節奏被打斷"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最佳默契合照。",
+            "action": "導師已撤回本人非必要默契拍照提案，不索取學生影像或掩蓋實際衝突。",
+            "tradeoff": "少了和氣畫面"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點怕被當成冷淡，私人聚會先說我今天只口頭打招呼，不硬去碰拳裝熟。",
+          "action": "導師已向本人私人成人聚會提出無接觸問候偏好，不影響正式職務或要求他人配合表演。",
+          "tradeoff": "可能沒那麼熱絡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1583043677
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "ef558a332611dc68588cacbb55c0ee3eda28bf65abcfd922783f702be4ab6428"
+      },
+      "consequenceDirections": {
+        "A": "教師選自己的身體界線，不拿學生護腕當私人話題。",
+        "B": "可回饋確實完成的安排，不把圖當實際球技已會。",
+        "C": "各有選擇，不能由其中一人代表另一人。",
+        "D": "不用靠手勢證明友情，必要安全仍維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6800d00074a9ce52e7a84aef8b6e100af5fda4a86527722f1f6f43ba97317ea8",
+    "draftSha256": "fa107d16304f7be79496fc270e8db35173d7e88f372f7a37fa8df8b90bf5deb6",
     "seedAssignmentVersion": 1
   }
 }

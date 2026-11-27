@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3406f9330c8bdb9eb6587011435af5b4c05f875094ddaff13becccfb4c61e176",
+      "checkedAt": "2026-11-27T12:32:47.285Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問所有作者是否願意保留原先最後一格作共同展示。",
+            "action": "導師已提出依原規則展示完整版本的作者意願詢問，未取得全員同意或宣稱版本定案。",
+            "tradeoff": "有人可能不喜歡"
+          },
+          {
+            "id": 2,
+            "text": "這次不另公開展示，原稿各自依約保存。",
+            "action": "導師已取消本人非必要公開接龍展示提案，不刪各人原句或原正常回饋。",
+            "tradeoff": "少了全班一起笑的機會"
+          },
+          {
+            "id": 3,
+            "text": "我另寫一個自己的不同結尾，只作方法比較不換掉他那格。",
+            "action": "導師已以自有不同文字提供有限結尾方法示例，不更動學生原稿或強制替換展示。",
+            "tradeoff": "多一個版本也可能不好笑"
+          },
+          {
+            "id": 4,
+            "text": "讓願意的作者各談一個轉折，不票選哪格該消失。",
+            "action": "導師已發出限方法的一次自願短分享邀請，未要求公開自辯或互相刪稿。",
+            "tradeoff": "占用正常課內時間"
+          },
+          {
+            "id": 5,
+            "text": "提供兩個空白新框，願意的人另寫平行版本，不重交原文。",
+            "action": "導師已提供有限自願平行創作空間，不收作額外評分或補做義務。",
+            "tradeoff": "共同故事更分散"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最佳結局人氣票選。",
+            "action": "導師已撤回本人非必要結局人氣排名，不影響必要作者權益與回饋。",
+            "tradeoff": "少了勝負與掌聲"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是沒耐心又嫌不夠好笑，自己的完美結語講稿也先不念，讓故事停在這個亂七八糟的空格旁。",
+          "action": "導師已取消本人非必要長篇創作總結，不刪原稿或略過共同必要修正與支持。",
+          "tradeoff": "少了自己收漂亮尾的滿足"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1322335287
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "a65469dfa762857eb555d05d61849f768a367d3a07b4fd0a907cec1543c33988"
+      },
+      "consequenceDirections": {
+        "A": "不拿停展處罰末格作者，必要學習回饋仍完成。",
+        "B": "教師承受尷尬，不拿停止說教代替必要更正與作者意願。",
+        "C": "不以票數替教師刪稿背書，原成果照實保存。",
+        "D": "教師可表達品味，但無權把自己的版本當唯一正解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7514d171d70126062b7313e11f8f12d749f5ccbfea39c6ae5e92019b639a8d90",
+    "draftSha256": "3406f9330c8bdb9eb6587011435af5b4c05f875094ddaff13becccfb4c61e176",
     "seedAssignmentVersion": 1
   }
 }

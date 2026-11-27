@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "aa6ba913888ba6dda1bae7e965294ce28bb801f8f0965882def4787e76fa5a55",
-      "checkedAt": "2026-11-27T17:56:21.254Z",
+      "sourceVersion": "b6f7f13997d549993ec5501c3c0966d071ad42e7b902ebf64f700ba7795b2b25",
+      "checkedAt": "2026-11-27T18:04:29.213Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -43,9 +43,9 @@
           },
           {
             "id": 4,
-            "text": "不加額外提示，維持已公開公平資訊。",
-            "action": "拒絕私人押題要求，不拒必要學習支持。",
-            "tradeoff": "學生可能失望。"
+            "text": "這次就照原定複習進度走，不另外做一份給全班的複習單。",
+            "action": "決定不新增非必要的全班複習教材，維持既有公開公平資訊、原定教學與必要答疑支持；不把拒絕洩題當本候選獨有行動。",
+            "tradeoff": "省下額外備課時間，但學生可能覺得班群反映沒有帶來更多準備資源。"
           },
           {
             "id": 5,
@@ -68,26 +68,26 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 1555495759
+          "seed": 2102767737
         },
         "selectedIds": [
-          2,
-          1,
+          4,
+          3,
           5
         ],
         "finalChoiceMap": {
-          "A": 1,
-          "B": 2,
-          "C": 5,
-          "D": "emotional"
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
         },
-        "optionsDigest": "e17900d23f001ee459b8c52990db93f9403fb5e39fed1a7447a63fb0c6f2d32d"
+        "optionsDigest": "6568d1cf834c98f05f678822f2147c9d3bd8b0630bd15aa1592c63208155d2a5"
       },
       "consequenceDirections": {
-        "A": "須明說不保證涵蓋，不用來換額外待遇。",
-        "B": "拒提問仍享必要支持。",
-        "C": "不將課談當他班真相已查實。",
-        "D": "可拒交流，個人示範不保證學習成效或命中考題。"
+        "A": "原定教學、公平資訊及答疑持續，學生可能失望或在班群反映教師未額外製作材料，不把失望當違規。",
+        "B": "不將課談當他班真相已查實。",
+        "C": "可拒交流，個人示範不保證學習成效或命中考題。",
+        "D": "科任可拒絕協作，不保證另有資料。"
       },
       "semanticReviewed": true,
       "selectionRevisionHistory": [
@@ -161,9 +161,80 @@
             "C": "不以拒押題懲罰提問者。",
             "D": "示例不保證考到，也不證學生已懂。"
           }
+        },
+        {
+          "reason": "普通4原本重複已完成的拒絕私人押題，改為不額外製作非必要公開複習教材，與普通1額外提供複習架構區別。 依原工具一次真實重抽洗牌，保留原證據。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "另提供一份不含押題的自願複習架構。",
+                "action": "製作合法原創一般整理工具，不暗示試題權重。",
+                "tradeoff": "占備課，可能被當猜題。"
+              },
+              {
+                "id": 2,
+                "text": "邀學生自願提最不懂的一個概念。",
+                "action": "提出一般答疑邀請，不將提問當考題線索。",
+                "tradeoff": "花課間，可能很多。"
+              },
+              {
+                "id": 3,
+                "text": "問科任願不願另說一份常見解題誤區，公開給想看的人。",
+                "action": "提出額外專業說明協作邀請，不代其接受、不洩正式試題，未取得內容。",
+                "tradeoff": "要聯繫，可能無空。"
+              },
+              {
+                "id": 4,
+                "text": "不加額外提示，維持已公開公平資訊。",
+                "action": "拒絕私人押題要求，不拒必要學習支持。",
+                "tradeoff": "學生可能失望。"
+              },
+              {
+                "id": 5,
+                "text": "邀幹部一般討論怎麼傳達不確定消息。",
+                "action": "提出去識別自願溝通交流，不要學生監控班群。",
+                "tradeoff": "占班務，可能被反問。"
+              },
+              {
+                "id": 6,
+                "text": "查詢校內現有非押題複習資源資訊。",
+                "action": "詢問合法入口，不代取得題庫或保證成績。",
+                "tradeoff": "可能沒合適資源。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想證明不靠暗示能準備，願意用同樣公開材料和他各寫一段解題思路，讓他挑我的漏洞。",
+              "action": "提出教師本人自願參與的公開練習交流，不用正式試題、不改評量或替學生答卷。",
+              "tradeoff": "可能被挑錯，花休息。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1555495759
+            },
+            "selectedIds": [
+              2,
+              1,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 2,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "e17900d23f001ee459b8c52990db93f9403fb5e39fed1a7447a63fb0c6f2d32d"
+          },
+          "previousConsequenceDirections": {
+            "A": "須明說不保證涵蓋，不用來換額外待遇。",
+            "B": "拒提問仍享必要支持。",
+            "C": "不將課談當他班真相已查實。",
+            "D": "可拒交流，個人示範不保證學習成效或命中考題。"
+          }
         }
       ],
-      "reviewer": "Codex／第十輪施工者定向核讀G1166四碼因果、開場及未變動七候選映射；6-1為帶動力而非從眾，非獨立審查"
+      "reviewer": "ChatGPT／指定三篇核心衝突定向修正及實際語意核讀，修正者自審"
     },
     "stage2": {
       "status": "not_started",
@@ -184,7 +255,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aa6ba913888ba6dda1bae7e965294ce28bb801f8f0965882def4787e76fa5a55",
+    "draftSha256": "b6f7f13997d549993ec5501c3c0966d071ad42e7b902ebf64f700ba7795b2b25",
     "seedAssignmentVersion": 1
   }
 }

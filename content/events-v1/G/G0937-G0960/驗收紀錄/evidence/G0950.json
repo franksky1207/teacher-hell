@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1117f236fd73af01bdd754b354b62aba5282e2331aa4cef17aa21b52810d2aaf",
+      "checkedAt": "2026-11-27T15:37:19.080Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收件與授課分開，按原合法流程讓課先進行。",
+            "action": "導師已在本人班務權限分離有限收件與課內學習接續，不延誤本科教學。",
+            "tradeoff": "有人本子晚處理"
+          },
+          {
+            "id": 2,
+            "text": "在原可調早自習短段提前完成本人必要點收，不占第一節。",
+            "action": "導師已在原合法時段調整本人有限點收工作，不改學生到校或上課權。",
+            "tradeoff": "自己的原班務變緊"
+          },
+          {
+            "id": 3,
+            "text": "原缺件者依正常個別方式補，不全班等。",
+            "action": "導師已依原職權安排有限個別缺件接續，不停全班教學。",
+            "tradeoff": "教師要分看"
+          },
+          {
+            "id": 4,
+            "text": "向原主管反映原班務時程與教學衝突，請正式協調。",
+            "action": "導師已提出有限正式工作衝突協調需求，未核准新時程。",
+            "tradeoff": "要再走程序"
+          },
+          {
+            "id": 5,
+            "text": "請科任在原任課時間提供缺的核心學習資訊，不加全班補量。",
+            "action": "導師已提出限原授課職權的有限核心支持需求，未取得協作或改正式評量。",
+            "tradeoff": "原進度得調"
+          },
+          {
+            "id": 6,
+            "text": "本次不再爭誰拖誰，原必要資訊用文字確認。",
+            "action": "導師已停止本人非必要歸責爭辯，維持有限正式工作確認。",
+            "tradeoff": "私交冷一點"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也懶得再為一排本子求整齊，提出把每天一律全收改成按當天必要事項查核；校規一定要查的照辦，不用齊不齊替我撐面子。",
+          "action": "導師已在本人班務權限提出由每日全本點收改為依實際必要事項查核的有限調整方案，需核定者未核不先改，不免法定或校規必要通知查核。",
+          "tradeoff": "少了每天翻過全部本子的掌握，也可能被認為偷懶"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3396316034
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "63d6317979e61a105d0e634b0c8b02d7c51b4bf89d63350a0615a6d3e399fb46"
+      },
+      "consequenceDirections": {
+        "A": "可看安排，不把申請當問題已消失。",
+        "B": "可保學習，不免必要收件。",
+        "C": "改變原一律全收的非必要班務做法，而非只換收件時間或由教師催缺件；保留必要查核，未核准不稱新制已實施。",
+        "D": "可減消耗，不迴避已需補正的教學缺口。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒本週教師催缺件仍被普通3個別缺件接續涵蓋；改為提出必要事項查核取代非必要全本點收的班務調整。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "收件與授課分開，按原合法流程讓課先進行。",
+                "action": "導師已在本人班務權限分離有限收件與課內學習接續，不延誤本科教學。",
+                "tradeoff": "有人本子晚處理"
+              },
+              {
+                "id": 2,
+                "text": "在原可調早自習短段提前完成本人必要點收，不占第一節。",
+                "action": "導師已在原合法時段調整本人有限點收工作，不改學生到校或上課權。",
+                "tradeoff": "自己的原班務變緊"
+              },
+              {
+                "id": 3,
+                "text": "原缺件者依正常個別方式補，不全班等。",
+                "action": "導師已依原職權安排有限個別缺件接續，不停全班教學。",
+                "tradeoff": "教師要分看"
+              },
+              {
+                "id": 4,
+                "text": "向原主管反映原班務時程與教學衝突，請正式協調。",
+                "action": "導師已提出有限正式工作衝突協調需求，未核准新時程。",
+                "tradeoff": "要再走程序"
+              },
+              {
+                "id": 5,
+                "text": "請科任在原任課時間提供缺的核心學習資訊，不加全班補量。",
+                "action": "導師已提出限原授課職權的有限核心支持需求，未取得協作或改正式評量。",
+                "tradeoff": "原進度得調"
+              },
+              {
+                "id": 6,
+                "text": "本次不再爭誰拖誰，原必要資訊用文字確認。",
+                "action": "導師已停止本人非必要歸責爭辯，維持有限正式工作確認。",
+                "tradeoff": "私交冷一點"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想再拿收齊當自己帶班漂亮，這週自己接原缺件的非急提醒，不讓第一節老師替我等整齊；少一點自己的方便。",
+              "action": "導師已在本人班務權限承諾本週有限非急缺件提醒，不取得收齊結果或代本科授課。",
+              "tradeoff": "自己聯繫工作變多，也可能本子仍不齊"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3847342892
+            },
+            "selectedIds": [
+              4,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 3,
+              "C": "emotional",
+              "D": 5
+            },
+            "optionsDigest": "70321a62e5b252fbd96bc1df39befd4b1754a267f5747f27440114478149c2ac"
+          },
+          "previousConsequenceDirections": {
+            "A": "可看安排，不把申請當問題已消失。",
+            "B": "可精準，不公開羞辱或交幹部逼催。",
+            "C": "教師承接限期有限班務催件，不把必要學習權包成情緒獨有，不逼學生新增作業。",
+            "D": "可補內容，未同意不代承諾。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ab502aa146d1e49030aa12b31d0d4367024fda4ab63a7c8db11087810594c88",
+    "draftSha256": "1117f236fd73af01bdd754b354b62aba5282e2331aa4cef17aa21b52810d2aaf",
     "seedAssignmentVersion": 1
   }
 }

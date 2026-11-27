@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cba423dbf78a7c0f83c17a0ebcf12d32cb5ffe1d324d71cc9e223303b461d4d3",
+      "checkedAt": "2026-11-27T15:37:19.084Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提供原正常課業回饋，不接家庭獎懲決策。",
+            "action": "導師已明示本人原職務學習支持範圍，不承接家庭現金或處罰。",
+            "tradeoff": "他覺得幫得少"
+          },
+          {
+            "id": 2,
+            "text": "邀孩子自願在原允許時段談一項作業困難，不問模型花費。",
+            "action": "導師已提出有限自願學習問答邀請，未取得參與或家庭資料。",
+            "tradeoff": "可能不願意"
+          },
+          {
+            "id": 3,
+            "text": "提供原適任輔導與親職支持資訊，不直接請人介入。",
+            "action": "導師已提供既有合法親職支持資訊，未取得人力或安排。",
+            "tradeoff": "家長還要自己選"
+          },
+          {
+            "id": 4,
+            "text": "請家長依原可行家庭方式自行確認孩子消費界線，不替他定額。",
+            "action": "導師已提出可拒絕的有限家庭自主管理建議，不代核金錢安排。",
+            "tradeoff": "他仍要面對衝突"
+          },
+          {
+            "id": 5,
+            "text": "在原課內用自編假例談獎勵與學習，不提這筆錢。",
+            "action": "導師已安排有限無識別一般學習討論，不收真家庭帳務。",
+            "tradeoff": "占可調時間"
+          },
+          {
+            "id": 6,
+            "text": "必要內容回完就結束非急談話，不再重算發錢方式。",
+            "action": "導師已停止本人非必要家庭款項協商，維持原必要聯繫。",
+            "tradeoff": "家長失去順手的方案"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點想被他信任得像什麼都能接，這回改用自己一個真實拖延的小例子，問他願不願在原時段一起想一個不用錢催自己的辦法；不把孩子搬來受教。",
+          "action": "導師已提出本人有限真實非敏感自我管理例的自願交流邀請，未取得參與或家庭決議。",
+          "tradeoff": "得講自己的糗，也可能被認為在岔題"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2399130951
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "94b699897b82d66962ad27fda17dd94c86cecaaa1899161925a1b43b76ad692a"
+      },
+      "consequenceDirections": {
+        "A": "可回學習，不以談話換錢。",
+        "B": "教師投入本人非敏感自述與有限親職交流，不索孩子秘密或保證方法有效，不將支持變必要課業替代。",
+        "C": "可回責任，不由學校代管財務。",
+        "D": "可教一般方法，不把富家孩子當教材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cb254ac4e935555b13646542c698d7a8767bf09b65ebb3e0232e6bf744fb8887",
+    "draftSha256": "cba423dbf78a7c0f83c17a0ebcf12d32cb5ffe1d324d71cc9e223303b461d4d3",
     "seedAssignmentVersion": 1
   }
 }

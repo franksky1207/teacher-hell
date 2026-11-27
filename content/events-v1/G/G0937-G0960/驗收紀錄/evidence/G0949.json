@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e24d8560d4a2a99f9641bdbff956951ce3e37ffe8c31d4967943f595195e17c3",
+      "checkedAt": "2026-11-27T15:37:19.079Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供本人可公開的正式計算說明，不臨時加一次考。",
+            "action": "導師已提供限原職權的有限合法成績計算資訊，不新增正式評量。",
+            "tradeoff": "他可能還想有分可看"
+          },
+          {
+            "id": 2,
+            "text": "原規則允許時，提出等值一般學習回饋，不讓病中補量。",
+            "action": "導師已在一般教學權限提供有限等值學習支持，不改正式計算或加健康門檻。",
+            "tradeoff": "不一定是數字"
+          },
+          {
+            "id": 3,
+            "text": "請原主管就原文字未清楚部分提供正式釐清。",
+            "action": "導師已提出有限正式規則說明需求，未取得新標準或裁定。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 4,
+            "text": "家長若願，依原申覆管道就一項實際疑點申請核對。",
+            "action": "導師已提供原合法有限申覆途徑，不代核結果。",
+            "tradeoff": "要整理材料"
+          },
+          {
+            "id": 5,
+            "text": "孩子健康可行後在原課內私下問一處仍卡住的概念。",
+            "action": "導師已提出健康可行下的有限自願學習問答，未取得參與或分數。",
+            "tradeoff": "沒有立即補兩筆成績"
+          },
+          {
+            "id": 6,
+            "text": "必要事情說清，停止本人額外非急每日試算解讀。",
+            "action": "導師已明示本人非必要即時試算諮詢界線，不取消原申覆與必要回覆。",
+            "tradeoff": "家長可能更焦慮"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再用一句大家都一樣當擋箭牌，自己具名把這次病假說明不清的實務問題送原教學協調，讓下次有能直接查的文字。",
+          "action": "導師已提交本人有限評量說明改善建議，未核准新規或取代本次合法處理。",
+          "tradeoff": "要承認原溝通不周，也可能被要求重做說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1654293379
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "b75b24a4c86a861d89eabcef4e711216ad346ebb7df56c501045805e56d6495d"
+      },
+      "consequenceDirections": {
+        "A": "可保權利，不保證加分。",
+        "B": "可看需要，不以補作換病假權。",
+        "C": "教師提出本人工作文字改進，不擅改成績或虛認舊規合法性，必要當次更正原已共同行。",
+        "D": "可保時間，急迫必要資訊仍照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7bbc30f51f3167f80b4546820232959191ab974f3b279a82aae09c2cc785be07",
+    "draftSha256": "e24d8560d4a2a99f9641bdbff956951ce3e37ffe8c31d4967943f595195e17c3",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f14dc2daf1d63d351993931af80970c53f480468736e3ecdb66d3e6d3016cafd",
+      "checkedAt": "2026-11-27T15:37:19.076Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原成人失物窗口處理今後物件，他只回報不接私收。",
+            "action": "導師已明確不委其非必要失物私收，提供原成人接續方式。",
+            "tradeoff": "他少一個想幫的地方"
+          },
+          {
+            "id": 2,
+            "text": "向失物窗口問問，有沒有不碰別人物品、只協助登記的自願工作；沒確認就不先派給他。",
+            "action": "導師已向原失物權責提出有限合法協作方式查詢，未取得職務、核准或學生同意，不授學生保管或開櫃權。",
+            "tradeoff": "可能根本沒有適合的工作，還得再等回覆"
+          },
+          {
+            "id": 3,
+            "text": "等他原可聯繫時段自願說明當時判斷，不催即刻返校。",
+            "action": "導師已提出原可行時段內有限自願經過交流，未取得回覆或自述。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 4,
+            "text": "用教師自編假物件情境，在原班務時間談回報與保管差別。",
+            "action": "導師已安排有限無識別一般流程練習，不公開個案。",
+            "tradeoff": "用掉課內彈性"
+          },
+          {
+            "id": 5,
+            "text": "提供校方既有失物辦法查閱處，不要求他再整理全班物件。",
+            "action": "導師已提供原合法失物資訊，不新增勞務或保管權。",
+            "tradeoff": "看起來只是資料"
+          },
+          {
+            "id": 6,
+            "text": "本次必要事情接完就不再追加非急訊息，等正常聯絡再談。",
+            "action": "導師已停止本人非必要即時追問，維持原正式必要接續。",
+            "tradeoff": "失主或同學仍會好奇"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕麻煩才老想有人先收好，這回自己接一週班內成人的有限轉交，不再讓他把自家時間拿來補我的方便。",
+          "action": "導師已在本人原職權承諾本週有限成人拾物轉交，不取得新物權或免原失物程序。",
+          "tradeoff": "自己的工作增多，還得依校方規範保管"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1289202600
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "49f0d36a2c4f2da82ecb647d4d21adaeef7377b7bbbf8192816f6edca5d9b6bb"
+      },
+      "consequenceDirections": {
+        "A": "可清職務，不阻正常反映。",
+        "B": "教師親自承接限期合法成人轉交，與直接全部走校方窗口不同在本人中介工作，不私開櫃或承諾永久代管。",
+        "C": "可聽真實動機，不要求家庭細節或以說明換尊重。",
+        "D": "可學方法，不重演原傘或櫃主。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2成人直接接失物與普通1回原成人窗口實質重疊，改為查詢不接觸物件的合法自願協作可能性。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "依原成人失物窗口處理今後物件，他只回報不接私收。",
+                "action": "導師已明確不委其非必要失物私收，提供原成人接續方式。",
+                "tradeoff": "他少一個想幫的地方"
+              },
+              {
+                "id": 2,
+                "text": "原合法班務照常，額外失物由成人直接接。",
+                "action": "導師已停止本人額外學生失物保管需求，維持原合法班務與成人責任。",
+                "tradeoff": "成人多工"
+              },
+              {
+                "id": 3,
+                "text": "等他原可聯繫時段自願說明當時判斷，不催即刻返校。",
+                "action": "導師已提出原可行時段內有限自願經過交流，未取得回覆或自述。",
+                "tradeoff": "要等"
+              },
+              {
+                "id": 4,
+                "text": "用教師自編假物件情境，在原班務時間談回報與保管差別。",
+                "action": "導師已安排有限無識別一般流程練習，不公開個案。",
+                "tradeoff": "用掉課內彈性"
+              },
+              {
+                "id": 5,
+                "text": "提供校方既有失物辦法查閱處，不要求他再整理全班物件。",
+                "action": "導師已提供原合法失物資訊，不新增勞務或保管權。",
+                "tradeoff": "看起來只是資料"
+              },
+              {
+                "id": 6,
+                "text": "本次必要事情接完就不再追加非急訊息，等正常聯絡再談。",
+                "action": "導師已停止本人非必要即時追問，維持原正式必要接續。",
+                "tradeoff": "失主或同學仍會好奇"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕麻煩才老想有人先收好，這回自己接一週班內成人的有限轉交，不再讓他把自家時間拿來補我的方便。",
+              "action": "導師已在本人原職權承諾本週有限成人拾物轉交，不取得新物權或免原失物程序。",
+              "tradeoff": "自己的工作增多，還得依校方規範保管"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 420374622
+            },
+            "selectedIds": [
+              6,
+              4,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 6,
+              "D": 2
+            },
+            "optionsDigest": "2d8c4376888f71fadd332c3d29bd96d072db57eaefebb381d353fff5105bd18e"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師親自承接限期合法成人轉交，與直接全部走校方窗口不同在本人中介工作，不私開櫃或承諾永久代管。",
+            "B": "可學方法，不重演原傘或櫃主。",
+            "C": "可停打斷，不延必要權益回覆。",
+            "D": "可保參與，不將烏龍當撤所有班務理由。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "246f9d3e1dff4498c31b38d9a79dd7c1bcd6ae8833b37753f572607639d0af25",
+    "draftSha256": "f14dc2daf1d63d351993931af80970c53f480468736e3ecdb66d3e6d3016cafd",
     "seedAssignmentVersion": 1
   }
 }

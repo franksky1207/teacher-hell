@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ab85b2f015e609bddcf73bacd29fca9b4bc3d59ee37c70dc9473927f8e6e4b84",
+      "checkedAt": "2026-11-27T15:37:19.081Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明確不要求他當同桌監看者，正常求助仍開放。",
+            "action": "導師已停止本人非必要同儕監看期待，維持原求助與必要管理。",
+            "tradeoff": "他可能怕自己又漏事"
+          },
+          {
+            "id": 2,
+            "text": "提供原既有私下求助管道，不要他課中打暗號。",
+            "action": "導師已提供合法有限私下聯繫方式，不授調查權或取得資料。",
+            "tradeoff": "他要換習慣"
+          },
+          {
+            "id": 3,
+            "text": "用教師自編無識別例子說明不連坐與物件管理。",
+            "action": "導師已安排有限中性規則說明，不公開個案或查私物。",
+            "tradeoff": "用掉可調時間"
+          },
+          {
+            "id": 4,
+            "text": "他願意的話，課後原可用短段只談怕衝突的一件事。",
+            "action": "導師已提出有限自願私人擔憂交流，未取得參與或心理結論。",
+            "tradeoff": "可能不想再說"
+          },
+          {
+            "id": 5,
+            "text": "請原有權者依現行合法範圍處理反覆飲食管理問題，不交學生互管。",
+            "action": "導師已提出原權責有限管理協調需求，未取得新規或裁定。",
+            "tradeoff": "需要正式聯繫"
+          },
+          {
+            "id": 6,
+            "text": "原課務照常，今天不新增全班反省文章。",
+            "action": "導師已不追加本人非必要全班反省任務，維持原正常教學與必要個別處理。",
+            "tradeoff": "有人覺得不夠嚴"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想一整節猜眼神，先問他願不願按班上原來的方式申請暫時換位，不把同桌的飲料拿出來當公開理由。",
+          "action": "導師已提出需本人自願、相關學習條件與原班務程序允許的有限暫時換位方案，未取得同意或完成換位，不以求助為處罰理由。",
+          "tradeoff": "新位置未必習慣，同學也可能猜原因"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 584399067
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "09043a04b7db7f9ba4c5b850faafd74290d3390b40e9a2afcefa9fe3c71910d8"
+      },
+      "consequenceDirections": {
+        "A": "只是拒新增非必要量，不虛構原已派作業。",
+        "B": "另提出實際座位環境調整，與普通2提供私下求助管道不同；必要保護不以接受換位為條件，不公開個案或保證調整成功。",
+        "C": "可有支持，不以談心才免連坐。",
+        "D": "可有路徑，不承諾絕對匿名。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒單句私下求助與普通2私下求助管道實質重疊，自嘲誤判不足區分；改為自願暫時換位提案。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "明確不要求他當同桌監看者，正常求助仍開放。",
+                "action": "導師已停止本人非必要同儕監看期待，維持原求助與必要管理。",
+                "tradeoff": "他可能怕自己又漏事"
+              },
+              {
+                "id": 2,
+                "text": "提供原既有私下求助管道，不要他課中打暗號。",
+                "action": "導師已提供合法有限私下聯繫方式，不授調查權或取得資料。",
+                "tradeoff": "他要換習慣"
+              },
+              {
+                "id": 3,
+                "text": "用教師自編無識別例子說明不連坐與物件管理。",
+                "action": "導師已安排有限中性規則說明，不公開個案或查私物。",
+                "tradeoff": "用掉可調時間"
+              },
+              {
+                "id": 4,
+                "text": "他願意的話，課後原可用短段只談怕衝突的一件事。",
+                "action": "導師已提出有限自願私人擔憂交流，未取得參與或心理結論。",
+                "tradeoff": "可能不想再說"
+              },
+              {
+                "id": 5,
+                "text": "請原有權者依現行合法範圍處理反覆飲食管理問題，不交學生互管。",
+                "action": "導師已提出原權責有限管理協調需求，未取得新規或裁定。",
+                "tradeoff": "需要正式聯繫"
+              },
+              {
+                "id": 6,
+                "text": "原課務照常，今天不新增全班反省文章。",
+                "action": "導師已不追加本人非必要全班反省任務，維持原正常教學與必要個別處理。",
+                "tradeoff": "有人覺得不夠嚴"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被他的暗號看得心累，乾脆把自己剛才誤認眼抽筋那段說給他聽，問他下次若願意直接留一句「我想私下問」，我照原時段接，不猜謎。",
+              "action": "導師已提出可拒絕的有限單句私下求助方式並說明本人誤判，不取得同意或增加告密責任。",
+              "tradeoff": "自己有點丟臉，也可能讓他覺得老師很遲鈍"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3403637699
+            },
+            "selectedIds": [
+              6,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "cb01f1e09e95676e4ef4401fd51b1da6610dac42dbec68ca75de3581cb8b7498"
+          },
+          "previousConsequenceDirections": {
+            "A": "可教界線，不重演同桌杯子。",
+            "B": "只是拒新增非必要量，不虛構原已派作業。",
+            "C": "可有支持，不以談心才免連坐。",
+            "D": "教師提出具體有限的單句求助約定，不將其當唯一合法管道或逼秘密報人，必要保護不綁回答。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29e446cceddaf0f00030626ba4eaab9539d8d6a950bcc767f761ce217f30797e",
+    "draftSha256": "ab85b2f015e609bddcf73bacd29fca9b4bc3d59ee37c70dc9473927f8e6e4b84",
     "seedAssignmentVersion": 1
   }
 }

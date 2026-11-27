@@ -16,14 +16,82 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b1c32fa15e10447756c2d75da62b1ce5940fe540ddb2176d9a54d3f1acc9a5d",
+      "checkedAt": "2026-11-27T15:37:19.088Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依已確認合法早離安排接續，回覆真實交接資訊。",
+            "action": "導師已在原職權配合已確認的合法離校接續，不更改未核站點。",
+            "tradeoff": "家長仍可能擔心"
+          },
+          {
+            "id": 2,
+            "text": "向原交通窗口查既有合規校車或接駁資訊，不先保位。",
+            "action": "導師已提出既有合法交通資訊查詢，未取得名額或服務。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 3,
+            "text": "相關家長本人皆願且校方規則允許時，申請正式共乘接續確認。",
+            "action": "導師已提出需相關合法同意的有限共乘接續需求，未取得同意或交付。",
+            "tradeoff": "要多方協調"
+          },
+          {
+            "id": 4,
+            "text": "將已確認的安全離校步驟寫給必要知情者，不散家庭情況。",
+            "action": "導師已提供本人可確認的有限交通接續資訊，不保證未核路況。",
+            "tradeoff": "自己多整理"
+          },
+          {
+            "id": 5,
+            "text": "請原輔導或家庭支持窗口提供可公開資源，家長自願選。",
+            "action": "導師已提供既有合法家庭支持資訊，不代申請或取得資源。",
+            "tradeoff": "不是即刻解決路燈"
+          },
+          {
+            "id": 6,
+            "text": "向校方提出此類晚歸時點與交通衝突的正式建議，不只口頭破例。",
+            "action": "導師已提交有限正式離校時點協調建議，未核定新制度。",
+            "tradeoff": "可能不改"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕一句照安排讓人心裡還黑著，申請自己這次在原核可安全範圍陪走到正式交接點，該誰接仍確認，不私自把孩子載走。",
+          "action": "導師已提出需校方原程序允許的本人有限安全陪同申請，未獲准、實行或完成接送。",
+          "tradeoff": "自己的可調時間少，還可能不獲准"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 850220733
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "0e069f702a392f665583d1f9533df6abc3360ff3a128f6d2d79ea85d95245e3d"
+      },
+      "consequenceDirections": {
+        "A": "可保必要交通，不把早離當所有風險已零。",
+        "B": "教師提出本人有限額外陪同行動，不把陪到當長期接送承諾或必要保障的唯一來源。",
+        "C": "可保可預期，不捏造班次一定準點。",
+        "D": "可看長期負荷，不把轉介當服務已到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9eba103d270a3ce2da2f6232278172b4c91c380494c279c407ce82615b17f286",
+    "draftSha256": "2b1c32fa15e10447756c2d75da62b1ce5940fe540ddb2176d9a54d3f1acc9a5d",
     "seedAssignmentVersion": 1
   }
 }

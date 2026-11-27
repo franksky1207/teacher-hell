@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "577946686dd78795fcee29588f751d63a1297e1f1f29356008d25415b5f4a7bd",
+      "checkedAt": "2026-11-27T15:37:19.085Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原已確認分工先看一份，逐件留真實回饋。",
+            "action": "導師已在原指導範圍採有限逐件閱稿安排，不保證全份完成。",
+            "tradeoff": "完成看起來慢"
+          },
+          {
+            "id": 2,
+            "text": "協商按原正式節點回一次進度，不再非急每兩天即報。",
+            "action": "導師已提出有限例行工作進度回覆方式，不取得新期限或免職責。",
+            "tradeoff": "他可能覺得被擋"
+          },
+          {
+            "id": 3,
+            "text": "雙方及原權利允許下，只共看一個原稿共同卡點。",
+            "action": "導師已提出限合法草稿的有限自願共同檢視邀請，未取得參與或全稿結論。",
+            "tradeoff": "其他部分仍各讀"
+          },
+          {
+            "id": 4,
+            "text": "向原主管提出本人非急工作重排需求。",
+            "action": "導師已提交本人有限工作配置申請，未獲准或取得人力。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 5,
+            "text": "提供原已可用的指導檢核資訊給學生自願參考，不加新必交。",
+            "action": "導師已提供既有合法有限自查資訊，不新增總量或認定作品完成。",
+            "tradeoff": "少了逐句改的安心"
+          },
+          {
+            "id": 6,
+            "text": "依原程序提出指導分工調整，相關方同意才換。",
+            "action": "導師已提出有限正式分工調整需求，未取得同意或轉移責任。",
+            "tradeoff": "可能被覺得退縮"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服被那句隨時可以追著跑，今天把自己原可自由用的這段拿來實際讀三份，讀到哪就寫哪，不裝全改完。",
+          "action": "導師已將本人可支配安全工作短段投入三份合法草稿的有限閱讀，未宣稱三份皆閱畢、改完或保證成效。",
+          "tradeoff": "自己的休息少，也可能看得太急"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2711768579
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "7359480c38dfc65e193f627edd12df91d372857ac74129dca0f941e2deeff3c8"
+      },
+      "consequenceDirections": {
+        "A": "教師選擇本人當下額外閱稿投入，不強迫同事同犧牲、不因競爭降低必要正確回饋。",
+        "B": "可保可行分工，不擅停原指導。",
+        "C": "可保深度，不冒三份都讀。",
+        "D": "可減打斷，不延誤必要聯繫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2da78d46cee542c19e81d19c39574833bdee6bb4b922fcb68be67b992e10de3a",
+    "draftSha256": "577946686dd78795fcee29588f751d63a1297e1f1f29356008d25415b5f4a7bd",
     "seedAssignmentVersion": 1
   }
 }

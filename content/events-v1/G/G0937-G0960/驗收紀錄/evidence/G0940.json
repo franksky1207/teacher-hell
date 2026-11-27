@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9a00b8fd443232af54890a2d319fed81371ca8fce111661a36e6794503a396b2",
+      "checkedAt": "2026-11-27T15:37:19.067Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只把資料作原合法教學協作評估，不先派發。",
+            "action": "導師已提出限原權責的有限材料評估，未取得採用或發放。",
+            "tradeoff": "他想幫的速度慢"
+          },
+          {
+            "id": 2,
+            "text": "讓原任課者在本科原權限使用，我不跨科代派。",
+            "action": "導師已提出限原授課角色的合法材料接續，不替他承諾採用。",
+            "tradeoff": "他要自己面對同事"
+          },
+          {
+            "id": 3,
+            "text": "只提供既有合法基礎練習資訊，不新收整疊。",
+            "action": "導師已提供原可用學習資訊，婉拒本人非必要整疊供料，不取得材料。",
+            "tradeoff": "少了現成卷"
+          },
+          {
+            "id": 4,
+            "text": "向原教研提出難度與實際需求的具體問題，不講誰偷偷印。",
+            "action": "導師已提出有限正式教學難度協調需求，不改原決議或披私人行為。",
+            "tradeoff": "可能有壓力"
+          },
+          {
+            "id": 5,
+            "text": "請學生自願回一項真正卡點，由原授課者決定教法。",
+            "action": "導師已提出原課內有限自願困難回饋，不取得全班共識或新評量。",
+            "tradeoff": "回覆可能少"
+          },
+          {
+            "id": 6,
+            "text": "這次不再額外合作私印，維持原必要合法教材。",
+            "action": "導師已停止本人非必要新增私印協作，維持原合法課務與權利。",
+            "tradeoff": "同事可能失望"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每次收了紙就裝沒分歧，自己具名提基礎需求的教學意見，這回不借他的錢替我發聲。",
+          "action": "導師已提交本人具名有限教學需求意見，不核定教材替代或將學生當陣營。",
+          "tradeoff": "自己得扛教研追問，還可能被嫌找麻煩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2857631830
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "b0ed3d8e3685006a98b7634de482ab84b3b8db06e89487e9044e06be13a0ddd2"
+      },
+      "consequenceDirections": {
+        "A": "教師提出本人真實專業異議，不代同事立場、不用分歧為理由侵學生權益。",
+        "B": "可保專業，不把匿名推測當證據。",
+        "C": "可看適用，不把供料當必須用。",
+        "D": "可看本人，不用支持老師當立場票。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d475cf8a8be46e647e6d2f6c90c18e61a351d4dacaf5f2bb46b01a75cd5b0b74",
+    "draftSha256": "9a00b8fd443232af54890a2d319fed81371ca8fce111661a36e6794503a396b2",
     "seedAssignmentVersion": 1
   }
 }

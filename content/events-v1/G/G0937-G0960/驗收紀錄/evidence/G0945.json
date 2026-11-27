@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "69746a676a334ee2870fec529bf633e999f7d8a7323dabdbe65d7282a69517cd",
+      "checkedAt": "2026-11-27T15:37:19.074Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依現行合法且已核定安排配合，不採未核准擴張。",
+            "action": "導師已維持原合法管理範圍，不新增未核義務或放棄必要學生權益。",
+            "tradeoff": "主管會不快"
+          },
+          {
+            "id": 2,
+            "text": "向原權責請求本案依據與具體時段書面確認。",
+            "action": "導師已提出有限正式條件確認，未取得新核准或免責。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 3,
+            "text": "申請原制度內可行時段調整，保留必要休息。",
+            "action": "導師已提出有限合法時段調整需求，未獲准或改流程。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 4,
+            "text": "只向學生說明原可公開的管理與反映方式，不點外班。",
+            "action": "導師已提供有限合法一般資訊，不披第三人或鼓動對抗。",
+            "tradeoff": "不像明確站誰"
+          },
+          {
+            "id": 5,
+            "text": "請原主管協調班務與學務的工作分界，不私下吵一整節。",
+            "action": "導師已提出有限正式分工協調需求，未取得裁定或新制度。",
+            "tradeoff": "事情變正式"
+          },
+          {
+            "id": 6,
+            "text": "必要問題回完，今天不再評論整條走廊誰比較亂。",
+            "action": "導師已停止本人非必要群體標籤爭論，維持原正式接續。",
+            "tradeoff": "心裡仍有氣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被午休全塞滿弄煩，自己先寫一條真實需要休息的工作困難，和願意學生的非敏感需要一併走原管道反映，不叫他們替我罵主管。",
+          "action": "導師已提交本人有限非敏感休息需求並提出可拒絕的一般需求彙整邀請，未取得學生資料或核准改時。",
+          "tradeoff": "自己要承認負荷，還可能沒人願說"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1778041542
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "fcc72361f44e7826b38f112c6b76de9cc577065d872eb61c5fba77f1bf119c83"
+      },
+      "consequenceDirections": {
+        "A": "可減標籤，不免必要工作回覆。",
+        "B": "教師提出本人與自願學生有限需求回饋，不把學生當站隊者或以反映才給必要休息。",
+        "C": "可守依據，不以不爽拒正式職務。",
+        "D": "可回權責，不代裁誰有理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "456f9f26741893bc54235444762ac03aef2b36c7b72343e215ec3a3a981a93ec",
+    "draftSha256": "69746a676a334ee2870fec529bf633e999f7d8a7323dabdbe65d7282a69517cd",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7403ba673ea57c3949a5048c37b7034d2516ceacbf028b171196e28e3e6435a3",
+      "checkedAt": "2026-11-27T15:37:19.078Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本案停止本人額外推介，正式必要資訊照規處理。",
+            "action": "導師已停止本人此案非必要額外推薦，不撤原必要資料權益接續。",
+            "tradeoff": "少了活動選擇"
+          },
+          {
+            "id": 2,
+            "text": "只提供已核實可公開的主辦與用途資訊，不代作報名建議。",
+            "action": "導師已提供有限正式來源資訊，不代填資料或保證活動。",
+            "tradeoff": "家長還得自己判斷"
+          },
+          {
+            "id": 3,
+            "text": "向原校方窗口提出外部訊息查核問題，請評估後續轉發。",
+            "action": "導師已提出有限正式外部資訊評估需求，未取得決定或新規。",
+            "tradeoff": "可能慢"
+          },
+          {
+            "id": 4,
+            "text": "提供既有個資權利反映管道，由本人依法選擇使用。",
+            "action": "導師已提供原合法資料權利資訊，不代申請或取得處理結果。",
+            "tradeoff": "還要自己辦"
+          },
+          {
+            "id": 5,
+            "text": "用教師自編無識別報名頁示例，教看必要欄位與勾選。",
+            "action": "導師已安排有限中性資料識讀示例，不取得學生個資或推原營隊。",
+            "tradeoff": "占可調短段"
+          },
+          {
+            "id": 6,
+            "text": "必要事情回完，今天不再群聊猜其他老師是不是收好處。",
+            "action": "導師已停止本人非必要動機猜測對話，維持原正式反映權。",
+            "tradeoff": "有人不滿"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每次熟人問一句就替校外活動掛保證，之後本人不再額外當私人營隊推薦人；學校依法要傳的就清楚標來源，不裝成我選的。",
+          "action": "導師已明示本人往後非必要私人營隊推薦界線，保留原正式必要資訊傳達與合法求助。",
+          "tradeoff": "少了熱心形象，也可能被嫌什麼都不幫"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3648593238
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "5d78100d6643252b670de648fe73c5174e4dffeca6bd2b8efbdcbf493c66c5af"
+      },
+      "consequenceDirections": {
+        "A": "教師撤回本人未承諾的非必要私人推薦角色，不抵正式職務或保證新程序，與本案停推不同在長期角色界線。",
+        "B": "可有方法，不重播孩子真資料。",
+        "C": "可有求助，不把資訊當已刪資料。",
+        "D": "可減無據指控，不壓正當具體反映。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "031d8229690ab4cae935eb0574e093ace41aa0b73d9f67a42d8fc0979848ab8d",
+    "draftSha256": "7403ba673ea57c3949a5048c37b7034d2516ceacbf028b171196e28e3e6435a3",
     "seedAssignmentVersion": 1
   }
 }

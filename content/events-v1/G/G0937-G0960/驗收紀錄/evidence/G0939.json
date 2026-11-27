@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b740d0f1b9099fdaa72f4f1f6af0d9a4ee0b4d3e5b1dc883a0b680a26b6ca1b",
+      "checkedAt": "2026-11-27T15:37:19.066Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "如實回覆已收到機器但缺線，提出原約內補件需求。",
+            "action": "玩家已向賣方提出有限欠件補救需求，未取得線材或承諾。",
+            "tradeoff": "還要等"
+          },
+          {
+            "id": 2,
+            "text": "查原補線訂單取消條件，未取消成功前不重下第二筆。",
+            "action": "玩家已查詢本人已下單補線的取消條件，未取得取消或款項。",
+            "tradeoff": "可能來不及"
+          },
+          {
+            "id": 3,
+            "text": "自己保留原補線訂單，原差額依正當途徑另提協商。",
+            "action": "玩家已維持本人現有訂單並提出限事實的差額協商需求，未取得款項或新線。",
+            "tradeoff": "可能付雙重等待成本"
+          },
+          {
+            "id": 4,
+            "text": "向平台依真實交易提出正式反映，不公開對方私人聯繫。",
+            "action": "玩家已提交本人有限交易事實反映，未取得裁定或補償。",
+            "tradeoff": "需要整理證據"
+          },
+          {
+            "id": 5,
+            "text": "請適任專業者確認原型號的正確線材條件，不自己猜。",
+            "action": "玩家已提出有限線材適配評估需求，未取得結果、物件或通電許可。",
+            "tradeoff": "可能要花費"
+          },
+          {
+            "id": 6,
+            "text": "今天停止非急來回聊天，保留原必要交易處理。",
+            "action": "玩家已停止本人當晚非急交易閒聊，維持原正式補救與安全接續。",
+            "tradeoff": "越想越虧可能還在"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是不想再裝大方，直接說那句沒關係不是我多買一條也開心，提出要把原欠件補齊；我願把自己的新單按規申請取消，不再默默吞。",
+          "action": "玩家已提出原交易欠件履行請求並依本人訂單程序申請取消，未取得補件、取消或退款。",
+          "tradeoff": "得正面面對對方，也可能兩邊都卡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1432649692
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "325503f3ca208bb5529f5cef160a177e9373e2f895f5e7175d0b43fad96c5ae9"
+      },
+      "consequenceDirections": {
+        "A": "可有程序，不保證站我這邊。",
+        "B": "玩家正式提出原欠件履行及本人訂單取消需求，不把提出當兩者均成，不用怒氣要求無據補償。",
+        "C": "可分急用與原約，不私定賣方必付金額。",
+        "D": "可保安全，詢問不等已檢驗。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "22db781b55db0a87dae44009c7a242c9954a4a10fb1331f290e9faf1c5e625e9",
+    "draftSha256": "5b740d0f1b9099fdaa72f4f1f6af0d9a4ee0b4d3e5b1dc883a0b680a26b6ca1b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3b8a07a58339123ca378f77315bcbd02c29eee4127aa2715a1aa1448a9c9ec8e",
+      "checkedAt": "2026-11-27T15:37:19.086Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "現有足夠部分依原需要用，不要求他再添。",
+            "action": "導師已在原教學範圍停止本人額外添購要求，不改物權或代核賠償。",
+            "tradeoff": "成果可能簡單"
+          },
+          {
+            "id": 2,
+            "text": "原新物仍由本人決定是否合法借組使用，不視為贈與。",
+            "action": "導師已提出限物主自願的有限借用選擇，未取得同意或移轉物權。",
+            "tradeoff": "合作可能更尷尬"
+          },
+          {
+            "id": 3,
+            "text": "告知原店家未拆件退換條件的查詢方式，不代保證退。",
+            "action": "導師已提供正常退換查詢資訊，不代申請或取得款項。",
+            "tradeoff": "可能退不了"
+          },
+          {
+            "id": 4,
+            "text": "依原規則申請等值材料替代方案，避免誰出更多決定成果。",
+            "action": "導師已提出有限合法材料替代需求，未獲准或取得物資。",
+            "tradeoff": "可能要重新整理"
+          },
+          {
+            "id": 5,
+            "text": "請各人自願列本人已做工作，由我核實，不請他追組員。",
+            "action": "導師已提出原負擔內有限個人實作資訊核對，不取得全部責任結論。",
+            "tradeoff": "會看見不同說法"
+          },
+          {
+            "id": 6,
+            "text": "未來材料需求先回原合法班務管道，不讓一人默認全付。",
+            "action": "導師已明示本人不採非必要單人墊全組費用期待，提供原正式需求接續。",
+            "tradeoff": "方便少了"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再誇他最可靠，這次自己在原課內多看一小段，讓各人自願示出本人原應做的一步，不讓他替所有人再做一次。",
+          "action": "導師已安排原一般教學範圍的有限自願個別步驟回饋，不取得參與或代定損壞賠償。",
+          "tradeoff": "自己要盯得細，也可能讓組員不高興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 392592866
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "37ebdc149c18571422c1dc96d45d14e874e78d6f535d5c4e14bd7a0f10161b6a"
+      },
+      "consequenceDirections": {
+        "A": "可保學習，未准不改正式標準。",
+        "B": "可清權限，不強迫全班統一消費。",
+        "C": "教師投入有限現場學習觀察，不加懲罰量、不以參與換原財務權益，不能一次看完就判全責。",
+        "D": "可限投入，不以不再買免原責任處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "88655f95ecaa0f996c9c50c71ba150726ab554eea6be95b01a434efe6f9fbf48",
+    "draftSha256": "3b8a07a58339123ca378f77315bcbd02c29eee4127aa2715a1aa1448a9c9ec8e",
     "seedAssignmentVersion": 1
   }
 }

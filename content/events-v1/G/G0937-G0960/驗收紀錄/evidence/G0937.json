@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ed5b0d68e3590df90a9f1d06bb9b0981cf7bb79add4f59562b5b6ccb0fcd582b",
+      "checkedAt": "2026-11-27T15:37:19.062Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向店家提出恢復原約定鞋底的修正需求。",
+            "action": "玩家已提出限原約定的修正請求，未取得返修完成或交期。",
+            "tradeoff": "要再等"
+          },
+          {
+            "id": 2,
+            "text": "先用家中現有合腳鞋應付明天，這雙按原店規留待處理。",
+            "action": "玩家已選用本人既有可安全穿著替代鞋，提出原鞋合法保管接續，不宣稱修正完成。",
+            "tradeoff": "不是原本想穿的"
+          },
+          {
+            "id": 3,
+            "text": "詢問原消費條件可行的退費或解約，不先說一定能退。",
+            "action": "玩家已提出限本案事實的退費條件詢問，未取得款項或解約。",
+            "tradeoff": "可能無法全退"
+          },
+          {
+            "id": 4,
+            "text": "查另一家適任店是否能評估恢復，不先交物或付新費。",
+            "action": "玩家已查詢有限專業評估可能性，未取得修復或新委託。",
+            "tradeoff": "多跑一趟"
+          },
+          {
+            "id": 5,
+            "text": "請師傅把本次實際做的項目與原差異寫清，不口頭帶過。",
+            "action": "玩家已提出有限真實施工項目說明需求，未認定適腳或完成爭議。",
+            "tradeoff": "會顯得計較"
+          },
+          {
+            "id": 6,
+            "text": "依原正常管道反映本次錯件，今天不再當面耗。",
+            "action": "玩家已提出限本案事實的正式消費反映途徑，不公開第三人或取得裁定。",
+            "tradeoff": "鄰里熟店關係尷尬"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是捨不得這家熟店的情，提出自己願意另接受這個硬底版本，原單仍是他看錯；不合腳就不穿，別拿明天的腳替我嘴硬。",
+          "action": "玩家已提出本人自願接受現版本的有限協商意願，未取得新結算共識或專業適腳結論。",
+          "tradeoff": "可能多留一雙用不到的鞋，也像自己吞下委屈"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1020591643
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "bc6b0b62cfabbeeb6319c277a3a6989b0f0d202b29ef1285eb98a67463125cfa"
+      },
+      "consequenceDirections": {
+        "A": "可回契約，不把提出當已修好。",
+        "B": "可查權益，不以吵架取現金。",
+        "C": "可停對峙，不撤正當補救權。",
+        "D": "玩家提出真實自願變更接受意願，不宣稱適腳或要求他人同意不實說法，費用仍須雙方合法確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a9a2c2239f3a0687da7f0216f33988d0ecc408047d8d3d9b079af27b046f410",
+    "draftSha256": "ed5b0d68e3590df90a9f1d06bb9b0981cf7bb79add4f59562b5b6ccb0fcd582b",
     "seedAssignmentVersion": 1
   }
 }

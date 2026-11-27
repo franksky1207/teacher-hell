@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f4f7876f3a049a300f294b82a1787911881f734f1ac85248f38be09d7a9251bf",
+      "checkedAt": "2026-11-27T15:37:19.070Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依真實活動性質提供原合法請假途徑，不偽作公假。",
+            "action": "導師已提供現行合法請假資訊，不核准假別或代寫活動性質。",
+            "tradeoff": "可能有原規則影響"
+          },
+          {
+            "id": 2,
+            "text": "向原升學權責查一項具體推薦資格疑問，未有答覆不替他猜。",
+            "action": "導師已提出限原職權的正式資格詢問，未取得判定或錄取。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 3,
+            "text": "家長若願，詢問營隊原改期退費條件，不承諾一定能改。",
+            "action": "導師已提供既有正常消費聯繫資訊及條件查詢建議，不代退費或取得結果。",
+            "tradeoff": "可能損失費用"
+          },
+          {
+            "id": 4,
+            "text": "只和孩子在原可用時段自願談實際需要，不替家長推高價課。",
+            "action": "導師已提出有限自願學習需求交流，未取得參與或申請同意。",
+            "tradeoff": "孩子看法可能不同"
+          },
+          {
+            "id": 5,
+            "text": "原課程有可用支持資訊就提供，不另加心得作資格交換。",
+            "action": "導師已提供既有合法學習資訊，不新增必交量或核定替代資格。",
+            "tradeoff": "不像名師營"
+          },
+          {
+            "id": 6,
+            "text": "必要內容答完，這次不再額外替營隊包裝學習計畫。",
+            "action": "導師已拒絕本人非必要外部營隊文書包裝角色，不停原合法必要支持。",
+            "tradeoff": "家長可能覺得沒彈性"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己一句應該沒事害他賠錢，請他若願意和我一起走原升學諮詢時段，把一個資格問題問清；這次我也當需要確認的人。",
+          "action": "導師已提出需原窗口可行及家長自願的有限共同諮詢邀請，未取得時段、答應或資格結果。",
+          "tradeoff": "要用自己可調空檔，還可能顯得不專業"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3571469354
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "827f12530a2659558175ed1bc13e2317eadd156680e1b2a018fd9e6e8f03aafb"
+      },
+      "consequenceDirections": {
+        "A": "可回學習，不把提供資訊當題目或服務已到。",
+        "B": "可守工作界線，不拒正常法定申請。",
+        "C": "可保真實，不保證資格不受影響。",
+        "D": "教師提出本人共同諮詢投入，不代有權者回答，與普通2單純轉交資格詢問不同在雙方自願到場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0572abaacd811504da7f0be8cd381fe906dae3fe5886b058e8a1335366b6169a",
+    "draftSha256": "f4f7876f3a049a300f294b82a1787911881f734f1ac85248f38be09d7a9251bf",
     "seedAssignmentVersion": 1
   }
 }

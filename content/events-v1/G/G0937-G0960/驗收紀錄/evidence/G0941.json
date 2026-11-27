@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "49bbab1eca5ca7c3d0617b916d20d398120762cce20033568ded9547d40a8c6e",
+      "checkedAt": "2026-11-27T15:37:19.068Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按已說清的先後與實際剩量確認，不再新增承諾。",
+            "action": "玩家已限本人新增自願分送範圍至真實餘量，不撤已承諾份。",
+            "tradeoff": "後面的人會失望"
+          },
+          {
+            "id": 2,
+            "text": "未承諾部分徵詢是否願分小份，不單方縮原約。",
+            "action": "玩家已提出限未承諾餘量的自願小份方案，未取得同意或完成分送。",
+            "tradeoff": "每人吃得少"
+          },
+          {
+            "id": 3,
+            "text": "未承諾部分今天不再送，按安全方式自己留存。",
+            "action": "玩家已停止本人未承諾餘量新增贈送，依食安保管，不撤原既定承諾。",
+            "tradeoff": "有人覺得說話不算話"
+          },
+          {
+            "id": 4,
+            "text": "若原領取者願意，改約原可安全保存期限內的合法交付時段。",
+            "action": "玩家已提出限既有承諾與食安的自願交付時段調整，未取得同意或送達。",
+            "tradeoff": "要再安排"
+          },
+          {
+            "id": 5,
+            "text": "對未答應者只提供本人有權公開的食譜資訊，不另烤一盤補。",
+            "action": "玩家已提供本人可公開的有限製作資訊，不新增製作義務或處理已承諾份。",
+            "tradeoff": "不是大家想吃的現貨"
+          },
+          {
+            "id": 6,
+            "text": "在原可行安全交付地點分送，不讓人進私人陽台挑。",
+            "action": "玩家已提出原合法安全交付安排，未取得領取同意或完成分送。",
+            "tradeoff": "少了炫耀現場的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏捨不得那塊自己烤得最漂亮的，未答應出去的這份先留家人吃；其餘照原約，別為了人人說好就把自家也送光。",
+          "action": "玩家已指定本人未承諾且可支配的一份保留家庭用途，不撤原承諾或宣稱家人收受。",
+          "tradeoff": "群裡可能有人失望，我也少一個被誇的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 123997468
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "db3a9b64187a1685bb666ad7d73e4bc99f3a42b85ef3ad9f4548b0b0454edbe7"
+      },
+      "consequenceDirections": {
+        "A": "可分享，未同意不能宣稱已改份量。",
+        "B": "玩家將本人未承諾特定份量改為家庭用途，與全部自留不同在仍保原分送，家人可不收不硬餵。",
+        "C": "可不急下樓，改約不等同意或可無限保存。",
+        "D": "可分享方法，不把資料當已履行原實物承諾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bfdef672b9b5357da210e1dc11adc21bc2549cf3c98d9a182aef2ff90e971322",
+    "draftSha256": "49bbab1eca5ca7c3d0617b916d20d398120762cce20033568ded9547d40a8c6e",
     "seedAssignmentVersion": 1
   }
 }

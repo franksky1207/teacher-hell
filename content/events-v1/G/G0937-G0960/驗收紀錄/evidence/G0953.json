@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b449eb4f12b255e133726fe7fca9c85e02f896d16af171e2fb28efb7d4f983ac",
+      "checkedAt": "2026-11-27T15:37:19.082Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "使用原校方已可用版本，不採這份新梗。",
+            "action": "導師已選用原合法可用班會材料，不取得學生原稿新權利。",
+            "tradeoff": "學生心力暫時不用"
+          },
+          {
+            "id": 2,
+            "text": "徵作者同意只留一張不誤導的梗，其他回必要內容。",
+            "action": "導師已提出需權利同意的有限用途修訂方案，未取得同意或完成新檔。",
+            "tradeoff": "個人風格變少"
+          },
+          {
+            "id": 3,
+            "text": "本段不用投影，由我按正確必要內容口頭說。",
+            "action": "導師已在本人班務權限提供有限口頭必要說明，不新增圖像或擅改原稿。",
+            "tradeoff": "少了畫面"
+          },
+          {
+            "id": 4,
+            "text": "邀他自願只說一處創作想法，不現場演全份。",
+            "action": "導師已提出有限自願創作說明邀請，未取得參與或發布同意。",
+            "tradeoff": "沒有全班笑那麼久"
+          },
+          {
+            "id": 5,
+            "text": "將未定版本送原承辦確認，不先向校長保證會採。",
+            "action": "導師已提出有限正式素材核稿需求，未取得發布或觀摩使用核准。",
+            "tradeoff": "可能趕不及"
+          },
+          {
+            "id": 6,
+            "text": "只將原必要內容做成本人可用的簡單文字頁，不再要求他趕新圖。",
+            "action": "導師已以本人合法內容製作有限文字頁，不重製學生原稿或加其工作。",
+            "tradeoff": "看起來素"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕笑話講不好被校長看，這回拿我自己願意被笑的一句班務口誤寫成新開場，原梗不硬留；笑不笑算我的。",
+          "action": "導師已製作本人有權使用的有限自嘲開場提案，未取得核准、採用或演出。",
+          "tradeoff": "自己可能冷場，還多做一段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2230335767
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "b8e0e61d6669bb19dd6b87b8bdc55886e9944835ed05f917bbbb4c2d8c0d6b4d"
+      },
+      "consequenceDirections": {
+        "A": "可有替代，不用口說漏必要資訊。",
+        "B": "可回核稿，不把送審當准。",
+        "C": "可聽作者，不以解釋換原稿權益。",
+        "D": "教師提供本人真實非敏感新素材，不拿自嘲代必要內容或以幽默壓作者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "718b1bc9a60ee65139753a9fa431f988b63c57c9b79899aed74902debd120e98",
+    "draftSha256": "b449eb4f12b255e133726fe7fca9c85e02f896d16af171e2fb28efb7d4f983ac",
     "seedAssignmentVersion": 1
   }
 }

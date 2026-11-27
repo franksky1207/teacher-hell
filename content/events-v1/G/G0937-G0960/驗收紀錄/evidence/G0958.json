@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f9205d449d47ca536e306c0aedc27caaacc09d1abf110d0751cd3fedef16ca68",
+      "checkedAt": "2026-11-27T15:37:19.086Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持合法自願統計，不替未同意者勾選。",
+            "action": "導師已限本次班務統計於真實自願回覆，不扣款或代訂。",
+            "tradeoff": "數字不會全齊"
+          },
+          {
+            "id": 2,
+            "text": "本次不新增這項班費加購提案，原必要活動照常。",
+            "action": "導師已停止本人本次非必要統一加購需求，維持原活動參與權。",
+            "tradeoff": "多數人失望"
+          },
+          {
+            "id": 3,
+            "text": "提出較低負擔的可行款式，仍需依程序及本人自願。",
+            "action": "導師已提出有限合法替代款式資訊需求，未取得報價、共識或訂單。",
+            "tradeoff": "可能不受歡迎"
+          },
+          {
+            "id": 4,
+            "text": "匿名蒐集可接受範圍，不問誰家付不起。",
+            "action": "導師已提出有限非敏感自願價格範圍回饋，不取得全班同意或新預算。",
+            "tradeoff": "整合較慢"
+          },
+          {
+            "id": 5,
+            "text": "查原合法支持是否有一般性資源，不指定誰受助或出資者選人。",
+            "action": "導師已查詢既有合法一般支持資訊，不披家庭或核定款項。",
+            "tradeoff": "未必有"
+          },
+          {
+            "id": 6,
+            "text": "他若願意只做原非敏感數量彙整，其他價格協調由成人接。",
+            "action": "導師已提出可拒絕的有限班務分工調整，不代裁財務或新增負擔。",
+            "tradeoff": "他覺得職務變小"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也嫌這個價，先在我那格填不參加這次加購，不拿他的家當理由；活動我照常去，別讓不買像少一個人。",
+          "action": "導師已填具本人不參加非必要加購的真實意願，不代表全班或影響他人合法消費。",
+          "tradeoff": "自己沒新衣，也可能被當老師在帶風向"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2513086164
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "6ca1f9e18bd88ada2fd633ea4962576bc3218d0051973ec7f1b2fd537b8c85c5"
+      },
+      "consequenceDirections": {
+        "A": "可停止本人可決定的非必要統一加購，不阻合法私人自願消費。",
+        "B": "教師實際放棄本人自願訂購，不替他人投票或撤正常活動權益，學生可不同意。",
+        "C": "可有資訊，查詢不是取得補助。",
+        "D": "可保選擇，不把缺同意當欠繳。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0c202301797a283b9e8d617320be1551521d475a089a0b208d8355435e25490b",
+    "draftSha256": "f9205d449d47ca536e306c0aedc27caaacc09d1abf110d0751cd3fedef16ca68",
     "seedAssignmentVersion": 1
   }
 }

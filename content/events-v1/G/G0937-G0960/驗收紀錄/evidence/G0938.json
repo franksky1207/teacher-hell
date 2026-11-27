@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bcc43bffdb132c7839ec57023016097dcaac080d1d5919f880553d1cf2cbd733",
+      "checkedAt": "2026-11-27T15:37:19.064Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按必要合理調整評估後，再用原公平分組方式。",
+            "action": "導師已提出原合法分組及合理調整接續，不執行未評估抽組。",
+            "tradeoff": "他仍要面對未知"
+          },
+          {
+            "id": 2,
+            "text": "在原規則允許且各人願意下，申請保留一位熟悉伙伴。",
+            "action": "導師已提出限原規範與相關自願的有限伙伴安排，未取得同意或分組結果。",
+            "tradeoff": "不是三人全留"
+          },
+          {
+            "id": 3,
+            "text": "先在原課內做一次可拒絕的短雙人合作，再定未來分組。",
+            "action": "導師已提出原可調教學短段的自願有限合作邀請，未取得參與或評估結論。",
+            "tradeoff": "多用一段時間"
+          },
+          {
+            "id": 4,
+            "text": "請原適任輔導者協助具體支持，不讓朋友當治療者。",
+            "action": "導師已提出限必要知情的既有支持需求，未取得服務或診斷。",
+            "tradeoff": "要再接觸一人"
+          },
+          {
+            "id": 5,
+            "text": "本次一般練習提供等值個人方式，正式組務依原程序再定。",
+            "action": "導師已在本人一般教學權限提供有限等值個人練習，不擅改正式評量。",
+            "tradeoff": "少了合作機會"
+          },
+          {
+            "id": 6,
+            "text": "讓各人私下自願提一項合作需要，不要公開點名最怕誰。",
+            "action": "導師已提供有限自願合作需求回饋方式，不取得他人同意或固定分組。",
+            "tradeoff": "整合較慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己只會說試試看，這次自願在原合作短段當一位可被拒絕的練習搭檔，卡住就一起停，不叫兩個朋友替我帶他。",
+          "action": "導師已提出原合法教學範圍內本人自願合作邀請，未取得參與或情緒改善結果。",
+          "tradeoff": "自己的巡看時間少，孩子可能更黏老師"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2167253929
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "e68031e979a4ecb7531baa0205358b64d2cfe0afa950666d1869d216bd2f17a5"
+      },
+      "consequenceDirections": {
+        "A": "教師提出本人具體有限合作投入，不替代必要專業支持或把同伴責任加重。",
+        "B": "可看多方，不以偏好票定誰不合群。",
+        "C": "可保多方，不拿抽籤取消必要支持。",
+        "D": "可試互動，不以一次成功說焦慮沒了。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aff520a93fa827efb0e8bd426e3a0d2cd3e42d99bf38830347b5aaf536e26e34",
+    "draftSha256": "bcc43bffdb132c7839ec57023016097dcaac080d1d5919f880553d1cf2cbd733",
     "seedAssignmentVersion": 1
   }
 }

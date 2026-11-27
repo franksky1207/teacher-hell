@@ -15,14 +15,155 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0330c9e21c0457c4fe02c41b002e8ef411ae787ee73284ac211ae305d078805f",
+      "checkedAt": "2026-11-27T15:37:19.083Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說明可公開的原合法判準，不向他交個案隱私。",
+            "action": "導師已提供有限一般判準說明，不披健康資料或授處分權。",
+            "tradeoff": "他覺得沒答案"
+          },
+          {
+            "id": 2,
+            "text": "把服務紀錄只按真實執勤內容回報，不以罰多少當成果。",
+            "action": "導師已提供原規範內有限真實服務記載方式，不虛增時數或保證獲獎。",
+            "tradeoff": "他怕不亮眼"
+          },
+          {
+            "id": 3,
+            "text": "向原糾察權責詢問評獎指標，不自己替他答應加點。",
+            "action": "導師已提出有限正式服務指標確認，未取得核定或改分。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 4,
+            "text": "用教師自編無識別轉角例練安全提醒，不演追人攔人。",
+            "action": "導師已提出有限自願中性提醒練習，未取得參與或新權限。",
+            "tradeoff": "占短段時間"
+          },
+          {
+            "id": 5,
+            "text": "原個案走正式程序，今天不再課間辯功勞。",
+            "action": "導師已停止本人非必要服務功勞爭辯，維持原必要回覆與異議管道。",
+            "tradeoff": "他仍不甘心"
+          },
+          {
+            "id": 6,
+            "text": "邀適任者依原服務範圍協助看工作負荷，別讓他整節巡人。",
+            "action": "導師已提出限既有制度與自願的有限服務支持需求，未取得安排或剝參與權。",
+            "tradeoff": "他怕被看成不夠積極"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服氣，好好提醒卻像沒做事，自己向負責服務評獎的人提議，把提醒和轉交的做法在記錄裡寫清楚；不替他預訂獎。",
+          "action": "導師已向原服務評獎權責提交有限記錄方式建議，請將正當提醒與轉交行動明確記載，不宣稱原制度未承認、不核定指標或保證個人獲獎。",
+          "tradeoff": "自己得整理建議，也可能被認為偏袒他"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2400835456
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "84302d3424aa1f60a51a0a2aa73e8de57ffea5e5582a2b7cc086362d29cd4334"
+      },
+      "consequenceDirections": {
+        "A": "可學方法，不把學生當執法人員。",
+        "B": "可查依據，查詢不是改獎。",
+        "C": "可保資訊，不以績效代事實。",
+        "D": "教師具名提出評價記錄方式建議，與普通2依原標準記真實服務、普通3詢問現行指標不同；若原已有規定仍依規處理，不為個人特設獎項。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒紙人安全情境與普通4中性提醒練習同為安全示例教學，附加紙材不足區分；改為教師提出評價記錄方式建議。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "說明可公開的原合法判準，不向他交個案隱私。",
+                "action": "導師已提供有限一般判準說明，不披健康資料或授處分權。",
+                "tradeoff": "他覺得沒答案"
+              },
+              {
+                "id": 2,
+                "text": "把服務紀錄只按真實執勤內容回報，不以罰多少當成果。",
+                "action": "導師已提供原規範內有限真實服務記載方式，不虛增時數或保證獲獎。",
+                "tradeoff": "他怕不亮眼"
+              },
+              {
+                "id": 3,
+                "text": "向原糾察權責詢問評獎指標，不自己替他答應加點。",
+                "action": "導師已提出有限正式服務指標確認，未取得核定或改分。",
+                "tradeoff": "要等"
+              },
+              {
+                "id": 4,
+                "text": "用教師自編無識別轉角例練安全提醒，不演追人攔人。",
+                "action": "導師已提出有限自願中性提醒練習，未取得參與或新權限。",
+                "tradeoff": "占短段時間"
+              },
+              {
+                "id": 5,
+                "text": "原個案走正式程序，今天不再課間辯功勞。",
+                "action": "導師已停止本人非必要服務功勞爭辯，維持原必要回覆與異議管道。",
+                "tradeoff": "他仍不甘心"
+              },
+              {
+                "id": 6,
+                "text": "邀適任者依原服務範圍協助看工作負荷，別讓他整節巡人。",
+                "action": "導師已提出限既有制度與自願的有限服務支持需求，未取得安排或剝參與權。",
+                "tradeoff": "他怕被看成不夠積極"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想自己那句放行變成不用管，這次在原班務短段親自演一次錯的急法只用桌上紙人，請願意的人幫我找不危險的替代；不拿真學生出糗。",
+              "action": "導師已以本人可用紙材提出有限自願桌面求助情境，不讓學生危險行動或取得執法權。",
+              "tradeoff": "自己多準備，也可能被笑幼稚"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1551800877
+            },
+            "selectedIds": [
+              4,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 4,
+              "D": 3
+            },
+            "optionsDigest": "da56492d7417c9d96aa2e57194a4cb2cd5632f29829c8e5f92d02cd42b46a416"
+          },
+          "previousConsequenceDirections": {
+            "A": "可保實際貢獻，正式獎項依原權責不代核。",
+            "B": "教師製作明示虛構的安全桌面情境，與口頭提醒練習不同在新問題模型，不替原處理改口或模擬真跑。",
+            "C": "可學方法，不把學生當執法人員。",
+            "D": "可查依據，查詢不是改獎。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d89b3f03bee6e6c0b2b5b4ab4b9e58d30c5288cdc79e5cc0c67702161364819c",
+    "draftSha256": "0330c9e21c0457c4fe02c41b002e8ef411ae787ee73284ac211ae305d078805f",
     "seedAssignmentVersion": 1
   }
 }

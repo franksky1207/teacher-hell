@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf6ba55c128bddc19c4b8a29572664d73fbf8e7bdf9370f400fee010802bd603",
+      "checkedAt": "2026-11-27T15:37:19.072Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "重申原合法課堂規範，不為傳聞新增全班禁令。",
+            "action": "導師已提供原可公開課堂規範，不擴張保管或處分權。",
+            "tradeoff": "他可能覺得不夠"
+          },
+          {
+            "id": 2,
+            "text": "請他在原任課權限先確認當節具體用途，不憑科目封面判人。",
+            "action": "導師已提出限原授課角色的有限用途確認建議，不代定學生動機。",
+            "tradeoff": "要多問一步"
+          },
+          {
+            "id": 3,
+            "text": "向原教學協作提出課間收發與下一節準備的銜接問題。",
+            "action": "導師已提出有限正式課務銜接需求，未取得共識或改課。",
+            "tradeoff": "需要協調"
+          },
+          {
+            "id": 4,
+            "text": "原班務短段用無識別假例說明桌面與作業交接，不重演本案。",
+            "action": "導師已安排有限虛構一般流程說明，不公開原個案。",
+            "tradeoff": "用掉短段時間"
+          },
+          {
+            "id": 5,
+            "text": "本次不追誰先傳話，已核實資訊留在原必要範圍。",
+            "action": "導師已停止本人非必要來源追問，維持必要澄清。",
+            "tradeoff": "他可能還想找人問"
+          },
+          {
+            "id": 6,
+            "text": "向原主管查有無可用工作支援資訊，讓同事自願選。",
+            "action": "導師已提供既有合法工作支持資訊，不代申請或取得人力。",
+            "tradeoff": "可能幫不上"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被副科兩字聽得不舒服，自己向班上說我任教的科目同樣得等該上它的時間，不借導師身份搶別人的課。",
+          "action": "導師已明示本人不提出非必要跨科佔時要求，維持原合法課程與必要協調，不要求學生站隊。",
+          "tradeoff": "自己也少了便利，還可能引來學生翻舊帳"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2263267147
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "9ed7c03a05fdf94c1af45fd96a359f00dca36959a20a237f223c7d955aff61e7"
+      },
+      "consequenceDirections": {
+        "A": "教師對本人未來課務要求作明確有限限制，不以表態代必要規則或掩以往實際錯誤。",
+        "B": "可給做法，不羞辱當事人。",
+        "C": "可減誤見，不把送案當新程序。",
+        "D": "可停擴散，不壓必要事實與正式反映。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0859bd6fb3f247fabd83e61c90165239e4db6eb3b1851a0e7ff1022daf33f2b3",
+    "draftSha256": "bf6ba55c128bddc19c4b8a29572664d73fbf8e7bdf9370f400fee010802bd603",
     "seedAssignmentVersion": 1
   }
 }

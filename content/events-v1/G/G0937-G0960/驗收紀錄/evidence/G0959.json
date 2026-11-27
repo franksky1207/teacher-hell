@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "061de78d133c8949b998fb026bdd43f37f252508b4b058fb0493d7491f0c6f93",
+      "checkedAt": "2026-11-27T15:37:19.087Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "採用已確認合規的併車接續，按真實延誤告知家長。",
+            "action": "導師已在原授權範圍配合已確認合規併車接續，不變更路線或忽略必要交接。",
+            "tradeoff": "到家較晚"
+          },
+          {
+            "id": 2,
+            "text": "詢問家長是否願且能按原合法方式接，未成仍守安全候車。",
+            "action": "導師已提出有限自願合法接送詢問，未取得同意或完成交付。",
+            "tradeoff": "可能接不到"
+          },
+          {
+            "id": 3,
+            "text": "向調度查原有下一班是否合規可接，不先帶孩子移點。",
+            "action": "導師已提出既有合法車次銜接查詢，未取得名額或變更交接。",
+            "tradeoff": "可能等更久"
+          },
+          {
+            "id": 4,
+            "text": "申請在原核可有成人照看的室內候車，不逼孩子站門口。",
+            "action": "導師已提出限原管理允許的有限候車位置調整，未取得場地或移動核准。",
+            "tradeoff": "要協調位置"
+          },
+          {
+            "id": 5,
+            "text": "將家長已確認的真實回覆交原窗口統一接續，不口頭替他們答應。",
+            "action": "導師已提供限必要知情的已確認接送回覆，不代家長決定或核定車次。",
+            "tradeoff": "自己多一段整理"
+          },
+          {
+            "id": 6,
+            "text": "在安全候車內提供原可用安靜自選活動，不新增必做功課。",
+            "action": "導師已提供原允許候車範圍的有限自願安靜活動，不放棄成人照看。",
+            "tradeoff": "不像立刻能走"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想讓他們看著大人互相抱歉，原工作許可下自己多留一段陪已由成人照看的候車，交接仍走原程序；我不把這三十分鐘當誰欠我。",
+          "action": "導師已提出本人原允許時段內的有限額外陪等意願，未取得核准、交通結果或移轉必要照看。",
+          "tradeoff": "自己少了可用下班時間，也可能孩子根本不想聊天"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4163988874
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "e16fc2f6c71fe5eb35e66a775643ab9466947ca185c88d1091f3cd1596579aa2"
+      },
+      "consequenceDirections": {
+        "A": "可有準確資訊，不將未知填同意。",
+        "B": "教師增加本人有限在場陪伴，不讓必要成人保障僅此分支存在、不越工時與場地規定。",
+        "C": "可保交通，不把通知當家長已接走。",
+        "D": "可查資源，不把詢問當有位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c3777d9106e9295125d0fdbd7678c9ce70946aae71807737fd49ff3c9dd46cb1",
+    "draftSha256": "061de78d133c8949b998fb026bdd43f37f252508b4b058fb0493d7491f0c6f93",
     "seedAssignmentVersion": 1
   }
 }

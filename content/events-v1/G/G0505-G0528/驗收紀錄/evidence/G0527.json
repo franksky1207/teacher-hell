@@ -15,14 +15,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4432fb6890293801f049b7bcfcb28a2564606e017909a61cbce747b47693b89d",
+      "checkedAt": "2026-11-27T07:36:54.791Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓本人只交自己寫的一句話，不用錄演練。",
+            "action": "導師已提供本人自願短文字求助方式，未取得或要求原演練紀錄。",
+            "tradeoff": "內容可能很少"
+          },
+          {
+            "id": 2,
+            "text": "若本人願意，另錄一段只含自己想說的話，朋友不入音。",
+            "action": "導師已說明另作個人錄音的可行條件並徵詢意願，尚未錄製或取得完整授權。",
+            "tradeoff": "要重新起步，也可能又緊張"
+          },
+          {
+            "id": 3,
+            "text": "原演練不送出，另約本人當面談。",
+            "action": "導師已發出正常工作時段的本人短談邀約，未要求朋友代答。",
+            "tradeoff": "多一段談話時間"
+          },
+          {
+            "id": 4,
+            "text": "由本人選一張不含他人私事的提問卡帶來，不交原台詞。",
+            "action": "導師已提供既有通用提問卡供本人自選，不將選卡當診斷或必填表。",
+            "tradeoff": "卡片未必準確代表整件事"
+          },
+          {
+            "id": 5,
+            "text": "若本人同意，先讓朋友只陪到門口，再由我接續。",
+            "action": "導師已分別徵詢有限陪同意願，尚未將陪到門口視為談話同意。",
+            "tradeoff": "可能少了當場支持感"
+          },
+          {
+            "id": 6,
+            "text": "先收下本人願意說的第一句，之後不用照演練順序。",
+            "action": "導師已直接聽取本人自願的一句並確認後續可停可換方式，不追問未願揭露處。",
+            "tradeoff": "可能講得零碎"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不太會開口，另找熟同事練說一次自己的需要，不用學生的台詞。",
+          "action": "導師已向適當熟同事發出私人短談練習邀請，內容僅涉自身願公開的需要，尚未獲應允，不延誤學生必要求助或洩漏演練內容",
+          "tradeoff": "用掉自己的空檔，也得承受成人拒絕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2231548324
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "568d0a9a5f4e74a94a4ad0b13b75c7e99fe1c532ca0f7601bafe15d7860ccd04"
+      },
+      "consequenceDirections": {
+        "A": "朋友可退回陪伴位置，當事人可另選要說多少。",
+        "B": "教師可有自己的練習去處，學生不必安慰或教導師開口，當事人的求助仍依本人意願接續。",
+        "C": "陪練者不用替對方決定內容，任何人均可拒絕這種陪同。",
+        "D": "真實需要可以改變，不必維持一份完美台詞。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒放下問項先聽與普通6先聽第一句涵蓋相同行動，改為另邀成人同事練習自己的求助，付出自身時間與被拒成本。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "讓本人只交自己寫的一句話，不用錄演練。",
+                "action": "導師已提供本人自願短文字求助方式，未取得或要求原演練紀錄。",
+                "tradeoff": "內容可能很少"
+              },
+              {
+                "id": 2,
+                "text": "若本人願意，另錄一段只含自己想說的話，朋友不入音。",
+                "action": "導師已說明另作個人錄音的可行條件並徵詢意願，尚未錄製或取得完整授權。",
+                "tradeoff": "要重新起步，也可能又緊張"
+              },
+              {
+                "id": 3,
+                "text": "原演練不送出，另約本人當面談。",
+                "action": "導師已發出正常工作時段的本人短談邀約，未要求朋友代答。",
+                "tradeoff": "多一段談話時間"
+              },
+              {
+                "id": 4,
+                "text": "由本人選一張不含他人私事的提問卡帶來，不交原台詞。",
+                "action": "導師已提供既有通用提問卡供本人自選，不將選卡當診斷或必填表。",
+                "tradeoff": "卡片未必準確代表整件事"
+              },
+              {
+                "id": 5,
+                "text": "若本人同意，先讓朋友只陪到門口，再由我接續。",
+                "action": "導師已分別徵詢有限陪同意願，尚未將陪到門口視為談話同意。",
+                "tradeoff": "可能少了當場支持感"
+              },
+              {
+                "id": 6,
+                "text": "先收下本人願意說的第一句，之後不用照演練順序。",
+                "action": "導師已直接聽取本人自願的一句並確認後續可停可換方式，不追問未願揭露處。",
+                "tradeoff": "可能講得零碎"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想把每場求助都講得像口試，收起自己那張長問項，先只聽。",
+              "action": "導師已停用自身非必要長問項，於正常可用時間聽取本人自願內容，不省略必要保護程序。",
+              "tradeoff": "少了熟悉的控制，也可能得多次確認"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1380797555
+            },
+            "selectedIds": [
+              4,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 3,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "f86be61ddba20610b6fba7661da780837315ecc1ef373108025251f98c62a709"
+          },
+          "previousConsequenceDirections": {
+            "A": "新的同意須清楚，不能把原演練剪進來。",
+            "B": "朋友可退回陪伴位置，當事人可另選要說多少。",
+            "C": "教師仍需聽本人補充，不能只按卡片猜需求。",
+            "D": "教師可容許不完整，必要事項仍需適當時候查明。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8cb382009395ad9e5510747c4766336325af266159d1fddd8311186494f6ca45",
+    "draftSha256": "4432fb6890293801f049b7bcfcb28a2564606e017909a61cbce747b47693b89d",
     "seedAssignmentVersion": 1
   }
 }

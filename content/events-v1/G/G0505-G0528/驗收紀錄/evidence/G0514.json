@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9858370c5dbd504671cd86db7e35b6398ba5cb713d6ca4ddaafae0d37b86ef38",
+      "checkedAt": "2026-11-27T07:36:54.782Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "約一個雙方能回覆的工作時段，不要求隨時在線。",
+            "action": "導師已與家長提出非急迫工作聯繫時段邀約，尚未假定同意，緊急管道保持。",
+            "tradeoff": "回覆不會即時"
+          },
+          {
+            "id": 2,
+            "text": "請正式接送窗口直接確認必要資訊，我不再多問同一份。",
+            "action": "導師已依權限將必要接送確認交原窗口接續，不移轉自身其他義務。",
+            "tradeoff": "少了熟人代辦方便"
+          },
+          {
+            "id": 3,
+            "text": "把校務通知和私人聊天分開，自己的非必要群聊先停。",
+            "action": "導師已停止自身非必要班群閒聊，維持正式必要通知與工作回覆。",
+            "tradeoff": "群組少了熱鬧互動"
+          },
+          {
+            "id": 4,
+            "text": "用本人願意的方式回覆必要校務，不把已讀速度列成表現。",
+            "action": "導師已徵詢家長在既有合規管道中的聯繫偏好，未承諾任何管道均可取代法定送達。",
+            "tradeoff": "需適應不同聯繫習慣"
+          },
+          {
+            "id": 5,
+            "text": "在正常班務時間重講全班通用的離校規則，不點這個家庭。",
+            "action": "導師已安排不涉及個案的通用離校說明，不公開家長聯繫情況。",
+            "tradeoff": "占一點班務時間"
+          },
+          {
+            "id": 6,
+            "text": "邀家長私下說明最容易漏接的非急訊息類型，不重問家事。",
+            "action": "導師已提出限定聯繫負擔的自願短談邀請，未索取私人行蹤或家庭對話。",
+            "tradeoff": "另占時間，也可能不願再談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想晚上還當聊天室常駐，關掉自己的非急群聊提醒。",
+          "action": "導師已在非值勤私人時段將非急班群靜音，保留正式緊急聯繫與依規應辦事項。",
+          "tradeoff": "少了即時掌握，也可能被抱怨變慢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 924292703
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "fbd3b7b5c400e923f2489cdb33ed5805800b20fd16b3dec1d414d9f622c10b57"
+      },
+      "consequenceDirections": {
+        "A": "可減少重複說明，但不能把窗口當作拒絕回應。",
+        "B": "能刪減多餘重問，不能要求親自證明日程。",
+        "C": "資訊能否送達仍須按事實確認，不只看藍勾。",
+        "D": "教師要守住工作回覆，不再用全天在線要求家長。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e45a1d7140a4023a2c44ed785b36b11932528927354692b0e2bcfb61f27229ab",
+    "draftSha256": "9858370c5dbd504671cd86db7e35b6398ba5cb713d6ca4ddaafae0d37b86ef38",
     "seedAssignmentVersion": 1
   }
 }

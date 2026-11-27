@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cc1a795fae197a55a7c1eedd7aeaa980cb92f2111ed65b22369e9079551d35a9",
+      "checkedAt": "2026-11-27T07:36:54.788Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先離開，讓他自己坐到原定回去時間。",
+            "action": "導師已結束自身非必要陪坐，未要求對方交代休息內容或代為延後職務。",
+            "tradeoff": "少了聊天機會"
+          },
+          {
+            "id": 2,
+            "text": "各自讀自己的東西，不談工作。",
+            "action": "導師已提議各自安靜閱讀的有限陪坐，尚未將同事沉默視為接受。",
+            "tradeoff": "仍共享位置，未必都自在"
+          },
+          {
+            "id": 3,
+            "text": "若他想換，先問另個原准許休息處現在有沒有空位。",
+            "action": "導師已提出替代休息位置查詢，未搬公物、占位或要求同事同行。",
+            "tradeoff": "多一道詢問，也可能沒位"
+          },
+          {
+            "id": 4,
+            "text": "把非急工作談話另約正常工作時段，今天不追問。",
+            "action": "導師已發出後續工作短談邀約，未要求在當下休息時回覆。",
+            "tradeoff": "問題延後"
+          },
+          {
+            "id": 5,
+            "text": "向課務詢問這週可預先保留的休息安排，不替他自己排班。",
+            "action": "導師已經同事同意提出必要範圍之排班休息詢問，尚未獲准變更。",
+            "tradeoff": "可能不獲調整"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己另加的午間教法小聊，不把他的點頭當報名。",
+            "action": "導師已撤去本人非必要午間交流邀請，不更動他人已確認的正式行程。",
+            "tradeoff": "少一次想分享的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也困了，自己設提醒閉目休息，不再努力找話題。",
+          "action": "導師已在自身合法休息空檔設個人提醒並閉目小憩，必要職務有原定接續，不委託同事代醒或代值勤。",
+          "tradeoff": "可能少回訊息，也得自己準時醒來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1120785954
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "ef57dd550c48869caf34b74f83db9178e588810e5d4f87871e5e3983c27864e4"
+      },
+      "consequenceDirections": {
+        "A": "休息不再被吃掉，之後須確實履約。",
+        "B": "可短暫同坐，也可由任何一方先離開。",
+        "C": "同事不必陪聊或負責叫醒，原職務不能被睡過頭取代。",
+        "D": "同事可回自己的事，教師得向真正受邀者改口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c107af8ea3d3815e73dfc2afe9d4e5b4ca96d02306a0cc38932b79224f823e95",
+    "draftSha256": "cc1a795fae197a55a7c1eedd7aeaa980cb92f2111ed65b22369e9079551d35a9",
     "seedAssignmentVersion": 1
   }
 }

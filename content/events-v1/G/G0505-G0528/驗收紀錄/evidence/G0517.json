@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eef3174f8e9b37e40caea6430121818be380736a6fdcdee86360ab7434c58b59",
+      "checkedAt": "2026-11-27T07:36:54.785Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只陪他問一個最關鍵的退訂問題，到點就走。",
+            "action": "導師已向同事說明可陪詢的有限範圍與結束時間，未代作退款決定。",
+            "tradeoff": "不能一次問完"
+          },
+          {
+            "id": 2,
+            "text": "今天不陪交涉，請他按店家原聯絡方式自行處理。",
+            "action": "導師已婉拒尚未成立的私人陪詢委託，不收取退款或控制帳號。",
+            "tradeoff": "朋友可能失望"
+          },
+          {
+            "id": 3,
+            "text": "和他把用途需求列清楚，聯繫店家則由本人來。",
+            "action": "導師已協助整理本人自述的用途與疑問，未向店家作專業保證。",
+            "tradeoff": "需花一段整理時間"
+          },
+          {
+            "id": 4,
+            "text": "若合適，借我自己的安全備鞋讓他先確認需求，不急著買第二雙。",
+            "action": "導師已提出本人有權出借、清潔安全且尺寸可先確認的備鞋邀請，未假定適配或交付。",
+            "tradeoff": "私人用品有借還成本"
+          },
+          {
+            "id": 5,
+            "text": "陪他看原商品說明，只比較這雙可做與不可做的事。",
+            "action": "導師已與同事核對原商品標示與本人需求，未將消費經驗當醫療或運動安全認證。",
+            "tradeoff": "可能仍沒有想留的理由"
+          },
+          {
+            "id": 6,
+            "text": "提供幾個他可自行比較的公開選購資訊，不幫忙下單。",
+            "action": "導師已提供可公開取得的一般選購資訊，未推銷、收款或承諾店家品質。",
+            "tradeoff": "資訊多也可能更難選"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點想買，先把自己的購物車清空，別陪問又陪出一雙。",
+          "action": "導師已刪除自身未結帳的私人鞋款購物車項目，不取消同事訂單或干涉其決定。",
+          "tradeoff": "錯過心動款，也得承認自己會衝動"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2636404594
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "b7fbe0e25143684005417f929ccac9ea2171efe9b473b8a1ef2fb7ee475377fa"
+      },
+      "consequenceDirections": {
+        "A": "同事需自己接後續，不把短陪變全程代辦。",
+        "B": "朋友的訂金仍由朋友處理，教師不再擴大自己的支出。",
+        "C": "買新鞋需待本人處理原單，不產生第二次代購。",
+        "D": "問題會較具體，也可能發現其實只需先退訂。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "86180f5c7d889719bb006ea4605448a065230aedc8c90a400f06b83ac4b95376",
+    "draftSha256": "eef3174f8e9b37e40caea6430121818be380736a6fdcdee86360ab7434c58b59",
     "seedAssignmentVersion": 1
   }
 }

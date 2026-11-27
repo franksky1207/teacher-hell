@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "497143dfc47f3b7f9878de73acc21c1310441bda5992e2d0350206eca523b265",
+      "checkedAt": "2026-11-27T07:36:54.792Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "謝謝他，請他保留原票，不另外補一場給我。",
+            "action": "導師已婉拒受贈並交回票券，不要求改買、代訂或陪同。",
+            "tradeoff": "少了一份難得禮物"
+          },
+          {
+            "id": 2,
+            "text": "若他仍明確願意，接受這張票並自己安排去看。",
+            "action": "導師已在對方再次明確同意後接受可轉讓私人票券，未要求其他回禮或工作交換。",
+            "tradeoff": "承受對方讓出期待的心意，也可能有愧疚"
+          },
+          {
+            "id": 3,
+            "text": "問他願不願意照原計畫去，劇後再約短聊。",
+            "action": "導師已提出原觀劇後的自願私人聊天邀約，尚未約成或要求劇情報告。",
+            "tradeoff": "要配合雙方時間"
+          },
+          {
+            "id": 4,
+            "text": "若他想轉出，提出按實際可轉讓條件自費買，不拿生日當折扣。",
+            "action": "導師已提出符合票券及法規的自費受讓邀請，尚未成交或取得票權，不要求溢價轉售。",
+            "tradeoff": "自己花錢，朋友仍會失去原場次"
+          },
+          {
+            "id": 5,
+            "text": "先一起查這張票的退票條件，不急著把送禮當唯一去向。",
+            "action": "導師已與同事查看該票官方退票條款與期限，未代為退票、保證退款或要求放棄原場次",
+            "tradeoff": "把興奮時刻變成查規則，也可能根本不能退"
+          },
+          {
+            "id": 6,
+            "text": "改提日後一起找雙方都想看的場次，各自買自己的。",
+            "action": "導師已發出未來各自負擔票費的私人觀劇邀請，尚未訂票或替對方答應。",
+            "tradeoff": "要另配時間與預算"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也很想看，自己查有沒有當場次的票，有就自己買，沒有就算了。",
+          "action": "導師已自行查詢官方售票存量，未取得票或要求朋友讓位；若無合法票源即不入場。",
+          "tradeoff": "花自己的錢，也可能空手"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1750399885
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "5ef925134c4829b7a8ff6c716557b0792a2cd131eeb03d7c40345d7139936e92"
+      },
+      "consequenceDirections": {
+        "A": "共享可來自聽他說，不必都坐在場內。",
+        "B": "不保證搶得到相鄰位，今天這張仍屬朋友。",
+        "C": "交易與送禮分開，對方可改回自己去。",
+        "D": "教師可承認想看，不把唯一那張當友情證明。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5歸還暫不決定與普通1拒贈還票的已完成行動過近，改為共同查看退票條款，未宣稱可退或已退款。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "謝謝他，請他保留原票，不另外補一場給我。",
+                "action": "導師已婉拒受贈並交回票券，不要求改買、代訂或陪同。",
+                "tradeoff": "少了一份難得禮物"
+              },
+              {
+                "id": 2,
+                "text": "若他仍明確願意，接受這張票並自己安排去看。",
+                "action": "導師已在對方再次明確同意後接受可轉讓私人票券，未要求其他回禮或工作交換。",
+                "tradeoff": "承受對方讓出期待的心意，也可能有愧疚"
+              },
+              {
+                "id": 3,
+                "text": "問他願不願意照原計畫去，劇後再約短聊。",
+                "action": "導師已提出原觀劇後的自願私人聊天邀約，尚未約成或要求劇情報告。",
+                "tradeoff": "要配合雙方時間"
+              },
+              {
+                "id": 4,
+                "text": "若他想轉出，提出按實際可轉讓條件自費買，不拿生日當折扣。",
+                "action": "導師已提出符合票券及法規的自費受讓邀請，尚未成交或取得票權，不要求溢價轉售。",
+                "tradeoff": "自己花錢，朋友仍會失去原場次"
+              },
+              {
+                "id": 5,
+                "text": "今天先不決定，讓他拿回票在仍有效的時間內自行選。",
+                "action": "導師已歸還票並結束當下受贈徵詢，未作後續保留或接受承諾。",
+                "tradeoff": "可能錯過轉讓機會"
+              },
+              {
+                "id": 6,
+                "text": "改提日後一起找雙方都想看的場次，各自買自己的。",
+                "action": "導師已發出未來各自負擔票費的私人觀劇邀請，尚未訂票或替對方答應。",
+                "tradeoff": "要另配時間與預算"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實也很想看，自己查有沒有當場次的票，有就自己買，沒有就算了。",
+              "action": "導師已自行查詢官方售票存量，未取得票或要求朋友讓位；若無合法票源即不入場。",
+              "tradeoff": "花自己的錢，也可能空手"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1817558645
+            },
+            "selectedIds": [
+              1,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 2,
+              "D": 3
+            },
+            "optionsDigest": "85e773fcebf2f744a7d52f0c08638fabc9e9bd50f4b5ae1e397e6504432250b4"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師可承認想看，不把唯一那張當友情證明。",
+            "B": "心意可被接住，朋友仍有自己的座位。",
+            "C": "教師須接受朋友看不到這場，不能假裝沒有代價。",
+            "D": "共享可來自聽他說，不必都坐在場內。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ffe04b5e17abe8b625f774e7a1f49f372513d9c0e33bd01c338d11c51a8b252",
+    "draftSha256": "497143dfc47f3b7f9878de73acc21c1310441bda5992e2d0350206eca523b265",
     "seedAssignmentVersion": 1
   }
 }

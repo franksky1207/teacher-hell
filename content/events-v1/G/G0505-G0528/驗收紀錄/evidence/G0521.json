@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b9ecac34b19f5b44789666cc4aa6d230fe77da1eb46a3e0e7fd3fbe3f696d340",
+      "checkedAt": "2026-11-27T07:36:54.787Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這次額外學生示範，回到原體育課安排。",
+            "action": "導師已撤回自身額外示範邀請，不改正式課務或阻止必要教學。",
+            "tradeoff": "少了現成示例"
+          },
+          {
+            "id": 2,
+            "text": "詢問體育老師能否在核准安全處另作一次自願短示範。",
+            "action": "導師已提出限定安全條件的替代示範詢問，尚未獲准或取得學生新同意。",
+            "tradeoff": "要等場地與意願"
+          },
+          {
+            "id": 3,
+            "text": "改請授課老師判斷是否自己示範，不指定學生上。",
+            "action": "導師已向體育老師提出本人示範建議，未替其承諾或接管授課。",
+            "tradeoff": "要配合老師身體與課程狀況"
+          },
+          {
+            "id": 4,
+            "text": "只用已獲授權且適用的動作圖說明，不重拍學生。",
+            "action": "導師已提供可用圖示供授課教師評估，未自行教授不具資格之技巧。",
+            "tradeoff": "看不到現場連續動作"
+          },
+          {
+            "id": 5,
+            "text": "讓學生自願說明自己怎麼發現場地變了，不要求再做動作。",
+            "action": "導師已發出限定於親見變化的自願說明邀請，未安排演出或取代成人安全確認。",
+            "tradeoff": "少了動作效果"
+          },
+          {
+            "id": 6,
+            "text": "與授課者討論以分組觀察取代單人公開示範的可能。",
+            "action": "導師已提出後續教學方式建議，尚未變更正式課程或指定學生角色。",
+            "tradeoff": "課程需重排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想學，找私人時間問教練有沒有適合初學的課。",
+          "action": "導師已以私人身分詢問合適教練的初學課程，尚未預約、付費或取得適合本人之判定。",
+          "tradeoff": "可能花錢，也得面對自己沒那麼會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2156103324
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "a28fba3615a0cb6eb79590361b76e9919d7da742bf9e6e619113104012bbd398"
+      },
+      "consequenceDirections": {
+        "A": "若獲採用可少一人壓力，不能讓小組自行判斷可否冒險。",
+        "B": "沒合適條件就不做，不能用已答應催人。",
+        "C": "教師自學不拿學生作教材，不影響體育課。",
+        "D": "經驗可被聽見，但不讓學生背安全判斷責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "806921f1c9e1c8d510b07fbd4674c7cbad39a86fcedc227851c0ee40894cf35a",
+    "draftSha256": "b9ecac34b19f5b44789666cc4aa6d230fe77da1eb46a3e0e7fd3fbe3f696d340",
     "seedAssignmentVersion": 1
   }
 }

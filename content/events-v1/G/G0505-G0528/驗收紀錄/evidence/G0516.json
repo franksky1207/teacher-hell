@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "890aecd35a732b24231d8225b06638dc0b53891fc4d38284b817387cc8600c1e",
+      "checkedAt": "2026-11-27T07:36:54.784Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原約只試熟悉的一段。",
+            "action": "導師已恢復本次自願短試的原約段落，不以此推論其他段能力。",
+            "tradeoff": "無法示範我原想補的部分"
+          },
+          {
+            "id": 2,
+            "text": "取消這次學生額外示範，由教師用既有教材接續。",
+            "action": "導師已取消自身非必要學生示範邀請，保留原教學責任。",
+            "tradeoff": "少了學生版本"
+          },
+          {
+            "id": 3,
+            "text": "請他只說兩段準備上哪裡不同，不要求唱沒練的。",
+            "action": "導師已提出限定於技術差異的自願說明邀請，未要求實唱或披露社區資料。",
+            "tradeoff": "少了直接音樂效果"
+          },
+          {
+            "id": 4,
+            "text": "在課內先帶全班分句練，學生不另當示範者。",
+            "action": "導師已在本人授權課程改採全班分句練習，不要求該生領唱。",
+            "tradeoff": "進度慢一些"
+          },
+          {
+            "id": 5,
+            "text": "另問他是否願意在往後練熟後再自選一段分享，不預訂日期。",
+            "action": "導師已發出不設強制期限的未來分享邀請，尚未同意或排定。",
+            "tradeoff": "沒有立即成果"
+          },
+          {
+            "id": 6,
+            "text": "先說清楚本節真正要聽的是哪個技巧，再改用可達目標的素材。",
+            "action": "導師已在授課範圍釐清並改用已可使用的替代教材，不挪用學生未同意演出。",
+            "tradeoff": "教師須重新選材"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想唱，自己試一小句，不用他那段替我掩飾沒準備。",
+          "action": "導師已在正常授課允許範圍以本人聲音試唱可負荷短句，必要教學照常，不要求學生評分或補唱。",
+          "tradeoff": "可能當場卡住"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2178251265
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "aef077c4d8924e2a685a15a1d7f87bf05bf829c88e31b84a0d7a38abf980e42b"
+      },
+      "consequenceDirections": {
+        "A": "未來可能不想分享，教師不能追成固定承諾。",
+        "B": "正常課程可完成，不把取消當學生害大家沒得聽。",
+        "C": "教師得承認自己的限制，不把學生拉來救場。",
+        "D": "大家有共同起點，熟者也不需承擔老師缺口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d3550cc5e86c18998fd58620912b01b3287604013144e16b40475be63858bff5",
+    "draftSha256": "890aecd35a732b24231d8225b06638dc0b53891fc4d38284b817387cc8600c1e",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89ad32c261934b7c24995f02b2d7ccec42470ba2c13a4158f0da8a50ff978161",
+      "checkedAt": "2026-11-27T07:36:54.777Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤掉班內額外的學生關燈輪值，照原校內方式由成人確認。",
+            "action": "導師已取消自身另加的非必要學生關燈輪值，必要照明管理仍由原成人執行。",
+            "tradeoff": "少了學生自治項目"
+          },
+          {
+            "id": 2,
+            "text": "在原班務時間用空教室平面圖談一次流程，不實地摸黑演練。",
+            "action": "導師已安排合法課內的紙面流程說明，不新增學生安全責任。",
+            "tradeoff": "占用班務時間"
+          },
+          {
+            "id": 3,
+            "text": "把可自主取消的午休後加碼小測撤掉，減少催著換教室。",
+            "action": "導師已取消本人非必要的午休後附加測驗，不改正式課表。",
+            "tradeoff": "少一次練習"
+          },
+          {
+            "id": 4,
+            "text": "向場地管理者詢問是否有可用的既定分區照明方式。",
+            "action": "導師已提出非必要照明操作改善詢問，未改設備或取代當下必要照明。",
+            "tradeoff": "要等回覆，也不保證能改"
+          },
+          {
+            "id": 5,
+            "text": "另約他談這項班務讓他擔心什麼，不要求提供同學睡眠名單。",
+            "action": "導師已發出正常工作時間的自願短談邀請，未新增學生紀錄任務。",
+            "tradeoff": "可能占用額外談話"
+          },
+          {
+            "id": 6,
+            "text": "把我自己加的催促口令停掉，讓必要轉場只用既定訊號。",
+            "action": "導師已停止自身額外催促口令，未變更原校內正式訊號或省略清點。",
+            "tradeoff": "少了我覺得方便的快節奏"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想睡醒一點，放下手機，利用自己的原空檔喝水洗把臉。",
+          "action": "導師已在自身可休息且必要成人職務已接續下，短暫補水梳洗，不擅離無人照看的現場。",
+          "tradeoff": "少回幾則非急訊息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3547813648
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "21c4d2547450404f3c2fd5a9f622f524106b04754f7341b6bc4891d84d0a6c99"
+      },
+      "consequenceDirections": {
+        "A": "學生不再從多個口令猜是否該離開，成人仍須照看。",
+        "B": "能處理他自己的不安，而非派他查別人。",
+        "C": "若能採用才可更新操作，不能由學生試開配電。",
+        "D": "教師可以清醒再接原工作，不把值勤留給學生。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8ccc673edbe1b54c83471358fadb5efcce9ee8036f14124e1c78d8028803a3ec",
+    "draftSha256": "89ad32c261934b7c24995f02b2d7ccec42470ba2c13a4158f0da8a50ff978161",
     "seedAssignmentVersion": 1
   }
 }

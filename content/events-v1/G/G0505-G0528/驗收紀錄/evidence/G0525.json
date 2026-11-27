@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "98f8183ef6f6279afb5ff424d3efb75567de0f4c88edee970d8ed751c289cc05",
+      "checkedAt": "2026-11-27T07:36:54.790Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請承辦書面說明原費用與新增項目的差別，再讓家庭決定。",
+            "action": "導師已向承辦提出分列費用說明需求，尚未取得核准或承諾金額。",
+            "tradeoff": "需等回覆"
+          },
+          {
+            "id": 2,
+            "text": "詢問只參加無額外費用部分是否可行，不先保證資格。",
+            "action": "導師已提出限範圍參與詢問，未替學生保留名額。",
+            "tradeoff": "內容可能縮小"
+          },
+          {
+            "id": 3,
+            "text": "提供原有支持方案的申請資訊，讓家庭私下決定。",
+            "action": "導師已提供經確認可用的支持管道，不索取無關醫療資料或保證補助。",
+            "tradeoff": "需要程序，也不保證通過"
+          },
+          {
+            "id": 4,
+            "text": "這次不替家長代填意願，請本人看正式條件後回覆。",
+            "action": "導師已停止非必要代填服務並提供正式回覆方式，不放棄必要可及協助。",
+            "tradeoff": "少了熟人代辦方便"
+          },
+          {
+            "id": 5,
+            "text": "向承辦申請延後尚未到期、可調整的意願確認，不延誤既定權益。",
+            "action": "導師已提出一般性期限調整建議，未擅自展延或只為單一家保留。",
+            "tradeoff": "可能不獲准"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的非必要外包展示提案，不拿家長支持當核准。",
+            "action": "導師已撤回自身非必要外包構想，未替學校解除既有契約或處理已成立費用。",
+            "tradeoff": "少了原想呈現的效果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再靠「我幫你想辦法」當好人，這次請承辦來聽，我不私下允諾。",
+          "action": "導師已提出經家長知悉的承辦同談邀請，尚未促成會談或轉嫁全部親師責任。",
+          "tradeoff": "得放下萬能形象，也要配合承辦時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2786074056
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "198614ccc340e50e74002305100fc0b09237c414add18c9544d327e101596de2"
+      },
+      "consequenceDirections": {
+        "A": "若獲准可保留部分參與，仍依公平名額規則。",
+        "B": "基本活動仍按承辦安排，不能把取消歸咎這個家庭。",
+        "C": "多出的考慮時間不等於專屬保位。",
+        "D": "家長可聽到真正有權者的回覆，教師仍須接回自己的部分。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "58178dc1c44e68f173426bb2910c15d0a2a9e4346729e7f785767b4c30fcb4a9",
+    "draftSha256": "98f8183ef6f6279afb5ff424d3efb75567de0f4c88edee970d8ed751c289cc05",
     "seedAssignmentVersion": 1
   }
 }

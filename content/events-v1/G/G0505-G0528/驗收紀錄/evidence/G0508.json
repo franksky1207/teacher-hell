@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2f14931925faf9f0dce8ccb86d6f49d2a26d998afe6a23efeb9dca33069403b9",
+      "checkedAt": "2026-11-27T07:36:54.776Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說明原來選人的依據，不拿他的準備當交換名額。",
+            "action": "導師已向學生說明本次實際遴選依據，未承諾補償性主持機會。",
+            "tradeoff": "可能讓他更失望"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意只提供稿中一段，署名與用途另外確認。",
+            "action": "導師已提出有限稿件使用邀請，尚未取得同意或交給新主持。",
+            "tradeoff": "貢獻不等於上台"
+          },
+          {
+            "id": 3,
+            "text": "讓他收回整份稿，這次不再追加他的工作。",
+            "action": "導師已結束本次非必要稿件徵求並交回自有稿，原正常班務另依分工。",
+            "tradeoff": "少了現成內容"
+          },
+          {
+            "id": 4,
+            "text": "另約一次私下口說回饋，只看他想練的一小段。",
+            "action": "導師已發出非強制的小段回饋邀約，未作人選保證。",
+            "tradeoff": "要另留時間"
+          },
+          {
+            "id": 5,
+            "text": "下次正式徵詢時把工作、期限與確認方式先寫清楚。",
+            "action": "導師已為下一次本人可決定的徵詢草擬明確程序，尚未發出人選或改全校規則。",
+            "tradeoff": "教師多一道準備"
+          },
+          {
+            "id": 6,
+            "text": "邀現任主持自行決定是否要合作，不由我硬湊兩人。",
+            "action": "導師已分別詢問雙方合作意願，尚未形成共同主持或稿件使用同意。",
+            "tradeoff": "要再協調，也可能被拒"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想把自己那段介紹講得像得獎感言，刪掉我自己的長開場。",
+          "action": "導師已取消自身可刪減的非必要長開場，保留必要班會資訊，不追加學生工作。",
+          "tradeoff": "少一次表現，也要重排銜接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2485870503
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "e901e7a7ca1f8ea9510f6f9ea48f3cef1144bcf067e3ba76276c769e4d432811"
+      },
+      "consequenceDirections": {
+        "A": "主持仍按正式安排進行，不用學生補教師刪掉的話。",
+        "B": "學生能知道何時才算受邀，仍須各自表意。",
+        "C": "學生可停在這裡，不因失望被說沒責任。",
+        "D": "理由可被問，主持仍不因做了稿就自動歸他。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5ca7a0d67e303af9fcb1dfd415f7e1ca6e2191c25069b534b0d1d28b437bdb7a",
+    "draftSha256": "2f14931925faf9f0dce8ccb86d6f49d2a26d998afe6a23efeb9dca33069403b9",
     "seedAssignmentVersion": 1
   }
 }

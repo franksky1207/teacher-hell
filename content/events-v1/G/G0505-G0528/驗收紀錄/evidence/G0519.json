@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d4b8633cd666edacfdeeadaadb1b9f55220f2d35b5ada9fc1017695c1bf3276a",
+      "checkedAt": "2026-11-27T07:36:54.786Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他用自己的話解釋那一題，回饋限於實際理解。",
+            "action": "導師已在原規則內安排限定單題說明，不把說明等同全份獨立成果。",
+            "tradeoff": "不能憑一題補成全份通過"
+          },
+          {
+            "id": 2,
+            "text": "另給一小段差異較大的題目，於正常課內獨立完成。",
+            "action": "導師已在本人可調整範圍提供同目標短題重試，不延長私人留校。",
+            "tradeoff": "多一次作答時間"
+          },
+          {
+            "id": 3,
+            "text": "保留原稿作過程資料，教他標明引用來源。",
+            "action": "導師已依原規定保留必要過程稿並示範來源標示，不將補署名當自動合格。",
+            "tradeoff": "沒有立刻恢復原成果認定"
+          },
+          {
+            "id": 4,
+            "text": "原結果維持，只回覆申疑管道與後續完成方式。",
+            "action": "導師已依核實規則說明本次結果與正常救濟、接續方式，不杜撰處分。",
+            "tradeoff": "學生可能仍生氣"
+          },
+          {
+            "id": 5,
+            "text": "讓他逐項圈出哪些能自己推，哪些只能照抄，再談需要的協助。",
+            "action": "導師已安排可負荷的原稿自辨，不要求公開自白或追加整份反省。",
+            "tradeoff": "要花心力自辨，也可能不願承認"
+          },
+          {
+            "id": 6,
+            "text": "用我自己的短例子示範如何參考後另作，不用他當反面教材。",
+            "action": "導師已使用自有可用示例說明參考與自作差異，不公開該生稿件。",
+            "tradeoff": "教師多備一份"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想總拿標準答案壓人，自己把同題寫成一份帶刪改的草稿。",
+          "action": "導師已獨立完成本人題目草稿並保留自身刪改，僅在可授權教學範圍提供，不追加學生評改責任。",
+          "tradeoff": "花我的時間，也露出卡住處"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2560142552
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "e8eb4e71d8e2154bbf2c5c307380a6ef3e0119b9f5acbe07dc6af31681da6a74"
+      },
+      "consequenceDirections": {
+        "A": "他可學會區分看過與自己完成，仍須另滿足原要求。",
+        "B": "教師可提供真實過程，不等於學生能抄草稿交件。",
+        "C": "他可證明懂的部分，也可能發現還漏條件。",
+        "D": "新表現能提供理解依據，不能倒抹原抄用事實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5b54d4c811b7d4e213cc60eb5e568c4f3c5e7a1d6e42e3c70d8773269fcd9e43",
+    "draftSha256": "d4b8633cd666edacfdeeadaadb1b9f55220f2d35b5ada9fc1017695c1bf3276a",
     "seedAssignmentVersion": 1
   }
 }

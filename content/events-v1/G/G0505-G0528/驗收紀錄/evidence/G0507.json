@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ea12f9149a653de23d44a8c6c764ddd7b1ad78fdad675b80bfea11731f36af93",
+      "checkedAt": "2026-11-27T07:36:54.775Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受黑白版本，照原本剩餘時間完成。",
+            "action": "導師已在本人可決定的練習內接受同目標黑白版，不改原剩餘時限。",
+            "tradeoff": "成品少了色彩"
+          },
+          {
+            "id": 2,
+            "text": "若有適用的現成紙材，讓他選擇換紙而不重開計時。",
+            "action": "導師已提供校內現有安全適用紙材的選擇，未保證效果或追加時間。",
+            "tradeoff": "有重畫成本"
+          },
+          {
+            "id": 3,
+            "text": "只交已做出的試色與設計草稿，後續再於正常課內完成。",
+            "action": "導師已在自身可調整範圍接受本次過程稿，另明示正常課內接續方式。",
+            "tradeoff": "成品延後"
+          },
+          {
+            "id": 4,
+            "text": "全班先做一筆小測，再決定自己的媒材。",
+            "action": "導師已安排同目標的短媒材試作，不要求互借私人用品。",
+            "tradeoff": "占一點原練習時間"
+          },
+          {
+            "id": 5,
+            "text": "減掉非必要裝飾，只檢查文字是否清楚可讀。",
+            "action": "導師已刪除本人額外裝飾要求，保留原核心實作目標。",
+            "tradeoff": "少了原先漂亮版面"
+          },
+          {
+            "id": 6,
+            "text": "另給他一次私下回看兩種版本的機會，不公開選誰比較好。",
+            "action": "導師已發出可拒絕的課後正常工作回饋邀請，未要求再做完整一份。",
+            "tradeoff": "多一次教師回饋"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想用抽屜那支舊筆，自己寫張小招牌，看它還能撐多久。",
+          "action": "導師已以自有安全舊筆製作私人小字牌，不借學生用品、不比較學生身價。",
+          "tradeoff": "用掉自己的時間，成品可能很醜"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3779681391
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "555afe0707cfbeea69c2dc3474bd92f65dc08a546091e37ad16e65c2530b3736"
+      },
+      "consequenceDirections": {
+        "A": "工具可能能用，但範圍得縮小。",
+        "B": "他能分辨媒材與內容，不需再向同學證明價格。",
+        "C": "學生可集中完成基本內容，不能只因工具貴得加分。",
+        "D": "教師的偏愛不變成全班標準，也不拿來羞辱他的筆。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0b8c9a8da7e8d4a2b75b0928f106f46b24c1e48168f1cda17e054499b3bbbb2",
+    "draftSha256": "ea12f9149a653de23d44a8c6c764ddd7b1ad78fdad675b80bfea11731f36af93",
     "seedAssignmentVersion": 1
   }
 }

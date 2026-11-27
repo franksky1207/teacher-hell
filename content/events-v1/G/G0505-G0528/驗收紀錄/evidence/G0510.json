@@ -16,14 +16,82 @@
     "G07",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "98123c0d8f2b621a177ae778cb7e3cfd14f970a1550943f5a0417d797b2a16f6",
+      "checkedAt": "2026-11-27T07:36:54.778Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請同事用這個反例帶學生看漏掉的條件。",
+            "action": "導師已向同事提出由其帶反例討論的合作邀請，尚未替其答應授課安排。",
+            "tradeoff": "要面對自己先前說錯"
+          },
+          {
+            "id": 2,
+            "text": "我接回自己有權教的下一段，先用完整步驟練。",
+            "action": "導師已在雙方確認的授課分工內接回本人段落，不擅接他科或保證學生已理解。",
+            "tradeoff": "自己工作增加，短片捷徑先不用"
+          },
+          {
+            "id": 3,
+            "text": "暫不再加新題，先讓學生說明剛才怎麼得出答案。",
+            "action": "導師已在自身可調整課程內停止追加題量，聽取原有解題步驟，不取代必要錯誤更正。",
+            "tradeoff": "進度放慢"
+          },
+          {
+            "id": 4,
+            "text": "用已確認的教科書例子接續，這次不採短片方法。",
+            "action": "導師已在有權範圍改用確認過的既有例子，不將未查短片再交學生驗證。",
+            "tradeoff": "少了省力趣味"
+          },
+          {
+            "id": 5,
+            "text": "課後邀他一起重整自用教法筆記，只留已確認的適用範圍。",
+            "action": "導師已提出雙方正常工作時間的教法筆記整理邀約，尚未取得同意。",
+            "tradeoff": "增加成人整理時間"
+          },
+          {
+            "id": 6,
+            "text": "向主管反映可取消的重複工作，別只叫他擠時間查新法。",
+            "action": "導師已提出非必要重複工作減量需求，未擅停正式任務。",
+            "tradeoff": "可能不獲准"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點被那句口訣哄走，自己找另一個反例試給自己看。",
+          "action": "導師已以自有可用題目完成一次私人反例試算，不替代本案共同必要更正。",
+          "tradeoff": "花我的時間，也可能找不到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1544976289
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "d7e2734196cb469120606d4d9c791021e2b54f9a0201a6976bf427b8c902adfb"
+      },
+      "consequenceDirections": {
+        "A": "可看出記口訣與懂條件的差異，不靠答對就結束。",
+        "B": "若無減量仍須完成必要查核，不能以忙當通則。",
+        "C": "可減少下次套錯，不能叫學生代清舊筆記。",
+        "D": "教師能看到自己同樣會貪快，不要求同事替我驗算。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "789d5456d0c514a5c6a74ce2b6608c5f2ef30ba91b699d50a20c1a00397a1d77",
+    "draftSha256": "98123c0d8f2b621a177ae778cb7e3cfd14f970a1550943f5a0417d797b2a16f6",
     "seedAssignmentVersion": 1
   }
 }

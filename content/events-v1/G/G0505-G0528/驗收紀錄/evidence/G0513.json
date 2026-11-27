@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6fff5b3c0f409851def463e66f4307a8d0008bb9beeb8c7e2a3a3dbe90df22b1",
+      "checkedAt": "2026-11-27T07:36:54.781Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先回饋短版已完成的核心，不把它直接當全組交齊。",
+            "action": "導師已在本人權限內核記短版實際完成處，未將團體全部義務視為完成。",
+            "tradeoff": "團體仍有缺漏"
+          },
+          {
+            "id": 2,
+            "text": "請組員各認自己的剩餘部分，不把空白全塞回他。",
+            "action": "導師已逐一核對剩餘分工意願與原責任，不替未同意者新增任務。",
+            "tradeoff": "其他人得重排時間"
+          },
+          {
+            "id": 3,
+            "text": "邀全組刪掉可省的非必要延伸，只保留共同目標。",
+            "action": "導師已提出本人可調整範圍內的減量方案，未擅改他科評量。",
+            "tradeoff": "成品規模縮小"
+          },
+          {
+            "id": 4,
+            "text": "查校內原可用的課內或自習資源，讓他自行選需不需要。",
+            "action": "導師已提供經確認可使用的校內學習資源資訊，不要求延長留校。",
+            "tradeoff": "得配合現有時段"
+          },
+          {
+            "id": 5,
+            "text": "向原授課教師詢問分段交件的可能，不先保證延期。",
+            "action": "導師已提出分段繳交詢問，未改他科期限或承諾全數接受。",
+            "tradeoff": "要等待回覆"
+          },
+          {
+            "id": 6,
+            "text": "讓他保留短版作自己的練習，小組另依原要求接續。",
+            "action": "導師已經本人同意限縮短版為個人練習回饋，明示團體要求另依法釐清，不沒收成果。",
+            "tradeoff": "可能需重整銜接"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了凡事都要大份，自己原想加做的範例就不做了。",
+          "action": "導師已取消自身非必要額外範例製作，保留必要教學與原有可用材料。",
+          "tradeoff": "少一件示範，也要承認原計畫太滿"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2941956596
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "64edd0a8bf9932b04f91ea20fffa70c1688d3a190accd7e895ae6bb7bb54b6b7"
+      },
+      "consequenceDirections": {
+        "A": "可能得到桌面空間，也可能仍需其他安排。",
+        "B": "若獲同意可少做，不能用多數逼他另加私人時間。",
+        "C": "可發現原分工是否真有人接，不能靠最先做者補全。",
+        "D": "學生仍有正常教材，不需替教師補漂亮成果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ea9b755ad1f719a583547fbfe5b67593041b74c842699ed188d061de78ecf21a",
+    "draftSha256": "6fff5b3c0f409851def463e66f4307a8d0008bb9beeb8c7e2a3a3dbe90df22b1",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3fdfbd340600a5559fb38daafb8d2f98a97d527f3ba1f30b9e67b0d1a8c69286",
+      "checkedAt": "2026-11-27T07:36:54.772Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把可完成的課內重點列給孩子，由本人說哪裡需要協助。",
+            "action": "導師已整理本人有權安排的課業重點並提供協助方式，未替其他任課教師承諾減免。",
+            "tradeoff": "要另備材料"
+          },
+          {
+            "id": 2,
+            "text": "約孩子私下談實際進度，不讓家長代答全部。",
+            "action": "導師已發出正常工作時段的學生短談邀請，尚未取得本人回覆。",
+            "tradeoff": "多一次工作談話"
+          },
+          {
+            "id": 3,
+            "text": "向相關任課老師詢問能否分段補交，不先答應全科延期。",
+            "action": "導師已提出必要範圍內的分段補交詢問，未改他科期限。",
+            "tradeoff": "回饋延後，也可能未獲同意"
+          },
+          {
+            "id": 4,
+            "text": "本週另約一次課業短談，先談家庭最想處理的一科。",
+            "action": "導師已向家長提出正常工作時段的一次有限課業短談邀請，尚未約成，不把家庭回應當接受所有支持",
+            "tradeoff": "另占雙方時間，也可能暫時約不上"
+          },
+          {
+            "id": 5,
+            "text": "徵詢家庭是否需要學校現有支持的聯繫方式。",
+            "action": "導師已提出非強制支持資訊，必要保護與通報不以接受為條件。",
+            "tradeoff": "可能多一道轉接"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己加的非必要補充作業，只保留原核心要求。",
+            "action": "導師已撤去本人可取消的額外作業，不擅刪正式課程或他科要求。",
+            "tradeoff": "少一份練習"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕又急著辯解，請主管安排一位適當同事陪這次談。",
+          "action": "導師已向適當主管提出經家長知悉的陪談需求，尚未有人同意或代為定論。",
+          "tradeoff": "得承認自己沒把握，也要等人有空"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1745595669
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "3b159dff979d98eef2f98febebaeeab719253c81cb3f3bccfdbcf7e01a9c8040"
+      },
+      "consequenceDirections": {
+        "A": "家長可集中說明一項需要，教師不能藉此承諾全科追齊；必要更正仍另共同完成。",
+        "B": "陪談可減少互搶話，不能讓家長被多人圍住。",
+        "C": "孩子可能說出和家長不同的需要。",
+        "D": "減少的是真份量，不能另改名補回。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4回原群組補正無據評價屬共同必要責任，改為額外的一次有限課業短談。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "把可完成的課內重點列給孩子，由本人說哪裡需要協助。",
+                "action": "導師已整理本人有權安排的課業重點並提供協助方式，未替其他任課教師承諾減免。",
+                "tradeoff": "要另備材料"
+              },
+              {
+                "id": 2,
+                "text": "約孩子私下談實際進度，不讓家長代答全部。",
+                "action": "導師已發出正常工作時段的學生短談邀請，尚未取得本人回覆。",
+                "tradeoff": "多一次工作談話"
+              },
+              {
+                "id": 3,
+                "text": "向相關任課老師詢問能否分段補交，不先答應全科延期。",
+                "action": "導師已提出必要範圍內的分段補交詢問，未改他科期限。",
+                "tradeoff": "回饋延後，也可能未獲同意"
+              },
+              {
+                "id": 4,
+                "text": "向原群組只說明不應由請假推論學習意願，不再解釋家事。",
+                "action": "導師已補充一般性說明並限縮揭露，未重述學生家庭詳情。",
+                "tradeoff": "得承認自己說快了"
+              },
+              {
+                "id": 5,
+                "text": "徵詢家庭是否需要學校現有支持的聯繫方式。",
+                "action": "導師已提出非強制支持資訊，必要保護與通報不以接受為條件。",
+                "tradeoff": "可能多一道轉接"
+              },
+              {
+                "id": 6,
+                "text": "取消我自己加的非必要補充作業，只保留原核心要求。",
+                "action": "導師已撤去本人可取消的額外作業，不擅刪正式課程或他科要求。",
+                "tradeoff": "少一份練習"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我怕又急著辯解，請主管安排一位適當同事陪這次談。",
+              "action": "導師已向適當主管提出經家長知悉的陪談需求，尚未有人同意或代為定論。",
+              "tradeoff": "得承認自己沒把握，也要等人有空"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3444501255
+            },
+            "selectedIds": [
+              6,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 3,
+              "C": "emotional",
+              "D": 6
+            },
+            "optionsDigest": "906fc2c5214d22bf537a6439d1322d9242dcb47a4c68ee7878b36b8603a69b8f"
+          },
+          "previousConsequenceDirections": {
+            "A": "旁人不再拿原話作結論，仍可能私下猜測。",
+            "B": "各科安排須依實際回覆，不由一張總表包辦。",
+            "C": "陪談可減少互搶話，不能讓家長被多人圍住。",
+            "D": "減少的是真份量，不能另改名補回。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4b9e61675971b8d0ea48e8f8afdbd9545b242799fb63e63bc4abb8e1f9d66f74",
+    "draftSha256": "3fdfbd340600a5559fb38daafb8d2f98a97d527f3ba1f30b9e67b0d1a8c69286",
     "seedAssignmentVersion": 1
   }
 }

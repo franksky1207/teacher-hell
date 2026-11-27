@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "72774fed4b764acf35ce35551617eb9be2975cb0e77ded15abd06c86e2ba4799",
+      "checkedAt": "2026-11-27T07:36:54.780Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不接受本次尚未成立的額外邀請，完成原工作。",
+            "action": "導師已婉拒本次未成立的自願額外支援，未拒絕合法正式派令。",
+            "tradeoff": "少一次即時幫忙"
+          },
+          {
+            "id": 2,
+            "text": "向課務提出預排輪替建議，附原有工作時段。",
+            "action": "導師已提交預排建議與必要工作資訊，尚未核准。",
+            "tradeoff": "需協調，也未必採用"
+          },
+          {
+            "id": 3,
+            "text": "我在確實可行範圍自願接這一次，先請課務確認。",
+            "action": "導師已提出一次性自願支援意願與條件，尚未獲排班核准或承諾常態待命。",
+            "tradeoff": "用掉自己的準備空檔"
+          },
+          {
+            "id": 4,
+            "text": "申請保留原固定共備時段，不用私人默契擋通知。",
+            "action": "導師已向有權者提出既有共備時段保留需求，未關閉必要工作通知。",
+            "tradeoff": "可能無法全部保留"
+          },
+          {
+            "id": 5,
+            "text": "只提供我已有且可分享的教材，不另承諾人到場。",
+            "action": "導師已在授權範圍提供無學生個資的既有教材，明示非出席同意。",
+            "tradeoff": "資料不一定符合需求"
+          },
+          {
+            "id": 6,
+            "text": "先撤掉我自己加的非必要課後教具交流，讓原備課不再往外擠。",
+            "action": "導師已取消自身可自主退出的非必要教具交流，不減正式課務。",
+            "tradeoff": "少一次交流"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想回那句「看起來空」，先把自己的待辦排給自己看，不再搶著當第一個回覆的人。",
+          "action": "導師已整理自身原有待辦與可用空檔，停止搶回非必要自願徵詢，不漏接正式派令。",
+          "tradeoff": "得面對沒做完的量，也可能少了熱心形象"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3243559738
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "adcb226cf3a3ae154188fe2620b3af105b96878c1666775a4ceb2ff8e943a917"
+      },
+      "consequenceDirections": {
+        "A": "教師能如實判斷是否自願接手，正式工作仍須按時回應。",
+        "B": "課務須另找合法安排，不能把拒絕說成不負責。",
+        "C": "教師釋出的是自己額外安排，不是要求同事放棄正式準備。",
+        "D": "正式回覆能讓同事知道範圍，也可能要求其他調整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c71c493e420b8ba01c016695877665dda991253967315a1c29bf47b3bfde6a08",
+    "draftSha256": "72774fed4b764acf35ce35551617eb9be2975cb0e77ded15abd06c86e2ba4799",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "902f77dc2be271b1c462905ccaa92f2e0ceab920e67a61d99c803a09712487f1",
+      "checkedAt": "2026-11-27T07:36:54.790Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天繼續讀，明說不聊天。",
+            "action": "導師已結束當次非必要聊天邀請，維持私人閱讀，不以冷處理阻斷正式工作。",
+            "tradeoff": "朋友會有點尷尬"
+          },
+          {
+            "id": 2,
+            "text": "只聊他願意說的一件小事，到點就回各自安排。",
+            "action": "導師已向同事提出短時限日常聊天邀請，尚未假定同意或要求交代。",
+            "tradeoff": "閱讀少了幾分鐘"
+          },
+          {
+            "id": 3,
+            "text": "另約彼此方便的私人時間，不把每天收班當固定碰面。",
+            "action": "導師已發出可拒絕的日後私人邀約，未承諾固定每日出席。",
+            "tradeoff": "可能很久才約得成"
+          },
+          {
+            "id": 4,
+            "text": "請他往後找我時直接問，不再替我的空位寫故事。",
+            "action": "導師已向同事明示私人推測不宜代發，未要求公開自身行程或作永久保證。",
+            "tradeoff": "話比較直，也可能掃興"
+          },
+          {
+            "id": 5,
+            "text": "問他有沒有想推薦的書，各自讀完再談。",
+            "action": "導師已發出私人書籍推薦詢問，未借走物品或要求對方準備報告。",
+            "tradeoff": "新話題可能不合口味"
+          },
+          {
+            "id": 6,
+            "text": "下次換位置也不另外公告，工作仍照原管道找我。",
+            "action": "導師已說明不以私人座位作常態到場承諾，維持既有工作聯繫與必要出勤。",
+            "tradeoff": "他可能又撲空"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天就想躲一下，拿自己的書去另一個准許的安靜位置讀。",
+          "action": "導師已在私人可用時間移至原准許且有空位的閱讀位置，不擅離必要職務、不占他人座位。",
+          "tradeoff": "可能錯過聊天，也得自己找有空位的地方"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1657916574
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "6360429b6836f4ae4cd5087fb949b3637cd928fe10ef383d6342f8d16c1597ae"
+      },
+      "consequenceDirections": {
+        "A": "可預期的是正式聯繫方式，不是私人座位。",
+        "B": "固定座位不再被當預約，仍可另約相處。",
+        "C": "教師能保留獨處，不用編一段外出理由。",
+        "D": "友情可換方式延續，無須天天守座位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a3991b3424067938c63bd6c78ac9aaab3b88c009e4d3cc247c3ba62d232fb94b",
+    "draftSha256": "902f77dc2be271b1c462905ccaa92f2e0ceab920e67a61d99c803a09712487f1",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "98514480433b5509bb15eb151ef3a82fe8a834f9a2f83d0af87b160ab69ea3af",
+      "checkedAt": "2026-11-27T07:36:54.783Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只展示明確同意留下的成品，不開放帶走。",
+            "action": "導師已在有權管理範圍將本次展示限為觀看，僅使用已同意素材，未處分私人作品。",
+            "tradeoff": "要重新說明用途"
+          },
+          {
+            "id": 2,
+            "text": "問物主是否願意另分一小份作自由取用，與展件分開。",
+            "action": "導師已提出有限供應意願詢問，未收取、標免費或替物主答應。",
+            "tradeoff": "資源數量有限"
+          },
+          {
+            "id": 3,
+            "text": "暫停這次展示，讓作者依權利收回自己的部分。",
+            "action": "導師已取消本人可決定的非必要展示，依法交還自有作品，不擅把公物送出。",
+            "tradeoff": "少了成果曝光"
+          },
+          {
+            "id": 4,
+            "text": "改用經作者同意的作品照片，不再擺可拿的實物。",
+            "action": "導師已向作者提出限用途照片展示邀請，尚未取得新授權。",
+            "tradeoff": "少了觸摸細節"
+          },
+          {
+            "id": 5,
+            "text": "正常課內只回看這次怎麼排版，不再為了補缺重做整桌。",
+            "action": "導師已取消自身額外的整桌重製要求，提供自願技術回饋，不取代必要追還。",
+            "tradeoff": "沒有完整新展示"
+          },
+          {
+            "id": 6,
+            "text": "請正式展示管理者接回後續管理，我不再用學生口頭看攤。",
+            "action": "導師已提出後續非必要展示管理接續需求，未將必要保管交給無同意學生或宣稱承辦已答應。",
+            "tradeoff": "需成人接續，也可能縮小開放時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再做那張精緻的個人導覽牌，自己的介紹先撤掉。",
+          "action": "導師已撤回本人可自主取消的非必要個人導覽介紹，不擅刪他人署名或成品。",
+          "tradeoff": "少一次露臉，也得放下漂亮版面"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2061832565
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "e0a91df987323b8d74956da029ebed233ec2207e2d717dbe728d7a8ce68200a4"
+      },
+      "consequenceDirections": {
+        "A": "展示若續辦可少一段，學生不用再供材料讓教師好看。",
+        "B": "觀看與取得物品能被分開，仍可能有人再問可否拿。",
+        "C": "照片用途仍要限縮，不靠換媒介免問作者。",
+        "D": "作者可以休息，公物與必要保存另依原規定處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "38799f3dcb8c270f595c7e74072a25bf72957d33d51f02b93edbc06b6516396a",
+    "draftSha256": "98514480433b5509bb15eb151ef3a82fe8a834f9a2f83d0af87b160ab69ea3af",
     "seedAssignmentVersion": 1
   }
 }

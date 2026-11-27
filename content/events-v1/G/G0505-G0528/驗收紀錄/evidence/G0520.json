@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "54977b0e488e2683cf0ee468079c42e7cb95d2fbd24cb32bf6a7d6fc1561d4a9",
+      "checkedAt": "2026-11-27T07:36:54.786Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原條件提出借用申請，等結果再說。",
+            "action": "導師已將符合可申請條件的借用需求送交承辦，尚未核准或宣布遊戲成立。",
+            "tradeoff": "可能來不及這次用"
+          },
+          {
+            "id": 2,
+            "text": "這次不安排額外遊戲，班會照原任務。",
+            "action": "導師已取消自身可決定的當次非必要遊戲構想，不省略必要澄清或把取消當懲罰。",
+            "tradeoff": "原本興致會落空"
+          },
+          {
+            "id": 3,
+            "text": "改提不需借器材的小遊戲，先問大家是否真想玩。",
+            "action": "導師已提出可在原許可範圍進行的自願替代玩法，未假定全班同意。",
+            "tradeoff": "玩法不如期待"
+          },
+          {
+            "id": 4,
+            "text": "讓學生在原班務時間各提一種下次想做的事，再按規定選。",
+            "action": "導師已安排正常班務的開放提案，不預先批准內容或指派額外籌備。",
+            "tradeoff": "當下不會立刻玩到"
+          },
+          {
+            "id": 5,
+            "text": "我提供原本可用的自有簡單桌遊，但不保證全班都想參加。",
+            "action": "導師已在原校規允許範圍提出自有安全桌遊借用邀請，尚未同意開玩或取得參與者意願。",
+            "tradeoff": "動用私人用品，有借還成本"
+          },
+          {
+            "id": 6,
+            "text": "把這次活動統籌接回，只請他處理原本確定的那項班務。",
+            "action": "導師已接回本人發起之非必要活動統籌，取消學生追加採借任務，不改原正常班務。",
+            "tradeoff": "教師多做協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想玩，但先拿自己的單人小遊戲回去解，不借全班替我過癮。",
+          "action": "導師已在私人可用時間試玩自有可用單人遊戲，不占學生課程或要求協助。",
+          "tradeoff": "用掉私人空檔，也可能解不開"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1837431059
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "620a1cb8fe017778b1ce69e5f84b3a553ea12dd2753f9f7b39eb9f91471317d0"
+      },
+      "consequenceDirections": {
+        "A": "能另有選擇，也可能沒人想換。",
+        "B": "學生須面對先說錯的尷尬，正常參與不受報復。",
+        "C": "教師的興趣可獨立存在，班會不因此加時。",
+        "D": "參與仍自願，不能拿教師提供逼全班玩。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bec3c97504bc498e8d78fd64d7fbef9de47d91e066d6b35da4e738cbc7a9590d",
+    "draftSha256": "54977b0e488e2683cf0ee468079c42e7cb95d2fbd24cb32bf6a7d6fc1561d4a9",
     "seedAssignmentVersion": 1
   }
 }

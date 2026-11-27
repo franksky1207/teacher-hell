@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76a4dc4ee2e67c404d6d99c2105f0e052ff99e1cd417d000d166759da25d1119",
+      "checkedAt": "2026-11-27T07:36:54.785Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "謝謝他，今天仍照原計畫自己去吃。",
+            "action": "導師已婉拒本次分享並維持私人外食安排，未要求同事等待。",
+            "tradeoff": "放過一份好湯，也可能讓人失落"
+          },
+          {
+            "id": 2,
+            "text": "取消自己尚未成立的外食打算，徵詢能否分一份當午餐。",
+            "action": "導師已提出接受一份湯的請求並停止未下單之外食準備，尚未取得供食同意。",
+            "tradeoff": "選擇變少，也可能分量不足"
+          },
+          {
+            "id": 3,
+            "text": "只問配方，不收今天的湯。",
+            "action": "導師已婉拒收食，詢問對方是否願分享一般配方，接受不願回答。",
+            "tradeoff": "沒有現成午餐，也要自己找吃的"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意各自吃午餐坐一會，我買自己的回來。",
+            "action": "導師已發出各自負擔餐食的短坐邀請，尚未形成共同用餐約定。",
+            "tradeoff": "要配合時間"
+          },
+          {
+            "id": 5,
+            "text": "若他還想分享，建議自行問其他願意的熟人，我不代分。",
+            "action": "導師已提出可拒絕的轉詢建議，未替他人答應或搬動食物。",
+            "tradeoff": "可能沒人需要"
+          },
+          {
+            "id": 6,
+            "text": "提議改天各自帶一份自己願意分享的，不替今天補償。",
+            "action": "導師已提出雙方自願的日後餐食交流邀約，尚未定日或要求對方備食。",
+            "tradeoff": "多一項私人準備，也未必約得成"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就想兩樣都吃，自費點小份外食，再問能不能分我半碗湯。",
+          "action": "導師已自費下單小份外食，另向同事提出少量湯品分享請求，尚未取得供食同意，不擅自分取或要求對方另煮",
+          "tradeoff": "花自己的錢，也可能吃不完而後悔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 155545831
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "c8a5d736a377183e1e9a2b23e2866cdf126dde4b21ebb7b233014ad7b2d51462"
+      },
+      "consequenceDirections": {
+        "A": "同事可留自己喝，拒絕不需要長篇辯解。",
+        "B": "若對方願意，教師會同時吃到兩樣也須自己承擔份量；若拒絕，不能以已點外食為由再討湯。",
+        "C": "物主能自己決定去向，不因教師拒絕就變公用。",
+        "D": "下次是新邀請，不把收食變回禮義務。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒自費原外食且拒湯與普通1依原計畫外食主要行動重疊，改為自費小份外食並提出少量分湯請求，與以湯替代外食及單純拒湯不同。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "謝謝他，今天仍照原計畫自己去吃。",
+                "action": "導師已婉拒本次分享並維持私人外食安排，未要求同事等待。",
+                "tradeoff": "放過一份好湯，也可能讓人失落"
+              },
+              {
+                "id": 2,
+                "text": "取消自己尚未成立的外食打算，徵詢能否分一份當午餐。",
+                "action": "導師已提出接受一份湯的請求並停止未下單之外食準備，尚未取得供食同意。",
+                "tradeoff": "選擇變少，也可能分量不足"
+              },
+              {
+                "id": 3,
+                "text": "只問配方，不收今天的湯。",
+                "action": "導師已婉拒收食，詢問對方是否願分享一般配方，接受不願回答。",
+                "tradeoff": "沒有現成午餐，也要自己找吃的"
+              },
+              {
+                "id": 4,
+                "text": "問他願不願意各自吃午餐坐一會，我買自己的回來。",
+                "action": "導師已發出各自負擔餐食的短坐邀請，尚未形成共同用餐約定。",
+                "tradeoff": "要配合時間"
+              },
+              {
+                "id": 5,
+                "text": "若他還想分享，建議自行問其他願意的熟人，我不代分。",
+                "action": "導師已提出可拒絕的轉詢建議，未替他人答應或搬動食物。",
+                "tradeoff": "可能沒人需要"
+              },
+              {
+                "id": 6,
+                "text": "提議改天各自帶一份自己願意分享的，不替今天補償。",
+                "action": "導師已提出雙方自願的日後餐食交流邀約，尚未定日或要求對方備食。",
+                "tradeoff": "多一項私人準備，也未必約得成"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我今天就是想吃那家，連菜單都先選好，不再為不好意思換口味。",
+              "action": "導師已自行向原想吃的店下單並支付私人餐費，婉拒當次湯品，不讓同事代付或候餐。",
+              "tradeoff": "自己花錢，也會錯過湯"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3481859179
+            },
+            "selectedIds": [
+              6,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "331141cf61ad6bbc4420505e9132f5486dc15e224bc7d258ab4202cc62fc46fe"
+          },
+          "previousConsequenceDirections": {
+            "A": "下次是新邀請，不把收食變回禮義務。",
+            "B": "陪伴不靠收下食物成立，也可能對方只想安靜。",
+            "C": "物主能自己決定去向，不因教師拒絕就變公用。",
+            "D": "教師能直接承認偏好，仍需接受朋友可能有點掃興。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e6a7a0f5781f320889fbbc3eaf534bc655e364eef7ca48f050e0082b8b696e04",
+    "draftSha256": "76a4dc4ee2e67c404d6d99c2105f0e052ff99e1cd417d000d166759da25d1119",
     "seedAssignmentVersion": 1
   }
 }

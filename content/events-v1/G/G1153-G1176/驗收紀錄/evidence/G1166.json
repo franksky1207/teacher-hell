@@ -15,14 +15,155 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b2c683f9a76c5a003e0008715fb270569ab37df29e482e23e7778777be81151e",
+      "checkedAt": "2026-11-27T17:44:26.122Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另提供一份不含押題的自願複習架構。",
+            "action": "製作合法原創一般整理工具，不暗示試題權重。",
+            "tradeoff": "占備課，可能被當猜題。"
+          },
+          {
+            "id": 2,
+            "text": "邀學生自願提最不懂的一個概念。",
+            "action": "提出一般答疑邀請，不將提問當考題線索。",
+            "tradeoff": "花課間，可能很多。"
+          },
+          {
+            "id": 3,
+            "text": "問科任願不願另說一份常見解題誤區，公開給想看的人。",
+            "action": "提出額外專業說明協作邀請，不代其接受、不洩正式試題，未取得內容。",
+            "tradeoff": "要聯繫，可能無空。"
+          },
+          {
+            "id": 4,
+            "text": "不加額外提示，維持已公開公平資訊。",
+            "action": "拒絕私人押題要求，不拒必要學習支持。",
+            "tradeoff": "學生可能失望。"
+          },
+          {
+            "id": 5,
+            "text": "邀幹部一般討論怎麼傳達不確定消息。",
+            "action": "提出去識別自願溝通交流，不要學生監控班群。",
+            "tradeoff": "占班務，可能被反問。"
+          },
+          {
+            "id": 6,
+            "text": "查詢校內現有非押題複習資源資訊。",
+            "action": "詢問合法入口，不代取得題庫或保證成績。",
+            "tradeoff": "可能沒合適資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明不靠暗示能準備，願意用同樣公開材料和他各寫一段解題思路，讓他挑我的漏洞。",
+          "action": "提出教師本人自願參與的公開練習交流，不用正式試題、不改評量或替學生答卷。",
+          "tradeoff": "可能被挑錯，花休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1555495759
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "e17900d23f001ee459b8c52990db93f9403fb5e39fed1a7447a63fb0c6f2d32d"
+      },
+      "consequenceDirections": {
+        "A": "須明說不保證涵蓋，不用來換額外待遇。",
+        "B": "拒提問仍享必要支持。",
+        "C": "不將課談當他班真相已查實。",
+        "D": "可拒交流，個人示範不保證學習成效或命中考題。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3教師示例與情緒教師試寫思路近同，改為向另一位合資格成人提出額外協作。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "另提供一份不含押題的自願複習架構。",
+                "action": "製作合法原創一般整理工具，不暗示試題權重。",
+                "tradeoff": "占備課，可能被當猜題。"
+              },
+              {
+                "id": 2,
+                "text": "邀學生自願提最不懂的一個概念。",
+                "action": "提出一般答疑邀請，不將提問當考題線索。",
+                "tradeoff": "花課間，可能很多。"
+              },
+              {
+                "id": 3,
+                "text": "用合法公開舊練習示範怎麼分析錯誤。",
+                "action": "提出自願一般學習示例，不使用未公開題或預示本次出題。",
+                "tradeoff": "要準備，可能無趣。"
+              },
+              {
+                "id": 4,
+                "text": "不加額外提示，維持已公開公平資訊。",
+                "action": "拒絕私人押題要求，不拒必要學習支持。",
+                "tradeoff": "學生可能失望。"
+              },
+              {
+                "id": 5,
+                "text": "邀幹部一般討論怎麼傳達不確定消息。",
+                "action": "提出去識別自願溝通交流，不要學生監控班群。",
+                "tradeoff": "占班務，可能被反問。"
+              },
+              {
+                "id": 6,
+                "text": "查詢校內現有非押題複習資源資訊。",
+                "action": "詢問合法入口，不代取得題庫或保證成績。",
+                "tradeoff": "可能沒合適資源。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想證明不靠暗示能準備，願意用同樣公開材料和他各寫一段解題思路，讓他挑我的漏洞。",
+              "action": "提出教師本人自願參與的公開練習交流，不用正式試題、不改評量或替學生答卷。",
+              "tradeoff": "可能被挑錯，花休息。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 122264636
+            },
+            "selectedIds": [
+              4,
+              3,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": "emotional",
+              "C": 4,
+              "D": 3
+            },
+            "optionsDigest": "e9f3de0e4cb4284fa341bb958f725360edc42341f1e37bf2e1e5d2b11e051c9d"
+          },
+          "previousConsequenceDirections": {
+            "A": "須明說不保證涵蓋，不用來換額外待遇。",
+            "B": "可拒交流，個人示範不保證學習成效或命中考題。",
+            "C": "不以拒押題懲罰提問者。",
+            "D": "示例不保證考到，也不證學生已懂。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "515e3547487bed5013ed24ce7050e227f8ff787ac4b2de66aa14ee4accfc44bf",
+    "draftSha256": "b2c683f9a76c5a003e0008715fb270569ab37df29e482e23e7778777be81151e",
     "seedAssignmentVersion": 1
   }
 }

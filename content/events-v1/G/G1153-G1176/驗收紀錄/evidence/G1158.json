@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "641bddb6dc6cf52825a69bb367b41faee02df5b2de23d2d80cffc60900ab4a4c",
+      "checkedAt": "2026-11-27T17:44:26.107Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他用虛構情境練一次如何通知教師改道。",
+            "action": "提出成人自願溝通演練，不替代必要現場告知。",
+            "tradeoff": "花空堂，可能尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "詢問總務是否有合規臨時隔離用品的資訊。",
+            "action": "查詢既有專業資源，不自設紙板措施或取得器材。",
+            "tradeoff": "可能無庫存。"
+          },
+          {
+            "id": 3,
+            "text": "我願整理一般通道圖草稿，交權責確認。",
+            "action": "額外製作資訊素材，不自行裁定哪些區安全。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 4,
+            "text": "提議主管評估一般緊急代班聯繫方式。",
+            "action": "提出額外工作機制建議，未排定人力。",
+            "tradeoff": "可能被認為多事。"
+          },
+          {
+            "id": 5,
+            "text": "提供既有員工支持及勞動權益資訊讓他自選。",
+            "action": "給合法公開資訊，不代法律判斷或申請。",
+            "tradeoff": "可能不想用。"
+          },
+          {
+            "id": 6,
+            "text": "不額外擔任私下說情者，讓正式程序照實處理。",
+            "action": "拒絕非必要私人代言，不拒必要真實證明或安全交接。",
+            "tradeoff": "同事可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一直怕被嫌麻煩，我聽得有點火，願在成人會議另提一次：封路通知不能靠誰比較好說話，我也接受被正式通知繞路。",
+          "action": "額外提出一般安全聯繫制度意見，承擔本人通行不便，不公開其家庭或代處分結果。",
+          "tradeoff": "多準備發言，也可能被抱怨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1714760856
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "e5e978f3f491a00f33c00a0ebdf07f7e0ec18a58c9a18df74834106cc3afee7a"
+      },
+      "consequenceDirections": {
+        "A": "拒練不影響合法勞動權益。",
+        "B": "不把未成立機制當今天已有人承接。",
+        "C": "主管可不採用，必要安全通知不以此案通過為條件。",
+        "D": "無物資仍須維持必要安全隔離。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4251085a62340a55612072a714306bbd87a582a2e0dc918a4cbd260550ef9ee0",
+    "draftSha256": "641bddb6dc6cf52825a69bb367b41faee02df5b2de23d2d80cffc60900ab4a4c",
     "seedAssignmentVersion": 1
   }
 }

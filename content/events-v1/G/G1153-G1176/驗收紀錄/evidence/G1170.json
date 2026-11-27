@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "43b300f5314a10126afd577f6989b50f9c38b9a6406aa7c1a049059bd2702ffb",
+      "checkedAt": "2026-11-27T17:44:26.131Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請正式清運端提供目前適用的分類資訊。",
+            "action": "查詢可核實在地指引，不將一般影片當校內規範。",
+            "tradeoff": "要等回覆。"
+          },
+          {
+            "id": 2,
+            "text": "邀他以公開資料做一張簡明分類圖。",
+            "action": "提出自願原創資訊整理，內容須權責核對，未發布。",
+            "tradeoff": "花時間，可能要改。"
+          },
+          {
+            "id": 3,
+            "text": "提議減少班級非必要包裝消費，先從自願做起。",
+            "action": "提出未來自願源頭減量建議，不禁止必要飲食或強迫自購容器。",
+            "tradeoff": "便利下降，可能不跟。"
+          },
+          {
+            "id": 4,
+            "text": "詢問總務有無合規易清理的回收容器。",
+            "action": "查詢額外資源，不取得容器或宣稱改善過敏。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 5,
+            "text": "讓股長自選是否保留原有合宜職務。",
+            "action": "提出自願職務檢視，不以求助撤職或免真實責任。",
+            "tradeoff": "要重新分工。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加延伸環保活動，維持正式回收做法。",
+            "action": "拒絕追加非必要教學活動，仍處理必要分類與衛生。",
+            "tradeoff": "他可能失落。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每天追著奶茶盒跑，願自己先停掉下週一筆尚未購買的非必要包裝飲料，省下來但不要求全班比環保。",
+          "action": "決定本人未成立的私人飲品消費不購買，不假定已有班級訂飲可取消，不給學生道德評分。",
+          "tradeoff": "放掉自己想喝的，可能被笑做樣子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4162254839
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "b2b342d7fb6d1f1b6c7b70a7a957097beea3fa1ba344b096f9a26fa227c186d2"
+      },
+      "consequenceDirections": {
+        "A": "不能以個人消費變更代必要回收，學生無須仿效。",
+        "B": "必要衛生不等新桶才做。",
+        "C": "不能用少活動放任新的具體風險。",
+        "D": "可留任，不再授權自創危險規則。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "350f6bfcc86ee49cb8ace2a79c144abac491dc0d41596e307dc25aa36c9754c3",
+    "draftSha256": "43b300f5314a10126afd577f6989b50f9c38b9a6406aa7c1a049059bd2702ffb",
     "seedAssignmentVersion": 1
   }
 }

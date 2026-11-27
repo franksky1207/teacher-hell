@@ -16,14 +16,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "17e9ee69a3849c2a8212116bf6f97285db58a49e589cbffb57512550d8ee4464",
+      "checkedAt": "2026-11-27T17:44:26.140Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他挑一題，一起看學生要走哪些閱讀步驟。",
+            "action": "提出成人自願教材分析，不代學生完成或宣稱已診斷原因。",
+            "tradeoff": "占空堂，可能卡住。"
+          },
+          {
+            "id": 2,
+            "text": "提供公開可合法使用的題幹設計資源。",
+            "action": "給一般教學資訊，不代取得授權或審稿。",
+            "tradeoff": "可能不適用。"
+          },
+          {
+            "id": 3,
+            "text": "徵詢學生自願指出哪一步看不懂，不問誰打低分。",
+            "action": "提出去識別一般需求交流，不改原匿名評價。",
+            "tradeoff": "整理耗時。"
+          },
+          {
+            "id": 4,
+            "text": "我願把一個虛構長題分成兩版，供他自行比較。",
+            "action": "自製原創成人示例，不擅改他教材或宣稱實測成功。",
+            "tradeoff": "花備課，可能不被用。"
+          },
+          {
+            "id": 5,
+            "text": "不替他再做班級動員，維持學生自由真實回饋。",
+            "action": "拒絕非必要評鑑支持宣傳，不減其正常課務合作。",
+            "tradeoff": "同事可能覺得不挺。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內既有成人教學諮詢資源。",
+            "action": "查詢合法入口，不代其報名或獲專家指導。",
+            "tradeoff": "可能無時段。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕得罪他，也真累了，這次明講不接額外改稿，今天下班先回家，不把他的認可當我的加班單。",
+          "action": "拒絕本人非必要追加教材修改協作，按合法工作安排結束，維持必要課務合作與學生支持。",
+          "tradeoff": "可能傷同事信任，也少參與改善的機會。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3283705845
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "f480e9018da25db2c6572085c9e52d908734af90d2c3c936fc0158a6d6041960"
+      },
+      "consequenceDirections": {
+        "A": "可拒答，不以提供意見換分數。",
+        "B": "對方可失望，不能以拒額外改稿報復學生或阻正式教學支援。",
+        "C": "不能以不宣傳故意阻礙合法教學。",
+        "D": "不能把查詢當有人已接手。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原教師試答與普通1教材分析同核心協作過近，改為實際拒接額外修改，區分普通5不作評鑑宣傳。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他挑一題，一起看學生要走哪些閱讀步驟。",
+                "action": "提出成人自願教材分析，不代學生完成或宣稱已診斷原因。",
+                "tradeoff": "占空堂，可能卡住。"
+              },
+              {
+                "id": 2,
+                "text": "提供公開可合法使用的題幹設計資源。",
+                "action": "給一般教學資訊，不代取得授權或審稿。",
+                "tradeoff": "可能不適用。"
+              },
+              {
+                "id": 3,
+                "text": "徵詢學生自願指出哪一步看不懂，不問誰打低分。",
+                "action": "提出去識別一般需求交流，不改原匿名評價。",
+                "tradeoff": "整理耗時。"
+              },
+              {
+                "id": 4,
+                "text": "我願把一個虛構長題分成兩版，供他自行比較。",
+                "action": "自製原創成人示例，不擅改他教材或宣稱實測成功。",
+                "tradeoff": "花備課，可能不被用。"
+              },
+              {
+                "id": 5,
+                "text": "不替他再做班級動員，維持學生自由真實回饋。",
+                "action": "拒絕非必要評鑑支持宣傳，不減其正常課務合作。",
+                "tradeoff": "同事可能覺得不挺。"
+              },
+              {
+                "id": 6,
+                "text": "詢問校內既有成人教學諮詢資源。",
+                "action": "查詢合法入口，不代其報名或獲專家指導。",
+                "tradeoff": "可能無時段。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕自己建議害他白忙，願意先做一回他那題，讓他看到我也可能讀錯，不再替學生說他們太懶。",
+              "action": "提出教師本人成人自願試答合法題材的交流，未實測、未代學生評分或保證成效。",
+              "tradeoff": "花時間，也可能露出自己不會。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3166864793
+            },
+            "selectedIds": [
+              3,
+              1,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 1,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "942a999a63bb48915fd7cae288eb45a102a2c01e81dd80ec211a972bf63378da"
+          },
+          "previousConsequenceDirections": {
+            "A": "可拒答，不以提供意見換分數。",
+            "B": "分析不保證評鑑分數。",
+            "C": "不能以不宣傳故意阻礙合法教學。",
+            "D": "他可拒看，個人試答不代正式評量或解釋所有負評。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c1d40cd86b5de94db9a3ad96d9104ad8dd396800c7df07e44552da2a87d50b69",
+    "draftSha256": "17e9ee69a3849c2a8212116bf6f97285db58a49e589cbffb57512550d8ee4464",
     "seedAssignmentVersion": 1
   }
 }

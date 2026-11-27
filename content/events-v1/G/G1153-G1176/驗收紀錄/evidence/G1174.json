@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d4fdcda78b12640c32029f9743d9595b3e40723c46c8f4ae114e23c930ab9c2",
+      "checkedAt": "2026-11-27T17:44:26.139Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照平常戰術認真打，讓他自己回應。",
+            "action": "依規則採正常競爭戰術，不保證得分或勝負。",
+            "tradeoff": "可能打得很懸殊。"
+          },
+          {
+            "id": 2,
+            "text": "改練較不熟的合法戰術，不假裝自己全力。",
+            "action": "在賽制允許下選擇自身技術練習，若被問真實說明，不偽造比分。",
+            "tradeoff": "可能輸掉原想拿的名次。"
+          },
+          {
+            "id": 3,
+            "text": "依規則詢問是否短暫休息，不要求談工作。",
+            "action": "提出合規雙方自願暫停請求，未取得同意。",
+            "tradeoff": "打斷節奏。"
+          },
+          {
+            "id": 4,
+            "text": "賽後另邀他自願加打一場不記名次的練習。",
+            "action": "提出未來合規自願加賽邀約，不改當前比分。",
+            "tradeoff": "多花體力時間。"
+          },
+          {
+            "id": 5,
+            "text": "賽後問是否願一起吃便宜晚餐，球先照打。",
+            "action": "提出成人自願普通用餐邀請，不用請客換談失業。",
+            "tradeoff": "花錢與時間。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加賽後安排，完成原賽程就各自走。",
+            "action": "拒絕本人額外社交加碼，遵原合法賽程。",
+            "tradeoff": "少一次陪伴。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想贏，卻更想今晚別變成我在安慰他；若賽規允許，問他願不願改成不記名次的練習，我願放掉自己的爭冠機會。",
+          "action": "提出須賽規允許與雙方合意的當前賽程轉非排名練習請求，未取得同意、不偽報比分或要求對手放棄權益。",
+          "tradeoff": "本人放棄可能名次，也可能被認為多事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1194400222
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "a26e1eebecf0f0b29e09b5aa5a03516af68f9b0982c0e8e863153bfa821247f0"
+      },
+      "consequenceDirections": {
+        "A": "他可拒，不能以加賽保證振作。",
+        "B": "不把沒約當對方不值得關心。",
+        "C": "對手或承辦可拒，則依法原賽程；不假稱退出會使對方振作。",
+        "D": "對方可感被尊重或失落，不能由比分判心情。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒正常競爭附帶賽後請教，與普通1及4過近；改為真實名次取捨與合意賽程變更提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "照平常戰術認真打，讓他自己回應。",
+                "action": "依規則採正常競爭戰術，不保證得分或勝負。",
+                "tradeoff": "可能打得很懸殊。"
+              },
+              {
+                "id": 2,
+                "text": "改練較不熟的合法戰術，不假裝自己全力。",
+                "action": "在賽制允許下選擇自身技術練習，若被問真實說明，不偽造比分。",
+                "tradeoff": "可能輸掉原想拿的名次。"
+              },
+              {
+                "id": 3,
+                "text": "依規則詢問是否短暫休息，不要求談工作。",
+                "action": "提出合規雙方自願暫停請求，未取得同意。",
+                "tradeoff": "打斷節奏。"
+              },
+              {
+                "id": 4,
+                "text": "賽後另邀他自願加打一場不記名次的練習。",
+                "action": "提出未來合規自願加賽邀約，不改當前比分。",
+                "tradeoff": "多花體力時間。"
+              },
+              {
+                "id": 5,
+                "text": "賽後問是否願一起吃便宜晚餐，球先照打。",
+                "action": "提出成人自願普通用餐邀請，不用請客換談失業。",
+                "tradeoff": "花錢與時間。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加賽後安排，完成原賽程就各自走。",
+                "action": "拒絕本人額外社交加碼，遵原合法賽程。",
+                "tradeoff": "少一次陪伴。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我還是很想贏，乾脆說清楚這局我會照打，賽後想請他教我剛才那個發球，承認不是只有我有招。",
+              "action": "採正常競爭並提出成人自願賽後技術請教，不故意放分或假稱對方已答應。",
+              "tradeoff": "放下面子，也可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 786903143
+            },
+            "selectedIds": [
+              2,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "bf5de540cb70684026b598ec0a1b26bb680ada1474bd3aa8935b38a780e412ba"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可不願，必要尊重隱私仍維持。",
+            "B": "不把沒約當對方不值得關心。",
+            "C": "可輸可贏，請教不保證安慰對方或改其職場困境。",
+            "D": "對方可不喜歡被當練習，教師須接受反應。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "47435d50b26e5a6cee3b5f0bc17c30dba76d095c01d1fe47a3636d5a3bb7ba7f",
+    "draftSha256": "7d4fdcda78b12640c32029f9743d9595b3e40723c46c8f4ae114e23c930ab9c2",
     "seedAssignmentVersion": 1
   }
 }

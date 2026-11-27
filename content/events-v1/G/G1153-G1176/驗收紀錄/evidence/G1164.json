@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d911849b32a8a70cd559db837a0b29dccd8ab60472c4f566298ec58569fffa60",
+      "checkedAt": "2026-11-27T17:44:26.118Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天不測，請他另約工作時段。",
+            "action": "拒絕午休額外測試，提出可另約的工作交流，不阻正式審核。",
+            "tradeoff": "好友可能失望。"
+          },
+          {
+            "id": 2,
+            "text": "只看五分鐘畫面，不按模擬送出。",
+            "action": "接受有限離線介面檢視，不執行發送或驗證系統效果。",
+            "tradeoff": "仍吃掉休息，回饋有限。"
+          },
+          {
+            "id": 3,
+            "text": "我願在確認隔離後完整跑一次假流程，時間到就停。",
+            "action": "自願進行有限離線全虛構流程試用，無任何可投遞目標或真實連接。",
+            "tradeoff": "少休息，可能卡很久。"
+          },
+          {
+            "id": 4,
+            "text": "改請他提供靜態流程圖，我晚些自行看。",
+            "action": "接受非急迫靜態一般資訊，不承諾即時回覆或跑程式。",
+            "tradeoff": "多一件待辦。"
+          },
+          {
+            "id": 5,
+            "text": "提議先向正式審核窗口確認測試範圍。",
+            "action": "提出合法程序詢問建議，不代送審或取得核准。",
+            "tradeoff": "可能延後試用。"
+          },
+          {
+            "id": 6,
+            "text": "我提供兩個虛構導師情境給他自己測。",
+            "action": "額外撰寫全虛構使用情境，不使用真實缺曠或電話資料，不參與執行。",
+            "tradeoff": "要想案例，可能不完整。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點手癢，想挑一個最容易出錯的假情境跟他賭誰先找到漏洞，輸了只認輸，不拿正式資料當賭注。",
+          "action": "提出成人自願離線虛構錯誤情境挑戰，無金錢賭注或真實資料，不假定已找到漏洞。",
+          "tradeoff": "吃休息，可能被他笑外行。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2181110732
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "2a426d2a58f6a1d992d36f2f6d6be1ad23d064a97fa3d490e8b1b28707f6b853"
+      },
+      "consequenceDirections": {
+        "A": "案例不能證所有情況皆通過。",
+        "B": "圖不等系統已測，必要工作不被取代。",
+        "C": "未排定不當教師已承諾陪測。",
+        "D": "錯誤搜尋不等資安驗證，任何真實連接企圖即停止。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "302b028362911eb348f85f105c4599213f55ba347451d5421ab389f59f1001a1",
+    "draftSha256": "d911849b32a8a70cd559db837a0b29dccd8ab60472c4f566298ec58569fffa60",
     "seedAssignmentVersion": 1
   }
 }

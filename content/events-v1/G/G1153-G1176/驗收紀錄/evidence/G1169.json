@@ -16,14 +16,82 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "93ba473f61fecbbbc02ea6654c36bfddc8d88b2563c3297cbb20a1ac9b78abab",
+      "checkedAt": "2026-11-27T17:44:26.128Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出一般飲水規則檢視，與這個配方分開。",
+            "action": "提議依健康需要與權責檢視班規，不代批准配方。",
+            "tradeoff": "要協調，可能不改。"
+          },
+          {
+            "id": 2,
+            "text": "邀他查官方健康資訊，整理想問專業者的問題。",
+            "action": "提出自願資料查詢，不混飲或診斷。",
+            "tradeoff": "花時間，可能沒有同配方資料。"
+          },
+          {
+            "id": 3,
+            "text": "提供校內健康諮詢入口供自選。",
+            "action": "給既有合法資訊，不代預約或取得醫囑。",
+            "tradeoff": "可能需等。"
+          },
+          {
+            "id": 4,
+            "text": "另提不含飲品的自願讀書節奏交流。",
+            "action": "提出一般時間安排活動，不指定生理作息或醫療方案。",
+            "tradeoff": "占課間。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一張誇大倍率廣告的辨識示例。",
+            "action": "自製虛構非醫療處方素材，不拿學生當負例。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 6,
+            "text": "拒絕這次特調例外，不阻合法一般規則提案。",
+            "action": "不接受具體未有依據的額外飲品申請，保留合理權益與正式提案。",
+            "tradeoff": "學生可能覺得保守。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也靠咖啡撐過不少天，今天不想裝成從不累；願意把自己下一杯非必要咖啡改成休息，邀他看我也得放掉一點進度。",
+          "action": "決定本人下一可休息時段不新增非必要咖啡消費，以合法休息取代額外備課，不要求學生跟隨或宣稱療效。",
+          "tradeoff": "少做一段私人加碼工作，可能不習慣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2659332777
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "e0510361f5dd8a8703d7485835c5f0940581f2660ac123c044927da14a4de8fa"
+      },
+      "consequenceDirections": {
+        "A": "正常飲水與必要調整所有分支維持。",
+        "B": "必要不適處理不以用此入口為條件。",
+        "C": "不拿自身選擇當醫療建議或取消學生合理飲水權。",
+        "D": "可拒，不用自述健康換自主。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82a2bb533eefc2880673d3133489613880712ac06d331651512202de469febd6",
+    "draftSha256": "93ba473f61fecbbbc02ea6654c36bfddc8d88b2563c3297cbb20a1ac9b78abab",
     "seedAssignmentVersion": 1
   }
 }

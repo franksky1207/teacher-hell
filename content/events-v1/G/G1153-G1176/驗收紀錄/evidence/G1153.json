@@ -16,14 +16,82 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ba73cd2596cf0345f1c1c37a42f5aa0e52efea21fccd267880d9f2d8e8f4656d",
+      "checkedAt": "2026-11-27T17:44:26.094Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他把創作過程留成私人自願紀錄，暫不公開名次。",
+            "action": "提出本人原創非保密製作紀錄整理建議，不含內部截圖。",
+            "tradeoff": "要重整，少掌聲。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式查詢消息的公開入口。",
+            "action": "額外提供可核實資訊來源，不保證發布日或資格。",
+            "tradeoff": "可能仍要等。"
+          },
+          {
+            "id": 3,
+            "text": "另邀家人只談作品本身，不談還沒確定的結果。",
+            "action": "提出合意家庭交流建議，不代家人同意或揭他人作品。",
+            "tradeoff": "可能仍失落。"
+          },
+          {
+            "id": 4,
+            "text": "今天不加公開活動，讓他照原課務走。",
+            "action": "婉拒額外宣傳與分享，維持必要支持。",
+            "tradeoff": "期待暫時懸著。"
+          },
+          {
+            "id": 5,
+            "text": "我願幫他整理一張公開參賽規範時間線。",
+            "action": "額外製作僅含公開規則的資訊工具，不代寫虛假申辯。",
+            "tradeoff": "花備課，可能無助。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內既有創作交流資源，供之後自選。",
+            "action": "查詢合法非保密作品交流入口，未報名或取得評語。",
+            "tradeoff": "可能沒時段。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想先替他高興，願意課間只看原作一小段，講我真正喜歡哪裡，今天不拿晉級替它加分。",
+          "action": "提出教師本人有限自願作品交流，不評保密名次、不聲稱正式獎項。",
+          "tradeoff": "花休息，學生可能不想看。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1937695060
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "2f4e892d78e3c8c0c1f53c406e1dca86ea8b1c7870e196b3a343564e0d2c9dbf"
+      },
+      "consequenceDirections": {
+        "A": "可不整理，不能把私人稿當正式入選證據。",
+        "B": "不能把查詢當主辦同意公開。",
+        "C": "他可拒，教師偏好不代表評審意見或免保密責任。",
+        "D": "圖不保證資格保留。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "582bb6a5d3ecfb6d2a090c7d3e0c4ac1a6de4bf39e27f56071cb19451d791241",
+    "draftSha256": "ba73cd2596cf0345f1c1c37a42f5aa0e52efea21fccd267880d9f2d8e8f4656d",
     "seedAssignmentVersion": 1
   }
 }

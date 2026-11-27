@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3e3fd5a68562545f2870d14517dc6971d8ac6cc6a1a375d8549249a8a0b9581",
+      "checkedAt": "2026-11-27T17:44:26.099Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀學生自願比較同一短文用兩種格式的感受。",
+            "action": "提出合法素材的一般學習方式交流，不用結果斷言能力高低。",
+            "tradeoff": "占課間，可能沒共識。"
+          },
+          {
+            "id": 2,
+            "text": "與科任協商只在他課內遵其合理筆記要求。",
+            "action": "提出權限清楚的課程協調，不全面禁合法工具。",
+            "tradeoff": "學生要切換方式。"
+          },
+          {
+            "id": 3,
+            "text": "我願重寫推薦頁，明列適用與不適用的用途。",
+            "action": "額外修訂本人推薦資源說明，不宣稱效果已證實。",
+            "tradeoff": "花備課，可能仍被批。"
+          },
+          {
+            "id": 4,
+            "text": "詢問同科有沒有合法可公開的整理範例。",
+            "action": "查詢一般示例資訊，不取得學生作品授權或完整教材。",
+            "tradeoff": "可能無適合例。"
+          },
+          {
+            "id": 5,
+            "text": "婉拒替整科審查筆記，維持本人一般支持範圍。",
+            "action": "拒絕非必要跨科全面審閱，不拒已知必要學習協作。",
+            "tradeoff": "同事可能不滿。"
+          },
+          {
+            "id": 6,
+            "text": "邀他提出不靠格式也能看理解的兩個問題。",
+            "action": "提出成人教學方法交流，不代科任出題或保證可鑑別。",
+            "tradeoff": "占空堂，可能談不攏。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服被說只會格子，想自己用他的方法整理一篇，再把我卡住的地方拿去問，不要求他收回質疑。",
+          "action": "自願以合法短文實作本人筆記並提出成人交流邀請，不代學生表現或改課程。",
+          "tradeoff": "花時間，可能真的畫不好。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2856858698
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "382e04a38ad09d968556e3beec5539561df41c743b994580272becfb5073669a"
+      },
+      "consequenceDirections": {
+        "A": "對方可拒看，教師個人例子不證任一方法較優。",
+        "B": "未完成不稱新方法有效。",
+        "C": "不能以界線擋合理學生支持。",
+        "D": "拒參與不影響必要支持，不能以偏好替代能力評量。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff4b957cf94eebbba1f9add4581e0f2cd6733292ac6177ff49cbd3c3d70aacc8",
+    "draftSha256": "c3e3fd5a68562545f2870d14517dc6971d8ac6cc6a1a375d8549249a8a0b9581",
     "seedAssignmentVersion": 1
   }
 }

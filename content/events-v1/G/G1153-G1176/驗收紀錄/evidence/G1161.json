@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7b7bd7d3706731699a8881ca742113ed5af5df947c7bd3981d0866f7c45e19b5",
+      "checkedAt": "2026-11-27T17:44:26.114Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另用虛構短文比較兩種回饋各在回什麼。",
+            "action": "提出成人自願教學交流，不使用未授權真實週記。",
+            "tradeoff": "花空堂，可能更分歧。"
+          },
+          {
+            "id": 2,
+            "text": "邀他提供一般邏輯練習資訊，留本科自行選用。",
+            "action": "提出合法資源協作邀請，不代其接受或改週記目的。",
+            "tradeoff": "可能無資源。"
+          },
+          {
+            "id": 3,
+            "text": "我願在自己的週記另加一個可自選的回應提問。",
+            "action": "重編本人非必要延伸回饋形式，不逼學生揭隱私。",
+            "tradeoff": "增加批閱時間。"
+          },
+          {
+            "id": 4,
+            "text": "暫不改生活短評方式，約定依實際需求再議。",
+            "action": "保留本人合規週記安排，拒絕僅因字數作全面改制。",
+            "tradeoff": "可能得罪朋友。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生自願說哪種回應對自己有用。",
+            "action": "徵詢去識別一般回饋需求，不要求評比兩位教師。",
+            "tradeoff": "需整理。"
+          },
+          {
+            "id": 6,
+            "text": "提出一次同科正式教學討論，別只在茶水間吵。",
+            "action": "邀成人循合宜管道討論目的，未取得出席或共識。",
+            "tradeoff": "要準備，也更正式。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想連喝水都被檢查，今天想先離開茶水間，把剩下休息留給自己，另約工作時段再談。",
+          "action": "結束當次非必要私人教學辯論，提出後續工作交流邀約，保留必要協作。",
+          "tradeoff": "朋友可能覺得被甩開。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 215711243
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "7084fde4abb81982253634bc9e3f9aa08a1acfd7e125c8c8628827815c3fb4a4"
+      },
+      "consequenceDirections": {
+        "A": "比較不證明字多字少必然較好。",
+        "B": "不揭私人作品，不以會議換關係和好。",
+        "C": "未約成仍維持合理教學支持，不以情緒懲罰學生。",
+        "D": "資訊不等已完成個別支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e910c8e290bc919e2e033bb5d7cf4d655b84db7b7d28962488f4c123fcc23d46",
+    "draftSha256": "7b7bd7d3706731699a8881ca742113ed5af5df947c7bd3981d0866f7c45e19b5",
     "seedAssignmentVersion": 1
   }
 }

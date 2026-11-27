@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aeef4f8c16b27d1361e110b516ed65fd5689620cde56081407c144df0cc66094",
+      "checkedAt": "2026-11-27T17:44:26.124Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他另談能讓對方自選的支持方式。",
+            "action": "提出額外自願同儕支持交流，不代受影響者同意。",
+            "tradeoff": "花課間，可能不服。"
+          },
+          {
+            "id": 2,
+            "text": "提議私下自願書面表達，由對方決定收不收。",
+            "action": "提供合意修復邀請方式，不強迫收信或原諒。",
+            "tradeoff": "可能被退回。"
+          },
+          {
+            "id": 3,
+            "text": "用虛構情境做一次旁觀者怎麼介入的討論。",
+            "action": "提出一般去識別自願活動，不重演羞辱或暴力。",
+            "tradeoff": "占班務，可能被猜。"
+          },
+          {
+            "id": 4,
+            "text": "邀他把護友想法寫成不指人的原創短文。",
+            "action": "提出自願創作邀請，不公開本案或要求代人發聲。",
+            "tradeoff": "需創作，可能拒。"
+          },
+          {
+            "id": 5,
+            "text": "不再加私人和解會，維持正式支持與處理。",
+            "action": "拒絕非必要調解加碼，不拒依法必要程序。",
+            "tradeoff": "他可能覺得沒出口。"
+          },
+          {
+            "id": 6,
+            "text": "提供既有自願學生支持入口。",
+            "action": "給合法一般資訊，不代轉介或把同學強送諮商。",
+            "tradeoff": "可能不用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他問跳出來幹嘛，我聽得也火，想請他陪我設計一張『幫忙前先問』的原創小卡，這次我也先問他要不要做。",
+          "action": "提出教師共同製作一般自願支持工具的邀請，不揭個案、不以參與換免責。",
+          "tradeoff": "本人花準備，可能被當說教。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2283661186
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "f5ad68b2c09a74095ec14539b7764e506e5d2359e0e75031a5e2e397b8255d32"
+      },
+      "consequenceDirections": {
+        "A": "不以討論定誰有罪。",
+        "B": "作品不免必要行為責任。",
+        "C": "可拒製作，工具不保證下次介入恰當，不替代必要處理。",
+        "D": "未收不影響必要支持，不能當公開謝罪替代交易。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "57410642e4d66af878ca47a5800842b550bcd07b96156d5cd4524a17c0b92646",
+    "draftSha256": "aeef4f8c16b27d1361e110b516ed65fd5689620cde56081407c144df0cc66094",
     "seedAssignmentVersion": 1
   }
 }

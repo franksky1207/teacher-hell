@@ -15,14 +15,155 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d42772a7bc0d3b65344c16c15b9257071192d65a4100967397c7e320bf513098",
+      "checkedAt": "2026-11-27T17:44:26.141Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我願自費提供幾個可拆標籤夾，先問作者們是否需要，不改他們自己的封面。",
+            "action": "提出本人預算的低價合規可拆標示工具提供意願，未購買、未強迫作者使用，不改私有作品。",
+            "tradeoff": "花錢，整齊效果可能不一致。"
+          },
+          {
+            "id": 2,
+            "text": "邀他自願介紹分類方法，作者內容不展示。",
+            "action": "提出一般原創整理經驗交流，不讓他代公開其他人檔案。",
+            "tradeoff": "占班務，可能拒。"
+          },
+          {
+            "id": 3,
+            "text": "提議由各人自己維持自己的標籤，不再全壓股長。",
+            "action": "提出公平合規的未來分工，不轉嫁必要專業資料保護。",
+            "tradeoff": "整齊度可能下降。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一份空白索引範本，減少下次重排。",
+            "action": "自製一般工具，不複製真實個資或強迫採用。",
+            "tradeoff": "花備課。"
+          },
+          {
+            "id": 5,
+            "text": "另邀他談打掃那次，今天整理不拿來交換。",
+            "action": "提出學生自願舊事交流，不改必要規範或要求原諒。",
+            "tradeoff": "花課間，可能尷尬。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校方可公開的檔案保存工具資訊。",
+            "action": "查詢合規一般資源，不取得新櫃或資料權限。",
+            "tradeoff": "可能無資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那句不是幫我讓我有點好笑，我願把自己一直亂放的空白教案也重排，請他只挑方法，不碰任何學生資料。",
+          "action": "提出教師本人整理私有空白備課材料並邀自願方法交流，不接觸個資或給學生額外義務。",
+          "tradeoff": "自己花空堂，也可能被他嫌亂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1836257855
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "8e1f3e03b3bdc5b69269d8854ffac2cd19dac10de31a4061382244aa9e5ca73d"
+      },
+      "consequenceDirections": {
+        "A": "他可拒，私人材料整理不買到其讚賞或替代必要檔案安全。",
+        "B": "分享不等他得管理全班私資料。",
+        "C": "詢問不當檔案已備份或改善保密。",
+        "D": "可拒談，不因不和解不肯定真實投入。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1真實肯定附不加任務欠實質取捨，改為不同於索引範本的實物資源投入。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "具體謝謝他已知整理投入，不另加新任務。",
+                "action": "表達真實有限肯定，拒絕順勢增加非必要整理工作。",
+                "tradeoff": "少一次延伸改造。"
+              },
+              {
+                "id": 2,
+                "text": "邀他自願介紹分類方法，作者內容不展示。",
+                "action": "提出一般原創整理經驗交流，不讓他代公開其他人檔案。",
+                "tradeoff": "占班務，可能拒。"
+              },
+              {
+                "id": 3,
+                "text": "提議由各人自己維持自己的標籤，不再全壓股長。",
+                "action": "提出公平合規的未來分工，不轉嫁必要專業資料保護。",
+                "tradeoff": "整齊度可能下降。"
+              },
+              {
+                "id": 4,
+                "text": "我願做一份空白索引範本，減少下次重排。",
+                "action": "自製一般工具，不複製真實個資或強迫採用。",
+                "tradeoff": "花備課。"
+              },
+              {
+                "id": 5,
+                "text": "另邀他談打掃那次，今天整理不拿來交換。",
+                "action": "提出學生自願舊事交流，不改必要規範或要求原諒。",
+                "tradeoff": "花課間，可能尷尬。"
+              },
+              {
+                "id": 6,
+                "text": "詢問校方可公開的檔案保存工具資訊。",
+                "action": "查詢合規一般資源，不取得新櫃或資料權限。",
+                "tradeoff": "可能無資源。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他那句不是幫我讓我有點好笑，我願把自己一直亂放的空白教案也重排，請他只挑方法，不碰任何學生資料。",
+              "action": "提出教師本人整理私有空白備課材料並邀自願方法交流，不接觸個資或給學生額外義務。",
+              "tradeoff": "自己花空堂，也可能被他嫌亂。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 564147108
+            },
+            "selectedIds": [
+              4,
+              1,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 5,
+              "D": 1
+            },
+            "optionsDigest": "14dbe8f63fad224d04a935a50bb99470baa362e2a45600d53d575b7e05eee46a"
+          },
+          "previousConsequenceDirections": {
+            "A": "工具不保證每次整齊，不用不影響待遇。",
+            "B": "他可拒，私人材料整理不買到其讚賞或替代必要檔案安全。",
+            "C": "可拒談，不因不和解不肯定真實投入。",
+            "D": "他可仍不滿，不把謝謝當關係已修復。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9711ebbe9a059c154b2fff1f25a07038d72395671a5c5758fb72697fb6561f33",
+    "draftSha256": "d42772a7bc0d3b65344c16c15b9257071192d65a4100967397c7e320bf513098",
     "seedAssignmentVersion": 1
   }
 }

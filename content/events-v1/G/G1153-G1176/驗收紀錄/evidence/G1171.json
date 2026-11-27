@@ -16,14 +16,155 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9b719e237903691ef16ef8dcd0ec3d05b74db5994175f0cd157af78764b2528e",
+      "checkedAt": "2026-11-27T17:44:26.133Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒捐入教室，讓物主自行決定退換或帶回。",
+            "action": "拒絕未成立的額外資源接收，不代辦退貨或擅丟。",
+            "tradeoff": "好意落空。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式公衛資訊入口，讓家長自選閱讀。",
+            "action": "額外提供公開可靠一般資訊，不開個別醫療建議。",
+            "tradeoff": "可能被嫌制式。"
+          },
+          {
+            "id": 3,
+            "text": "詢問校方能否說明既有空調與通風管理方式。",
+            "action": "提出額外一般說明請求，不取得專業結論或新設備。",
+            "tradeoff": "需等待。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長只寫不含產品的衛生提問清單。",
+            "action": "提出成人自願一般需求整理，不讓多數替過敏者決定。",
+            "tradeoff": "可能不想再寫。"
+          },
+          {
+            "id": 5,
+            "text": "我願整理不含廣告的一般健康訊息摘要。",
+            "action": "自願製作依正式來源的資訊素材，非自行評估精油。",
+            "tradeoff": "占備課，資料要更新。"
+          },
+          {
+            "id": 6,
+            "text": "詢問物主是否願依法自行查詢商品宣稱申訴資訊。",
+            "action": "提供合法消費爭議查詢選擇，不代認定詐欺或保證退費。",
+            "tradeoff": "可能麻煩。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "大家說天然我也想偷懶信了，這次願拿自己的空堂，另邀合適專業者一起看一則去識別的產品宣稱，聽聽我到底漏了什麼。",
+          "action": "提出教師本人參與的額外成人一般廣告辨識交流邀請，僅用合法公開去識別素材，未取得專業者同意、不接個別醫療診斷。",
+          "tradeoff": "花空堂，也可能被批判判讀粗糙。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1391331226
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4d9d8d9176dbf663aedda0eff3adbaafe94dd7bac2c892775cb8e3ed2d91d916"
+      },
+      "consequenceDirections": {
+        "A": "摘要不代專業醫療或空調作業。",
+        "B": "家長可不同意，但教室健康與設備底線不放寬。",
+        "C": "資料不代表個別風險已評估。",
+        "D": "對方可沒空，交流不替代必要健康保障，也不保證能對產品作結論。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒拒未被要求的代購代退，改為教師實際尋求合資格成人交流的額外邀約。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "婉拒捐入教室，讓物主自行決定退換或帶回。",
+                "action": "拒絕未成立的額外資源接收，不代辦退貨或擅丟。",
+                "tradeoff": "好意落空。"
+              },
+              {
+                "id": 2,
+                "text": "提供正式公衛資訊入口，讓家長自選閱讀。",
+                "action": "額外提供公開可靠一般資訊，不開個別醫療建議。",
+                "tradeoff": "可能被嫌制式。"
+              },
+              {
+                "id": 3,
+                "text": "詢問校方能否說明既有空調與通風管理方式。",
+                "action": "提出額外一般說明請求，不取得專業結論或新設備。",
+                "tradeoff": "需等待。"
+              },
+              {
+                "id": 4,
+                "text": "邀家長只寫不含產品的衛生提問清單。",
+                "action": "提出成人自願一般需求整理，不讓多數替過敏者決定。",
+                "tradeoff": "可能不想再寫。"
+              },
+              {
+                "id": 5,
+                "text": "我願整理不含廣告的一般健康訊息摘要。",
+                "action": "自願製作依正式來源的資訊素材，非自行評估精油。",
+                "tradeoff": "占備課，資料要更新。"
+              },
+              {
+                "id": 6,
+                "text": "詢問物主是否願依法自行查詢商品宣稱申訴資訊。",
+                "action": "提供合法消費爭議查詢選擇，不代認定詐欺或保證退費。",
+                "tradeoff": "可能麻煩。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "大家都想幫忙，我卻累得不想再收一盒善意，今天願意拒絕額外代購代退，讓自己準時結束這段談話。",
+              "action": "明確拒絕本人非必要代購退貨服務，結束額外非急迫會談，不停止必要健康告知與合法物品交接。",
+              "tradeoff": "可能被說冷淡。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 530112215
+            },
+            "selectedIds": [
+              5,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 4,
+              "D": 5
+            },
+            "optionsDigest": "affdc02e39679a2987a2cc2901eeafe319163917f6a0151ec2255cf515caf34e"
+          },
+          "previousConsequenceDirections": {
+            "A": "說明不等零感染保證。",
+            "B": "物主可不滿，必要程序與學生待遇不因拒服務改變。",
+            "C": "拒寫不影響孩子必要健康支持。",
+            "D": "摘要不代專業醫療或空調作業。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "494bb65a887440ef2a461153b2e95261943e1fc6f8d1602fea10d53d23f1f14c",
+    "draftSha256": "9b719e237903691ef16ef8dcd0ec3d05b74db5994175f0cd157af78764b2528e",
     "seedAssignmentVersion": 1
   }
 }

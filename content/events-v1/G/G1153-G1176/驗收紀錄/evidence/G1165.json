@@ -16,14 +16,155 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1f9c274296207d85b4a9c3d5af8d82fbbbc06ec8827c27aed5bd3d456105ffe1",
+      "checkedAt": "2026-11-27T17:44:26.120Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他另用虛構情境確認正式通報判斷流程。",
+            "action": "提出成人額外程序演練，不代專業職權或當下必要通報。",
+            "tradeoff": "花空堂，可能尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "請警衛端提供可公開的一般配送核對資訊。",
+            "action": "查詢額外一般門禁說明，不揭人員行蹤或安全細節。",
+            "tradeoff": "可能無資料。"
+          },
+          {
+            "id": 3,
+            "text": "我願整理一張舊聞日期辨識卡。",
+            "action": "自製一般媒體工具，不轉貼個案或宣稱已無危險。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 4,
+            "text": "建議主管評估他必要照護下的合規工作支援。",
+            "action": "提出成人任務支持建議，不代請假或安排替手。",
+            "tradeoff": "可能被認為多管。"
+          },
+          {
+            "id": 5,
+            "text": "提供既有員工照顧資源入口。",
+            "action": "額外提供合法公開資訊，不問病歷或假定有補助。",
+            "tradeoff": "可能沒幫助。"
+          },
+          {
+            "id": 6,
+            "text": "詢問能否將一般配送說明加到正式成人新進說明裡。",
+            "action": "提出未來一般門禁資訊納入成人正式說明的建議，未改制度或安排課程，不揭安全細節。",
+            "tradeoff": "多協調，可能不採用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被卡隊伍也很氣，不想再替未查證的消息擔保；願在成人會議明講這次等候的可核實影響，請權責端回應門禁怎麼協調。",
+          "action": "額外提出真實一般流程影響意見，不虛構時間損失或揭學生名單，不保證採納。",
+          "tradeoff": "準備發言，也可能得罪校安。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1400645839
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "0abbe33b98a5378e68fd8d35ec64a2f56051362c276c3add7f8024b71b449b6e"
+      },
+      "consequenceDirections": {
+        "A": "資訊不等其家庭危機已解決。",
+        "B": "資訊不代即時查明。",
+        "C": "支援未成立前不當有人已接管。",
+        "D": "影響反映不免本案必要真實處理，不能用抱怨否定正當安全攔查。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6拒未有前提的私人代班，改為不同於查資訊的制度傳達提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他另用虛構情境確認正式通報判斷流程。",
+                "action": "提出成人額外程序演練，不代專業職權或當下必要通報。",
+                "tradeoff": "花空堂，可能尷尬。"
+              },
+              {
+                "id": 2,
+                "text": "請警衛端提供可公開的一般配送核對資訊。",
+                "action": "查詢額外一般門禁說明，不揭人員行蹤或安全細節。",
+                "tradeoff": "可能無資料。"
+              },
+              {
+                "id": 3,
+                "text": "我願整理一張舊聞日期辨識卡。",
+                "action": "自製一般媒體工具，不轉貼個案或宣稱已無危險。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 4,
+                "text": "建議主管評估他必要照護下的合規工作支援。",
+                "action": "提出成人任務支持建議，不代請假或安排替手。",
+                "tradeoff": "可能被認為多管。"
+              },
+              {
+                "id": 5,
+                "text": "提供既有員工照顧資源入口。",
+                "action": "額外提供合法公開資訊，不問病歷或假定有補助。",
+                "tradeoff": "可能沒幫助。"
+              },
+              {
+                "id": 6,
+                "text": "不加私人門禁代班，照原任務完成本班接續。",
+                "action": "拒絕非必要越權協辦，不拒必要安全協作。",
+                "tradeoff": "同事可能失望。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被卡隊伍也很氣，不想再替未查證的消息擔保；願在成人會議明講這次等候的可核實影響，請權責端回應門禁怎麼協調。",
+              "action": "額外提出真實一般流程影響意見，不虛構時間損失或揭學生名單，不保證採納。",
+              "tradeoff": "準備發言，也可能得罪校安。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1963369049
+            },
+            "selectedIds": [
+              3,
+              6,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 3,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "be558afd90e5132cabf6b252219c497105b44eb761985576068d2638b75291c4"
+          },
+          "previousConsequenceDirections": {
+            "A": "資訊不代即時查明。",
+            "B": "工具不等未來消息必假。",
+            "C": "不能放任實際危險或延誤交接。",
+            "D": "影響反映不免本案必要真實處理，不能用抱怨否定正當安全攔查。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "939545ebd136afc36e20bbec17ef5a2eb8cc1a8ba18887f482cab034bd46671e",
+    "draftSha256": "1f9c274296207d85b4a9c3d5af8d82fbbbc06ec8827c27aed5bd3d456105ffe1",
     "seedAssignmentVersion": 1
   }
 }

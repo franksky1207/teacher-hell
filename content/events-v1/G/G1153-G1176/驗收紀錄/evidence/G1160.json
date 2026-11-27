@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e61eae7dd689c87009ac63fd5d1c864ce831bae965110f74e6a560f1a0353650",
+      "checkedAt": "2026-11-27T17:44:26.112Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "坦白今晚預算到這裡，結清原帳就回家。",
+            "action": "拒絕未成立的額外酒吧消費，循安全合法方式返家。",
+            "tradeoff": "錯過後半聚會。"
+          },
+          {
+            "id": 2,
+            "text": "提議改到無低消的合法公共空間短聊。",
+            "action": "提出成人自願低成本替代邀約，未保證場地或對方接受。",
+            "tradeoff": "可能被拒，時間仍晚。"
+          },
+          {
+            "id": 3,
+            "text": "邀一位朋友另約白天散步，今晚不跟續攤。",
+            "action": "提出新私人自願邀約，不代取消他人酒吧計畫。",
+            "tradeoff": "可能約不到。"
+          },
+          {
+            "id": 4,
+            "text": "詢問店家是否有符合本人預算的合法方案，不先訂位。",
+            "action": "查詢一般公開消費條件，不要求特權、未取得低消豁免。",
+            "tradeoff": "可能仍超預算，耗時間。"
+          },
+          {
+            "id": 5,
+            "text": "我願在原餐廳允許的時間多坐十分鐘，再各走各的。",
+            "action": "提出短暫自願延伸交流，須店家允許不影響營業，未代朋友同意。",
+            "tradeoff": "晚些休息，可能沒人留下。"
+          },
+          {
+            "id": 6,
+            "text": "提議下次事前講好續攤成本，再決定參加。",
+            "action": "提出未來成人聚會資訊約定，未成立下次行程。",
+            "tradeoff": "少即興自由。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不想每次先走，願在不碰家用的範圍，把一筆可不買的私人消費讓給今晚，按一般低消參加一小時，不喝酒。",
+          "action": "提出本人自主有限續攤消費決定，限可支配非必要私人預算且店規可行、合意消費，不動必要醫療生活費；未入店或付款。",
+          "tradeoff": "少下週私人享受，今晚更晚休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 448839453
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "1739edf06e1747f2ba343b174052977723578b9cc9c6099fdb089c8acbaba190"
+      },
+      "consequenceDirections": {
+        "A": "若預算不足或無可行方案就不成立，不借貸硬撐、不保證朋友因此更親近。",
+        "B": "友情不以接受邀約證明。",
+        "C": "無方案就不承諾消費，不以查詢當已進場。",
+        "D": "朋友可不認同，不改本次已合意費用。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒保留預算與普通1拒續攤相同，改為有限私人享受之間實際替換，不要求節省必要家計。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "坦白今晚預算到這裡，結清原帳就回家。",
+                "action": "拒絕未成立的額外酒吧消費，循安全合法方式返家。",
+                "tradeoff": "錯過後半聚會。"
+              },
+              {
+                "id": 2,
+                "text": "提議改到無低消的合法公共空間短聊。",
+                "action": "提出成人自願低成本替代邀約，未保證場地或對方接受。",
+                "tradeoff": "可能被拒，時間仍晚。"
+              },
+              {
+                "id": 3,
+                "text": "邀一位朋友另約白天散步，今晚不跟續攤。",
+                "action": "提出新私人自願邀約，不代取消他人酒吧計畫。",
+                "tradeoff": "可能約不到。"
+              },
+              {
+                "id": 4,
+                "text": "詢問店家是否有符合本人預算的合法方案，不先訂位。",
+                "action": "查詢一般公開消費條件，不要求特權、未取得低消豁免。",
+                "tradeoff": "可能仍超預算，耗時間。"
+              },
+              {
+                "id": 5,
+                "text": "我願在原餐廳允許的時間多坐十分鐘，再各走各的。",
+                "action": "提出短暫自願延伸交流，須店家允許不影響營業，未代朋友同意。",
+                "tradeoff": "晚些休息，可能沒人留下。"
+              },
+              {
+                "id": 6,
+                "text": "提議下次事前講好續攤成本，再決定參加。",
+                "action": "提出未來成人聚會資訊約定，未成立下次行程。",
+                "tradeoff": "少即興自由。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我焦慮得不想再算，想直接說今晚我寧可把錢留著買家裡需要的東西，讓他們笑我小氣也算了。",
+              "action": "明確拒絕本次新增酒吧消費並將本人可支配預算指定留作家用，不揭家人私事或代他人付款。",
+              "tradeoff": "可能傷面子，與朋友疏遠。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2726738526
+            },
+            "selectedIds": [
+              6,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 2,
+              "C": "emotional",
+              "D": 6
+            },
+            "optionsDigest": "7229832fcefc09f624cf244cc816d022c82901226e45b9fd18dba70615f11386"
+          },
+          "previousConsequenceDirections": {
+            "A": "友情不以接受邀約證明。",
+            "B": "不得久占不宜空間，無合宜地點就不去。",
+            "C": "他人可不理解，家用尚未購買不宣稱已照護完成。",
+            "D": "朋友可不認同，不改本次已合意費用。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eba34c4899f019f89693af372c29249ae7ab8ad0ee9846c2fdbcb4654b164332",
+    "draftSha256": "e61eae7dd689c87009ac63fd5d1c864ce831bae965110f74e6a560f1a0353650",
     "seedAssignmentVersion": 1
   }
 }

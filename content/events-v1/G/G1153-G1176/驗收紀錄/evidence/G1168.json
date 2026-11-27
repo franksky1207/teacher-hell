@@ -16,14 +16,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7f3c6263e048ded118fa4416ef9325899de006a6faa22cd2a3934be8ec5cfd80",
+      "checkedAt": "2026-11-27T17:44:26.126Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自願說最先卡住哪一題。",
+            "action": "提出額外一般答疑，不替代必要學習支持或指控故意懶。",
+            "tradeoff": "花課間，可能不想說。"
+          },
+          {
+            "id": 2,
+            "text": "做一張孩子自用的分段作業卡。",
+            "action": "額外提供原創自主工具，不加家長夜間監督義務。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 3,
+            "text": "與家長協商非緊急聯絡時段，避免睡眠被切碎。",
+            "action": "提出自願成人聯絡節奏，不延誤必要即時事項。",
+            "tradeoff": "可能不易排。"
+          },
+          {
+            "id": 4,
+            "text": "提供既有課內外學習資源資訊。",
+            "action": "給合法入口，不代報名或把必要支持全外包。",
+            "tradeoff": "可能無適合時間。"
+          },
+          {
+            "id": 5,
+            "text": "婉拒此刻額外長談，另邀清醒且方便的時間。",
+            "action": "在必要安全已接妥後停止非必要會談，未代家長同意新時段。",
+            "tradeoff": "可能被說不聽。"
+          },
+          {
+            "id": 6,
+            "text": "我願把本人非必要加做題量減成可選練習。",
+            "action": "調整本人有權的額外練習，不改他科或撤必要評量。",
+            "tradeoff": "少練習量，需另設回饋。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他搬那句話來我也惱，乾脆自己重做一版可以口頭說思路的練習，別每次只靠多寫幾格讓我安心。",
+          "action": "額外重編本人有權的原創練習回應形式，提供自願口頭思路選擇，不降低必要公平評量或擅改他科。",
+          "tradeoff": "本人多備課，現場回應也花時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3710656127
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "cf5595f1377aa6a7c00d4f22a517b96fced46c37fd500b2d71c56d732b476eff"
+      },
+      "consequenceDirections": {
+        "A": "拒談不影響入班與正常支持。",
+        "B": "學生可不選口頭，形式不保證學會；不以此換家長原諒或讓孩子才可入班。",
+        "C": "不能以未約成延誤必要告知與支持。",
+        "D": "資訊不等學生已獲服務。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原私人提醒與核心實際取捨偏弱，改為教師真實課程準備與回應時間投入。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀孩子自願說最先卡住哪一題。",
+                "action": "提出額外一般答疑，不替代必要學習支持或指控故意懶。",
+                "tradeoff": "花課間，可能不想說。"
+              },
+              {
+                "id": 2,
+                "text": "做一張孩子自用的分段作業卡。",
+                "action": "額外提供原創自主工具，不加家長夜間監督義務。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 3,
+                "text": "與家長協商非緊急聯絡時段，避免睡眠被切碎。",
+                "action": "提出自願成人聯絡節奏，不延誤必要即時事項。",
+                "tradeoff": "可能不易排。"
+              },
+              {
+                "id": 4,
+                "text": "提供既有課內外學習資源資訊。",
+                "action": "給合法入口，不代報名或把必要支持全外包。",
+                "tradeoff": "可能無適合時間。"
+              },
+              {
+                "id": 5,
+                "text": "婉拒此刻額外長談，另邀清醒且方便的時間。",
+                "action": "在必要安全已接妥後停止非必要會談，未代家長同意新時段。",
+                "tradeoff": "可能被說不聽。"
+              },
+              {
+                "id": 6,
+                "text": "我願把本人非必要加做題量減成可選練習。",
+                "action": "調整本人有權的額外練習，不改他科或撤必要評量。",
+                "tradeoff": "少練習量，需另設回饋。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他把我那句話搬來，我有點惱也心虛，想寫一張只給自己的提醒，之後不再拿當日清當我省事的口號。",
+              "action": "教師自製私人工作用語提醒，僅記本人承諾，不公開孩子或冒稱已改掉所有做法。",
+              "tradeoff": "得面對自己的省事心態，花整理。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1374543366
+            },
+            "selectedIds": [
+              6,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "6133348d6402e05b638128f548d0b3e2e85ba7b0672175756f4e6e092fdc089a"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能以未約成延誤必要告知與支持。",
+            "B": "不以家長抗議換特殊分數，全班公平適用。",
+            "C": "提醒不代必要實際改正與學生支持，未來仍可能失誤須照實處理。",
+            "D": "工具不保證不缺交，不用不受罰。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6b3d9e59e59c7948c6d499fa0791c8469b069121e9077f27548b9c4ccf7460d8",
+    "draftSha256": "7f3c6263e048ded118fa4416ef9325899de006a6faa22cd2a3934be8ec5cfd80",
     "seedAssignmentVersion": 1
   }
 }

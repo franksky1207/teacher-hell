@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf4307ef6be75fc734b8bcd8860893784ba9fe65a39e82aa1000125cda8e48aa",
+      "checkedAt": "2026-11-27T17:44:26.101Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他自選是否縮減非必要提醒工作。",
+            "action": "提出自願職務界線調整，不卸成人必要秩序責任。",
+            "tradeoff": "要另分工。"
+          },
+          {
+            "id": 2,
+            "text": "提議用教師統一的短提示取代學生臨場制止。",
+            "action": "提出合規一般秩序提示安排，不聲稱已解冷戰。",
+            "tradeoff": "教師多介入。"
+          },
+          {
+            "id": 3,
+            "text": "邀雙方各自自願談，不先排同場。",
+            "action": "提出額外感受交流，不要求和解或誰先道歉才給支持。",
+            "tradeoff": "耗兩段時間。"
+          },
+          {
+            "id": 4,
+            "text": "另邀願意的人在課間做一次漫畫推薦，不要求熟友同組。",
+            "action": "提出合法來源、合宜時段的自願漫畫閱讀交流，不占午休、不以互動交換和解。",
+            "tradeoff": "需準備，可能冷場。"
+          },
+          {
+            "id": 5,
+            "text": "做一張不記名的幹部求助流程卡。",
+            "action": "教師額外製作一般工具，不逼學生代成人蒐證。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加額外討論，讓各人有正常相處空間。",
+            "action": "停止非必要追加談話，維持安全、秩序及必要求助。",
+            "tradeoff": "關係可能暫僵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說挺我，我反而有點煩，不想再被搬成吼人的理由；願意在班上另留一段，公開說我的休息也不能拿同學面子去換。",
+          "action": "提出教師本人一般班務立場說明，不揭個案、不把必要更正作獨占優勢，不要求學生發言。",
+          "tradeoff": "占班務，可能被反問以前為何不說。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1256264121
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "e08e3096298c0b2f372fd70f32ee81d1a73251affa02b21b8077c3285e9353ee"
+      },
+      "consequenceDirections": {
+        "A": "不將空間當放任排擠或報復。",
+        "B": "雙方可拒或分開參與，活動不免必要秩序與支持。",
+        "C": "說明不保證和解，必要秩序與權益所有分支維持。",
+        "D": "不能以提示不響就不處理危險或必要求助。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4泛稱一般活動缺具體動作，明確為原衝突漫畫的合宜自願交流。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他自選是否縮減非必要提醒工作。",
+                "action": "提出自願職務界線調整，不卸成人必要秩序責任。",
+                "tradeoff": "要另分工。"
+              },
+              {
+                "id": 2,
+                "text": "提議用教師統一的短提示取代學生臨場制止。",
+                "action": "提出合規一般秩序提示安排，不聲稱已解冷戰。",
+                "tradeoff": "教師多介入。"
+              },
+              {
+                "id": 3,
+                "text": "邀雙方各自自願談，不先排同場。",
+                "action": "提出額外感受交流，不要求和解或誰先道歉才給支持。",
+                "tradeoff": "耗兩段時間。"
+              },
+              {
+                "id": 4,
+                "text": "另提不強制合作的一般班級活動供自選。",
+                "action": "提出全新低壓自願交流，不借活動逼雙方同組。",
+                "tradeoff": "要準備，可能沒人參與。"
+              },
+              {
+                "id": 5,
+                "text": "做一張不記名的幹部求助流程卡。",
+                "action": "教師額外製作一般工具，不逼學生代成人蒐證。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加額外討論，讓各人有正常相處空間。",
+                "action": "停止非必要追加談話，維持安全、秩序及必要求助。",
+                "tradeoff": "關係可能暫僵。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他說挺我，我反而有點煩，不想再被搬成吼人的理由；願意在班上另留一段，公開說我的休息也不能拿同學面子去換。",
+              "action": "提出教師本人一般班務立場說明，不揭個案、不把必要更正作獨占優勢，不要求學生發言。",
+              "tradeoff": "占班務，可能被反問以前為何不說。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 844999126
+            },
+            "selectedIds": [
+              4,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 3,
+              "C": 2,
+              "D": "emotional"
+            },
+            "optionsDigest": "66c3d2cf9b4d65556b28e5b796b29d4b8cd0d868a13a1c3cb4c1b9f78ddfa1b7"
+          },
+          "previousConsequenceDirections": {
+            "A": "活動不代必要事件處理。",
+            "B": "可拒談，沉默不當原諒。",
+            "C": "不能以提示不響就不處理危險或必要求助。",
+            "D": "說明不保證和解，必要秩序與權益所有分支維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e5e665fbf2ec0361842962a7c2625abce2576da142b1c1e63bb16c62b2403992",
+    "draftSha256": "bf4307ef6be75fc734b8bcd8860893784ba9fe65a39e82aa1000125cda8e48aa",
     "seedAssignmentVersion": 1
   }
 }

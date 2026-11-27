@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6c4256449b53fcda927c9ccfaaadb07e2bba20527cc9e80d72ac4573b00abe64",
+      "checkedAt": "2026-11-27T17:44:26.137Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今晚停止新增非必要私訊，按時休息。",
+            "action": "停止本人當晚額外鼓勵訊息作業，不延誤必要告知與既約回覆。",
+            "tradeoff": "原想關心的人得晚點。"
+          },
+          {
+            "id": 2,
+            "text": "另用完全虛構資料做一份匯出核對步驟。",
+            "action": "自製一般流程工具，無真實成績或聯絡資訊。",
+            "tradeoff": "占時間，仍可能疏漏。"
+          },
+          {
+            "id": 3,
+            "text": "向資訊端提出介面辨識改善建議。",
+            "action": "提出一般功能建議，不上傳真實截圖或取得修正承諾。",
+            "tradeoff": "需整理，可能不採用。"
+          },
+          {
+            "id": 4,
+            "text": "詢問正式系統是否有合規的本人核對功能。",
+            "action": "查詢既有技術資訊，不自行加外掛或測真實錯發。",
+            "tradeoff": "可能沒有。"
+          },
+          {
+            "id": 5,
+            "text": "把之後非必要鼓勵改成合意的工作時段口頭交流。",
+            "action": "提出未來自願交流方式建議，不改必要正式通知或家長權益。",
+            "tradeoff": "時間較難排。"
+          },
+          {
+            "id": 6,
+            "text": "邀合適成人用虛構案例檢視工作流程。",
+            "action": "提出額外去個資協作邀請，不擅看其他班資料。",
+            "tradeoff": "要另約，暴露失誤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想再傳一張完美圖挽回，卻決定把那批非必要圖全撤出自己的待送清單，改寫給孩子的文字草稿，今天不急著送。",
+          "action": "清除本人尚未送出的非必要訊息草稿中的敏感附圖，另作去敏感真實文字草稿，不刪事件必要證據或宣稱已傳達。",
+          "tradeoff": "重做費時，少了好看圖表。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2084046105
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "371565f50aa7c649edc078aaa83a98dfefe3e6105098ca34c7be6d0926310450"
+      },
+      "consequenceDirections": {
+        "A": "草稿不等已鼓勵到人，必要資安處理與依法保存不受影響。",
+        "B": "工具不代表正式資安已核准。",
+        "C": "未接邀不當有第二人核對。",
+        "D": "功能未改仍需依現行規範核對。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f7032b1725d77b5af336cbab82a085562a703dbf21669e1282873e09e4ab3466",
+    "draftSha256": "6c4256449b53fcda927c9ccfaaadb07e2bba20527cc9e80d72ac4573b00abe64",
     "seedAssignmentVersion": 1
   }
 }

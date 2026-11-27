@@ -16,14 +16,155 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "09cb7a67bce86715cdd1b54398a9adb1852df9d8d755bfc1b51778b3b93b48b3",
+      "checkedAt": "2026-11-27T17:44:26.109Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助把截圖疑點改成不指控人的交易提問清單。",
+            "action": "額外整理一般交易問題，不公開帳號或宣稱已查安全。",
+            "tradeoff": "花時間，可能仍沒答案。"
+          },
+          {
+            "id": 2,
+            "text": "提供官方消費防詐查詢資訊供家庭自行選。",
+            "action": "給合法公開入口，不代報案或認定詐欺。",
+            "tradeoff": "可能制式。"
+          },
+          {
+            "id": 3,
+            "text": "建議有意購買者自行向賣方詢問退換和聯繫條件。",
+            "action": "提出私人合意交易查詢建議，不轉傳學生個資。",
+            "tradeoff": "可能錯過限量。"
+          },
+          {
+            "id": 4,
+            "text": "建議還沒付錢的人先等基本交易資訊補齊，再自己決定。",
+            "action": "提出非強制暫緩新付款的私人交易建議，不代取消訂單或認定詐騙。",
+            "tradeoff": "可能錯過限量，也會被說擋生意。"
+          },
+          {
+            "id": 5,
+            "text": "用虛構網頁做一次一般交易資訊辨識。",
+            "action": "提出去識別自願媒體活動，不把真實校友頁作公開負例。",
+            "tradeoff": "占班務，可能無趣。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長自願分享市場上怎麼問清楚買賣條件。",
+            "action": "提出不涉及真實交易資料的一般經驗分享邀請。",
+            "tradeoff": "需準備，可能不想講。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他怕大家辛苦錢沒了，我也懂，卻不想只教人懷疑；願意自己畫一張笨拙的示範訂購頁，請他找我漏寫什麼。",
+          "action": "以教師原創虛構非交易頁提出成人自願檢視邀請，不開放真實匯款或冒充安全認證。",
+          "tradeoff": "花備課，自己的疏漏會露出來。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1795093877
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "a6c7558be821f032edce9ab3728017820171bd682004f293b8ff2a613e209727"
+      },
+      "consequenceDirections": {
+        "A": "他可拒看，找齊欄位也不能保證交易安全。",
+        "B": "外觀不是定罪依據，也不證安全。",
+        "C": "不得指名賣家或宣稱全能防騙。",
+        "D": "資訊不等對個案背書。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4拒教師未被要求協辦的團購，改為對原實際預購的行動建議。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "協助把截圖疑點改成不指控人的交易提問清單。",
+                "action": "額外整理一般交易問題，不公開帳號或宣稱已查安全。",
+                "tradeoff": "花時間，可能仍沒答案。"
+              },
+              {
+                "id": 2,
+                "text": "提供官方消費防詐查詢資訊供家庭自行選。",
+                "action": "給合法公開入口，不代報案或認定詐欺。",
+                "tradeoff": "可能制式。"
+              },
+              {
+                "id": 3,
+                "text": "建議有意購買者自行向賣方詢問退換和聯繫條件。",
+                "action": "提出私人合意交易查詢建議，不轉傳學生個資。",
+                "tradeoff": "可能錯過限量。"
+              },
+              {
+                "id": 4,
+                "text": "不協辦團購，保留各家合法自主。",
+                "action": "拒絕教師額外商業招募，不剝奪必要防詐與申訴支持。",
+                "tradeoff": "家長可能覺得不夠熱心。"
+              },
+              {
+                "id": 5,
+                "text": "用虛構網頁做一次一般交易資訊辨識。",
+                "action": "提出去識別自願媒體活動，不把真實校友頁作公開負例。",
+                "tradeoff": "占班務，可能無趣。"
+              },
+              {
+                "id": 6,
+                "text": "邀家長自願分享市場上怎麼問清楚買賣條件。",
+                "action": "提出不涉及真實交易資料的一般經驗分享邀請。",
+                "tradeoff": "需準備，可能不想講。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他怕大家辛苦錢沒了，我也懂，卻不想只教人懷疑；願意自己畫一張笨拙的示範訂購頁，請他找我漏寫什麼。",
+              "action": "以教師原創虛構非交易頁提出成人自願檢視邀請，不開放真實匯款或冒充安全認證。",
+              "tradeoff": "花備課，自己的疏漏會露出來。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2157910513
+            },
+            "selectedIds": [
+              3,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 3,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "df6fa32aa0210ec28473fc50688f747b0e2cea8870c970d6a68b75ca2fc7bc5f"
+          },
+          "previousConsequenceDirections": {
+            "A": "不代擔保商品或關閉合法求助。",
+            "B": "賣方可不答，不能以校友身分免查證。",
+            "C": "外觀不是定罪依據，也不證安全。",
+            "D": "他可拒看，找齊欄位也不能保證交易安全。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "603dfed10c813fd8594b52f6c4986146d75435110eae7475adda3836ca8ef49c",
+    "draftSha256": "09cb7a67bce86715cdd1b54398a9adb1852df9d8d755bfc1b51778b3b93b48b3",
     "seedAssignmentVersion": 1
   }
 }

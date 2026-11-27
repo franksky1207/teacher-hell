@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4515a723c62d7f040897b1f4c65f8501318b465310e9ec91d3fe4e1ec7c7777f",
+      "checkedAt": "2026-11-27T17:44:26.117Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問物主是否願依合規回收方式交還回收流程。",
+            "action": "提出合意安全回收方案，不私丟或假稱已回收。",
+            "tradeoff": "心血難留下。"
+          },
+          {
+            "id": 2,
+            "text": "向美術端詢問是否有合規原創材料用途。",
+            "action": "查詢既有合法需求，不取得人力或宣稱瓶蓋安全適用。",
+            "tradeoff": "可能沒人需要。"
+          },
+          {
+            "id": 3,
+            "text": "邀他只選少量合適材料，提出一張平面構圖。",
+            "action": "提出自願紙上設計，不施工黏貼、不假定可大量存放。",
+            "tradeoff": "規模小，要再想。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一張辨識活動日期的原創小卡。",
+            "action": "額外製作一般資訊工具，不重貼未授權商標或保證識別能力。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 5,
+            "text": "邀他自願分享清洗工序花了哪些力氣，不談贈衣。",
+            "action": "提出一般投入經驗交流，不把危險翻找作示範。",
+            "tradeoff": "可能覺得尷尬。"
+          },
+          {
+            "id": 6,
+            "text": "不另找班服替代品，維持班級目前衣物安排。",
+            "action": "拒絕額外贈衣追尋，不擅改已成立他人採購或權益。",
+            "tradeoff": "期待落空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那袋有點不甘，願自己出錢買一塊合規底板，邀他用少量安全材料試做原創圖，這次不等品牌送禮。",
+          "action": "提出本人預算的低量原創材料創作協作，須校規、安全與作者合意，未買或完成。",
+          "tradeoff": "花錢和休息，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2063885182
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "cb268ee82f606dba1bf43b574378374055e277ea53b0a07b9af5a54f70e4f991"
+      },
+      "consequenceDirections": {
+        "A": "不以教師拒找宣稱學生不能合法自行查資訊。",
+        "B": "不能因買底板逼學生創作或宣稱所有瓶蓋可安全使用。",
+        "C": "可不想做，材料仍依權益處理。",
+        "D": "卡片不把過期活動變有效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "153e4feef6d98c56cba66720eadcae6ae2ea60cd220eb431edfd3a436594582b",
+    "draftSha256": "4515a723c62d7f040897b1f4c65f8501318b465310e9ec91d3fe4e1ec7c7777f",
     "seedAssignmentVersion": 1
   }
 }

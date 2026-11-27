@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "80224e5c0267e837b4f9fde32752a0ab7bf8ee2395c7700da8d3a5c0f629fe10",
+      "checkedAt": "2026-11-27T17:44:26.104Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問夜間合法服務的報價與可處理範圍。",
+            "action": "提出專業服務條件查詢，未授權作業或取得安全結論。",
+            "tradeoff": "要等，可能很貴。"
+          },
+          {
+            "id": 2,
+            "text": "在專業確認可等的前提下申請次日時段。",
+            "action": "提出條件式專業修繕預約，未取得時段或宣稱可安全居住。",
+            "tradeoff": "今晚不便，可能沒空。"
+          },
+          {
+            "id": 3,
+            "text": "查詢另一家合資格服務，取得第二個條件比較。",
+            "action": "在不延誤必要安全下另詢專業服務，不自行診斷。",
+            "tradeoff": "多聯絡，也可能無人。"
+          },
+          {
+            "id": 4,
+            "text": "聯絡建物正式管理窗口，詢問共用管線資訊。",
+            "action": "提出合法資料詢問，不擅開他戶管線或揭隱私。",
+            "tradeoff": "可能已無人值班。"
+          },
+          {
+            "id": 5,
+            "text": "依實際產品資訊查詢消費爭議管道，今晚先不替神粉下結論。",
+            "action": "額外查詢正式消費爭議資訊，不捏造配方原因、未申訴或取得退款，不延誤必要安全。",
+            "tradeoff": "花私人時間，可能無法處理當下堵塞。"
+          },
+          {
+            "id": 6,
+            "text": "詢問私人朋友是否能合意提供短暫休息處。",
+            "action": "提出成人自願住宿支援詢問，依專業安全建議及正式返程安排，不代對方同意。",
+            "tradeoff": "欠人情，可能沒地方。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想明天再為這個請假，若今晚專業端能安全處理，願按書面條件多付夜間費，別再自己省成更大洞。",
+          "action": "提出本人有預算上限、條件明確的夜間專業委託請求，未承接付款或宣稱已疏通。",
+          "tradeoff": "可能很貴，休息仍被吃掉。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1822290045
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "d0749a96ea16737c2270c1c73ea072c91cd0b4bf7c037fbd0613891b4a9fe8bb"
+      },
+      "consequenceDirections": {
+        "A": "未確認可等不逕留現場，必要安全另維持。",
+        "B": "未答應不算已有住宿，必要安全不等朋友收留。",
+        "C": "對方可無法處理，費用不買到安全保證，急迫風險另依法求助。",
+        "D": "若屬急迫危害依正式緊急管道處理，不以比價延誤。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5停偏方與保存資料已是共同安全處理，改成額外消費權益查詢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問夜間合法服務的報價與可處理範圍。",
+                "action": "提出專業服務條件查詢，未授權作業或取得安全結論。",
+                "tradeoff": "要等，可能很貴。"
+              },
+              {
+                "id": 2,
+                "text": "在專業確認可等的前提下申請次日時段。",
+                "action": "提出條件式專業修繕預約，未取得時段或宣稱可安全居住。",
+                "tradeoff": "今晚不便，可能沒空。"
+              },
+              {
+                "id": 3,
+                "text": "查詢另一家合資格服務，取得第二個條件比較。",
+                "action": "在不延誤必要安全下另詢專業服務，不自行診斷。",
+                "tradeoff": "多聯絡，也可能無人。"
+              },
+              {
+                "id": 4,
+                "text": "聯絡建物正式管理窗口，詢問共用管線資訊。",
+                "action": "提出合法資料詢問，不擅開他戶管線或揭隱私。",
+                "tradeoff": "可能已無人值班。"
+              },
+              {
+                "id": 5,
+                "text": "暫停未成立的居家清潔新嘗試，先保存產品資料。",
+                "action": "停止本人新增偏方實作，額外整理可核實公開產品資訊供後續詢問。",
+                "tradeoff": "還得花時間。"
+              },
+              {
+                "id": 6,
+                "text": "詢問私人朋友是否能合意提供短暫休息處。",
+                "action": "提出成人自願住宿支援詢問，依專業安全建議及正式返程安排，不代對方同意。",
+                "tradeoff": "欠人情，可能沒地方。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想明天再為這個請假，若今晚專業端能安全處理，願按書面條件多付夜間費，別再自己省成更大洞。",
+              "action": "提出本人有預算上限、條件明確的夜間專業委託請求，未承接付款或宣稱已疏通。",
+              "tradeoff": "可能很貴，休息仍被吃掉。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2271175426
+            },
+            "selectedIds": [
+              2,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 2,
+              "D": "emotional"
+            },
+            "optionsDigest": "2443291267653211d21f3adc478778ed000b6b496fd0e1da667a95c50d46616b"
+          },
+          "previousConsequenceDirections": {
+            "A": "未答應不算已有住宿，必要安全不等朋友收留。",
+            "B": "資料不足須明說，不把詢問當修好。",
+            "C": "未確認可等不逕留現場，必要安全另維持。",
+            "D": "對方可無法處理，費用不買到安全保證，急迫風險另依法求助。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5d3afc6f6bebd3a3ae8ca095ce28fa871c103583010d84c0fabc2712601abc69",
+    "draftSha256": "80224e5c0267e837b4f9fde32752a0ab7bf8ee2395c7700da8d3a5c0f629fe10",
     "seedAssignmentVersion": 1
   }
 }

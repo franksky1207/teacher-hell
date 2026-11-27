@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "09c9df24c0377c5799dd798ddb3bc37a488ca862404886971629a597f06aadae",
+      "checkedAt": "2026-11-27T17:44:26.135Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀兩位成人談下次跨班事件怎麼接手。",
+            "action": "提出自願一般任務協調，不代裁定處分或要求學生出席。",
+            "tradeoff": "可能更僵。"
+          },
+          {
+            "id": 2,
+            "text": "我願整理僅含已知事實的跨班流程提問草稿。",
+            "action": "額外製作去識別一般問題，不另蒐學生證詞或取代必要紀錄。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 3,
+            "text": "邀衛生股長自願說希望後續哪種支持。",
+            "action": "提出額外一般需求交流，不逼再次敘述受辱。",
+            "tradeoff": "花課間，可能拒。"
+          },
+          {
+            "id": 4,
+            "text": "提供既有校內正當管教與申訴資訊給成人。",
+            "action": "額外提供合法公開資料，不代評定對方違法。",
+            "tradeoff": "可能被認為說教。"
+          },
+          {
+            "id": 5,
+            "text": "不另外私辦和解會，維持原權責處理。",
+            "action": "拒絕非必要私人調解，不拒必要真實說明與支持。",
+            "tradeoff": "雙方可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "提議用虛構事件作日後成人情境討論。",
+            "action": "提出新去識別一般研討邀請，未取得安排或同意。",
+            "tradeoff": "要準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被說替我出頭我其實不想領，願意當面拒絕這份人情，說我不會替任何一邊換處分，也不再私下陪罵外班。",
+          "action": "拒絕本人非必要私人站隊與陪同抱怨邀請，維持正當支持、事實與法定程序，不否認對方合理制止。",
+          "tradeoff": "可能傷同事情誼。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3042469935
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "64e56db67cf878dbfaf3263c74d17c9b5c461b3aacc70960b08c3fa53290aed5"
+      },
+      "consequenceDirections": {
+        "A": "草稿不等事件已裁決。",
+        "B": "拒談仍有必要支持。",
+        "C": "資訊不等正式處理結果。",
+        "D": "對方可覺得不領情，教師不因此對學生偏袒或少提供必要協作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0b48e7460e4d48a5fc1cd78c0d17ce94f6733230f061e2c1a099910eb615352f",
+    "draftSha256": "09c9df24c0377c5799dd798ddb3bc37a488ca862404886971629a597f06aadae",
     "seedAssignmentVersion": 1
   }
 }

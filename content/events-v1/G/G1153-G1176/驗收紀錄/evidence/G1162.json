@@ -15,14 +15,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2575aa5375beb27e5b511a9c4f75a8389c2796238e1752db80340d28adc704cb",
+      "checkedAt": "2026-11-27T17:44:26.115Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持自由傳訊，婉拒額外印表。",
+            "action": "拒絕真實提出的印製協作，不縮減必要回饋可及性。",
+            "tradeoff": "家長可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "提出自願一頁紙本版本，保留其他方式。",
+            "action": "製作合規低資料量的新自願回饋格式，未採他班四聯。",
+            "tradeoff": "多整理，可能重複。"
+          },
+          {
+            "id": 3,
+            "text": "邀家長先提最想回饋的三個問題。",
+            "action": "徵詢成人自願一般意見，不代其同意公開。",
+            "tradeoff": "可能偏個人想法。"
+          },
+          {
+            "id": 4,
+            "text": "我願整理一份不含個資的成果展示文字摘要。",
+            "action": "額外製作公開可知資訊供家庭自選，不展示學生私訊。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 5,
+            "text": "詢問行政是否已有合法可及的回饋工具。",
+            "action": "查詢既有資源，不把詢問當開表或取得許可。",
+            "tradeoff": "可能沒工具。"
+          },
+          {
+            "id": 6,
+            "text": "邀他協助整理公開活動時程，先用假資料示範。",
+            "action": "提出不接觸學生資訊的額外成人協作，未授權查看私訊。",
+            "tradeoff": "要帶著做，未必省時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被比四張我有點氣，想另邀家長看一次我自己的展示準備草圖，請他直接挑哪個地方值得問，不再先比紙幾聯。",
+          "action": "提出教師原創不含學生資訊的成人自願草圖交流，未安排出席、不作正式問卷或要求給好評。",
+          "tradeoff": "多花工作時間，也可能被說準備很亂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 907789295
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "7a346c7150c3f2216b6386c70012dffce2b42ad905b0e530b9046096be78efb1"
+      },
+      "consequenceDirections": {
+        "A": "家長可拒，交流不替代必要回饋入口，也不把教師草圖當學生成果。",
+        "B": "不以未填降低孩子待遇。",
+        "C": "摘要不證明所有家長已收到或回覆。",
+        "D": "必要溝通不等新系統。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒留言卡與普通2紙本回饋同核心媒介，改為教師額外提供具體準備過程交流。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "維持自由傳訊，婉拒額外印表。",
+                "action": "拒絕真實提出的印製協作，不縮減必要回饋可及性。",
+                "tradeoff": "家長可能失落。"
+              },
+              {
+                "id": 2,
+                "text": "提出自願一頁紙本版本，保留其他方式。",
+                "action": "製作合規低資料量的新自願回饋格式，未採他班四聯。",
+                "tradeoff": "多整理，可能重複。"
+              },
+              {
+                "id": 3,
+                "text": "邀家長先提最想回饋的三個問題。",
+                "action": "徵詢成人自願一般意見，不代其同意公開。",
+                "tradeoff": "可能偏個人想法。"
+              },
+              {
+                "id": 4,
+                "text": "我願整理一份不含個資的成果展示文字摘要。",
+                "action": "額外製作公開可知資訊供家庭自選，不展示學生私訊。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 5,
+                "text": "詢問行政是否已有合法可及的回饋工具。",
+                "action": "查詢既有資源，不把詢問當開表或取得許可。",
+                "tradeoff": "可能沒工具。"
+              },
+              {
+                "id": 6,
+                "text": "邀他協助整理公開活動時程，先用假資料示範。",
+                "action": "提出不接觸學生資訊的額外成人協作，未授權查看私訊。",
+                "tradeoff": "要帶著做，未必省時。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想省一次被比較的氣，卻不想印四張裝正式；願意自己做一張漂亮的空白留言卡，讓想寫的人只寫一句。",
+              "action": "提出教師本人額外原創低負擔留言卡方案，不替家長選答案或強制交回。",
+              "tradeoff": "花設計時間，可能沒人寫。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4084140926
+            },
+            "selectedIds": [
+              6,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": "emotional",
+              "C": 5,
+              "D": 6
+            },
+            "optionsDigest": "8543fe997a897c70f4c5853508da96ac1f97a1e5fc02ed1955ad1eeed9e5cdb0"
+          },
+          "previousConsequenceDirections": {
+            "A": "不把無紙等同不重視，也不妨礙合法紙本需求。",
+            "B": "拒填不等不關心，卡片不代必要回饋入口。",
+            "C": "必要溝通不等新系統。",
+            "D": "對方可拒，不能因熱心給未授權資料。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dd7428422abdad709583aa786f89612a771b0d02acaca6a01d54210c81b08897",
+    "draftSha256": "2575aa5375beb27e5b511a9c4f75a8389c2796238e1752db80340d28adc704cb",
     "seedAssignmentVersion": 1
   }
 }

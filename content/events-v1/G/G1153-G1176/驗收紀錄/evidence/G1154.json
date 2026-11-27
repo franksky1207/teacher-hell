@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "55347149e78c424743383bb020aebb9108b8e0babd805084fb23b10751e641e7",
+      "checkedAt": "2026-11-27T17:44:26.097Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留學生原稿，婉拒本次成品替換。",
+            "action": "拒絕未成立的額外成品使用，不處分家長私物。",
+            "tradeoff": "可能傷好意。"
+          },
+          {
+            "id": 2,
+            "text": "邀雙方合意做一版混合稿，先談署名與修改。",
+            "action": "提出新原創合作協商，未取得作者接受或完稿。",
+            "tradeoff": "耗時間，可能談不攏。"
+          },
+          {
+            "id": 3,
+            "text": "詢問作者是否願意另列一小區給不同版本並置。",
+            "action": "提出合意、合規展示提案，不以比較羞辱任何作者。",
+            "tradeoff": "占版面，可能像比輸贏。"
+          },
+          {
+            "id": 4,
+            "text": "只詢問是否願意捐空白紙，成品自行帶回。",
+            "action": "提出無條件且合法的材料接收方案，未移交或保證採用。",
+            "tradeoff": "少現成效果。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長做一次一般排版技巧的自願分享提案。",
+            "action": "提出須校規與作者素材合法的一般交流邀請，未排定或讓學生做商業宣傳。",
+            "tradeoff": "需準備，可能不准。"
+          },
+          {
+            "id": 6,
+            "text": "我願另寫一張原作設計意圖的介紹，先請作者確認。",
+            "action": "額外協助原創文字介紹，不代作者同意、評分或虛報成品。",
+            "tradeoff": "花備課，可能被拒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那句小學生讓我很不舒服，願意拿自己的蹩腳手稿和學生原稿放在同一張草稿桌，先請他也教教我，而不是只挑孩子。",
+          "action": "提出教師本人原創草稿參與的自願成人學生技巧交流，未展示不願公開作品，不換採用承諾。",
+          "tradeoff": "自己丟臉，花課間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1938600471
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "3afda49e200c6dc8de2b83105aaf74a848b927bdd7c28e1e25ac7e442b53b255"
+      },
+      "consequenceDirections": {
+        "A": "任一方可拒，未准不貼。",
+        "B": "家長可不願教，學生可拒參與；不以教師下場壓家長認錯。",
+        "C": "拒分享不影響孩子待遇。",
+        "D": "作者可不想解釋，介紹不能迫接受新版。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "657c604f355ff8169ca4491ffb73ac4f34fc4f85ebcd4f31c2d6cc7ffcd0d950",
+    "draftSha256": "55347149e78c424743383bb020aebb9108b8e0babd805084fb23b10751e641e7",
     "seedAssignmentVersion": 1
   }
 }

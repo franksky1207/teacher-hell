@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f8a24630a7b6be2a7d1ceadfed63e78ff785db45046c1bb256f7dc2246a4b51e",
+      "checkedAt": "2026-11-27T05:31:26.494Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下再確認孩子是否真正自願，不讓家長或組員代答",
+            "action": "導師已私下再確認孩子是否真正自願，不讓家長或組員代答",
+            "tradeoff": "要另找本人，也可能改變原意願"
+          },
+          {
+            "id": 2,
+            "text": "解開角色與家庭背景，不向同學提供真人對照",
+            "action": "導師已解開角色與家庭背景，不向同學提供真人對照",
+            "tradeoff": "戲劇效果可能較弱，也要確認原稿不再可辨識"
+          },
+          {
+            "id": 3,
+            "text": "全組重新自選角色，按同樣方式協調",
+            "action": "導師已全組重新自選角色，按同樣方式協調",
+            "tradeoff": "花課堂時間，也可能有人得換掉原準備"
+          },
+          {
+            "id": 4,
+            "text": "依孩子意願提供不需上台的合規參與方式",
+            "action": "導師已依孩子意願提供不需上台的合規參與方式",
+            "tradeoff": "角色空缺須重排，也要符合必要課程目標"
+          },
+          {
+            "id": 5,
+            "text": "聽家長說她擔心的具體負荷，不先承諾指定換角",
+            "action": "導師已聽家長說她擔心的具體負荷，不先承諾指定換角",
+            "tradeoff": "談話可能不舒服，也可能沒有立即共識"
+          },
+          {
+            "id": 6,
+            "text": "和當事人確認可退出與可停的界線，再決定如何繼續",
+            "action": "導師已和當事人確認可退出與可停的界線，再決定如何繼續",
+            "tradeoff": "安排較慢，也不能用有退出規則就強迫開始"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你受不了這角色被說得像處罰，先把自己的示範段留給你演，學生角色仍各自重談",
+          "action": "導師已以本人原創且不含學生家事的短段示範家務角色，不替學生分角、不擴大揭露家庭狀況，必要課程由正常安排承接",
+          "tradeoff": "要付出你的示範時間，也可能演得很尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3858533643
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "5916d9b4e4ff15d6c99eb9d500f0623d751b7d5bbf98e64b871dfd1a83eebd6e"
+      },
+      "consequenceDirections": {
+        "A": "有別的參與入口，不能把不演媽媽當作不願學習。",
+        "B": "孩子知道不是演了就得演到底，家長仍可能不放心。",
+        "C": "家長能看見家務角色不必指向某個孩子，卻不能因教師演過就要求孩子照演。",
+        "D": "家庭的疲倦能被理解，教師仍需保留孩子自己的表意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "66021cd78f5bde4a025591fa022726f64f9f33a42b5d9fa2014efe9a5a0acdc7",
+    "draftSha256": "f8a24630a7b6be2a7d1ceadfed63e78ff785db45046c1bb256f7dc2246a4b51e",
     "seedAssignmentVersion": 1
   }
 }

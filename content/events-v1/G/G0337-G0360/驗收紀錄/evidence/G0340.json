@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d85f3fb17cdc8a35103a2e5edc03e51d896a2b2435d030c9bb3c3d755cc07b2a",
+      "checkedAt": "2026-11-27T05:31:26.493Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "各留一個反例，另約正式空檔再核對",
+            "action": "導師已各留一個反例，另約正式空檔再核對",
+            "tradeoff": "今天沒有完整結論，必須記得後續"
+          },
+          {
+            "id": 2,
+            "text": "承認簡單說得太快，停止這輪辯題，讓他去吃",
+            "action": "導師已承認簡單說得太快，停止這輪辯題，讓他去吃",
+            "tradeoff": "要承受沒能當場證明自己的不甘"
+          },
+          {
+            "id": 3,
+            "text": "暫不採用這題，待共同確認適用範圍",
+            "action": "導師已暫不採用這題，待共同確認適用範圍",
+            "tradeoff": "可用例子減少，也可能讓他覺得被撤下"
+          },
+          {
+            "id": 4,
+            "text": "請他只標最關鍵的難點，餘下由你先做準備",
+            "action": "導師已請他只標最關鍵的難點，餘下由你先做準備",
+            "tradeoff": "你要承接實際工作，他不必把整段休息都交出來"
+          },
+          {
+            "id": 5,
+            "text": "向任課同仁請教不同程度學生可能卡哪裡，不把兩人輸贏當依據",
+            "action": "導師已向任課同仁請教不同程度學生可能卡哪裡，不把兩人輸贏當依據",
+            "tradeoff": "需自願且適當的交流，不能拿學生私人資料比較"
+          },
+          {
+            "id": 6,
+            "text": "明確詢問他今天願意談到何時，時間到便停",
+            "action": "導師已明確詢問他今天願意談到何時，時間到便停",
+            "tradeoff": "可能只剩很短，也得真守住"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得不服，拿自己的午休試解一題同概念變式，讓他先去吃，不要求等你",
+          "action": "導師已以本人合法可用休息空檔自作一題原創同概念變式，不占同事用餐、不賭勝負或以試解取代必要教學核對",
+          "tradeoff": "你的休息會變少，也可能自己做不出來"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3729863783
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "c7cf4f84e0716a83c3f834e2b0ddc46745caed04fe0eb3d76e6d8fd368c300f1"
+      },
+      "consequenceDirections": {
+        "A": "同事保住休息，題目仍須在採用前正常核對。",
+        "B": "難點有具體資料，卻不能靠留一張紙就假裝已聽懂對方。",
+        "C": "他的時間有自己決定權，教師則不能因話還沒講完就繼續追到餐桌。",
+        "D": "你能面對真正難點，卻不能把成人解得快慢當成學生都該會的證據。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f3ec347b2e83c78cdc998c390bdaba356327256520fb0d4bbad6c20a97acfa0",
+    "draftSha256": "d85f3fb17cdc8a35103a2e5edc03e51d896a2b2435d030c9bb3c3d755cc07b2a",
     "seedAssignmentVersion": 1
   }
 }

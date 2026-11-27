@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aa6a3be0f1c0e8348a2b955cf9972a30c9de0f6b352925b25a9eccd0dd1f53d5",
+      "checkedAt": "2026-11-27T05:31:26.499Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用同樣安全條件先測功能，再談外觀",
+            "action": "導師已用同樣安全條件先測功能，再談外觀",
+            "tradeoff": "展示順序要改，測試也不能只比單一數字"
+          },
+          {
+            "id": 2,
+            "text": "分開看設計過程與實際作用，不把兩者湊成誰最省最好",
+            "action": "導師已分開看設計過程與實際作用，不把兩者湊成誰最省最好",
+            "tradeoff": "要多整理依據，也須符合原課程要求"
+          },
+          {
+            "id": 3,
+            "text": "請他自願示範一個低成本工法，不要求全班改用",
+            "action": "導師已請他自願示範一個低成本工法，不要求全班改用",
+            "tradeoff": "會占課內時間，也不必替每組修好"
+          },
+          {
+            "id": 4,
+            "text": "讓各組先說原設計想解決什麼，再按目標核對",
+            "action": "導師已讓各組先說原設計想解決什麼，再按目標核對",
+            "tradeoff": "討論較長，教師要避免只聽口才"
+          },
+          {
+            "id": 5,
+            "text": "提供全班可及的合規材料再練一小段，不把家庭採買當必需",
+            "action": "導師已提供全班可及的合規材料再練一小段，不把家庭採買當必需",
+            "tradeoff": "學校需備材與時間，也不保證做得更好"
+          },
+          {
+            "id": 6,
+            "text": "維持原展示順序，但明列功能與材料限制的具體回饋",
+            "action": "導師已維持原展示順序，但明列功能與材料限制的具體回饋",
+            "tradeoff": "學生可能失望未先測，教師仍須公平看實際作用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不服自己示範老靠漂亮材料，拿同樣可用紙尺做一座自己的試橋，接受照同條件看",
+          "action": "導師已以本人合法可用的低成本材料製作非評量試橋，僅依任課核可安全條件比較，不加載危險重量或要求學生跟做",
+          "tradeoff": "花你的備課時間，也可能根本撐不住"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1202529758
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "0e1d81631fb06ababcc2c73138810c5a3ba2a7bc38e418a06c69d12508a2f704"
+      },
+      "consequenceDirections": {
+        "A": "作用有被看見的機會，漂亮作品仍可能在其他目標上有價值。",
+        "B": "同學能學到具體方法，作者卻不會因此成免費製作助手。",
+        "C": "學生看見成人也須面對材料限制，教師卻不能用自己的失敗否定學生成功或臨時抬高負重。",
+        "D": "外觀不再悄悄等同成績，但原順序的暗示可能仍存在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e935b9e13ebe67ba79f0840f8c216bb8225dbdf2f0e63b5070ef3d4038cf1b22",
+    "draftSha256": "aa6a3be0f1c0e8348a2b955cf9972a30c9de0f6b352925b25a9eccd0dd1f53d5",
     "seedAssignmentVersion": 1
   }
 }

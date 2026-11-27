@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b6257b4237f3611a36e7d3d2058970a105c6e27be53fc6265e253b98ff3e8d3",
+      "checkedAt": "2026-11-27T05:31:26.506Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天改成可獨立完成的個人區，必要共同部分另排",
+            "action": "導師已今天改成可獨立完成的個人區，必要共同部分另排",
+            "tradeoff": "分工要重做，也不能把兩人負擔全丟其他人"
+          },
+          {
+            "id": 2,
+            "text": "在各方自願與規則允許下換組一次，不當永久先例",
+            "action": "導師已在各方自願與規則允許下換組一次，不當永久先例",
+            "tradeoff": "需要找到真願接手的人，也可能換不成"
+          },
+          {
+            "id": 3,
+            "text": "訂出下次排班前可詢問的輪替方式，不公開私人爭執",
+            "action": "導師已訂出下次排班前可詢問的輪替方式，不公開私人爭執",
+            "tradeoff": "要維持一致，仍可能有人對結果不滿"
+          },
+          {
+            "id": 4,
+            "text": "保留他願意的共同區工作，明確不再代派好友任務",
+            "action": "導師已保留他願意的共同區工作，明確不再代派好友任務",
+            "tradeoff": "教師要接起剩餘協調，也需核對另一人意願"
+          },
+          {
+            "id": 5,
+            "text": "取消可刪的班角加碼整理，只保留必要清潔",
+            "action": "導師已取消可刪的班角加碼整理，只保留必要清潔",
+            "tradeoff": "成果較簡單，也不能因兩人吵架就停掉基本衛生"
+          },
+          {
+            "id": 6,
+            "text": "分別聽兩人對可合作範圍的說法，不強迫當場和好",
+            "action": "導師已分別聽兩人對可合作範圍的說法，不強迫當場和好",
+            "tradeoff": "花教師時間，意見也可能相反"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想再替友情配對，今天試一次自願認領工作，你只核對必要結果",
+          "action": "導師已在正常班務規則容許下提出本輪自願認領安全工作方案，保留公平分配、必要結果與成人協調責任，不取消既有義務",
+          "tradeoff": "要在公平與安全範圍內，有缺口仍須教師協調，不能撒手不管"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 64897396
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "f4a77c3ae689a8964dc58fb479340c53c250cc025fbcaf99c05f020624a6b1f2"
+      },
+      "consequenceDirections": {
+        "A": "學生有機會自己選任務，教師卻得接受安排不整齊，也不能讓不敢開口的人只剩最重工作。",
+        "B": "衝突有暫時空間，但好友不必因此被公開貼成問題人物。",
+        "C": "工作量下降，真正分工衝突仍需處理。",
+        "D": "學生能履行今天的部分，不以做完為代價取得處罰朋友的權力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3a7c60dee4c979e4e69ac353cd77988514bf46f4d7617e4716e6dee85f0ebbef",
+    "draftSha256": "5b6257b4237f3611a36e7d3d2058970a105c6e27be53fc6265e253b98ff3e8d3",
     "seedAssignmentVersion": 1
   }
 }

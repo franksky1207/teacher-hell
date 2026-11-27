@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5a8509323d875d4c380cf8a91df30713220b64e5be91fedca08f31300a7f2b89",
+      "checkedAt": "2026-11-27T05:31:44.004Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收起錯題，讓他用剩下時間聽球，不繼續追問",
+            "action": "導師已收起錯題，讓他用剩下時間聽球，不繼續追問",
+            "tradeoff": "討論沒完成，你要另安排正式工作時間"
+          },
+          {
+            "id": 2,
+            "text": "若雙方願意，一起安靜聽完這段，不把每球都拉回教學",
+            "action": "導師已若雙方願意，一起安靜聽完這段，不把每球都拉回教學",
+            "tradeoff": "要放下解題欲，也未必聽得到原來那個關鍵局面"
+          },
+          {
+            "id": 3,
+            "text": "明確撤回未核實的轉播比喻，先不用在課堂",
+            "action": "導師已明確撤回未核實的轉播比喻，先不用在課堂",
+            "tradeoff": "少一個熟悉素材，也得另備正確說明"
+          },
+          {
+            "id": 4,
+            "text": "另約正常工作空檔，請他只指出最容易混淆的一步",
+            "action": "導師已另約正常工作空檔，請他只指出最容易混淆的一步",
+            "tradeoff": "要配合彼此時間，也不能默認他負責整題重寫"
+          },
+          {
+            "id": 5,
+            "text": "讓他自願推薦另一個真正適用的公開例子，不要求即刻答",
+            "action": "導師已讓他自願推薦另一個真正適用的公開例子，不要求即刻答",
+            "tradeoff": "他可拒絕，資料仍須核對"
+          },
+          {
+            "id": 6,
+            "text": "由你自己先把兩種機率分開試算，再向適當任課者確認",
+            "action": "導師已由你自己先把兩種機率分開試算，再向適當任課者確認",
+            "tradeoff": "增加你的備課，也可能發現原類比完全不能用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想追完賽況，把備課閒聊停下，自費找合法重播回家看",
+          "action": "導師已取消本人非必要午休備課閒聊，僅就本人私人時間查找合法重播，不散發未授權內容或以此代替必要教學確認",
+          "tradeoff": "花自己的私人時間或費用，不能要求他陪看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2737946603
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "e1d8a06b0e15d7900f1c774319d929355592867c56ee162acbc9c3042c8e8e77"
+      },
+      "consequenceDirections": {
+        "A": "學生不會被模糊類比誤導，同事卻可能仍覺得休息被你花掉。",
+        "B": "休息不再假借教學之名延長，你仍須另做真正的備課，重播也不會把錯過的當下還回來。",
+        "C": "專業質疑有機會被處理，今天的錯過仍無法補回。",
+        "D": "私人快樂不再被當備課空檔，課程疑義仍需回頭核對。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／當批選項顯示文字定向潤飾複核，原行動、代價及映射不變"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7755f1c1e621ab6c5a7aa4498271f868d0a44904997738f11ef73097019464aa",
+    "draftSha256": "5a8509323d875d4c380cf8a91df30713220b64e5be91fedca08f31300a7f2b89",
     "seedAssignmentVersion": 1
   }
 }

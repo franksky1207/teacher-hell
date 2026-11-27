@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1cf5afba318bcf318d897ddb717c7a29cef28aec8f2bdfa951bd08820cab9720",
+      "checkedAt": "2026-11-27T05:31:26.506Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依公開且合規的方式輪用，不讓私下小組占住",
+            "action": "導師已依公開且合規的方式輪用，不讓私下小組占住",
+            "tradeoff": "要花時間管理，也不保證每人每次都有位"
+          },
+          {
+            "id": 2,
+            "text": "分開小組討論與安靜自用的時段，先確認可行",
+            "action": "導師已分開小組討論與安靜自用的時段，先確認可行",
+            "tradeoff": "可用時間變零碎，也須有人維持規範"
+          },
+          {
+            "id": 3,
+            "text": "取消非必要的特殊桌安排，協助需求轉到已核准空間",
+            "action": "導師已取消非必要的特殊桌安排，協助需求轉到已核准空間",
+            "tradeoff": "可能不在原班，也需符合出入與照看規定"
+          },
+          {
+            "id": 4,
+            "text": "請各組說實際要用多久，不由最有影響的人代定",
+            "action": "導師已請各組說實際要用多久，不由最有影響的人代定",
+            "tradeoff": "要重新協調，可能有些期待根本排不下"
+          },
+          {
+            "id": 5,
+            "text": "保留一段不需入組的個人使用空檔，不以家庭理由登記",
+            "action": "導師已保留一段不需入組的個人使用空檔，不以家庭理由登記",
+            "tradeoff": "小組時段減少，也須按學校規則確認"
+          },
+          {
+            "id": 6,
+            "text": "把清桌的付出與往後使用權說清楚，必要分工依公平方式重排",
+            "action": "導師已把清桌的付出與往後使用權說清楚，必要分工依公平方式重排",
+            "tradeoff": "可能讓清理者失落，教師也須承認先前未說明"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想再拿學生清好的桌做自己的收納，搬走本人非必要暫放物，這次真的讓出可用桌面",
+          "action": "導師已移除本人可處分且非必要暫放的物件至合法可用位置，不占他人空間、不擅移學生物品或取消正常管理",
+          "tradeoff": "你得另找合法收納位置，不能轉塞別人的區域"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 986012787
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "140136ab75113a2f944254c8df2565d2c30f75ae4ebaf3a3ad581d2b556bcdc7"
+      },
+      "consequenceDirections": {
+        "A": "公共空間不再只要求學生分享，卻仍需處理彼此的使用衝突，不能一空桌就宣告公平。",
+        "B": "使用能按真實範圍安排，卻不能用說得最急就壓過其他人。",
+        "C": "公共桌不再靠關係排除提議者，但真正需求仍須依實際條件協調。",
+        "D": "出力能被看見，卻不能變成其他人永遠不能靠近的理由。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5667f205f01303c18de765a10e5bcec47c9802d14c028a043d7845ae12ace483",
+    "draftSha256": "1cf5afba318bcf318d897ddb717c7a29cef28aec8f2bdfa951bd08820cab9720",
     "seedAssignmentVersion": 1
   }
 }

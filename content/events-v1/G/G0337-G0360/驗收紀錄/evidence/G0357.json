@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0b573aff4f64a7dddd0219366ea9756640ebeef4abea404cb616237daf2e93c8",
+      "checkedAt": "2026-11-27T05:31:26.505Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "直接說明彼此沒有約定，不讓目光變成教師背書",
+            "action": "導師已直接說明彼此沒有約定，不讓目光變成教師背書",
+            "tradeoff": "他可能很尷尬，你須避免用嘲諷拆台"
+          },
+          {
+            "id": 2,
+            "text": "請他自己收回大家必須等的期待，讓各人自由離開",
+            "action": "導師已請他自己收回大家必須等的期待，讓各人自由離開",
+            "tradeoff": "可能立刻散場，也不能把離開者說成不挺"
+          },
+          {
+            "id": 3,
+            "text": "若場地與雙方意願都合適，另約短暫自願觀看，不評分",
+            "action": "導師已若場地與雙方意願都合適，另約短暫自願觀看，不評分",
+            "tradeoff": "要真正有可用時間，也不保證其他人都在"
+          },
+          {
+            "id": 4,
+            "text": "讓他決定今天是否不演，不用補償同學的等待",
+            "action": "導師已讓他決定今天是否不演，不用補償同學的等待",
+            "tradeoff": "有人可能失望，教師須處理具體施壓"
+          },
+          {
+            "id": 5,
+            "text": "只談他想練的具體部分，不追全場表演",
+            "action": "導師已只談他想練的具體部分，不追全場表演",
+            "tradeoff": "分享範圍縮小，也要維持安全與自願"
+          },
+          {
+            "id": 6,
+            "text": "請圍觀者回到原課間安排，由本人選是否私下談",
+            "action": "導師已請圍觀者回到原課間安排，由本人選是否私下談",
+            "tradeoff": "現場氣氛中斷，也不能用解散當懲罰"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實也不想每次路過都被算觀眾，改走自己原可用的另一條路，今天不再留下看熱鬧",
+          "action": "導師已明確說明無觀看約定，在正常勤務與安全容許下調整本人非必要通行路線，不以離開放任危險或拒絕正式求助",
+          "tradeoff": "少了原熟悉互動，也得明說不是處罰或躲孩子"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3313622693
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "ecda5cd9389c6d7ac164a429126c9b37ebd90e9383f066fdab30accedd2f1e1d"
+      },
+      "consequenceDirections": {
+        "A": "同學知道不是老師保證，學生仍需自己面對說過頭的話。",
+        "B": "他不用繼續站中央撐場，教師仍需正常回應若有的需求。",
+        "C": "退出不等於被揭穿就該丟臉，原自誇仍可自己說清楚。",
+        "D": "學生不能靠攔住你的習慣路線取得見證，你則須接受這次沒有漂亮救場，必要照護仍正常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "943bb31aa3c77e3593a79dabdd44c49f4bd0a30b66ff4c8a761ae5e149bcf720",
+    "draftSha256": "0b573aff4f64a7dddd0219366ea9756640ebeef4abea404cb616237daf2e93c8",
     "seedAssignmentVersion": 1
   }
 }

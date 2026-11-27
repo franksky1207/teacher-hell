@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0c27ad4238ddbfdf3e38f39d99b652233e38dcfd6be2c3b439ee644554073676",
+      "checkedAt": "2026-11-27T05:31:26.501Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "立刻依原約看一小段，給能採取的具體回饋",
+            "action": "導師已立刻依原約看一小段，給能採取的具體回饋",
+            "tradeoff": "其他工作要挪開，也不能為趕快回而亂判"
+          },
+          {
+            "id": 2,
+            "text": "明確結束非必要追加，只處理原已交內容",
+            "action": "導師已明確結束非必要追加，只處理原已交內容",
+            "tradeoff": "沒有更多新版可挑，也要守住必要課程要求"
+          },
+          {
+            "id": 3,
+            "text": "約一個確實能完成的判讀時間，說清目前做到哪裡",
+            "action": "導師已約一個確實能完成的判讀時間，說清目前做到哪裡",
+            "tradeoff": "你得履約，等待仍讓人不安"
+          },
+          {
+            "id": 4,
+            "text": "請適任任課同仁依規則共同核對，不把延誤留給學生猜",
+            "action": "導師已請適任任課同仁依規則共同核對，不把延誤留給學生猜",
+            "tradeoff": "要取得正常協作與必要知情，也不保證更快"
+          },
+          {
+            "id": 5,
+            "text": "讓本人指出最需要回饋的一處，先聚焦處理",
+            "action": "導師已讓本人指出最需要回饋的一處，先聚焦處理",
+            "tradeoff": "其他部分暫時沒答案，也要遵守原公平規則"
+          },
+          {
+            "id": 6,
+            "text": "把本次補交的目的、已完成與仍缺項寫清楚給本人",
+            "action": "導師已把本次補交的目的、已完成與仍缺項寫清楚給本人",
+            "tradeoff": "要整理準確資訊，不能追溯新增標準"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再靠他願意重做掩蓋自己沒回，主動把這次延誤記入工作紀錄並向主管說明",
+          "action": "導師已如實記錄本人回覆延誤與當前進度，向主管提出必要說明，不公開學生私事、不因此更動正式評量結果",
+          "tradeoff": "留下可查疏漏，也可能被要求檢視處理量"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3455312863
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "d43bc30c0e0065d1e42fb83375e809172644e538188d37c38db6e8f429b46629"
+      },
+      "consequenceDirections": {
+        "A": "學生知道原作不是丟進黑洞，仍可能對先前等待不滿。",
+        "B": "學生知道不是無止境加考，但也可能發現仍有必要部分要補。",
+        "C": "學生不用再證明自己催過，你則要真的改善回覆，不是寫一筆就當補償完成。",
+        "D": "學生不用靠一直重作換教師看一眼，原缺口卻仍需據實回應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d8d6fa29680c2d151772b7c5b5f3105924e4d25bdb62aa80936186f21ab1e4f4",
+    "draftSha256": "0c27ad4238ddbfdf3e38f39d99b652233e38dcfd6be2c3b439ee644554073676",
     "seedAssignmentVersion": 1
   }
 }

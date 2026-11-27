@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c007222e47a0888ac525314b8da7de8f1aadc208b71c2823d32028d691a5b912",
+      "checkedAt": "2026-11-27T05:31:26.494Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "採用短書寫，和他約好切換訊號再用",
+            "action": "導師已採用短書寫，和他約好切換訊號再用",
+            "tradeoff": "備課要多確認，也不能把訊號當保證永遠無衝突"
+          },
+          {
+            "id": 2,
+            "text": "保留口答，但給足思考時間再邀回應",
+            "action": "導師已保留口答，但給足思考時間再邀回應",
+            "tradeoff": "課堂可能安靜，也要處理只有快手發言的習慣"
+          },
+          {
+            "id": 3,
+            "text": "請同事先在自己合適課節試，再分享實際觀察",
+            "action": "導師已請同事先在自己合適課節試，再分享實際觀察",
+            "tradeoff": "要本人願意，也不等於把新方法推回去不管"
+          },
+          {
+            "id": 4,
+            "text": "和學生核對短寫幫到哪裡，不用全班低頭就判成功",
+            "action": "導師已和學生核對短寫幫到哪裡，不用全班低頭就判成功",
+            "tradeoff": "需可調整時間與自願回饋"
+          },
+          {
+            "id": 5,
+            "text": "讓兩人各負責一個完整小段，中途不隨意代接",
+            "action": "導師已讓兩人各負責一個完整小段，中途不隨意代接",
+            "tradeoff": "分工較硬，臨場必要協助仍須保留"
+          },
+          {
+            "id": 6,
+            "text": "如實說你對被切畫面的不舒服，不因此否定題目",
+            "action": "導師已如實說你對被切畫面的不舒服，不因此否定題目",
+            "tradeoff": "要面對合作摩擦，不能要求同事只道歉不提教學"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想讓他感受當主持人的難處，邀他課後自願和你重演一輪交接，只用你們自己的題目",
+          "action": "導師已提出雙方自願、在正常可用時段的共同帶課交接演練，不錄學生、不加派未同意工作，保留必要課務",
+          "tradeoff": "占用正式可安排的空檔，也可能輪到你搶話最多"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3875824754
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "4a6e37565f6224bca1a756815a875f3a23783538f6ec1d5cf5ffc224a87b8fad"
+      },
+      "consequenceDirections": {
+        "A": "方法與相處能分開討論，兩人卻未必當場達成同樣看法。",
+        "B": "兩人可在沒有學生當觀眾時練切換，卻不能把演練當成證明誰比較會教。",
+        "C": "他能依自己的節奏試，合作課仍須另談如何切換。",
+        "D": "同事不必靠搶畫面才有方法可試，你也得放下每段都要主導。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0c3859dbc8acd7e1b088f795d159e9a08fc147e149805f6299e111c0095c2d5",
+    "draftSha256": "c007222e47a0888ac525314b8da7de8f1aadc208b71c2823d32028d691a5b912",
     "seedAssignmentVersion": 1
   }
 }

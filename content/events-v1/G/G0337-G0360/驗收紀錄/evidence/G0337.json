@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf8dde977717a02221e40c0d30db0b96c0bab02cf5199e8552cd089c9ba633a6",
+      "checkedAt": "2026-11-27T05:31:26.489Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "換上核對好的頁面直接繼續，不再重演錯名",
+            "action": "導師已換上核對好的頁面直接繼續，不再重演錯名",
+            "tradeoff": "有些人可能沒注意到更正，需要確實送達原接收者"
+          },
+          {
+            "id": 2,
+            "text": "讓本人只念正確署名，先確認真的願意",
+            "action": "導師已讓本人只念正確署名，先確認真的願意",
+            "tradeoff": "可能再次緊張，也不能把不念當不負責"
+          },
+          {
+            "id": 3,
+            "text": "由你說明自己也漏看，不把失誤全壓在他身上",
+            "action": "導師已由你說明自己也漏看，不把失誤全壓在他身上",
+            "tradeoff": "你要承認疏漏，也不能替未核對部分作保"
+          },
+          {
+            "id": 4,
+            "text": "使用核對過的書面更正卡，不要求本人再朗讀",
+            "action": "導師已使用核對過的書面更正卡，不要求本人再朗讀",
+            "tradeoff": "畫面可能打斷節奏，仍要按原分享範圍處理"
+          },
+          {
+            "id": 5,
+            "text": "先讓他短暫休息，由合適者依本人同意接續必要報告",
+            "action": "導師已先讓他短暫休息，由合適者依本人同意接續必要報告",
+            "tradeoff": "要協調且不擅改評量，疲勞需求仍要適當確認"
+          },
+          {
+            "id": 6,
+            "text": "讓他自己選改頁後從哪一段重入，保留必要課程要求",
+            "action": "導師已讓他自己選改頁後從哪一段重入，保留必要課程要求",
+            "tradeoff": "需要挪動流程，也可能不完全流暢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你想到自己的念錯史也覺得糗，請他先在私下教你把正確名字念準，再由你對原接收者說",
+          "action": "導師已邀學生自願私下核對已查證姓名讀音，由本人承擔必要正確轉述，不要求學生公開測試或忍受起鬨",
+          "tradeoff": "占用短空檔，也可能輪到你卡住"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 174444239
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "1042717b0cd1a2d781089d93fe94cb3d90334b41ccd583eb93d703673ab7f664"
+      },
+      "consequenceDirections": {
+        "A": "學生有可預期的重新開始，卻不能藉選段把作者更正略掉。",
+        "B": "他有一次清楚說對的機會，卻保有不想公開再試的選擇。",
+        "C": "學生可以當一次知道答案的人，卻不用為教師發音負全責；更正仍由你確認送達。",
+        "D": "接收者能看見正確署名，學生不必再承受口頭失誤的壓力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e75aafd8fccd596e66e430d2186055571cae24e40f17f4b47bce4615dbcb5d8",
+    "draftSha256": "bf8dde977717a02221e40c0d30db0b96c0bab02cf5199e8552cd089c9ba633a6",
     "seedAssignmentVersion": 1
   }
 }

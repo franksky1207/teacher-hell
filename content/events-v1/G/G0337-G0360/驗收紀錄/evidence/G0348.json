@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "13e18a4d34a55e787495f2a553c537804c020c0b7f1e2cbd3a796a9c1cd5c43a",
+      "checkedAt": "2026-11-27T05:31:44.009Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只開本節必要的小份，明說其餘不列作業",
+            "action": "導師已只開本節必要的小份，明說其餘不列作業",
+            "tradeoff": "部分材料用不上，也要依授權保管"
+          },
+          {
+            "id": 2,
+            "text": "把未成立借用的剩餘材料退回，不把它算班級庫存",
+            "action": "導師已把未成立借用的剩餘材料退回，不把它算班級庫存",
+            "tradeoff": "未來要另借，也可能少了臨時方便"
+          },
+          {
+            "id": 3,
+            "text": "先讓少量自願試作者操作，其他人按原課程進行",
+            "action": "導師已先讓少量自願試作者操作，其他人按原課程進行",
+            "tradeoff": "參與不齊，也須合格照看"
+          },
+          {
+            "id": 4,
+            "text": "由兩位教師共同重排一個可停下的小步驟，做到就先結束",
+            "action": "導師已由兩位教師共同重排一個可停下的小步驟，做到就先結束",
+            "tradeoff": "整體成品不完整，也要依任課目標調整"
+          },
+          {
+            "id": 5,
+            "text": "請學生先選與目標有關的一種媒材，不規定整盒通吃",
+            "action": "導師已請學生先選與目標有關的一種媒材，不規定整盒通吃",
+            "tradeoff": "作品會不同，也要確認各選擇都安全可行"
+          },
+          {
+            "id": 6,
+            "text": "記下本次實際用量與時間，再決定後續是否借用",
+            "action": "導師已記下本次實際用量與時間，再決定後續是否借用",
+            "tradeoff": "要多整理，不保證試過就持續採用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想玩那盒，向他借一小份，自己備課時試，不叫學生全做完",
+          "action": "導師已向物主提出僅供本人在合法備課空檔自願小份試材的借用請求，依授權與安全執行，不擴大學生任務或占用未同意資源",
+          "tradeoff": "要取得物主同意並自負時間，失敗也不能再添學生作業"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2915654546
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "431e82cbda9b36e8a3cd6f1f4a41f01a3c698b88468665c7bb063d3a9e2723c2"
+      },
+      "consequenceDirections": {
+        "A": "資源有明確界線，但原課程仍需在現有量內完成。",
+        "B": "教師能滿足自己的試材欲，學生保有原範圍；同事仍可拒借，不能被你的熱情推著送整盒。",
+        "C": "能看見真實耗時，卻不能把先試者變成要替全班示範到底的人。",
+        "D": "同事能依實際條件提供資源，不必靠一箱多帶證明支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／當批選項顯示文字定向潤飾複核，原行動、代價及映射不變"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4017b456357324669e828fa57e1036be1e4ab152c64f93c229db58f6f1875bc0",
+    "draftSha256": "13e18a4d34a55e787495f2a553c537804c020c0b7f1e2cbd3a796a9c1cd5c43a",
     "seedAssignmentVersion": 1
   }
 }

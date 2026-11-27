@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4a2c24a97485245d7d96680dbea4ced7074af8ba2ae386ceb48f108f6d65c9d5",
+      "checkedAt": "2026-11-27T05:31:26.501Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把兔子交回作者依法決定，不替他指定送誰",
+            "action": "導師已把兔子交回作者依法決定，不替他指定送誰",
+            "tradeoff": "有人可能期待收到，教師要自己說明用途已改"
+          },
+          {
+            "id": 2,
+            "text": "在相關人同意下作共同展示，不按秩序分配",
+            "action": "導師已在相關人同意下作共同展示，不按秩序分配",
+            "tradeoff": "少了個人持有的快感，也須尊重作品使用範圍"
+          },
+          {
+            "id": 3,
+            "text": "由你向原聽見者更正秩序獎說法，不點名誰未拿到",
+            "action": "導師已由你向原聽見者更正秩序獎說法，不點名誰未拿到",
+            "tradeoff": "要承認成人擅改用途，可能被追問"
+          },
+          {
+            "id": 4,
+            "text": "今天暫停這件非必要分送，讓各人平靜後再談",
+            "action": "導師已今天暫停這件非必要分送，讓各人平靜後再談",
+            "tradeoff": "活動熱鬧中斷，也要保管物主同意留下的作品"
+          },
+          {
+            "id": 5,
+            "text": "私下聽作者對原決定的疑問，如實說明你當時的想法",
+            "action": "導師已私下聽作者對原決定的疑問，如實說明你當時的想法",
+            "tradeoff": "他可能仍覺得不合理，不能用好意要求理解"
+          },
+          {
+            "id": 6,
+            "text": "讓想創作的人自願做自己的小物，不要求作者教全班",
+            "action": "導師已讓想創作的人自願做自己的小物，不要求作者教全班",
+            "tradeoff": "需要學校可用材料與安全條件，也不是人人想折"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想把做兔子的心情找回來，自己用合法餘紙學折一隻，失敗的留給自己，不拿去評誰",
+          "action": "導師已以本人合法取得紙料自願製作私人趣味紙兔，不要求學生免費教學、加做或作紀律分配，原作品權利照常",
+          "tradeoff": "花你的空檔，也可能折得很怪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1126220157
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "072ad696b419378977fbd99a492325920254e15dd6235e90969f7612111458f2"
+      },
+      "consequenceDirections": {
+        "A": "學生看見成人可只為好玩動手，你卻不能拿自己的兔子取代作者的同意或逼大家接受新版本。",
+        "B": "小物能回到班級趣味，卻不能把不同意展示的人說成掃興。",
+        "C": "趣味可有自己的入口，卻不能再用誰做得好排成新獎勵。",
+        "D": "問責不是只被聽成不肯分享，教師也須承擔已造成的影響。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba0093685f1d3272725219aef507a74a29b40237c0a37d1fea980004ac82fcde",
+    "draftSha256": "4a2c24a97485245d7d96680dbea4ced7074af8ba2ae386ceb48f108f6d65c9d5",
     "seedAssignmentVersion": 1
   }
 }

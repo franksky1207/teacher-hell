@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9c12ef659fb9cdbdbb75ae78d35538b33c83ee69bfd408814f1a27005c2ed56d",
+      "checkedAt": "2026-11-27T05:31:26.503Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "清楚說明符號意思與選件標準，不用安慰話另開保證",
+            "action": "導師已清楚說明符號意思與選件標準，不用安慰話另開保證",
+            "tradeoff": "他可能覺得太冷，也不會立刻放下失望"
+          },
+          {
+            "id": 2,
+            "text": "下次選件前不用曖昧反應，改用清楚的收件文字",
+            "action": "導師已下次選件前不用曖昧反應，改用清楚的收件文字",
+            "tradeoff": "會少些即時親切感，也需真的維持一致"
+          },
+          {
+            "id": 3,
+            "text": "本次依原標準選件，提供可理解的實際回饋",
+            "action": "導師已本次依原標準選件，提供可理解的實際回饋",
+            "tradeoff": "可能仍沒選上，也須承受不滿"
+          },
+          {
+            "id": 4,
+            "text": "讓本人說明最想你看到的改動，不要求再熬夜重交",
+            "action": "導師已讓本人說明最想你看到的改動，不要求再熬夜重交",
+            "tradeoff": "要另花查看時間，不能保證看到就選"
+          },
+          {
+            "id": 5,
+            "text": "今天暫停非必要加改，先照顧疲倦，原件仍保留正常判讀",
+            "action": "導師已今天暫停非必要加改，先照顧疲倦，原件仍保留正常判讀",
+            "tradeoff": "短期沒有新版，也要有可行後續時間"
+          },
+          {
+            "id": 6,
+            "text": "核對原群組說法，只向必要範圍更正，不追究誰先猜",
+            "action": "導師已核對原群組說法，只向必要範圍更正，不追究誰先猜",
+            "tradeoff": "要控制範圍，也可能仍有人不信"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想半夜被催按心，取消本人非必要深夜即時互動，白天再看作品",
+          "action": "導師已停止本人非必要深夜群組即時互動並明列一般回覆時段，保留正式急迫聯繫與必要職務，不取消學生作品正常受理",
+          "tradeoff": "少了學生期待的即時反應，正式急件仍有有效窗口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 921571135
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "142367dcb139009dd7945e856d0fa5b9d24dd7dd45e55629bef9e0e05c658a1e"
+      },
+      "consequenceDirections": {
+        "A": "心形不再被傳成錄取通知，卻不能拿流言責任全推同學。",
+        "B": "學生不必整夜守你上線，你則要真的在公告時段回覆，不把離線當永遠不回。",
+        "C": "學生較少靠符號猜，但不能把改字當成這次等待的時間都被補回。",
+        "D": "作品能按一致方式看，教師仍須承認原回應可能被誤讀。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c171ba61812b5a3f003c03eaeda3d430c4c25c739ba21766541efdc8c79e159a",
+    "draftSha256": "9c12ef659fb9cdbdbb75ae78d35538b33c83ee69bfd408814f1a27005c2ed56d",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "05cda1c2c836848e2b702d47916d60199101677016b528353f15f228e713cb6b",
+      "checkedAt": "2026-11-27T05:31:26.495Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "接受兩組自願的翻面比較，不再要求新印彩色",
+            "action": "導師已接受兩組自願的翻面比較，不再要求新印彩色",
+            "tradeoff": "要協調雙方工作範圍，成品可能不華麗"
+          },
+          {
+            "id": 2,
+            "text": "改用學校既有公用紙，家庭餘料由本人自行保留",
+            "action": "導師已改用學校既有公用紙，家庭餘料由本人自行保留",
+            "tradeoff": "尺寸或份量有限，也要另排材料"
+          },
+          {
+            "id": 3,
+            "text": "由你向原聽見者更正數量，不叫原組替你解釋",
+            "action": "導師已由你向原聽見者更正數量，不叫原組替你解釋",
+            "tradeoff": "要承認自己先許諾，可能被追問"
+          },
+          {
+            "id": 4,
+            "text": "讓各組在原課程目標內選合適呈現，不以兩套彩色作標準",
+            "action": "導師已讓各組在原課程目標內選合適呈現，不以兩套彩色作標準",
+            "tradeoff": "形式會不一致，也要核對公平規則"
+          },
+          {
+            "id": 5,
+            "text": "請兩組先談每一面真正要比較什麼，再決定合作",
+            "action": "導師已請兩組先談每一面真正要比較什麼，再決定合作",
+            "tradeoff": "會占時間，也可能最後不合做"
+          },
+          {
+            "id": 6,
+            "text": "只做一小面試稿，核對效果後再談是否擴大",
+            "action": "導師已只做一小面試稿，核對效果後再談是否擴大",
+            "tradeoff": "進度較慢，也不保證正式使用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不服漂亮就一定要彩印，自己用可合法取得的餘紙做一張黑白示範，和學生同樣面對限制",
+          "action": "導師已以本人合法取得餘紙製作原創黑白示範，不取用學生家庭印刷、不強迫同樣呈現或改正式評量",
+          "tradeoff": "花自己的備課，也可能示範比學生更難看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2102047018
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "dc36ca5c05a7cdc7ea4aff966ec43339566599f7bee938fee000256bb7b71530"
+      },
+      "consequenceDirections": {
+        "A": "班級不靠家庭產能成立，他卻可能遺憾自己原想法沒用上。",
+        "B": "翻面不只是省紙噱頭，內容若無法配合就需另案。",
+        "C": "教師不再只要求別人省資源，卻不能把自製版本壓成全班唯一形式。",
+        "D": "學生不用再挨個拒絕同學，教師仍須安排必要教材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "18de235fa203dfe9b114cce9424a1f21c82566494710bcd798fb2277abeaa647",
+    "draftSha256": "05cda1c2c836848e2b702d47916d60199101677016b528353f15f228e713cb6b",
     "seedAssignmentVersion": 1
   }
 }

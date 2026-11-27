@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "83d0e39ffd1f23a89c319dcf46e444e698583779faa85d19641bcb22b95df4da",
+      "checkedAt": "2026-11-27T05:31:26.502Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用幾個核對過的新詞試圖，不只看剛才一個成功",
+            "action": "導師已用幾個核對過的新詞試圖，不只看剛才一個成功",
+            "tradeoff": "要留時間與本人意願，也可能發現不適用"
+          },
+          {
+            "id": 2,
+            "text": "把圖列為可選練習方式，保留其他合適媒介",
+            "action": "導師已把圖列為可選練習方式，保留其他合適媒介",
+            "tradeoff": "教師要照顧不同進度，也不強迫同桌公開示範"
+          },
+          {
+            "id": 3,
+            "text": "保留必要發音練習，依個別困難調整提示",
+            "action": "導師已保留必要發音練習，依個別困難調整提示",
+            "tradeoff": "要更細緻觀察，也不能把原方法原封不動重來"
+          },
+          {
+            "id": 4,
+            "text": "請作者說明圖哪裡代表什麼，由任課老師核實",
+            "action": "導師已請作者說明圖哪裡代表什麼，由任課老師核實",
+            "tradeoff": "占用課內時間，他也不必替每個同學教會"
+          },
+          {
+            "id": 5,
+            "text": "給被嘲笑者私下選擇練法，不把圖當必須接受的恩情",
+            "action": "導師已給被嘲笑者私下選擇練法，不把圖當必須接受的恩情",
+            "tradeoff": "可能不選朋友的圖，也要保護相處界線"
+          },
+          {
+            "id": 6,
+            "text": "和任課老師回看這次卡住的步驟，先處理具體教學缺口",
+            "action": "導師已和任課老師回看這次卡住的步驟，先處理具體教學缺口",
+            "tradeoff": "增加備課與核對，不會立刻有全套新教材"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點不服一張圖就贏了，拿自己不熟的合規新詞試讀，請學生自願指出哪裡沒對上",
+          "action": "導師已自願以本人不熟的核對詞例作非評量試讀，學生僅自願回饋、由任課者核正，不嘲弄他人或要求跟做",
+          "tradeoff": "你可能也念不好，不能讓學生代替教師判正確"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2021812628
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "48c651919da5dbda9792311f4453595b676a9b61b900f5eaa05b931cea9f0e7d"
+      },
+      "consequenceDirections": {
+        "A": "成人得面對新手困難，學生可能因此更敢說原教法問題，也可能嫌這次比試沒必要。",
+        "B": "有需要者能試，卻不會因成功一次就全班照畫。",
+        "C": "學生有不同支點，但真正音感仍須在合適練習中確認。",
+        "D": "質疑能落在實際方法，不能用承認不足代替後續練習。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8013905705e1af6e6d7cfc67f07fe7dc7f8261af9f7c5572844054952af85f5f",
+    "draftSha256": "83d0e39ffd1f23a89c319dcf46e444e698583779faa85d19641bcb22b95df4da",
     "seedAssignmentVersion": 1
   }
 }

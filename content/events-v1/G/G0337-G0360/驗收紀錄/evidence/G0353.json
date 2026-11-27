@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b332e9e615b69a8abb4cabb814a16355e2b164de0ea568d3d83bf2472d0792c2",
+      "checkedAt": "2026-11-27T05:31:26.502Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拒絕為證明鞋子得體而指定站位，讓孩子照原安排",
+            "action": "導師已拒絕為證明鞋子得體而指定站位，讓孩子照原安排",
+            "tradeoff": "家長可能失望，也要接受自己的焦慮沒被公開安撫"
+          },
+          {
+            "id": 2,
+            "text": "只私下說明鞋款符合哪些服儀要求，不評家庭眼光",
+            "action": "導師已只私下說明鞋款符合哪些服儀要求，不評家庭眼光",
+            "tradeoff": "可能顯得不夠熱情，卻不能用稱讚保證別人反應"
+          },
+          {
+            "id": 3,
+            "text": "聽孩子自己希望怎麼處理，不讓家長代答",
+            "action": "導師已聽孩子自己希望怎麼處理，不讓家長代答",
+            "tradeoff": "要另留適當時間，也可能只想什麼都不變"
+          },
+          {
+            "id": 4,
+            "text": "向班上說明不以價格嘲弄人，不展示這雙鞋",
+            "action": "導師已向班上說明不以價格嘲弄人，不展示這雙鞋",
+            "tradeoff": "可能有人猜背景，須控制說明範圍"
+          },
+          {
+            "id": 5,
+            "text": "讓家長保留私人判斷，不再以教師喜不喜歡作結論",
+            "action": "導師已讓家長保留私人判斷，不再以教師喜不喜歡作結論",
+            "tradeoff": "可能少了一句想聽的保證，仍須真誠回應"
+          },
+          {
+            "id": 6,
+            "text": "在必要同意與規則下，由學校窗口回應服儀疑問，不私下新增穿著標準",
+            "action": "導師已在必要同意與規則下，由學校窗口回應服儀疑問，不私下新增穿著標準",
+            "tradeoff": "要等正式說明，也可能與家長期待不同"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想只在孩子身上補場，向原聚會承辦反映那些話，請成人回應自己場面的管理",
+          "action": "導師已依必要知情向原聚會承辦反映已核實的價格嘲弄情形，請其依職責回應，不公開家況或替未查事項定責",
+          "tradeoff": "要依核實情形與必要範圍聯繫，也可能碰上推託"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2151862218
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "d26bea4a63356128e286df4c52fc5680b56056ae7272a92aff9f272fa2097b32"
+      },
+      "consequenceDirections": {
+        "A": "育兒選擇不靠教師一票驗收，但家長可能需要時間放下在意。",
+        "B": "家長有可核對依據，孩子的穿著不成全班話題。",
+        "C": "家長知道不必把孩子推上台證明，教師卻不能把承辦接到反映當成事情已解決。",
+        "D": "當事人有自己的選擇，教師不能因想幫家長就跳過。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "07712587b5a1173e1ea9791a3dcbc308ce221b4945ea3deca6c081dd82d326a4",
+    "draftSha256": "b332e9e615b69a8abb4cabb814a16355e2b164de0ea568d3d83bf2472d0792c2",
     "seedAssignmentVersion": 1
   }
 }

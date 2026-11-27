@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c108472e3ad51b0baa7ff19b77e60dd54194dca8bd45af551b51be32acc5105c",
+      "checkedAt": "2026-11-27T05:31:26.491Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓孩子依一致規則試讀一小段，家長不代答",
+            "action": "導師已讓孩子依一致規則試讀一小段，家長不代答",
+            "tradeoff": "要有合適時段，也不保證結果改變"
+          },
+          {
+            "id": 2,
+            "text": "只聽家長說明兩個漏字，不再要求整場公開示範",
+            "action": "導師已只聽家長說明兩個漏字，不再要求整場公開示範",
+            "tradeoff": "資訊有限，仍需依事實核對"
+          },
+          {
+            "id": 3,
+            "text": "依既有表現重新給具體回饋，不把漏字自動視為態度",
+            "action": "導師已依既有表現重新給具體回饋，不把漏字自動視為態度",
+            "tradeoff": "需要整理可核對觀察，也可能仍有明確學習缺口"
+          },
+          {
+            "id": 4,
+            "text": "保留本人同意的原稿作過程資料，不替錯字修漂亮",
+            "action": "導師已保留本人同意的原稿作過程資料，不替錯字修漂亮",
+            "tradeoff": "要控制使用範圍，也不能把家庭筆記全部留存"
+          },
+          {
+            "id": 5,
+            "text": "說明往後可接受的陪讀與自主作答範圍，不追溯新增要求",
+            "action": "導師已說明往後可接受的陪讀與自主作答範圍，不追溯新增要求",
+            "tradeoff": "要講清實際界線，也可能有邊界案例待討論"
+          },
+          {
+            "id": 6,
+            "text": "約一個確實能完成的核對與回覆時間，別讓夜班家庭一直等",
+            "action": "導師已約一個確實能完成的核對與回覆時間，別讓夜班家庭一直等",
+            "tradeoff": "你要履約，也不能先承諾免查"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你懊惱自己只會看成品，徵得同意後把這兩個例子提到教師交流裡，讓大人先討論怎樣分陪讀與代作",
+          "action": "導師已向家長提出自願、去識別且限合法授權的教師交流素材使用請求，不公開孩子身分、不要求補做或用授權換待遇",
+          "tradeoff": "需取得合法使用同意與去識別，家長可拒絕，不能增加家庭任務"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3934464855
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "6b5065fad6d15b96cfb2fbede5cdc334b7ba1743ae218fcac99c5e48b69b69e0"
+      },
+      "consequenceDirections": {
+        "A": "本人理解能被看見，但家庭到場不是獲得重試的唯一資格。",
+        "B": "陪讀界線能被理解，卻不能只靠成人說法替孩子全部作保。",
+        "C": "家庭有可遵循方式，教師仍須按個別事實判斷而非看家長來不來。",
+        "D": "其他教師可能看出判斷盲點，也可能提出你沒想到的疑問；這不能替孩子的個案下結論。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2f8512fa377f04ceff4dec0d66057f7c1ff529bcf0d16f738359dbe8c4194584",
+    "draftSha256": "c108472e3ad51b0baa7ff19b77e60dd54194dca8bd45af551b51be32acc5105c",
     "seedAssignmentVersion": 1
   }
 }

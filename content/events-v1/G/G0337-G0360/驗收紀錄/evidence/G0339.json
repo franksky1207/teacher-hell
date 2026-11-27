@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bce908c303f3c9e7597b87918785ec3c57d7eb6790eca4cdfe4efbddbda4f215",
+      "checkedAt": "2026-11-27T05:31:26.492Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拒絕固定保留他人的位置，三人每天找當時可用的地方",
+            "action": "導師已拒絕固定保留他人的位置，三人每天找當時可用的地方",
+            "tradeoff": "少了熟悉感，也可能一時無法同桌"
+          },
+          {
+            "id": 2,
+            "text": "問原位同學是否願意共同用餐，不把詢問當默認答應",
+            "action": "導師已問原位同學是否願意共同用餐，不把詢問當默認答應",
+            "tradeoff": "對方可拒絕，也可能覺得有壓力"
+          },
+          {
+            "id": 3,
+            "text": "只約早餐時間，不承諾固定哪張桌",
+            "action": "導師已只約早餐時間，不承諾固定哪張桌",
+            "tradeoff": "要每天重新確認，也可能有人改變安排"
+          },
+          {
+            "id": 4,
+            "text": "向學校確認合法可用的共同用餐位置，再由自願者參加",
+            "action": "導師已向學校確認合法可用的共同用餐位置，再由自願者參加",
+            "tradeoff": "未必有專用空間，也須依現有規則使用"
+          },
+          {
+            "id": 5,
+            "text": "請三人各說自己真正想保留什麼，不由帶頭者替大家定",
+            "action": "導師已請三人各說自己真正想保留什麼，不由帶頭者替大家定",
+            "tradeoff": "可能有人只想偶爾吃，熱情會降下來"
+          },
+          {
+            "id": 6,
+            "text": "今天先依原座位用餐，後續另談，不讓等待壓縮必要吃飯",
+            "action": "導師已今天先依原座位用餐，後續另談，不讓等待壓縮必要吃飯",
+            "tradeoff": "氣氛可能有點散，也得安排真的回覆"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也突然想坐下吃自己的早餐，找一個獲准的空位自用，不再站著替三人當訂位服務",
+          "action": "導師已於合法用餐且不妨礙必要勤務的空位吃本人餐點，明確不接受私人訂位任務，既有座位協調仍正常承接",
+          "tradeoff": "不能占他人座位，也要維持本人必要照看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2581075585
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "36c7211ba9cea9c7edc0a48c9b17c2740cabc9f9ce4da346c28b28c0ae6dc94d"
+      },
+      "consequenceDirections": {
+        "A": "早餐不擠進未同意的座位，教師卻不能保證永遠三人一起。",
+        "B": "同伴仍能約時間，卻不能用收乾淨交換占他人的座位。",
+        "C": "眼前不必在肚子餓時搶位置，原期待卻仍待處理。",
+        "D": "學生知道教師不會靠好心替他們保留別人的位子，你則得接受有人失望，不再用自己忙完再說拖著。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "90c0c7f2b446e10f0572cc763e5f562ab450ec318ae5319f2aefb747d0718fa1",
+    "draftSha256": "bce908c303f3c9e7597b87918785ec3c57d7eb6790eca4cdfe4efbddbda4f215",
     "seedAssignmentVersion": 1
   }
 }

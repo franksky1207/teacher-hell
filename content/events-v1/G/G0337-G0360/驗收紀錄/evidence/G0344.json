@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "732467e37f674b51a3cb3c1b13a3eeafb5b97457ccd80a2255220ba1ce96af2a",
+      "checkedAt": "2026-11-27T05:31:43.995Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請兩人私下核對實際已付款項與餐點，不讓全班圍問",
+            "action": "導師已請兩人私下核對實際已付款項與餐點，不讓全班圍問",
+            "tradeoff": "要依資料確認，不能只憑一人記憶判欠款"
+          },
+          {
+            "id": 2,
+            "text": "把未成立的訂單依店規撤回，不擅取消已製作餐點",
+            "action": "導師已把未成立的訂單依店規撤回，不擅取消已製作餐點",
+            "tradeoff": "店家可能不同意全部撤，仍須處理真正費用"
+          },
+          {
+            "id": 3,
+            "text": "交由適當成人窗口協助金錢爭議，不由你代收全班款",
+            "action": "導師已交由適當成人窗口協助金錢爭議，不由你代收全班款",
+            "tradeoff": "需要正常交接，未必即時得到結論"
+          },
+          {
+            "id": 4,
+            "text": "在規則容許下由雙方自行約定合適還款方式，不用互留到放學",
+            "action": "導師已在規則容許下由雙方自行約定合適還款方式，不用互留到放學",
+            "tradeoff": "對方可不同意，不能由教師強訂私人借款條件"
+          },
+          {
+            "id": 5,
+            "text": "由當事人向店家詢問實際付款與取餐規則，必要時由家長協助",
+            "action": "導師已由當事人向店家詢問實際付款與取餐規則，必要時由家長協助",
+            "tradeoff": "要花時間，也不保證店家提供特別安排"
+          },
+          {
+            "id": 6,
+            "text": "說清今後不以同學代排默認代墊，私人約定先確認",
+            "action": "導師已說清今後不以同學代排默認代墊，私人約定先確認",
+            "tradeoff": "要改變習慣，還需遵守離校交易規則"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再當代訂的理由，退出自己原先幫忙牽線的團購，晚餐自己處理",
+          "action": "導師已退出本人尚未成立的非必要集體訂餐協助，不代收學生費用、不取消他人已成立交易或擅離必要職務",
+          "tradeoff": "少了方便與熱鬧，也要向原聯絡者說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2122277951
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "f3b59dd3d0117450db29e464596bfe1cec75eb2e9de2622977e7865ca6d9d75c"
+      },
+      "consequenceDirections": {
+        "A": "學生不再拿教師也參加當作接單理由，你仍須完成既有必要交接，不能一退就不理真實欠款。",
+        "B": "學生知道跑腿與付錢不同，這次已墊的仍須如實處理。",
+        "C": "新負擔可以停止，既有交易不會被當成一句取消就消失。",
+        "D": "還款有較清楚依據，卻不會因教師看過就自動完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／當批選項顯示文字定向潤飾複核，原行動、代價及映射不變"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ce97c41d57d39a8d64cfd54846041830236b9758c674263bc80c13e8a5534efe",
+    "draftSha256": "732467e37f674b51a3cb3c1b13a3eeafb5b97457ccd80a2255220ba1ce96af2a",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ce3a863cf7955a1e8e3721cb15af3a0d4f6f9644b61cc4f75e7a115fb65e3c8d",
+      "checkedAt": "2026-11-27T05:31:44.018Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依活動規則取消非必要問答，只把朗讀完成",
+            "action": "導師已依活動規則取消非必要問答，只把朗讀完成",
+            "tradeoff": "聽眾可能失望，也要向場地方確認調整"
+          },
+          {
+            "id": 2,
+            "text": "只接受針對文字表達的問題，不談未公開私事",
+            "action": "導師已只接受針對文字表達的問題，不談未公開私事",
+            "tradeoff": "需要主持清楚篩選，仍可能遇到越界提問"
+          },
+          {
+            "id": 3,
+            "text": "直接說明今天不帶讀的原因，只講你願公開的部分",
+            "action": "導師已直接說明今天不帶讀的原因，只講你願公開的部分",
+            "tradeoff": "可能很脆弱，也不保證聽眾理解"
+          },
+          {
+            "id": 4,
+            "text": "請場方依原規則收書面問題，你自行選願意回覆的內容",
+            "action": "導師已請場方依原規則收書面問題，你自行選願意回覆的內容",
+            "tradeoff": "要有後續處理時間，也不能假稱每題都會答"
+          },
+          {
+            "id": 5,
+            "text": "把一般教學問題另留正式工作交流，不占這段私人朗讀",
+            "action": "導師已把一般教學問題另留正式工作交流，不占這段私人朗讀",
+            "tradeoff": "要真正有合適管道，也不能把邀約變成人情加班"
+          },
+          {
+            "id": 6,
+            "text": "在雙方願意下，只和同事談一段他真正聽見的感受，不請他評教法",
+            "action": "導師已在雙方願意下，只和同事談一段他真正聽見的感受，不請他評教法",
+            "tradeoff": "可能不是你期待的回應，也需尊重場方時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你只想把故事讀完，撤下自己的分析投影片，不再帶大家拆解",
+          "action": "導師已在場方允許下撤去本人非必要分析簡報，完成合法公開且本人願讀的文字，不公開他人私事或違背既有必要活動約定",
+          "tradeoff": "少了拿手的講解，也可能冷場"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3282993706
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "ae61ba9f1101544932a8c3d705be1eac5108e430df406cfb16530918d589f3d7"
+      },
+      "consequenceDirections": {
+        "A": "角色界線能被說清，卻不必為拒絕分析提供更多私事。",
+        "B": "朋友可以當讀者，教師卻不能規定只能被感動。",
+        "C": "專業興趣仍有位置，卻不吞掉這次個人表達。",
+        "D": "聽眾得自己接住未被拆解的故事，你則要接受沒有人立刻稱讚老師好會講。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／當批選項顯示文字定向潤飾複核，原行動、代價及映射不變"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4d73c17d3aa6858277c53a26c5491bdf16ca5adfc16e6f60f9fac32861b9623f",
+    "draftSha256": "ce3a863cf7955a1e8e3721cb15af3a0d4f6f9644b61cc4f75e7a115fb65e3c8d",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a3214bc8d1bb09bfb8dc2e8845ba11222e414358266146d03ee5c159a26d6a94",
+      "checkedAt": "2026-11-27T05:31:26.504Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "如實更正你的署名範圍，不替他承諾常態調度",
+            "action": "導師已如實更正你的署名範圍，不替他承諾常態調度",
+            "tradeoff": "會面對主管追問，也不能只私下安慰"
+          },
+          {
+            "id": 2,
+            "text": "在合法核定且本人仍願意下完成今天短課，明確不自動延續",
+            "action": "導師已在合法核定且本人仍願意下完成今天短課，明確不自動延續",
+            "tradeoff": "他仍需付出當天時間，也保有依規則反映負荷的權利"
+          },
+          {
+            "id": 3,
+            "text": "請課務按正式任務區分臨時與固定，不靠個人熱心排班",
+            "action": "導師已請課務按正式任務區分臨時與固定，不靠個人熱心排班",
+            "tradeoff": "需要核對與協調，未必立刻補得出人"
+          },
+          {
+            "id": 4,
+            "text": "由你申請承接有資格且能合法調整的一小段，不以同事考核換課時",
+            "action": "導師已由你申請承接有資格且能合法調整的一小段，不以同事考核換課時",
+            "tradeoff": "你的工作也需安排，不能自己說換就換"
+          },
+          {
+            "id": 5,
+            "text": "請同事依正式管道表達可承擔範圍，你提供親見事實",
+            "action": "導師已請同事依正式管道表達可承擔範圍，你提供親見事實",
+            "tradeoff": "他要面對主管，也不能保證一定獲准"
+          },
+          {
+            "id": 6,
+            "text": "刪去可取消的非必要額外暖身，不把所有加碼算本班必需",
+            "action": "導師已刪去可取消的非必要額外暖身，不把所有加碼算本班必需",
+            "tradeoff": "少了一次你想帶的內容，正式課程不能缺"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再用同事的疲倦換自己的方便，主動退出這次非必要考核推薦意見，請主管別用你替他評可調度",
+          "action": "導師已撤回本人非必要主觀考核推薦並更正未授權推論，依法應提供事實仍如實回覆，不越權更改考核或空置教學",
+          "tradeoff": "可能被認為不配合，你仍須提供依法必要事實"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2591024029
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "be96c771edee9ca6647466647b1e1925ab51f0b665491e92836df87610306b78"
+      },
+      "consequenceDirections": {
+        "A": "同事不必靠導師私人認可換工作量，主管也得依正式資料處理，不能因你退出就不查原錯誤說法。",
+        "B": "學生有正常接續，卻不能把完成一次再當成以後都行的證據。",
+        "C": "實際負擔可能分散，卻不會因此自動更正所有原紀錄。",
+        "D": "學生的正常學習仍在，同事不用一直為班級額外熱鬧出力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "11ad86a657d2e12a3ea1a528c5f58b753695f85846fac01a44816650f267207a",
+    "draftSha256": "a3214bc8d1bb09bfb8dc2e8845ba11222e414358266146d03ee5c159a26d6a94",
     "seedAssignmentVersion": 1
   }
 }

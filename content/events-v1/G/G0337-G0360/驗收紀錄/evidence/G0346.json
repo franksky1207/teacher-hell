@@ -14,14 +14,82 @@
   "plannedTags": [
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "29c03fe9c14b00a2fc8e2f5f77dcd46bb09b7a00acd50270fccf83b730f32fa5",
+      "checkedAt": "2026-11-27T05:31:26.498Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和承辦協調人人依同樣方式取餐，不公開資格",
+            "action": "導師已和承辦協調人人依同樣方式取餐，不公開資格",
+            "tradeoff": "需符合實際供應規則，也未必能完全相同"
+          },
+          {
+            "id": 2,
+            "text": "在本人同意下只更正抽獎說法，不揭露真正家庭原因",
+            "action": "導師已在本人同意下只更正抽獎說法，不揭露真正家庭原因",
+            "tradeoff": "可能引來追問，須控制接收範圍"
+          },
+          {
+            "id": 3,
+            "text": "保留已確認的個別取餐安排，另約本人核對是否仍合用",
+            "action": "導師已保留已確認的個別取餐安排，另約本人核對是否仍合用",
+            "tradeoff": "可能暫時不夠低調，也需如期回看"
+          },
+          {
+            "id": 4,
+            "text": "讓學生自己選可行的聯繫方式，不叫朋友代問餐務",
+            "action": "導師已讓學生自己選可行的聯繫方式，不叫朋友代問餐務",
+            "tradeoff": "他可能需要練習開口，也不能把申請責任全推給孩子"
+          },
+          {
+            "id": 5,
+            "text": "向班上說明不以領餐方式評斷任何人，不拿此個案示範",
+            "action": "導師已向班上說明不以領餐方式評斷任何人，不拿此個案示範",
+            "tradeoff": "可能有人猜背景，仍要處理實際嘲弄"
+          },
+          {
+            "id": 6,
+            "text": "私下提供可自願使用的家庭支持窗口，不要求為了正餐多說故事",
+            "action": "導師已私下提供可自願使用的家庭支持窗口，不要求為了正餐多說故事",
+            "tradeoff": "程序需要時間，也未必立即改善收入"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再用老師請的好名聲做中心，請承辦往後別把你個人名字放在非必要支援宣傳上",
+          "action": "導師已向承辦提出本人非必要對外宣傳不具名的請求，必要經費與實際貢獻如實留存，學生供餐與資格處理不變",
+          "tradeoff": "少了被感謝的機會，也不能刪除依法必留的真實經費紀錄"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3630861579
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "41f4c4ebbd5116ad83f5856ebb1312372eec08c2dd773ffe52b350116e8024ef"
+      },
+      "consequenceDirections": {
+        "A": "家庭有更多合法路徑，學生仍可拒談非必要細節。",
+        "B": "規則不只保護一人，卻不能用全班宣導取代個別支持。",
+        "C": "同學不再把傳聞當事實，他卻不必交代父親近況來換清白。",
+        "D": "學生不用一邊吃一邊記誰的恩，教師卻仍須正常提供資源，不把不署名當作不負責。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a10bf50dae2e1104aeddd0adccf37173ce4894598f70edf314b033bbfe15bc5b",
+    "draftSha256": "29c03fe9c14b00a2fc8e2f5f77dcd46bb09b7a00acd50270fccf83b730f32fa5",
     "seedAssignmentVersion": 1
   }
 }

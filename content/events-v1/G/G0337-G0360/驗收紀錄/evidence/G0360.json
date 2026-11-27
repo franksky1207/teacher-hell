@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d3233510338bd05fcb707bf93a83839113060841f275c5539f9ebf4fbc10487",
+      "checkedAt": "2026-11-27T05:31:44.021Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "移到已核准的備用位置陪伴，先完成必要交接",
+            "action": "導師已移到已核准的備用位置陪伴，先完成必要交接",
+            "tradeoff": "場地可能沒那麼方便，也不能讓學生獨自移動"
+          },
+          {
+            "id": 2,
+            "text": "保持合規借用，但先清好桌角再入座，取得現場同意",
+            "action": "導師已保持合規借用，但先清好桌角再入座，取得現場同意",
+            "tradeoff": "會多一道確認，也不保證每次都能借"
+          },
+          {
+            "id": 3,
+            "text": "帶學生回到可正常照看的教室，不占警衛休息位置",
+            "action": "導師已帶學生回到可正常照看的教室，不占警衛休息位置",
+            "tradeoff": "要有合適路線與成人接續，也不能為省事讓人落單"
+          },
+          {
+            "id": 4,
+            "text": "和場地管理者確認臨時陪伴的借位方式，不由熟悉就算可用",
+            "action": "導師已和場地管理者確認臨時陪伴的借位方式，不由熟悉就算可用",
+            "tradeoff": "要協調，今天仍依已確認安排"
+          },
+          {
+            "id": 5,
+            "text": "讓同仁只完成必要勤務資訊交接，後續家長說明由你接手",
+            "action": "導師已讓同仁只完成必要勤務資訊交接，後續家長說明由你接手",
+            "tradeoff": "你的時間增加，也須控制必要知情範圍"
+          },
+          {
+            "id": 6,
+            "text": "把你留在桌面的個人物件依規定收走，不讓借桌變長期占用",
+            "action": "導師已把你留在桌面的個人物件依規定收走，不讓借桌變長期占用",
+            "tradeoff": "得另找合法位置，也要保留必要教學與照護物品"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點心虛，拿自己買的未開封常溫茶請他喝",
+          "action": "導師已於必要照看持續且校規允許的同事私人低價互贈範圍內，提出本人自有未開封常溫茶的自願分享，不代替安全改正、借位同意或勤務交接",
+          "tradeoff": "他可以拒絕，飲料不換取借位或放寬規則，也不能離開學生買東西"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2550808914
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "2a7d5576e2955ef5b2fb770c65d1c5f5403b99c5e2d7b022c407c13eb829fc30"
+      },
+      "consequenceDirections": {
+        "A": "值勤者不用每天替你清桌角，學生陪伴仍需合適正式場所。",
+        "B": "同仁可能笑著收下，也可能只想安靜休息；你仍須真正整理和交接，不能一瓶茶就當補回他的時間。",
+        "C": "下次較可預期，卻不能把一套說明當成任何時刻都能進來。",
+        "D": "熱茶與通行不再靠事後閃避，支援者仍可依勤務拒絕未成立安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／當批選項顯示文字定向潤飾複核，原行動、代價及映射不變"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b4239575ca529f6307065b4ac3309d9c6d1c3010c9d68900a31ef8cf4f30fb5",
+    "draftSha256": "7d3233510338bd05fcb707bf93a83839113060841f275c5539f9ebf4fbc10487",
     "seedAssignmentVersion": 1
   }
 }

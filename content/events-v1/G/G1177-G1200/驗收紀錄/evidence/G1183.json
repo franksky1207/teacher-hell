@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bd0cfce1c602b31950860e660596eeb1ab53c767e0e4fa89eceb9102b34202b8",
+      "checkedAt": "2026-11-27T17:53:20.627Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀學生自願比較筆記與引導題哪裡幫得上。",
+            "action": "提出一般素材需求交流，不讓選擇成取得必要支持的條件。",
+            "tradeoff": "花課間，可能無答案。"
+          },
+          {
+            "id": 2,
+            "text": "提議先試一題合宜引導，不一次加十題。",
+            "action": "提出經學生與權責合意的低負擔補充方案，未執行或證有效。",
+            "tradeoff": "進度慢，需追蹤。"
+          },
+          {
+            "id": 3,
+            "text": "邀同事只提供可自選的原創提綱，不代寫答案。",
+            "action": "提出教學材料角色分工，不把所需協助一概當依賴。",
+            "tradeoff": "要重編，可能不適合。"
+          },
+          {
+            "id": 4,
+            "text": "詢問正式課輔是否有合宜資源。",
+            "action": "查詢合法入口，不取得人力或代報名。",
+            "tradeoff": "可能無時段。"
+          },
+          {
+            "id": 5,
+            "text": "不再加額外課後方案，先維持合宜課內支持。",
+            "action": "拒絕追加非必要留課協作，不取消已成立合法支持。",
+            "tradeoff": "少一次額外互動。"
+          },
+          {
+            "id": 6,
+            "text": "我願替他整理一份空白引導題版型。",
+            "action": "教師自製一般原創工具供科任選用，不代其出題或背書。",
+            "tradeoff": "占備課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一口氣把責任全收回去，我有點火，想把我那句代勞先擱著，真的陪他做一題，讓我也看自己是不是說得太快。",
+          "action": "提出成人共同試作一題合法原創引導題的額外協作，不用學生當試驗、不宣稱已改變支持結論。",
+          "tradeoff": "花空堂，可能露出自己沒想清楚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1402960277
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "3b9f0ac0c22d1590d233e176c63d8e3516eb94b789ebd9648f809859f613a2ae"
+      },
+      "consequenceDirections": {
+        "A": "資訊不代必要本職支持。",
+        "B": "同事可拒，成人試作不替代學生意願與必要支持。",
+        "C": "不能因拒加課減必要協助。",
+        "D": "必要支持仍依專業和實際需要接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52afffbcb210987c18fd624b719a033200b9f4f4c5de7fb082a8605907acb13f",
+    "draftSha256": "bd0cfce1c602b31950860e660596eeb1ab53c767e0e4fa89eceb9102b34202b8",
     "seedAssignmentVersion": 1
   }
 }

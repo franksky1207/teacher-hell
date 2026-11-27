@@ -16,14 +16,155 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e7d68b83643ec827f59fbb479ed40143f080b366eae713396ed19242ec35d110",
+      "checkedAt": "2026-11-27T17:53:20.641Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議全班自願做一次一般時間回顧，不把個別遲到者叫出來寫。",
+            "action": "提出新非處罰性一般時間使用活動，不替代必要出缺勤與正當支持；不當罰寫所有分支先停。",
+            "tradeoff": "占班務，也可能沒人想談。"
+          },
+          {
+            "id": 2,
+            "text": "協助科任改成開課後一次正常發卷。",
+            "action": "提出成人授課節奏協作，不要求學生提前到班。",
+            "tradeoff": "少一點正式課內時間。"
+          },
+          {
+            "id": 3,
+            "text": "我願做一份自願的到課準備小卡。",
+            "action": "提供原創自主工具，不列處罰或上交要求。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願說課間最來不及的是哪一步。",
+            "action": "徵詢一般時間需求，不逼家庭或生理隱私。",
+            "tradeoff": "花時間。"
+          },
+          {
+            "id": 5,
+            "text": "請正式輔導管教窗口提供合宜作法資訊。",
+            "action": "查詢既有公開規範，不代取得個案決定。",
+            "tradeoff": "可能要等。"
+          },
+          {
+            "id": 6,
+            "text": "問科任是否需要一個普通分卷夾，我願自費提供樣本。",
+            "action": "提出本人預算低價合規分卷工具意願，未採購或代處理正式試卷，不要求學生提前入班。",
+            "tradeoff": "花錢與準備，可能不用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想只盯學生快一點，願在本人可用工作時間額外協助科任發卷一次，讓我也試鐘響後收得住的流程。",
+          "action": "提出經權責可行、科任合意的教師額外一次正常課內分卷協作，未安排、未接觸未授權試卷、不以此逼學生早到。",
+          "tradeoff": "本人少備課時間，可能仍發得慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2023155787
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "7edc1e958dbc5e72ce44e245e8af7cc8fac30968d74db2171f713649bcb81ef2"
+      },
+      "consequenceDirections": {
+        "A": "不等回覆才停止已知不當處理。",
+        "B": "科任可不採用，正常入班權仍維持。",
+        "C": "科任可拒，協作不等流程已證有效，必要正常入班與休息仍共同維持。",
+        "D": "對方可拒，樣本不保證節省所有時間或改課成功。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1撤不當罰寫屬共同底線，改為底線外的新一般自願活動。；原普通6拒未被提出的課前代發分工，改為具體資源投入詢問。；原情緒重寫規畫與普通1、3近同，改為教師人力參與而非再做一張說明。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議取消本人非必要固定罰寫形式，改合宜一般時間規畫。",
+                "action": "提出符合正當管教與權責的規範調整，不免必要出缺勤紀錄或支持。",
+                "tradeoff": "少直觀處置，需另協調。"
+              },
+              {
+                "id": 2,
+                "text": "協助科任改成開課後一次正常發卷。",
+                "action": "提出成人授課節奏協作，不要求學生提前到班。",
+                "tradeoff": "少一點正式課內時間。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一份自願的到課準備小卡。",
+                "action": "提供原創自主工具，不列處罰或上交要求。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 4,
+                "text": "邀學生自願說課間最來不及的是哪一步。",
+                "action": "徵詢一般時間需求，不逼家庭或生理隱私。",
+                "tradeoff": "花時間。"
+              },
+              {
+                "id": 5,
+                "text": "請正式輔導管教窗口提供合宜作法資訊。",
+                "action": "查詢既有公開規範，不代取得個案決定。",
+                "tradeoff": "可能要等。"
+              },
+              {
+                "id": 6,
+                "text": "不額外接科任提前發卷分工，維持正常課務界線。",
+                "action": "拒絕非必要課前代發協作，不拒合理必要交接。",
+                "tradeoff": "同事可能失望。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想天天看那兩行字，願把自己的遲到處理說明重寫成一張有選擇的計畫，不再靠抄完讓我覺得有管。",
+              "action": "額外重編本人一般時間支持說明，提供合宜自願規畫選擇，不新增罰寫或免必要正當程序。",
+              "tradeoff": "自己多花準備，少了控制感。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2852871204
+            },
+            "selectedIds": [
+              5,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "744e80f628a44d2efffd2a75ea37f372c43d309f8c8f2ade7eb41ad3c2690890"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能把界線變成學生應更早就位。",
+            "B": "不等回覆才停止已知不當處理。",
+            "C": "方案仍須權責與正當性，不能用改版假稱已改善全部狀況。",
+            "D": "不得以新活動再侵占休息或正常入班。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "28e260b27b0f48fa862a99fc11f48e0d75c91188b06a0a709d0c71d1403841c6",
+    "draftSha256": "e7d68b83643ec827f59fbb479ed40143f080b366eae713396ed19242ec35d110",
     "seedAssignmentVersion": 1
   }
 }

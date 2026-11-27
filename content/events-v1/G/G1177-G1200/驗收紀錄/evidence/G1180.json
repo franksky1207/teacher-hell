@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d579319b9cb0c90654a5d6fd3c79a131b32fd548dc0315a5a3c745e65b4fa3aa",
+      "checkedAt": "2026-11-27T17:53:20.622Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問可否換到較不受拍攝干擾的位置。",
+            "action": "提出一般換座請求，未取得座位或他人配合。",
+            "tradeoff": "可能沒空位。"
+          },
+          {
+            "id": 2,
+            "text": "問能不能改外帶，我回家看書。",
+            "action": "提出合意包裝方式變更，未取得同意或退費。",
+            "tradeoff": "路上不便，浪費交通時間。"
+          },
+          {
+            "id": 3,
+            "text": "把書收起來，這次只喝完咖啡就走。",
+            "action": "放棄當次閱讀安排，於合理安全範圍完成私人消費。",
+            "tradeoff": "失去期待的閱讀夜。"
+          },
+          {
+            "id": 4,
+            "text": "透過店家正式意見管道說明實際體驗。",
+            "action": "提出可核實一般消費回饋，不揭陌生人或保證賠償。",
+            "tradeoff": "花時間，可能無回應。"
+          },
+          {
+            "id": 5,
+            "text": "查詢另一間合法營業地點的實際條件，再決定去不去。",
+            "action": "額外查詢替代私人場所資訊，不訂位或保證有座。",
+            "tradeoff": "可能又花錢與路程。"
+          },
+          {
+            "id": 6,
+            "text": "禮貌問鄰桌願不願意避開我的桌面。",
+            "action": "提出本人合理影像界線請求，不擅制止他人全部合法活動。",
+            "tradeoff": "可能尷尬。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我又氣又不想當場吵，決定在原攻略底下寫這晚的實際經驗，標清日期，不拍別人，讓下一個要看書的人自己判斷。",
+          "action": "於合法公開回饋管道提供本人真實日期與體驗，不揭陌生人身分、不指控未證實設備原因或保證他日狀況。",
+          "tradeoff": "花私人時間，可能被讀者或店家反駁。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2289366919
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "d0dc2043b14ad9c9bac3fe65cb21850921e648d6436b5c70d96b726220231d8e"
+      },
+      "consequenceDirections": {
+        "A": "作者可不回應，評論不使店家必退費，也不等所有人認同；與普通4向店家私下反映不同公開對象與人際成本。",
+        "B": "無合意條件不硬走，必要安全交通維持。",
+        "C": "不能由失望推定詐騙或設備故障原因。",
+        "D": "不把忍耐當同意未來攝入自己影像。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒外帶搭車回熟區近普通2外帶回家，改為向原資訊來源的公開真實體驗回饋。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問可否換到較不受拍攝干擾的位置。",
+                "action": "提出一般換座請求，未取得座位或他人配合。",
+                "tradeoff": "可能沒空位。"
+              },
+              {
+                "id": 2,
+                "text": "問能不能改外帶，我回家看書。",
+                "action": "提出合意包裝方式變更，未取得同意或退費。",
+                "tradeoff": "路上不便，浪費交通時間。"
+              },
+              {
+                "id": 3,
+                "text": "把書收起來，這次只喝完咖啡就走。",
+                "action": "放棄當次閱讀安排，於合理安全範圍完成私人消費。",
+                "tradeoff": "失去期待的閱讀夜。"
+              },
+              {
+                "id": 4,
+                "text": "透過店家正式意見管道說明實際體驗。",
+                "action": "提出可核實一般消費回饋，不揭陌生人或保證賠償。",
+                "tradeoff": "花時間，可能無回應。"
+              },
+              {
+                "id": 5,
+                "text": "查詢另一間合法營業地點的實際條件，再決定去不去。",
+                "action": "額外查詢替代私人場所資訊，不訂位或保證有座。",
+                "tradeoff": "可能又花錢與路程。"
+              },
+              {
+                "id": 6,
+                "text": "禮貌問鄰桌願不願意避開我的桌面。",
+                "action": "提出本人合理影像界線請求，不擅制止他人全部合法活動。",
+                "tradeoff": "可能尷尬。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想再花兩百證明攻略騙我，想把今晚另一筆可省的享受留給公車，直接多坐回熟悉街區，咖啡帶著慢慢喝。",
+              "action": "提出合意外帶後以本人預算採安全公共交通回熟悉生活區的私人安排，未獲包裝或車班保證，不額外換店消費。",
+              "tradeoff": "放掉探店興致，多交通費。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 161762899
+            },
+            "selectedIds": [
+              6,
+              2,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "85de1688cdb8f257b3e4b52b7bd15e67f1a3b48cb7264a8033d10dec80605068"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可需店家協調，權益依法維持不等對方好意。",
+            "B": "若外帶或路線不可行另選安全安排，不把回熟區保證成安靜。",
+            "C": "無合意條件不硬走，必要安全交通維持。",
+            "D": "店家可有包裝限制，不以付款當可任意要求。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b5756dec935a76cb362386c8aa411aca4994824157d1136d7e81e8e6a4da4abc",
+    "draftSha256": "d579319b9cb0c90654a5d6fd3c79a131b32fd548dc0315a5a3c745e65b4fa3aa",
     "seedAssignmentVersion": 1
   }
 }

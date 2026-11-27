@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "38c94e14324336eda2e351fc091a4577cd7c1a1d879bc98f08006ff3c2d3825a",
+      "checkedAt": "2026-11-27T17:53:20.630Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他自選一項最想討論的非緊急建議。",
+            "action": "提出一般議程聚焦邀請，不忽略必要事件或限制合法提問。",
+            "tradeoff": "其餘建議暫放。"
+          },
+          {
+            "id": 2,
+            "text": "提出每週一次合意整理時段，不逐則回八項。",
+            "action": "協商非必要一般交流節奏，未取得同意。",
+            "tradeoff": "要挪時間。"
+          },
+          {
+            "id": 3,
+            "text": "我願做一份班訊用途索引，讓他少重複截圖。",
+            "action": "額外整理公開可知一般通知資訊，不轉他人私訊。",
+            "tradeoff": "花備課。"
+          },
+          {
+            "id": 4,
+            "text": "邀他只保留自己的文字意見，不轉傳含他人資訊的截圖。",
+            "action": "提出自願一般交流格式建議，必要保密本來共同維持。",
+            "tradeoff": "要改習慣。"
+          },
+          {
+            "id": 5,
+            "text": "我願寫一份八點建議的初步回覆草稿，先標哪些只是待議，不把建議當新規。",
+            "action": "額外整理本人真實可知的非急迫意見回覆草稿，不宣稱已採納、發布或取得主管核准。",
+            "tradeoff": "占備課，可能引來更多意見。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內現有家長參與管道，供他自選。",
+            "action": "提供合法資訊，不代報名、受託或安排工作。",
+            "tradeoff": "可能不合意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我差點連早餐都忘了，今天想先把手機收進包裡，好好吃自己的加蛋，不讓八百字決定我第一口吃什麼。",
+          "action": "在無必要即時事項且保留緊急聯絡可及前提下，暫停本人非必要閱讀，完成私人早餐後依工作安排接續。",
+          "tradeoff": "可能晚些讀，須忍住內疚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1811544440
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "3450981e43eb57160cbd2403ed5728f612679d67026497375855d8c69ca96de0"
+      },
+      "consequenceDirections": {
+        "A": "對方可不願選，必要回覆仍照實。",
+        "B": "不能把吃早餐當錯過已知急迫訊息的理由，也不宣稱已回覆。",
+        "C": "緊急與法定通知不等週結。",
+        "D": "草稿不等正式承諾，必要事項仍按權責處理。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5延後非急迫訊息與情緒早餐放下手機同核心行動，改為實際產出草稿。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請他自選一項最想討論的非緊急建議。",
+                "action": "提出一般議程聚焦邀請，不忽略必要事件或限制合法提問。",
+                "tradeoff": "其餘建議暫放。"
+              },
+              {
+                "id": 2,
+                "text": "提出每週一次合意整理時段，不逐則回八項。",
+                "action": "協商非必要一般交流節奏，未取得同意。",
+                "tradeoff": "要挪時間。"
+              },
+              {
+                "id": 3,
+                "text": "我願做一份班訊用途索引，讓他少重複截圖。",
+                "action": "額外整理公開可知一般通知資訊，不轉他人私訊。",
+                "tradeoff": "花備課。"
+              },
+              {
+                "id": 4,
+                "text": "邀他只保留自己的文字意見，不轉傳含他人資訊的截圖。",
+                "action": "提出自願一般交流格式建議，必要保密本來共同維持。",
+                "tradeoff": "要改習慣。"
+              },
+              {
+                "id": 5,
+                "text": "今早不即時回非緊急長文，工作時段再處理。",
+                "action": "依明確合理回覆安排延後非必要即時交流，保留緊急與既約義務。",
+                "tradeoff": "家長可能失落。"
+              },
+              {
+                "id": 6,
+                "text": "詢問校內現有家長參與管道，供他自選。",
+                "action": "提供合法資訊，不代報名、受託或安排工作。",
+                "tradeoff": "可能不合意。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我差點連早餐都忘了，今天想先把手機收進包裡，好好吃自己的加蛋，不讓八百字決定我第一口吃什麼。",
+              "action": "在無必要即時事項且保留緊急聯絡可及前提下，暫停本人非必要閱讀，完成私人早餐後依工作安排接續。",
+              "tradeoff": "可能晚些讀，須忍住內疚。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1605198274
+            },
+            "selectedIds": [
+              6,
+              1,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": "emotional",
+              "C": 5,
+              "D": 6
+            },
+            "optionsDigest": "d93b40c435547d3cd2a871a284af81f4c393082f33aad318f638981136dd0ea7"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可不願選，必要回覆仍照實。",
+            "B": "不能把吃早餐當錯過已知急迫訊息的理由，也不宣稱已回覆。",
+            "C": "不能以延後漏掉實際急迫訊息。",
+            "D": "入口不代表其建議已送審。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6bb7381c3b9ac0a186b014d00fa352ccda53c6451989718e4aa57bf38c6e4a07",
+    "draftSha256": "38c94e14324336eda2e351fc091a4577cd7c1a1d879bc98f08006ff3c2d3825a",
     "seedAssignmentVersion": 1
   }
 }

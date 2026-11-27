@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c932c517d3182eca3b35571e835b1305a8361800367205dadd7db9b32fcb0f10",
+      "checkedAt": "2026-11-27T17:53:20.624Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "與科任提出依實際需求提供不同難度的方案。",
+            "action": "提出公平可及分層教學建議，未取得內容或核准耳機例外。",
+            "tradeoff": "需協調，可能無資源。"
+          },
+          {
+            "id": 2,
+            "text": "查詢校規允許的個別自主學習申請方式。",
+            "action": "詢問正式管道，不代准或跳過必要教學。",
+            "tradeoff": "可能限制多。"
+          },
+          {
+            "id": 3,
+            "text": "邀他自願列出已會與想加深的具體內容。",
+            "action": "提出一般需求交流，不把自述當已驗證能力。",
+            "tradeoff": "花課間，可能不想寫。"
+          },
+          {
+            "id": 4,
+            "text": "我願找一篇合法進階短文供自選，不占原必要學習。",
+            "action": "額外查找並提供有使用權限的材料，無合適則明說。",
+            "tradeoff": "花備課，可能不合程度。"
+          },
+          {
+            "id": 5,
+            "text": "先維持已核定安排，不承諾分數達標免聽。",
+            "action": "拒絕具體分數門檻例外，仍依法處理合理需求。",
+            "tradeoff": "他可能更不滿。"
+          },
+          {
+            "id": 6,
+            "text": "邀同學自願交流各自想加深的一項技能。",
+            "action": "提出不比成績的一般學習交流，不讓優勢者當強制助教。",
+            "tradeoff": "占班務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說想第一，我也有點不服，願意自願聽一段合法公開的進階材料，跟他各說沒聽懂哪裡，不拿他當小老師。",
+          "action": "提出教師本人參與的一次自願公開素材交流，不代科任核定或使用考題。",
+          "tradeoff": "自己可能跟不上，花休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2864637925
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "dbe6f0fe1c062db336716e881170b8d3ba60e40615f64684a980207406b87306"
+      },
+      "consequenceDirections": {
+        "A": "未准不自行戴耳機。",
+        "B": "找到材料不等核准免英聽。",
+        "C": "不以金錢或90分當唯一必要調整依據。",
+        "D": "學生可拒，個人聽讀不證應免所有基礎教學。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2163a79d69c840c0ae9fdb4aebb68df70dd6a77231cb554cb93b0d28e2f2b323",
+    "draftSha256": "c932c517d3182eca3b35571e835b1305a8361800367205dadd7db9b32fcb0f10",
     "seedAssignmentVersion": 1
   }
 }

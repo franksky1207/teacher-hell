@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "976840e124469996f191ff752f469fdf815fbad16938302bb38a709cb014eea5",
+      "checkedAt": "2026-11-27T17:53:20.632Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問櫃位正常退貨條件，不假稱瑕疵。",
+            "action": "提出真實未使用商品退貨詢問，未取得退刷。",
+            "tradeoff": "可能被拒，要再跑。"
+          },
+          {
+            "id": 2,
+            "text": "詢問是否可依一般規則換較低價款。",
+            "action": "提出正常換貨條件詢問，不要求差價必退。",
+            "tradeoff": "可能仍超預算。"
+          },
+          {
+            "id": 3,
+            "text": "詢問卡公司合法帳單處理條件與總費用，先不答應分期。",
+            "action": "查詢正式付款安排資訊，不取得分期或將費用當折扣，不延誤本人既有合法付款責任。",
+            "tradeoff": "可能有利息費用，花查詢時間。"
+          },
+          {
+            "id": 4,
+            "text": "在合規平台查正常二手轉讓條件。",
+            "action": "查詢本人合法物品自願轉售資訊，不成交或誇大新品狀況。",
+            "tradeoff": "可能折價。"
+          },
+          {
+            "id": 5,
+            "text": "邀信任成人只陪我核對消費安排，不要對方借錢。",
+            "action": "提出私人自願預算交流，不公開家人醫療細節。",
+            "tradeoff": "承認衝動，可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "先保留完整包裝，明日工作後再作合法決定。",
+            "action": "暫緩非必要處分與使用，查明有效退換期限不任其過期。",
+            "tradeoff": "今晚一直惦記。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我今天就是想有一件喜歡的，願在必要家用確定不受影響時留它，明確砍掉自己接下來兩次非必要探店，不叫家人替我省。",
+          "action": "在真實核對可行私人餘額後保留商品，取消本人未成立的兩次私人消費意願，不撤他人既約。",
+          "tradeoff": "失去別的享受，也可能後悔。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2032662500
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "cc5c241c7980f001488189a7af3644a57406e8b6b1593b9d85ae6fb815c60579"
+      },
+      "consequenceDirections": {
+        "A": "未同意不拆牌或宣稱已換。",
+        "B": "暫緩不等可退，必要付款仍需真實安排。",
+        "C": "實體店條件依合法約定，不保證可退。",
+        "D": "若餘額不足此方案不成立，不以犒賞為由延誤必要家計。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3條件式保留已涵蓋情緒保留並減私人享受，改為不同付款資訊選擇。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問櫃位正常退貨條件，不假稱瑕疵。",
+                "action": "提出真實未使用商品退貨詢問，未取得退刷。",
+                "tradeoff": "可能被拒，要再跑。"
+              },
+              {
+                "id": 2,
+                "text": "詢問是否可依一般規則換較低價款。",
+                "action": "提出正常換貨條件詢問，不要求差價必退。",
+                "tradeoff": "可能仍超預算。"
+              },
+              {
+                "id": 3,
+                "text": "核實可支配預算，若不壓必要家用就保留外套。",
+                "action": "製作私人實際預算核對並作條件式保留決定，不動必要醫療生活支出。",
+                "tradeoff": "少其他私人享受。"
+              },
+              {
+                "id": 4,
+                "text": "在合規平台查正常二手轉讓條件。",
+                "action": "查詢本人合法物品自願轉售資訊，不成交或誇大新品狀況。",
+                "tradeoff": "可能折價。"
+              },
+              {
+                "id": 5,
+                "text": "邀信任成人只陪我核對消費安排，不要對方借錢。",
+                "action": "提出私人自願預算交流，不公開家人醫療細節。",
+                "tradeoff": "承認衝動，可能被拒。"
+              },
+              {
+                "id": 6,
+                "text": "先保留完整包裝，明日工作後再作合法決定。",
+                "action": "暫緩非必要處分與使用，查明有效退換期限不任其過期。",
+                "tradeoff": "今晚一直惦記。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我今天就是想有一件喜歡的，願在必要家用確定不受影響時留它，明確砍掉自己接下來兩次非必要探店，不叫家人替我省。",
+              "action": "在真實核對可行私人餘額後保留商品，取消本人未成立的兩次私人消費意願，不撤他人既約。",
+              "tradeoff": "失去別的享受，也可能後悔。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1400797415
+            },
+            "selectedIds": [
+              1,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 5,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "54313e3460264a89fc92f724520163bc3d32d742f9f6ef34e222593cc4c523c0"
+          },
+          "previousConsequenceDirections": {
+            "A": "實體店條件依合法約定，不保證可退。",
+            "B": "對方意見不代本人付款責任。",
+            "C": "暫緩不等可退，必要付款仍需真實安排。",
+            "D": "若餘額不足此方案不成立，不以犒賞為由延誤必要家計。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f5f8b1163a70299d2b2ac923b4fbb455231bc24f7a5a3d66dc33d9390f9be433",
+    "draftSha256": "976840e124469996f191ff752f469fdf815fbad16938302bb38a709cb014eea5",
     "seedAssignmentVersion": 1
   }
 }

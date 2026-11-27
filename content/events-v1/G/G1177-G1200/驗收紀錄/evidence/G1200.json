@@ -16,14 +16,155 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "70507d0a10a6779287d38451567f000070914cfda51db8502ddabe7033a1dce8",
+      "checkedAt": "2026-11-27T17:53:20.654Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "查詢校內已授權題庫的使用條件。",
+            "action": "詢問合法既有資源，不取得帳號或假定每人有名額。",
+            "tradeoff": "可能沒有適合內容。"
+          },
+          {
+            "id": 2,
+            "text": "提供具明確使用權的公開練習入口。",
+            "action": "額外給可核實合法公開資訊，不盜版或保證涵蓋全科。",
+            "tradeoff": "資料可能分散。"
+          },
+          {
+            "id": 3,
+            "text": "我願用本人原創題材做一份短練習。",
+            "action": "自製合法一般補充內容，不代商業題庫或保證分數。",
+            "tradeoff": "占備課，量很少。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願列出真正缺哪科哪類協助。",
+            "action": "提出低壓一般需求交流，不索收入證明。",
+            "tradeoff": "花課間。"
+          },
+          {
+            "id": 5,
+            "text": "向課程端提出低成本合法學習資源需求。",
+            "action": "提出額外制度協調，不代取得預算或核可App。",
+            "tradeoff": "可能慢或無資源。"
+          },
+          {
+            "id": 6,
+            "text": "拒絕這個App例外，但保留正式新工具提案入口。",
+            "action": "不採具體未核可外部註冊要求，不禁止所有合法工具探索。",
+            "tradeoff": "學生可能失落。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也羨慕過那些會員，願把自己那本可合法外借的普通參考書拿出來問他借不借，不用資料換，也不必說謝。",
+          "action": "提出本人私有合法實體參考書的合意短期借用邀請，不保證適用、未移交，不拿他生個資或以接受換待遇。",
+          "tradeoff": "本人少一本可用書，承擔合理借損風險與交接時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 649902955
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "abd34f6eba5f5dec9e504bc3ae8fc49f2218a1c366ec0131085f9bebae4ee18a"
+      },
+      "consequenceDirections": {
+        "A": "入口不等完成指導或取得VIP。",
+        "B": "未改制度前不讓學生冒個資風險。",
+        "C": "必要替代學習支持不能因拒例外消失。",
+        "D": "學生可拒，必要學習支持不依私人借用成立；不宣稱一本書等同VIP全科資源。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒多查三入口只是普通1、2的規模加總，改為教師自己實體資源投入與風險取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "查詢校內已授權題庫的使用條件。",
+                "action": "詢問合法既有資源，不取得帳號或假定每人有名額。",
+                "tradeoff": "可能沒有適合內容。"
+              },
+              {
+                "id": 2,
+                "text": "提供具明確使用權的公開練習入口。",
+                "action": "額外給可核實合法公開資訊，不盜版或保證涵蓋全科。",
+                "tradeoff": "資料可能分散。"
+              },
+              {
+                "id": 3,
+                "text": "我願用本人原創題材做一份短練習。",
+                "action": "自製合法一般補充內容，不代商業題庫或保證分數。",
+                "tradeoff": "占備課，量很少。"
+              },
+              {
+                "id": 4,
+                "text": "邀學生自願列出真正缺哪科哪類協助。",
+                "action": "提出低壓一般需求交流，不索收入證明。",
+                "tradeoff": "花課間。"
+              },
+              {
+                "id": 5,
+                "text": "向課程端提出低成本合法學習資源需求。",
+                "action": "提出額外制度協調，不代取得預算或核可App。",
+                "tradeoff": "可能慢或無資源。"
+              },
+              {
+                "id": 6,
+                "text": "拒絕這個App例外，但保留正式新工具提案入口。",
+                "action": "不採具體未核可外部註冊要求，不禁止所有合法工具探索。",
+                "tradeoff": "學生可能失落。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他說買不起讓我有點想直接刷卡，可是不想拿一次請客當答案；願自己多花一段空堂，把三個合法入口真的逐一查清楚，再給他選。",
+              "action": "額外實際查閱三個可核實合法資源條件並整理差異，若不足三個如實說明，不代註冊、付款或保證適用。",
+              "tradeoff": "花本人時間，可能查不到足夠。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2300271017
+            },
+            "selectedIds": [
+              4,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "c3133960242d57bed26ef3af68eeeec53720e573d05d3a8cb7d3559bfa4c1ea2"
+          },
+          "previousConsequenceDirections": {
+            "A": "未適合需求需明說，不以使用換待遇。",
+            "B": "必要替代學習支持不能因拒例外消失。",
+            "C": "學生可不用，查入口不等已取得帳號或個別支持完成。",
+            "D": "拒談不影響必要學習支持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7803aa4f0bc560a8ad4f77c4235a2c55370fd42e88977e4d286c645920c75068",
+    "draftSha256": "70507d0a10a6779287d38451567f000070914cfda51db8502ddabe7033a1dce8",
     "seedAssignmentVersion": 1
   }
 }

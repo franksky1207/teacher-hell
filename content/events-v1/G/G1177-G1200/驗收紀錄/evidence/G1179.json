@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c2ec282558b80b3f9e87f020638752516a8f9fdef433c72a7786b3aad2984cd4",
+      "checkedAt": "2026-11-27T17:53:20.620Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問總務是否可專業審視這款，再決定接收。",
+            "action": "提出合規產品評估請求，未使用、未接受成校產。",
+            "tradeoff": "要等，可能不適用。"
+          },
+          {
+            "id": 2,
+            "text": "婉拒捐贈，請學校處理必要合宜耗材。",
+            "action": "拒絕額外私人物資，不把必要供應丟回家庭。",
+            "tradeoff": "家長可能失落。"
+          },
+          {
+            "id": 3,
+            "text": "提出公開比較合規替代耗材的長期費用建議。",
+            "action": "額外請權責評估可行採購，不取得預算或指定品牌。",
+            "tradeoff": "要整理，可能不採用。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長自願整理只含本人孩子可知的不適情境。",
+            "action": "提出一般自願資訊整理，不逼醫療證明或重演暴露。",
+            "tradeoff": "可能又累一次。"
+          },
+          {
+            "id": 5,
+            "text": "詢問有無合規不含私人捐品的清潔方式調整。",
+            "action": "提出專業程序評估請求，不自行配方或保證有效。",
+            "tradeoff": "可能要協調。"
+          },
+          {
+            "id": 6,
+            "text": "我願整理一張清潔時段的公開提醒草稿。",
+            "action": "額外製作依權責確認的一般通知，不揭敏感學生或當已無風險。",
+            "tradeoff": "占備課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他捨不得用卻拿來，我有點不忍，願意自費負擔一小份經校方確認合宜的普通耗材，先問需不需要，不指定這一牌。",
+          "action": "提出本人預算無條件低價額外耗材提供意願，未採購，不免學校必要安全供應。",
+          "tradeoff": "花私人錢，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3063258442
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "aa23b69847fce4ad50104176301b7c2c37c2a7825fda96119d4e20dfe091b988"
+      },
+      "consequenceDirections": {
+        "A": "評估不保證個別無過敏，必要保障照常。",
+        "B": "提醒不代必要風險處理。",
+        "C": "不能只拒物卻不處理真實刺激問題。",
+        "D": "不得以自費買到特定產品使用許可或要求家長回報。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "311bfebe923bae8648434a91a0f9198b6ae72bb581aeaba5f6efc24a39257d95",
+    "draftSha256": "c2ec282558b80b3f9e87f020638752516a8f9fdef433c72a7786b3aad2984cd4",
     "seedAssignmentVersion": 1
   }
 }

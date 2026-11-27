@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bee23e75171769aa872024e93d6581c7ffa9e001a9f7f681b32c5d4e5054378c",
+      "checkedAt": "2026-11-27T17:53:20.648Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問承辦預計何時公布正式辦法。",
+            "action": "額外查詢可公開時點，不承諾登記或取得名額。",
+            "tradeoff": "可能沒日期。"
+          },
+          {
+            "id": 2,
+            "text": "提供一張只記公開活動日期的空白行事曆。",
+            "action": "自製一般資訊工具，不收學生姓名或意願名冊。",
+            "tradeoff": "占備課，可能變動。"
+          },
+          {
+            "id": 3,
+            "text": "邀學生自願談對此類活動真正有興趣的內容。",
+            "action": "提出一般需求交流，不當成預報名或保證參加。",
+            "tradeoff": "花班務。"
+          },
+          {
+            "id": 4,
+            "text": "請家長只轉官方原連結，不替班級承諾卡位。",
+            "action": "提出一般訊息協作建議，必要不實更正本來共同維持。",
+            "tradeoff": "他可能覺得沒發揮。"
+          },
+          {
+            "id": 5,
+            "text": "拒絕提前開表，待正式辦法依規辦理。",
+            "action": "不建立尚無依據的預報名，不減公平知情。",
+            "tradeoff": "可能被說慢。"
+          },
+          {
+            "id": 6,
+            "text": "查詢校內既有活動諮詢資源供家庭自選。",
+            "action": "給合法公開入口，不代預約或取得推薦。",
+            "tradeoff": "可能不實用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說最先知道我也有點想贏，但這次想把自己的午休留給小說，不陪著每日刷新，正式消息工作時段再接。",
+          "action": "停止本人非必要高頻活動追蹤，依合理工作時段處理正式資訊，保留必要時限與緊急聯絡。",
+          "tradeoff": "可能錯過聊天熱度，家長失望。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 502811956
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "2641b98e2526e2a4d2de2e93bd25141a2efbab6e3d5a8fdea6418245299076a8"
+      },
+      "consequenceDirections": {
+        "A": "入口不代表活動已通過。",
+        "B": "拒談不影響未來公平資格。",
+        "C": "不能因休息漏掉已知正式截止，不宣稱家長的活動無價值。",
+        "D": "不以答應此格式才給正式資訊。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e71fc50de3ed442df83ee44e6e4551df81c35ae64a7a7063a482511e5176c224",
+    "draftSha256": "bee23e75171769aa872024e93d6581c7ffa9e001a9f7f681b32c5d4e5054378c",
     "seedAssignmentVersion": 1
   }
 }

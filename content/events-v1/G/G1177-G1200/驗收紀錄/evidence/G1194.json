@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "290ace836ddde3e74fbb4d59c02cd65e81c508230eef5105e4cabfa459b7f39b",
+      "checkedAt": "2026-11-27T17:53:20.646Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "再次婉拒茶，照原本界線離開。",
+            "action": "拒絕新私人邀請，循安全合法路線返家，不作再訪承諾。",
+            "tradeoff": "可能內疚。"
+          },
+          {
+            "id": 2,
+            "text": "提議只在安全公開巷口聊五分鐘，不入屋。",
+            "action": "提出成人自願有限公開交流，未代接受。",
+            "tradeoff": "晚些回家。"
+          },
+          {
+            "id": 3,
+            "text": "若有安全公開店面可行，詢問改在那裡自費買茶。",
+            "action": "提出私人自願公共場所替代邀約，不假定店存在或有座。",
+            "tradeoff": "花錢與路程。"
+          },
+          {
+            "id": 4,
+            "text": "問他是否願自行聯絡熟人分享這壺茶。",
+            "action": "提出成人自主另找陪伴建議，不假定有家人或代傳個資。",
+            "tradeoff": "可能無人可找。"
+          },
+          {
+            "id": 5,
+            "text": "提供已知公開社區活動資訊，讓他自選。",
+            "action": "額外給一般社會交流入口，不代報名或診斷孤獨。",
+            "tradeoff": "資訊可能不合意。"
+          },
+          {
+            "id": 6,
+            "text": "邀他若願意另說水果怎麼挑，今天只聽一個訣竅。",
+            "action": "提出有限公開生活經驗交流，不承諾長談或入屋。",
+            "tradeoff": "花時間，可能講不停。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在真的只想回家，可是也有點想喝；願另問日後在安全公開地方約一杯茶，今晚就到這裡，不說改天一定來敷衍。",
+          "action": "提出日後公共場所成人自願茶敘邀請並結束當晚交流，未排定時段或承諾入屋，不附回報義務。",
+          "tradeoff": "多一個未來私人安排，可能約不成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 603059381
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "85f9765f0c6046be09e1f5c2eeca67fcd6f872955137d77656b927299482793a"
+      },
+      "consequenceDirections": {
+        "A": "無合意安全地點不成立。",
+        "B": "對方可拒，教師不把未接受邀約說成已約定；與普通1立即離開無後約、普通3當晚換店不同。",
+        "C": "可拒或須依約結束，不能以禮物作回報要求。",
+        "D": "對方可失落，不因熱情就需入屋。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒真實說累後離開與普通1同動作，改為確有後續邀請成本的選擇。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "再次婉拒茶，照原本界線離開。",
+                "action": "拒絕新私人邀請，循安全合法路線返家，不作再訪承諾。",
+                "tradeoff": "可能內疚。"
+              },
+              {
+                "id": 2,
+                "text": "提議只在安全公開巷口聊五分鐘，不入屋。",
+                "action": "提出成人自願有限公開交流，未代接受。",
+                "tradeoff": "晚些回家。"
+              },
+              {
+                "id": 3,
+                "text": "若有安全公開店面可行，詢問改在那裡自費買茶。",
+                "action": "提出私人自願公共場所替代邀約，不假定店存在或有座。",
+                "tradeoff": "花錢與路程。"
+              },
+              {
+                "id": 4,
+                "text": "問他是否願自行聯絡熟人分享這壺茶。",
+                "action": "提出成人自主另找陪伴建議，不假定有家人或代傳個資。",
+                "tradeoff": "可能無人可找。"
+              },
+              {
+                "id": 5,
+                "text": "提供已知公開社區活動資訊，讓他自選。",
+                "action": "額外給一般社會交流入口，不代報名或診斷孤獨。",
+                "tradeoff": "資訊可能不合意。"
+              },
+              {
+                "id": 6,
+                "text": "邀他若願意另說水果怎麼挑，今天只聽一個訣竅。",
+                "action": "提出有限公開生活經驗交流，不承諾長談或入屋。",
+                "tradeoff": "花時間，可能講不停。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我今晚真的累到不想再當好人，願坦白我現在只想回家吃飯，不拿兩疊作文當比較好聽的藉口。",
+              "action": "表達本人私人需求並結束額外互助交流，不撤已完成合意搬物或作假承諾。",
+              "tradeoff": "形象可能沒那麼體貼。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3830560604
+            },
+            "selectedIds": [
+              6,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 1,
+              "D": 2
+            },
+            "optionsDigest": "727e9fb82470f4ac232fff6d66701fbaf99ea3557b7829586b168206251caa68"
+          },
+          "previousConsequenceDirections": {
+            "A": "可拒或須依約結束，不能以禮物作回報要求。",
+            "B": "對方可不理解，必要自身安全與合法尊重共同維持。",
+            "C": "對方可失落，不因熱情就需入屋。",
+            "D": "對方可不想聊，時間到依約離開。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "76d334ff2e8945b8883864f8539456425f7f50b2326dd7e646684cdf8407ea72",
+    "draftSha256": "290ace836ddde3e74fbb4d59c02cd65e81c508230eef5105e4cabfa459b7f39b",
     "seedAssignmentVersion": 1
   }
 }

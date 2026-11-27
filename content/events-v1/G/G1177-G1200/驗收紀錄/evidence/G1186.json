@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e4c5c16843bccfb88d94fac30cabbbd9d7977ad360590faf584a3b91a18d1a13",
+      "checkedAt": "2026-11-27T17:53:20.634Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議把必要衛生紙與非必要擦拭材料分開放。",
+            "action": "提出合規用途配置，不限制必要取用或假定新物資已取得。",
+            "tradeoff": "要整理，可能仍混用。"
+          },
+          {
+            "id": 2,
+            "text": "詢問校方能否提供合宜一般擦拭耗材。",
+            "action": "查詢額外資源，不取得物品。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 3,
+            "text": "邀全班自願提供不記人的減少浪費點子。",
+            "action": "徵詢一般使用建議，不公布被懷疑者。",
+            "tradeoff": "占班務。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一張一般用途提示卡，不列張數。",
+            "action": "自製原創資訊工具，不記生理需求。",
+            "tradeoff": "花備課。"
+          },
+          {
+            "id": 5,
+            "text": "拒絕記名超額付費，保留必要自由取用。",
+            "action": "拒絕具體新制度，不放棄必要班費合法管理與支持。",
+            "tradeoff": "他可能覺得縱容。"
+          },
+          {
+            "id": 6,
+            "text": "提議定期只記總量，由成人檢視採購。",
+            "action": "提出低資料一般資源管理方案，不監控個人或既定不合理配額。",
+            "tradeoff": "多統計，可能找不出原因。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那張罰款欄看得我也想當場簽，可是更想省麻煩；願自費先做一個可反覆用的普通擦桌墊示例，問大家願不願試，不讓他當收費員。",
+          "action": "提出本人預算的合規非食物接觸一般桌面保護示例，未取得採用或完成購買，不取代必要衛生用品。",
+          "tradeoff": "花錢與準備，可能不用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1727767297
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "52a4fadddb13073a044f6c3412da1bc7e0bdb1009be7cd507a54eed2e74907d1"
+      },
+      "consequenceDirections": {
+        "A": "提示不保證消耗下降。",
+        "B": "無資源不逼學生用私錢買必需品。",
+        "C": "須依清潔與材質規定，不以樣本保證節紙或逼學生使用。",
+        "D": "不以票數訂不合理用量門檻。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a1f823da825cb062138a03d29f64c6fc19d10fa91d09b99f7ee966f57747d246",
+    "draftSha256": "e4c5c16843bccfb88d94fac30cabbbd9d7977ad360590faf584a3b91a18d1a13",
     "seedAssignmentVersion": 1
   }
 }

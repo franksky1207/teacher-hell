@@ -16,14 +16,155 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8c524530f88637611fbba6b0fa671f869ace90fd20d3172f173ca1bc66b87147",
+      "checkedAt": "2026-11-27T17:53:20.625Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供正式產品安全資訊入口供自行查詢。",
+            "action": "額外提供可靠公開資料，不判定單一產品合格或開照射方式。",
+            "tradeoff": "可能太專業。"
+          },
+          {
+            "id": 2,
+            "text": "整理廣告與包裝警語差異的真實提問草稿。",
+            "action": "額外彙整可知文字供物主自行詢問，不代消費申訴或保證退貨。",
+            "tradeoff": "占備課，可能被拒。"
+          },
+          {
+            "id": 3,
+            "text": "提供既有消費爭議管道資訊。",
+            "action": "給合法入口，不代退貨、轉賣或處分。",
+            "tradeoff": "可能要另跑。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長用虛構廣告練習看限制條件。",
+            "action": "提出一般成人自願媒體交流，不打開設備或教操作。",
+            "tradeoff": "花時間，可能不想談。"
+          },
+          {
+            "id": 5,
+            "text": "不加私人產品諮詢，依規完成必要領回接續。",
+            "action": "婉拒實際提出的額外判讀要求，不停止安全與正式交接。",
+            "tradeoff": "家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校方能否提供一般非物資捐助需求資訊。",
+            "action": "查詢未來合法支援方式，不替家長承諾捐贈。",
+            "tradeoff": "可能沒明確需求。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不甘一箱變麻煩，願陪他一起問正式商品安全窗口一次，自己聽限制，不再替直播猜。",
+          "action": "提出本人工作時段有限成人共同詢問正式商品安全資訊的邀約，未接通或取得結論，不代退貨、交涉交易或操作設備。",
+          "tradeoff": "花空堂，可能等線無回應。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1346096692
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ca1690a61ba0e50083c580db3181a7bc86bafa27a0780c45ee893a7610fc6e34"
+      },
+      "consequenceDirections": {
+        "A": "不以拒諮詢扣住私物或放任學生接觸。",
+        "B": "拒談不影響必要領回與權益。",
+        "C": "物主可拒，窗口可無個案結論，必要安全及領回不等詢問才做。",
+        "D": "資料不等產品安全認證。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒私人收藏撤推薦與核心互動偏離，改為教師實際共同詢問的額外投入，區分普通1資訊及普通2草稿。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提供正式產品安全資訊入口供自行查詢。",
+                "action": "額外提供可靠公開資料，不判定單一產品合格或開照射方式。",
+                "tradeoff": "可能太專業。"
+              },
+              {
+                "id": 2,
+                "text": "整理廣告與包裝警語差異的真實提問草稿。",
+                "action": "額外彙整可知文字供物主自行詢問，不代消費申訴或保證退貨。",
+                "tradeoff": "占備課，可能被拒。"
+              },
+              {
+                "id": 3,
+                "text": "提供既有消費爭議管道資訊。",
+                "action": "給合法入口，不代退貨、轉賣或處分。",
+                "tradeoff": "可能要另跑。"
+              },
+              {
+                "id": 4,
+                "text": "邀家長用虛構廣告練習看限制條件。",
+                "action": "提出一般成人自願媒體交流，不打開設備或教操作。",
+                "tradeoff": "花時間，可能不想談。"
+              },
+              {
+                "id": 5,
+                "text": "不加私人產品諮詢，依規完成必要領回接續。",
+                "action": "婉拒實際提出的額外判讀要求，不停止安全與正式交接。",
+                "tradeoff": "家長可能失望。"
+              },
+              {
+                "id": 6,
+                "text": "詢問校方能否提供一般非物資捐助需求資訊。",
+                "action": "查詢未來合法支援方式，不替家長承諾捐贈。",
+                "tradeoff": "可能沒明確需求。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "看整箱我也有點貪方便，願意把自己收藏的快速殺菌廣告拿來和他一起刪掉不可靠的推薦，別再轉給誰。",
+              "action": "檢視本人私人收藏並撤下本人無法支持的非必要推薦，不刪事件證據或宣稱產品已被官方判違規。",
+              "tradeoff": "承認自己也輕信，花私人整理時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2189139015
+            },
+            "selectedIds": [
+              3,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 1,
+              "D": 4
+            },
+            "optionsDigest": "c4e95f15d700a14e78141f248c057c5366826ab40fb442951baa4588de1f3852"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可不跟做，私人整理不代必要安全交接或產品判定。",
+            "B": "提供不等已受理或退款。",
+            "C": "資料不等產品安全認證。",
+            "D": "拒談不影響必要領回與權益。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5e5e85d6d632c56e5c5c3a386c9116a3e9073ebcbe6740b878a27fe3c0efe5b4",
+    "draftSha256": "8c524530f88637611fbba6b0fa671f869ace90fd20d3172f173ca1bc66b87147",
     "seedAssignmentVersion": 1
   }
 }

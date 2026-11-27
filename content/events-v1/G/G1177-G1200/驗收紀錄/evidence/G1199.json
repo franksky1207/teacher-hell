@@ -16,14 +16,82 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "efeb0f807328c048e67d5304b570b6f5931c303440a9e88a13ac4d02bfd1241f",
+      "checkedAt": "2026-11-27T17:53:20.653Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他挑一個主題，用課本頁碼做可核對的短卡。",
+            "action": "提出合法自願原創資料整理，不保證命中考題或代其完成。",
+            "tradeoff": "花時間，比生成慢。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式公開複習資源入口。",
+            "action": "額外給合法資訊，不代取得題庫或保證高分。",
+            "tradeoff": "可能太多資料。"
+          },
+          {
+            "id": 3,
+            "text": "用虛構問答測一次生成工具可能怎麼編造。",
+            "action": "提出全虛構離線示例，不用結果斷言所有AI必錯。",
+            "tradeoff": "要準備。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願說最難串起來的時間關係。",
+            "action": "提出一般學習需求交流，不公開催他答對。",
+            "tradeoff": "占課間。"
+          },
+          {
+            "id": 5,
+            "text": "不改全班晨間材料，讓個別合法需求另有支持。",
+            "action": "拒絕具體未核實教材替換要求，不減正常自主學習與必要協助。",
+            "tradeoff": "學生可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "我願製作一張查來源的空白檢核單供自用。",
+            "action": "額外做原創一般工具，不要求打分交回。",
+            "tradeoff": "占備課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他捏著二十張我也不甘心，願意自己另做一個能反覆擦改的空白時間軸，陪他只放三個確定事件，不求一次塞滿。",
+          "action": "提出教師本人原創可修正時間軸協作，限合法資料與自願參與，不預寫完整答案或宣稱已學會。",
+          "tradeoff": "花休息與製作，可能仍慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 126120846
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "e312400dd6bf64f4dc3e301b5d872756811383f35be2dfe9feadca932d712592"
+      },
+      "consequenceDirections": {
+        "A": "示例不代課本事實核對。",
+        "B": "他可拒，教師投入不換成績優惠或免真實更正。",
+        "C": "不能只說不改而忽略實際學習困難。",
+        "D": "可拒，不能以拒談停必要支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6ce10c277939b0f300daa92f5bcac034a74dfc632f78bbada4592d9bb96a1e12",
+    "draftSha256": "efeb0f807328c048e67d5304b570b6f5931c303440a9e88a13ac4d02bfd1241f",
     "seedAssignmentVersion": 1
   }
 }

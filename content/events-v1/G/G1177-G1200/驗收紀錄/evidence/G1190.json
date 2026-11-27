@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "78109eb6d37ca043ff1e5922a0659c554ce600d946ad397841906a66da003044",
+      "checkedAt": "2026-11-27T17:53:20.640Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出教學與自願創作耗材分開標示的方案。",
+            "action": "提出合規用途配置，不追溯虛定誰耗損。",
+            "tradeoff": "多管理，可能混用。"
+          },
+          {
+            "id": 2,
+            "text": "我願整理一份不含姓名的總量使用摘要。",
+            "action": "額外製作可核實一般資料，不虛構未知耗用。",
+            "tradeoff": "花時間，可能不完整。"
+          },
+          {
+            "id": 3,
+            "text": "詢問總務是否有合宜的公共補充耗材管道。",
+            "action": "查詢額外資源，不取得筆或免除必要供應。",
+            "tradeoff": "可能無庫存。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願設計不寫名字的還筆位置圖。",
+            "action": "提出原創一般工具協作，不當作懲罰。",
+            "tradeoff": "要準備。"
+          },
+          {
+            "id": 5,
+            "text": "和家長約一個非急迫進度回覆時點。",
+            "action": "提出有界限額外交流約定，不延誤必要告知。",
+            "tradeoff": "可能再多工作。"
+          },
+          {
+            "id": 6,
+            "text": "提議用原筆盒的固定空槽做歸位提示，不逐人登記。",
+            "action": "提出合規非記名固定格位管理方案，未實施或要求學生簽名，不改必要用途權益。",
+            "tradeoff": "盒子占空間，仍可能放錯。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被問到我也想把筆全鎖起來，卻知道那只會更麻煩；願意自費買一組自己專用的筆，和公用分清，自己帶自己收。",
+          "action": "以本人預算提供僅供本人使用的合法教具，減少私人使用與公用混淆，不撤公共必要耗材或宣稱原筆已補齊。",
+          "tradeoff": "花私人錢，要隨身帶。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 105756343
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "2f60883cd55b3d0c985ed4579ab8727b8e5228b1ab921a7f30cd8e08e83919a7"
+      },
+      "consequenceDirections": {
+        "A": "不把家長資源當固定必須來源。",
+        "B": "格位只能顯示在不在，不能證明誰拿或是否耗盡，與普通4位置圖的資訊產物不同。",
+        "C": "仍可能忘帶，不因自購免公物管理與真實說明。",
+        "D": "摘要不等每支已找回或有責任者。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6拒未明確提出逐人追蹤欠實際管理動作，改為原盒空槽的具體使用提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提出教學與自願創作耗材分開標示的方案。",
+                "action": "提出合規用途配置，不追溯虛定誰耗損。",
+                "tradeoff": "多管理，可能混用。"
+              },
+              {
+                "id": 2,
+                "text": "我願整理一份不含姓名的總量使用摘要。",
+                "action": "額外製作可核實一般資料，不虛構未知耗用。",
+                "tradeoff": "花時間，可能不完整。"
+              },
+              {
+                "id": 3,
+                "text": "詢問總務是否有合宜的公共補充耗材管道。",
+                "action": "查詢額外資源，不取得筆或免除必要供應。",
+                "tradeoff": "可能無庫存。"
+              },
+              {
+                "id": 4,
+                "text": "邀學生自願設計不寫名字的還筆位置圖。",
+                "action": "提出原創一般工具協作，不當作懲罰。",
+                "tradeoff": "要準備。"
+              },
+              {
+                "id": 5,
+                "text": "和家長約一個非急迫進度回覆時點。",
+                "action": "提出有界限額外交流約定，不延誤必要告知。",
+                "tradeoff": "可能再多工作。"
+              },
+              {
+                "id": 6,
+                "text": "不新增逐人登記，只做合規一般用途管理。",
+                "action": "拒絕不成比例的個人追蹤工具，不免必要公物管理。",
+                "tradeoff": "家長可能不滿。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "被問到我也想把筆全鎖起來，卻知道那只會更麻煩；願意自費買一組自己專用的筆，和公用分清，自己帶自己收。",
+              "action": "以本人預算提供僅供本人使用的合法教具，減少私人使用與公用混淆，不撤公共必要耗材或宣稱原筆已補齊。",
+              "tradeoff": "花私人錢，要隨身帶。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3802478968
+            },
+            "selectedIds": [
+              6,
+              2,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 2,
+              "D": 6
+            },
+            "optionsDigest": "904e5ff94063e87c3003f59e6bd830e0e33e15d4169c1e6e68acfe172a1ae466"
+          },
+          "previousConsequenceDirections": {
+            "A": "可不參加，圖不保證無遺失。",
+            "B": "仍可能忘帶，不因自購免公物管理與真實說明。",
+            "C": "摘要不等每支已找回或有責任者。",
+            "D": "不以不記名放任已知具體問題。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ad548afcf59435baca401083b0ac7b0a5a15d9989a79d15560d4d8e713795216",
+    "draftSha256": "78109eb6d37ca043ff1e5922a0659c554ce600d946ad397841906a66da003044",
     "seedAssignmentVersion": 1
   }
 }

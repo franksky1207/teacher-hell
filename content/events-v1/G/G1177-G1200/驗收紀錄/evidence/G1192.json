@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "302360efcdb4e5deb2a6807fccc3df96eda9f7224a060b46fac770c737c84b6e",
+      "checkedAt": "2026-11-27T17:53:20.642Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他自願談怎麼先問對方要不要幫。",
+            "action": "提出一般支持方式交流，不逼受助者現身。",
+            "tradeoff": "花課間。"
+          },
+          {
+            "id": 2,
+            "text": "提議用虛構情境談食物分享的界線。",
+            "action": "提出去識別自願活動，不演受助情境或對人貼標。",
+            "tradeoff": "占班務。"
+          },
+          {
+            "id": 3,
+            "text": "提供現有低曝光午餐求助資訊給全班。",
+            "action": "額外整理公開一般入口，不指名誰使用。",
+            "tradeoff": "花準備。"
+          },
+          {
+            "id": 4,
+            "text": "邀分享者自選是否先將未送出私人物品收回。",
+            "action": "提出物主合法合意保留未移交食品的選擇，不撤他人已接受的物品或必要餐食。",
+            "tradeoff": "心意暫落空。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一張不涉及食物的原創友善說話小卡。",
+            "action": "教師製作一般自願素材，不影射個案或強迫誦讀。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 6,
+            "text": "今天不追加班級分享活動，先維持正常用餐。",
+            "action": "停止非必要延伸安排，安全與必要支持共同維持。",
+            "tradeoff": "可能仍有委屈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他問以後別幫我也火，卻不想再讓食物扛一份義氣；願把自己的課間拿來陪他畫一張不指人的漫畫，讓他有地方把氣講完。",
+          "action": "提出教師本人參與的自願原創情緒漫畫交流，不畫可辨識同學、不買原諒或代必要支持。",
+          "tradeoff": "花休息，可能畫得難看。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3195247149
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "bfa417888e40d93de5dfad984a088212b558f970a583530fbdddb042882fea5f"
+      },
+      "consequenceDirections": {
+        "A": "不將正常吃飯當事件已解決。",
+        "B": "不以收回讓受助者餓著或公開其拒絕。",
+        "C": "學生可拒，不以畫完當已控制情緒或免責。",
+        "D": "不能當全班已不嘲笑的證據。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2ef893fbd190907d6842310dfa74e3811495d11ef9c82c4f666bac08e1e8fc2c",
+    "draftSha256": "302360efcdb4e5deb2a6807fccc3df96eda9f7224a060b46fac770c737c84b6e",
     "seedAssignmentVersion": 1
   }
 }

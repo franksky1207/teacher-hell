@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f06075dac1992674ee3bf679c86b7ab515193b8e85c3e34417252b7bb65c76f5",
+      "checkedAt": "2026-11-27T17:53:20.616Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議保留紙本與核准數位雙軌，自願選。",
+            "action": "提出公平可及的合規替代提案，未核准數位上線。",
+            "tradeoff": "要維護兩種來源。"
+          },
+          {
+            "id": 2,
+            "text": "詢問校內可用時段與設備，先看可行性。",
+            "action": "查詢正式資源，不取得機位或占必要休息。",
+            "tradeoff": "可能沒空間。"
+          },
+          {
+            "id": 3,
+            "text": "用假資料試表單欄位，今天不碰學生資料。",
+            "action": "自願進行離線虛構欄位試用，不接真實平台。",
+            "tradeoff": "花空堂。"
+          },
+          {
+            "id": 4,
+            "text": "先精簡本人可調的紙本重複欄，再談媒介。",
+            "action": "重編本人非必要紙本欄位，不刪必要學習資訊或擅改校定格式。",
+            "tradeoff": "要重做版型。"
+          },
+          {
+            "id": 5,
+            "text": "婉拒這週全面上線，讓原繳交照常。",
+            "action": "拒絕具體未成熟改制，不阻合法未來提案。",
+            "tradeoff": "同事可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "邀學生自願談哪個欄真正能回顧學習。",
+            "action": "徵詢一般用途意見，不收設備家計細節。",
+            "tradeoff": "要整理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想少一疊紙，可是更不想半夜救表單，願意只接一次欄位討論，明講不上線值夜班。",
+          "action": "提出本人有限成人設計交流，拒絕非必要夜間即時支援承諾，不關閉必要緊急聯繫。",
+          "tradeoff": "可能少了合作機會。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1985784379
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "8321838a8ffae8e9e19f8dabdd7cf368d2f3d5ab8f5e678659b3bf8baf432bd3"
+      },
+      "consequenceDirections": {
+        "A": "試用不等資安核准或制度已改。",
+        "B": "不能用維持紙本忽略已知可及需求。",
+        "C": "對方可不同意，必要可及與教學不因教師界線減少。",
+        "D": "精簡不證線上無用，仍須必要支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba8ae8ff0211f9c1a0d0b3b866f056b4c348a1ad9c00277446144a8c0927488d",
+    "draftSha256": "f06075dac1992674ee3bf679c86b7ab515193b8e85c3e34417252b7bb65c76f5",
     "seedAssignmentVersion": 1
   }
 }

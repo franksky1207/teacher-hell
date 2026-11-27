@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c53c15542230cae04e80e0d639001aceaa0f4ee2e08e4a6f757bb800ad58f212",
+      "checkedAt": "2026-11-27T17:53:20.637Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請主管提供一般呈現要求的正式文字。",
+            "action": "額外要求明確工作說明，不以未給文字當可造假。",
+            "tradeoff": "可能被說太正式。"
+          },
+          {
+            "id": 2,
+            "text": "只就本人可核實資料加上定義說明，不代全校發言。",
+            "action": "額外整理本人合法一般統計定義，不改數值或公開學生資訊。",
+            "tradeoff": "多整理。"
+          },
+          {
+            "id": 3,
+            "text": "邀好友另談彼此能替對方答應到哪裡。",
+            "action": "提出成人自願關係界線交流，不要求他放棄誠實。",
+            "tradeoff": "可能尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "提出成人會議討論數據用途與合理公開範圍。",
+            "action": "提出額外制度議程，不取得採納或代表其他人。",
+            "tradeoff": "準備耗時，可能被反對。"
+          },
+          {
+            "id": 5,
+            "text": "不加入額外聯名行動，維持本人依法真實工作。",
+            "action": "婉拒好友當下默認的共同代言，不阻其合法表達。",
+            "tradeoff": "可能被視為不挺。"
+          },
+          {
+            "id": 6,
+            "text": "提供現有資料倫理與合法公開指引資訊。",
+            "action": "額外給可靠一般資料，不代法律認證。",
+            "tradeoff": "可能被嫌繞圈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被推出來其實不爽，願意當面說他不能替我簽名；這次若要額外說明，我自己署自己的名字，不躲在我們兩個後面。",
+          "action": "提出本人自願單獨書面表達工作界線的意願，不代他人聯名、不以具名才誠實。",
+          "tradeoff": "多花時間，自己承擔人際風險。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1552414191
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "a684ed2ddc4d37c77c5b3e68ab4e14ef0d2b62c9054ddc826fcef5b0b65565cd"
+      },
+      "consequenceDirections": {
+        "A": "清楚定義不等宣傳已核准。",
+        "B": "可不獲回應，單獨意見不代表正式申訴已受理。",
+        "C": "必要真實不等開會才做。",
+        "D": "拒聯名不容許造假或漏必要告知。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "914ab51a300d5fc3f91949748f2342c19aa219f466ba64ee79a3ea9f8e9be5a7",
+    "draftSha256": "c53c15542230cae04e80e0d639001aceaa0f4ee2e08e4a6f757bb800ad58f212",
     "seedAssignmentVersion": 1
   }
 }

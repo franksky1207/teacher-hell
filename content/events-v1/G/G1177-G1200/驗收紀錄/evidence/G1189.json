@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "014f61958475203c369fb253641327c583a7b711e2d19941ecf0bc749de512ca",
+      "checkedAt": "2026-11-27T17:53:20.638Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議合規的自願點心區安排，保留必要飲食便利。",
+            "action": "提出不剝奪健康權益的場域協調，未取得同意或新增強制禁令。",
+            "tradeoff": "空間有限。"
+          },
+          {
+            "id": 2,
+            "text": "詢問校方有無合宜清潔耗材與成人協助。",
+            "action": "查詢額外資源，不取得人力。",
+            "tradeoff": "可能沒預算。"
+          },
+          {
+            "id": 3,
+            "text": "邀全班自願提出吃完自己可做的善後方法。",
+            "action": "提出一般分工建議，不以多數強逼少數危險勞務。",
+            "tradeoff": "占班務。"
+          },
+          {
+            "id": 4,
+            "text": "請股長自選是否收回尚未成立捐贈的拖把。",
+            "action": "提出物主自願保留私物的方案，不強迫捐贈或私人賠償。",
+            "tradeoff": "少新工具。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一張不同污漬交由誰處理的公開提問圖。",
+            "action": "額外整理一般問題交權責核對，不教學生刮磨或亂配清潔劑。",
+            "tradeoff": "花備課。"
+          },
+          {
+            "id": 6,
+            "text": "拒絕臨時全面禁食，維持合規必要支持。",
+            "action": "不採具體不合理加碼要求，保留可依法調整的正常飲食安排。",
+            "tradeoff": "股長可能不滿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那句撐不住我聽得煩又心疼，想自己出一段空堂陪他把原本安全的掃具整理好，今天別再一起追分數。",
+          "action": "提出教師本人參與的有限非必要安全工具收納協助，不用刮刀、不代必要清潔、不逼學生參加。",
+          "tradeoff": "花休息，可能被說老師也來管小事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 453042990
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "822ad30ec4a88996753faa2c8ac9f2768e9c431a34d423f74e485661453c9853"
+      },
+      "consequenceDirections": {
+        "A": "物品取回不免校方必要合宜耗材。",
+        "B": "必要安全清潔不能丟給股長。",
+        "C": "對方可拒，收納不等工作量已合理，必要責任仍共同維持。",
+        "D": "不能只拒禁令卻放任不合理清掃負擔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b5d89e239ceb4f9825eee0ab918f7aac8478e11d2ad54a5656c78d38393e04c",
+    "draftSha256": "014f61958475203c369fb253641327c583a7b711e2d19941ecf0bc749de512ca",
     "seedAssignmentVersion": 1
   }
 }

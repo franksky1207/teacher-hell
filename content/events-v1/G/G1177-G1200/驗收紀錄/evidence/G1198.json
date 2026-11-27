@@ -16,14 +16,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc275653cdba25c72705cc75699c3a6fc89353434bb21c9a3ea3c462547cbafd",
+      "checkedAt": "2026-11-27T17:53:20.651Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起做全虛構資料的申請準備範例。",
+            "action": "額外製作成人一般流程示例，不放真實學生或代號對照。",
+            "tradeoff": "花時間。"
+          },
+          {
+            "id": 2,
+            "text": "提出供有意願家庭自行參加的一般補助資訊說明，不針對那兩戶。",
+            "action": "向正式窗口提出全班範圍非強制一般資訊說明邀請，不披露個案、不代家庭申請，未取得人力或安排。",
+            "tradeoff": "要協調，可能無人參與。"
+          },
+          {
+            "id": 3,
+            "text": "我願整理可公開的補助資格入口供家庭自選。",
+            "action": "額外提供合法公開資訊，不指名推定貧困或代申請。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 4,
+            "text": "邀職員只整理一般截止提醒，不列個人。",
+            "action": "提出不含個案的新行政資訊協作，不建立影子名單。",
+            "tradeoff": "可能較難追蹤。"
+          },
+          {
+            "id": 5,
+            "text": "不另加私人跨處室追蹤表，沿合法原處室程序。",
+            "action": "拒絕真實新表協作，維持必要合法支持與紀錄。",
+            "tradeoff": "對方可能覺得被綁手。"
+          },
+          {
+            "id": 6,
+            "text": "詢問既有合規的家庭自願諮詢安排。",
+            "action": "查詢正式資源，不代預約或透露名單。",
+            "tradeoff": "可能無空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一收表又開表，我真的想喊停，願用自己的空堂另寫一份不帶個案的流程疑問，具名請主管回答，不再讓我們各自猜。",
+          "action": "額外提出一般資料權限流程釐清請求，不虛構工時、不帶可識別資訊，不以具名才遵法。",
+          "tradeoff": "花時間，可能被說太麻煩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3455791313
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "8d810b29108906d874ecb9fbd32ba8bf236e4af5f9e64b1ea85c590a8b12edb2"
+      },
+      "consequenceDirections": {
+        "A": "主管可無明確答覆，必要保護與授權底線仍共同維持。",
+        "B": "不能因拒表放任實際風險漏接。",
+        "C": "拒參加不影響支持，不能藉說明會暗查家計或辨識需求者。",
+        "D": "示例不等真實家庭已申請。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2權限說明查詢與情緒具名請求同核心問題，改為不同對象的一般資訊活動邀請。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "一起做全虛構資料的申請準備範例。",
+                "action": "額外製作成人一般流程示例，不放真實學生或代號對照。",
+                "tradeoff": "花時間。"
+              },
+              {
+                "id": 2,
+                "text": "請正式權責端提供跨處室資料使用說明。",
+                "action": "查詢一般授權規則，不以等待免必要保護。",
+                "tradeoff": "可能需等。"
+              },
+              {
+                "id": 3,
+                "text": "我願整理可公開的補助資格入口供家庭自選。",
+                "action": "額外提供合法公開資訊，不指名推定貧困或代申請。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 4,
+                "text": "邀職員只整理一般截止提醒，不列個人。",
+                "action": "提出不含個案的新行政資訊協作，不建立影子名單。",
+                "tradeoff": "可能較難追蹤。"
+              },
+              {
+                "id": 5,
+                "text": "不另加私人跨處室追蹤表，沿合法原處室程序。",
+                "action": "拒絕真實新表協作，維持必要合法支持與紀錄。",
+                "tradeoff": "對方可能覺得被綁手。"
+              },
+              {
+                "id": 6,
+                "text": "詢問既有合規的家庭自願諮詢安排。",
+                "action": "查詢正式資源，不代預約或透露名單。",
+                "tradeoff": "可能無空。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他一收表又開表，我真的想喊停，願用自己的空堂另寫一份不帶個案的流程疑問，具名請主管回答，不再讓我們各自猜。",
+              "action": "額外提出一般資料權限流程釐清請求，不虛構工時、不帶可識別資訊，不以具名才遵法。",
+              "tradeoff": "花時間，可能被說太麻煩。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1326608081
+            },
+            "selectedIds": [
+              5,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "241b14f381343b6ecad06823d1821123a321632f947370d861b335fe2e58c509"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能因拒表放任實際風險漏接。",
+            "B": "未預約不當家庭已有協助。",
+            "C": "提醒不取代合法必要個案支持。",
+            "D": "主管可無明確答覆，必要保護與授權底線仍共同維持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "78bdc17fc18256bdde052e234daaa8635e2b168b08d62a99a728ae548033ea51",
+    "draftSha256": "fc275653cdba25c72705cc75699c3a6fc89353434bb21c9a3ea3c462547cbafd",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5057c2d79a9601be2d084ed616e16355a89d257dd41add16120a3d6086324132",
+      "checkedAt": "2026-11-27T17:53:20.619Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供正式一般睡眠資訊，讓家長自選查閱。",
+            "action": "額外提供可靠公開資訊，不開個人作息處方。",
+            "tradeoff": "可能被嫌制式。"
+          },
+          {
+            "id": 2,
+            "text": "邀孩子自願談午休時什麼最不舒服。",
+            "action": "提出一般感受交流，不診斷或要健康證明。",
+            "tradeoff": "花課間。"
+          },
+          {
+            "id": 3,
+            "text": "提出午休前事項分散到其他可用時間的班務建議。",
+            "action": "調整本人可調非必要整理事務，不壓必要休息與教學。",
+            "tradeoff": "教師要重排。"
+          },
+          {
+            "id": 4,
+            "text": "詢問校護有無一般睡眠衛教資訊。",
+            "action": "查詢既有專業資料，不代預約或揭學生健康。",
+            "tradeoff": "可能要等。"
+          },
+          {
+            "id": 5,
+            "text": "拒絕個別計時盯睡，維持合理午休照看。",
+            "action": "婉拒具體非必要睡眠監控要求，不放棄必要求助與健康處理。",
+            "tradeoff": "家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "另邀家長談他最想減去的非必要學習負擔。",
+            "action": "提出成人自願一般負擔交流，不承諾改他科。",
+            "tradeoff": "花空堂，可能無共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被比成只看成績我很刺，願把自己下一次午休也留白，不再塞額外備課，但不向家長報自己睡幾分鐘。",
+          "action": "決定本人可休息時段不加非必要工作，不代學生規定睡眠或宣稱健康效益。",
+          "tradeoff": "少做一段自願備課。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 176770537
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "787493500817d361fe616b6dd2922206b908e478471acb2c6642d34aba1bbfd8"
+      },
+      "consequenceDirections": {
+        "A": "資料不等個別健康評估。",
+        "B": "必要不適處理不等資料回覆。",
+        "C": "拒談仍享必要支持。",
+        "D": "個人留白不代班級必要照看，也不保證自己睡著。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "546ec82d29e003c2d190476e578026c7e98880512c070c11df435ad1b3a41f94",
+    "draftSha256": "5057c2d79a9601be2d084ed616e16355a89d257dd41add16120a3d6086324132",
     "seedAssignmentVersion": 1
   }
 }

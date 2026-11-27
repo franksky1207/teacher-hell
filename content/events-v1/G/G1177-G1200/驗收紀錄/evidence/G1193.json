@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bd86c2e4d2cbccc413a186b6d9ae056e207070270b2b798c6c59fe045d287f77",
+      "checkedAt": "2026-11-27T17:53:20.644Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他另談回報到哪裡就可以回自己的生活。",
+            "action": "提出額外自願幹部界線交流，不免成人必要查明。",
+            "tradeoff": "花課間。"
+          },
+          {
+            "id": 2,
+            "text": "我願做一張一般求助資訊卡，不列疑似違規者。",
+            "action": "自製原創一般工具，不要求打卡或蒐證。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 3,
+            "text": "提議把非必要手機班務工作從副班長職務分開。",
+            "action": "提出自願角色調整協商，不免成人責任或擅撤職。",
+            "tradeoff": "要重新分工。"
+          },
+          {
+            "id": 4,
+            "text": "另邀全班談課間能怎麼休息，不追問誰去哪。",
+            "action": "提出一般自願生活交流，不追蹤行蹤。",
+            "tradeoff": "占班務。"
+          },
+          {
+            "id": 5,
+            "text": "不加私人巡邏安排，依正式權責接線索。",
+            "action": "拒絕學生提出的額外帶隊抓人模式，維持必要成人處理。",
+            "tradeoff": "他可能覺得白講。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校內是否有合規的手機規範說明素材。",
+            "action": "查詢既有公開資源，不代核准新搜查方式。",
+            "tradeoff": "可能無資料。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他把五分鐘全押在抓人上，我也被催得想衝，卻願意把自己的課間留下來聽他說別的事，問一次他今天本來想做什麼。",
+          "action": "提出教師本人有限自願一般近況交流，不讓學生提供更多行蹤線索、不以參與換必要查明。",
+          "tradeoff": "花休息，可能被嫌轉話題。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2911110485
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "02f2f410977940d58ad0974840fb7c2fbd66929844b2fab94916aa17c9e03d71"
+      },
+      "consequenceDirections": {
+        "A": "可拒交流，成人必要安全與正當處理不因聊天延誤。",
+        "B": "拒談不影響其合法回報與待遇。",
+        "C": "不以活動處理替代具體必要安全查明。",
+        "D": "拒私人模式不等不查已知危險。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "180558b1078b18c2f4dc869aa7062b8a8fdeb80bc9c927cc8baa84defb2cc555",
+    "draftSha256": "bd86c2e4d2cbccc413a186b6d9ae056e207070270b2b798c6c59fe045d287f77",
     "seedAssignmentVersion": 1
   }
 }

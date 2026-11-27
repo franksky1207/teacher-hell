@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "024a21633376b2910c19a4b7ecd26e5195fe9ee4258f65129cb586fcbb09618b",
+      "checkedAt": "2026-11-27T17:53:20.650Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "挑一個真正喜歡的現貨，不為幫忙全包。",
+            "action": "依本人喜好與預算購買可售現貨一件，須正常交易合意。",
+            "tradeoff": "幫忙規模小，可能仍選不出。"
+          },
+          {
+            "id": 2,
+            "text": "詢問能否依一般條件預訂相近款。",
+            "action": "提出私人正常訂製資訊詢問，未付款或取得交期。",
+            "tradeoff": "可能要等且不完全一樣。"
+          },
+          {
+            "id": 3,
+            "text": "謝謝說明，這次不買，繼續逛。",
+            "action": "拒絕未成立私人交易，尊重攤主正常營業。",
+            "tradeoff": "可能內疚。"
+          },
+          {
+            "id": 4,
+            "text": "問是否可取得公開作品資訊，回家再想。",
+            "action": "查詢合意公開資料，不偷拍或承諾回購。",
+            "tradeoff": "可能再錯過現貨。"
+          },
+          {
+            "id": 5,
+            "text": "邀攤主若願意說一個製作細節，只聽不拍。",
+            "action": "提出成人自願作品交流，不要求免費教學或購物優惠。",
+            "tradeoff": "占彼此時間。"
+          },
+          {
+            "id": 6,
+            "text": "徵得同意再向有興趣朋友轉公開連結。",
+            "action": "提出合意公開作品資訊分享，不傳個資或承諾朋友會買。",
+            "tradeoff": "花聯絡時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是喜歡那個淺色，不想買一堆替自己裝好心；願意按一般條件付訂等一個新作，讓我想要的也承擔等待。",
+          "action": "提出有預算上限且正常合約條件的新作付訂請求，未取得接單、付款或確切成品，不碰預留品。",
+          "tradeoff": "可能要等很久，也可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3242861574
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "0c1fd2ca5773373d4a64c71e22c95bb870299f039c478b472ce6757a66762359"
+      },
+      "consequenceDirections": {
+        "A": "攤主可拒，不動原預訂者權益。",
+        "B": "對方可忙不答，聽完不構成購買承諾。",
+        "C": "不把沒買當作品不好，也不欠購買義務。",
+        "D": "若不接訂就不成立，不能因願付訂要求複製他人原創受限設計。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "23c60e24912dfb6339de55af527be19a85e30355faa38c023668f5976475b8cb",
+    "draftSha256": "024a21633376b2910c19a4b7ecd26e5195fe9ee4258f65129cb586fcbb09618b",
     "seedAssignmentVersion": 1
   }
 }

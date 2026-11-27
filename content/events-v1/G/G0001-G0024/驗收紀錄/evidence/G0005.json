@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e5b9cc1970168d198f380d31c4a98a96eded851b528de8c256819e5107bf7ba8",
+      "checkedAt": "2026-11-27T02:43:02.993Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "與任課老師分工，由你陪學生、他留下說明自己笑到哪裡。",
+            "action": "導師已與任課老師分工，由你陪學生、他留下說明自己笑到哪裡。",
+            "tradeoff": "各有照應，但交接需明確。"
+          },
+          {
+            "id": 2,
+            "text": "先向當事人詢問可接受的道歉場合，再轉達任課老師。",
+            "action": "導師已先向當事人詢問可接受的道歉場合，再轉達任課老師。",
+            "tradeoff": "尊重界線，但公開收束會延後。"
+          },
+          {
+            "id": 3,
+            "text": "只釐清親見的模仿行為，分別與相關學生短談。",
+            "action": "導師已只釐清親見的模仿行為，分別與相關學生短談。",
+            "tradeoff": "避免公開重演，但需多段時間。"
+          },
+          {
+            "id": 4,
+            "text": "請任課老師先留親見時間點，約共同補談。",
+            "action": "導師已請任課老師先留親見時間點，約共同補談。",
+            "tradeoff": "保留事實，但不能立刻完成修復。"
+          },
+          {
+            "id": 5,
+            "text": "在不提當事人特徵下，立即向全班說清笑聲轉向的界線。",
+            "action": "導師已在不提當事人特徵下，立即向全班說清笑聲轉向的界線。",
+            "tradeoff": "中止合理化，但當事人仍可能感到被指涉。"
+          },
+          {
+            "id": 6,
+            "text": "經任課同意協助找可用備鞋，另約事件處理時間。",
+            "action": "導師已經任課同意協助找可用備鞋，另約事件處理時間。",
+            "tradeoff": "解決後續干擾，但不是責任處理的替代。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己在門外也差點笑，當場收回那個笑臉。",
+          "action": "導師已承認自己在門外也差點笑，當場收回那個笑臉。",
+          "tradeoff": "真實承擔，但讓教師面子受損。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1597417579
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "997a35f63c9774f8f36285edde31d4650d82f19935f7d7c749353000b752d526"
+      },
+      "consequenceDirections": {
+        "A": "行為責任可區分，學生可能各有說法；導師須處理矛盾。",
+        "B": "學生可能選擇私談，任課需等待；同學仍需被告知取笑已停止。",
+        "C": "學生可能看到成人修正，任課也可能難堪；後續仍須處理模仿者。",
+        "D": "班級知道界線，起鬨者可能抗辯；不可用討論取代個別處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7e1735d42db3fa2c8a21536237d66b8a4e8ffe16ec6c1b2fa3cf48218007acaa",
+    "draftSha256": "e5b9cc1970168d198f380d31c4a98a96eded851b528de8c256819e5107bf7ba8",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1fe3ecfb5d69ec8bf5f01d214831f5986a45a4672de9b289fc437f9dd2a70ffe",
+      "checkedAt": "2026-11-27T02:43:03.003Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請本科接回講解，由你更正黑板並協助照看。",
+            "action": "導師已請本科接回講解，由你更正黑板並協助照看。",
+            "tradeoff": "迅速回軌，但學生反例暫未展開。"
+          },
+          {
+            "id": 2,
+            "text": "徵得任課同意，先讓學生說完一個反例。",
+            "action": "導師已徵得任課同意，先讓學生說完一個反例。",
+            "tradeoff": "保留有效推理，但壓縮新進度。"
+          },
+          {
+            "id": 3,
+            "text": "協助取出現成模型，由本科用它驗證錯誤。",
+            "action": "導師已協助取出現成模型，由本科用它驗證錯誤。",
+            "tradeoff": "直觀可看，但示範需時間。"
+          },
+          {
+            "id": 4,
+            "text": "收一題即時短答交任課判讀，不再由你判定。",
+            "action": "導師已收一題即時短答交任課判讀，不再由你判定。",
+            "tradeoff": "能看理解分布，但增加批閱。"
+          },
+          {
+            "id": 5,
+            "text": "把錯誤與更正並列留在板上，標明由誰核對。",
+            "action": "導師已把錯誤與更正並列留在板上，標明由誰核對。",
+            "tradeoff": "可追溯，但版面凌亂。"
+          },
+          {
+            "id": 6,
+            "text": "和任課協商把未完內容移至其合法授課時段。",
+            "action": "導師已和任課協商把未完內容移至其合法授課時段。",
+            "tradeoff": "補救時間完整，但進度有代價。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "當著學生向同事說「我怕承認不會，才硬講了」。",
+          "action": "導師已當著學生向同事說「我怕承認不會，才硬講了」。",
+          "tradeoff": "承擔面子損失，但不直接補足知識。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2148292556
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "1b3fb313c9cf8a06bee8a65535c12106480965973ac892afc6ae40d2da6aebd5"
+      },
+      "consequenceDirections": {
+        "A": "學生可能敢指出錯誤，同事也可能仍惱火；本科仍須收束。",
+        "B": "正解可補足，學生可能覺得被打斷；須保留另問機會。",
+        "C": "本科可決定補救範圍，學生有個別證據；導師須承擔整理。",
+        "D": "學生可能指出關鍵，任課需調整節奏；不要求公開表演。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c086053d74ae18a89a11fabfc58129b8fcd16ca099c5632a693c19ac4bda528",
+    "draftSha256": "1fe3ecfb5d69ec8bf5f01d214831f5986a45a4672de9b289fc437f9dd2a70ffe",
     "seedAssignmentVersion": 1
   }
 }

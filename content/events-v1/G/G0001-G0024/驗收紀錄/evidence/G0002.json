@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4f1ea6f423b26c47e3d81987afdbf716158cb0fe8fd9895d5f1a054381774401",
+      "checkedAt": "2026-11-27T02:43:02.990Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先向科任詢問標準步驟的評量目的。",
+            "action": "導師已先向科任詢問標準步驟的評量目的。",
+            "tradeoff": "釐清要求，但孩子須等待回覆。"
+          },
+          {
+            "id": 2,
+            "text": "請孩子自願挑一題整理兩法差異，再代轉科任。",
+            "action": "導師已請孩子自願挑一題整理兩法差異，再代轉科任。",
+            "tradeoff": "保留學生主導，但整理也增加工作。"
+          },
+          {
+            "id": 3,
+            "text": "和家長約定今晚只記錄實際用時，不再加練。",
+            "action": "導師已和家長約定今晚只記錄實際用時，不再加練。",
+            "tradeoff": "可看負荷，但一天資料未必代表平常。"
+          },
+          {
+            "id": 4,
+            "text": "徵得雙方同意，安排一次有孩子參與的親師短談。",
+            "action": "導師已徵得雙方同意，安排一次有孩子參與的親師短談。",
+            "tradeoff": "避免代言，但協調時段較難。"
+          },
+          {
+            "id": 5,
+            "text": "提供本科要求與自選探索分開收納的做法。",
+            "action": "導師已提供本科要求與自選探索分開收納的做法。",
+            "tradeoff": "減少混淆，但未減少總題量。"
+          },
+          {
+            "id": 6,
+            "text": "協助家長提出可試行的減量申請，交科任決定。",
+            "action": "導師已協助家長提出可試行的減量申請，交科任決定。",
+            "tradeoff": "直接處理負荷，但可能未被接受。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己看到兩本也頭痛，先請孩子教你那個箭頭。",
+          "action": "導師已坦白自己看到兩本也頭痛，先請孩子教你那個箭頭。",
+          "tradeoff": "拉近距離，但暫緩家長要的快速處方。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4153561277
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "19f50919ff629f5ccad6b989634c2310a8bbf201746756a0ac94ebf5e107ec5a"
+      },
+      "consequenceDirections": {
+        "A": "孩子可當面說明目的，家長可能放鬆或堅持；會談占用時間。",
+        "B": "孩子可能獲得聽眾，家長重看探索價值；導師仍需回應工作量。",
+        "C": "重複練習負擔具體化，家長可能改判；仍需後續協商。",
+        "D": "兩本用途變清楚，孩子可能較安心；家長仍可能質疑重複時間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b317a546dfc4035ee016b5d9a31f697e32eb642492b96b93d3218dcd417e66f0",
+    "draftSha256": "4f1ea6f423b26c47e3d81987afdbf716158cb0fe8fd9895d5f1a054381774401",
     "seedAssignmentVersion": 1
   }
 }

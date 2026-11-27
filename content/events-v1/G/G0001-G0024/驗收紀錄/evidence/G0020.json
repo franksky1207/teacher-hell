@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a8d3fd4e4bc6b3bff234cf62e4652006e12685d1fed0698001b4f04c2d287036",
+      "checkedAt": "2026-11-27T02:43:03.007Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "加開書面提問入口，維持自願課後詢問。",
+            "action": "導師已加開書面提問入口，維持自願課後詢問。",
+            "tradeoff": "可近性增加，但教師回覆量增加。"
+          },
+          {
+            "id": 2,
+            "text": "挪本科合法授課時間的一小段處理共通問題。",
+            "action": "導師已挪本科合法授課時間的一小段處理共通問題。",
+            "tradeoff": "人人可用，但進度壓縮。"
+          },
+          {
+            "id": 3,
+            "text": "將需示範問題另約雙方可用時段。",
+            "action": "導師已將需示範問題另約雙方可用時段。",
+            "tradeoff": "符合需求，但協調費時。"
+          },
+          {
+            "id": 4,
+            "text": "把問答整理成不具名共通筆記供全班使用。",
+            "action": "導師已把問答整理成不具名共通筆記供全班使用。",
+            "tradeoff": "可重用，但教師需編寫。"
+          },
+          {
+            "id": 5,
+            "text": "徵得孩子同意，協助他先選最急的一題於課間問。",
+            "action": "導師已徵得孩子同意，協助他先選最急的一題於課間問。",
+            "tradeoff": "能及時處理，但問題量受限。"
+          },
+          {
+            "id": 6,
+            "text": "更正努力與晚留的連結，請各家只回報自己的時間限制。",
+            "action": "導師已更正努力與晚留的連結，請各家只回報自己的時間限制。",
+            "tradeoff": "資訊更真實，但安排變複雜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己貪圖放學一次講完，先刪掉那句努力的評語。",
+          "action": "導師已承認自己貪圖放學一次講完，先刪掉那句努力的評語。",
+          "tradeoff": "修復暗示，但需重做安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3625064855
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "f85d180f5d8c12691fbc81b8f42c8e571f2e24696aafe328a4755db54e202721"
+      },
+      "consequenceDirections": {
+        "A": "需離校者也能聽見；個別題仍待處理。",
+        "B": "家長可能配合改約；不能保證立即排到。",
+        "C": "家長可能放心，教師仍須提供可用替代入口。",
+        "D": "學生可解眼前卡點；不能把所有課間都占滿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "19f6cb9342bee8712ad8c43311e2c1749bca8e984920dcdf7a176429bb9b5010",
+    "draftSha256": "a8d3fd4e4bc6b3bff234cf62e4652006e12685d1fed0698001b4f04c2d287036",
     "seedAssignmentVersion": 1
   }
 }

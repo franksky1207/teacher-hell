@@ -15,14 +15,82 @@
     "G06",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cdf9a5c300b6d4fe1e64e15c0b1098719aba4d95953be117fd62ddd4f944105c",
+      "checkedAt": "2026-11-27T02:43:03.009Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "約定普通訊息的固定確認時段。",
+            "action": "導師已約定普通訊息的固定確認時段。",
+            "tradeoff": "可持續，但即時性下降。"
+          },
+          {
+            "id": 2,
+            "text": "採普通訊息定期彙整，重要事項另標期限。",
+            "action": "導師已採普通訊息定期彙整，重要事項另標期限。",
+            "tradeoff": "降低通知量，但整理費時。"
+          },
+          {
+            "id": 3,
+            "text": "確認既有合法備援聯絡人的同意與可用範圍。",
+            "action": "導師已確認既有合法備援聯絡人的同意與可用範圍。",
+            "tradeoff": "有替代路徑，但不宜過度使用。"
+          },
+          {
+            "id": 4,
+            "text": "明列急件由學校既有緊急聯絡程序處理。",
+            "action": "導師已明列急件由學校既有緊急聯絡程序處理。",
+            "tradeoff": "區分清楚，但普通訊息不能借急件催覆。"
+          },
+          {
+            "id": 5,
+            "text": "試行一週只回覆需確認的事項，其餘不要求回貼圖。",
+            "action": "導師已試行一週只回覆需確認的事項，其餘不要求回貼圖。",
+            "tradeoff": "減少形式負擔，但教師較少可見回應。"
+          },
+          {
+            "id": 6,
+            "text": "與家長共同檢視最近一次漏接，修正單一環節。",
+            "action": "導師已與家長共同檢視最近一次漏接，修正單一環節。",
+            "tradeoff": "處理具體原因，但不覆蓋所有情況。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦言自己收到「好」才睡得著，撤掉所有通知都要秒回的期待。",
+          "action": "導師已坦言自己收到「好」才睡得著，撤掉所有通知都要秒回的期待。",
+          "tradeoff": "承認焦慮，但得自己承受等待。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1098417837
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "75e67ea1e8d73a9cdc8f7062e89fe2be57f2f928fc668b55d411cfae77fc7820"
+      },
+      "consequenceDirections": {
+        "A": "家長可能安心；教師需判斷真正急迫性。",
+        "B": "家長較易掌握；期限仍可能需提醒。",
+        "C": "家長可能更願合作；導師需建立可預期確認方式。",
+        "D": "確認更有意義；家長仍需留意期限。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "192b239b4599bd82153f333f6f49a978e360d55a4a7e5e198c0ce4a233bf5124",
+    "draftSha256": "cdf9a5c300b6d4fe1e64e15c0b1098719aba4d95953be117fd62ddd4f944105c",
     "seedAssignmentVersion": 1
   }
 }

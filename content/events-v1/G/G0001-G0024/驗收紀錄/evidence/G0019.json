@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc13933457729eb6653e0c2ad1cc2bd4faf526a2739b0a92ebbdbed2d0af64e9",
+      "checkedAt": "2026-11-27T02:43:03.006Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "約隔日雙方可用的私下短談，今晚各自返家。",
+            "action": "導師已約隔日雙方可用的私下短談，今晚各自返家。",
+            "tradeoff": "保住生活，但修復延後。"
+          },
+          {
+            "id": 2,
+            "text": "徵得同意到不妨通行的安靜處，只聽最在意的一點。",
+            "action": "導師已徵得同意到不妨通行的安靜處，只聽最在意的一點。",
+            "tradeoff": "即時回應，但晚餐延遲。"
+          },
+          {
+            "id": 3,
+            "text": "詢問他希望你向原本聽見玩笑的人如何更正。",
+            "action": "導師已詢問他希望你向原本聽見玩笑的人如何更正。",
+            "tradeoff": "處理公開影響，但需再次提起。"
+          },
+          {
+            "id": 4,
+            "text": "當場撤回客服比喻，不要求他接受道歉。",
+            "action": "導師已當場撤回客服比喻，不要求他接受道歉。",
+            "tradeoff": "責任清楚，但關係未必立即好轉。"
+          },
+          {
+            "id": 5,
+            "text": "經同意改用私人短訊補充道歉，讓他自行選回覆時間。",
+            "action": "導師已經同意改用私人短訊補充道歉，讓他自行選回覆時間。",
+            "tradeoff": "降低現場壓力，但文字易誤讀。"
+          },
+          {
+            "id": 6,
+            "text": "請他說出明天合作中一項希望調整的具體互動。",
+            "action": "導師已請他說出明天合作中一項希望調整的具體互動。",
+            "tradeoff": "能立刻落實，但不涵蓋全部傷害。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白剛才一直假裝挑便當是在躲尷尬，先認真聽他。",
+          "action": "導師已坦白剛才一直假裝挑便當是在躲尷尬，先認真聽他。",
+          "tradeoff": "放下自保，但兩人都晚回家。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3886364377
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "12ab6a43e6702ca9d7f10b4567ec062dc0883f1e8074c742834f829f06029bcc"
+      },
+      "consequenceDirections": {
+        "A": "同事可能仍不滿；後續合作需靠實際行動。",
+        "B": "同事可選範圍；更正可能重喚尷尬。",
+        "C": "同事可能願意說真話；需尊重隨時結束。",
+        "D": "同事可慢慢讀；你不能催回應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e77b1d36e19af403f25fefcf4938bd74bf19b835211a5f8b5e3c46061fc06a97",
+    "draftSha256": "fc13933457729eb6653e0c2ad1cc2bd4faf526a2739b0a92ebbdbed2d0af64e9",
     "seedAssignmentVersion": 1
   }
 }

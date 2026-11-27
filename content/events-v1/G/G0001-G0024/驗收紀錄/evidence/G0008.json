@@ -16,14 +16,82 @@
     "G05",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "897b6ae01f05ba72009a4b053282a5082e3246407c2e34943506e065bb9033ff",
+      "checkedAt": "2026-11-27T02:43:02.996Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "買足自己的午餐，邀他自願一起吃。",
+            "action": "導師已買足自己的午餐，邀他自願一起吃。",
+            "tradeoff": "互助自然，但可能被誤讀成回報。"
+          },
+          {
+            "id": 2,
+            "text": "私下約課後短談早餐動線，今天先確認他吃足。",
+            "action": "導師已私下約課後短談早餐動線，今天先確認他吃足。",
+            "tradeoff": "保護隱私，但多約一次時間。"
+          },
+          {
+            "id": 3,
+            "text": "向學生介紹可自行使用的校內餐食支持入口。",
+            "action": "導師已向學生介紹可自行使用的校內餐食支持入口。",
+            "tradeoff": "增加選擇，但他可能不願使用。"
+          },
+          {
+            "id": 4,
+            "text": "把飯糰收受範圍講清楚，陪他去校內販售點各自選餐。",
+            "action": "導師已把飯糰收受範圍講清楚，陪他去校內販售點各自選餐。",
+            "tradeoff": "保留自主，但你需陪走一趟。"
+          },
+          {
+            "id": 5,
+            "text": "先談自己的忘餐習慣，請他只說願意分享的早晨片段。",
+            "action": "導師已先談自己的忘餐習慣，請他只說願意分享的早晨片段。",
+            "tradeoff": "降低審問感，但資訊可能有限。"
+          },
+          {
+            "id": 6,
+            "text": "徵得本人同意後，協調午餐窗口提供合適份量。",
+            "action": "導師已徵得本人同意後，協調午餐窗口提供合適份量。",
+            "tradeoff": "有具體支持，但牽涉第三方知情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "笑說今天不想當會教不會吃飯的大人，先坐下把午餐吃完。",
+          "action": "導師已笑說今天不想當會教不會吃飯的大人，先坐下把午餐吃完。",
+          "tradeoff": "接住親近，但正式關懷稍後安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3881016939
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "77914d4fff5fc3052a065ef746e8e70e70d341f256cd6afae2e3b4cc02332c5d"
+      },
+      "consequenceDirections": {
+        "A": "學生可能放心同桌吃，教師需另外履行關心承諾。",
+        "B": "可找出趕車等實際障礙，學生可能仍怕被追問；不推定家庭失職。",
+        "C": "學生可能主動透露困難；導師不能據此保證問題已解決。",
+        "D": "學生有求助路徑，是否接受由本人決定；需避免貼標籤。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "34e4a603a2f095c8e6ead8a522efa6c2d0ea1d0f88da86f8271ec98539c7cd02",
+    "draftSha256": "897b6ae01f05ba72009a4b053282a5082e3246407c2e34943506e065bb9033ff",
     "seedAssignmentVersion": 1
   }
 }

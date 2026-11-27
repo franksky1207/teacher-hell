@@ -15,14 +15,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1938497e4e238c070284b498ff40ac88d16f158d77faf62c3d68040101a469c8",
+      "checkedAt": "2026-11-27T02:43:03.006Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助查下一班合法路線，讓學生自行選擇。",
+            "action": "導師已協助查下一班合法路線，讓學生自行選擇。",
+            "tradeoff": "資訊可用，但可能晚到家。"
+          },
+          {
+            "id": 2,
+            "text": "請帶頭者在原群組更正消息並註明門禁條件。",
+            "action": "導師已請帶頭者在原群組更正消息並註明門禁條件。",
+            "tradeoff": "能觸及跟隨者，但增加其公開負擔。"
+          },
+          {
+            "id": 3,
+            "text": "經本人同意協助聯絡家長調整當次接送。",
+            "action": "導師已經本人同意協助聯絡家長調整當次接送。",
+            "tradeoff": "處理眼前交通，但家庭未必有支援。"
+          },
+          {
+            "id": 4,
+            "text": "向校方反映正門到站所需時間，請權責方評估。",
+            "action": "導師已向校方反映正門到站所需時間，請權責方評估。",
+            "tradeoff": "處理長期問題，但當天無法改門禁。"
+          },
+          {
+            "id": 5,
+            "text": "與學生核對轉傳來源及省略條件，做不具名提醒。",
+            "action": "導師已與學生核對轉傳來源及省略條件，做不具名提醒。",
+            "tradeoff": "增加查證能力，但要花課後時間。"
+          },
+          {
+            "id": 6,
+            "text": "陪學生在合規等候處確認已有可負擔返程方案。",
+            "action": "導師已陪學生在合規等候處確認已有可負擔返程方案。",
+            "tradeoff": "照顧實際困難，但延後自己離校。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也被「比較快」吸引，今天自掏合法車資借支並約清楚歸還。",
+          "action": "導師已承認自己也被「比較快」吸引，今天自掏合法車資借支並約清楚歸還。",
+          "tradeoff": "可解當次缺口，但有私人金錢與依賴風險。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1657870301
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "b8757cbff7a4b2ba623349f37160eda44ca8b1e0f42a9971d1c2fca22a8e3446"
+      },
+      "consequenceDirections": {
+        "A": "誤訊可被追溯，同學可能抱怨；仍須確認已出發者收到。",
+        "B": "學生可能接受等車，仍需通知家人；導師不能保證時刻。",
+        "C": "學生可能接受或婉拒；不以借支交換服從，後續依校規處理。",
+        "D": "學生可能發現訊息缺口，班級少一次誤信；不可公開羞辱。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a87a2583e398e437f8f528eacdeb1fcbeb7b49d966a725878c6db32386414ed3",
+    "draftSha256": "1938497e4e238c070284b498ff40ac88d16f158d77faf62c3d68040101a469c8",
     "seedAssignmentVersion": 1
   }
 }

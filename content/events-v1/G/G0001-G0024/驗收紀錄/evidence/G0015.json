@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "91a6307be35c5ae7c2c78ac11e26bc2e0145314dcab901799568b2bf7aed2236",
+      "checkedAt": "2026-11-27T02:43:03.003Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "開放自願分享解法，不排輪次也不附獎品。",
+            "action": "導師已開放自願分享解法，不排輪次也不附獎品。",
+            "tradeoff": "有發言空間，但仍可能少數人主導。"
+          },
+          {
+            "id": 2,
+            "text": "讓學生自由選擇一對一分享對象。",
+            "action": "導師已讓學生自由選擇一對一分享對象。",
+            "tradeoff": "降低公開壓力，但無法全班交流。"
+          },
+          {
+            "id": 3,
+            "text": "收不具名的解題片段，由你挑共通方法講解。",
+            "action": "導師已收不具名的解題片段，由你挑共通方法講解。",
+            "tradeoff": "保護個資，但教師整理費工。"
+          },
+          {
+            "id": 4,
+            "text": "安排全班安靜看自己的錯題，分享移到自願課間。",
+            "action": "導師已安排全班安靜看自己的錯題，分享移到自願課間。",
+            "tradeoff": "立即降噪，但慶祝氣氛中斷。"
+          },
+          {
+            "id": 5,
+            "text": "請提案者先試寫一個不含分數的示範邀請。",
+            "action": "導師已請提案者先試寫一個不含分數的示範邀請。",
+            "tradeoff": "保留主導，但他多一項工作。"
+          },
+          {
+            "id": 6,
+            "text": "經家庭同意將點心另留合規且與成績無關的場合。",
+            "action": "導師已經家庭同意將點心另留合規且與成績無關的場合。",
+            "tradeoff": "心意能保留，但不再鼓勵作答。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也很想用點心換安靜，今天先陪大家安靜訂正。",
+          "action": "導師已承認自己也很想用點心換安靜，今天先陪大家安靜訂正。",
+          "tradeoff": "真實自省，但熱心提案被延後。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1783541892
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "07cd6610e51c17a241dc68a608fcd939dc3ba0b78b6875f003a1fb7b87bf8683"
+      },
+      "consequenceDirections": {
+        "A": "學生可專注回顧，高分者可能覺得掃興；需說明慶祝界線。",
+        "B": "學生可能接受拆開目的，也可能不想提供；不得強收。",
+        "C": "解法可被看見，作者可能想認領；須守住事先約定。",
+        "D": "學生可能笑出來或感到失落；導師仍須保護不公開的權利。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b6acaec385a532bcd2dec93adcea9699d19365458e4ebaea06c6448d6a51749b",
+    "draftSha256": "91a6307be35c5ae7c2c78ac11e26bc2e0145314dcab901799568b2bf7aed2236",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "35c67efdd05b2f9511c43839d96e6980238b4d1f2415b8cb2434c2f7ede30e42",
+      "checkedAt": "2026-11-27T02:43:03.001Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收取私人過程附件，公開報告只用定稿。",
+            "action": "導師已收取私人過程附件，公開報告只用定稿。",
+            "tradeoff": "保存修正，但教師多看一份。"
+          },
+          {
+            "id": 2,
+            "text": "經逐一同意後，只展示去除可辨識內容的片段。",
+            "action": "導師已經逐一同意後，只展示去除可辨識內容的片段。",
+            "tradeoff": "有過程示例，但刪修費工。"
+          },
+          {
+            "id": 3,
+            "text": "請每人另寫一項自己的修正，不使用原草稿展示。",
+            "action": "導師已請每人另寫一項自己的修正，不使用原草稿展示。",
+            "tradeoff": "各自有聲音，但增加個人作業。"
+          },
+          {
+            "id": 4,
+            "text": "將報告的成品與過程回饋分開說明。",
+            "action": "導師已將報告的成品與過程回饋分開說明。",
+            "tradeoff": "評量目的清楚，但不能立刻解決展示爭議。"
+          },
+          {
+            "id": 5,
+            "text": "安排組內閉門說明，由你只聽修正歷程。",
+            "action": "導師已安排組內閉門說明，由你只聽修正歷程。",
+            "tradeoff": "保留互相理解，但占用小組時間。"
+          },
+          {
+            "id": 6,
+            "text": "歸還原稿由組員共同保管，教師只留同意的摘要。",
+            "action": "導師已歸還原稿由組員共同保管，教師只留同意的摘要。",
+            "tradeoff": "減少資料持有，但追溯較有限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "向學生承認自己只想桌面乾淨，把那句廢稿正式收回。",
+          "action": "導師已向學生承認自己只想桌面乾淨，把那句廢稿正式收回。",
+          "tradeoff": "修復失言，但無法省掉後續協商。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2861984464
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "515588258ade43d56d7cd8184ce9c36f9b22aebb403bd06178c776590b822686"
+      },
+      "consequenceDirections": {
+        "A": "修正歸屬較清楚，帶頭者可能嫌重做；公開範圍仍由本人選。",
+        "B": "學生可能緩和對導師的不滿，組員仍須處理展示界線。",
+        "C": "努力可被看見，組員隱私較完整；評量時間增加。",
+        "D": "組員可補充各自貢獻，可能仍有爭議；不強迫公開認錯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ef3c7eca9333a3963d97e9434cae8a80944e2e77fe57789a777d678a887a7683",
+    "draftSha256": "35c67efdd05b2f9511c43839d96e6980238b4d1f2415b8cb2434c2f7ede30e42",
     "seedAssignmentVersion": 1
   }
 }

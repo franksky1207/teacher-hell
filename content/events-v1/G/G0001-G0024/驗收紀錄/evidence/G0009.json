@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1605195ea95b800b9e5ceec54ae525703a6757a5de943177c3acfde69b02f30c",
+      "checkedAt": "2026-11-27T02:43:02.997Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請分享者更新原訊息並標出缺漏範圍。",
+            "action": "導師已請分享者更新原訊息並標出缺漏範圍。",
+            "tradeoff": "訊息集中，但增加他的修正工作。"
+          },
+          {
+            "id": 2,
+            "text": "提供教師核對過的一頁要點，與原照片分開。",
+            "action": "導師已提供教師核對過的一頁要點，與原照片分開。",
+            "tradeoff": "有可靠底稿，但教師準備較多。"
+          },
+          {
+            "id": 3,
+            "text": "帶全班比對照片與題目，找出缺條件會差在哪。",
+            "action": "導師已帶全班比對照片與題目，找出缺條件會差在哪。",
+            "tradeoff": "可學查證，但占用教學時間。"
+          },
+          {
+            "id": 4,
+            "text": "請願意的同學共同補上照片索引。",
+            "action": "導師已請願意的同學共同補上照片索引。",
+            "tradeoff": "分擔修正，但需協調版本。"
+          },
+          {
+            "id": 5,
+            "text": "將群組分享改標「片段參考」，保留自行補問入口。",
+            "action": "導師已將群組分享改標「片段參考」，保留自行補問入口。",
+            "tradeoff": "降低誤用，但仍需讀者判斷。"
+          },
+          {
+            "id": 6,
+            "text": "私下和分享者訂一個累時可停止拍照的替代交接。",
+            "action": "導師已私下和分享者訂一個累時可停止拍照的替代交接。",
+            "tradeoff": "減輕疲勞，但少了即時照片。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也曾只看照片就回「收到」，撤回那個完整保證。",
+          "action": "導師已承認自己也曾只看照片就回「收到」，撤回那個完整保證。",
+          "tradeoff": "面對疏忽，但教師權威受考驗。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 916344153
+        },
+        "selectedIds": [
+          4,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "161427e517a4a50405c03d4e4173782ec01f212ddbfc821b12da7d28ed679da3"
+      },
+      "consequenceDirections": {
+        "A": "可由他人自願補位或改隔日詢問；學生需接受等待。",
+        "B": "學生可能敢報缺漏；導師須重新說明核對責任。",
+        "C": "完整性提高，分享者可能安心；合作者仍需核對一致。",
+        "D": "同學可能養成看範圍的習慣，也可能忽略標示；無法保證零漏抄。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "46726d0835bfda368017e70cabd4deba04b1bd4559a5aca51294e52ab3c03a9e",
+    "draftSha256": "1605195ea95b800b9e5ceec54ae525703a6757a5de943177c3acfde69b02f30c",
     "seedAssignmentVersion": 1
   }
 }

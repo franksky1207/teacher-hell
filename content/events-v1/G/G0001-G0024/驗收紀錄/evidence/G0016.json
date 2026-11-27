@@ -15,14 +15,82 @@
     "G07",
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "23c45a6d0405943ea40cc3590229db22dc5f193aef32fc47259b3b64e2fbb50a",
+      "checkedAt": "2026-11-27T02:43:03.004Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請代課者自願補充親見的進度事實。",
+            "action": "導師已請代課者自願補充親見的進度事實。",
+            "tradeoff": "取得線索，但不保證每格有字。"
+          },
+          {
+            "id": 2,
+            "text": "協助任課下次回班先用一題確認實際進度。",
+            "action": "導師已協助任課下次回班先用一題確認實際進度。",
+            "tradeoff": "直接看學生，但占用授課時間。"
+          },
+          {
+            "id": 3,
+            "text": "把現有交接分為必要進度與非必要觀察。",
+            "action": "導師已把現有交接分為必要進度與非必要觀察。",
+            "tradeoff": "目的清楚，但需重新整理。"
+          },
+          {
+            "id": 4,
+            "text": "徵得雙方同意安排十分鐘交接通話。",
+            "action": "導師已徵得雙方同意安排十分鐘交接通話。",
+            "tradeoff": "能即時問答，但時段難配。"
+          },
+          {
+            "id": 5,
+            "text": "只轉交已完成題號，私人評語不再流傳。",
+            "action": "導師已只轉交已完成題號，私人評語不再流傳。",
+            "tradeoff": "限縮資訊，但任課想知道的較少。"
+          },
+          {
+            "id": 6,
+            "text": "請任課列出明天真正需要的兩個問題再轉詢。",
+            "action": "導師已請任課列出明天真正需要的兩個問題再轉詢。",
+            "tradeoff": "降低詢問量，但需取捨。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也把滿表當成認真，陪他把不必要的格子劃掉。",
+          "action": "導師已承認自己也把滿表當成認真，陪他把不必要的格子劃掉。",
+          "tradeoff": "減輕形式負擔，但觸碰備課自尊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 309216577
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "8669640a2b62364a2fb5265d535439633d365206022a427f61256c1685270b5d"
+      },
+      "consequenceDirections": {
+        "A": "任課可接續教學，仍可能失落；不能逼補未觀察評語。",
+        "B": "代課較易作答，任課可能發現不需全欄；仍須等待回覆。",
+        "C": "誤會可能澄清，任課也可能仍求完整；兩人都需投入時間。",
+        "D": "任課可能接受簡化或抗拒；教師需尊重原表用途。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "314865d2b96bd671c961c3f43c21b652608b832941c8a20237a7f7d550599473",
+    "draftSha256": "23c45a6d0405943ea40cc3590229db22dc5f193aef32fc47259b3b64e2fbb50a",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe9ed8d91e4236aa0e0c4516071c123b11fea7f22a6908b34d2e7f44b880a6f5",
+      "checkedAt": "2026-11-27T02:43:03.005Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先拍存本人同意保留的原步驟，代轉科任。",
+            "action": "導師已先拍存本人同意保留的原步驟，代轉科任。",
+            "tradeoff": "留住理解證據，但需等待回饋。"
+          },
+          {
+            "id": 2,
+            "text": "用課間聽一段口述，記下錯誤轉折。",
+            "action": "導師已用課間聽一段口述，記下錯誤轉折。",
+            "tradeoff": "回應當下，但教師時間有限。"
+          },
+          {
+            "id": 3,
+            "text": "請科任說明完成勾與理解評量的差異。",
+            "action": "導師已請科任說明完成勾與理解評量的差異。",
+            "tradeoff": "權責清楚，但解釋可能較晚。"
+          },
+          {
+            "id": 4,
+            "text": "先依既定期限收件，附上學生對訂正的疑問。",
+            "action": "導師已先依既定期限收件，附上學生對訂正的疑問。",
+            "tradeoff": "不中斷流程，但卡點未立即解決。"
+          },
+          {
+            "id": 5,
+            "text": "經科任同意試用一題口頭驗證，不改其他人的成績。",
+            "action": "導師已經科任同意試用一題口頭驗證，不改其他人的成績。",
+            "tradeoff": "看得見理解，但占用本科時間。"
+          },
+          {
+            "id": 6,
+            "text": "提供自我標記「會的步驟／待問處」方式由本人選用。",
+            "action": "導師已提供自我標記「會的步驟／待問處」方式由本人選用。",
+            "tradeoff": "保留歷程，但另有書寫負擔。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦言自己剛剛也差點只找最後答案，先把橡皮擦還到他手邊。",
+          "action": "導師已坦言自己剛剛也差點只找最後答案，先把橡皮擦還到他手邊。",
+          "tradeoff": "承認快讀習慣，但解法仍需專業確認。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 592510360
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "82f1a7b0943b73e210b0a11a42b808c6498c15ea70a39a924861f9370017a8cb"
+      },
+      "consequenceDirections": {
+        "A": "學生可能願意留下錯步，教師須以實際聆聽承接。",
+        "B": "科任可看真實卡點，學生可能安心；不保證原評價改變。",
+        "C": "學生可能不再全擦，科任未必採用；需避免變成加作業。",
+        "D": "學生有正式依據，可能仍不滿；導師需跟進回覆。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2dce4201114cdc20cc95b0655a31be424572c715b1586bc0517dbf68e9839daf",
+    "draftSha256": "fe9ed8d91e4236aa0e0c4516071c123b11fea7f22a6908b34d2e7f44b880a6f5",
     "seedAssignmentVersion": 1
   }
 }

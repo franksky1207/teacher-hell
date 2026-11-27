@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf3ebe45279f7f35172292b203efdc0e4f1a1bc067706197b3f2c07b04182b55",
+      "checkedAt": "2026-11-27T02:43:03.000Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先只聽家長描述可調整的共用空間時段。",
+            "action": "導師已先只聽家長描述可調整的共用空間時段。",
+            "tradeoff": "處理實務，但孩子觀點尚缺。"
+          },
+          {
+            "id": 2,
+            "text": "分別約自願短談，今天先結束爭執通話。",
+            "action": "導師已分別約自願短談，今天先結束爭執通話。",
+            "tradeoff": "保留各自聲音，但修復延後。"
+          },
+          {
+            "id": 3,
+            "text": "經雙方同意，只協助訂今晚一段不互相干擾的時間。",
+            "action": "導師已經雙方同意，只協助訂今晚一段不互相干擾的時間。",
+            "tradeoff": "目標小而可行，但不解決全部怨。"
+          },
+          {
+            "id": 4,
+            "text": "請家長先用一句話回應孩子不願爭吵外傳的感受。",
+            "action": "導師已請家長先用一句話回應孩子不願爭吵外傳的感受。",
+            "tradeoff": "碰觸關係核心，但家長可能防衛。"
+          },
+          {
+            "id": 5,
+            "text": "提供校內輔導的自願諮詢管道，讓家長自行選擇。",
+            "action": "導師已提供校內輔導的自願諮詢管道，讓家長自行選擇。",
+            "tradeoff": "可獲專業支持，但不是立即解方。"
+          },
+          {
+            "id": 6,
+            "text": "和家長約定學校只處理與就學相關的具體需求。",
+            "action": "導師已和家長約定學校只處理與就學相關的具體需求。",
+            "tradeoff": "範圍清楚，但家長可能感到支持不足。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己剛才也想趕快叫孩子去讀書，收回這個衝動。",
+          "action": "導師已承認自己剛才也想趕快叫孩子去讀書，收回這個衝動。",
+          "tradeoff": "顯露侷限，但可減少站隊感。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 691308613
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "f41d31bb8ce2453dca1a29ec20e759d0c8fdd89e5ec5d192f366cc681e1bccb1"
+      },
+      "consequenceDirections": {
+        "A": "家長可能找到可做的改變；需另徵孩子意見，不能單方定案。",
+        "B": "求助內容被限縮，家長可能不滿；仍須保留必要關懷。",
+        "C": "家長可能願意再聽，也可能失望；導師需重建可幫忙的範圍。",
+        "D": "家長可能另約諮詢，孩子可能想保留界線；不強推聯談。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7d8311d20e868a9aaac75bac444bed118452b7b52a9cd9141488e00cb404ca39",
+    "draftSha256": "bf3ebe45279f7f35172292b203efdc0e4f1a1bc067706197b3f2c07b04182b55",
     "seedAssignmentVersion": 1
   }
 }

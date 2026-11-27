@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "34705575b09d236f59884c5b8a77af5e5969313abc67ac8de9dc57f04939bae1",
+      "checkedAt": "2026-11-27T02:43:02.992Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "帶學生走一次安全通行線，確認後讓他回班。",
+            "action": "導師已帶學生走一次安全通行線，確認後讓他回班。",
+            "tradeoff": "具體學會避險，但需占用課間。"
+          },
+          {
+            "id": 2,
+            "text": "與值勤人員確認暫時等候點，向本班說明。",
+            "action": "導師已與值勤人員確認暫時等候點，向本班說明。",
+            "tradeoff": "減少群聚，但改變原等候習慣。"
+          },
+          {
+            "id": 3,
+            "text": "請學生只口述親見經過，由你補入報修。",
+            "action": "導師已請學生只口述親見經過，由你補入報修。",
+            "tradeoff": "保留有用資訊，但學生不能自行決定修法。"
+          },
+          {
+            "id": 4,
+            "text": "經值勤方同意，與學生在不占動線處放簡短警示。",
+            "action": "導師已經值勤方同意，與學生在不占動線處放簡短警示。",
+            "tradeoff": "讓他參與，但警示仍需有人維護。"
+          },
+          {
+            "id": 5,
+            "text": "私下肯定提醒，明說不公開表揚設障。",
+            "action": "導師已私下肯定提醒，明說不公開表揚設障。",
+            "tradeoff": "保護尷尬，但善意不會獲全班掌聲。"
+          },
+          {
+            "id": 6,
+            "text": "和學生約定發現公共危害時先找哪個成人。",
+            "action": "導師已和學生約定發現公共危害時先找哪個成人。",
+            "tradeoff": "建立通報路徑，但無法立即獲得參與感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "蹲下陪他喘口氣，承認自己也怕好心幫倒忙。",
+          "action": "導師已蹲下陪他喘口氣，承認自己也怕好心幫倒忙。",
+          "tradeoff": "安撫關係，但多花停留時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2733368545
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "d124b73ae504a8f0a3e2c2aa5b0dd9ed3b1f85eff5dc5e0dc08b21226fea9331"
+      },
+      "consequenceDirections": {
+        "A": "警示可能提醒後來者，學生有新的幫忙方式；不得代替修繕。",
+        "B": "修繕收到具體線索，學生可能覺得被認真聽見；仍需等待處理。",
+        "C": "學生可能說出怕被笑的部分；現場安全由值勤方持續接手。",
+        "D": "學生可能理解善意與作法可分開；仍可能失落，需要觀察。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92b5f6d839b6da9c6aa53cf8d9c07e49e8256386f27f007c107988415a281eb8",
+    "draftSha256": "34705575b09d236f59884c5b8a77af5e5969313abc67ac8de9dc57f04939bae1",
     "seedAssignmentVersion": 1
   }
 }

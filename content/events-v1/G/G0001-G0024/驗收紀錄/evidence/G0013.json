@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "204a0afdd404a69755eaab4c25f8a3ed45beb0a5cb28732748d1e5f42fde697d",
+      "checkedAt": "2026-11-27T02:43:03.002Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先向漏列者個別補謝，說明換班資訊。",
+            "action": "導師已先向漏列者個別補謝，說明換班資訊。",
+            "tradeoff": "即時承認貢獻，但可能還有其他漏列。"
+          },
+          {
+            "id": 2,
+            "text": "提供自願更正窗口，由學生自行修訂貼紙名單。",
+            "action": "導師已提供自願更正窗口，由學生自行修訂貼紙名單。",
+            "tradeoff": "保留自治，但補漏需要時間。"
+          },
+          {
+            "id": 3,
+            "text": "經發起者同意改為一張全班合謝卡。",
+            "action": "導師已經發起者同意改為一張全班合謝卡。",
+            "tradeoff": "避免漏名，但個別貢獻較模糊。"
+          },
+          {
+            "id": 4,
+            "text": "暫停新貼紙發放，先與換班經手人核對。",
+            "action": "導師已暫停新貼紙發放，先與換班經手人核對。",
+            "tradeoff": "資料較完整，但熱鬧被打斷。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生用口頭向實際幫忙者道謝，不再依表發物。",
+            "action": "導師已邀學生用口頭向實際幫忙者道謝，不再依表發物。",
+            "tradeoff": "謝意直接，但害羞者可能不自在。"
+          },
+          {
+            "id": 6,
+            "text": "保留既有貼紙，另在值日交接加換班備註。",
+            "action": "導師已保留既有貼紙，另在值日交接加換班備註。",
+            "tradeoff": "不撤回謝意，但此次遺漏仍須道歉。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己很想一張全班都有就結案，先陪他把漏謝那句話練好。",
+          "action": "導師已坦白自己很想一張全班都有就結案，先陪他把漏謝那句話練好。",
+          "tradeoff": "回應挫折，但教師多花陪伴時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4241216543
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "691842ac7c5f546e8fb5b9ebe99d8c4ad2bf0b5d5d42de7b42acd1a7f25e23d6"
+      },
+      "consequenceDirections": {
+        "A": "學生可能敢向同學開口；不能保證對方立即原諒。",
+        "B": "本人可能欣慰或嫌補救刻意；後續仍需開放更正。",
+        "C": "大家可共同收下，原本獲個別感謝者可能失落。",
+        "D": "感謝回到互動，學生可能願意自主補謝；形式不再整齊。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ecbf245e313ab4fddc4243a26ac3c5e20c8fc6cdae234e19e5f2b27ee3540360",
+    "draftSha256": "204a0afdd404a69755eaab4c25f8a3ed45beb0a5cb28732748d1e5f42fde697d",
     "seedAssignmentVersion": 1
   }
 }

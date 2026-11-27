@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ea8b066cb4a4c4fad88e7ecb24af37780e20b3a3afb8e7e62ea70ee378328224",
+      "checkedAt": "2026-11-27T02:43:02.995Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留登記者借傘順位，協助另一人聯絡接送。",
+            "action": "導師已保留登記者借傘順位，協助另一人聯絡接送。",
+            "tradeoff": "守住承諾，但另一人可能等較久。"
+          },
+          {
+            "id": 2,
+            "text": "詢問雙方共走安全路段的意願，同意後完成共同借用登記。",
+            "action": "導師已詢問雙方共走安全路段的意願，同意後完成共同借用登記。",
+            "tradeoff": "兼顧兩人，但路線與傘面有限。"
+          },
+          {
+            "id": 3,
+            "text": "徵得先登記者同意讓位，另確認其遮雨等候安排。",
+            "action": "導師已徵得先登記者同意讓位，另確認其遮雨等候安排。",
+            "tradeoff": "可優先照顧長路線，但讓位不能視為義務。"
+          },
+          {
+            "id": 4,
+            "text": "向校內借用窗口詢問第二把可借傘，兩人先等候。",
+            "action": "導師已向校內借用窗口詢問第二把可借傘，兩人先等候。",
+            "tradeoff": "爭議暫緩，但未必借得到。"
+          },
+          {
+            "id": 5,
+            "text": "由你提供自己的合用備傘給其中一人並記下歸還方式。",
+            "action": "導師已由你提供自己的合用備傘給其中一人並記下歸還方式。",
+            "tradeoff": "解決短缺，但自己返程不便。"
+          },
+          {
+            "id": 6,
+            "text": "請雙方各說可接受的等候底線，再排當次借用及接送安排。",
+            "action": "導師已請雙方各說可接受的等候底線，再排當次借用及接送安排。",
+            "tradeoff": "納入實際需求，但協商較慢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦言自己也想把傘留給走最遠的人，仍向先來者道歉並恢復其順位。",
+          "action": "導師已坦言自己也想把傘留給走最遠的人，仍向先來者道歉並恢復其順位。",
+          "tradeoff": "承認偏心，但清點者可能覺得善意被否定。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2242151127
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "623e8ad2cae4771cf5142d6b0123a347a7b20e7f3fb4a1fff98387f5cc94685b"
+      },
+      "consequenceDirections": {
+        "A": "兩人可各用一把，學生可能安心；導師承擔私人資源成本。",
+        "B": "借傘順序確定，清點者可能不甘心；替代交通有時間成本。",
+        "C": "可能找到分時借用空間，也可能談不攏；不更動校定門禁。",
+        "D": "學生看見需求與承諾衝突，導師需另處理後位者安全返程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e123aeecae76fe88279933597662a4668471b2625861915e494bde9d43111ac2",
+    "draftSha256": "ea8b066cb4a4c4fad88e7ecb24af37780e20b3a3afb8e7e62ea70ee378328224",
     "seedAssignmentVersion": 1
   }
 }

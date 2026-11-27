@@ -15,14 +15,82 @@
     "G02",
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b1ad6f2d5fd74c6146045ceaab816050d69668fbbe2a7153a97d5641bf697f4b",
+      "checkedAt": "2026-11-27T02:43:02.992Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "撤回快慢比較，按同一起點重新採樣。",
+            "action": "導師已撤回快慢比較，按同一起點重新採樣。",
+            "tradeoff": "可比較，但前次紀錄不能排名。"
+          },
+          {
+            "id": 2,
+            "text": "將原紀錄改為流程診斷，分開標出清點步驟。",
+            "action": "導師已將原紀錄改為流程診斷，分開標出清點步驟。",
+            "tradeoff": "保留資料，但不再有簡單贏家。"
+          },
+          {
+            "id": 3,
+            "text": "並列總歸還時間與清點時間，各記一輪。",
+            "action": "導師已並列總歸還時間與清點時間，各記一輪。",
+            "tradeoff": "兩種需求可看，但登記工作增加。"
+          },
+          {
+            "id": 4,
+            "text": "暫停計秒，改核對缺件及歸位正確率。",
+            "action": "導師已暫停計秒，改核對缺件及歸位正確率。",
+            "tradeoff": "重視完整，但失去速度資訊。"
+          },
+          {
+            "id": 5,
+            "text": "請兩組互看一次流程，只記各自遺漏的步驟。",
+            "action": "導師已請兩組互看一次流程，只記各自遺漏的步驟。",
+            "tradeoff": "促成理解，但需雙方願意展示。"
+          },
+          {
+            "id": 6,
+            "text": "保留各組自己的前後比較，停止跨組比較。",
+            "action": "導師已保留各組自己的前後比較，停止跨組比較。",
+            "tradeoff": "維持改良動機，但不回答誰最快。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己的稱讚改成「還齊值得肯定」，坦白計時太隨便。",
+          "action": "導師已把自己的稱讚改成「還齊值得肯定」，坦白計時太隨便。",
+          "tradeoff": "止住護短衝動，但得面對專業質疑。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3476697632
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "ed46478d90a287814224198c37741332b3c23a93106cb00d0139774a36217b41"
+      },
+      "consequenceDirections": {
+        "A": "學生可能願意再合作，教師須承擔錯誤標準造成的失望。",
+        "B": "互看可能發現不同負擔，疑慮可能緩和；占用器材交接時間。",
+        "C": "耗時環節浮現，學生可能提出改良；回饋說明較複雜。",
+        "D": "學生可能發現取捨，組員承擔更多採樣；導師須簡化欄位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3c1af3573ff3cbbd121029657ca8eb201ea084dfa802cc556ced9487778d7382",
+    "draftSha256": "b1ad6f2d5fd74c6146045ceaab816050d69668fbbe2a7153a97d5641bf697f4b",
     "seedAssignmentVersion": 1
   }
 }

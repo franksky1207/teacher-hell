@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "56f001f9eac211b63f33559663122a45cd239d7269bd7577d4fddc0baebdfb14",
+      "checkedAt": "2026-11-27T02:43:02.998Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請值勤人員按既有收件路徑轉交餐袋。",
+            "action": "導師已請值勤人員按既有收件路徑轉交餐袋。",
+            "tradeoff": "維持一致，但家長需等候。"
+          },
+          {
+            "id": 2,
+            "text": "由你在可離班且已有照看交接時親領餐袋。",
+            "action": "導師已由你在可離班且已有照看交接時親領餐袋。",
+            "tradeoff": "當次迅速，但占用導師時間。"
+          },
+          {
+            "id": 3,
+            "text": "核對校方是否有適用的必要例外，由權責者決定。",
+            "action": "導師已核對校方是否有適用的必要例外，由權責者決定。",
+            "tradeoff": "保留合理彈性，但不能保證核准。"
+          },
+          {
+            "id": 4,
+            "text": "與家長確認安全保存時限，協調最近一次合規配送。",
+            "action": "導師已與家長確認安全保存時限，協調最近一次合規配送。",
+            "tradeoff": "兼顧可食性，但未必符合家長理想時間。"
+          },
+          {
+            "id": 5,
+            "text": "徵得孩子及家長同意，今天用校內餐，餐袋由家長帶回。",
+            "action": "導師已徵得孩子及家長同意，今天用校內餐，餐袋由家長帶回。",
+            "tradeoff": "不耽誤吃飯，但家庭準備落空。"
+          },
+          {
+            "id": 6,
+            "text": "完成當次轉交後，和家長約定往後固定收件方式。",
+            "action": "導師已完成當次轉交後，和家長約定往後固定收件方式。",
+            "tradeoff": "改善持續性，但多一次協調。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白自己也餓得不想講規則，仍親自把當次流程向家長說完。",
+          "action": "導師已坦白自己也餓得不想講規則，仍親自把當次流程向家長說完。",
+          "tradeoff": "讓孩子免於傳話，但教師得承受火氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2296654423
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "532e08fbb275de3fff34a9eecb69b3f3ee12257ab8d9b6ae3d73a5c5d076ebc4"
+      },
+      "consequenceDirections": {
+        "A": "餐點進入正式交接，家長可能嫌慢；學生不用自行下樓。",
+        "B": "孩子可能失落或鬆口氣，家長需處理帶回餐點；不預設可久放。",
+        "C": "下次較可預期，家長可能需改行程；學生減少門口尷尬。",
+        "D": "家長可能尊重成人出面，也可能繼續抱怨；交付仍走既有流程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6601f0d42ac6467384b82957ce60215b9e6c9e0e4ef2e92640eff705d0cec7e4",
+    "draftSha256": "56f001f9eac211b63f33559663122a45cd239d7269bd7577d4fddc0baebdfb14",
     "seedAssignmentVersion": 1
   }
 }

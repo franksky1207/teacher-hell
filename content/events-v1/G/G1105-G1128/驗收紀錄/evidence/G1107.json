@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "59db42e4d69073b3f2178f1f84cbd7051d32bce8a7ec3335b4582d44ccd5ead8",
+      "checkedAt": "2026-11-27T17:26:48.377Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵詢全班對輪換頻率的一般感受，不提這封信。",
+            "action": "提出去識別自願需求徵詢，不以多數排除必要調整。",
+            "tradeoff": "占班務，可能分歧。"
+          },
+          {
+            "id": 2,
+            "text": "提議延長到一個月試行，先走合規協調。",
+            "action": "提出有限期座位頻率調整建議，未正式實施。",
+            "tradeoff": "需追蹤，可能不准。"
+          },
+          {
+            "id": 3,
+            "text": "邀孩子自願說自己適應座位的經驗。",
+            "action": "提出非必要一般適應交流，不逼其替家長站隊。",
+            "tradeoff": "花課間，可能與家長不同。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一張換位前可自用的整理卡。",
+            "action": "自製原創收納與學習準備工具，不蒐同儕喜惡或保證適應。",
+            "tradeoff": "占備課，可能被嫌多餘。"
+          },
+          {
+            "id": 5,
+            "text": "先維持目前頻率，約定下次循既有班務程序再議。",
+            "action": "拒絕立即單方改頻率，接受未來合規提案，不虛構新門檻。",
+            "tradeoff": "家長可能覺得被拖。"
+          },
+          {
+            "id": 6,
+            "text": "向學務詢問其他合規座位安排的公開案例。",
+            "action": "查詢一般程序資訊，不調他班學生個資。",
+            "tradeoff": "可能不適用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點受不了被叫去當匿名擋箭牌，願意多開一次自己的班務說明，具名講我的考量，不替誰背書。",
+          "action": "提出教師本人主持額外一般座位程序說明的邀請，不揭家長身分、未取得出席同意。",
+          "tradeoff": "多花時間，也可能當場被質疑。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1198045501
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "50454b40f4b6b276ce3c8933fe0d71e8c568751563ed3a64040925388a0cdcb0"
+      },
+      "consequenceDirections": {
+        "A": "可出現不同理由，未徵詢不當已共識。",
+        "B": "孩子可拒談，必要支持不受影響。",
+        "C": "家長可不出席，教師不能以說明取代學生合理調整。",
+        "D": "必要個別調整仍即時辦，不能拿兩週慣例擋合理需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eb611bc582d17a374ca89c85949754242abc3f923cb7fc9839bfe09656006c51",
+    "draftSha256": "59db42e4d69073b3f2178f1f84cbd7051d32bce8a7ec3335b4582d44ccd5ead8",
     "seedAssignmentVersion": 1
   }
 }

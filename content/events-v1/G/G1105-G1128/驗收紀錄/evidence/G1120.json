@@ -16,14 +16,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c524759e8f892d084112f09e494f181e736a8bbb18b7b79dda60dfa767438d2c",
+      "checkedAt": "2026-11-27T17:26:48.402Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議改用官方圖卡辨識情境，不計個人物品分。",
+            "action": "提出符合正式指引的非實作辨識活動，不重演危險。",
+            "tradeoff": "需改教材，可能無趣。"
+          },
+          {
+            "id": 2,
+            "text": "結束這次額外競賽，回到原班會議程。",
+            "action": "停止尚在進行的非必要競賽，不取消必要防災教育。",
+            "tradeoff": "校安可能難堪。"
+          },
+          {
+            "id": 3,
+            "text": "邀願意的同學各編一題防災問答，改成自願互問，不排誰最快。",
+            "action": "提出新自願原創防災問答方案，正確內容須依正式指引核對，未取得同意。",
+            "tradeoff": "要備題與核對，可能冷場。"
+          },
+          {
+            "id": 4,
+            "text": "請防災承辦提供現有課程素材。",
+            "action": "查詢正式教材，不當成承辦已到場或重新核准。",
+            "tradeoff": "可能要等。"
+          },
+          {
+            "id": 5,
+            "text": "教師自願整理正常用具與安全收納的問題單。",
+            "action": "額外彙整一般問題供專業端回答，不自行簽發安全結論。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 6,
+            "text": "提議校安另談示範校評分與日常教室怎麼區分。",
+            "action": "提出成人自願制度目的交流，不代改評獎規則。",
+            "tradeoff": "可能被認為潑冷水。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想全班記得的只有扣分，想拿自己桌上那支總滾走的筆作題目，請大家幫我想不妨礙上課的收法。",
+          "action": "提出以教師自有普通物品為題的自願創作討論，不模擬震動、不稱方案已安全認證。",
+          "tradeoff": "花時間，自己會被笑桌亂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1936328360
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "e5f4edaf18bca16c27cfb6cef9b64d34402952c2794f904b51b947199d9532ad"
+      },
+      "consequenceDirections": {
+        "A": "學生可不參加或提不可行點子，仍須專業界線，不以幽默恢復錯誤競賽。",
+        "B": "校安可不願改，圖卡不代必要正式演練。",
+        "C": "專業端可需補充，問題單不免必要管理。",
+        "D": "正式安全責任仍維持，學生不因抗議受罰。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3桌面配置討論涵蓋情緒教師筆收納討論，改為不同的知識問答活動。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議改用官方圖卡辨識情境，不計個人物品分。",
+                "action": "提出符合正式指引的非實作辨識活動，不重演危險。",
+                "tradeoff": "需改教材，可能無趣。"
+              },
+              {
+                "id": 2,
+                "text": "結束這次額外競賽，回到原班會議程。",
+                "action": "停止尚在進行的非必要競賽，不取消必要防災教育。",
+                "tradeoff": "校安可能難堪。"
+              },
+              {
+                "id": 3,
+                "text": "邀他和學生用紙上圖一起畫合理桌面配置。",
+                "action": "提出自願設計討論，不以學生實物作地震測試。",
+                "tradeoff": "占時間，未必有共識。"
+              },
+              {
+                "id": 4,
+                "text": "請防災承辦提供現有課程素材。",
+                "action": "查詢正式教材，不當成承辦已到場或重新核准。",
+                "tradeoff": "可能要等。"
+              },
+              {
+                "id": 5,
+                "text": "教師自願整理正常用具與安全收納的問題單。",
+                "action": "額外彙整一般問題供專業端回答，不自行簽發安全結論。",
+                "tradeoff": "占備課。"
+              },
+              {
+                "id": 6,
+                "text": "提議校安另談示範校評分與日常教室怎麼區分。",
+                "action": "提出成人自願制度目的交流，不代改評獎規則。",
+                "tradeoff": "可能被認為潑冷水。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想全班記得的只有扣分，想拿自己桌上那支總滾走的筆作題目，請大家幫我想不妨礙上課的收法。",
+              "action": "提出以教師自有普通物品為題的自願創作討論，不模擬震動、不稱方案已安全認證。",
+              "tradeoff": "花時間，自己會被笑桌亂。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1957966923
+            },
+            "selectedIds": [
+              2,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 2,
+              "D": "emotional"
+            },
+            "optionsDigest": "77d29dcd5bb207a115a00318847814f24ae7a7b964061fb113adc45bca1e97d5"
+          },
+          "previousConsequenceDirections": {
+            "A": "他可拒談，必要權益不以談成為條件。",
+            "B": "未有素材先不自創危險示範。",
+            "C": "正式安全責任仍維持，學生不因抗議受罰。",
+            "D": "學生可不參加或提不可行點子，仍須專業界線，不以幽默恢復錯誤競賽。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b7a9dd9e0caa7fb999352ecd88076ab492786cfb6a0b1594587aad1060094402",
+    "draftSha256": "c524759e8f892d084112f09e494f181e736a8bbb18b7b79dda60dfa767438d2c",
     "seedAssignmentVersion": 1
   }
 }

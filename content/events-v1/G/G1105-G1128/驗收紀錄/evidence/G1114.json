@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "824e1a1538279aada0167e6c77050745c985b43ed5c0b7d5c5368619fb2abb23",
+      "checkedAt": "2026-11-27T17:26:48.393Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他挑一個影片承諾，查正式健康資料的說法。",
+            "action": "提出不涉個資的自願媒體辨識查詢，不代醫療診斷。",
+            "tradeoff": "花時間，可能查不到同題資料。"
+          },
+          {
+            "id": 2,
+            "text": "提供校內合資格運動與健康諮詢入口。",
+            "action": "提供既有正式資訊，未預約或取得建議。",
+            "tradeoff": "可能要等。"
+          },
+          {
+            "id": 3,
+            "text": "提議把他的運動目標寫成給專業者的提問單。",
+            "action": "協助自願整理本人問題，不訂減重目標或判療效。",
+            "tradeoff": "需要整理，可能不想談。"
+          },
+          {
+            "id": 4,
+            "text": "另提全班用虛構標題辨識『保證快速』宣稱。",
+            "action": "提出不影射個案的一般媒體活動，不播放極端訓練作示範。",
+            "tradeoff": "占班務，可能無趣。"
+          },
+          {
+            "id": 5,
+            "text": "等必要安排接妥，今天不加勸說，讓他先休息。",
+            "action": "拒絕追加非必要即時教學，保留求助與必要支持。",
+            "tradeoff": "擔心他仍相信影片。"
+          },
+          {
+            "id": 6,
+            "text": "邀朋友自願改分享不用動作的健康資訊來源。",
+            "action": "提出合宜同儕資訊交流，不讓朋友當照護者或監督者。",
+            "tradeoff": "要協調，可能無人想做。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也會被『一週見效』勾住，想跟他約一個不比體重的挑戰：各找一則自己差點信的廣告，看看誰先找到漏洞。",
+          "action": "提出教師與學生自願媒體查證互動，不實作運動或公開身體資料。",
+          "tradeoff": "自己要找素材，也可能找錯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2250439238
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "4f249a037b513467de7d3e7283f8f0a74b8c4e71a6621b897466b5db2eee74ad"
+      },
+      "consequenceDirections": {
+        "A": "活動不能證明誰會受傷或替個案下結論。",
+        "B": "不得以分享造成傷生再次曝光或羞辱。",
+        "C": "不能以單篇資料替其開運動處方。",
+        "D": "他可拒絕，不能用遊戲勝負判定醫療事實或要求原諒網紅。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a20bfb0307b887966b5d0ed6634719236fa40e1c492c5499f3160eb730295cc",
+    "draftSha256": "824e1a1538279aada0167e6c77050745c985b43ed5c0b7d5c5368619fb2abb23",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a18a1a2ee48a6c7ac61478d4c89e412a4c520ac32df3a6904499f44e347b6185",
+      "checkedAt": "2026-11-27T17:26:48.390Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他用虛構情境練一句不幫忙抄的回應。",
+            "action": "提出自願溝通演練，不要求現實對質或蒐證。",
+            "tradeoff": "占課間，可能覺得尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "給他一張可私下自用的界線提醒卡。",
+            "action": "教師額外製作一般原創溝通小卡，不標其身分或命令持卡回報。",
+            "tradeoff": "花準備，可能不用。"
+          },
+          {
+            "id": 3,
+            "text": "另提全班用虛構例子區分討論和抄寫。",
+            "action": "提出不影射個案的一般作業合作辨識活動。",
+            "tradeoff": "占教學時間，可能被對號入座。"
+          },
+          {
+            "id": 4,
+            "text": "另邀他自願跟不同同學做一次不計分的題目討論，看看是否想試。",
+            "action": "提出新自願同儕討論邀請，未代另一同學接受，不假定原有合作搭檔可撤換。",
+            "tradeoff": "要協調，可能不想換熟悉的人。"
+          },
+          {
+            "id": 5,
+            "text": "提供現有學生支持資源資訊，讓他自行選。",
+            "action": "給既有合法支持入口，不代轉介或假定諮詢已成。",
+            "tradeoff": "可能不想用。"
+          },
+          {
+            "id": 6,
+            "text": "今天不加練習，讓他選擇回去做自己的事。",
+            "action": "停止本人額外非必要追問，維持安全與必要支持，不讓他背朋友責任。",
+            "tradeoff": "未談完的感受可能仍在。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那句『沒管好』讓我心裡發緊，想把自己以前也不敢跟朋友說不的一段小事講給他，不急著教他勇敢。",
+          "action": "提出本人非敏感真實成人經驗分享，學生可拒聽，不替同儕行為下結論。",
+          "tradeoff": "暴露自己膽小，花課間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 834279132
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "dfca3ec2094039681829d93e66bb26ff14f4df0d60bde92489153a3984296b04"
+      },
+      "consequenceDirections": {
+        "A": "他可覺得無用，分享不能當成必要支持已完成。",
+        "B": "必要支持仍由成人維持，不能一給入口就不管。",
+        "C": "雙方可拒，不強迫當朋友或使孩子成舉報者。",
+        "D": "可再求助，不把離開當已釋懷。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原文預設既有合作搭檔，改為明確新邀約。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他用虛構情境練一句不幫忙抄的回應。",
+                "action": "提出自願溝通演練，不要求現實對質或蒐證。",
+                "tradeoff": "占課間，可能覺得尷尬。"
+              },
+              {
+                "id": 2,
+                "text": "給他一張可私下自用的界線提醒卡。",
+                "action": "教師額外製作一般原創溝通小卡，不標其身分或命令持卡回報。",
+                "tradeoff": "花準備，可能不用。"
+              },
+              {
+                "id": 3,
+                "text": "另提全班用虛構例子區分討論和抄寫。",
+                "action": "提出不影射個案的一般作業合作辨識活動。",
+                "tradeoff": "占教學時間，可能被對號入座。"
+              },
+              {
+                "id": 4,
+                "text": "詢問他是否希望調整非必要合作搭檔。",
+                "action": "提出學生可拒的合作安排討論，不擅改必要權益或認定誰有罪。",
+                "tradeoff": "可能失去熟悉搭檔。"
+              },
+              {
+                "id": 5,
+                "text": "提供現有學生支持資源資訊，讓他自行選。",
+                "action": "給既有合法支持入口，不代轉介或假定諮詢已成。",
+                "tradeoff": "可能不想用。"
+              },
+              {
+                "id": 6,
+                "text": "今天不加練習，讓他選擇回去做自己的事。",
+                "action": "停止本人額外非必要追問，維持安全與必要支持，不讓他背朋友責任。",
+                "tradeoff": "未談完的感受可能仍在。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那句『沒管好』讓我心裡發緊，想把自己以前也不敢跟朋友說不的一段小事講給他，不急著教他勇敢。",
+              "action": "提出本人非敏感真實成人經驗分享，學生可拒聽，不替同儕行為下結論。",
+              "tradeoff": "暴露自己膽小，花課間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3779345992
+            },
+            "selectedIds": [
+              5,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "48bdc6bccbe7f55f675b5deab3fe4674da4235151115c4cce0c0712368575240"
+          },
+          "previousConsequenceDirections": {
+            "A": "他可覺得無用，分享不能當成必要支持已完成。",
+            "B": "對方可有不同需要，需公平調整。",
+            "C": "可拒練，演練不保證同儕接受。",
+            "D": "必要支持仍由成人維持，不能一給入口就不管。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c21d9eaae3e6473986b44111e5a65b62460b67f8c52041f8080d2ee5415fbd68",
+    "draftSha256": "a18a1a2ee48a6c7ac61478d4c89e412a4c520ac32df3a6904499f44e347b6185",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "17e23fd7e40d568cf7be3f00cb82bc817c3d949aa04005e0d6e8a5e40b5cacfc",
+      "checkedAt": "2026-11-27T17:26:48.374Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀股長先私下問一句對方想不想被祝福。",
+            "action": "提出低壓自願祝福意願詢問方式，不要求對方解釋。",
+            "tradeoff": "可能得到拒絕，驚喜沒了。"
+          },
+          {
+            "id": 2,
+            "text": "建議寫一張不公開的卡片，收不收由本人。",
+            "action": "提出合宜私人卡片邀請，不代壽星接受或公布生日。",
+            "tradeoff": "要重做，可能退回。"
+          },
+          {
+            "id": 3,
+            "text": "問股長願不願意把點心留給自己，今天先正常過。",
+            "action": "提出停止本次非必要突襲、由物主自行保留點心的方案。",
+            "tradeoff": "股長可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "另提不指定誰的自願一般桌遊交流。",
+            "action": "提出全新不以壽星為中心的自願互動方案，需合法時段與同意。",
+            "tradeoff": "要協調，未必有人想玩。"
+          },
+          {
+            "id": 5,
+            "text": "讓股長先和我談想讓別人開心的方式。",
+            "action": "提出有限自願幹部交流，不要求他道歉或揣測壽星病因。",
+            "tradeoff": "占課間，他可能覺得被說教。"
+          },
+          {
+            "id": 6,
+            "text": "提供幾個不指名的祝福形式，讓股長自己選要不要提。",
+            "action": "額外製作一般自願關懷點子，不宣稱各形式已獲壽星接受。",
+            "tradeoff": "增加準備，可能不用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我差點也想拍手，現在有點掃興；願意把這份熱鬧留在我身上，問股長要不要跟我猜一題，不去圍壽星。",
+          "action": "提出教師本人參與的自願趣味問答，限不影響必要課務，不將教師當代替壽星收禮者。",
+          "tradeoff": "花休息，自己可能答錯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4287180243
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "a5f052bbb318b593ce3b057aa0d25d528a8e1a8a5f4847cf680c7a4b8bc13d49"
+      },
+      "consequenceDirections": {
+        "A": "股長可不想玩，不能靠轉移熱鬧保證壽星自在。",
+        "B": "拒絕須被接受，不以願意受祝福換正常相處。",
+        "C": "對方可不收，卡片不代表友情已成立。",
+        "D": "不得逼壽星因物資已買而接受活動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a4352de6c710c3780741e03aea95f4918116f41b16f24b5a87b33030e725d2cf",
+    "draftSha256": "17e23fd7e40d568cf7be3f00cb82bc817c3d949aa04005e0d6e8a5e40b5cacfc",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,155 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2843f6ee5dc1b3a348a24c9509e064deedaac7243d523af32b91ed4b737f6073",
+      "checkedAt": "2026-11-27T17:26:48.413Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他用虛構清潔廣告找出『天然就無毒』的跳步。",
+            "action": "提出一般媒體辨識交流，不操作任何混合液。",
+            "tradeoff": "占課間，可能覺得說教。"
+          },
+          {
+            "id": 2,
+            "text": "提供校內正式清潔用品與操作資訊。",
+            "action": "額外整理已知可公開用品資訊，不自行開清潔處方。",
+            "tradeoff": "花整理，可能已聽過。"
+          },
+          {
+            "id": 3,
+            "text": "邀他改做不接觸清潔劑的一般收納小標籤。",
+            "action": "提出自願原創物品標示方案，不讓他以勞務補償失誤。",
+            "tradeoff": "需準備，可能不想做。"
+          },
+          {
+            "id": 4,
+            "text": "詢問總務可否安排一次合規用品說明。",
+            "action": "提出額外專業說明邀請，未取得人力或排定。",
+            "tradeoff": "需協調，可能無空。"
+          },
+          {
+            "id": 5,
+            "text": "今天不加延伸任務，讓他回正常課務。",
+            "action": "停止教師額外非必要教學邀請，保留必要支持與合法事件處理。",
+            "tradeoff": "可能仍信偏方。"
+          },
+          {
+            "id": 6,
+            "text": "我願做一張不含配方的廣告查證提問卡。",
+            "action": "自製一般媒體提問工具，不提供危險配方或成效認證。",
+            "tradeoff": "占備課，可能不用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他問是不是別幫忙，我有點捨不得，願意把自己想整理的原創紙卡交給他挑，要不要和我一起做，別再靠神水討我開心。",
+          "action": "提出教師本人參與、以原創紙材製作班級閱讀書籤的自願邀請，未代學生同意，不處理混合液、不以勞務抵責。",
+          "tradeoff": "教師要備紙與休息時間，也可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 849317203
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "0cb22e4959fcff2f3cf6b10e5fb42209eef2ae3afec4bae2b7a85aa222b9809e"
+      },
+      "consequenceDirections": {
+        "A": "他可拒，不能據廣告練習推定本液成分。",
+        "B": "不把正常上課當已接受教訓或免責交換。",
+        "C": "他可不做，書籤不是清潔認證或換正常待遇條件，必要安全處理仍共同維持。",
+        "D": "資訊不等已完成專業清除或材料相容性確認。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒只是自曝輕信後辨識廣告，與普通1同核心動作，改為教師實際投入的非化學自願創作，非普通3收納標籤。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他用虛構清潔廣告找出『天然就無毒』的跳步。",
+                "action": "提出一般媒體辨識交流，不操作任何混合液。",
+                "tradeoff": "占課間，可能覺得說教。"
+              },
+              {
+                "id": 2,
+                "text": "提供校內正式清潔用品與操作資訊。",
+                "action": "額外整理已知可公開用品資訊，不自行開清潔處方。",
+                "tradeoff": "花整理，可能已聽過。"
+              },
+              {
+                "id": 3,
+                "text": "邀他改做不接觸清潔劑的一般收納小標籤。",
+                "action": "提出自願原創物品標示方案，不讓他以勞務補償失誤。",
+                "tradeoff": "需準備，可能不想做。"
+              },
+              {
+                "id": 4,
+                "text": "詢問總務可否安排一次合規用品說明。",
+                "action": "提出額外專業說明邀請，未取得人力或排定。",
+                "tradeoff": "需協調，可能無空。"
+              },
+              {
+                "id": 5,
+                "text": "今天不加延伸任務，讓他回正常課務。",
+                "action": "停止教師額外非必要教學邀請，保留必要支持與合法事件處理。",
+                "tradeoff": "可能仍信偏方。"
+              },
+              {
+                "id": 6,
+                "text": "我願做一張不含配方的廣告查證提問卡。",
+                "action": "自製一般媒體提問工具，不提供危險配方或成效認證。",
+                "tradeoff": "占備課，可能不用。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想要進門就亮晶晶，現在聞得頭痛，只想承認自己也會被那種影片吸引；願意拿一則我收藏的假清潔廣告一起拆，不讓他一個人當笨蛋。",
+              "action": "以本人合法收藏公開廣告提出自願共同辨識邀請，不實作、不揭其他人資料或宣稱學生無責。",
+              "tradeoff": "自己要露出輕信的一面，花時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4124481275
+            },
+            "selectedIds": [
+              5,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 5,
+              "D": 1
+            },
+            "optionsDigest": "2c47c9be4b26837b9f3d04040c9bb8848ad06e0816942a635e4eb8f4b3047a8e"
+          },
+          "previousConsequenceDirections": {
+            "A": "使用不保證識破所有偏方，拒用不受罰。",
+            "B": "學生可不願看，成人共感不代必要安全與真實責任處理。",
+            "C": "不把正常上課當已接受教訓或免責交換。",
+            "D": "他可拒，不能據廣告練習推定本液成分。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1ff550c25dc94d093d00be4f99611f0c5486b874486f530f7de22efe7c83e70e",
+    "draftSha256": "2843f6ee5dc1b3a348a24c9509e064deedaac7243d523af32b91ed4b737f6073",
     "seedAssignmentVersion": 1
   }
 }

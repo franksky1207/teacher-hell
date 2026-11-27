@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ed1a7364a1287c43fdcf55ee9eb93104a9016aa8c3a90a6739005e7c96b20ef3",
+      "checkedAt": "2026-11-27T17:26:48.405Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "申請把本人備用卡改採正式借還登記方式。",
+            "action": "提出未來本人卡片合規管理變更請求，未核准或建立登記。",
+            "tradeoff": "要多手續，可能不便。"
+          },
+          {
+            "id": 2,
+            "text": "詢問能否取消本人非必要備用卡資格。",
+            "action": "提出卡片權限縮減申請，不自行銷毀或宣稱權限已撤。",
+            "tradeoff": "日後借用較麻煩。"
+          },
+          {
+            "id": 3,
+            "text": "邀設備端提供成人門禁使用的正式簡介。",
+            "action": "提出額外一般說明資源請求，不代其承諾製作。",
+            "tradeoff": "需協調，可能制式。"
+          },
+          {
+            "id": 4,
+            "text": "我願做本人鑰匙與卡片的非敏感保管清單。",
+            "action": "額外整理本人可核實持有物，不公開卡號與安全細節。",
+            "tradeoff": "花時間，可能仍遺忘。"
+          },
+          {
+            "id": 5,
+            "text": "另詢問校方可否設置合規集中借用窗口。",
+            "action": "查詢新增集中管理可行性，不取得新窗口或人力。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 6,
+            "text": "不另提新制，往後嚴格按現有合法借卡方式。",
+            "action": "拒絕新增非必要制度協作，不拒本案依法查明與補正。",
+            "tradeoff": "原手續不便仍在。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被直接說借學生我很不爽，想要求他在下一次額外成人說明會，用不指人的例子講卡號不等於人，別讓猜測一路傳。",
+          "action": "提出一般門禁資料解讀說明建議，不揭本案身分、不聲稱對方已接受。",
+          "tradeoff": "多一次溝通，可能被說轉移焦點。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4280934045
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "fcd1959225b3311aad5667df83d936ce681379de44899f9694afbcdf5d58d28d"
+      },
+      "consequenceDirections": {
+        "A": "不以提案代必要當下查明與停卡控管。",
+        "B": "清單不是門禁安全鑑定，也不免必要交接。",
+        "C": "權責端可不同意，安全交接仍須完成。",
+        "D": "可被拒，必要個案澄清仍依法辦，不以提案免保管責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c193acf45b515d7fe9aba63f5a7760aef39b8fb049598353030330ab1d108a44",
+    "draftSha256": "ed1a7364a1287c43fdcf55ee9eb93104a9016aa8c3a90a6739005e7c96b20ef3",
     "seedAssignmentVersion": 1
   }
 }

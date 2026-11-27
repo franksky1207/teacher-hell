@@ -16,14 +16,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "28d75641e5a8a69897f8b9477a713e5d0a165571ca1f14eb70d7b568ab1df900",
+      "checkedAt": "2026-11-27T17:26:48.407Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天不加新活動，讓各自依合宜計畫學習。",
+            "action": "不新增教師額外活動，在必要任務與支持下維持合理自主安排。",
+            "tradeoff": "教師少掌握即時進度。"
+          },
+          {
+            "id": 2,
+            "text": "提供一張自願使用的空白時間規畫卡。",
+            "action": "自製一般學習工具，不要求上交或審查私人讀書計畫。",
+            "tradeoff": "花備課，可能不用。"
+          },
+          {
+            "id": 3,
+            "text": "另邀學生自願分享一個安排時間的方法。",
+            "action": "提出不比較成績的一般經驗交流，不讓完成者變強制助教。",
+            "tradeoff": "占班務，可能冷場。"
+          },
+          {
+            "id": 4,
+            "text": "詢問科任有哪些合法延伸閱讀可自選。",
+            "action": "查詢既有資源資訊，不代取得教材或派新增必做作業。",
+            "tradeoff": "可能沒有。"
+          },
+          {
+            "id": 5,
+            "text": "提議保留一小段自願提問時間，其餘自己安排。",
+            "action": "提出不妨礙合理自主的教師額外答疑邀請，未強迫所有人參與。",
+            "tradeoff": "自己增加回應時間。"
+          },
+          {
+            "id": 6,
+            "text": "我另整理一個不記名的公共推薦架，供想找材料的人。",
+            "action": "在權限與合法來源範圍內自願整理既有可用材料，不保證每人有適合文本。",
+            "tradeoff": "占整理時間，空間有限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那張表排得比我漂亮，我有點不服，想拿自己的空白計畫跟他一起填一次，但不要求他照我的。",
+          "action": "提出教師本人自願參與的一般規畫交流，不展示他人個資或代學生決定。",
+          "tradeoff": "花休息，自己的混亂會露餡。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 206845054
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "9c7a051e9e47e3a86cb419f4e9af9f5472f1401ac2bcc5a89d2cb216b3b30a6e"
+      },
+      "consequenceDirections": {
+        "A": "學生可拒絕，教師不以互動證明自己時間管理較好。",
+        "B": "學生可拒，不能延後其必要休息作分享。",
+        "C": "不用不影響自主權，工具不保證效率。",
+        "D": "學生可不提問，不能以提問換自主資格。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "009d97d1b3a0af9f6e206626f2955439f62f7d8fbf948870c9c3433c7132568f",
+    "draftSha256": "28d75641e5a8a69897f8b9477a713e5d0a165571ca1f14eb70d7b568ab1df900",
     "seedAssignmentVersion": 1
   }
 }

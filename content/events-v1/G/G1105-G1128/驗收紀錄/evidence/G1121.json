@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b287d53be6a0c0d4281beef359e76fd0a41acdc8b5ab5b10ef8999c4dd3f3572",
+      "checkedAt": "2026-11-27T17:26:48.403Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和科任協商一份不加學生負擔的課前用品需求表。",
+            "action": "提出成人教學用品規畫協作，不擅增學生值勤或視為已同意。",
+            "tradeoff": "要整理，可能要求仍很多。"
+          },
+          {
+            "id": 2,
+            "text": "詢問總務是否有可合規設置的備用品盒。",
+            "action": "提出資源詢問，不取得物資或空間。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 3,
+            "text": "另邀他把下月可公開的課務需求排成對照圖，看哪些需要提早協調。",
+            "action": "提出成人未來課務需求圖協作，不代調課或取得同意，不放入學生隱私。",
+            "tradeoff": "占空堂，可能仍不願合作。"
+          },
+          {
+            "id": 4,
+            "text": "請組長提供正式紀錄表達的一般指引。",
+            "action": "查詢既有紀錄說明，不要求替本人壓掉合法反映。",
+            "tradeoff": "需等待，可能無細則。"
+          },
+          {
+            "id": 5,
+            "text": "我願重整自己講桌用品，減少交接時找東西。",
+            "action": "在本人權限內整理可處置教具，不替他科任意丟物。",
+            "tradeoff": "占空堂，順手位置改變。"
+          },
+          {
+            "id": 6,
+            "text": "不加私人檢查表，往後只用正式教學聯絡管道。",
+            "action": "選擇以既有正式管道處理非急迫意見，不拒必要當面緊急聯繫。",
+            "tradeoff": "互動較冷，可能難和解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到調課就想頂嘴，想先請他把那句不滿完整說完，今天我只記自己的承諾，不急著辯。",
+          "action": "提出有限成人自願聆聽交流，僅記本人可承擔事項，不要求對方配合或把指控當既定事實。",
+          "tradeoff": "自己要忍住反駁，耗休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4134170202
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "8dbd8d9c38bcbe3400e205fbadcb242e72cb128558703aa383c46d802296960f"
+      },
+      "consequenceDirections": {
+        "A": "可仍有缺漏，整理不免必要真實紀錄。",
+        "B": "無盒也須維持必要教具，不讓學生私費補。",
+        "C": "資訊不等已更改日誌或裁定同事錯。",
+        "D": "對方可仍生氣，聽完不代表認錯或交換撤記。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3談舊怨與情緒聽舊不滿近同，改為未來課務協作產物。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "和科任協商一份不加學生負擔的課前用品需求表。",
+                "action": "提出成人教學用品規畫協作，不擅增學生值勤或視為已同意。",
+                "tradeoff": "要整理，可能要求仍很多。"
+              },
+              {
+                "id": 2,
+                "text": "詢問總務是否有可合規設置的備用品盒。",
+                "action": "提出資源詢問，不取得物資或空間。",
+                "tradeoff": "可能無預算。"
+              },
+              {
+                "id": 3,
+                "text": "另約一次談調課舊事，不拿日誌交換。",
+                "action": "提出成人自願舊事交流，不要求撤真實紀錄。",
+                "tradeoff": "可能更不愉快。"
+              },
+              {
+                "id": 4,
+                "text": "請組長提供正式紀錄表達的一般指引。",
+                "action": "查詢既有紀錄說明，不要求替本人壓掉合法反映。",
+                "tradeoff": "需等待，可能無細則。"
+              },
+              {
+                "id": 5,
+                "text": "我願重整自己講桌用品，減少交接時找東西。",
+                "action": "在本人權限內整理可處置教具，不替他科任意丟物。",
+                "tradeoff": "占空堂，順手位置改變。"
+              },
+              {
+                "id": 6,
+                "text": "不加私人檢查表，往後只用正式教學聯絡管道。",
+                "action": "選擇以既有正式管道處理非急迫意見，不拒必要當面緊急聯繫。",
+                "tradeoff": "互動較冷，可能難和解。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我聽到調課就想頂嘴，想先請他把那句不滿完整說完，今天我只記自己的承諾，不急著辯。",
+              "action": "提出有限成人自願聆聽交流，僅記本人可承擔事項，不要求對方配合或把指控當既定事實。",
+              "tradeoff": "自己要忍住反駁，耗休息。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1255527198
+            },
+            "selectedIds": [
+              4,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 5,
+              "D": 3
+            },
+            "optionsDigest": "c3ffcb89598476d4aec48a1b63282ad56d17dfd55caa8c15215df0d744b4a4b4"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可仍生氣，聽完不代表認錯或交換撤記。",
+            "B": "資訊不等已更改日誌或裁定同事錯。",
+            "C": "可仍有缺漏，整理不免必要真實紀錄。",
+            "D": "對方可拒，必要工作照常。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bbccc1a15c25277b8f73ec14fe24ee97f21c3f2c4a5c5c1e7159eaefb3997e3f",
+    "draftSha256": "b287d53be6a0c0d4281beef359e76fd0a41acdc8b5ab5b10ef8999c4dd3f3572",
     "seedAssignmentVersion": 1
   }
 }

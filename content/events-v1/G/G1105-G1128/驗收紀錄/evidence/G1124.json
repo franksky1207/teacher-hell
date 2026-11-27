@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6fc59465baf3a5d36b59bb1e247e005f1effc375b0d847f6e45e33900bbea64a",
+      "checkedAt": "2026-11-27T17:26:48.408Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自願列兩項目前最需要練的能力。",
+            "action": "提出一般需求交流，不將弱項公開或要求買書。",
+            "tradeoff": "花時間，可能不知怎麼列。"
+          },
+          {
+            "id": 2,
+            "text": "做一張看目錄與程度的空白比較表，讓家庭自己選。",
+            "action": "額外提供原創教材評估工具，不代背書產品或取得內容授權。",
+            "tradeoff": "占備課，可能仍選不出。"
+          },
+          {
+            "id": 3,
+            "text": "請科任自願提供已知合法延伸練習資訊。",
+            "action": "提出額外資訊協作邀請，不代同意或送題。",
+            "tradeoff": "可能等不到。"
+          },
+          {
+            "id": 4,
+            "text": "建議先把手邊已合法取得的練習挑一小段完成再評估。",
+            "action": "提出有限自願學習安排建議，不增強制題量或延誤必要支持。",
+            "tradeoff": "可能來不及比較更多資料。"
+          },
+          {
+            "id": 5,
+            "text": "我不評推薦版本，提供正式學習資源入口供自選。",
+            "action": "婉拒額外商業教材背書，給已知正式資訊。",
+            "tradeoff": "家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長另談『夠用』指的是安心還是哪個學習問題。",
+            "action": "提出有界限成人自願價值交流，不心理診斷。",
+            "tradeoff": "花空堂，可能覺得被反問。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說怕害孩子，我也想到自己囤的沒寫完教材，願意把本人那份不漂亮的使用紀錄拿出來談，不裝成有神書的人。",
+          "action": "自願整理本人合法非敏感的教材使用經驗供成人選聽，不推論所有教材效能。",
+          "tradeoff": "丟面子，花私人時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 533808970
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "52be12e8dff4098ec468415bc2911c6a50da049bb3de244da2f061ab80e52acd"
+      },
+      "consequenceDirections": {
+        "A": "家長可拒談，不以談成換必要資源。",
+        "B": "完成後仍可能不知是否需另購，不保證結果。",
+        "C": "可拒談，必要教學支持不因拒談少給。",
+        "D": "家長可不認同，私人例子不代專業教學建議或考試保證。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "be7b714d409e3f896a863393d9c431792670094b76a30ce696debbf3765ed37b",
+    "draftSha256": "6fc59465baf3a5d36b59bb1e247e005f1effc375b0d847f6e45e33900bbea64a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f7968f05be65557254647def64ac453741459c7946754cfc47f2356ccbc0b01a",
+      "checkedAt": "2026-11-27T17:26:48.400Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議這次不辦統一紀念品加購，保留原創圖作紀念。",
+            "action": "提出尚未成立採購的停止方案，原創圖使用仍需作者同意。",
+            "tradeoff": "少實體物件，設計者可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "保留自願加購，但改成不公開名單的個別登記。",
+            "action": "提出減少比較壓力的隱私友善調查方式，不保證完全無同儕壓力。",
+            "tradeoff": "需重新聯繫整理。"
+          },
+          {
+            "id": 3,
+            "text": "徵詢不含收入資料的費用上限感受。",
+            "action": "提出自願一般成本需求調查，不逼家庭證明貧窮。",
+            "tradeoff": "耗時，未必一致。"
+          },
+          {
+            "id": 4,
+            "text": "詢問承辦有沒有合規的較低成本餐盒選項。",
+            "action": "查詢額外餐食方案，不取得報價或降低必要安全標準。",
+            "tradeoff": "可能沒合適供應。"
+          },
+          {
+            "id": 5,
+            "text": "提出讓孩子自做原創紙徽章的自願方案。",
+            "action": "提出不強制出資或交作業的低物資創作，未獲參與同意。",
+            "tradeoff": "要準備，耐用度低。"
+          },
+          {
+            "id": 6,
+            "text": "不另主持家長協商會，讓意見走原調查回覆。",
+            "action": "婉拒額外會談，但依法接收實際費用疑慮及必要支持需求。",
+            "tradeoff": "家長可能覺得不被聽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想留漂亮徽章，聽他這樣講又不想裝大方；決定自己的那份也不加購，改花時間幫作者做一張可自存的數位紀念圖。",
+          "action": "選擇本人不加入未成立加購，另邀作者合意做原創數位圖供自願保存，不要求家庭跟隨。",
+          "tradeoff": "放掉實物，增加編輯時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3756574384
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "62e059d2f0f226dcc082b8e1f289fad6cb99e79d19f16dbb82fb30593ac09945"
+      },
+      "consequenceDirections": {
+        "A": "可不參加，不能用作品換參訪資格。",
+        "B": "作者可拒，教師不買不使其他合法自願加購被羞辱。",
+        "C": "基本參與不受加購影響，不以匿名掩蓋費用。",
+        "D": "不能處分已屬私人的作品或已成立他人交易。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ae7dd542fc98c4a10a8a9837a908a0fa4332f784de84e94597d7f1dc0561da85",
+    "draftSha256": "f7968f05be65557254647def64ac453741459c7946754cfc47f2356ccbc0b01a",
     "seedAssignmentVersion": 1
   }
 }

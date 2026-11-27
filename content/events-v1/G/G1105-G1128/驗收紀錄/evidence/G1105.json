@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "92f6232012ac6f7d9e53e0d895e9d54429404ad52295254e3a0053b7408ed197",
+      "checkedAt": "2026-11-27T17:26:48.370Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起查正式練習申請流程，讓學生自行提案。",
+            "action": "額外協助查詢合規課後練習條件，不代准或取得家長同意。",
+            "tradeoff": "花時間，可能無時段。"
+          },
+          {
+            "id": 2,
+            "text": "提議改以課內可調時間的短練習，由權責教師評估。",
+            "action": "提出既有課務權限內短段練習建議，未獲准。",
+            "tradeoff": "壓縮別的活動。"
+          },
+          {
+            "id": 3,
+            "text": "我願協助學生寫清楚需要幾次、每次多久。",
+            "action": "提供全新練習需求草稿協助，不將未核准時間列已排定。",
+            "tradeoff": "占備課，可能白做。"
+          },
+          {
+            "id": 4,
+            "text": "邀校安談他願意接到哪裡，別把稱讚當排班。",
+            "action": "提出自願成人任務邊界交流，不變更必要職責。",
+            "tradeoff": "可能傷他的面子。"
+          },
+          {
+            "id": 5,
+            "text": "不額外帶練，讓學生走校內既有活動申請入口。",
+            "action": "婉拒教師非必要帶練，提供已知正式入口。",
+            "tradeoff": "少了教師協助。"
+          },
+          {
+            "id": 6,
+            "text": "邀學生用紙上動線圖重畫不擋門的練習需求。",
+            "action": "提出自願空間規畫習作，不實地試撞或核准場地。",
+            "tradeoff": "需整理，可能不合空間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想回他一句『不要亂罩』，改成明講我不願再替未通知的加時接家長電話，請他下次把額外邀約先交正式窗口。",
+          "action": "表達本人不接受臨時非必要加時代言的界線，提出未來邀約交正式窗口的要求，不拒當下必要聯繫。",
+          "tradeoff": "同事可能覺得不給情面。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2938338832
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "64721d5b459da0db1146a9c8a8f005abeaa1236a0bf8def92066271904c10d6b"
+      },
+      "consequenceDirections": {
+        "A": "基本安全與合法活動機會仍維持。",
+        "B": "他可不服，教師仍須依法交接，不能以生氣中止必要照看。",
+        "C": "可拒談，不當他已答應未來值勤。",
+        "D": "學生可不申請，未准不練到晚。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "39179158799ace675a53adae0745fcc28a7eb25c3e84c1912d38d6f283a7c5b3",
+    "draftSha256": "92f6232012ac6f7d9e53e0d895e9d54429404ad52295254e3a0053b7408ed197",
     "seedAssignmentVersion": 1
   }
 }

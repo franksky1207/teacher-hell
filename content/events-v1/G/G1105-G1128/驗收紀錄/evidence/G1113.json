@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6119dc230a20dc69467fc216f25fb4b596846bdb8c48a412a9613510bb88a603",
+      "checkedAt": "2026-11-27T17:26:48.391Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出每月輪換的合規試行方案，先聽學生意見。",
+            "action": "提出工作量可行且符合安全限制的輪換建議，未實施。",
+            "tradeoff": "要重新排表，可能被反對。"
+          },
+          {
+            "id": 2,
+            "text": "提議只交換相當工作量的任務，須雙方自願。",
+            "action": "提出公平合意的局部任務交換方案，不把不安全工作轉給別人。",
+            "tradeoff": "可能找不到願意者。"
+          },
+          {
+            "id": 3,
+            "text": "協助徵詢校方是否能增加成人專業清潔資源。",
+            "action": "提出額外資源詢問，不取得人力或免除既定安全責任。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 4,
+            "text": "邀全班比較實際耗材與工作量，不公開個別抱怨。",
+            "action": "提出一般掃區負擔檢視，不派學生額外試作危險項目。",
+            "tradeoff": "占班務，資訊可能不足。"
+          },
+          {
+            "id": 5,
+            "text": "我願自費補一批校方確認適用的普通清潔布，先問是否需要，不拿來交換不改制。",
+            "action": "提出本人預算的非必要合規普通耗材提供意願，未取得需求同意或完成購買，不取代校方必要安全用品。",
+            "tradeoff": "若接受會花錢，也可能被說拿物品堵嘴。"
+          },
+          {
+            "id": 6,
+            "text": "不答應立即改全班頻率，依既有合規程序討論。",
+            "action": "拒絕受施壓即改制，接受合法提案且必要個別調整照辦。",
+            "tradeoff": "家長可能更生氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他袖子一直不放，我也有點火，想請他先坐下，另留一段時間聽我說這次想保住的不是抽籤面子。",
+          "action": "提出有界限的額外成人工作理念交流，不以配合談話換學生權益。",
+          "tradeoff": "占空堂，可能被嫌繞話。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 856506782
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "ad57970f3f67c41795048a1002028bd3025d80fa2637c9b923dfbd0f7eb132ad"
+      },
+      "consequenceDirections": {
+        "A": "家長可拒談，必要掃區處理不因此停下。",
+        "B": "觀察不等安全鑑定，基本權益仍共同維持。",
+        "C": "無資源不得以學生填補專業危險工作。",
+        "D": "拒絕不受處罰，未交換仍維持必要合理調整。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5輪換草稿近普通1月輪換方案，改為不同資源投入取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提出每月輪換的合規試行方案，先聽學生意見。",
+                "action": "提出工作量可行且符合安全限制的輪換建議，未實施。",
+                "tradeoff": "要重新排表，可能被反對。"
+              },
+              {
+                "id": 2,
+                "text": "提議只交換相當工作量的任務，須雙方自願。",
+                "action": "提出公平合意的局部任務交換方案，不把不安全工作轉給別人。",
+                "tradeoff": "可能找不到願意者。"
+              },
+              {
+                "id": 3,
+                "text": "協助徵詢校方是否能增加成人專業清潔資源。",
+                "action": "提出額外資源詢問，不取得人力或免除既定安全責任。",
+                "tradeoff": "可能無預算。"
+              },
+              {
+                "id": 4,
+                "text": "邀全班比較實際耗材與工作量，不公開個別抱怨。",
+                "action": "提出一般掃區負擔檢視，不派學生額外試作危險項目。",
+                "tradeoff": "占班務，資訊可能不足。"
+              },
+              {
+                "id": 5,
+                "text": "我願做一份輪換排程草稿，讓大家看到代價再談。",
+                "action": "自願製作符合已知限制的排程提案，不假定人力或同意。",
+                "tradeoff": "花備課，可能不用。"
+              },
+              {
+                "id": 6,
+                "text": "不答應立即改全班頻率，依既有合規程序討論。",
+                "action": "拒絕受施壓即改制，接受合法提案且必要個別調整照辦。",
+                "tradeoff": "家長可能更生氣。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他袖子一直不放，我也有點火，想請他先坐下，另留一段時間聽我說這次想保住的不是抽籤面子。",
+              "action": "提出有界限的額外成人工作理念交流，不以配合談話換學生權益。",
+              "tradeoff": "占空堂，可能被嫌繞話。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 900593023
+            },
+            "selectedIds": [
+              1,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 5,
+              "C": 4,
+              "D": 1
+            },
+            "optionsDigest": "1ffd817d64c538672dbfcf8fad738153d0a0a042600f54dc10872d25a80ad2c1"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可拒談，必要掃區處理不因此停下。",
+            "B": "草稿可被否決，不使下月輪調自動成立。",
+            "C": "觀察不等安全鑑定，基本權益仍共同維持。",
+            "D": "學生可有不同需求，必要調整不等多數同意。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2d79aa38db5cd99b947da6cff8fde38c0dd9ed00d60bada3b7f1c45f5f39a738",
+    "draftSha256": "6119dc230a20dc69467fc216f25fb4b596846bdb8c48a412a9613510bb88a603",
     "seedAssignmentVersion": 1
   }
 }

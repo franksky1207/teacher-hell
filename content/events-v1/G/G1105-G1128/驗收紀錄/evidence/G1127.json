@@ -16,14 +16,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20536ee65683cf4225e33cf34d95757b82a87ed2ff4185542afb3a0293eb8544",
+      "checkedAt": "2026-11-27T17:26:48.412Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問總務是否有合規的低處栽培位置。",
+            "action": "查詢既有安全位置條件，不取得場地或保證植物存活。",
+            "tradeoff": "可能沒有地方。"
+          },
+          {
+            "id": 2,
+            "text": "與物主談是否願意將私有盆栽帶回家。",
+            "action": "提出合意收回非必要班級栽培的方案，不擅處分。",
+            "tradeoff": "少綠意，物主可能失落。"
+          },
+          {
+            "id": 3,
+            "text": "提議以植物原創照片取代實體高處展示。",
+            "action": "提出經作者同意的原創平面展示，不拍學生或當場地已准。",
+            "tradeoff": "少照顧樂趣，需整理。"
+          },
+          {
+            "id": 4,
+            "text": "邀校安另談什麼情況要即時口頭聯絡。",
+            "action": "提出成人額外溝通協作，不改法定通報與真實記錄。",
+            "tradeoff": "花空堂，可能怕衝突仍不說。"
+          },
+          {
+            "id": 5,
+            "text": "我願寫一張一般物品擺放的自用檢視卡。",
+            "action": "自製本人一般提醒工具，不讓學生背專業風險判定責任。",
+            "tradeoff": "多整理，未必記得。"
+          },
+          {
+            "id": 6,
+            "text": "不另建私人訊息默契，後續走正式聯繫管道。",
+            "action": "拒絕非必要私下保證，保留緊急即時聯繫與正式回報。",
+            "tradeoff": "關係可能冷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那張笑臉我看了更煩，不想再把盆栽養成誰被扣分的證據；願自費做一個低矮可搬的展示盒，先交總務看合不合適。",
+          "action": "提出本人預算的低矮展示盒設計及審視請求，未施工、未取得場地或許可，不放回高處。",
+          "tradeoff": "花錢與準備，可能被退案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3873239388
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "95601186980ec8ad552b9a3a2f54de63577569201e8b84fb870fc25ae24ed3fb"
+      },
+      "consequenceDirections": {
+        "A": "物主可不接受，總務可不核可；未准不擺放，不因投入而撤安全紀錄。",
+        "B": "邀約不代表機制已改善。",
+        "C": "未准不放回高處，安全前提共同維持。",
+        "D": "正式聯繫不能成為延誤急迫風險的藉口。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒電話工作意見與普通4溝通機制交流相近，改為實際空間工具投入提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問總務是否有合規的低處栽培位置。",
+                "action": "查詢既有安全位置條件，不取得場地或保證植物存活。",
+                "tradeoff": "可能沒有地方。"
+              },
+              {
+                "id": 2,
+                "text": "與物主談是否願意將私有盆栽帶回家。",
+                "action": "提出合意收回非必要班級栽培的方案，不擅處分。",
+                "tradeoff": "少綠意，物主可能失落。"
+              },
+              {
+                "id": 3,
+                "text": "提議以植物原創照片取代實體高處展示。",
+                "action": "提出經作者同意的原創平面展示，不拍學生或當場地已准。",
+                "tradeoff": "少照顧樂趣，需整理。"
+              },
+              {
+                "id": 4,
+                "text": "邀校安另談什麼情況要即時口頭聯絡。",
+                "action": "提出成人額外溝通協作，不改法定通報與真實記錄。",
+                "tradeoff": "花空堂，可能怕衝突仍不說。"
+              },
+              {
+                "id": 5,
+                "text": "我願寫一張一般物品擺放的自用檢視卡。",
+                "action": "自製本人一般提醒工具，不讓學生背專業風險判定責任。",
+                "tradeoff": "多整理，未必記得。"
+              },
+              {
+                "id": 6,
+                "text": "不另建私人訊息默契，後續走正式聯繫管道。",
+                "action": "拒絕非必要私下保證，保留緊急即時聯繫與正式回報。",
+                "tradeoff": "關係可能冷。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那張笑臉我看了更煩，想把這次非急迫意見用電話講一次，免得自己也只回一個更難看的貼圖。",
+              "action": "提出有界限成人電話交流請求，說明本人感受，不要求撤真實紀錄或配合才處理安全。",
+              "tradeoff": "耗休息，可能講得更僵。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1867693367
+            },
+            "selectedIds": [
+              3,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 5,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "eedbfd26dd602982d0193ac218af78cb84a86fdffb30f044289095aab710c3aa"
+          },
+          "previousConsequenceDirections": {
+            "A": "邀約不代表機制已改善。",
+            "B": "不能把打勾當專業安全確認。",
+            "C": "可不想拍，照片不代盆栽必要妥善安置。",
+            "D": "對方可拒接，教師不能以未接當惡意證據。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f3043fa6a76c1263e68223f50ed1f33b010c41c03e3384746faf0973a9543f2",
+    "draftSha256": "20536ee65683cf4225e33cf34d95757b82a87ed2ff4185542afb3a0293eb8544",
     "seedAssignmentVersion": 1
   }
 }

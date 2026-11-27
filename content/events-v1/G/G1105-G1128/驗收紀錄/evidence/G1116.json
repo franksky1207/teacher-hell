@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "00047c49b130949e0c03aeb288f63e01ae86869257cc50a182d4e22c081ce68d",
+      "checkedAt": "2026-11-27T17:26:48.396Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出我負擔自己額外主導那兩道，請大家確認。",
+            "action": "提出自願個人多負擔方案，不代他人同意，也不抹去原必要付款責任。",
+            "tradeoff": "私人支出增加。"
+          },
+          {
+            "id": 2,
+            "text": "按各自實際點用情況重新討論分帳。",
+            "action": "提出透明且合意的分攤方案，不強迫他人支付未同意消費。",
+            "tradeoff": "計算麻煩，可能尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "詢問店家合適的打包方式，願意者各自帶。",
+            "action": "提出安全合宜剩菜保存與自願帶回方案，不強迫吃完。",
+            "tradeoff": "要搬、保存未必方便。"
+          },
+          {
+            "id": 4,
+            "text": "問店家能否讓我自費訂一份同款招牌的做法介紹，下次自己學著做，不再起鬨大家點。",
+            "action": "詢問店家是否有合法公開食譜或付費教學資訊，未取得配方、報名或擅錄後廚，不影響本次公平結帳。",
+            "tradeoff": "可能被拒，若報名另花私人錢與時間。"
+          },
+          {
+            "id": 5,
+            "text": "提議下次大家先訂每人上限，再各自決定來不來。",
+            "action": "提出未來自願聚餐預算原則，未成立下次邀約。",
+            "tradeoff": "少即興點菜自由。"
+          },
+          {
+            "id": 6,
+            "text": "願意記下這次真實點菜份量，自己下次拿捏。",
+            "action": "自製私人消費備忘，不記朋友財務狀況或代全體定規則。",
+            "tradeoff": "得面對失控，花整理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點想逞強全請，卻更怕大家以後不敢約我；願意坦白我剛才就是想吃，另邀那位朋友下次只散步，不拿請客壓過他的難堪。",
+          "action": "提出不附消費交換的成人自願散步邀約，承認本人慾望，不免本次公平付款。",
+          "tradeoff": "要暴露失禮，可能約不到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1950806411
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "b4bf73c762227da12edf84cf6c8b041f4640783d1b57791ec6e93be21c8cfdef"
+      },
+      "consequenceDirections": {
+        "A": "朋友可拒絕，邀約不代表關係已修復或願意接受賠禮。",
+        "B": "朋友可不願被請，需另合意分攤。",
+        "C": "店家可提醒不宜久放，打包不抵銷付款責任。",
+        "D": "店家可無此服務，不能以詢問當自己已學會；朋友不被拉去付費。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4拒絕未存在續攤邀約且結清為共同責任，改為承接自己想吃的合法學習資訊詢問。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提出我負擔自己額外主導那兩道，請大家確認。",
+                "action": "提出自願個人多負擔方案，不代他人同意，也不抹去原必要付款責任。",
+                "tradeoff": "私人支出增加。"
+              },
+              {
+                "id": 2,
+                "text": "按各自實際點用情況重新討論分帳。",
+                "action": "提出透明且合意的分攤方案，不強迫他人支付未同意消費。",
+                "tradeoff": "計算麻煩，可能尷尬。"
+              },
+              {
+                "id": 3,
+                "text": "詢問店家合適的打包方式，願意者各自帶。",
+                "action": "提出安全合宜剩菜保存與自願帶回方案，不強迫吃完。",
+                "tradeoff": "要搬、保存未必方便。"
+              },
+              {
+                "id": 4,
+                "text": "先各自結清合意部分，今天不另續攤。",
+                "action": "拒絕本人額外續攤邀約，維持已成立合理付款責任。",
+                "tradeoff": "聚會提早散，朋友可能失落。"
+              },
+              {
+                "id": 5,
+                "text": "提議下次大家先訂每人上限，再各自決定來不來。",
+                "action": "提出未來自願聚餐預算原則，未成立下次邀約。",
+                "tradeoff": "少即興點菜自由。"
+              },
+              {
+                "id": 6,
+                "text": "願意記下這次真實點菜份量，自己下次拿捏。",
+                "action": "自製私人消費備忘，不記朋友財務狀況或代全體定規則。",
+                "tradeoff": "得面對失控，花整理。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點想逞強全請，卻更怕大家以後不敢約我；願意坦白我剛才就是想吃，另邀那位朋友下次只散步，不拿請客壓過他的難堪。",
+              "action": "提出不附消費交換的成人自願散步邀約，承認本人慾望，不免本次公平付款。",
+              "tradeoff": "要暴露失禮，可能約不到。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1250410579
+            },
+            "selectedIds": [
+              5,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "b2ee11cb2a8a6895c2b4334b60c8ab43c9fd7f1f1ad1a0105f78c1a1d9032b67"
+          },
+          "previousConsequenceDirections": {
+            "A": "朋友可拒絕，邀約不代表關係已修復或願意接受賠禮。",
+            "B": "不把不續攤當朋友小氣，帳務須真實協商。",
+            "C": "朋友可不願被請，需另合意分攤。",
+            "D": "朋友可不參加，不改本次已發生的消費。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a5a367f291c6e45a5f331897caf367ec3347ecff05df47cdac120f68a216b505",
+    "draftSha256": "00047c49b130949e0c03aeb288f63e01ae86869257cc50a182d4e22c081ce68d",
     "seedAssignmentVersion": 1
   }
 }

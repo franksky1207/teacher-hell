@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "24a4e84e7b6ca1aae7a1536bfad6bb6cdb601f2a0a9398cafc9ea244ddf81280",
+      "checkedAt": "2026-11-27T17:26:48.386Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出一份簡單的急迫聯繫分類草案，請家長確認。",
+            "action": "額外協商非緊急交流分類，不由家長否決法定必要聯繫。",
+            "tradeoff": "要整理，可能仍不同意。"
+          },
+          {
+            "id": 2,
+            "text": "把非急迫近況整理成一頁，供週五前自選閱讀。",
+            "action": "額外製作僅含其孩子必要可知範圍的一般摘要，不揭其他學生。",
+            "tradeoff": "占備課，可能不看。"
+          },
+          {
+            "id": 3,
+            "text": "邀家長把週五通話拆成兩次更短交流。",
+            "action": "提出替代非急迫親師時間邀請，未排定。",
+            "tradeoff": "自己多切換時間。"
+          },
+          {
+            "id": 4,
+            "text": "查詢正式家庭聯絡授權方式，讓他自願指定。",
+            "action": "提供合法授權條件資訊，不假定家人已同意或秘書可代理監護。",
+            "tradeoff": "需協調，未必有人。"
+          },
+          {
+            "id": 5,
+            "text": "提議週五讓家長先選三個最想問的非急迫問題，必要訊息另外照常說。",
+            "action": "提出非必要週結議程由家長自選焦點的交流方式，未取得同意，不漏報必要事項。",
+            "tradeoff": "可能談不到教師最想補充的近況。"
+          },
+          {
+            "id": 6,
+            "text": "另邀孩子自願談作業最卡住的一步。",
+            "action": "提出額外一般學習經驗交流，不代必要教學或追究他人責任。",
+            "tradeoff": "花課間，可能無答案。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被五分鐘壓得像報告機，願意坦白這週講不完，提出把一次額外成人長談放在我能準時結束的時間。",
+          "action": "提出有界限的額外成人交流邀請，明示本人結束時間，不代家長接受。",
+          "tradeoff": "可能多花一段空堂，也可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 393576196
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "c24242897655b34786c0191b2beeba151523975f4b9d78d56786989e0edcb865"
+      },
+      "consequenceDirections": {
+        "A": "家長可不選，議程取捨不能遮掉必要即時資訊。",
+        "B": "無人可代不減學生支持。",
+        "C": "家長可無法接受，必要溝通另照規定維持。",
+        "D": "長談不等問題已解決，必要責任不靠出席交換。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5拒絕未有前提的每日摘要，改為原已存在週結的實際議程取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提出一份簡單的急迫聯繫分類草案，請家長確認。",
+                "action": "額外協商非緊急交流分類，不由家長否決法定必要聯繫。",
+                "tradeoff": "要整理，可能仍不同意。"
+              },
+              {
+                "id": 2,
+                "text": "把非急迫近況整理成一頁，供週五前自選閱讀。",
+                "action": "額外製作僅含其孩子必要可知範圍的一般摘要，不揭其他學生。",
+                "tradeoff": "占備課，可能不看。"
+              },
+              {
+                "id": 3,
+                "text": "邀家長把週五通話拆成兩次更短交流。",
+                "action": "提出替代非急迫親師時間邀請，未排定。",
+                "tradeoff": "自己多切換時間。"
+              },
+              {
+                "id": 4,
+                "text": "查詢正式家庭聯絡授權方式，讓他自願指定。",
+                "action": "提供合法授權條件資訊，不假定家人已同意或秘書可代理監護。",
+                "tradeoff": "需協調，未必有人。"
+              },
+              {
+                "id": 5,
+                "text": "維持週五一般總結，不再多加每日摘要。",
+                "action": "拒絕額外非必要每日彙整，仍履行必要即時聯繫。",
+                "tradeoff": "家長可能覺得少資訊。"
+              },
+              {
+                "id": 6,
+                "text": "另邀孩子自願談作業最卡住的一步。",
+                "action": "提出額外一般學習經驗交流，不代必要教學或追究他人責任。",
+                "tradeoff": "花課間，可能無答案。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被五分鐘壓得像報告機，願意坦白這週講不完，提出把一次額外成人長談放在我能準時結束的時間。",
+              "action": "提出有界限的額外成人交流邀請，明示本人結束時間，不代家長接受。",
+              "tradeoff": "可能多花一段空堂，也可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1175917274
+            },
+            "selectedIds": [
+              5,
+              6,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": 2,
+              "D": "emotional"
+            },
+            "optionsDigest": "ee25c384a6435225fef72e6f955c08954cd5ac56b5fb0040162f0cf1230f2eb3"
+          },
+          "previousConsequenceDirections": {
+            "A": "可拒談，不能據此認定家庭失職。",
+            "B": "原默契不遮掉危險或急迫情況。",
+            "C": "未讀不能當重要訊息已送達證明。",
+            "D": "長談不等問題已解決，必要責任不靠出席交換。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b8af012657e9202cb7d8892a08b8b156d52c4b5f5fde2a3ac446b2df2deda1ce",
+    "draftSha256": "24a4e84e7b6ca1aae7a1536bfad6bb6cdb601f2a0a9398cafc9ea244ddf81280",
     "seedAssignmentVersion": 1
   }
 }

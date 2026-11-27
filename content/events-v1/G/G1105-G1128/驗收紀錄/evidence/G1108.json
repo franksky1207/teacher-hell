@@ -16,14 +16,82 @@
     "G07",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f3e5eed3f811ee627ba8e97c708a8064233a6edb7d3e3b14937484af5a7551fb",
+      "checkedAt": "2026-11-27T17:26:48.379Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起找原始研究的範圍，先不拿譯文改規定。",
+            "action": "額外查閱合法公開來源與限制，不宣稱已完成專業研究評析。",
+            "tradeoff": "占空堂，可能找不到全文。"
+          },
+          {
+            "id": 2,
+            "text": "提供一個班級可見的普通時鐘，少用手機看時間。",
+            "action": "以本人合法預算添置普通時鐘，不代替正式校時或剝奪聯絡。",
+            "tradeoff": "花錢，未必改善注意力。"
+          },
+          {
+            "id": 3,
+            "text": "提議用明確的課前說明取代每次臨場爭執。",
+            "action": "提出符合校規的教學說明腳本協作，不強制對方採用。",
+            "tradeoff": "要準備，仍可能有人違規。"
+          },
+          {
+            "id": 4,
+            "text": "詢問校方是否有合規的教學使用手機申請。",
+            "action": "查詢正式課程例外管道，未取得許可。",
+            "tradeoff": "可能程序多。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生自願提保管時真正不方便的事。",
+            "action": "提出不蒐敏感健康資料的一般使用需求徵詢。",
+            "tradeoff": "花時間，可能變抱怨。"
+          },
+          {
+            "id": 6,
+            "text": "不協辦放桌上方案，維持目前合規安排。",
+            "action": "拒絕非必要改制協作，不拒絕處理已知學生支持需求。",
+            "tradeoff": "同事可能覺得沒被體諒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再當手機警察，願意用自己的課先試一次不用手機的查資料任務，讓他看看不是只能抓人。",
+          "action": "提出本人授課權限內合法替代教學試作，不改他科規範、不預設成效。",
+          "tradeoff": "自己多備課，可能不好玩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3667762279
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "2e74b5fee2e20aae0f789142367ba51096cefe240f6cd766158dee85f52b8aed"
+      },
+      "consequenceDirections": {
+        "A": "學生可仍分心，示例不證明可解決所有保管爭議。",
+        "B": "查不到須承認，必要合理支持仍維持。",
+        "C": "腳本不免正當處理與必要照顧。",
+        "D": "仍須由權責支持疲勞教師，不用維持規範逼其冒險。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29ca50add95875703ce93859e73eaeab49761b4856ec18f9681e3984a9a88e00",
+    "draftSha256": "f3e5eed3f811ee627ba8e97c708a8064233a6edb7d3e3b14937484af5a7551fb",
     "seedAssignmentVersion": 1
   }
 }

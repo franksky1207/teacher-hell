@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "99376f49621c1def437211e3a3fdf8fa4816bb21f8aaaf99d075b2e7aa091e3f",
+      "checkedAt": "2026-11-27T17:26:48.384Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問清楚檢查費、保固依據與報價，不立即同意。",
+            "action": "詢問正式售後條件，未授權付費維修或承認個人耗損。",
+            "tradeoff": "花時間，可能仍推託。"
+          },
+          {
+            "id": 2,
+            "text": "循既有消費爭議管道提出具體申訴。",
+            "action": "就可知交易事實正式提出消費申訴，不保證退換。",
+            "tradeoff": "需準備，可能耗時。"
+          },
+          {
+            "id": 3,
+            "text": "詢問其他合格維修端的檢查條件。",
+            "action": "查詢合法專業檢測資訊，不拆機或取得故障結論。",
+            "tradeoff": "可能另收費。"
+          },
+          {
+            "id": 4,
+            "text": "暫不買新機，先用家裡既有安全通風方式。",
+            "action": "停止新增購物決定，在不影響健康必要措施下採既有可行居家安排。",
+            "tradeoff": "舒適度可能下降。"
+          },
+          {
+            "id": 5,
+            "text": "找一個有經驗的成人朋友，請他陪看保固條款。",
+            "action": "提出私人自願條款閱讀邀請，不代朋友承諾專業責任。",
+            "tradeoff": "可能丟臉，也花對方時間。"
+          },
+          {
+            "id": 6,
+            "text": "整理真實使用紀錄，寫一篇標明未查明原因的心得。",
+            "action": "撰寫可核實私人消費體驗，不宣稱推薦文必為公關或揭客服個資。",
+            "tradeoff": "花時間，可能被爭辯。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心就這樣丟著，願意提出有費用上限的原廠送檢委託，先要書面條件，不急著換新。",
+          "action": "提出以本人預算負擔、有上限及書面條件的專業送檢委託請求，未獲承接、付款或得到檢測結論。",
+          "tradeoff": "若成立會多花一筆，可能仍修不好。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1752120424
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "7f21290e42d80aeebd27b53b959f108c0663c3063fad496126ba8bf03a33cda9"
+      },
+      "consequenceDirections": {
+        "A": "讀者可不認同，心得不使廠商依法必退。",
+        "B": "受理不等勝訴或退款，不捏造使用情況。",
+        "C": "廠商可拒絕條件，未委託前不送修；私人付費不放棄法定權益。",
+        "D": "朋友可拒，意見不代法律或檢測結論。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒不新購與普通4近同，改為自願承擔送檢成本與條件委託，不冒稱已檢出結果。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "先問清楚檢查費、保固依據與報價，不立即同意。",
+                "action": "詢問正式售後條件，未授權付費維修或承認個人耗損。",
+                "tradeoff": "花時間，可能仍推託。"
+              },
+              {
+                "id": 2,
+                "text": "循既有消費爭議管道提出具體申訴。",
+                "action": "就可知交易事實正式提出消費申訴，不保證退換。",
+                "tradeoff": "需準備，可能耗時。"
+              },
+              {
+                "id": 3,
+                "text": "詢問其他合格維修端的檢查條件。",
+                "action": "查詢合法專業檢測資訊，不拆機或取得故障結論。",
+                "tradeoff": "可能另收費。"
+              },
+              {
+                "id": 4,
+                "text": "暫不買新機，先用家裡既有安全通風方式。",
+                "action": "停止新增購物決定，在不影響健康必要措施下採既有可行居家安排。",
+                "tradeoff": "舒適度可能下降。"
+              },
+              {
+                "id": 5,
+                "text": "找一個有經驗的成人朋友，請他陪看保固條款。",
+                "action": "提出私人自願條款閱讀邀請，不代朋友承諾專業責任。",
+                "tradeoff": "可能丟臉，也花對方時間。"
+              },
+              {
+                "id": 6,
+                "text": "整理真實使用紀錄，寫一篇標明未查明原因的心得。",
+                "action": "撰寫可核實私人消費體驗，不宣稱推薦文必為公關或揭客服個資。",
+                "tradeoff": "花時間，可能被爭辯。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我偏不想再花錢證明自己眼光差，今晚把購物網站關掉，原本換機的預算先留著，忍住找下一個冷門神牌。",
+              "action": "決定當晚不新增購買、保留私人預算，必要故障處理與合法權益不撤。",
+              "tradeoff": "繼續沒有機器可用，也得忍住不甘心。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2319271998
+            },
+            "selectedIds": [
+              1,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "a762e82ad3fabf42e5174f99695e2fb32ead5106f7244d9b041ae7dfa6bde7c5"
+          },
+          "previousConsequenceDirections": {
+            "A": "讀者可不認同，心得不使廠商依法必退。",
+            "B": "之後仍可能需要設備，不將不買當故障已解決。",
+            "C": "受理不等勝訴或退款，不捏造使用情況。",
+            "D": "報價可不接受，必要證據與權益仍保留。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5a81d09d6cb9705103de59fc3d54abc15cc3ad1bd634eb784baf2c85fe6a4db8",
+    "draftSha256": "99376f49621c1def437211e3a3fdf8fa4816bb21f8aaaf99d075b2e7aa091e3f",
     "seedAssignmentVersion": 1
   }
 }

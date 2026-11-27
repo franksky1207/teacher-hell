@@ -16,14 +16,82 @@
     "G04",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f7a4de88bf52bb642804d0946056d47970ac62cf7f47f46f9df0e7dc36bfeab0",
+      "checkedAt": "2026-11-27T17:26:48.411Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "減去本人可調的一次額外小考，換成不計分練習。",
+            "action": "調整本人有權且不影響必要評量的額外測驗安排，非改他科。",
+            "tradeoff": "少一次檢核，需另設回饋。"
+          },
+          {
+            "id": 2,
+            "text": "向科任提出跨科額外小考排程協調。",
+            "action": "提出合法共同排程邀請，未取得同意或改動校定考試。",
+            "tradeoff": "需時間，可能談不攏。"
+          },
+          {
+            "id": 3,
+            "text": "徵詢全班自願的一般學習負荷感受。",
+            "action": "蒐集去識別一般負擔意見，不要求健康證明。",
+            "tradeoff": "整理耗時。"
+          },
+          {
+            "id": 4,
+            "text": "提供校方既有課程意見管道，讓家長自選提出。",
+            "action": "提供合法入口，不代陳情或保證改課。",
+            "tradeoff": "可能被認為推事。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一份可公開的評量目的對照說明。",
+            "action": "額外整理本人可核實的一般測驗用途，不揭他科未公開試題。",
+            "tradeoff": "花備課，未必說服。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長分享非個資的接送觀察，另交權責端參考。",
+            "action": "提出成人自願一般觀察彙整邀請，不要求跟拍或辨識學生。",
+            "tradeoff": "要再約，可能無新增資訊。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他問得我有點刺痛，想把自己那份寫滿的補考訂正單重做成一張能選題的練習，不再用厚度讓我安心。",
+          "action": "自願重編本人可調的額外練習，以合法內容提供選擇，不取消必要補救或評量。",
+          "tradeoff": "自己重做費時，少了全做的控制感。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4250179738
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "06fb8ac76f785bfd2aee04ea0ae6298e55f0c149a9c3f68de888af2de1744010"
+      },
+      "consequenceDirections": {
+        "A": "學生可仍選不到適合內容，不能保證自主選題有效。",
+        "B": "感受不等因果研究，不能診斷他人。",
+        "C": "說明不證明現有密度必然合理。",
+        "D": "學生可仍疲倦，不能保證少考即提升學習。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "689f67962c0fdd0fe54d930dc3ad8ba678ea9ebcde1222133696cfaf69d7292c",
+    "draftSha256": "f7a4de88bf52bb642804d0946056d47970ac62cf7f47f46f9df0e7dc36bfeab0",
     "seedAssignmentVersion": 1
   }
 }

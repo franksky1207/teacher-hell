@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c8bd4d063ba26db1bdaf45a9229c62153b6da702ed308e3a01dd07bd2e152894",
+      "checkedAt": "2026-11-27T17:26:48.394Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "詢問總務可否增加合規置物空間。",
+            "action": "提出額外收納資源詢問，未取得櫃體或批准施工。",
+            "tradeoff": "可能無預算。"
+          },
+          {
+            "id": 2,
+            "text": "邀學生提出不擋通道的自願收納配置草圖。",
+            "action": "提出紙上空間規畫，不讓學生搬消防設備或做危險測試。",
+            "tradeoff": "占班務，可能放不下。"
+          },
+          {
+            "id": 3,
+            "text": "我願整理一次不用拿器材的消防位置辨識活動。",
+            "action": "額外準備一般消防識讀素材，不實作取放或假稱已會操作。",
+            "tradeoff": "花備課，可能重複。"
+          },
+          {
+            "id": 4,
+            "text": "請他與我另約工作溝通，別把兩次事混成一個指控。",
+            "action": "提出成人自願分案交流邀約，不阻擋合法問責。",
+            "tradeoff": "可能更僵，要花時間。"
+          },
+          {
+            "id": 5,
+            "text": "詢問校方既有巡檢紀錄的正常查閱方式。",
+            "action": "查詢本人合法可閱資料程序，不要求刪除真實紀錄。",
+            "tradeoff": "需要等待。"
+          },
+          {
+            "id": 6,
+            "text": "暫不增加班級收納工具，讓同學依現有合規位置收好。",
+            "action": "選擇不新增物資的現場安排，必要清除障礙已共同完成。",
+            "tradeoff": "便利受限，需維持秩序。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他在大家面前翻舊帳，我很想頂回去；這次想把非必要討論改成書面，讓我先寫清楚再回，不在辦公室互吼。",
+          "action": "提出後續非急迫工作意見採書面交換，不延誤當下必要真實回報或法定處理。",
+          "tradeoff": "寫作耗時，對方可能覺得疏遠。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3852810871
+        },
+        "selectedIds": [
+          3,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "4daf5bd5ae7d31428e372885af52a7b3e4cf0d32cb2ea87c99cc3496ca343254"
+      },
+      "consequenceDirections": {
+        "A": "不能把額外工具缺乏當安全不落實理由。",
+        "B": "校安可不接受私下形式要求，正式必要程序仍照辦。",
+        "C": "查詢不等取閱或更正成功。",
+        "D": "活動不代依法必要教育與檢查。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2e173c25b5342ea6b9f7f78466d6f1d7348275bd89e5e8a0e65b710234f2abb2",
+    "draftSha256": "c8bd4d063ba26db1bdaf45a9229c62153b6da702ed308e3a01dd07bd2e152894",
     "seedAssignmentVersion": 1
   }
 }

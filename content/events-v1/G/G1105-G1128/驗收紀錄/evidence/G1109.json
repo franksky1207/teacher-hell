@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b1d21172a6841788a4dfa8bce76047e18e527ff3022e154a2faa13a81dc1562d",
+      "checkedAt": "2026-11-27T17:26:48.381Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提一次一般口頭意見，不加入作者。",
+            "action": "提出有限成人交流，不承諾署名或重寫，依賽規正確揭露必要協助。",
+            "tradeoff": "少參賽機會，可能仍花時間。"
+          },
+          {
+            "id": 2,
+            "text": "先談清可行分工，再決定是否實質共同創作。",
+            "action": "提出符合賽規的共同創作協商，未完成合作或取得資格。",
+            "tradeoff": "須投入，可能談不攏。"
+          },
+          {
+            "id": 3,
+            "text": "提供已公開的教案組織資源，讓他自己改。",
+            "action": "提供合法公開資訊，不閱未授權資料、不代寫。",
+            "tradeoff": "意見不夠貼近。"
+          },
+          {
+            "id": 4,
+            "text": "婉拒這次複審協作，請他按原作者送。",
+            "action": "拒絕額外合作，不影響正常同事工作關係與必要配合。",
+            "tradeoff": "錯過比賽，也可能更尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "問他是否願意先做一張不用學生資料的教案流程圖。",
+            "action": "提出作者自選流程整理建議，不假定已授權共同編輯。",
+            "tradeoff": "要重整，未必有用。"
+          },
+          {
+            "id": 6,
+            "text": "詢問教學端是否有正式作品諮詢時段。",
+            "action": "查詢既有資源，不代報名、取得審稿或新增作者。",
+            "tradeoff": "可能沒有時段。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想拿這次機會，但不想靠一盒點心裝沒事；願意另約一段，把借室那次先講開，再談要不要一起做。",
+          "action": "提出一次自願成人舊事交流邀約，未和解或答應參賽，不將必要權益作交換。",
+          "tradeoff": "要碰不舒服的事，可能兩件都談不成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1947942376
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "31853afeecb837dedbe963f1d44663eacee20c69c38b4a9c909daa49419f1535"
+      },
+      "consequenceDirections": {
+        "A": "對方可不願談，不能要求原諒或以同意聊天當正常工作條件。",
+        "B": "圖可不製作，建議不等參賽完成。",
+        "C": "若無共識不假掛名，舊借室問題另處理。",
+        "D": "同事可失望，不能藉比賽報復借室爭議。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9961adc77ac9ae899bfdb006a7e09b465e1ada155d5b5aa0f688c323611cda12",
+    "draftSha256": "b1d21172a6841788a4dfa8bce76047e18e527ff3022e154a2faa13a81dc1562d",
     "seedAssignmentVersion": 1
   }
 }

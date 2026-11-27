@@ -15,14 +15,155 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "71c8f2e52804e9fa7c1a5e1348f3b13399b5f097a2319c72825f57f434507d7e",
+      "checkedAt": "2026-11-27T17:26:48.409Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議本人班務鐘前預留三分鐘收尾，先試一週。",
+            "action": "提出自身可調班務排程試行，不替其他科代定，必要課務不縮減。",
+            "tradeoff": "少討論時間，可能仍不夠。"
+          },
+          {
+            "id": 2,
+            "text": "將非急迫班務改成事前書面徵詢，課內只談重點。",
+            "action": "自願重編本人非必要班務呈現，不把必要知情全丟紙本。",
+            "tradeoff": "增加整理，未必有人讀。"
+          },
+          {
+            "id": 3,
+            "text": "詢問教務能否調整合規收發器材時段。",
+            "action": "提出非必要收發排程協調，未獲准或取得代班。",
+            "tradeoff": "可能無彈性。"
+          },
+          {
+            "id": 4,
+            "text": "我願把本人可處理的額外紙本分類先做好，減少他等待。",
+            "action": "自願事前分類合法可接觸的一般資料，不代科任評分或擅動專業器材。",
+            "tradeoff": "多花備課。"
+          },
+          {
+            "id": 5,
+            "text": "提議用教師自己的計時提醒，不增加學生提醒職務。",
+            "action": "於本人班務設非必要自我計時工具，不用聲音干擾或苛責學生。",
+            "tradeoff": "可能打斷討論，仍會忘。"
+          },
+          {
+            "id": 6,
+            "text": "不答應固定提前五分鐘清場，改循課務協調談合理界線。",
+            "action": "拒絕單方縮短必要教學，提出合規協調請求，不為本次拖堂辯解。",
+            "tradeoff": "同事可能更不滿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的怕自己下次又捨不得停，願意向教學端申請一次成人觀課，請人看我怎麼收尾，不再只說會注意。",
+          "action": "提出經權責與必要同意的成人班務觀課請求，不錄學生影像、不保證有人到場，不代替必要準時責任。",
+          "tradeoff": "暴露自己拖拉，須協調時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2890600729
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "bb05f5bdee314a482f39198adceba5c6c779b76ee633c18607d0f6bfb7447376"
+      },
+      "consequenceDirections": {
+        "A": "提醒不代必要準時義務。",
+        "B": "必要準時與交接共同維持，不等協調才改掉拖延。",
+        "C": "未讀不能當已同意，必要互動仍保留。",
+        "D": "可無人接受，觀課也不保證永不拖堂，當下必要交接已共同完成。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒今日放下未完議題已接近開場結束拖堂，改為額外外部觀察邀請。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提議本人班務鐘前預留三分鐘收尾，先試一週。",
+                "action": "提出自身可調班務排程試行，不替其他科代定，必要課務不縮減。",
+                "tradeoff": "少討論時間，可能仍不夠。"
+              },
+              {
+                "id": 2,
+                "text": "將非急迫班務改成事前書面徵詢，課內只談重點。",
+                "action": "自願重編本人非必要班務呈現，不把必要知情全丟紙本。",
+                "tradeoff": "增加整理，未必有人讀。"
+              },
+              {
+                "id": 3,
+                "text": "詢問教務能否調整合規收發器材時段。",
+                "action": "提出非必要收發排程協調，未獲准或取得代班。",
+                "tradeoff": "可能無彈性。"
+              },
+              {
+                "id": 4,
+                "text": "我願把本人可處理的額外紙本分類先做好，減少他等待。",
+                "action": "自願事前分類合法可接觸的一般資料，不代科任評分或擅動專業器材。",
+                "tradeoff": "多花備課。"
+              },
+              {
+                "id": 5,
+                "text": "提議用教師自己的計時提醒，不增加學生提醒職務。",
+                "action": "於本人班務設非必要自我計時工具，不用聲音干擾或苛責學生。",
+                "tradeoff": "可能打斷討論，仍會忘。"
+              },
+              {
+                "id": 6,
+                "text": "不答應固定提前五分鐘清場，改循課務協調談合理界線。",
+                "action": "拒絕單方縮短必要教學，提出合規協調請求，不為本次拖堂辯解。",
+                "tradeoff": "同事可能更不滿。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我很想說他也太急，卻知道是自己不放手；願意把我最想講的那個非急迫班務留到下週，今天讓它真的沒結論。",
+              "action": "放棄本人可延後的額外議題即時完成欲，不取消必要事項或既有權益。",
+              "tradeoff": "自己要忍住懸著，之後仍需處理。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1518693488
+            },
+            "selectedIds": [
+              1,
+              4,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 1,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "7d3b245042fbed2c36ca8b7ad6801bb42c838a924a57d0fb63bc7dabe9b4aeb1"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可不用此方式，不代表所有工作已轉交。",
+            "B": "須依真實可行性調整，不承諾零延誤。",
+            "C": "必要準時與交接共同維持，不等協調才改掉拖延。",
+            "D": "學生可能鬆口氣或疑惑，不能把延後當事情已解決。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f7621dc2d56d473d49f2947e3a581f71fe0535f40dbfd3fd8d7383e999e1586",
+    "draftSha256": "71c8f2e52804e9fa7c1a5e1348f3b13399b5f097a2319c72825f57f434507d7e",
     "seedAssignmentVersion": 1
   }
 }

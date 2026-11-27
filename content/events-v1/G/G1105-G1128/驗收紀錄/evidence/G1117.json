@@ -15,14 +15,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b62ce2d2d6732522951f175fcdd52190f38445f1779c8a93cf4d81d67efcd111",
+      "checkedAt": "2026-11-27T17:26:48.397Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自願在班上分享一個準備小技巧。",
+            "action": "提出不誇大成就的自願經驗分享，未取得孩子同意。",
+            "tradeoff": "占班務，可能被拒。"
+          },
+          {
+            "id": 2,
+            "text": "提供既有競賽進階準備資源資訊。",
+            "action": "提供合法公開資源，不代報名或承諾進決賽。",
+            "tradeoff": "可能不適用。"
+          },
+          {
+            "id": 3,
+            "text": "問家長是否願意留一段私下肯定，由孩子自選收不收。",
+            "action": "提出家人合意私人訊息邀請，不代孩子接受。",
+            "tradeoff": "需要聯絡，可能尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "不另加班級活動，保留孩子正常準備時間。",
+            "action": "婉拒額外公開安排，仍維持必要學習支持。",
+            "tradeoff": "家長可能失落。"
+          },
+          {
+            "id": 5,
+            "text": "協助查閱主辦單位可公開的下一輪流程。",
+            "action": "額外查詢正式賽程條件，不代判獎項或保證資格。",
+            "tradeoff": "花時間，可能資訊未出。"
+          },
+          {
+            "id": 6,
+            "text": "提議作者自願畫一張不寫名次的準備流程圖，供想看的人自選。",
+            "action": "提出原創過程圖新製作方案，不要求作者公開自己或代其同意，不冒充獎狀。",
+            "tradeoff": "要創作，少即時掌聲。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說趁熱我也被勾起好勝，願意跟孩子約一次互相問難題，讓他有個不用上台也能較勁的對象。",
+          "action": "提出使用合法公開題材的教師本人自願問答邀約，不替孩子承諾參與或改正式待遇。",
+          "tradeoff": "自己要準備，可能輸得難看。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 219974214
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "a1e0df1360152fc5d698f941cab7ba0df5a12a11e470af5288d72cf373e0c85d"
+      },
+      "consequenceDirections": {
+        "A": "作者可拒，圖不改正式表揚資格，也不推廣未核可產品。",
+        "B": "資訊不等已取得指導。",
+        "C": "孩子可拒絕，勝負不證明比賽水準或改表揚資格。",
+        "D": "孩子可拒收，不當成已被安慰。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6全班進展分享涵蓋普通1個人準備分享，改為不同的原創圖產物。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀孩子自願在班上分享一個準備小技巧。",
+                "action": "提出不誇大成就的自願經驗分享，未取得孩子同意。",
+                "tradeoff": "占班務，可能被拒。"
+              },
+              {
+                "id": 2,
+                "text": "提供既有競賽進階準備資源資訊。",
+                "action": "提供合法公開資源，不代報名或承諾進決賽。",
+                "tradeoff": "可能不適用。"
+              },
+              {
+                "id": 3,
+                "text": "問家長是否願意留一段私下肯定，由孩子自選收不收。",
+                "action": "提出家人合意私人訊息邀請，不代孩子接受。",
+                "tradeoff": "需要聯絡，可能尷尬。"
+              },
+              {
+                "id": 4,
+                "text": "不另加班級活動，保留孩子正常準備時間。",
+                "action": "婉拒額外公開安排，仍維持必要學習支持。",
+                "tradeoff": "家長可能失落。"
+              },
+              {
+                "id": 5,
+                "text": "協助查閱主辦單位可公開的下一輪流程。",
+                "action": "額外查詢正式賽程條件，不代判獎項或保證資格。",
+                "tradeoff": "花時間，可能資訊未出。"
+              },
+              {
+                "id": 6,
+                "text": "提議全班自願分享不同的小進展，不設競賽排名。",
+                "action": "提出全新非強制成長交流，不以孩子為宣傳主角。",
+                "tradeoff": "需籌備，可能沒人想講。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他說趁熱我也被勾起好勝，願意跟孩子約一次互相問難題，讓他有個不用上台也能較勁的對象。",
+              "action": "提出使用合法公開題材的教師本人自願問答邀約，不替孩子承諾參與或改正式待遇。",
+              "tradeoff": "自己要準備，可能輸得難看。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 938048701
+            },
+            "selectedIds": [
+              2,
+              1,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 1,
+              "D": 6
+            },
+            "optionsDigest": "bae3c613f9f8886741e2774a34cca93cc01f9633381d3728cb5674c88d8f28ec"
+          },
+          "previousConsequenceDirections": {
+            "A": "孩子可拒絕，勝負不證明比賽水準或改表揚資格。",
+            "B": "資訊不等已取得指導。",
+            "C": "不以分享換正式表揚，孩子可不公開。",
+            "D": "不以活動替代或冒充正式校級表揚。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "584d647209efe4c7ba445053f0efab132b44f2b958a75bfeea7fc92404a482d1",
+    "draftSha256": "b62ce2d2d6732522951f175fcdd52190f38445f1779c8a93cf4d81d67efcd111",
     "seedAssignmentVersion": 1
   }
 }

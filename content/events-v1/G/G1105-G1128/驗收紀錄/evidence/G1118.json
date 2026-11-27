@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "da7cd81e2556c259d99adf64702639be0dcc386fd153af4e1673527ff92019de",
+      "checkedAt": "2026-11-27T17:26:48.398Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "限定再陪十分鐘，只走官方頁面，完成不了就停。",
+            "action": "提出有限私人操作協助，不保證掛號成功或接管帳戶。",
+            "tradeoff": "繼續壓縮休息。"
+          },
+          {
+            "id": 2,
+            "text": "提供官方電話與臨櫃資訊，今晚不再操作。",
+            "action": "給可核實正式醫院掛號入口，結束本人額外線上協助。",
+            "tradeoff": "鄰居可能失望。"
+          },
+          {
+            "id": 3,
+            "text": "問他是否有願意聯絡的熟人，可自行請對方幫忙。",
+            "action": "提出成人自願另找協助的選擇，不假定有親屬或代傳帳密。",
+            "tradeoff": "可能沒有人。"
+          },
+          {
+            "id": 4,
+            "text": "在他同意下寫一張不含帳密的操作步驟。",
+            "action": "製作私人原創操作提示，敏感資料不記錄。",
+            "tradeoff": "花時間，頁面可能變。"
+          },
+          {
+            "id": 5,
+            "text": "我願從醫院公開資料整理一張大字交通與服務位置圖，明天由他自己決定怎麼去。",
+            "action": "自願依可核實官方資料製作位置資訊，不安排交通、不預約服務或保證掛號，無資料則明說。",
+            "tradeoff": "花私人時間，可能用不上。"
+          },
+          {
+            "id": 6,
+            "text": "我先上樓吃飯，若今晚還有餘力再由他決定要不要問一次。",
+            "action": "結束當下非必要協助，不承諾晚間一定回來。",
+            "tradeoff": "可能內疚，也可能被等候。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一直道歉我反而不想再教，願意問他要不要先坐著陪我把便當吃完，手機放下，今天別再比誰比較能撐。",
+          "action": "提出成人自願短暫相伴邀請，暫停操作但不宣稱掛號完成，不耽誤急迫求醫。",
+          "tradeoff": "便當冷了，自己又晚些休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 200706911
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "1f13a9f19dc8c1116fba7ed46fe4628e5c390d79251dc0d37a5e1d6eb4a41a3f"
+      },
+      "consequenceDirections": {
+        "A": "鄰居可拒絕，陪伴不能替代掛號與醫療服務。",
+        "B": "須明說不保證續幫，不能讓他以為事情已辦妥。",
+        "C": "無人可幫不等可讓教師無限接手。",
+        "D": "路線資訊可變動，不能用圖替代必要查詢或急迫醫療。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5建議臨櫃近普通2提供電話臨櫃資訊，改為教師另做具體位置圖。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "限定再陪十分鐘，只走官方頁面，完成不了就停。",
+                "action": "提出有限私人操作協助，不保證掛號成功或接管帳戶。",
+                "tradeoff": "繼續壓縮休息。"
+              },
+              {
+                "id": 2,
+                "text": "提供官方電話與臨櫃資訊，今晚不再操作。",
+                "action": "給可核實正式醫院掛號入口，結束本人額外線上協助。",
+                "tradeoff": "鄰居可能失望。"
+              },
+              {
+                "id": 3,
+                "text": "問他是否有願意聯絡的熟人，可自行請對方幫忙。",
+                "action": "提出成人自願另找協助的選擇，不假定有親屬或代傳帳密。",
+                "tradeoff": "可能沒有人。"
+              },
+              {
+                "id": 4,
+                "text": "在他同意下寫一張不含帳密的操作步驟。",
+                "action": "製作私人原創操作提示，敏感資料不記錄。",
+                "tradeoff": "花時間，頁面可能變。"
+              },
+              {
+                "id": 5,
+                "text": "邀他明日另到醫院正式服務台詢問。",
+                "action": "建議循官方協助，自主決定，未預約櫃台或安排交通。",
+                "tradeoff": "可能多跑一趟。"
+              },
+              {
+                "id": 6,
+                "text": "我先上樓吃飯，若今晚還有餘力再由他決定要不要問一次。",
+                "action": "結束當下非必要協助，不承諾晚間一定回來。",
+                "tradeoff": "可能內疚，也可能被等候。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他一直道歉我反而不想再教，願意問他要不要先坐著陪我把便當吃完，手機放下，今天別再比誰比較能撐。",
+              "action": "提出成人自願短暫相伴邀請，暫停操作但不宣稱掛號完成，不耽誤急迫求醫。",
+              "tradeoff": "便當冷了，自己又晚些休息。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3343629153
+            },
+            "selectedIds": [
+              2,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "fc2ac61008ebfbf5f3d9d4e62a821444ecc23299b8936147a9e19f8a283188f7"
+          },
+          "previousConsequenceDirections": {
+            "A": "鄰居可拒絕，陪伴不能替代掛號與醫療服務。",
+            "B": "可能仍失敗，到時須依約停下而非冒稱已掛好。",
+            "C": "不能保證明天一定掛得上，急迫症狀另求醫。",
+            "D": "電話可已下班，資訊不代表掛號完成。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3562f0d6211b07c75ee7fe1bcbe71e938876e20cbed40df365e1b84cd528f8ae",
+    "draftSha256": "da7cd81e2556c259d99adf64702639be0dcc386fd153af4e1673527ff92019de",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6f0383e7c58f273f8a78d06cf8481893eaf6a129c89149aac409e2ba59057940",
+      "checkedAt": "2026-11-27T14:55:21.598Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只收好本人收據，今天結束運動回家。",
+            "action": "玩家已收存本人消費紀錄並結束當晚非必要活動，不逃既有費用。",
+            "tradeoff": "放鬆被尷尬打斷"
+          },
+          {
+            "id": 2,
+            "text": "向櫃檯詢問本人會員真正包含的項目。",
+            "action": "玩家已查詢本人會員現有權益，未取得新優惠或退費。",
+            "tradeoff": "要再花時間"
+          },
+          {
+            "id": 3,
+            "text": "私下告知常客剛才的說法不準，不要求他賠。",
+            "action": "玩家已向原傳訊者作本人可核實的有限費用更正，不索賠或定罪。",
+            "tradeoff": "可能回得不客氣"
+          },
+          {
+            "id": 4,
+            "text": "按正常管道反映標示是否可再清楚，不拍人上網。",
+            "action": "玩家已提出限本人實際經驗的有限標示改善意見，不取得採用或補償。",
+            "tradeoff": "可能看起來像自己找台階"
+          },
+          {
+            "id": 5,
+            "text": "在原時間與身體可行範圍繼續免費已含的運動項目，不再用椅子。",
+            "action": "玩家已選用本人現有會員合法項目，不新增按摩使用或保證身體改善。",
+            "tradeoff": "少了原本想休息的方式"
+          },
+          {
+            "id": 6,
+            "text": "詢問場館是否有可用的正常付費方案，今天不再買。",
+            "action": "玩家已查詢場館正常公開付費方案，不購買新服務或取得退費。",
+            "tradeoff": "沒省到這次費"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還想保住自己不是不看字的人，請櫃檯若有空讓我自己指一次價目在哪；看完承認就是我漏看，不拖常客來公審。",
+          "action": "玩家已提出需店方方便時的有限價目位置確認請求，未取得協助、優惠或完成爭議處理。",
+          "tradeoff": "顯得很在意面子，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 421661999
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "662bc8fac93cc718243c5ab7274c9fe58a2d833b28cd27a365ac97aa0e17639b"
+      },
+      "consequenceDirections": {
+        "A": "可結束耗損，必要費用與異議仍照程序。",
+        "B": "可停止誤訊，不用交情定對方故意騙人。",
+        "C": "玩家實際核讀本人漏看的收費標示，不假稱無告知或用認錯換減免。",
+        "D": "可有服務建議，不能假稱原告示完全沒有。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1c254e90167225f8dfb73529c5f75b2681cabfaeac946819383431b1e5424962",
+    "draftSha256": "6f0383e7c58f273f8a78d06cf8481893eaf6a129c89149aac409e2ba59057940",
     "seedAssignmentVersion": 1
   }
 }

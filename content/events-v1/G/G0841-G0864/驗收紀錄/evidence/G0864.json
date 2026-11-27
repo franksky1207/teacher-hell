@@ -15,14 +15,82 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2106e2a0c9e63e4a108108736a627677d6bcf5d9bad92e7e8be569d3fe3e6b4c",
+      "checkedAt": "2026-11-27T14:55:21.604Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原總務查可公開的維護紀錄，查到再如實回覆。",
+            "action": "導師已提出限可公開內容的維護紀錄查詢，未取得紀錄或承諾改善完成。",
+            "tradeoff": "要等，也可能不是學校管"
+          },
+          {
+            "id": 2,
+            "text": "提供校方原交通聯繫窗口，不再私下當維護中介。",
+            "action": "導師已提供既有正式交通聯繫資訊，不取得工程回覆或撤必要交接。",
+            "tradeoff": "家長要再聯繫"
+          },
+          {
+            "id": 3,
+            "text": "建議原權責依實際管轄轉報，不替別單位答日期。",
+            "action": "導師已向原校方權責提出有限管轄確認及轉報需求，未取得受理或施工。",
+            "tradeoff": "流程可能長"
+          },
+          {
+            "id": 4,
+            "text": "在原合法資訊範圍整理已知接送注意事項，不談未確認剪樹時間。",
+            "action": "導師已提供本人可確認的有限現行接送資訊，不核定新動線。",
+            "tradeoff": "家長可能覺得沒答那一問"
+          },
+          {
+            "id": 5,
+            "text": "若家長願，請他向原窗口提供本人在安全處看到的具體位置。",
+            "action": "導師已提出限安全合法觀察的自願位置回饋邀請，未取得資料或志工資格。",
+            "tradeoff": "要再說一遍"
+          },
+          {
+            "id": 6,
+            "text": "必要事項交接後按原放學工作走，不加門口延伸討論。",
+            "action": "導師已結束本人非急門口延伸對話，維持原必要安全接續。",
+            "tradeoff": "看起來像急著走"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每次只說不清楚，這次自己多接一次原窗口追蹤，回覆就算仍未知也照實說，不陪他猜樹何時會短。",
+          "action": "導師已提出本人本次有限維護進度聯繫安排，不取得修剪核准或完成結果。",
+          "tradeoff": "自己的可用時間被占，也可能沒得到好消息"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2191300846
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "77246eee7a65ef278634002a2dae174dd348ac7ac3d529ea04c2ad487da7875e"
+      },
+      "consequenceDirections": {
+        "A": "教師承接有限額外進度聯繫，不保證工程或把追蹤成為唯一必要安全保障。",
+        "B": "可有事實來源，不叫他監工或進車流拍照。",
+        "C": "可回權責，不以轉介代已需完成的必要安全處理。",
+        "D": "可釐清管轄，不把查詢當已修剪。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "03ffd74371af0b80e4b2e8233cbacd9924854673726896c2ea5b48b0c32f72d0",
+    "draftSha256": "2106e2a0c9e63e4a108108736a627677d6bcf5d9bad92e7e8be569d3fe3e6b4c",
     "seedAssignmentVersion": 1
   }
 }

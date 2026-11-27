@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "88140a851eee6fd5b009fdd53ac6cc3160b0324ca2fbfc7345745c9212a62143",
+      "checkedAt": "2026-11-27T14:55:21.587Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先核本人班級已知的訂單數量，不碰別班帳。",
+            "action": "導師已在本人知情權限核對本班訂購數量，不閱他班非必要資料。",
+            "tradeoff": "別的差異暫時仍在"
+          },
+          {
+            "id": 2,
+            "text": "先向原廠商提出本班抬頭更正，再等新件。",
+            "action": "導師已按原權限提出本班單據更正需求，未取得新憑證或結案。",
+            "tradeoff": "不能立即結帳"
+          },
+          {
+            "id": 3,
+            "text": "請她確認哪一筆最影響原期限，只先處理那筆。",
+            "action": "導師已提出限正式期限的工作優先確認，未免除原必要對帳。",
+            "tradeoff": "其餘要等"
+          },
+          {
+            "id": 4,
+            "text": "在原可用工作時間留一小段共同對讀，其他各自按分工做。",
+            "action": "導師已提出有限共同對讀時段邀請，未取得同意或完成對帳。",
+            "tradeoff": "少了本人空檔"
+          },
+          {
+            "id": 5,
+            "text": "向主管申請這次時程調整，附實際錯件，不私下拖延。",
+            "action": "導師已提交限必要資料的時程調整申請，未獲准或更動正式期限。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 6,
+            "text": "只把本人可證實的差異列表交她，不再口頭逐張追。",
+            "action": "導師已提交本人合法掌握的有限差異清單，不代核會計帳。",
+            "tradeoff": "她得再讀一次"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣得不想再讓下次也收這種單，自己向主管提出後續供貨另作比較，不把今天的火直接變廠商黑名單。",
+          "action": "導師已在本人班務建議權限向原主管提出後續供貨評估需求，未取得換商、採購或黑名單核定。",
+          "tradeoff": "自己得整理真實問題，也可能被說小題大作"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3488016367
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "8aee041860c29a763e71793ce93a1ea6f284b5fd19d87164ec41770a806e848f"
+      },
+      "consequenceDirections": {
+        "A": "可有雙人交會，未同意不強留同事。",
+        "B": "可保持原憑證，不自行塗改冒新單。",
+        "C": "可有可查交接，不把清單當新憑證。",
+        "D": "可把當次憤怒轉成未來供貨選擇的有限提案，原對帳與廠商正當程序仍需維持，不因生氣判惡意。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒額外對讀與普通4共同對讀過近，且取消備課討論未有前提；改為未來供貨比較評估建議。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "先核本人班級已知的訂單數量，不碰別班帳。",
+                "action": "導師已在本人知情權限核對本班訂購數量，不閱他班非必要資料。",
+                "tradeoff": "別的差異暫時仍在"
+              },
+              {
+                "id": 2,
+                "text": "先向原廠商提出本班抬頭更正，再等新件。",
+                "action": "導師已按原權限提出本班單據更正需求，未取得新憑證或結案。",
+                "tradeoff": "不能立即結帳"
+              },
+              {
+                "id": 3,
+                "text": "請她確認哪一筆最影響原期限，只先處理那筆。",
+                "action": "導師已提出限正式期限的工作優先確認，未免除原必要對帳。",
+                "tradeoff": "其餘要等"
+              },
+              {
+                "id": 4,
+                "text": "在原可用工作時間留一小段共同對讀，其他各自按分工做。",
+                "action": "導師已提出有限共同對讀時段邀請，未取得同意或完成對帳。",
+                "tradeoff": "少了本人空檔"
+              },
+              {
+                "id": 5,
+                "text": "向主管申請這次時程調整，附實際錯件，不私下拖延。",
+                "action": "導師已提交限必要資料的時程調整申請，未獲准或更動正式期限。",
+                "tradeoff": "可能不准"
+              },
+              {
+                "id": 6,
+                "text": "只把本人可證實的差異列表交她，不再口頭逐張追。",
+                "action": "導師已提交本人合法掌握的有限差異清單，不代核會計帳。",
+                "tradeoff": "她得再讀一次"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被那疊亂單弄火了，今天先取消自己可取消的額外備課討論，留下把本班這疊逐張讀給她核，不再讓她一人唸。",
+              "action": "導師已取消本人可自主取消的非必要討論並提出本班逐件對讀協作，未取得同事參與或對帳完成。",
+              "tradeoff": "自己的原討論要另約，對方未必想一起做"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3352935444
+            },
+            "selectedIds": [
+              1,
+              6,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "b1d551a22ec428adc01d061ccb70964cf99ea03c38a2b25e74d86b402e39c739"
+          },
+          "previousConsequenceDirections": {
+            "A": "可排順序，不把優先處理當其他可不查。",
+            "B": "可有可查交接，不把清單當新憑證。",
+            "C": "教師提出本人實際增加的有限對讀投入，不擅延同事工時或代其核准。",
+            "D": "可完成有限查核，不宣稱全案已平。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0429ca3bab284ea22eddafd51b158cef32617fd9843b76b772374b0dbe988e4c",
+    "draftSha256": "88140a851eee6fd5b009fdd53ac6cc3160b0324ca2fbfc7345745c9212a62143",
     "seedAssignmentVersion": 1
   }
 }

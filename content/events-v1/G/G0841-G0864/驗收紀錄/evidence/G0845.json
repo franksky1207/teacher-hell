@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d5b88315b71e26cf3ac13778cefb035ee14304d236b8ed6a11bb32407ef11148",
+      "checkedAt": "2026-11-27T14:55:21.589Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下次仍用原已核可的共同成果標準，事前說清楚。",
+            "action": "導師已確認本人下次原核可共同成果方式，不追溯改本次成績。",
+            "tradeoff": "家長可能更不服"
+          },
+          {
+            "id": 2,
+            "text": "向原教學權責提出下次分列共同成果與個人貢獻的方案。",
+            "action": "導師已提出下次有限評量方案申請，未獲准或更動本次分數。",
+            "tradeoff": "設計及說明更複雜"
+          },
+          {
+            "id": 3,
+            "text": "下次在原教學允許範圍改作個人報告，不辦這段分組。",
+            "action": "導師已提出本人可調整範圍的下次個人一般練習方案，不擅變正式評量。",
+            "tradeoff": "少了合作練習"
+          },
+          {
+            "id": 4,
+            "text": "請孩子自願就一件實際分工提供回饋，不拿家長的說法代他。",
+            "action": "導師已提出有限自願個人分工回饋邀請，不取得他人責任結論。",
+            "tradeoff": "孩子可能不想談"
+          },
+          {
+            "id": 5,
+            "text": "用教師自有虛構例子說明兩種計分各看什麼，不討論誰該第一。",
+            "action": "導師已提供有限虛構評量說明，不公開學生資料或核定新標準。",
+            "tradeoff": "不像立刻給承諾"
+          },
+          {
+            "id": 6,
+            "text": "把下次程序建議交正式課程管道，本次不再額外面談。",
+            "action": "導師已受理有限未來程序建議並結束本人非急追加面談，不更動原合法申覆。",
+            "tradeoff": "親師距離可能拉開"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再替每組猜誰做多少，下次自己增加一次課內逐人看草稿的短檢查，不把查分工丟給最認真的人。",
+          "action": "導師已在原課程可調範圍安排一次有限個別草稿回饋，不改正式分數或要求學生監督同伴。",
+          "tradeoff": "自己的課內回饋工作變多，也可能讓學生有壓力"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1633623739
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "67cbaf44343df0b3edaee1ae7b834b82f14ff48ada1a7fd13bc037bdf90d701d"
+      },
+      "consequenceDirections": {
+        "A": "可改學習形式，須守原課程必要目標。",
+        "B": "教師新增本人有限觀察投入，不將觀察當已核准計分改制。",
+        "C": "可聽本人經驗，不讓回饋變抓組員戰犯。",
+        "D": "可看不同面向，未准前不能保證新標準。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "79061165cffd374c2952b7da0975b21ea94942b11383e6a9251a5cb74c269bb2",
+    "draftSha256": "d5b88315b71e26cf3ac13778cefb035ee14304d236b8ed6a11bb32407ef11148",
     "seedAssignmentVersion": 1
   }
 }

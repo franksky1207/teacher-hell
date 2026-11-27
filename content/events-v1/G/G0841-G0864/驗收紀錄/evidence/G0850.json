@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "df682c065039a558df5fa83ca754289de5986de4922933e7daeb122aaa09dfd7",
+      "checkedAt": "2026-11-27T14:55:21.593Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這段回各人原休息，不再辦造型挑戰。",
+            "action": "導師已結束本人可決定的非必要校內挑戰延伸，維持正常休息與必要支持。",
+            "tradeoff": "期待沒做完"
+          },
+          {
+            "id": 2,
+            "text": "改成不插電的紙上造型構想，自願參加。",
+            "action": "導師已提出有限自願紙上創作方式，不取得參與或新增設備使用權。",
+            "tradeoff": "看不到本人效果"
+          },
+          {
+            "id": 3,
+            "text": "現場只看既有合法圖例，不做真人整理。",
+            "action": "導師已提供本人可用的有限中性圖例，不涉及學生照片或實際器材。",
+            "tradeoff": "少了動手感"
+          },
+          {
+            "id": 4,
+            "text": "原作者若願意，說明一個自己想呈現的造型，不評別人的。",
+            "action": "導師已提出有限自願個人設計說明邀請，未取得參與或拍攝許可。",
+            "tradeoff": "有人會嫌只有說"
+          },
+          {
+            "id": 5,
+            "text": "請原有權者評估日後是否有適合的正式空間，今天不先開。",
+            "action": "導師已提出原制度內有限場地可行性詢問，未獲准或約定活動。",
+            "tradeoff": "可能根本不准"
+          },
+          {
+            "id": 6,
+            "text": "只提供既有安全用電的查閱資訊，不再加課內活動。",
+            "action": "導師已提供現有合法一般用電資訊，不作私人器材適用保證。",
+            "tradeoff": "這段有點乾"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己又說成回家就好，乾脆用教室可用的普通鏡子照自己的亂髮，請願意的人只用話替我想個不插電的樣子，不碰學生的頭。",
+          "action": "導師已提供本人外觀作有限自願口頭設計對象，不碰觸學生、不錄影或操作電器。",
+          "tradeoff": "自己挨笑，也可能比原挑戰更搶戲"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3516697253
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "18b453a02c214e6310ef14dfb301c9bea322d3f2aa79866e1df523d56fea4467"
+      },
+      "consequenceDirections": {
+        "A": "教師作為自願新設計對象，需現有鏡面安全可用、不索器材或要求參加，不重開危險挑戰。",
+        "B": "可停止非必要活動，不拿取消當罰通知者。",
+        "C": "可保表達，不逼學生說家庭設備。",
+        "D": "可留查核，不以資訊代當下必要安全處置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "488012007685152718821141ea85c4816cfae927b0186523d1279ad81808d86a",
+    "draftSha256": "df682c065039a558df5fa83ca754289de5986de4922933e7daeb122aaa09dfd7",
     "seedAssignmentVersion": 1
   }
 }

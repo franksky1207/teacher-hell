@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b4dfc8af7d5510822bf79770a4a35ad14f8a346661decd06fe4afaf341eb5da",
+      "checkedAt": "2026-11-27T14:55:21.588Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請原承辦先核定可用的補正方式，不先換頁。",
+            "action": "導師已向原權責提出有限補正方式確認，未替換原件或宣稱完整。",
+            "tradeoff": "可能趕不上"
+          },
+          {
+            "id": 2,
+            "text": "原規則允許時，邀學生本人在可行時段確認事實並註明補簽日期。",
+            "action": "導師已提出需原規則允許的有限本人確認邀請，未取得簽名或新日期證據。",
+            "tradeoff": "學生可能不在或不願"
+          },
+          {
+            "id": 3,
+            "text": "把現有可核材料附上，原缺漏明列送審。",
+            "action": "導師已提交原權責可受理的有限現況及附件，不宣稱缺漏已補。",
+            "tradeoff": "抽查可能記缺失"
+          },
+          {
+            "id": 4,
+            "text": "申請延後該頁補件，其他合格頁依原期限交。",
+            "action": "導師已提出單頁有限展延申請並按原程序接續其餘頁，未獲准延限。",
+            "tradeoff": "要多追一頁，也可能不准"
+          },
+          {
+            "id": 5,
+            "text": "請原有權窗口直接聯繫本人確認，我只提供必要聯絡資訊。",
+            "action": "導師已向有權承辦提供必要合法聯絡協助，未取得確認或簽名。",
+            "tradeoff": "學生又接一次通知"
+          },
+          {
+            "id": 6,
+            "text": "下次這類簽名頁由我逐份收件核對，不委託學生代收；正式格式照舊。",
+            "action": "導師已在本人原職權內承諾下次由本人逐份受理此類簽名頁，不宣稱已取得下次簽名或擅改格式。",
+            "tradeoff": "自己多一段收件工作"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想她又替我壓一個含糊的時間，自己具名向主管報這次漏核對，請她別再為我私下擋送件。",
+          "action": "導師已提交本人具名的有限工作責任說明並拒絕非正式壓件協助，不免必要補正或更動正式送件。",
+          "tradeoff": "自己得被問，還可能傷她好意"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2858451686
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "15d139601c8b36392599a33cabec2e5b02d26749abd244371ced3a3a03ef22ba"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔具名工作責任並退出私人遮擋，不把必要缺失報告變唯一這條才做。",
+        "B": "可保本人意思，不追溯假簽。",
+        "C": "可回權責，不擅交私人資料給無關人。",
+        "D": "可保完整真相，不用其他材料冒簽名。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6送原件加缺漏說明與普通3現況送審過近；改為下次本人收件核對的明確工作承諾。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請原承辦先核定可用的補正方式，不先換頁。",
+                "action": "導師已向原權責提出有限補正方式確認，未替換原件或宣稱完整。",
+                "tradeoff": "可能趕不上"
+              },
+              {
+                "id": 2,
+                "text": "原規則允許時，邀學生本人在可行時段確認事實並註明補簽日期。",
+                "action": "導師已提出需原規則允許的有限本人確認邀請，未取得簽名或新日期證據。",
+                "tradeoff": "學生可能不在或不願"
+              },
+              {
+                "id": 3,
+                "text": "把現有可核材料附上，原缺漏明列送審。",
+                "action": "導師已提交原權責可受理的有限現況及附件，不宣稱缺漏已補。",
+                "tradeoff": "抽查可能記缺失"
+              },
+              {
+                "id": 4,
+                "text": "申請延後該頁補件，其他合格頁依原期限交。",
+                "action": "導師已提出單頁有限展延申請並按原程序接續其餘頁，未獲准延限。",
+                "tradeoff": "要多追一頁，也可能不准"
+              },
+              {
+                "id": 5,
+                "text": "請原有權窗口直接聯繫本人確認，我只提供必要聯絡資訊。",
+                "action": "導師已向有權承辦提供必要合法聯絡協助，未取得確認或簽名。",
+                "tradeoff": "學生又接一次通知"
+              },
+              {
+                "id": 6,
+                "text": "這次不再另做新排版，原件加真實缺漏說明交原權責。",
+                "action": "導師已附本人真實缺漏說明於原件供審，不替原核章者更動紀錄。",
+                "tradeoff": "不好看，也可能被退"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想她又替我壓一個含糊的時間，自己具名向主管報這次漏核對，請她別再為我私下擋送件。",
+              "action": "導師已提交本人具名的有限工作責任說明並拒絕非正式壓件協助，不免必要補正或更動正式送件。",
+              "tradeoff": "自己得被問，還可能傷她好意"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2408015113
+            },
+            "selectedIds": [
+              4,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 2,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "5769d0b1de911e16214514b80891897db8b008a3985127feb305ed07749ed58d"
+          },
+          "previousConsequenceDirections": {
+            "A": "可區分範圍，不把整批扣著。",
+            "B": "可保本人意思，不追溯假簽。",
+            "C": "可保來源，不用漂亮新頁遮已核錯誤。",
+            "D": "教師承擔具名工作責任並退出私人遮擋，不把必要缺失報告變唯一這條才做。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d78680988eaa16e4be81809666953b58958cd5b0d1caaaa4fe002c772ecb69ce",
+    "draftSha256": "2b4dfc8af7d5510822bf79770a4a35ad14f8a346661decd06fe4afaf341eb5da",
     "seedAssignmentVersion": 1
   }
 }

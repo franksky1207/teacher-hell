@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d2654640958851024bdd4cabca8b4df58adddbc5ae280d85401140d65895f655",
+      "checkedAt": "2026-11-27T14:55:21.597Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只收給老師，不發回原表給組員。",
+            "action": "導師已在可調一般互評範圍改為成人限閱，不承諾絕對保密或停止查核。",
+            "tradeoff": "同伴拿不到直接原話"
+          },
+          {
+            "id": 2,
+            "text": "原表不互傳，由我整理成不指向個人的共通改進點。",
+            "action": "導師已在原資料權限內提出有限去識別彙整方式，不公開私人原表或保證不可反推。",
+            "tradeoff": "本人語氣會被抽掉"
+          },
+          {
+            "id": 3,
+            "text": "只讓各人寫自己做過的部分，不評同伴人格。",
+            "action": "導師已調整本次一般練習為有限個人實作自述，不免必要核實。",
+            "tradeoff": "看不到完整互評"
+          },
+          {
+            "id": 4,
+            "text": "原互評延到有足夠說明的課內短段，今天不急交。",
+            "action": "導師已在本人可調一般活動內延後有限互評，不更動正式評量。",
+            "tradeoff": "少一段進度"
+          },
+          {
+            "id": 5,
+            "text": "他若願意，只私下提出一項具體工作困難，我協助回原分工。",
+            "action": "導師已提出有限自願個別工作困難回饋邀請，未取得自述或和解。",
+            "tradeoff": "可能仍怕被猜"
+          },
+          {
+            "id": 6,
+            "text": "這次不加新互評資料，依原已有合法實作記錄回饋。",
+            "action": "導師已停止本人非必要新互評蒐集，使用既有合法材料作有限回饋。",
+            "tradeoff": "少了學生當下觀點"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每次讓最怕翻臉的人寫最狠那格，這回自己進各組看一小段分工，只記我真正看到的，不叫他替我盯朋友。",
+          "action": "導師已在原課內安排本人有限組務觀察與事實記錄，不索學生秘密或核定全部責任。",
+          "tradeoff": "自己的回饋工作增加，也可能看不到平常狀況"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2418933036
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "170b94d108de71543b6e37cb8508bd9d91efff8a225e0d7dfeee30c1fdfad11b"
+      },
+      "consequenceDirections": {
+        "A": "可給時間，不擅改正式截止或評量。",
+        "B": "可保有限私密，必要處理仍須依法知情。",
+        "C": "可保事實，不能用自述當全部責任已證。",
+        "D": "教師新增本人有限現場觀察，不能把一次看見當整組全部事實或代學生表態。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aa2a8297e3295441c47bd2116b4eaa5755d27e9cde290558c0251a66fa83e8fb",
+    "draftSha256": "d2654640958851024bdd4cabca8b4df58adddbc5ae280d85401140d65895f655",
     "seedAssignmentVersion": 1
   }
 }

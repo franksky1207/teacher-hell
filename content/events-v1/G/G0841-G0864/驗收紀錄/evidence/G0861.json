@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3b3270d903c867e63150da6595475c000cb1938d04128b176f4072b92d4242d",
+      "checkedAt": "2026-11-27T14:55:21.601Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不借這批私物，維持原可用教學方式。",
+            "action": "導師已婉拒本人可決定的非必要私物試用，不越權取消本科正常教學。",
+            "tradeoff": "少了新設備"
+          },
+          {
+            "id": 2,
+            "text": "提出先核准一小段課內試用，不直接承諾一個月。",
+            "action": "導師已提出需原權責及物主同意的有限短段試用申請，未獲准或取得設備。",
+            "tradeoff": "觀察範圍小"
+          },
+          {
+            "id": 3,
+            "text": "只請他自願用本人教材示範流程，不給學生上機。",
+            "action": "導師已提出限原合法材料的自願教師流程示範邀請，未取得參與或使用學生資料。",
+            "tradeoff": "學生無實際經驗"
+          },
+          {
+            "id": 4,
+            "text": "向學校查現有公用設備能否支援，不直接借他的整套。",
+            "action": "導師已提出既有校用設備支援查詢，未取得調用或核准。",
+            "tradeoff": "可能排不到"
+          },
+          {
+            "id": 5,
+            "text": "若他同意，先僅借本人可合法公開的操作說明，不借硬體。",
+            "action": "導師已提出限物主權利的有限操作說明借閱邀請，未取得同意或文件。",
+            "tradeoff": "看不到實際效果"
+          },
+          {
+            "id": 6,
+            "text": "把未定的試用案交原教學協調管道，今日不答應新流程。",
+            "action": "導師已提出正式有限教學試用協調需求，不核准全無紙化。",
+            "tradeoff": "同事可能覺得拖"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想試新東西，但先拿自己的合法示例資料讓他教我操作，願意出糗的是我，不叫全班先當測試。",
+          "action": "導師已提出以本人非敏感示例作有限自願操作學習的邀請，未取得借用、教學同意或技能完成。",
+          "tradeoff": "花自己的原可用空檔，也可能操作得很笨"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3320802530
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e06b2576fa182d5e1c2dc3c49643e845f8e15e89880196470f64f5141aff86a0"
+      },
+      "consequenceDirections": {
+        "A": "可分資料與物件，不取得教材複製新權。",
+        "B": "可釐清權責，不擅改原課程或阻正當提案。",
+        "C": "可縮風險，未准不收機或蒐集資料。",
+        "D": "教師提出本人有限學習邀請，不用學會等於全班適用、未同意不碰私機。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9dec35854922929e6dd76fe7db057c051ff532122caded7c77e9d055866e275e",
+    "draftSha256": "c3b3270d903c867e63150da6595475c000cb1938d04128b176f4072b92d4242d",
     "seedAssignmentVersion": 1
   }
 }

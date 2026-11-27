@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4dd4c9bd99016b8fe61ede574cfec965f19fb8bae1e701ba25584a72786af940",
+      "checkedAt": "2026-11-27T14:55:21.589Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只送缺件與異常的簡短事實及補救請求，不追加長文。",
+            "action": "玩家已提交本人有限消費事實及補救需求，未取得承諾或款項。",
+            "tradeoff": "怕客服又敷衍"
+          },
+          {
+            "id": 2,
+            "text": "依平台正常申訴管道送件，不再只與原客服來回。",
+            "action": "玩家已按原平台流程提出有限申訴，未取得裁定或退款。",
+            "tradeoff": "要時間與必要資料"
+          },
+          {
+            "id": 3,
+            "text": "詢問是否能由原有權客服主管接續，不自己找人施壓。",
+            "action": "玩家已提出有限客服層級接續請求，未取得人力或解決。",
+            "tradeoff": "可能還是同一套話"
+          },
+          {
+            "id": 4,
+            "text": "查詢本案適用的正式消費諮詢方式，先不公開店名。",
+            "action": "玩家已查詢原合法消費諮詢管道，不公開第三人資料或認定違法。",
+            "tradeoff": "沒有立即出氣"
+          },
+          {
+            "id": 5,
+            "text": "本次不再多錄，按必要證據送件後去處理安全清潔。",
+            "action": "玩家已停止本人非必要重錄並在必要留存完成後處理有限清潔，不偽造或擅毀必要證據。",
+            "tradeoff": "少了多角度畫面"
+          },
+          {
+            "id": 6,
+            "text": "平台若允許正式授權，問家人願不願替我辦這次申訴；不用共用帳密，不願就算。",
+            "action": "玩家已提出需平台規則允許及本人家人自願的有限代辦邀請，未取得答應、授權完成或受理，不交帳密。",
+            "tradeoff": "家人可能覺得又多一件麻煩"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣得不想再打一大篇，改用自己的聲音錄一段只講事實的申訴，自己出聲，不再叫家人掌鏡陪我火大。",
+          "action": "玩家已製作本人有限事實音訊作補救請求備用，未取得平台受理或退款，不錄他人聲音。",
+          "tradeoff": "得重講一次，語氣也可能顯得太兇"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2290904664
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "5c7fd5e564095e8ffe90ebf07e24521aa2eb1da75e463789708e0941512f1f15"
+      },
+      "consequenceDirections": {
+        "A": "玩家另作本人音訊陳述，不上傳家人或客服錄音、平台不收則保留原合法文字途徑。",
+        "B": "若可合法代辦可分擔當次申訴，不等申訴結果已定；若不願仍由原責任人依法處理，不能以家庭支持推定同意。",
+        "C": "可換回覆層級，未答應不當已轉接。",
+        "D": "可保清楚，不保證退款。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6再核數量與開場已核留數量的動作過近；改為規則允許下的自願代辦邀請，不新增已獲授權結果。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只送缺件與異常的簡短事實及補救請求，不追加長文。",
+                "action": "玩家已提交本人有限消費事實及補救需求，未取得承諾或款項。",
+                "tradeoff": "怕客服又敷衍"
+              },
+              {
+                "id": 2,
+                "text": "依平台正常申訴管道送件，不再只與原客服來回。",
+                "action": "玩家已按原平台流程提出有限申訴，未取得裁定或退款。",
+                "tradeoff": "要時間與必要資料"
+              },
+              {
+                "id": 3,
+                "text": "詢問是否能由原有權客服主管接續，不自己找人施壓。",
+                "action": "玩家已提出有限客服層級接續請求，未取得人力或解決。",
+                "tradeoff": "可能還是同一套話"
+              },
+              {
+                "id": 4,
+                "text": "查詢本案適用的正式消費諮詢方式，先不公開店名。",
+                "action": "玩家已查詢原合法消費諮詢管道，不公開第三人資料或認定違法。",
+                "tradeoff": "沒有立即出氣"
+              },
+              {
+                "id": 5,
+                "text": "本次不再多錄，按必要證據送件後去處理安全清潔。",
+                "action": "玩家已停止本人非必要重錄並在必要留存完成後處理有限清潔，不偽造或擅毀必要證據。",
+                "tradeoff": "少了多角度畫面"
+              },
+              {
+                "id": 6,
+                "text": "若家人願意，請他只核對訂單數量，我自己負責訊息。",
+                "action": "玩家已提出限非敏感訂單數量的自願協助邀請，未取得答應或代簽授權。",
+                "tradeoff": "仍占家人時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我氣得不想再打一大篇，改用自己的聲音錄一段只講事實的申訴，自己出聲，不再叫家人掌鏡陪我火大。",
+              "action": "玩家已製作本人有限事實音訊作補救請求備用，未取得平台受理或退款，不錄他人聲音。",
+              "tradeoff": "得重講一次，語氣也可能顯得太兇"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3232169243
+            },
+            "selectedIds": [
+              6,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 3,
+              "D": 4
+            },
+            "optionsDigest": "884934b167107b9e9cd3cf594d8ec0ec6e6ce2b2ba740dfd07a86d82ae375000"
+          },
+          "previousConsequenceDirections": {
+            "A": "玩家另作本人音訊陳述，不上傳家人或客服錄音、平台不收則保留原合法文字途徑。",
+            "B": "可分工，不把幫拿手機當已同意處理整案。",
+            "C": "可換回覆層級，未答應不當已轉接。",
+            "D": "可查權益，不把查詢當法律判決。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "af14099522178082689700a8e9461150f61f1a2e446a0181e1f9152102e3832b",
+    "draftSha256": "4dd4c9bd99016b8fe61ede574cfec965f19fb8bae1e701ba25584a72786af940",
     "seedAssignmentVersion": 1
   }
 }

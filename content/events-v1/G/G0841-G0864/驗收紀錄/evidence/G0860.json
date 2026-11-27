@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "133c919d7ce90092f129e9dcc2793b77008688a4eb0c02342167f8bff1fde73e",
+      "checkedAt": "2026-11-27T14:55:21.600Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原抽背，不為這次要求增加全班量。",
+            "action": "導師已維持原合法早自習一般練習，不新增全班默寫負擔。",
+            "tradeoff": "家長可能繼續焦慮"
+          },
+          {
+            "id": 2,
+            "text": "將建議交原授課者評估，不自己答應加考。",
+            "action": "導師已提出限原職權的有限教學建議，未取得新測驗核准。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 3,
+            "text": "提供既有自願練習的查找資訊，不直接派新作業。",
+            "action": "導師已提供原可用的有限自願練習資訊，不交付新必做題目。",
+            "tradeoff": "不是全班衝刺"
+          },
+          {
+            "id": 4,
+            "text": "在原可用親師時段約一次聚焦孩子一項卡點的面談。",
+            "action": "導師已提出有限自願個案面談邀請，未取得答應或評量定論。",
+            "tradeoff": "要安排，也可能約不成"
+          },
+          {
+            "id": 5,
+            "text": "本課原可調練習改成一次關鍵字自我檢查，不增總量。",
+            "action": "導師已在本人授課權限內安排有限等值自查方式，不新增測驗總量。",
+            "tradeoff": "少了完整默寫樣子"
+          },
+          {
+            "id": 6,
+            "text": "必要問題答完後按原工作返回，正常聯繫另約。",
+            "action": "導師已在必要接續完成後結束非急門口面談，維持原聯繫管道。",
+            "tradeoff": "家長可能覺得不夠重視"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句至少多一次逼得心煩，乾脆把我自己擬加的那段講評改成讓孩子自願問一題，今天先聽他真的卡哪，不替網路標題加碼。",
+          "action": "導師已在本人授課範圍調整有限講評為自願單題提問，不取得學生參與或更動正式標準。",
+          "tradeoff": "自己的講評少一段，也可能現場沒人問"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 149433517
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "772f80a44f073b17d4386de496d222b27bd1d2767b01a57e28b86666ef2ec921"
+      },
+      "consequenceDirections": {
+        "A": "可守原安排，不能以維持免必要個別支持。",
+        "B": "教師改本人原可調教學為有限學生提問，不增加強迫量、不許諾分數。",
+        "C": "可保師生工作，不阻急迫求助。",
+        "D": "可看本人需求，不拿全班當焦慮處方。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "652df60d1a484f54afb0be11314adedb3ae962c83cbf378bd6d692d8a1a7627f",
+    "draftSha256": "133c919d7ce90092f129e9dcc2793b77008688a4eb0c02342167f8bff1fde73e",
     "seedAssignmentVersion": 1
   }
 }

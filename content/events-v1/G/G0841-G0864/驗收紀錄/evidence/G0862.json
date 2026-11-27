@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "77014f408d769a7ec2bdbb26eaeb545183fffd72934ddbe9186973dd180d3b04",
+      "checkedAt": "2026-11-27T14:55:21.602Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原必要紙本，這次不加聊書活動。",
+            "action": "導師已維持原正式閱讀交件，停止本人非必要新增活動需求。",
+            "tradeoff": "館員會失望"
+          },
+          {
+            "id": 2,
+            "text": "向原權責提出口頭與精簡紀錄並行的方案。",
+            "action": "導師已提出有限閱讀方式調整申請，未獲准或取消原繳交。",
+            "tradeoff": "仍要留紙本，也可能不准"
+          },
+          {
+            "id": 3,
+            "text": "原可調短段只讀，不另收額外心得。",
+            "action": "導師已在本人可調範圍安排有限自由閱讀，不取消正式交件。",
+            "tradeoff": "看不到口頭熱鬧"
+          },
+          {
+            "id": 4,
+            "text": "請館員自願推薦一小份書目，原班務不改。",
+            "action": "導師已提出限原職權的自願書目推薦邀請，未取得書單或新增借閱義務。",
+            "tradeoff": "只是書單"
+          },
+          {
+            "id": 5,
+            "text": "詢問原教務是否可用已合法完成的原閱讀記錄，免再抄另一份。",
+            "action": "導師已提出既有材料替代重複記錄的有限可行性詢問，未核准或完成認定。",
+            "tradeoff": "可能不被接受"
+          },
+          {
+            "id": 6,
+            "text": "讓願意者先在原允許的借閱空檔私下口頭推薦，不改全班週程序。",
+            "action": "導師已提出原合法借閱時段的有限自願推薦方式，未取得參與或更動課表。",
+            "tradeoff": "參與人少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得新書只進一張表，自己先借一本合法可借的新書，在原可調短段只講一句我真想讀的地方，讓他們也能不講。",
+          "action": "導師已提出本人正常借閱需求及原課內有限自願推薦安排，未取得書籍或學生參與。",
+          "tradeoff": "少了我原備課一小段，還可能沒人想接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3510659326
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "6bffe6378abdd86acdd480fc19c4339b4ae22d4271b3cae610ee2deb319208d0"
+      },
+      "consequenceDirections": {
+        "A": "可試交流，不強迫學生公開口味或索買書。",
+        "B": "可有正式彈性，不先宣布廢單。",
+        "C": "可保現有安排，不把閱讀理想當不務正業。",
+        "D": "教師本人實際參與閱讀推薦而非請學生完成新任務，借閱仍按原規，未借到不假稱有書。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5f52c86d33592050c2bad95b290cb5a156aeaf6518fbad52fdfb609bf46ecf32",
+    "draftSha256": "77014f408d769a7ec2bdbb26eaeb545183fffd72934ddbe9186973dd180d3b04",
     "seedAssignmentVersion": 1
   }
 }

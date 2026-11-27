@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a468bfacfaf6aa96b2bb239de47b9fd66dde8dbb71d452196425626743e4c812",
+      "checkedAt": "2026-11-27T14:55:21.594Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今晚不再取件，確認原保管期限後安全回家。",
+            "action": "玩家已查核本人可得的取件期限並停止當晚非必要取件行程，不取得包裹。",
+            "tradeoff": "晚一天用到"
+          },
+          {
+            "id": 2,
+            "text": "依簡訊到正確門市，按原程序排隊取件。",
+            "action": "玩家已前往本人正確取件門市提出合法領取需求，未宣稱完成交付。",
+            "tradeoff": "多走一段"
+          },
+          {
+            "id": 3,
+            "text": "只詢問平台有無正常改店方式，不請這家替自己搬。",
+            "action": "玩家已查詢本人訂單正常移店可能性，未取得改店或物流服務。",
+            "tradeoff": "未必能改"
+          },
+          {
+            "id": 4,
+            "text": "若原規則允許，詢問家人是否願合法代領，不交帳密。",
+            "action": "玩家已提出需平台規範允許及家人自願的有限代領邀請，未取得答應或物件。",
+            "tradeoff": "欠一個人情"
+          },
+          {
+            "id": 5,
+            "text": "把這次正確門市存成自己的提醒，今晚只處理這一步。",
+            "action": "玩家已記錄本人取件資訊的有限提醒，不公開訂單或完成領取。",
+            "tradeoff": "東西仍沒領"
+          },
+          {
+            "id": 6,
+            "text": "照原店規買原本就需要的日用品，再離開，不再聊包裹。",
+            "action": "玩家已在原店規下處理本人必要日用品消費需求，不索取件特權或宣稱取得訂單。",
+            "tradeoff": "多花一點排隊時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我連自己的路都不敢太相信了，問家人願不願在電話裡陪我走到正確門市；包裹還是我自己辦，不方便就算。",
+          "action": "玩家已提出不影響安全行走、需家人自願的有限遠端陪同行程邀請，未取得答應、抵達或領件，不在車流中看手機。",
+          "tradeoff": "要承認自己迷糊，也占家人的時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3531218111
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "975458c179ee2931511eb399558f9033bd9ddf3be8aceb087586b146588f3f5c"
+      },
+      "consequenceDirections": {
+        "A": "私人陪伴直接承接錯門市的尷尬，與普通4請家人代領不同在本人仍親自處理，未同意不能假稱有人陪或已領到。",
+        "B": "可查條件，不把詢問當已移件。",
+        "C": "可改日常線索，不把設提醒當不再出錯。",
+        "D": "可分擔，邀請不等取得包裹。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒放棄日用品採買欠缺開場支撐、與普通1延後領件過近；改為請家人自願遠端陪本人認路。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今晚不再取件，確認原保管期限後安全回家。",
+                "action": "玩家已查核本人可得的取件期限並停止當晚非必要取件行程，不取得包裹。",
+                "tradeoff": "晚一天用到"
+              },
+              {
+                "id": 2,
+                "text": "依簡訊到正確門市，按原程序排隊取件。",
+                "action": "玩家已前往本人正確取件門市提出合法領取需求，未宣稱完成交付。",
+                "tradeoff": "多走一段"
+              },
+              {
+                "id": 3,
+                "text": "只詢問平台有無正常改店方式，不請這家替自己搬。",
+                "action": "玩家已查詢本人訂單正常移店可能性，未取得改店或物流服務。",
+                "tradeoff": "未必能改"
+              },
+              {
+                "id": 4,
+                "text": "若原規則允許，詢問家人是否願合法代領，不交帳密。",
+                "action": "玩家已提出需平台規範允許及家人自願的有限代領邀請，未取得答應或物件。",
+                "tradeoff": "欠一個人情"
+              },
+              {
+                "id": 5,
+                "text": "把這次正確門市存成自己的提醒，今晚只處理這一步。",
+                "action": "玩家已記錄本人取件資訊的有限提醒，不公開訂單或完成領取。",
+                "tradeoff": "東西仍沒領"
+              },
+              {
+                "id": 6,
+                "text": "照原店規買原本就需要的日用品，再離開，不再聊包裹。",
+                "action": "玩家已在原店規下處理本人必要日用品消費需求，不索取件特權或宣稱取得訂單。",
+                "tradeoff": "多花一點排隊時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我實在不想今天再走一家，這次連日用品也不買，兩手空空回家；那一袋就等清醒再領。",
+              "action": "玩家已結束本人當晚非必要取件及日用品採買安排，保留按原期限處理包裹的責任。",
+              "tradeoff": "今晚少了原本要用的東西，還得守取件期限"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1554299948
+            },
+            "selectedIds": [
+              1,
+              6,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "77fce27ad337e6c72d36e4ad703df0db0c7d3065b5492de5e4f04fd9216e5222"
+          },
+          "previousConsequenceDirections": {
+            "A": "可保休息，不逾期還假稱保留成功。",
+            "B": "可結束尷尬，不以購物當店員必須原諒。",
+            "C": "可查條件，不把詢問當已移件。",
+            "D": "玩家放掉當下額外消費與領件，與普通1只延領不同在同時放棄原日用品採買，不逃既有費用或清潔責任。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e25f30557d7995d1d450eb4a25de0500faa5eba4ad366fe9c3b525c4ed067018",
+    "draftSha256": "a468bfacfaf6aa96b2bb239de47b9fd66dde8dbb71d452196425626743e4c812",
     "seedAssignmentVersion": 1
   }
 }

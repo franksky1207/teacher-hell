@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "65951da586bb710330c20958aa4b79638167d637fd117d6b3e6ac5b078af7ab7",
+      "checkedAt": "2026-11-27T14:55:21.596Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原承辦查可否依法先收照片、紙本後補，不先留名額。",
+            "action": "導師已提出限原規則的電子先核可行性詢問，未取得受理或保留名額。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 2,
+            "text": "家長若願，請其自行安排符合原截止與規定的合法送件。",
+            "action": "導師已提供原正式送件條件，不代安排家庭人力或視為已交。",
+            "tradeoff": "家庭要多協調"
+          },
+          {
+            "id": 3,
+            "text": "申請本件延限，清楚寫原矛盾與擬補時間。",
+            "action": "導師已提交有限個案展延需求，未核准或確認參加。",
+            "tradeoff": "可能被拒也可能失去本次資格"
+          },
+          {
+            "id": 4,
+            "text": "若家長決定不參加，依原程序確認並接既有校內安排。",
+            "action": "導師已提出原合法不參加確認途徑及必要接續，不代家長作決定。",
+            "tradeoff": "孩子可能失望"
+          },
+          {
+            "id": 5,
+            "text": "請承辦提供原允許的簽署替代方式，我不另造表格。",
+            "action": "導師已提出既有合法替代簽署方式查詢，未取得同意或有效文件。",
+            "tradeoff": "還要等回覆"
+          },
+          {
+            "id": 6,
+            "text": "這次不再新增非急電話，原必要資訊以正式文字留清。",
+            "action": "導師已提供原必要條件的有限正式文字確認，結束非急延伸通話，不更改截止。",
+            "tradeoff": "少了即時商量的溫度"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他再分三個人奔波，先問原窗口可否由我在校內接這件的合法電子核對；只多接我能做的一段，絕不替他勾格或保位。",
+          "action": "導師已提出需原權責允許的本人有限電子核對協助意願，未取得授權、文件或名額。",
+          "tradeoff": "自己多跑窗口，還可能不被允許"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2723251844
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "979a47e84dd27cf0a5923f90edeb7db221e0f6b78b97bdae9c1dc00246f810d4"
+      },
+      "consequenceDirections": {
+        "A": "可找真規則，不能把家長口述當已簽。",
+        "B": "可保本人意願，不強迫奔波或保證送到。",
+        "C": "可減誤聽，不拖延必要回覆。",
+        "D": "教師申請本人有限接續角色，與查照片受理條件不同在額外實務承接，未准仍走原辦法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8b484390af04f211473796db423fd5b3a169fbb6320bf4f0ff986b3504daca3b",
+    "draftSha256": "65951da586bb710330c20958aa4b79638167d637fd117d6b3e6ac5b078af7ab7",
     "seedAssignmentVersion": 1
   }
 }

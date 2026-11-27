@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b085f2f4f688b775dbabb6edc04c14bac9793465e915dcf9844dce103d98c24",
+      "checkedAt": "2026-11-27T14:55:21.595Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "自費照原允許的低價飲料範圍履行，不以重算為由收回。",
+            "action": "導師已在校規食安可行範圍提出本人付費履行原承諾的安排，未取得全員收受或完成訂購。",
+            "tradeoff": "自己的錢要出去"
+          },
+          {
+            "id": 2,
+            "text": "先向班級說明可行時點與選擇，徵詢是否同意延後原款待。",
+            "action": "導師已提出需相關意願及原規範允許的有限履行延期建議，未取得同意或完成款待。",
+            "tradeoff": "期待要再等"
+          },
+          {
+            "id": 3,
+            "text": "向原班務權責詢問是否可改為一次不花班費的課內自由閱讀短段。",
+            "action": "導師已提出有限非必要款待替代方案申請，未獲准或取得全班同意。",
+            "tradeoff": "不是孩子原想要的飲料"
+          },
+          {
+            "id": 4,
+            "text": "原未達標事實保留，請孩子自願選擇是否收本人另送的低價致歉卡。",
+            "action": "導師已提出限本人材料的自願致歉卡收受邀請，不免原承諾必要協商或已完成交付。",
+            "tradeoff": "可能被嫌用紙換飲料"
+          },
+          {
+            "id": 5,
+            "text": "先不安排新獎勵，只把原承諾處理交正式親師協調。",
+            "action": "導師已提出限原正常管道的承諾處理協調，不自行判原承諾無效或增加新獎勵。",
+            "tradeoff": "大家會失望，也要等"
+          },
+          {
+            "id": 6,
+            "text": "詢問原店家符合原預算與限制的訂購方式，先不給學生新日期。",
+            "action": "導師已查詢本人擬付費原款待的可行訂購條件，未購買、取得或發放。",
+            "tradeoff": "仍沒拿到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我實在不想讓一分變成我們共同的笑話，自費之外，自己把算錯那一格畫成沒名字的小漫畫，隨同原允許款待承認這次老師丟臉。",
+          "action": "導師已製作本人非敏感錯算自嘲圖並提出原範圍自費款待安排，未取得收受或完成飲料訂購。",
+          "tradeoff": "自己多做又多花，學生也可能不覺得好笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3057715317
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "906ddb6991ddcc5c30a1b091edea57cd56a65100df76b0ac88c24340a412bdd0"
+      },
+      "consequenceDirections": {
+        "A": "可有個別拒收，不把卡片宣稱已抵原承諾。",
+        "B": "可查履行條件，不把詢價當下單或已發。",
+        "C": "可有明確商量，不單方無限延期。",
+        "D": "教師提供新自嘲作品與本人款待意願，不拿幽默代更正、不要求拍照或原諒。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "00c7d690e14931bcd442f7384988d6af9e8326adbdd02e17e3f7e0ddad021876",
+    "draftSha256": "2b085f2f4f688b775dbabb6edc04c14bac9793465e915dcf9844dce103d98c24",
     "seedAssignmentVersion": 1
   }
 }

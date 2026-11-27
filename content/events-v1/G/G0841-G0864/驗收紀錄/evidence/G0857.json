@@ -15,14 +15,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a3011c069be0230c71fac41ba2ea8a6110b270f6b1cf0966dad8d9202419fc0f",
+      "checkedAt": "2026-11-27T14:55:21.598Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天停止額外跑腿，由成人接續。",
+            "action": "導師已停止本人本日非必要跑腿需求並安排原成人接續，不撤學生正常參與。",
+            "tradeoff": "自己得多走"
+          },
+          {
+            "id": 2,
+            "text": "之後邀請一律明說可拒，不固定找同一人。",
+            "action": "導師已對本人未來非必要邀請設定可拒與不固定單人的方式，不增新義務。",
+            "tradeoff": "臨時方便少了"
+          },
+          {
+            "id": 3,
+            "text": "問他願保留哪一項原有有限班務，不要全包。",
+            "action": "導師已提出有限自願班務選擇詢問，未取得新承接同意。",
+            "tradeoff": "可能說不出來"
+          },
+          {
+            "id": 4,
+            "text": "按原允許方式提供一次真實協助證明，不加分作安撫。",
+            "action": "導師已提出限原規則及本人自願的實際協助記載方案，未核發或取得收受。",
+            "tradeoff": "可能更像工具人標籤"
+          },
+          {
+            "id": 5,
+            "text": "原課內做中性分工討論，不講他被笑的經過。",
+            "action": "導師已安排無個案識別的有限分工討論，不公開學生求助。",
+            "tradeoff": "占用可調時間"
+          },
+          {
+            "id": 6,
+            "text": "他若願，和原適任者討論同儕壓力，不必再跟我重說。",
+            "action": "導師已提供既有適任支持資訊及有限自願轉介途徑，未取得參與或診斷。",
+            "tradeoff": "要再見一個人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還有點不服自己真的那麼會使喚人，問他下次願不願挑一項原有、我也能安全做的班務交給我；不要再用獎勵抵掉。",
+          "action": "導師已提出本人承接下一次一項既有安全班務的有限自願協商邀請，未取得指定或完成工作，不轉移其他成人必要責任。",
+          "tradeoff": "自己要實際多做，也可能被他拒絕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3147915951
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "8aebc5007890344e7498a8cf31f354be244ab5312d79d0da83b30c7ec9c8a92b"
+      },
+      "consequenceDirections": {
+        "A": "可改真實邀請方式，不把輪邀變強迫人人做。",
+        "B": "可談班級界線，不讓他再站台解釋。",
+        "C": "可有支持，介紹不等服務已到。",
+        "D": "學生可選要不要協商教師承接一項既有工作，與今天停止全部額外跑腿不同；不能要求其必須原諒或替教師安排全部班務。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒搬回卷子與普通1成人接回過近，且卷子已交放；改為教師承接下次一項原有班務的可拒絕邀請。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今天停止額外跑腿，由成人接續。",
+                "action": "導師已停止本人本日非必要跑腿需求並安排原成人接續，不撤學生正常參與。",
+                "tradeoff": "自己得多走"
+              },
+              {
+                "id": 2,
+                "text": "之後邀請一律明說可拒，不固定找同一人。",
+                "action": "導師已對本人未來非必要邀請設定可拒與不固定單人的方式，不增新義務。",
+                "tradeoff": "臨時方便少了"
+              },
+              {
+                "id": 3,
+                "text": "問他願保留哪一項原有有限班務，不要全包。",
+                "action": "導師已提出有限自願班務選擇詢問，未取得新承接同意。",
+                "tradeoff": "可能說不出來"
+              },
+              {
+                "id": 4,
+                "text": "按原允許方式提供一次真實協助證明，不加分作安撫。",
+                "action": "導師已提出限原規則及本人自願的實際協助記載方案，未核發或取得收受。",
+                "tradeoff": "可能更像工具人標籤"
+              },
+              {
+                "id": 5,
+                "text": "原課內做中性分工討論，不講他被笑的經過。",
+                "action": "導師已安排無個案識別的有限分工討論，不公開學生求助。",
+                "tradeoff": "占用可調時間"
+              },
+              {
+                "id": 6,
+                "text": "他若願，和原適任者討論同儕壓力，不必再跟我重說。",
+                "action": "導師已提供既有適任支持資訊及有限自願轉介途徑，未取得參與或診斷。",
+                "tradeoff": "要再見一個人"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也有點被他說中，這回卷子由我抱回自己桌上，直接說我需要幫忙也會偷懶，不能靠他一直當好孩子讓我方便。",
+              "action": "導師已親自完成本次安全輕量卷件搬送並作本人有限工作習慣說明，不強迫學生陪同或接受道歉。",
+              "tradeoff": "自己多走，也可能讓他更不知道要怎麼靠近"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 143628835
+            },
+            "selectedIds": [
+              1,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 5,
+              "D": 1
+            },
+            "optionsDigest": "259bff819053005b04f89a4112678b75e7cfa34a6eefc69690e1697e55f3f338"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師親自完成當次合法輕量搬送並坦白私人依賴，不拿自責取代必要尊重或取消所有人正常幫忙。",
+            "B": "可改真實邀請方式，不把輪邀變強迫人人做。",
+            "C": "可談班級界線，不讓他再站台解釋。",
+            "D": "可讓熱心停一次，不把停止當他愛計較的罰。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "905393a50e5ff168928730ab2ebdf5bcfd1556aea315654b0dc4455a42f0e3a1",
+    "draftSha256": "a3011c069be0230c71fac41ba2ea8a6110b270f6b1cf0966dad8d9202419fc0f",
     "seedAssignmentVersion": 1
   }
 }

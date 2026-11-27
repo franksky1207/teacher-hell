@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "53a7b40fdd30287e1b772b3660578dc36d02c1516478876622be0b5101ae42c3",
+      "checkedAt": "2026-11-27T14:55:21.591Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只協助他依真實條件提出原可申請項目。",
+            "action": "導師已提供原程序內有限退費申請協助，未核准或取得退款。",
+            "tradeoff": "未必能退"
+          },
+          {
+            "id": 2,
+            "text": "安排由原收費窗口在可用時段逐項回覆。",
+            "action": "導師已提出有限正式費用諮詢需求，未取得時段或裁定。",
+            "tradeoff": "他還得再等"
+          },
+          {
+            "id": 3,
+            "text": "把可公開的必要收費依據交他帶回，不再口頭反覆講。",
+            "action": "導師已提供限可公開的有限費用依據，不披他人收費資訊。",
+            "tradeoff": "像一疊冷資料"
+          },
+          {
+            "id": 4,
+            "text": "若他願意，告知既有助學資訊及申請管道，不請他當場說家計。",
+            "action": "導師已提供既有合法支持資訊，不蒐集非必要家庭財務或代核資格。",
+            "tradeoff": "可能覺得被誤解成求救"
+          },
+          {
+            "id": 5,
+            "text": "受理一個仍未釐清的具體項目交原主管，不一次承諾整份翻案。",
+            "action": "導師已提出限原權責的一項正式釐清需求，未獲判定。",
+            "tradeoff": "其他疑問還要排"
+          },
+          {
+            "id": 6,
+            "text": "必要內容答完，今天不再加談，保留原正式申覆管道。",
+            "action": "導師已結束本人非急延伸面談，維持原合法費用異議途徑。",
+            "tradeoff": "他可能帶著氣離開"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他一回家又被那篇截圖嚇到，自己寫一張只談這筆費用的查核便條給他，不用他再轉述我的一大串話。",
+          "action": "導師已製作本人可確認的有限個案費用重點供私下核對，不冒正式退費核准。",
+          "tradeoff": "自己要多整理，還可能被當私人保證"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4235653987
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "6ab916b05f28556b1830b0149156b267f88733d3d4726f4cb2dcb39520f02212"
+      },
+      "consequenceDirections": {
+        "A": "可設工作界線，不撤正當反映。",
+        "B": "教師新增個案有限書面重點而非公版依據，不簽退款保證或代官方核定。",
+        "C": "可有選擇，不保證資格或取得補助。",
+        "D": "可保權益，不把申請當全額到帳。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3b6333b1ec3efb45a7df548da4296edb596a47b24d082c51ec18e739d4c83797",
+    "draftSha256": "53a7b40fdd30287e1b772b3660578dc36d02c1516478876622be0b5101ae42c3",
     "seedAssignmentVersion": 1
   }
 }

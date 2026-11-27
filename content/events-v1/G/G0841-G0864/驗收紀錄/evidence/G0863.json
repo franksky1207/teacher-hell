@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d81b02cfb0e865bf01b5cf2b4f8a9223bf51e40b662f3893342634106965ef14",
+      "checkedAt": "2026-11-27T14:55:21.603Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提供本人有權分享的空白母片，不替各班填內容。",
+            "action": "玩家已提出限自有素材權利的母片分享方案，未取得新任務同意或代製。",
+            "tradeoff": "有人不會套"
+          },
+          {
+            "id": 2,
+            "text": "向主管提出正式工時與支援需求，再決定可接範圍。",
+            "action": "玩家已提出本人有限工作配置需求，未獲准或承接全校量。",
+            "tradeoff": "可能被說計較"
+          },
+          {
+            "id": 3,
+            "text": "只承接一班自願試套，由原主管核定，不直接接全校。",
+            "action": "玩家已提出需原派工權責核可的有限試套範圍，未獲准或完成。",
+            "tradeoff": "仍多一班工作"
+          },
+          {
+            "id": 4,
+            "text": "提供本人寫的操作步驟，原各班自行完成。",
+            "action": "玩家已製作限本人可公開操作的有限說明，不代填他班內容。",
+            "tradeoff": "自己得寫說明"
+          },
+          {
+            "id": 5,
+            "text": "建議原行政聘適當支援處理，不由我私下承包。",
+            "action": "玩家已提出限原程序的正式支援建議，未核准採購或取得人力。",
+            "tradeoff": "可能無預算"
+          },
+          {
+            "id": 6,
+            "text": "不再額外優化這版，原正式任務以既有可用成果接續。",
+            "action": "玩家已停止本人非必要額外版面優化，不撤原必要交件。",
+            "tradeoff": "漂亮程度停在這裡"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏想證明這不是只有我能做，向主管申請用一次校內可調時段帶願意的老師實際操作；我教，不替全校填。",
+          "action": "玩家已提出需主管核可及參與者自願的有限校內操作工作坊申請，未取得核准、出席或完成培訓，不額外承諾下班時間。",
+          "tradeoff": "自己得帶一場，也可能現場教不會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1736995700
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "45474e9e81f0b7c52b7d85482bf316b9ade1a108f355d2119a5e1c177f00056a"
+      },
+      "consequenceDirections": {
+        "A": "從代做轉為當面操作學習，與分享母片或寫步驟不同在實際教學投入；未核可不佔正式課務，不保證各班成品。",
+        "B": "可分享工具，不代承諾全校成品。",
+        "C": "可看真成本，未核定不取學生資料。",
+        "D": "可分工作，提案不是已買服務。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒署名分享母片與普通1分享空母片過近，署名不足以構成實質差異；改為有限自願操作工作坊申請。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只提供本人有權分享的空白母片，不替各班填內容。",
+                "action": "玩家已提出限自有素材權利的母片分享方案，未取得新任務同意或代製。",
+                "tradeoff": "有人不會套"
+              },
+              {
+                "id": 2,
+                "text": "向主管提出正式工時與支援需求，再決定可接範圍。",
+                "action": "玩家已提出本人有限工作配置需求，未獲准或承接全校量。",
+                "tradeoff": "可能被說計較"
+              },
+              {
+                "id": 3,
+                "text": "只承接一班自願試套，由原主管核定，不直接接全校。",
+                "action": "玩家已提出需原派工權責核可的有限試套範圍，未獲准或完成。",
+                "tradeoff": "仍多一班工作"
+              },
+              {
+                "id": 4,
+                "text": "提供本人寫的操作步驟，原各班自行完成。",
+                "action": "玩家已製作限本人可公開操作的有限說明，不代填他班內容。",
+                "tradeoff": "自己得寫說明"
+              },
+              {
+                "id": 5,
+                "text": "建議原行政聘適當支援處理，不由我私下承包。",
+                "action": "玩家已提出限原程序的正式支援建議，未核准採購或取得人力。",
+                "tradeoff": "可能無預算"
+              },
+              {
+                "id": 6,
+                "text": "不再額外優化這版，原正式任務以既有可用成果接續。",
+                "action": "玩家已停止本人非必要額外版面優化，不撤原必要交件。",
+                "tradeoff": "漂亮程度停在這裡"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不服漂亮就得全包，這次署名把母片放到學校原允許的共用處，請使用者自己留署名和改版紀錄；我不幫人抹掉工作來源。",
+              "action": "玩家已在本人可分享權利與校規允許範圍提供有限署名母片，未承諾代改或改變原著作權歸屬。",
+              "tradeoff": "可能被嫌愛現，還得說清合法素材限制"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3336209977
+            },
+            "selectedIds": [
+              6,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "18d7e918570dd894f1ff46709ab1d5ee3ab7fba96e918711ac39b470a9e42459"
+          },
+          "previousConsequenceDirections": {
+            "A": "可分工作，提案不是已買服務。",
+            "B": "可停自願延伸，不拒合法原已派工作。",
+            "C": "可看真成本，未核定不取學生資料。",
+            "D": "玩家提供帶來源的實際共用文件，不以署名為由不當限制原雇用權益或索報酬。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "18528b24ba86c703abb11045df9a760ee6203bc0a2531054de0e2d99279cdc34",
+    "draftSha256": "d81b02cfb0e865bf01b5cf2b4f8a9223bf51e40b662f3893342634106965ef14",
     "seedAssignmentVersion": 1
   }
 }

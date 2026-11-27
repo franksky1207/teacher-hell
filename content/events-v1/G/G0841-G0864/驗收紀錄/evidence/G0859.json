@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f25c202f0eafcd039b29ffd1151540d650e3391cda530517847cc08f2ee0424d",
+      "checkedAt": "2026-11-27T14:55:21.599Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下一次照原期限交既有紙本，不再額外拍照片。",
+            "action": "導師已停止本人非必要雙格式需求，維持原正式交件方式。",
+            "tradeoff": "整理較不方便"
+          },
+          {
+            "id": 2,
+            "text": "申請原規範允許的分段核對，先核原憑證再看彙總。",
+            "action": "導師已提出有限分段核對方式申請，未獲准或結案。",
+            "tradeoff": "多一次交接"
+          },
+          {
+            "id": 3,
+            "text": "本週非必要帳務整理由我在原權限內接回，不讓他另熬夜。",
+            "action": "導師已承接本人有權處理的有限事務整理，不修改原憑證或宣稱帳已平。",
+            "tradeoff": "自己多工"
+          },
+          {
+            "id": 4,
+            "text": "他願意的話，只把私用票另放自己的袋子，不交我保管。",
+            "action": "導師已提出有限自願私票分存建議，未收私票或判私消費。",
+            "tradeoff": "要重整個人東西"
+          },
+          {
+            "id": 5,
+            "text": "請原有權者評估既有成人對帳支援，不把全部壓在股長。",
+            "action": "導師已提出原制度內有限對帳支援需求，未取得人力或免除必要核實。",
+            "tradeoff": "未必有空"
+          },
+          {
+            "id": 6,
+            "text": "用我自編假帳例練公私分類，不再看他的飲料品項。",
+            "action": "導師已安排有限無識別虛構分類練習，不公開私人票據。",
+            "tradeoff": "用掉可調短段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那杯也想嘆氣，這週不再請他額外追任何班費欠件，自己逐一走原正常聯繫，讓他的下課別再剩一堆提醒。",
+          "action": "導師已停止本人本週額外學生催件需求並承諾本人原管道有限聯繫，不宣稱已收齊或轉移正式財務權。",
+          "tradeoff": "自己要追件，還可能被當永久窗口"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2769730973
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "cf31bc22ac49c8400b4e208307a1841f5f0fc49791a3a5d3c43eddda20c2064a"
+      },
+      "consequenceDirections": {
+        "A": "可減一次堆全部，未准不能改正式期限。",
+        "B": "教師承接一週有限非必要催件工作，必要款務程序仍照規，不以私交免任何人費用。",
+        "C": "可教方法，不把個案變笑話。",
+        "D": "可找正式人力，查詢不是支援已到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5633f01d5e7fe5de35c63c9482f6a8a0bc64f5c6c25b23c9133816b65fa1e965",
+    "draftSha256": "f25c202f0eafcd039b29ffd1151540d650e3391cda530517847cc08f2ee0424d",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0908faba74841b28688dbac378a01a552ae6d253bb12e429e1b5190630bad542",
+      "checkedAt": "2026-11-27T14:55:21.586Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先陪長輩依院方指示接叫號，事件交現場人員。",
+            "action": "玩家已接回本人必要陪診安排，停止非必要現場爭辯，保留正式後續管道。",
+            "tradeoff": "自己的委屈沒說完"
+          },
+          {
+            "id": 2,
+            "text": "在不耽誤陪診下，只補充一個可核實的時間點。",
+            "action": "玩家已向院方提供本人所見的有限時間資訊，不接觸他人卡片或醫療資料。",
+            "tradeoff": "仍可能被當吵架的人"
+          },
+          {
+            "id": 3,
+            "text": "請院方告知正式反映方式，陪診後再按程序處理。",
+            "action": "玩家已查詢既有正式反映管道，未提交完成或取得結果。",
+            "tradeoff": "要另花時間"
+          },
+          {
+            "id": 4,
+            "text": "詢問是否有可用成人接續陪診幾分鐘，未有人同意就不離開。",
+            "action": "玩家已提出需本人信任且合法適任者同意的有限陪診接續請求，未取得協助。",
+            "tradeoff": "可能找不到"
+          },
+          {
+            "id": 5,
+            "text": "這次不追究那人意圖，只向護理師說自己喊大聲的部分。",
+            "action": "玩家已作本人有限聲量行為說明，不替他人確認動機或撤必要事實。",
+            "tradeoff": "可能覺得吞了黑鍋"
+          },
+          {
+            "id": 6,
+            "text": "回座位把自己見聞簡記，先不發群組。",
+            "action": "玩家已在陪診可行情況記錄本人非敏感見聞，不發布或建立他人病歷。",
+            "tradeoff": "沒有人替自己叫好"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再當整排的班長，直說「剛才我帶頭喊，這段我負責；後面的話別再跟著我」，不替那人判有罪。",
+          "action": "玩家已對原在場者作有限退回群體主導的聲明，不號召對質、公開個資或免除陪診責任。",
+          "tradeoff": "承認自己煽起聲量，可能兩邊都不討好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3699021100
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "047fa04a6c29ed26bbbb43df5db9f7885c8fefc7a34da83797d72ff775212493"
+      },
+      "consequenceDirections": {
+        "A": "可延後非急爭議，不假稱已受理。",
+        "B": "玩家向原在場者退出群體帶頭角色並承擔本人行為，不要求對方道歉換收手。",
+        "C": "可有有限事實，不替其他家屬作證。",
+        "D": "可保照護，不因離開就說誤會已清。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d90198389b15cf4797eb360ab61d2ac8962602e7371f09aa82151ebba2c74a64",
+    "draftSha256": "0908faba74841b28688dbac378a01a552ae6d253bb12e429e1b5190630bad542",
     "seedAssignmentVersion": 1
   }
 }

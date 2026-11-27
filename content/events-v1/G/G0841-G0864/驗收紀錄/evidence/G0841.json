@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "56f5bffec826c7ebece97e26dbc8d58ec4cc5102bfd60afcbb6bc131b7120750",
+      "checkedAt": "2026-11-27T14:55:21.584Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下次只留與本課確實有關的一段，其他不發。",
+            "action": "導師已在本人材料權限內限縮下一次非必要補充範圍，不更改本科評分。",
+            "tradeoff": "原設計要拆"
+          },
+          {
+            "id": 2,
+            "text": "邀他用一個具體題例私下比對兩份材料。",
+            "action": "導師已發出限合法材料的自願題例核對邀請，未取得參與或專業定論。",
+            "tradeoff": "要占兩人空檔"
+          },
+          {
+            "id": 3,
+            "text": "補充單只供自願延伸，不再當全班必交。",
+            "action": "導師已取消本人可決定的非必要補充單繳交要求，保留自願使用。",
+            "tradeoff": "少一份可看成果"
+          },
+          {
+            "id": 4,
+            "text": "拿自己的另一份課內例子取代這張跨科單。",
+            "action": "導師已選用本人有權且符合本課的既有替代例，不代定他科教法。",
+            "tradeoff": "重備一次，也少跨科連結"
+          },
+          {
+            "id": 5,
+            "text": "把這次分歧送原教學協調管道，只談材料用途。",
+            "action": "導師已提出有限正式材料用途協調需求，未取得裁定或新增制度。",
+            "tradeoff": "事情變正式"
+          },
+          {
+            "id": 6,
+            "text": "請學生自願圈出這張單哪一處曾幫助理解，不拿喜好投票定對錯。",
+            "action": "導師已提出原負擔內的有限自願材料使用回饋，不取得全班立場。",
+            "tradeoff": "回覆可能很少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是捨不得整張被打成沒用，自己署名留一份改寫版給願意看的人；他科不背書，有問題先來找我。",
+          "action": "導師已製作本人署名的有限自願延伸修訂稿並明示本人原管道答疑，不承諾無限工時或正確無誤。",
+          "tradeoff": "自己的課餘答疑會增加，也可能真的寫得不好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3895676343
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "a363a90e24d3a75f5edd467c28e65f0159356aae3b5a4930f00a209e5bfc4a06"
+      },
+      "consequenceDirections": {
+        "A": "可減額外負荷，不代表跨科一概無用。",
+        "B": "教師承擔自有延伸材料的內容與有限答疑，不越權改他科要求。",
+        "C": "可保選讀，正式必要學習不能被撤掉。",
+        "D": "能看分歧，不把邀請當已取得共識。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e8f3f60a3ed65ea3199a88dfb9342f08513402f6576dc7c977d7570497da6ba",
+    "draftSha256": "56f5bffec826c7ebece97e26dbc8d58ec4cc5102bfd60afcbb6bc131b7120750",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cf6049e276451133087d5f6e26f841d9cb9f668938437ddb5594c40cc30ea39d",
+      "checkedAt": "2026-11-27T14:55:21.594Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原評量權責如實說明現有材料，待核實後處理。",
+            "action": "導師已提出本人可確認的有限評量資料現況，不虛造分數或核定重考。",
+            "tradeoff": "原結果要等"
+          },
+          {
+            "id": 2,
+            "text": "在原允許空檔親自協助成人查找可安全辨識的封件。",
+            "action": "導師已提出本人限安全與保密條件的有限查找支援，未取得卷件或完成追回。",
+            "tradeoff": "占本人時間"
+          },
+          {
+            "id": 3,
+            "text": "請原有權承辦確認可能的既有備份，不另向學生索私照。",
+            "action": "導師已提出合法既有評量備份查詢，未取得資料或確認可替代性。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 4,
+            "text": "學生若願，只說明自己放到哪個已知位置，說完停止追問。",
+            "action": "導師已提出限必要且自願的有限位置資訊詢問，不取得新證據或強迫回現場。",
+            "tradeoff": "可能想不起來"
+          },
+          {
+            "id": 5,
+            "text": "今天不再請他做額外跑腿，原正常學習照需要接續。",
+            "action": "導師已停止本人本日非必要學生跑腿需求，不撤原正常參與及健康支持。",
+            "tradeoff": "自己少一份幫忙"
+          },
+          {
+            "id": 6,
+            "text": "向主管申請把本人非急事務後移，好在原安全條件內處理本案。",
+            "action": "導師已提出本人有限非急工作調整申請，未獲准或取得支援。",
+            "tradeoff": "其他工作要重排"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他把今天記成好心害事，自己在原必要知情範圍說明卷子與紙箱混放是我的管理問題，不讓大家把他叫成回收大師。",
+          "action": "導師已作本人真實物件放置管理的有限責任說明，不公開學生失誤或保證評量結果。",
+          "tradeoff": "得承認自己失手，也可能被主管檢視"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 694130732
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "da3b4519fa9b42c9e9eb0351afbb1f6a06622a16a2528d1f9dc1bae10ed15379"
+      },
+      "consequenceDirections": {
+        "A": "教師主動承擔本人可核實的放置缺漏、不以熱心免實際事實，必要調查與保護所有分支照常。",
+        "B": "可有正式時間，未准不擅離原課務。",
+        "C": "可停止過度付出，不把不派事當懲處或免必要支持。",
+        "D": "可找原證據，查詢不等已有完整備份。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f6eb86ce7b631ede00c9a03dcc0f9453572c52beec7615b51770979e1943c1ff",
+    "draftSha256": "cf6049e276451133087d5f6e26f841d9cb9f668938437ddb5594c40cc30ea39d",
     "seedAssignmentVersion": 1
   }
 }

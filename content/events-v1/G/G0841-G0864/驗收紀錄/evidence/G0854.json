@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "224c4566773f9c0757a4d4469a942f1e6abd985ac1a964846b81601fbaf3c245",
+      "checkedAt": "2026-11-27T14:55:21.595Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "之後本人逐件核實再簽，不再預留空白單。",
+            "action": "導師已停止本人預簽空白單做法並依原職權確認逐件辦理，不擴張權限。",
+            "tradeoff": "自己多一道工作"
+          },
+          {
+            "id": 2,
+            "text": "向原有權單位申請使用既有電子確認流程。",
+            "action": "導師已提出限既有制度的流程使用申請，未獲准或變更學生離班。",
+            "tradeoff": "可能不准，也不一定省時"
+          },
+          {
+            "id": 3,
+            "text": "本次把實際經過與原件交原主管，不另請同事代為說情。",
+            "action": "導師已提交本人可核實的有限經過與原件，不代判學生動機。",
+            "tradeoff": "留下自己失誤紀錄"
+          },
+          {
+            "id": 4,
+            "text": "請同事在原工作範圍確認哪個資訊最需要及時收到。",
+            "action": "導師已提出限原工作角色的有限交接資訊確認，不取得新代看同意。",
+            "tradeoff": "他可能覺得早該知道"
+          },
+          {
+            "id": 5,
+            "text": "只在原班務時間說清申請步驟，不重演兩名學生。",
+            "action": "導師已提供原現行程序的有限一般說明，不揭學生身份。",
+            "tradeoff": "學生可能覺得又一項說明"
+          },
+          {
+            "id": 6,
+            "text": "申請把本人非急事務後移，留出原合法請假核對時間。",
+            "action": "導師已提出本人有限非急工作調整申請，未獲准或擅停原職責。",
+            "tradeoff": "其他工作晚做"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕他以後連我的簽名都不信，這週自己在原核可交接點接每一件本人應辦的離班申請，不再讓他追著找單子。",
+          "action": "導師已在本人原職權及可用時段承諾本週固定交接點受理，不宣稱學生申請已准或免原正式流程。",
+          "tradeoff": "自己少了機動空檔，還可能被覺得作秀"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1379921855
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "928b74442d4fd5b2d04a0c0cab9dd4acde29bff4c245a5dc85e82a5996b201af"
+      },
+      "consequenceDirections": {
+        "A": "教師承擔一週具體有限的在場核對，不變更學生正當申請權或強留其他教師。",
+        "B": "可給可行做法，不公開個案或增加門檻。",
+        "C": "可正式重排，不假稱已免工作。",
+        "D": "可減空白流通，申請不是已能電子放人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f35380ac1413f9b3508b478d4e9daaa481bcb0ea68bfa7df68917a48fd1443ab",
+    "draftSha256": "224c4566773f9c0757a4d4469a942f1e6abd985ac1a964846b81601fbaf3c245",
     "seedAssignmentVersion": 1
   }
 }

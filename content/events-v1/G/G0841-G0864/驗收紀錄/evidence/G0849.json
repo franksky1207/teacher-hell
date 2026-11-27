@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "531422ae7cc33e60bc0432b430073bf7cbc9b461267c0effa7347f83a6378e6d",
+      "checkedAt": "2026-11-27T14:55:21.591Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向總務提出正式更換需求，附原已確認狀況。",
+            "action": "導師已提出限原職權的有限更換需求，未取得核准或物品。",
+            "tradeoff": "仍要等"
+          },
+          {
+            "id": 2,
+            "text": "查詢現有校用備品能否調用，不另向家長索物。",
+            "action": "導師已提出既有校用備品查詢，未取得調撥或借用。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 3,
+            "text": "只用原已安全可用的清潔方式，本次不新增採購提案。",
+            "action": "導師已選定現有安全清潔接續，不新增本人非必要採購建議。",
+            "tradeoff": "整理較慢"
+          },
+          {
+            "id": 4,
+            "text": "邀他自願記下原窗口回覆的進度，不再逐節來問。",
+            "action": "導師已提出限可公開進度的自願班務記錄邀請，未取得參與或採購權。",
+            "tradeoff": "少了立即對話"
+          },
+          {
+            "id": 5,
+            "text": "把原可公開的提案受理流程畫清，讓他知道連署後還有哪些步驟。",
+            "action": "導師已提供有限正式流程說明，不核准預算或交付物件。",
+            "tradeoff": "不能立刻拿到拖把"
+          },
+          {
+            "id": 6,
+            "text": "請原班務在現有安全工作內重分清潔區，不增加總量。",
+            "action": "導師已提出本人權限內等值安全分工調整，未擅借工具或增加勞務。",
+            "tradeoff": "大家要重新配合"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被他每天亮著眼睛問到心軟，自己接下這次有限追件，約定原工作時段回一次消息，不再讓他替我跑窗口。",
+          "action": "導師已提出本人本次有限採購進度聯繫安排並承諾按既定時段回覆，不宣稱取得物資。",
+          "tradeoff": "自己的空檔變少，也可能只回得出尚未核定"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 596840828
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "de1089906fd03bd764ffc8c55d52e782d8bbe806d48440660eed0eb34c40133c"
+      },
+      "consequenceDirections": {
+        "A": "可過渡，不把缺工具變全班加班。",
+        "B": "可用既有資源，查詢不是已借到。",
+        "C": "教師承擔本人可行追蹤角色，不承諾新貨到期或讓其成為必要進度回覆的唯一保障。",
+        "D": "可進原採購程序，不把送件當發貨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "62c2f90d7f1776d6dc8c136e2a86860f565abc2e86e4bb8c3dde4dda6ddc9c24",
+    "draftSha256": "531422ae7cc33e60bc0432b430073bf7cbc9b461267c0effa7347f83a6378e6d",
     "seedAssignmentVersion": 1
   }
 }

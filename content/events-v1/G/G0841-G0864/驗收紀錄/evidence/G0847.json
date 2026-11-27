@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0eddc9a12d649fed92fb72c5781d2f9288b3ce224c6d0296d84ece5dc9e8c41f",
+      "checkedAt": "2026-11-27T14:55:21.590Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "恢復原科目分類，只保留同類內的顏色次序。",
+            "action": "導師已在班用圖書管理權限提出有限重排方案，不移用他人私書或強迫學生加班。",
+            "tradeoff": "漂亮漸層斷開"
+          },
+          {
+            "id": 2,
+            "text": "保留顏色排法，由我補一張可查的科目位置表。",
+            "action": "導師已製作限班用非敏感書目位置的有限索引，不公開借閱人資料。",
+            "tradeoff": "自己得更新索引"
+          },
+          {
+            "id": 3,
+            "text": "只把常用書移回原區，其餘暫留漸層。",
+            "action": "導師已在合法管理範圍調整有限常用書區，明示其餘區別。",
+            "tradeoff": "兩套找法要說清"
+          },
+          {
+            "id": 4,
+            "text": "讓同學自願試找三本中性書，再回報卡在哪。",
+            "action": "導師已發出原可調時段的有限自願查找測試邀請，未取得參與或測試結論。",
+            "tradeoff": "要花短段時間"
+          },
+          {
+            "id": 5,
+            "text": "請他自願畫出自己的排法供我看，今天不再搬。",
+            "action": "導師已提出有限自願配置圖邀請，未取得作品或重排完成。",
+            "tradeoff": "眼前借書較麻煩"
+          },
+          {
+            "id": 6,
+            "text": "改成書背標籤區分科目、架上維持原顏色，先徵管理與物主同意。",
+            "action": "導師已提出需原管理及物權允許的有限標籤方案，未取得同意或貼標。",
+            "tradeoff": "貼標要時間，也可能不准"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還真想留住這條彩虹，這週多接下班用書歸位的那一小段，不再叫他一個人替漂亮負責。",
+          "action": "導師已在本人班務權限承諾本週有限班用書歸位工作，不更改借閱權益或保證查找便利。",
+          "tradeoff": "自己多做，也可能仍有人嫌難找"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1426072748
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "dc3e1c7c2150cee2ed83ba0c1620f5f84694ddddc0d6d5980cd556f00097511a"
+      },
+      "consequenceDirections": {
+        "A": "可看使用問題，不以速度評他整理能力。",
+        "B": "能找得到，不保證新借還仍不亂。",
+        "C": "教師承擔有限實際維護而非只稱讚，學生正常輪值不被永久免除，必要查找支持仍共同行。",
+        "D": "可有雙重線索，不擅貼私物。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eea0caa844c3dc2de68a380d28192af9908789a46014e840125474e671a3a3ab",
+    "draftSha256": "0eddc9a12d649fed92fb72c5781d2f9288b3ce224c6d0296d84ece5dc9e8c41f",
     "seedAssignmentVersion": 1
   }
 }

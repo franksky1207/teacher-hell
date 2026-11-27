@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c1ce32c47295d023ad33c54f2f23fdf00298e9ec9aaba6f92b51916a19909368",
+      "checkedAt": "2026-11-27T14:16:49.438Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提供本題正確評分依據，不再討論代改者身份。",
+            "action": "導師已提供原評量權限內的有限本題判準說明，不揭助理學生身份。",
+            "tradeoff": "家長可能認為護短"
+          },
+          {
+            "id": 2,
+            "text": "就孩子本人卷的其他疑點，依原申覆程序受理一次具體核對。",
+            "action": "導師已提供限本人卷與原程序的有限具體申覆途徑，不承諾改分。",
+            "tradeoff": "自己多工作，也可能查無更多"
+          },
+          {
+            "id": 3,
+            "text": "提供原正常成績更正紀錄方式，讓他自行確認。",
+            "action": "導師已提供孩子本人可查的有限更正紀錄資訊，不外洩第三人資料。",
+            "tradeoff": "仍可能想追人"
+          },
+          {
+            "id": 4,
+            "text": "詢問他是否願改在原可用面談時段，只談後續如何反映疑點。",
+            "action": "導師已提出可拒絕的有限後續面談邀請，未取得答應或設定新關卡。",
+            "tradeoff": "需再等也需安排"
+          },
+          {
+            "id": 5,
+            "text": "向原主管提出本人的批閱覆核流程改善建議。",
+            "action": "導師已提交本人評量權限相關的有限覆核改善建議，未核准新制度或保證零錯。",
+            "tradeoff": "要增加自己後續工作"
+          },
+          {
+            "id": 6,
+            "text": "必要問題答完後，明確結束這通非急電話，正常窗口仍開放。",
+            "action": "導師已在必要事項完整回覆後結束非急通話，保留原正常申覆及急迫聯繫。",
+            "tradeoff": "家長可能更生氣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句亂改刺到，這次自己把孩子這張卷逐題重新核讀，不再找任何學生幫忙，讓家長只對我問判準。",
+          "action": "導師已在本人合法評量權限完成該個卷額外逐題覆核，不加分討好或免其他受影響卷必要處理。",
+          "tradeoff": "占自己時間，可能讓家長誤認只有生氣才有服務"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 467170552
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "aa67ab372f8a11f2d196e20ea4e9174e1b7716478e943777e618e7145e693715"
+      },
+      "consequenceDirections": {
+        "A": "可以改制度，不假稱工具已能杜絕錯誤。",
+        "B": "可減電話互吼，不讓必要回覆拖延。",
+        "C": "可保查錯權，不因怒氣給全面加分。",
+        "D": "教師承擔額外完整個卷再核，不透露代改者；必要同類錯誤查核原已共同行，不給特殊分數。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b1c1177ead09f4e1b1f676e7d51fe481fc925b26473cb3ad6af0fca7149f4c59",
+    "draftSha256": "c1ce32c47295d023ad33c54f2f23fdf00298e9ec9aaba6f92b51916a19909368",
     "seedAssignmentVersion": 1
   }
 }

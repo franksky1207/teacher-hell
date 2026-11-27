@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8f3d3cb9677df23be3735132fa239ea03db41a46f5e8ad36d2432b668fbc774a",
+      "checkedAt": "2026-11-27T14:16:49.436Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後需要說明我的決定，由我自己在原班務時間說。",
+            "action": "導師已提出本人非必要決策宣傳不再委請同事代說的界線，不限制正式合作。",
+            "tradeoff": "少了同事幫腔"
+          },
+          {
+            "id": 2,
+            "text": "邀他私下只談這次話被怎麼聽見，不評論他的家教。",
+            "action": "導師已提出有限自願工作語句回顧邀請，未取得同意或心理定論。",
+            "tradeoff": "可能傷交情"
+          },
+          {
+            "id": 3,
+            "text": "請願意的學生在原短段提出一項具體管教疑問，由我答。",
+            "action": "導師已提供原班務內有限自願規定問答，不索私下同儕對話。",
+            "tradeoff": "自己要面對反對"
+          },
+          {
+            "id": 4,
+            "text": "用原可公開規範說明必要要求，不延伸老師辛苦與否。",
+            "action": "導師已提供本人原職權內的有限規範說明，不以同事家庭經驗作佐證。",
+            "tradeoff": "聽起來冷一些"
+          },
+          {
+            "id": 5,
+            "text": "本次不再請同事來班上澄清，原必要訊息由原窗口接續。",
+            "action": "導師已停止本人非必要同事入班說明需求，維持已完成與必要後續溝通。",
+            "tradeoff": "同事也許覺得自己被切割"
+          },
+          {
+            "id": 6,
+            "text": "共同確認原正常班務分工，但不把支持變成站隊表態。",
+            "action": "導師已提出限原工作範圍的自願分工確認，未取得新任務同意。",
+            "tradeoff": "少了親近的爽快"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想有人替我喊累，這回卻不想再借學生的體諒，乾脆向原主管申請減掉本人一項可調整的額外工作，不再請他替我解釋。",
+          "action": "導師已提出本人可申請範圍內的有限額外工作調整需求，未獲准或免除既有必要責任。",
+          "tradeoff": "要公開承認自己負荷，也可能不准"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 467800435
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ae9ceb19f5b46d76e101dde9b62a0e231483445504c84343fb238328b2bc227a"
+      },
+      "consequenceDirections": {
+        "A": "可減轉述，不否定他正常教學及自主意見。",
+        "B": "可談真正規定，不用疲憊當免責。",
+        "C": "可看語句效果，不能逼他承認惡意。",
+        "D": "教師把疲憊轉成自身正式工作調整申請，不加學生責任或假稱已減工。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8ff92cf9f8cde11c58a7afa0febfd10cef481dea6f8ee2991fb2ea8945dcb7fe",
+    "draftSha256": "8f3d3cb9677df23be3735132fa239ea03db41a46f5e8ad36d2432b668fbc774a",
     "seedAssignmentVersion": 1
   }
 }

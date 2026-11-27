@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7df3e06cdb4ce50748086a02322084162b079d46c711e621fa2f34fc0e9351b9",
+      "checkedAt": "2026-11-27T14:16:49.431Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原作只作個別回饋，不請他給全班看。",
+            "action": "導師已限本人原稿用途為合法個別回饋，不新增展示或借閱。",
+            "tradeoff": "分享的成就感變小"
+          },
+          {
+            "id": 2,
+            "text": "他若願意，只分享一張沒有內容的自製版面格。",
+            "action": "導師已提出有限自願空版面分享邀請，未取得成品或授權。",
+            "tradeoff": "還要另做，也可能不願"
+          },
+          {
+            "id": 3,
+            "text": "用教師自有另一份例稿教排版，原稿不再轉手。",
+            "action": "導師已選用本人有權使用的有限另稿教學，不轉用學生原稿。",
+            "tradeoff": "原作者的設計沒被看見"
+          },
+          {
+            "id": 4,
+            "text": "讓兩人自願分別寫清原本借看的範圍，未來自行決定借不借。",
+            "action": "導師已提出有限自願借用界線整理，不要求和解或更改原評量處理。",
+            "tradeoff": "關係可能更尷尬"
+          },
+          {
+            "id": 5,
+            "text": "本次停止本人額外筆記交流要求，回原課程內容。",
+            "action": "導師已不追加本次非必要筆記轉借，維持原授課回饋。",
+            "tradeoff": "少了一次分享機會"
+          },
+          {
+            "id": 6,
+            "text": "徵他同意後只讓願意的同學口頭問設計理由，不看原稿。",
+            "action": "導師已提出限本人自願的有限設計問答，不取得參與或原稿複製權。",
+            "tradeoff": "作者仍要面對別人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得他把分享當成做錯事，問他願不願把原稿暫借我當讀者，我只寫一封私人讀後回應，不拿去當教材。",
+          "action": "導師已提出限期私人借讀與本人文字回應承諾，未取得原稿、閱讀完成或新用途授權。",
+          "tradeoff": "他可能連老師都不想借，我也得花時間寫"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1220859066
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "81b5d79585931e0825eac47a84f6fc5397eae78e61a10e4f89dd7e8131052377"
+      },
+      "consequenceDirections": {
+        "A": "教師提供需本人同意的具體私人閱讀回應，不擴大作品流通或代替必要評量。",
+        "B": "可說界線，不能要原創者原諒才結案。",
+        "C": "可減壓，不阻止同學正常自願交往。",
+        "D": "可保作品控制，不把退回私人用當懲罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e1b513fb1f72c00e7958a8850e7feed9241639da8df7b360695ee189ec1f3111",
+    "draftSha256": "7df3e06cdb4ce50748086a02322084162b079d46c711e621fa2f34fc0e9351b9",
     "seedAssignmentVersion": 1
   }
 }

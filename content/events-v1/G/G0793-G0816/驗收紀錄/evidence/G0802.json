@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8e96994f15ab0eb3ceee6dd1630a27cc713891c9ca679369e9dc37696753042a",
+      "checkedAt": "2026-11-27T14:16:49.428Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向校方提出限期私借申請，按同意條件取還。",
+            "action": "導師已提出需物主及校方允許的限期借用申請，未取得物件或核准。",
+            "tradeoff": "多一筆保管責任"
+          },
+          {
+            "id": 2,
+            "text": "這節不用投影，回原合法紙本材料。",
+            "action": "導師已採用本人可用的原紙本教學方案，未借私物或更改公物處理。",
+            "tradeoff": "原備課版面要重整"
+          },
+          {
+            "id": 3,
+            "text": "請管理員依職權評估現有校用相容線，不新增購買。",
+            "action": "導師已提出既有校用相容備品查詢，未取用、核准或完成設備接續。",
+            "tradeoff": "可能沒有合適的"
+          },
+          {
+            "id": 4,
+            "text": "向原課務申請可用的替代教室，原課先照現有安排。",
+            "action": "導師已提出有限替代教室申請，未取得場地或變更當下動線。",
+            "tradeoff": "可能換不成，也有移動成本"
+          },
+          {
+            "id": 5,
+            "text": "只使用現有核可小螢幕作個別指看，不全班投影。",
+            "action": "導師已在原授課及安全照看範圍採有限個別看圖方式，不新增借物。",
+            "tradeoff": "大家要輪流看"
+          },
+          {
+            "id": 6,
+            "text": "請承辦說明正式補件的規格及程序，先不買相容品。",
+            "action": "導師已向原權責提出有限補件程序確認，不承諾採購或結案。",
+            "tradeoff": "恢復速度慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕又把人家家裡變備品倉，這次明確謝絕這條私人線，自己把原簡報的關鍵圖重畫在黑板上。",
+          "action": "導師已婉拒本人本次私借並在原課內製作有限板繪替代，不宣稱私線不可用或公物已補。",
+          "tradeoff": "自己多做，圖也可能沒投影清楚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 771758099
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "9ff942c4e902fd2c6451128e0d89a77de07a51b61534f0b9b0e5435db8984674"
+      },
+      "consequenceDirections": {
+        "A": "可避免私購亂替，查詢不等於補件已完成。",
+        "B": "可不依私人支援，不免原遺失責任。",
+        "C": "教師拒用特定私人支援並承擔現場改畫，與普通紙本不同在新教學產物，必要原件追查照常。",
+        "D": "能救急，但申請不等於已借到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "937b1898de72bdf42637dc96550960de32d4c188aba499bb8fe0f2ca4d8437a2",
+    "draftSha256": "8e96994f15ab0eb3ceee6dd1630a27cc713891c9ca679369e9dc37696753042a",
     "seedAssignmentVersion": 1
   }
 }

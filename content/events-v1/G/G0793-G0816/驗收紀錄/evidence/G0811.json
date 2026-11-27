@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "95d67375244ac8262544b195badaf859245784d4a5ce1e727a08bff988f89447",
+      "checkedAt": "2026-11-27T14:16:49.435Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依原要求只收學生實際完成部分，外包成品不當作業成果。",
+            "action": "導師已依原評分範圍辨明並收受可用學生原作，不採外包成品冒作學生實作。",
+            "tradeoff": "家長花的錢沒換到分"
+          },
+          {
+            "id": 2,
+            "text": "在原規則可行範圍協助申請等值補作，不額外加罰量。",
+            "action": "導師已提出限原制度的等值補作申請，未獲准或完成作品。",
+            "tradeoff": "要時間，也未必准"
+          },
+          {
+            "id": 3,
+            "text": "先返還私人輸出，讓家長自行決定去向。",
+            "action": "導師已按原權屬提出並辦理可完成的私物返還，不擅銷毀或給他人展示。",
+            "tradeoff": "家長可能覺得被退禮"
+          },
+          {
+            "id": 4,
+            "text": "原組若願，僅用原自作草圖作口頭說明，不展示商業海報。",
+            "action": "導師已提供原一般回饋可行的有限自作草圖說明方式，不改正式評分規範。",
+            "tradeoff": "畫面不完整"
+          },
+          {
+            "id": 5,
+            "text": "私下請家長以後先確認協助範圍，本次不再提供外包轉修建議。",
+            "action": "導師已向家長提出有限未來家庭協助界線，停止本人非必要外包修稿建議。",
+            "tradeoff": "可能被聽成不領情"
+          },
+          {
+            "id": 6,
+            "text": "請原有權教師共同核對本次實作標準，只看必要材料。",
+            "action": "導師已提出限正式授課權責及必要知情的評量協作請求，未取得第二結論。",
+            "tradeoff": "多一點等待與協調"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點替那張畫半截的紙不平，問原組願不願保留它當這次唯一課內分享，不修漂亮，逐個說自己真的畫到哪。",
+          "action": "導師已提出需組員自願的有限未完稿過程分享，未取得參與或改動正式評量標準。",
+          "tradeoff": "看起來寒酸，也可能讓家長更不服"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3443724374
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "ca885ba0c43c2cbd473ec9c45957c92dc5e4929d00db66884eb8a36fdd30da8e"
+      },
+      "consequenceDirections": {
+        "A": "可見真正分工，不能以口說假冒原繪製要求完成。",
+        "B": "可界定合作，不把幹部舊怨帶進評分。",
+        "C": "教師倡議未完成自作稿的過程分享，不取代必要評量、不強迫公開家庭外包。",
+        "D": "可有修正途徑，不保證原分數或資格。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "22729dbf14bf4e2b0942863966787011cf88dd989586f80e78a3d4637ff2e7bc",
+    "draftSha256": "95d67375244ac8262544b195badaf859245784d4a5ce1e727a08bff988f89447",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "091980bd860cfcce8f0134db225d758aaa2efd8e9496ddda7fc46f8264bde62e",
+      "checkedAt": "2026-11-27T14:16:49.429Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今晚到這裡，說明身體不舒服，按安全方式回去。",
+            "action": "玩家已婉拒本人非必要續攤並安排安全離開，不承諾硬撐或自行危險駕駛。",
+            "tradeoff": "怕朋友下次不找"
+          },
+          {
+            "id": 2,
+            "text": "若身體允許，只留原安全短段坐著，不再主持。",
+            "action": "玩家已提出限身體可承受的短留安排，退出本人非必要控場角色。",
+            "tradeoff": "可能有冷場"
+          },
+          {
+            "id": 3,
+            "text": "只跟一位自願留下的老友說最近實在沒別的話題。",
+            "action": "玩家已提出可拒絕的有限私人談話邀請，不要求他人保密不當資訊或陪續攤。",
+            "tradeoff": "顯得沒有想像中有趣"
+          },
+          {
+            "id": 4,
+            "text": "拒絕續攤，但約一個尚待雙方同意的改日簡單見面。",
+            "action": "玩家已婉拒當晚非必要續攤並提出日後有限自願邀約，未取得同意或預訂。",
+            "tradeoff": "今天沒接上，未來也未必約成"
+          },
+          {
+            "id": 5,
+            "text": "在原仍可行的餐廳停留內，自己點安全適量食物補吃，不再夾菜。",
+            "action": "玩家已按身體狀況及店規提出本人適量餐點需求，未宣稱取得餐點或症狀改善。",
+            "tradeoff": "多花時間與餐費"
+          },
+          {
+            "id": 6,
+            "text": "今晚不安排新聚會，只把原聯絡資訊留好，先結束。",
+            "action": "玩家已結束本人當晚非必要社交安排，維持既有合法私人聯繫。",
+            "tradeoff": "可能像退回邊緣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我餓到不想再演熱絡，直接說「我整晚忙著讓你們吃，自己沒吃到」，請願意的人在這裡陪我安靜補幾口，不續攤。",
+          "action": "玩家已婉拒續攤並提出原店允許、身體可承受的有限安靜陪餐邀請，未取得答應或保證進食完成。",
+          "tradeoff": "可能被聽成抱怨，還得自己付該付的餐費"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 266772868
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "9167a5c0b996081739d947d5a2e4fdcfa2b0bfe4cdb550c68d1a387a24c47928"
+      },
+      "consequenceDirections": {
+        "A": "玩家坦白不滿並要求不同互動方式，可被拒，身體需要仍先處理，不把服務換陪伴當義務。",
+        "B": "可有真實交流，邀請不等於對方願聽。",
+        "C": "可保普通聯繫，不強求立刻證明人緣。",
+        "D": "可回身體需要，不拿吃完保證胃痛已解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9a0337b047c469788d56e5baf972ee67537388b21e579384362075d70f8031c4",
+    "draftSha256": "091980bd860cfcce8f0134db225d758aaa2efd8e9496ddda7fc46f8264bde62e",
     "seedAssignmentVersion": 1
   }
 }

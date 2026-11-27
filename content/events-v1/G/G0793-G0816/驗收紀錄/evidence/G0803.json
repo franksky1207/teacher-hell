@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "25a334466b8b5f9c1e44baf1491b39643f1d48536532b83a97f26aed655534e8",
+      "checkedAt": "2026-11-27T14:16:49.428Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "之後本人的班務只用原可安排時段，不再私下借他的課。",
+            "action": "導師已撤回本人未定的非必要私借需求，維持原正式排課程序。",
+            "tradeoff": "自己的時間更擠"
+          },
+          {
+            "id": 2,
+            "text": "邀他私下只談已核實的兩次借課，不追問誰傳話。",
+            "action": "導師已提出可拒絕的有限工作事實談話邀請，未取得答應或判定動機。",
+            "tradeoff": "可能只得到沒關係"
+          },
+          {
+            "id": 3,
+            "text": "請教務以原程序統一受理班務調課需求，不由熟人口頭協調。",
+            "action": "導師已提出限現行制度的正式受理需求，不核定新排課規則。",
+            "tradeoff": "程序變慢"
+          },
+          {
+            "id": 4,
+            "text": "把本人可公開的班務時段提供他看，不要求他交自己的行程。",
+            "action": "導師已提供本人非敏感工作安排的有限說明，不蒐集他人私事。",
+            "tradeoff": "可能看起來像辯解"
+          },
+          {
+            "id": 5,
+            "text": "這次不再延伸談茶水間話，原必要回覆只以正式文字確認。",
+            "action": "導師已停止本人非必要傳話追問，將原必要工作確認轉為允許的文字方式。",
+            "tradeoff": "私人距離會拉開"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，一起列出下次調課前必須明說的條件。",
+            "action": "導師已提出限原工作範圍的自願條件確認，不取得同意或新增制度。",
+            "tradeoff": "像又多一項整理工作"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句刺到，今天不再陪著說笑，直說我聽了不舒服，但不追究來源；這杯茶喝完各自做事。",
+          "action": "導師已作本人有限私人感受表達並結束非必要寒暄，不認定傳聞為已證實言論或撤正式合作。",
+          "tradeoff": "交情可能暫時降溫，自己也不好下台"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1389760579
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "108cf20caf8dd210d8713659f71e1e27da577ef454bc9f413ebfda9e5fda477d"
+      },
+      "consequenceDirections": {
+        "A": "教師直接表達自身人際受傷並退出額外寒暄，必要補課與工作溝通仍照常，不公審同事。",
+        "B": "可以改真實工作方式，正式必要調課仍走原程序。",
+        "C": "可保工作準確，不把冷處理擴成拒絕合作。",
+        "D": "可減私人壓力，申請不是規則已改。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ac3cb51fc1989343283192400c9516831579d85a74bc2e2dd4e0fd37022ec19",
+    "draftSha256": "25a334466b8b5f9c1e44baf1491b39643f1d48536532b83a97f26aed655534e8",
     "seedAssignmentVersion": 1
   }
 }

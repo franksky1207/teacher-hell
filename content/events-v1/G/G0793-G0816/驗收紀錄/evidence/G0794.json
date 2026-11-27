@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6e424353d6ea45eb4757a3c66dee8e9470f8901476a8b064ccdafd6ce38f5f8a",
+      "checkedAt": "2026-11-27T14:16:49.416Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助他向主管提出實際工作重排申請。",
+            "action": "導師已提出本人可協助的工作負荷整理與申請，未獲核准或改正式評分。",
+            "tradeoff": "要列明負荷，可能被檢視"
+          },
+          {
+            "id": 2,
+            "text": "在他願意且規範允許下，只幫整理無作答內容的收件清單。",
+            "action": "導師已提出限授權及非敏感清單的事務協助，未取得資料或代批登分。",
+            "tradeoff": "只減掉小部分工作"
+          },
+          {
+            "id": 3,
+            "text": "陪他核對已明定的一題評分準則，由他依權責判。",
+            "action": "導師已提出限合法授課協作的準則核對，未接管評量或更動分數。",
+            "tradeoff": "會占彼此時間"
+          },
+          {
+            "id": 4,
+            "text": "他若願意，先休息原可用的幾分鐘，再回原正式安排。",
+            "action": "導師已提出原允許時間內的有限休息選擇，維持必要評量接續。",
+            "tradeoff": "批卷時間更緊"
+          },
+          {
+            "id": 5,
+            "text": "這次不額外代工，只幫他找到原有正式支援窗口。",
+            "action": "導師已提供既有工作支援聯繫資訊，不取得協助或撤本人原責任。",
+            "tradeoff": "同事可能覺得不夠義氣"
+          },
+          {
+            "id": 6,
+            "text": "請他自願把被酸的原話與時間記給自己，若要反映再走原程序。",
+            "action": "導師已提出限本人自願的工作事件記錄建議，未代提申訴或判定責任。",
+            "tradeoff": "要重想不舒服的話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也聽煩那句沒經驗，陪他留在辦公室各做各的，不催他表現振作；我的原空檔就坐這裡。",
+          "action": "導師已將本人可支配短段用作在場合規陪伴及自有工作，不承接他人評分或強求情緒改善。",
+          "tradeoff": "自己的事會慢，也可能一路都沒話"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2066596544
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "e90ea48b443bb8cd3fb9d8e4d6194a76d3d79bf54490810ad9d0c7fad8acc31c"
+      },
+      "consequenceDirections": {
+        "A": "可保角色界線，聯繫不是支援已到。",
+        "B": "可保事實，不能用紀錄換成績處置。",
+        "C": "可以釐清卡點，不把交情當額外分數。",
+        "D": "教師提供有限共同工作陪伴，不代改卷、不以陪伴保證對方復工或完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f7e81dd03de9a88089dba22c7f81b18df81f894cb00a49562f56ff66ad4944cc",
+    "draftSha256": "6e424353d6ea45eb4757a3c66dee8e9470f8901476a8b064ccdafd6ce38f5f8a",
     "seedAssignmentVersion": 1
   }
 }

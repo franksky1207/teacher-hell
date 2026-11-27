@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7b52dbcadef40ccf93a5a3ba70779847dec761bbf2de1b79d9827aa5513d1866",
+      "checkedAt": "2026-11-27T14:16:49.440Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若本人仍願捐給學校，協助走原受贈申請。",
+            "action": "導師已提出需物主及校方同意的原受贈申請方案，未收受、入冊或啟用。",
+            "tradeoff": "原贈與用意改變，也可能不准"
+          },
+          {
+            "id": 2,
+            "text": "本次婉拒，由物主依原方式帶回。",
+            "action": "導師已婉拒本人此次非必要受贈並提出原物返還安排，未代贈他人。",
+            "tradeoff": "同事可能失望"
+          },
+          {
+            "id": 3,
+            "text": "向承辦查是否准有限私借，期限及保管先寫清。",
+            "action": "導師已提出限原規則的有限私借可行性查詢，未核准或借到。",
+            "tradeoff": "多一筆責任，也可能不准"
+          },
+          {
+            "id": 4,
+            "text": "本課用原校用教具，不處理這箱的新用途。",
+            "action": "導師已採原可支用校用材料，停止本人額外用途需求並按原權屬接續物件。",
+            "tradeoff": "少了期待的新玩法"
+          },
+          {
+            "id": 5,
+            "text": "請物主自己向受贈窗口問清條件，我不代替他簽。",
+            "action": "導師已提供原正式窗口並拒絕越權代簽，不承接物件或更改權屬。",
+            "tradeoff": "他得再跑一次程序"
+          },
+          {
+            "id": 6,
+            "text": "若不進校，僅請他自願口述玩法供我了解，不拆箱或拍材料。",
+            "action": "導師已提出限本人自願與合法內容的有限玩法交流邀請，未取得參與或新使用權。",
+            "tradeoff": "班上還是用不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想收卻不想讓交情變帳目，這箱不拿，改約他下班到原合法遊戲空間各付各的玩一場，別讓他再送我。",
+          "action": "導師已婉拒本人本次受贈並提出需雙方同意的有限私人遊戲邀約，未取得同意、預訂或移用校產。",
+          "tradeoff": "要花自己的錢和休息，對方也可能不想赴約"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2823390530
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "a3eddffb4ec7baf393754d1ec36248ee90da692ff4bc0d8704377bc40e22e716"
+      },
+      "consequenceDirections": {
+        "A": "私人共同興趣直接承接送教具的交情，不把校物帶出去、不承諾聚會成案或消除原規範。",
+        "B": "可保物權，不把拒收說成其資源不乾淨。",
+        "C": "可以讓原主決定，不把窗口聯繫當已核准贈與。",
+        "D": "可分借與贈，不以借名義規避必須規範。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b30716ccf508aae715e97bb461e5beaf918220806c67ca794e017a0266865ad3",
+    "draftSha256": "7b52dbcadef40ccf93a5a3ba70779847dec761bbf2de1b79d9827aa5513d1866",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c7b67dd6d2be67a75b0064ed4835ba6ba41b5a6055295be332d358aec7c5d2ff",
+      "checkedAt": "2026-11-27T14:16:49.425Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本案後續訊息由正式窗口發布，不再請她轉達。",
+            "action": "導師已停止本人對此案新增非必要轉達分工，提供正式窗口。",
+            "tradeoff": "她可能覺得被撤換"
+          },
+          {
+            "id": 2,
+            "text": "只讓她自願協助提醒已正式公告的日期，不碰金額或資格。",
+            "action": "導師已提出限正式公告日期的可拒絕提醒邀請，未取得答應或新增資料權。",
+            "tradeoff": "幫忙範圍明顯縮小"
+          },
+          {
+            "id": 3,
+            "text": "提供一份由承辦確認可用的常見問題連結，讓群組自行查。",
+            "action": "導師已提供原正式可用資訊來源，不代審個案或保證補助。",
+            "tradeoff": "讀起來不如一句金額快"
+          },
+          {
+            "id": 4,
+            "text": "向承辦申請開放原既有諮詢時段，未定問題集中由窗口答。",
+            "action": "導師已提出既有資源範圍的有限諮詢需求，未取得安排或擴大支出。",
+            "tradeoff": "可能排不到，家長需等"
+          },
+          {
+            "id": 5,
+            "text": "私下和她確認未來願意與不願意承擔的聯絡範圍。",
+            "action": "導師已提出可拒絕的有限未來分工確認，不取得答應或新的對外權限。",
+            "tradeoff": "要承認原先分工也含糊"
+          },
+          {
+            "id": 6,
+            "text": "此案不再額外請志工協助，按原正式人力走。",
+            "action": "導師已停止本人此案非必要志工需求，維持原正式責任接續。",
+            "tradeoff": "自己和承辦工作增多"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕看起來把熱心的人推出去，自己在群裡補一句這次分工是我交代不清，不替未定金額背書，也不叫她出來道歉給人看。",
+          "action": "導師已就本人真實分工表述作有限公開責任說明，不增補助承諾或要求家長公開自責。",
+          "tradeoff": "公開承認自己的疏忽，還可能引來更多追問"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2207159954
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "15bf4ad7d08e26bda662b7b4e1925f223765b112dba94898a96106ea98d60069"
+      },
+      "consequenceDirections": {
+        "A": "可減轉述節點，不影響她其他合法參與。",
+        "B": "教師承擔本人真實溝通責任，必要誤訊更正原已完成，不代認家長全部行為或換她感謝。",
+        "C": "可保權責，正常家長發問權不受限。",
+        "D": "可少經轉述，不把連結當個案核定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a46db2d60cf977f0bba555f1d0c0ea1d7a5141e29274c2281108871095ab7109",
+    "draftSha256": "c7b67dd6d2be67a75b0064ed4835ba6ba41b5a6055295be332d358aec7c5d2ff",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "074e1c6e8015fa07a6026d1a4802223fa90738d0a183cff02dae1ae18dc5b5cc",
+      "checkedAt": "2026-11-27T14:16:49.430Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原點餐吃完結帳，不再替店家發新消息。",
+            "action": "玩家已停止本人非必要店務消息轉述，按原消費義務處理餐點。",
+            "tradeoff": "熱心的習慣得收住"
+          },
+          {
+            "id": 2,
+            "text": "詢問老闆是否願由他提供一則可公開資訊，我只轉原文。",
+            "action": "玩家已提出可拒絕的有限授權資訊轉發邀請，未取得內容或發布許可。",
+            "tradeoff": "他可能懶得再給"
+          },
+          {
+            "id": 3,
+            "text": "今後店務消息只提供店家原官方來源，不加自己的判斷。",
+            "action": "玩家已對本人未來非必要店務轉述設定限原授權來源的界線，不宣稱群體已改觀。",
+            "tradeoff": "少了聊天時的存在感"
+          },
+          {
+            "id": 4,
+            "text": "這次改外帶，結清原帳後離開忙碌櫃台。",
+            "action": "玩家已提出依店規的本人外帶需求並處理應付帳款，未保證店方已改單。",
+            "tradeoff": "原本想放鬆的晚餐沒坐成"
+          },
+          {
+            "id": 5,
+            "text": "向老闆詢問後續若仍有誤問，希望我怎麼有限協助。",
+            "action": "玩家已提出有限自願補救協助詢問，未取得委託或完成全部澄清效果。",
+            "tradeoff": "可能接到麻煩回覆"
+          },
+          {
+            "id": 6,
+            "text": "自己把推論錯在哪記下，不再找熟客討論老闆生意。",
+            "action": "玩家已記錄本人錯誤判斷並停止新增非必要店務討論，不蒐集商業私情。",
+            "tradeoff": "沒有人陪你消化尷尬"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我實在不想再當消息靈通那個人，自己退出群裡自封的店家近況彙整，明說往後不要經我問店務，免得嘴又比腦快。",
+          "action": "玩家已明確停止本人自發非必要店務彙整與中介詢問，不阻斷店家或群組正式聯繫。",
+          "tradeoff": "少了常被找的存在感，還會被笑"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 759495701
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "63265f7b6f09f07ddadbe5ecff9a8f9bf2d1a76b672102da6f6f4306ba3a29ba"
+      },
+      "consequenceDirections": {
+        "A": "玩家撤回本人自發且無正式責任的店務彙整角色，不退必要更正、不替老闆決定公開內容。",
+        "B": "可減新增干擾，不用安靜逃掉必要更正。",
+        "C": "可讓本人掌訊息，未同意不補猜冰箱或營收。",
+        "D": "可保持聯繫，不能保證每個讀者都不再誤解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "69877ba53f930d76273e0d17347f66c292acd8833fa67f793b6bb033d3fa66dd",
+    "draftSha256": "074e1c6e8015fa07a6026d1a4802223fa90738d0a183cff02dae1ae18dc5b5cc",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cf955393c99b70984c1c78f5407979c6c7d8537c299bcb07488319c3efc31135",
+      "checkedAt": "2026-11-27T14:16:49.432Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不供人物失敗照，只提供本人可公開的課程說明。",
+            "action": "導師已提供限本人有權公開的課程文字，不交學生影像。",
+            "tradeoff": "少了抓眼球的畫面"
+          },
+          {
+            "id": 2,
+            "text": "由本人先確認自願，再把學生同意的非羞辱片段送原核稿。",
+            "action": "導師已提出需相關權利與正式核稿的有限素材徵詢方案，未取得同意或發布。",
+            "tradeoff": "可能沒素材或趕不上"
+          },
+          {
+            "id": 3,
+            "text": "使用無人物且已可用的裝置前後照片，準確寫原因。",
+            "action": "導師已提出限既有合法無識別影像的展板方案，未取得新用途核准或宣稱已展。",
+            "tradeoff": "笑點變少"
+          },
+          {
+            "id": 4,
+            "text": "學生若願，讓他們自己新畫錯誤示意，不交原失敗照片。",
+            "action": "導師已提出原負擔外可拒絕的有限新圖邀請，未取得作品或展示權。",
+            "tradeoff": "要另作，也可不參加"
+          },
+          {
+            "id": 5,
+            "text": "請職員把原教學改進以時間線呈現，不以人物表情作賣點。",
+            "action": "導師已提供可核實的有限課程改進資訊並提出時間線方案，不核准最終展板。",
+            "tradeoff": "版面比較文字化"
+          },
+          {
+            "id": 6,
+            "text": "本班只交原必要資料，不參與這次額外亮點改版。",
+            "action": "導師已婉拒本人非必要亮點改版合作，維持原正式交件責任。",
+            "tradeoff": "職員要重找材料"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服每次都拿孩子的臉撐亮點，提議改放我自己失手的無敏感備課筆記，只講老師怎麼改，不讓學生替我證明可愛。",
+          "action": "導師已提出本人有權使用、真實非敏感備課修訂素材供審，不取得核准或公開學生資訊。",
+          "tradeoff": "丟自己的面子，也未必有招生效果"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2121786380
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "b349a872ea41d88a17fc5df34c8bcdb264bf78980d48755f067d59e0da9a91b2"
+      },
+      "consequenceDirections": {
+        "A": "可保職務最低必要內容，不阻礙他人合法提案。",
+        "B": "可以看改進，不以無臉自動等於無權利限制。",
+        "C": "可以看教學過程，不硬湊不存在的改善。",
+        "D": "教師提供本人真實可用新素材，需核稿不冒稱已展，不捏造失敗或要學生背書。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "55f39d848019c804042f9580c5c3b9eef9d574dc91e3a1279a20ca5ec44cc730",
+    "draftSha256": "cf955393c99b70984c1c78f5407979c6c7d8537c299bcb07488319c3efc31135",
     "seedAssignmentVersion": 1
   }
 }

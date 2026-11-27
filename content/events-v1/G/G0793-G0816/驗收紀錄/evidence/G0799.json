@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "56e9e81e9d033f31fd9131e8f61ee2e316ce1e68104ac562ce39eb0374d7038a",
+      "checkedAt": "2026-11-27T14:16:49.422Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原規定收目前可合法提交的真實初稿，不保證評等。",
+            "action": "導師已依原規則受理可提交初稿並註明真實完成程度，不擅定零或補分。",
+            "tradeoff": "未完成部分仍影響結果"
+          },
+          {
+            "id": 2,
+            "text": "協助向原承辦提出有事實依據的展延申請。",
+            "action": "導師已提出原程序允許的有限展延申請，未獲准或改截止。",
+            "tradeoff": "可能不准，也可能影響資格"
+          },
+          {
+            "id": 3,
+            "text": "原可用課內短段只處理那一段引述，不碰其他版面。",
+            "action": "導師已提供本人授課範圍的有限引述辨識協助，不完成學生改寫或保證參賽。",
+            "tradeoff": "其他瑕疵留著"
+          },
+          {
+            "id": 4,
+            "text": "依原規則讓他選擇不參加非必要評比，正常學習回饋仍收。",
+            "action": "導師已提供原允許的非必要評比退出途徑，不免正式學習責任。",
+            "tradeoff": "少一次參賽機會"
+          },
+          {
+            "id": 5,
+            "text": "先用原規則可行的摘要版本送審資格詢問，不冒充全文完稿。",
+            "action": "導師已向承辦提出限真實摘要的提交範圍詢問，未取得受理或資格。",
+            "tradeoff": "可能不被接受"
+          },
+          {
+            "id": 6,
+            "text": "把其他非急的本人課務負擔依規則調整，初稿仍照原期。",
+            "action": "導師已在本人可調整權限內重排非急練習，不更動正式初稿期限。",
+            "tradeoff": "其他項目會後移"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心讓他把零分當唯一乾脆，拿自己一段沒寫好的舊稿給他看，只一起標「完成」與「待做」，這次不替他算輸贏。",
+          "action": "導師已提供本人有權使用的有限未完稿例，安排原課內完成度辨識，不代寫或改評分。",
+          "tradeoff": "自己的草稿也丟臉，還可能被當安慰"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2481613211
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "fc5c993d23900628ad7fa6a45e0f70f42355d96161bf94154990682948591749"
+      },
+      "consequenceDirections": {
+        "A": "可以查可提交範圍，詢問不是已收件合格。",
+        "B": "可以走既有彈性，不能私下允兩天。",
+        "C": "教師以自有無敏感稿作有限完成度比對，不冒作替代學生成果或承諾成績。",
+        "D": "可降低額外負擔，不可退出正式必需評量。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff454a7c4f412abb7c25c98dee64b0ea8dd7fefc99739f576dc528da3bbdb6e9",
+    "draftSha256": "56e9e81e9d033f31fd9131e8f61ee2e316ce1e68104ac562ce39eb0374d7038a",
     "seedAssignmentVersion": 1
   }
 }

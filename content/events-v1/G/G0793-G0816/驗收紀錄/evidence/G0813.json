@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89c8eb6c1a82e472f8f428acdf6888fde1e5f531999927467f105e358db48e65",
+      "checkedAt": "2026-11-27T14:16:49.437Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原班務時間只受理練習時段的具體問題。",
+            "action": "導師已提供有限原時段問題受理，不放寬未核准社團時間。",
+            "tradeoff": "他可能還想談被抓包的感覺"
+          },
+          {
+            "id": 2,
+            "text": "協助向原社團承辦查詢可行時段，不保證延長。",
+            "action": "導師已提出原規範內有限時段可行性詢問，未獲准或增加留校。",
+            "tradeoff": "要等，也可能無解"
+          },
+          {
+            "id": 3,
+            "text": "他若願，將原不滿改成不涉個資的正式意見，由他自行確認送不送。",
+            "action": "導師已提出可拒絕的有限正式意見整理協助，未替他送件或取得同意。",
+            "tradeoff": "需要整理，也會留下正式紀錄"
+          },
+          {
+            "id": 4,
+            "text": "本次不再延伸社群討論，只按原必要程序接續。",
+            "action": "導師已停止本人非必要社群談話，維持必要事件處理與正常意見管道。",
+            "tradeoff": "關係可能仍僵"
+          },
+          {
+            "id": 5,
+            "text": "用本人自編情境在原課內談轉傳界線，不展示他那張圖。",
+            "action": "導師已提出限無識別虛構材料的有限媒體界線教學，不公開原帖。",
+            "tradeoff": "用掉課內彈性，也可能被猜是他"
+          },
+          {
+            "id": 6,
+            "text": "邀原社團教師依原角色回覆大家共同時段疑問。",
+            "action": "導師已提出限原職權的有限共同問題回覆需求，未取得協作或核可新時段。",
+            "tradeoff": "要配合對方時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想回一句管很寬，這次把那句留著不發，當面直說我不願當他的公開背景照；時間的反對意見，我另外照樣收。",
+          "action": "導師已明示本人對未來非必要肖像使用的不願及私人互動界線，維持正常管教意見受理，不要求全體禁評。",
+          "tradeoff": "他可能覺得老師太玻璃心，私人親近會少一點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1105531092
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "bb789dae5857552d8e13b7a469f36d27083711727834efc73debadf313034c35"
+      },
+      "consequenceDirections": {
+        "A": "可分開批評與照片，不因口氣不佳拒絕正常發聲。",
+        "B": "教師設定本人未來非必要被拍及私人互動界線，不把必要原圖處理包成情緒獨有、不拒批評。",
+        "C": "可停止非必要追問，不以程序當不理會安全權益。",
+        "D": "可教方法，須避可識別個案線索，不追加羞辱。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a88cc1be5b211b1d2ea27648c4cdc9b8ad2607ffb266bafd29197ac0bc7537b1",
+    "draftSha256": "89c8eb6c1a82e472f8f428acdf6888fde1e5f531999927467f105e358db48e65",
     "seedAssignmentVersion": 1
   }
 }

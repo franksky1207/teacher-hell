@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "30038dfa312d5df49ae67e136313cecaab6b652c7318a51668deb2c849c1597a",
+      "checkedAt": "2026-11-27T14:16:49.420Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只協助核對原正式證明的本人實際工作，不另加致謝。",
+            "action": "導師已在原職權提供本人實際協助內容核對，不核發越權證明。",
+            "tradeoff": "家長可能覺得冷"
+          },
+          {
+            "id": 2,
+            "text": "向承辦申請依原格式另列家長自願協助事項，不混入學生加分。",
+            "action": "導師已提出需承辦確認的家長協助記載申請，未核定時數或格式。",
+            "tradeoff": "要再核，也可能沒有這種證明"
+          },
+          {
+            "id": 3,
+            "text": "提供可公開的原機會分配原則，不公開其他學生個別資料。",
+            "action": "導師已提供限可公開的原分配原則說明，不揭個別成績或家庭。",
+            "tradeoff": "家長可能還想知道名單"
+          },
+          {
+            "id": 4,
+            "text": "就後續非必要志工邀請先不找他，明確讓他按家庭負荷自行決定。",
+            "action": "導師已停止本人對其新增非必要志工邀請，不影響本人原已完成貢獻的紀錄。",
+            "tradeoff": "少一位熟悉路線的支援"
+          },
+          {
+            "id": 5,
+            "text": "若他仍有異議，協助按原程序向核發窗口提出一次具體更正。",
+            "action": "導師已提供有限原證明異議程序協助，未受理成功或更改核定。",
+            "tradeoff": "須準備真實證據"
+          },
+          {
+            "id": 6,
+            "text": "詢問是否改用他指定且可用的單一聯繫時段，減少反覆打斷照顧。",
+            "action": "導師已提出可拒絕的有限例行聯繫安排，不改必要通知義務。",
+            "tradeoff": "不能隨打隨答"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想讓他的那天只剩一張時數，自己寫一封只給他的具體謝信，說明我看見他搬了什麼，不提孩子加分。",
+          "action": "導師已撰寫本人有限真實協助致謝信並提出私下收受，不冒官方證明、未保證收受或原諒。",
+          "tradeoff": "自己要花時間，還可能被當安慰獎"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3396861554
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "fe5e8afa10d7573e9b1c70163e5194793ffe18219d8f202e86a939268126efd4"
+      },
+      "consequenceDirections": {
+        "A": "可不再消耗，但原正式紀錄及公平處理照常。",
+        "B": "可看標準，不把他人資訊交出來換安心。",
+        "C": "教師提供真實私人致謝而非官方資格，家長可不收，不公開其照顧情況。",
+        "D": "可減負擔，急迫必要事件仍走原管道。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8255570f485c608dde53fd6ce97d86e8486872cfe15c7c9b23a522e05f09588b",
+    "draftSha256": "30038dfa312d5df49ae67e136313cecaab6b652c7318a51668deb2c849c1597a",
     "seedAssignmentVersion": 1
   }
 }

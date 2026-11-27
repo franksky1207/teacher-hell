@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7866fafb3cd4c26460f58bb1e449fab42db454ec64c33fd0abae4c5b0b4be02e",
+      "checkedAt": "2026-11-27T14:16:49.433Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只轉交原正式競賽資訊，不替他催簽。",
+            "action": "導師已提供限原核可資訊的自願參賽通知，不承諾報名人數。",
+            "tradeoff": "名額可能空著"
+          },
+          {
+            "id": 2,
+            "text": "向承辦查是否有正常展延，不先向學生許諾。",
+            "action": "導師已提出原程序允許的有限期限詢問，未取得展延或報名。",
+            "tradeoff": "可能不准，也錯過本次"
+          },
+          {
+            "id": 3,
+            "text": "有意願者可在原課內允許短段私下問一個負擔問題。",
+            "action": "導師已提供原允許範圍的有限自願負擔諮詢，不取得參賽同意或代簽。",
+            "tradeoff": "占用教師空檔"
+          },
+          {
+            "id": 4,
+            "text": "請組長先列明學校能提供的既有訓練與費用條件，再由本人決定。",
+            "action": "導師已向原權責詢問限既有可用支援的具體條件，不承諾取得資源。",
+            "tradeoff": "原催辦會變慢"
+          },
+          {
+            "id": 5,
+            "text": "本班不做額外動員，原正常自願報名照常開放。",
+            "action": "導師已婉拒本人非必要競賽動員，維持原正常申請管道。",
+            "tradeoff": "可能被主管盯"
+          },
+          {
+            "id": 6,
+            "text": "若學生願意，協助用本人已確認資料自己填新表，不沿代填那份。",
+            "action": "導師已提出限本人自願、原合法資料範圍的自填協助，未取得資料或完成送件。",
+            "tradeoff": "重填花時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服只剩簽名的催辦，自己署名向主管提一份反對這輪額外備賽的意見，不叫學生替我擋。",
+          "action": "導師已向有權主管提交本人真實教學負荷考量及反對新增額外備賽的有限書面意見，不冒學生立場、不妨礙原正常自願報名。",
+          "tradeoff": "主管可能認為我扯後腿，之後得自己解釋"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 837385312
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "8297d4f9c824df9c4caab9ba8ce8711b2652da243cf3280e7002294153596e49"
+      },
+      "consequenceDirections": {
+        "A": "可不拿導師威望衝人數，不阻學生合法參加。",
+        "B": "教師主動承擔具名異議的職場代價，正常自願報名與必要正確進度回覆仍各分支維持；意見不等於停辦核准或代表全班。",
+        "C": "可釐清時間，不把申請當延長成功。",
+        "D": "可讓本人決定，不拿成績當必須參賽。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒只回報真實自願進度，可能把必要誠實包成情緒獨有行動；改為本人署名提出非必要額外備賽異議，不替學生發言。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只轉交原正式競賽資訊，不替他催簽。",
+                "action": "導師已提供限原核可資訊的自願參賽通知，不承諾報名人數。",
+                "tradeoff": "名額可能空著"
+              },
+              {
+                "id": 2,
+                "text": "向承辦查是否有正常展延，不先向學生許諾。",
+                "action": "導師已提出原程序允許的有限期限詢問，未取得展延或報名。",
+                "tradeoff": "可能不准，也錯過本次"
+              },
+              {
+                "id": 3,
+                "text": "有意願者可在原課內允許短段私下問一個負擔問題。",
+                "action": "導師已提供原允許範圍的有限自願負擔諮詢，不取得參賽同意或代簽。",
+                "tradeoff": "占用教師空檔"
+              },
+              {
+                "id": 4,
+                "text": "請組長先列明學校能提供的既有訓練與費用條件，再由本人決定。",
+                "action": "導師已向原權責詢問限既有可用支援的具體條件，不承諾取得資源。",
+                "tradeoff": "原催辦會變慢"
+              },
+              {
+                "id": 5,
+                "text": "本班不做額外動員，原正常自願報名照常開放。",
+                "action": "導師已婉拒本人非必要競賽動員，維持原正常申請管道。",
+                "tradeoff": "可能被主管盯"
+              },
+              {
+                "id": 6,
+                "text": "若學生願意，協助用本人已確認資料自己填新表，不沿代填那份。",
+                "action": "導師已提出限本人自願、原合法資料範圍的自填協助，未取得資料或完成送件。",
+                "tradeoff": "重填花時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想再交一個看起來會過的數字，直接向組長回報「目前零位已確認自願」，讓這個零先留著，不拿猜的安撫他。",
+              "action": "導師已提交本人可確認的當下自願進度數字並拒絕額外人數預估，未承諾名額或簽名。",
+              "tradeoff": "主管可能更生氣，自己得承受追問"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3715377189
+            },
+            "selectedIds": [
+              4,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 2,
+              "D": 4
+            },
+            "optionsDigest": "4e8e10ee910ad70c45234dbaf5be775fccc24c6f5524d490447f84bbff5e70da"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師把未確定人數明確化，不阻斷之後自願報名，也不把必要誠實變這條才有。",
+            "B": "可讓本人決定，不拿成績當必須參賽。",
+            "C": "可釐清時間，不把申請當延長成功。",
+            "D": "可看完整條件，清單不是資源已給。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c14a224230fea371f723c284acaffead3b83767caff3a0aa4fe3e324c90676cb",
+    "draftSha256": "7866fafb3cd4c26460f58bb1e449fab42db454ec64c33fd0abae4c5b0b4be02e",
     "seedAssignmentVersion": 1
   }
 }

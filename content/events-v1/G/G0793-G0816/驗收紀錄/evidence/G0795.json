@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5274161575d14aa0f6db0f79d8538d28de5bd1f13d31783e86335f437c4f7967",
+      "checkedAt": "2026-11-27T14:16:49.417Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "結束當面爭辯，之後只向管理窗口追蹤。",
+            "action": "玩家已停止本人非必要當面爭辯，保留正式管理追蹤，不擅移物。",
+            "tradeoff": "每天碰面仍尷尬"
+          },
+          {
+            "id": 2,
+            "text": "只說明自己住戶身份與通行需求，不談職業。",
+            "action": "玩家已作本人有限通行需求表達，不發出教師式指令或威脅。",
+            "tradeoff": "對方可能繼續酸"
+          },
+          {
+            "id": 3,
+            "text": "提出願意在管理者在場時再談，不私下繼續。",
+            "action": "玩家已提出需相關方同意的有限管理見證談話請求，未取得同意或處理結果。",
+            "tradeoff": "要等，也可能沒下文"
+          },
+          {
+            "id": 4,
+            "text": "按管理程序提交只涉及通道的現況記錄，不拍人門牌等不必要資訊。",
+            "action": "玩家已依合法範圍提供有限公共通道事實記錄，不判定違法責任。",
+            "tradeoff": "鄰居可能視作正式告狀"
+          },
+          {
+            "id": 5,
+            "text": "詢問原管委會是否有正常住戶提案方式，另提長期收放規則。",
+            "action": "玩家已查詢既有住戶提案程序，未提出已核定規則或承諾大家同意。",
+            "tradeoff": "程序較慢"
+          },
+          {
+            "id": 6,
+            "text": "這次不談規則，只讓管理者接續，我回家休息。",
+            "action": "玩家已在必要管理接續成立後結束本人非必要現場停留，不免原法定配合。",
+            "tradeoff": "悶氣沒出口"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我實在不想被叫一句老師就縮回去，明說「我現在很生氣，今天不適合跟你講」，自己先離開，不再陪笑。",
+          "action": "玩家已作本人有限情緒及暫停私人互動表達並離開非必要對話，不放棄既有安全接續。",
+          "tradeoff": "關係可能更僵，門口再遇到仍難堪"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1292984991
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "c17eeb5e7008a24a164d88152b2b37c954458ada9bc15186f719697ba12dd3fa"
+      },
+      "consequenceDirections": {
+        "A": "可停止耗損，不等於認可堆放或放棄安全通報。",
+        "B": "可清楚說一件事，不以口才換管理權。",
+        "C": "玩家明確設下私人互動界線而非繼續訓話，必要管理程序照常、不威脅他人。",
+        "D": "可有中立場面，邀約不是調解成立。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ce6dd97fab67c11ce6bef3df48048417a6fccdaedb3da86f28952e8c764c68c",
+    "draftSha256": "5274161575d14aa0f6db0f79d8538d28de5bd1f13d31783e86335f437c4f7967",
     "seedAssignmentVersion": 1
   }
 }

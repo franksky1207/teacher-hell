@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d423b0a6fd8c6b9b9d4285182554e728f78be5b792f8e6be5e0bb5677fad8332",
+      "checkedAt": "2026-11-27T14:16:49.432Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "之後由原合法成人直接收箱，他本次班務到這裡。",
+            "action": "導師已在本人班務權限內接回原收件工作，維持必要處理與保密。",
+            "tradeoff": "他可能覺得被撤職"
+          },
+          {
+            "id": 2,
+            "text": "維持他只搬封好的整盒，由成人在私下開。",
+            "action": "導師已提出限原規定的封盒交接分工，未取得學生願意或以此免成人審閱。",
+            "tradeoff": "班務要多等一次交接"
+          },
+          {
+            "id": 3,
+            "text": "他若願，只私下確認今天被看見的範圍，不追問同學猜測。",
+            "action": "導師已提出限保護需要的有限私人暴露範圍確認，不公開身份或逼供。",
+            "tradeoff": "可能還是怕被捲入"
+          },
+          {
+            "id": 4,
+            "text": "本次不延伸班上討論，按原程序持續保護與個別處理。",
+            "action": "導師已停止本人非必要公開延伸活動，維持所有必要保護及正式處理。",
+            "tradeoff": "大家未必知道有人在做事"
+          },
+          {
+            "id": 5,
+            "text": "只向全班重申投件不得攻擊個人，不引用這張字句或時間。",
+            "action": "導師已作不含個案線索的有限一般性班級提醒，不代替必要個案處理。",
+            "tradeoff": "效果不一定明顯"
+          },
+          {
+            "id": 6,
+            "text": "在原許可下增加現有可用的私下成人反映管道，不必經學生收發。",
+            "action": "導師已提供既有合法成人聯繫方式，不新增不受控蒐集或絕對保密承諾。",
+            "tradeoff": "成人接收量增加"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他連箱子都不敢放，乾脆自己拿走這個空箱，今天不請任何學生替我送；麻煩就讓我多走這趟。",
+          "action": "導師已親自接手本次空箱的安全運送，未改未來收件制度或免除必要個案處理。",
+          "tradeoff": "自己多一段事務，也不能讓他立刻安心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1427531698
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "e378a7be5fdf7f2d60478997a85b59bba767c7493a0e7a6c4334d5ad0cad3302"
+      },
+      "consequenceDirections": {
+        "A": "可講共同界線，不讓人反推收件者或受害者。",
+        "B": "可減非必要接觸，不能讓保密變成無人處理。",
+        "C": "可安排必要保護，不把詢問變證人壓力。",
+        "D": "教師親自承擔本次實物運送，不以搬箱代替保護，未來分工仍未定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9e90155d52725d44903bebee619e59242c26774d05bcc76e999191203ae2546d",
+    "draftSha256": "d423b0a6fd8c6b9b9d4285182554e728f78be5b792f8e6be5e0bb5677fad8332",
     "seedAssignmentVersion": 1
   }
 }

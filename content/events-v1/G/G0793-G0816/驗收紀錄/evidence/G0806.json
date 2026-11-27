@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1ed58c8843a0a6877557cd5bd78fa8fc3e136a468d17e0a63fc31a7a98ac2391",
+      "checkedAt": "2026-11-27T14:16:49.431Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不用他額外來校，依原校內正式學習支持走。",
+            "action": "導師已婉拒本人非必要家長陪校需求，維持原正式支持接續。",
+            "tradeoff": "家長可能覺得自己派不上用場"
+          },
+          {
+            "id": 2,
+            "text": "只和家長核對一個真實需要協助的學習項目，再決定原管道。",
+            "action": "導師已提供有限具體需求核對，不新增留校、捐贈或補課承諾。",
+            "tradeoff": "沒有立刻的大方案"
+          },
+          {
+            "id": 3,
+            "text": "提供原正式輔導時段資訊，由孩子依條件自願申請。",
+            "action": "導師已提供既有學習支持的申請資訊，未完成安排或移轉決策給家長。",
+            "tradeoff": "未必有空位或符合需要"
+          },
+          {
+            "id": 4,
+            "text": "家長若願，改成原家中可行的一次短關心，不要求他陪寫功課。",
+            "action": "導師已提出可拒絕、有限的家庭互動建議，未取得家庭同意或保證效果。",
+            "tradeoff": "他可能怕做太少"
+          },
+          {
+            "id": 5,
+            "text": "先不新增任何計畫，按既定日期回覆已核實的學習進度。",
+            "action": "導師已維持原必要進度回覆安排並停止本人非必要新增任務，不承諾成績結果。",
+            "tradeoff": "家長要等"
+          },
+          {
+            "id": 6,
+            "text": "請原升學窗口依正式規定回覆家長的一個資格問題。",
+            "action": "導師已提出限原職權的正式資格諮詢需求，未取得回覆或結果。",
+            "tradeoff": "要再聯繫"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他說關店再趕來就心累，直接拒收他那張每晚陪讀表，也不替班級收講義；今晚把時間還他，不再給一份新功課帶回去。",
+          "action": "導師已婉拒本人本次額外陪讀排程及講義供應提案，不接受資源或要求家庭新增任務。",
+          "tradeoff": "他可能覺得苦心全被退掉"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1214243050
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "305ed87c25e3d4920c4285ebffd700acea889b4f91cec17cd93f8e6a97562d42"
+      },
+      "consequenceDirections": {
+        "A": "可交專業，不把轉介當已回答或保證錄取。",
+        "B": "教師明確拒新增家長人力及物資介入，不等於不要關心孩子，必要校內支持照常。",
+        "C": "可避免為謠言加碼，不能以一次談話判定全部狀況。",
+        "D": "可保清楚資訊，必要急迫問題仍即時處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "612b669e6391eb42afcef5b4b184749d2e5312daaf6aad7d6ae3239256de83ce",
+    "draftSha256": "1ed58c8843a0a6877557cd5bd78fa8fc3e136a468d17e0a63fc31a7a98ac2391",
     "seedAssignmentVersion": 1
   }
 }

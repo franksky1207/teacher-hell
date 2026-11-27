@@ -16,14 +16,155 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1953badeffd7e6c843b636f4b4fc4a208435919040602eeeb4320f05651afd8a",
+      "checkedAt": "2026-11-27T16:30:48.643Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "等安全善後結束，再邀他重設一次不潑水的合作分工。",
+            "action": "提出非緊急的自願合作方式討論，不以此抵銷必要責任。",
+            "tradeoff": "花時間，可能沒人想談。"
+          },
+          {
+            "id": 2,
+            "text": "問衛生承辦能否補評，願意接受照實況重新看。",
+            "action": "提出本次非必要整潔補評申請，未獲准或改分，必要事實回報已共同維持。",
+            "tradeoff": "需申請，可能不受理或分數仍低。"
+          },
+          {
+            "id": 3,
+            "text": "這次不再爭取評分，把班務時間還給原課程。",
+            "action": "不提出額外補評要求，於安全確認後回原課程安排。",
+            "tradeoff": "少一輪協調，成績可能較差。"
+          },
+          {
+            "id": 4,
+            "text": "邀受影響同學自願說最需要什麼額外協助。",
+            "action": "在必要支持已維持外，另徵詢自願一般協助需求，不公開損失細節。",
+            "tradeoff": "需整理且未必能提供。"
+          },
+          {
+            "id": 5,
+            "text": "我提供既有書籍修護資訊，讓需要的人自行參考。",
+            "action": "提供合法公開修護資訊，不叫學生救搶危險區物品。",
+            "tradeoff": "未必適合泡水狀況。"
+          },
+          {
+            "id": 6,
+            "text": "問總務有沒有適合這間教室的少水清潔方法。",
+            "action": "詢問權責者可行的低用水清潔方式，不自行替專業者核定方法或操作電氣。",
+            "tradeoff": "需了解新做法，未必適合現場。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我本來也喜歡他帶氣氛，這次想讓他知道我真的怕了，私下說完再離開。",
+          "action": "在必要處理外向學生表達教師自身驚嚇與對合作的期待，不要求學生安慰。",
+          "tradeoff": "顯露害怕，可能被當訓話。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4277726411
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "ffe906a794231ab4ab67769b9b4a7add8835d8a06c7a5800a753cc2fd03473f6"
+      },
+      "consequenceDirections": {
+        "A": "學生可聽不進或理解影響，教師須接受不能靠情緒表達換悔悟；安全與責任不因反應不同減免。",
+        "B": "他可願意或抗拒，教師不能把提案當全班已接受。",
+        "C": "承辦可拒絕或依實況給同樣結果，學生須面對成績；申請不等於免扣或可提前進危險區。",
+        "D": "權責者可能提供或不建議低水方法，學生可能覺得麻煩；未核定前不自行實驗，必要清潔與安全所有分支維持。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通2不再把必要真實評分說明當主要選擇，改為額外補評申請；普通6不虛構既有競速活動再取消，改為低用水方法資訊詢問。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "等安全善後結束，再邀他重設一次不潑水的合作分工。",
+                "action": "提出非緊急的自願合作方式討論，不以此抵銷必要責任。",
+                "tradeoff": "花時間，可能沒人想談。"
+              },
+              {
+                "id": 2,
+                "text": "向衛生承辦提出如實說明本次評分情況。",
+                "action": "另提出評分情境說明，未保證補評或免扣。",
+                "tradeoff": "需要整理，可能不受理。"
+              },
+              {
+                "id": 3,
+                "text": "這次不再爭取評分，把班務時間還給原課程。",
+                "action": "不提出額外補評要求，於安全確認後回原課程安排。",
+                "tradeoff": "少一輪協調，成績可能較差。"
+              },
+              {
+                "id": 4,
+                "text": "邀受影響同學自願說最需要什麼額外協助。",
+                "action": "在必要支持已維持外，另徵詢自願一般協助需求，不公開損失細節。",
+                "tradeoff": "需整理且未必能提供。"
+              },
+              {
+                "id": 5,
+                "text": "我提供既有書籍修護資訊，讓需要的人自行參考。",
+                "action": "提供合法公開修護資訊，不叫學生救搶危險區物品。",
+                "tradeoff": "未必適合泡水狀況。"
+              },
+              {
+                "id": 6,
+                "text": "提議以後班級清掃不再加自願競速橋段。",
+                "action": "提出未來清掃回到非競速分工的建議，不改學校必要規範。",
+                "tradeoff": "少趣味，可能較慢。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我本來也喜歡他帶氣氛，這次想讓他知道我真的怕了，私下說完再離開。",
+              "action": "在必要處理外向學生表達教師自身驚嚇與對合作的期待，不要求學生安慰。",
+              "tradeoff": "顯露害怕，可能被當訓話。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 365280389
+            },
+            "selectedIds": [
+              4,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 2,
+              "D": 4
+            },
+            "optionsDigest": "076f5caed031f245c5fb52860ff89e49e23480fc5f0060cddc58312dbaad8ef1"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可聽不進或理解影響，教師須接受不能靠情緒表達換悔悟；安全與責任不因反應不同減免。",
+            "B": "學生可能接受或抱怨，必要善後不因不爭分省略。",
+            "C": "承辦可依規定維持結果，學生須面對非預期後果；不虛稱已完成清潔。",
+            "D": "有人可拒說，教師不得把徵詢當已補償；帶頭者不能逼人表示原諒。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2324eb9467b994c376b7010c5767e18097c0a9bca6d5f3fcbc50602f20bc20c0",
+    "draftSha256": "1953badeffd7e6c843b636f4b4fc4a208435919040602eeeb4320f05651afd8a",
     "seedAssignmentVersion": 1
   }
 }

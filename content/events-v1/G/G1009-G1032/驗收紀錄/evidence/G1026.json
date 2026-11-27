@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2ac8457a89cbaabdfb4f1a45c0d15ffe165175d1542b10eeaf6b9b36c390bd8b",
+      "checkedAt": "2026-11-27T16:30:48.647Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我願陪一次正式陳述，但只說本人知道的事。",
+            "action": "提出一次自願陪同正式意見陳述，未承諾支持換師。",
+            "tradeoff": "占時間，容易被當站隊。"
+          },
+          {
+            "id": 2,
+            "text": "把他要反映的內容整理成事實與疑問兩欄。",
+            "action": "協助在同意範圍整理意見，不新增指控或公開名單。",
+            "tradeoff": "花整理時間，可能被嫌軟。"
+          },
+          {
+            "id": 3,
+            "text": "我不參加委員私人聚會，讓他自行循正式管道。",
+            "action": "婉拒非必要私人串聯，維持必要學生支持與工作說明。",
+            "tradeoff": "保住界線，可能失去支持。"
+          },
+          {
+            "id": 4,
+            "text": "另邀孩子自願說現在上課最擔心什麼。",
+            "action": "提出學生自願支持需求短談，不替代必要事件調查。",
+            "tradeoff": "需時間，孩子可能不願。"
+          },
+          {
+            "id": 5,
+            "text": "提議由校方辦不點名的教學溝通說明。",
+            "action": "向權責者提出一般教學溝通安排建議，未排定。",
+            "tradeoff": "或有共同空間，也可能被嫌迴避。"
+          },
+          {
+            "id": 6,
+            "text": "提供既有家長參與學校意見討論的資訊。",
+            "action": "提供合法公開參與資訊，不代入列委員或要求支持導師。",
+            "tradeoff": "可能無名額，需自行接洽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想欠這個人情，當面說這次不接受以『幫我』名義去施壓。",
+          "action": "另表達本人不接受被代表的立場，請對方勿以導師授權名義動員，仍尊重合法個人反映。",
+          "tradeoff": "可能傷認可自己的家長。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 576713647
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "905494dfaef2bfd4ac067fe06a1b79a8ca74c51d816942f8f4f0c1dd99100495"
+      },
+      "consequenceDirections": {
+        "A": "家長可能理解或認為不領情，教師不能因此拒合法詢問。",
+        "B": "家長可能接受或嫌不夠，權責者可有不同判斷；陪同不作權益門檻。",
+        "C": "家長可不同意改稿，教師須保留原意不以整理偷換立場。",
+        "D": "家長可能收回幫忙說法或更生氣，教師須承受支持降低；不能禁止其合法陳情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0acf76fe275c8397c3da568216d1779cebfbf79631b0574bb1eabab76fc3f20a",
+    "draftSha256": "2ac8457a89cbaabdfb4f1a45c0d15ffe165175d1542b10eeaf6b9b36c390bd8b",
     "seedAssignmentVersion": 1
   }
 }

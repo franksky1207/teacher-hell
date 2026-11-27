@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5495196c691bae7d9ea19a46bb982df81f359ae712ef80f683ed7879e7ae1be4",
+      "checkedAt": "2026-11-27T16:30:48.616Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留這次推導作業，另外提供一題可用兩種方法的比較。",
+            "action": "提供本人設計的雙方法比較例題，原必要作業維持。",
+            "tradeoff": "增加備課，可能仍不服。"
+          },
+          {
+            "id": 2,
+            "text": "讓孩子選一題口述思路，文字只寫關鍵步驟。",
+            "action": "於本人權限內提供一次口述加關鍵書寫的評量選擇。",
+            "tradeoff": "較彈性，需個別時間。"
+          },
+          {
+            "id": 3,
+            "text": "邀家長先看我這次作業在練什麼。",
+            "action": "提供教學目標與一份可公開例子作額外說明。",
+            "tradeoff": "耗說明時間。"
+          },
+          {
+            "id": 4,
+            "text": "我先不更動作業份量，讓孩子自己談想怎麼寫。",
+            "action": "另邀學生自願表達作業方法偏好，未承諾免除必要步驟。",
+            "tradeoff": "需另約且家長可能不悅。"
+          },
+          {
+            "id": 5,
+            "text": "提供現有解法查閱資訊，不代孩子再加課。",
+            "action": "提供合法既有方法參考來源，不安排補習或新作業。",
+            "tradeoff": "資料未必適合。"
+          },
+          {
+            "id": 6,
+            "text": "這次不做額外教學安排，按原目標完成。",
+            "action": "婉拒本次非必要客製，維持合法評量與必要支持。",
+            "tradeoff": "保住備課，親師可能僵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被說太慢我有點不服，邀他用一題變式跟我比誰先看出不能套公式。",
+          "action": "提出成人間自願解題比較，題目由本人核實，不用孩子成績當賭注。",
+          "tradeoff": "可能丟面子且費時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2199243491
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "81071c060a22e834e6dade76a1c86e0e7598b5c397aea511a19b7db22cdd659b"
+      },
+      "consequenceDirections": {
+        "A": "孩子可能說得清楚或暴露不理解，家長未必接受限一次。",
+        "B": "家長可能接受或投訴，教師須回應實質問題而非因不滿扣分。",
+        "C": "學生可有不同立場，教師須分清偏好與是否理解。",
+        "D": "家長可拒絕或指出教師也算慢，較勁不能當學生已學會的證據。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1ffe1ed2bc440758c4792a480167c57da55fab873bfb1ad27a002c3915eab595",
+    "draftSha256": "5495196c691bae7d9ea19a46bb982df81f359ae712ef80f683ed7879e7ae1be4",
     "seedAssignmentVersion": 1
   }
 }

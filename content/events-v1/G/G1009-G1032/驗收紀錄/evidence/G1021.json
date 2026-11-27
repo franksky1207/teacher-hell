@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7db2a54e8e4bbd96398413b6ed2d073dc09ecf29c7880309bb25bbda3b5d008f",
+      "checkedAt": "2026-11-27T16:30:48.640Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀物主私下談談我剛才哪一句讓他不舒服。",
+            "action": "提出自願私人對話邀請，不以留遊戲為條件。",
+            "tradeoff": "可能被拒或更尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "提議用店裡可借的小品重新開局。",
+            "action": "向願意的團友提出合法可借替代遊戲的邀請，未保證借到。",
+            "tradeoff": "少了原本期待，需重教。"
+          },
+          {
+            "id": 3,
+            "text": "我今天先退局，不再拉大家照我的節奏。",
+            "action": "結清本人責任後退出當晚遊戲。",
+            "tradeoff": "保住自主，失去聚會。"
+          },
+          {
+            "id": 4,
+            "text": "改邀願意的人聊天，不急著再玩。",
+            "action": "提出不使用物主器材的成人聊天邀約。",
+            "tradeoff": "節奏不同，可能冷場。"
+          },
+          {
+            "id": 5,
+            "text": "向主辦建議下次開局先講清楚時間與改規則方式。",
+            "action": "提出未來桌遊規則共識建議，未替他人訂規。",
+            "tradeoff": "需討論，可能被嫌麻煩。"
+          },
+          {
+            "id": 6,
+            "text": "我不再主揪，讓其他人決定剩下的晚上。",
+            "action": "退出本人非必要的帶頭安排，成人團友自行選擇。",
+            "tradeoff": "少控制感，可能無人接手。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是不甘心被說只想快，自己買一款短局遊戲，下次誰願意再來。",
+          "action": "以本人預算購買正常販售的短局桌遊，另提出自願下次邀約，不要求原物主參與。",
+          "tradeoff": "花私人錢，可能無人赴約。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 727440068
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "5b71239cbcd36b93f5df974b7b3a654b355cb2a6097f3e1aaf3bbcdbfad0bbb8"
+      },
+      "consequenceDirections": {
+        "A": "對方可直接離開，教師須承受聽到真實批評；不保證回桌。",
+        "B": "主辦可拒絕，物主未必再來；不能用未來建議推翻當晚約定。",
+        "C": "團友可能體諒或怪掃興，教師承擔人際後果。",
+        "D": "朋友可不來，教師可能發現短局也不合拍；買器材不買到別人的配合。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "013cb965129c9330b864237ce3da6b734ceea1245dcc6bef30c4ab795486f692",
+    "draftSha256": "7db2a54e8e4bbd96398413b6ed2d073dc09ecf29c7880309bb25bbda3b5d008f",
     "seedAssignmentVersion": 1
   }
 }

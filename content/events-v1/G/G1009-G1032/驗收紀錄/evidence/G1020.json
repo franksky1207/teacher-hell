@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "58c0c714c90db25a0fae67c72f99deeec5a460be1740532f86c8939eeea06711",
+      "checkedAt": "2026-11-27T16:30:48.638Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "公開邀有興趣的學生自願服務，不附借書好處。",
+            "action": "提出依校規公開自願協助方式，不替學生報名。",
+            "tradeoff": "可能無人來，需管理。"
+          },
+          {
+            "id": 2,
+            "text": "我自己用可用空堂幫一小段，不調學生午休。",
+            "action": "自願提供本人可行的安全上架協助，不代館員專業編目。",
+            "tradeoff": "少備課，支援有限。"
+          },
+          {
+            "id": 3,
+            "text": "這次不加支援，讓館方按原人力排程。",
+            "action": "婉拒額外班級與教師支援，維持必要正式合作。",
+            "tradeoff": "保住休息，上架可能較慢。"
+          },
+          {
+            "id": 4,
+            "text": "向主管建議短期成人支援，不用閱讀特權換人。",
+            "action": "提出成人短期支援資源建議，未獲核配。",
+            "tradeoff": "需行政協調，可能不准。"
+          },
+          {
+            "id": 5,
+            "text": "邀館員提供新書簡介，讓各班自己挑想讀的。",
+            "action": "提出合法公開新書介紹交流邀請，未取得稿件或排活動。",
+            "tradeoff": "轉回閱讀，仍需製作。"
+          },
+          {
+            "id": 6,
+            "text": "提出把上架分批，先公開確定可借的書。",
+            "action": "建議館方採透明分批上架，不代其核定時程。",
+            "tradeoff": "可能較好掌握，有人嫌慢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也很想搶那本，乾脆照規則排隊，請他別替我留。",
+          "action": "自願以教師本人一般資格參與正式借閱輪候，不占學生或他班順位。",
+          "tradeoff": "放棄人情便利，可能等很久。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2272257029
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "c5af102ac1fe96993262a1419b7184b8b129b586dd2d54c020368be796056c1f"
+      },
+      "consequenceDirections": {
+        "A": "館員可能採用或因編目無法分批，教師不得先宣布書可借。",
+        "B": "館員可接受或覺得不夠，教師不能因此取得優先借閱。",
+        "C": "館員可能尷尬或會心一笑，教師也可能借不到；不是以本人排隊代替全校公平。",
+        "D": "學生可拒絕、館員可能失望；公平借閱不受參與影響。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "df0c5a7ccdd6a1478a919e1c87ddf42d685e126beab952100df62690759f1591",
+    "draftSha256": "58c0c714c90db25a0fae67c72f99deeec5a460be1740532f86c8939eeea06711",
     "seedAssignmentVersion": 1
   }
 }

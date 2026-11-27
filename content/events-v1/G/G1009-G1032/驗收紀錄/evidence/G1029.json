@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6fb2a37ff46d8ca678eeadc3188c6a821f5da2b052bf045e5f35202cb8656dcb",
+      "checkedAt": "2026-11-27T16:30:48.652Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀他談以後非緊急狀況能否同步通知。",
+            "action": "提出不妨礙正式記錄的協作通知建議。",
+            "tradeoff": "需談界線，可能被拒。"
+          },
+          {
+            "id": 2,
+            "text": "在本人班務增加一次離開專科教室前的學生自查。",
+            "action": "安排不碰儀器的公共區域自查，仍由成人負必要管理責任。",
+            "tradeoff": "少課間，可能流形式。"
+          },
+          {
+            "id": 3,
+            "text": "我不爭這次額外重評，先依既有程序處理。",
+            "action": "不加提非必要評分重議，維持合法申覆資訊與必要事實處理。",
+            "tradeoff": "少協調，班級可能失分。"
+          },
+          {
+            "id": 4,
+            "text": "詢問承辦有沒有可用的專科教室使用提醒。",
+            "action": "查詢既有使用資訊，不代承辦增訂處罰。",
+            "tradeoff": "未必有合適版本。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生提出不增加清掃勞役的飲料處理辦法。",
+            "action": "徵詢自願相處方案，不要求超額服務抵扣分。",
+            "tradeoff": "需討論，可能沒共識。"
+          },
+          {
+            "id": 6,
+            "text": "我自費買一個自己的飲料杯套，先避免自己帶杯走進去。",
+            "action": "購置本人自用收納，改變教師自己的飲料攜帶習慣，不代學生賠償。",
+            "tradeoff": "花私人錢，作用有限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很介意最後才知道，私下直接說我被晾在外面的感受。",
+          "action": "於必要程序外向同事表達本人合作感受，不要求免責或撤真實紀錄。",
+          "tradeoff": "可能被認為只顧面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2178881803
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "cffd0e5f7963ac48e4470f1d44e549d9fea84a905b359b1ead8d6977e4ec395d"
+      },
+      "consequenceDirections": {
+        "A": "同事可認為原程序已足夠，教師不能要求私下擺平才上報。",
+        "B": "同事可指出教師的期待不合理，教師須承受關係摩擦而不報復配課。",
+        "C": "若有資料可提供，若無須另自備；查詢不等於學生已遵守。",
+        "D": "學生可能提供可行方法或互怪，教師仍依法處理責任不靠票數定人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4d6a076a037f8c29afcdaad2f3c376fbbc65a06dcc6ef9bce7dad1bfd8a4d234",
+    "draftSha256": "6fb2a37ff46d8ca678eeadc3188c6a821f5da2b052bf045e5f35202cb8656dcb",
     "seedAssignmentVersion": 1
   }
 }

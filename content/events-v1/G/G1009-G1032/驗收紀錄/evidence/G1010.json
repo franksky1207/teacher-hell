@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f251bd489c9318838117554e5ecfad800b50a861ec129224bcc165d31a18590d",
+      "checkedAt": "2026-11-27T16:30:48.620Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀家庭談談，有沒有成人能接手一段日常照顧。",
+            "action": "提出家庭自願負擔討論邀請，未保證有人接手。",
+            "tradeoff": "增加聯絡，可能無解。"
+          },
+          {
+            "id": 2,
+            "text": "讓他在可用時間傳一段非緊急生活提醒給家人。",
+            "action": "在不妨礙必要程序下提供自願聯絡空間，不代傳私人內容。",
+            "tradeoff": "佔時間，可能仍焦慮。"
+          },
+          {
+            "id": 3,
+            "text": "我把本人可調的非必要練習延期。",
+            "action": "延期本人額外練習，不影響必要學習目標。",
+            "tradeoff": "少一次即時練習。"
+          },
+          {
+            "id": 4,
+            "text": "提供現有家庭支持資訊，讓他選要不要看。",
+            "action": "提供合法既有支持管道，未替其轉介或取得資源。",
+            "tradeoff": "可能不想再被問家庭。"
+          },
+          {
+            "id": 5,
+            "text": "等事情平穩，邀他談每天回家最累的是哪一段。",
+            "action": "提出自願生活負擔短談，不要求交代全部家事。",
+            "tradeoff": "花課間，他可能拒談。"
+          },
+          {
+            "id": 6,
+            "text": "不加談家庭，尊重他今天先處理既有安排。",
+            "action": "不追加非必要家庭詢問，維持必要照看與學習接續。",
+            "tradeoff": "保留隱私，少一次理解機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到多寫兩份就心酸，願意替他向年級提出減少重複作業的建議。",
+          "action": "額外提出普遍適用的重複作業減量建議，不揭家庭細節或代他科批准。",
+          "tradeoff": "要整理提案且可能碰壁。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4119736302
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "0e80020de211c6685295ce2f9c32278c6b8872e7589cc32b3146a27c1790b1b1"
+      },
+      "consequenceDirections": {
+        "A": "學生可能安心或覺得沒人想聽，導師需仍可被聯絡。",
+        "B": "學生可能鬆口氣或仍無法專心，他科作業不因此自動延期。",
+        "C": "家庭可拒絕或找到支援，學生也可能擔心被責怪；必要安全不等討論。",
+        "D": "學生可能感到被理解或怕被對號入座，教師須保密；提案不當已減量。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0fe053b84c0f7be7c06972a264bf19094048dfb66cc31a640273b07713181886",
+    "draftSha256": "f251bd489c9318838117554e5ecfad800b50a861ec129224bcc165d31a18590d",
     "seedAssignmentVersion": 1
   }
 }

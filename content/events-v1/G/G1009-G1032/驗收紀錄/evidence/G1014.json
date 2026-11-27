@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1de87d21f364a4586dcc134c8a485f7194d24ad3eb63a910d7bb82a166903298",
+      "checkedAt": "2026-11-27T16:30:48.627Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把作品縮到組員願意承擔的規模。",
+            "action": "協助提出符合比賽規則的縮小設計方案，徵詢自願分工。",
+            "tradeoff": "細節減少，股長可能不甘。"
+          },
+          {
+            "id": 2,
+            "text": "提出只交目前完成部分，讓評審照實看。",
+            "action": "建議依規則提交已完成作品，未替組員或承辦決定。",
+            "tradeoff": "可能失去高分機會。"
+          },
+          {
+            "id": 3,
+            "text": "提出用班上已有的紙材拼貼，別再靠他那盒顏料。",
+            "action": "在賽規允許及組員自願前提下提出改用班有紙材的拼貼方案，未代全組同意。",
+            "tradeoff": "放棄手繪精修，須重想畫面。"
+          },
+          {
+            "id": 4,
+            "text": "問承辦可否延期，附真實工作量。",
+            "action": "提出非必要比賽時程調整詢問，未獲延長。",
+            "tradeoff": "可能不准，需聯絡。"
+          },
+          {
+            "id": 5,
+            "text": "邀股長單獨說說，拿不到第一最難受的是什麼。",
+            "action": "提出自願成就期待短談，不把談話當繼續參賽條件。",
+            "tradeoff": "花時間，可能被嫌說教。"
+          },
+          {
+            "id": 6,
+            "text": "不繼續衝這次比賽，徵詢大家改作班內展示。",
+            "action": "提出自願退出未必需競賽並轉作合意班內展示的方案，未代全組同意。",
+            "tradeoff": "放棄名次，保留創作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想留那塊最漂亮的色，自己花空堂做一個小展示框，不再要求他們擴畫。",
+          "action": "自願以本人時間與自有材料製作小展示框，先徵詢作者願否提供已完成片段，未取得作品。",
+          "tradeoff": "增加教師工時，也可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 176805883
+        },
+        "selectedIds": [
+          3,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "4d29a3681a092323194e1523ebc77db0f6f6634f8a980a4b034d99c0d96b6919"
+      },
+      "consequenceDirections": {
+        "A": "組員可能接受拼貼或仍想用顏料，物主可自願供應但不能索取勞力；教師不保證拼貼更容易得獎。",
+        "B": "股長可能願留局部或不肯割捨，教師須尊重作者與組員，不藉珍惜逼其補畫。",
+        "C": "組員可能支持或覺得可惜，必要正式退出由權責處理，不保證展示同意。",
+        "D": "他可拒談或說出不甘，教師不得用情緒分析取代負荷調整。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通3主要維持物主停止供應權，改為具體可選的紙材拼貼，超出所有分支共同尊重物權。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "把作品縮到組員願意承擔的規模。",
+                "action": "協助提出符合比賽規則的縮小設計方案，徵詢自願分工。",
+                "tradeoff": "細節減少，股長可能不甘。"
+              },
+              {
+                "id": 2,
+                "text": "提出只交目前完成部分，讓評審照實看。",
+                "action": "建議依規則提交已完成作品，未替組員或承辦決定。",
+                "tradeoff": "可能失去高分機會。"
+              },
+              {
+                "id": 3,
+                "text": "讓他保留未用私人顏料，班級另用已有材料。",
+                "action": "停止依賴其未同意續供的私人材料，改在既有可用資源內規劃。",
+                "tradeoff": "品質可能變，需重想。"
+              },
+              {
+                "id": 4,
+                "text": "問承辦可否延期，附真實工作量。",
+                "action": "提出非必要比賽時程調整詢問，未獲延長。",
+                "tradeoff": "可能不准，需聯絡。"
+              },
+              {
+                "id": 5,
+                "text": "邀股長單獨說說，拿不到第一最難受的是什麼。",
+                "action": "提出自願成就期待短談，不把談話當繼續參賽條件。",
+                "tradeoff": "花時間，可能被嫌說教。"
+              },
+              {
+                "id": 6,
+                "text": "不繼續衝這次比賽，徵詢大家改作班內展示。",
+                "action": "提出自願退出未必需競賽並轉作合意班內展示的方案，未代全組同意。",
+                "tradeoff": "放棄名次，保留創作。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想留那塊最漂亮的色，自己花空堂做一個小展示框，不再要求他們擴畫。",
+              "action": "自願以本人時間與自有材料製作小展示框，先徵詢作者願否提供已完成片段，未取得作品。",
+              "tradeoff": "增加教師工時，也可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2946638081
+            },
+            "selectedIds": [
+              2,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 4,
+              "D": 2
+            },
+            "optionsDigest": "c485883a9c6a29dfede54b2a4758bda80bc047ce60833d75b4156f21b0137f05"
+          },
+          "previousConsequenceDirections": {
+            "A": "他可能收回或仍願借，教師不以收回指責不合作。",
+            "B": "股長可能願留局部或不肯割捨，教師須尊重作者與組員，不藉珍惜逼其補畫。",
+            "C": "承辦可拒絕，組員仍不得被迫熬夜趕；教師需接受退出或降規格。",
+            "D": "股長可能抗議或鬆口氣，承辦也可能要求最低完成度；不假報完成。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "36342548e845e211a799535db5f7faf7f15769a7e9cdd9a040fe2ab418c75621",
+    "draftSha256": "1de87d21f364a4586dcc134c8a485f7194d24ad3eb63a910d7bb82a166903298",
     "seedAssignmentVersion": 1
   }
 }

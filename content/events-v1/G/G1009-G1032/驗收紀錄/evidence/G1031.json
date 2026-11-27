@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "01305be28c9305678afe74b91a8247a3441c83a6fa1ea13b52fb85e4c44770b7",
+      "checkedAt": "2026-11-27T16:30:48.654Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原小過建議，附清楚理由送審。",
+            "action": "於事實比例相符下提出原小過建議，交獎懲會依法審議，未核定。",
+            "tradeoff": "多正式準備，不保證採納。"
+          },
+          {
+            "id": 2,
+            "text": "改提兩支警告，但理由只寫事實與比例，不寫省會議。",
+            "action": "提出兩警告建議並循正式主管核定，未成處分。",
+            "tradeoff": "可能較輕，需承擔判斷。"
+          },
+          {
+            "id": 3,
+            "text": "在正式期限內先詢問權責者對基準的具體解讀。",
+            "action": "提出懲處基準諮詢，不私自延宕期限或承諾降處。",
+            "tradeoff": "需等待，可能仍有分歧。"
+          },
+          {
+            "id": 4,
+            "text": "邀組長另列兩案須準備的工作，供主管調人力。",
+            "action": "提出可核實工作負荷整理邀請，不以工作量決定學生懲處。",
+            "tradeoff": "增加整理，可能被嫌多事。"
+          },
+          {
+            "id": 5,
+            "text": "我不加私人協作，請組長按正式書面意見提出建議。",
+            "action": "婉拒非必要私下交換，請以既有正式方式提供專業建議，不阻合法送件。",
+            "tradeoff": "少人情空間，關係可能僵。"
+          },
+          {
+            "id": 6,
+            "text": "向主管提出本案以外的獎懲文書範本改善建議。",
+            "action": "提出未來文書重工改善議題，不改本案必要欄位或程序。",
+            "tradeoff": "耗時間，未必採用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累，可不想只談怎麼省事，願意多幫整理公開的會前附件。",
+          "action": "向權責者提出本人可否額外協助公開會前議程附件整理的請求，未受託、不閱額外學生個資，不交換懲處結果。",
+          "tradeoff": "犧牲休息，對方未必需要。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3451116928
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "54bb14db3ed7b8d7ff2e40a9294ca4d8bc3680e44b0ff21ea90a5433e187619b"
+      },
+      "consequenceDirections": {
+        "A": "主管可否決，組長可能認為太慢；提案不代表可用新範本送本案。",
+        "B": "組長或權責者可拒絕，若接受仍由原權責審核；協作不決定走哪一合法處分建議，也不暗示警告程序不合法。",
+        "C": "權責者可指出兩案條件不同，教師須修正自身理解；原事實不隨答案改寫。",
+        "D": "組長可拒絕，主管也可不支援；必要程序不因無人力省略。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒候選原行政整理過於抽象，明確為公開議程附件協作詢問，避免把合法警告說成少走必要程序。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "維持原小過建議，附清楚理由送審。",
+                "action": "於事實比例相符下提出原小過建議，交獎懲會依法審議，未核定。",
+                "tradeoff": "多正式準備，不保證採納。"
+              },
+              {
+                "id": 2,
+                "text": "改提兩支警告，但理由只寫事實與比例，不寫省會議。",
+                "action": "提出兩警告建議並循正式主管核定，未成處分。",
+                "tradeoff": "可能較輕，需承擔判斷。"
+              },
+              {
+                "id": 3,
+                "text": "在正式期限內先詢問權責者對基準的具體解讀。",
+                "action": "提出懲處基準諮詢，不私自延宕期限或承諾降處。",
+                "tradeoff": "需等待，可能仍有分歧。"
+              },
+              {
+                "id": 4,
+                "text": "邀組長另列兩案須準備的工作，供主管調人力。",
+                "action": "提出可核實工作負荷整理邀請，不以工作量決定學生懲處。",
+                "tradeoff": "增加整理，可能被嫌多事。"
+              },
+              {
+                "id": 5,
+                "text": "我不加私人協作，請組長按正式書面意見提出建議。",
+                "action": "婉拒非必要私下交換，請以既有正式方式提供專業建議，不阻合法送件。",
+                "tradeoff": "少人情空間，關係可能僵。"
+              },
+              {
+                "id": 6,
+                "text": "向主管提出本案以外的獎懲文書範本改善建議。",
+                "action": "提出未來文書重工改善議題，不改本案必要欄位或程序。",
+                "tradeoff": "耗時間，未必採用。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也累，可不想靠學生少走程序省力，願意多接一項本人有權做的會前行政整理。",
+              "action": "額外提出本人可承擔的非裁決性行政協作，待權責者確認，不以此交換處分結果。",
+              "tradeoff": "失去休息，可能仍不缺這項人力。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4059751012
+            },
+            "selectedIds": [
+              6,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 2,
+              "C": 6,
+              "D": "emotional"
+            },
+            "optionsDigest": "d96a5b06e8536f15c8f7dd1bba472cbb6b2c6664f34d618a577e2a556dc48a50"
+          },
+          "previousConsequenceDirections": {
+            "A": "組長可能接受或覺得不信任，教師仍須自行提出合法判斷。",
+            "B": "組長可能接受，主管仍可退回；學生權益不因較簡程序減少。",
+            "C": "主管可否決，組長可能認為太慢；提案不代表可用新範本送本案。",
+            "D": "組長可拒絕，會議或核定者仍獨立判斷；協作不能決定採小過或警告。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cc0985055d4e384270e73ac097a5a0ab9645c604d66ea1d3099fc4eb3a55cd78",
+    "draftSha256": "01305be28c9305678afe74b91a8247a3441c83a6fa1ea13b52fb85e4c44770b7",
     "seedAssignmentVersion": 1
   }
 }

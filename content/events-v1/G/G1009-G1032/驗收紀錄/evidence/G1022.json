@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aa5d10fd7442c4eced070c82c64d9086667ed68445c9d377ac2c6cf077ef912c",
+      "checkedAt": "2026-11-27T16:30:48.641Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我只標三個看不懂的地方，內容請他自己改。",
+            "action": "提供一次有限讀者意見，不代重寫或核定公告。",
+            "tradeoff": "少花時間，房東可能嫌少。"
+          },
+          {
+            "id": 2,
+            "text": "直接婉拒，我今晚沒有多接工作的力氣。",
+            "action": "拒絕非必要免費文書，維持必要租務聯絡。",
+            "tradeoff": "保住休息，關係可能冷。"
+          },
+          {
+            "id": 3,
+            "text": "我願接一次，但先談明確範圍與合理稿酬。",
+            "action": "提出一次有償有限潤稿協商，未成交或完成。",
+            "tradeoff": "可能有收入，也需時間。"
+          },
+          {
+            "id": 4,
+            "text": "提供一般可公開使用的公告範例給他參考。",
+            "action": "提供合法公開格式來源，不代填具體工法或租約承諾。",
+            "tradeoff": "省重寫，未必適用。"
+          },
+          {
+            "id": 5,
+            "text": "邀其他願意的住戶各提自己最需要知道的一項。",
+            "action": "提出自願彙集一般資訊需求的建議，不代代表全棟。",
+            "tradeoff": "可能更全面，增加聯絡。"
+          },
+          {
+            "id": 6,
+            "text": "把這段文書先擱下，另約時間只談我家的施工影響。",
+            "action": "提出本人租務非緊急協商時段，不接公告工作。",
+            "tradeoff": "議題集中，仍占私人時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的很想保住安靜，願意自費去附近共享空間一次，先看看值不值得暫時避開。",
+          "action": "以本人預算實地試用合法公開營業的共享空間，不承諾長期搬離或放棄租務權益。",
+          "tradeoff": "花錢與路程，可能仍吵。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3285997654
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "6f5c86dc0791fb7fed6d4955bf236bdd4db3a79687f17482fe39f8d0e9f4bfb4"
+      },
+      "consequenceDirections": {
+        "A": "房東可不用建議，教師不能保證公告因標註就正確。",
+        "B": "房東可另提時間，教師須守約；必要安全資訊不能延到任意日。",
+        "C": "教師可能找到喘息處或更失望，房東仍須依法處理施工；私人支出不當對方免責。",
+        "D": "房東可能理解或不悅，不能因拒稿減損合法居住權益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6402b965cfe5fcac7b3604e4156f5b5e5dd49d7053769b2a0fb0121966c40d8d",
+    "draftSha256": "aa5d10fd7442c4eced070c82c64d9086667ed68445c9d377ac2c6cf077ef912c",
     "seedAssignmentVersion": 1
   }
 }

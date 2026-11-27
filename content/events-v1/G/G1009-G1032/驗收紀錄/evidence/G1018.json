@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ba82cb7b90e96f822fa9ceca405f610378eebe2769b0a604f450f9d65228c6db",
+      "checkedAt": "2026-11-27T16:30:48.635Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改成一段自願安靜閱讀，其他時候正常說話。",
+            "action": "在可用班務時間提出有限安靜閱讀安排，維持求助自由。",
+            "tradeoff": "有安靜片刻，少其他活動。"
+          },
+          {
+            "id": 2,
+            "text": "請班長把主意留著，先問大家想不想做。",
+            "action": "邀班長提出可拒絕的活動討論，不強迫全體配合。",
+            "tradeoff": "有自主性，可能沒人支持。"
+          },
+          {
+            "id": 3,
+            "text": "我不要新活動，今天照平常過就好。",
+            "action": "婉拒額外體貼計畫，維持原班務與相處。",
+            "tradeoff": "省事，班長可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "邀大家用不具名小紙條說說我哪個表情最嚇人。",
+            "action": "提出自願、無人身羞辱的教師表情回饋。",
+            "tradeoff": "可能看見盲點，也會難堪。"
+          },
+          {
+            "id": 5,
+            "text": "讓班長自願說一次他怎麼想出這主意。",
+            "action": "邀發起者說明構思，不要求為全班道歉。",
+            "tradeoff": "佔課間，可能又成長演說。"
+          },
+          {
+            "id": 6,
+            "text": "提出以後驚喜先找一位成人確認，不必先透露給我。",
+            "action": "建議自願活動先諮詢合適成人，不增設學生私人相處審批。",
+            "tradeoff": "少誤會，也少突然性。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被嚇得以為要被罷免，乾脆拿自己開個玩笑，宣布今天先由我安靜聽他們聊。",
+          "action": "於可用非必要班務短段自願讓學生聊一般近況，教師少主講但維持照看。",
+          "tradeoff": "放下主導，可能更吵。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 716425819
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ce47d76c314cf1cea07d938ca64ef0c4f66c9f8cfd8f6e46211026d4a7a61caa"
+      },
+      "consequenceDirections": {
+        "A": "學生可能放鬆或覺得驚喜被潑冷水，教師承擔冷場。",
+        "B": "班長可拒絕或說出關心，教師不把解釋當全班都同意。",
+        "C": "學生可能接話或仍害羞，班長可能笑出來；不把無聲抗議當已發生事實。",
+        "D": "學生可能喜歡或無聊，班長須接受有人不參加非必要安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c33d2f1be403393a4013f44a697b6c1d7322e5af8999912262fcdd8da374b449",
+    "draftSha256": "ba82cb7b90e96f822fa9ceca405f610378eebe2769b0a604f450f9d65228c6db",
     "seedAssignmentVersion": 1
   }
 }

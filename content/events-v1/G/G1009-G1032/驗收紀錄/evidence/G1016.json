@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c84bb7a25fffed2e57ecfc3256b3686a2c301b4ab7cc642b2fe7f9ddbbf219ab",
+      "checkedAt": "2026-11-27T16:30:48.631Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先做一次兩位教師的線上交流，不承諾學生聯課。",
+            "action": "提出成人間自願線上備課交流邀請，未取得友校同意。",
+            "tradeoff": "規模較小，仍需時間。"
+          },
+          {
+            "id": 2,
+            "text": "請他先列出需要我實際負責的工作，再評估。",
+            "action": "邀提案者列明分工需求，未承諾接任或核准。",
+            "tradeoff": "避免含糊，可能被嫌計較。"
+          },
+          {
+            "id": 3,
+            "text": "邀學生自願說想交流什麼，再談活動形式。",
+            "action": "提出不涉個資的自願需求討論，不對學生保證活動。",
+            "tradeoff": "佔班務，期待可能增加。"
+          },
+          {
+            "id": 4,
+            "text": "這學期不加聯課，婉拒本次額外合作。",
+            "action": "拒絕未成立的非必要聯課邀請，維持正常教學合作。",
+            "tradeoff": "保住課務，可能傷牽線心意。"
+          },
+          {
+            "id": 5,
+            "text": "向行政詢問是否已有跨校交流資源可用。",
+            "action": "查詢既有核准合作架構，未取得名額或安排。",
+            "tradeoff": "可能少摸索，需查詢。"
+          },
+          {
+            "id": 6,
+            "text": "提議改成可合法共享的匿名作品互評。",
+            "action": "提出須兩校及作者合意的去識別作品交流方案，未取得授權或材料。",
+            "tradeoff": "免交通，仍需審資料。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不喜歡被先替我答應，這次自己聯絡友校說明我的合作界線。",
+          "action": "在必要澄清之外另向友校提出本人願協商範圍，不替校方承諾。",
+          "tradeoff": "自己出面，可能讓同事沒面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 999657757
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "5495f5e3251ce2afc575544f4bb1ee50a157d6d8229adec7cc0b74c1ce7f6270"
+      },
+      "consequenceDirections": {
+        "A": "學生可能有興趣或毫無意願，同事須面對未被歡迎的可能。",
+        "B": "行政可能提供或無資源，同事不能據此宣布成行。",
+        "C": "友校可能尊重或不想再談，同事可能感到被越過；私人界線不取代正式審核。",
+        "D": "他可重新分工或不願整理，導師需據實決定而非因人情答應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0820fe058e3f0e0f8cb9c9f9fc937568db256482bf8a925c18166b69e28131f3",
+    "draftSha256": "c84bb7a25fffed2e57ecfc3256b3686a2c301b4ab7cc642b2fe7f9ddbbf219ab",
     "seedAssignmentVersion": 1
   }
 }

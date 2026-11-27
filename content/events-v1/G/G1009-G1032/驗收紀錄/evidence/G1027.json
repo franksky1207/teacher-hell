@@ -15,14 +15,155 @@
     "G06",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d4536b7ca88150691c2ff771861edbb6cef7a8da3d255da6d6d105516520302",
+      "checkedAt": "2026-11-27T16:30:48.649Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另約一次有限時段，把這戶最擔心的問題談完。",
+            "action": "提出一次非必要延伸諮詢，不突破他生保密界線。",
+            "tradeoff": "佔空堂，未必消除焦慮。"
+          },
+          {
+            "id": 2,
+            "text": "邀孩子自願談上課時哪些安排讓他比較安心。",
+            "action": "提出學生自願一般安心需求短談，不以其回答才給必要支持。",
+            "tradeoff": "需時間，孩子可拒。"
+          },
+          {
+            "id": 3,
+            "text": "班會用不具名情境談工具怎麼借還。",
+            "action": "安排不重演危險的工具使用相處討論，不公開本案。",
+            "tradeoff": "佔班會，可能被對號入座。"
+          },
+          {
+            "id": 4,
+            "text": "提供校內既有親師諮詢資訊，讓他自行選擇。",
+            "action": "提供合法諮詢入口，不代安排介入或逼家庭接受。",
+            "tradeoff": "可能無法即時回應。"
+          },
+          {
+            "id": 5,
+            "text": "不加非必要會談，接著依已確認支持安排走。",
+            "action": "婉拒額外長談，維持必要聯繫與學習照顧。",
+            "tradeoff": "保住工作時間，家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "向權責者提出一般工具借用記錄可否更清楚的建議。",
+            "action": "提出未來工具管理資訊改善建議，未自行增查個人物品。",
+            "tradeoff": "需協調，可能增加文書。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕手機整晚亮，今晚把非緊急通知靜音，明早再接著回。",
+          "action": "設定本人夜間非緊急通知免打擾並告知工作回覆時段，保留必要緊急聯繫與已約回覆。",
+          "tradeoff": "保住睡眠，家長可能感到被冷落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1948094723
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "c71b6602fd06bbdb7b9ab25e7f2e6134552fb98f12e2ea36244fc464bebb9c6e"
+      },
+      "consequenceDirections": {
+        "A": "家長可能另洽權責者或投訴，教師不能把追問當不配合。",
+        "B": "孩子可能需求不同於家長，教師不能據此否認家長感受。",
+        "C": "家長可能接受或更焦慮，教師須按約回覆並維持必要緊急支援；不是以靜音保證問題消失。",
+        "D": "學生可能理解或覺得重複，教師仍需依權責維持安全，不拿討論當保證。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒額外傾聽與普通1有限會談過近，改為具體夜間訊息界線，承接深夜連訊而不漏緊急責任。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "另約一次有限時段，把這戶最擔心的問題談完。",
+                "action": "提出一次非必要延伸諮詢，不突破他生保密界線。",
+                "tradeoff": "佔空堂，未必消除焦慮。"
+              },
+              {
+                "id": 2,
+                "text": "邀孩子自願談上課時哪些安排讓他比較安心。",
+                "action": "提出學生自願一般安心需求短談，不以其回答才給必要支持。",
+                "tradeoff": "需時間，孩子可拒。"
+              },
+              {
+                "id": 3,
+                "text": "班會用不具名情境談工具怎麼借還。",
+                "action": "安排不重演危險的工具使用相處討論，不公開本案。",
+                "tradeoff": "佔班會，可能被對號入座。"
+              },
+              {
+                "id": 4,
+                "text": "提供校內既有親師諮詢資訊，讓他自行選擇。",
+                "action": "提供合法諮詢入口，不代安排介入或逼家庭接受。",
+                "tradeoff": "可能無法即時回應。"
+              },
+              {
+                "id": 5,
+                "text": "不加非必要會談，接著依已確認支持安排走。",
+                "action": "婉拒額外長談，維持必要聯繫與學習照顧。",
+                "tradeoff": "保住工作時間，家長可能失望。"
+              },
+              {
+                "id": 6,
+                "text": "向權責者提出一般工具借用記錄可否更清楚的建議。",
+                "action": "提出未來工具管理資訊改善建議，未自行增查個人物品。",
+                "tradeoff": "需協調，可能增加文書。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被一再求保證問得發酸，坦白說自己也怕，另花一段時間聽他說最難熬的那一刻。",
+              "action": "在必要回覆外自願提供有限傾聽，表達教師自身感受，不要求家長安慰。",
+              "tradeoff": "花休息時間，可能情緒更滿。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1296357848
+            },
+            "selectedIds": [
+              4,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 4,
+              "D": 6
+            },
+            "optionsDigest": "972fc3c3fe96786af5f931dafc3653f721c108454d74a77f5d7411236d9cafe4"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可能另洽權責者或投訴，教師不能把追問當不配合。",
+            "B": "家長可不談或說出深層擔心，教師不能把共感當專業保證或照護替代。",
+            "C": "家長可不用，必要本案回覆不因提供入口而結束。",
+            "D": "承辦可否決或提出別法，家長未必覺得足夠；不以新表單替代安全措施。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "97bdc9d0395f603efed8d00fcc4c3dd45a2631f53b339130e14c4bedeadc1f1a",
+    "draftSha256": "5d4536b7ca88150691c2ff771861edbb6cef7a8da3d255da6d6d105516520302",
     "seedAssignmentVersion": 1
   }
 }

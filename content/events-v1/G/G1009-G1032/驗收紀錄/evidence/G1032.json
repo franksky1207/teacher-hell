@@ -15,14 +15,155 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "794780f1ae74fce6d43031f843414544a24c5e65cd2c39fb165e1abeb983a5b4",
+      "checkedAt": "2026-11-27T16:30:48.655Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另選一篇已確認能供班級使用的公開文章，今天只談這篇。",
+            "action": "選取一篇授權確認可供班級使用的公開文章作具體替代教材，不使用原受限冊內容。",
+            "tradeoff": "另花選文時間，主題變窄。"
+          },
+          {
+            "id": 2,
+            "text": "改成口頭討論已知主題，不拿受限冊子當講義。",
+            "action": "調整本人討論課為一般口頭觀點交流，不重述受限內容作替代發放。",
+            "tradeoff": "少資料依據，需控討論品質。"
+          },
+          {
+            "id": 3,
+            "text": "向權利人詢問合法班級使用條件。",
+            "action": "提出授權條件詢問，未取得同意，不因詢問就發冊。",
+            "tradeoff": "可能要費用或不准。"
+          },
+          {
+            "id": 4,
+            "text": "邀他保留自己原創目錄的整理方法，不帶原文內容。",
+            "action": "提出學生自願介紹自創整理流程的邀請，先區分其原創與受限資料。",
+            "tradeoff": "保留技術心血，需再準備。"
+          },
+          {
+            "id": 5,
+            "text": "今天不加替代資料，將討論延後一次。",
+            "action": "延期本人可調的非必要討論活動，維持原必要教學。",
+            "tradeoff": "進度須重排，期待落空。"
+          },
+          {
+            "id": 6,
+            "text": "我提供既有資料查授權的方法，讓他以後自己先看得懂。",
+            "action": "提供合法來源判讀資訊，不把學習成果作責任處理條件。",
+            "tradeoff": "需閱讀，未必立刻會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看那一疊也捨不得，願意把自己原創的空白討論單印出來，這次換我扛紙墨。",
+          "action": "教師以自有合法原創空白單及本人預算提供當日自願討論材料，不複印受限內容。",
+          "tradeoff": "花私人錢與準備時間，內容不如原冊滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3269066155
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "f232a328d2543cb22ddfbf69209599cb229c1c26e204dc49af81d9ca24d7ad8d"
+      },
+      "consequenceDirections": {
+        "A": "他可拒絕或說明方法，教師不能把原冊拆碎分發當原創。",
+        "B": "學生可能覺得有人接住或仍懊惱，教師的支出不買到權利人授權，也不替代必要處理。",
+        "C": "權利人可拒絕或無回覆，學生須接受印本不能立即使用。",
+        "D": "同學可能失望或鬆口氣，學生不須自費再印新包補償。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1涵蓋所有替代教材而吞掉情緒候選自印原創空白單，改為外部公開文章的具體替代，與無內容空白引導單形成不同教材路徑。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我另找可合法使用的材料，今天縮小討論範圍。",
+                "action": "教師準備可合法使用的替代資料並縮小本人教學範圍。",
+                "tradeoff": "增加備課，內容變少。"
+              },
+              {
+                "id": 2,
+                "text": "改成口頭討論已知主題，不拿受限冊子當講義。",
+                "action": "調整本人討論課為一般口頭觀點交流，不重述受限內容作替代發放。",
+                "tradeoff": "少資料依據，需控討論品質。"
+              },
+              {
+                "id": 3,
+                "text": "向權利人詢問合法班級使用條件。",
+                "action": "提出授權條件詢問，未取得同意，不因詢問就發冊。",
+                "tradeoff": "可能要費用或不准。"
+              },
+              {
+                "id": 4,
+                "text": "邀他保留自己原創目錄的整理方法，不帶原文內容。",
+                "action": "提出學生自願介紹自創整理流程的邀請，先區分其原創與受限資料。",
+                "tradeoff": "保留技術心血，需再準備。"
+              },
+              {
+                "id": 5,
+                "text": "今天不加替代資料，將討論延後一次。",
+                "action": "延期本人可調的非必要討論活動，維持原必要教學。",
+                "tradeoff": "進度須重排，期待落空。"
+              },
+              {
+                "id": 6,
+                "text": "我提供既有資料查授權的方法，讓他以後自己先看得懂。",
+                "action": "提供合法來源判讀資訊，不把學習成果作責任處理條件。",
+                "tradeoff": "需閱讀，未必立刻會。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看那一疊也捨不得，願意把自己原創的空白討論單印出來，這次換我扛紙墨。",
+              "action": "教師以自有合法原創空白單及本人預算提供當日自願討論材料，不複印受限內容。",
+              "tradeoff": "花私人錢與準備時間，內容不如原冊滿。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4002993296
+            },
+            "selectedIds": [
+              4,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 6,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "fa8ca9c614b49bb20012ee25f7e140761bf9cc0825a36152455ce285cc340542"
+          },
+          "previousConsequenceDirections": {
+            "A": "同學可能失望或鬆口氣，學生不須自費再印新包補償。",
+            "B": "學生可不想看或提出新疑問，教師不將給資訊當授權已補到。",
+            "C": "學生可能覺得有人接住或仍懊惱，教師的支出不買到權利人授權，也不替代必要處理。",
+            "D": "他可拒絕或說明方法，教師不能把原冊拆碎分發當原創。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "646e0df1356eafd4e4f1dddb48ec7d601dc389b273f4ea6b66507bcf3aafa645",
+    "draftSha256": "794780f1ae74fce6d43031f843414544a24c5e65cd2c39fb165e1abeb983a5b4",
     "seedAssignmentVersion": 1
   }
 }

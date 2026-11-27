@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "af62c537e553fc3e5a6861c1f04332b7d28bb20fbaeb789fb28d4ff047bb09e9",
+      "checkedAt": "2026-11-27T16:30:48.624Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只選一小段，讓願意的學生試做再回饋。",
+            "action": "在授權及程度合適下提供小段自願練習，不收費或強迫參與。",
+            "tradeoff": "需整理，資料有限。"
+          },
+          {
+            "id": 2,
+            "text": "把授權可用的題本部分放成自取材料，不替全班排進度。",
+            "action": "依作者同意範圍將適合的既有題本部分提供自選取用，不替學生排共同進度。",
+            "tradeoff": "保留自主，可能無人取用。"
+          },
+          {
+            "id": 3,
+            "text": "先不採用，維持原自習並補清楚個人目標。",
+            "action": "婉拒本次額外題本，於既有自習中提供必要清楚目標。",
+            "tradeoff": "少改安排，專業質疑可能續。"
+          },
+          {
+            "id": 4,
+            "text": "邀他另談哪一類題型最值得練，不要求代課。",
+            "action": "提出一次成人教材取捨討論，未委託額外教學。",
+            "tradeoff": "花雙方空檔。"
+          },
+          {
+            "id": 5,
+            "text": "我另向校內查詢是否已有適合的題型支援。",
+            "action": "查詢現有合法資源與安排資訊，未取得額外人力。",
+            "tradeoff": "可能重複，需查詢。"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意讓我把一段改成口頭問答，不再加一疊紙。",
+            "action": "提出將題本一小段改編為口頭問答的授權請求，未取得同意或完成改編。",
+            "tradeoff": "改變媒介，教師需另花準備時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他那句沒效率刺到，拿自己的一次自習紀錄請他挑毛病。",
+          "action": "邀同事檢視本人去識別的自習安排紀錄並提出批評，不交學生個資。",
+          "tradeoff": "暴露自己的失敗，可能更難堪。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3537970192
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "cc1a16a567bb6c25bc32ca7548cd3f562633a3b707802310a33f5274518c4d45"
+      },
+      "consequenceDirections": {
+        "A": "學生可能覺得有用或太難，同事可能嫌採得少；不由小樣本宣稱整套有效。",
+        "B": "同事可指出問題或認為資料不足，教師須承受不被肯定，不要求對方改口。",
+        "C": "同事可拒絕或給具體建議，不能把邀請當已完成課程設計。",
+        "D": "作者可拒絕改編，教師也可能無法保留題型精度；原使用權確認不等於已准改編。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通2原「資訊或材料」不確定完成層次，明確為授權部分自取材料；普通6原重做必要授權確認，改為額外改編口頭問答請求。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只選一小段，讓願意的學生試做再回饋。",
+                "action": "在授權及程度合適下提供小段自願練習，不收費或強迫參與。",
+                "tradeoff": "需整理，資料有限。"
+              },
+              {
+                "id": 2,
+                "text": "把題本列為可自取資源，不代全班排進度。",
+                "action": "依同意範圍提供學生自選的合法題本資訊或材料。",
+                "tradeoff": "較自主，可能無人用。"
+              },
+              {
+                "id": 3,
+                "text": "先不採用，維持原自習並補清楚個人目標。",
+                "action": "婉拒本次額外題本，於既有自習中提供必要清楚目標。",
+                "tradeoff": "少改安排，專業質疑可能續。"
+              },
+              {
+                "id": 4,
+                "text": "邀他另談哪一類題型最值得練，不要求代課。",
+                "action": "提出一次成人教材取捨討論，未委託額外教學。",
+                "tradeoff": "花雙方空檔。"
+              },
+              {
+                "id": 5,
+                "text": "我另向校內查詢是否已有適合的題型支援。",
+                "action": "查詢現有合法資源與安排資訊，未取得額外人力。",
+                "tradeoff": "可能重複，需查詢。"
+              },
+              {
+                "id": 6,
+                "text": "我整理一份使用說明，請他只確認授權與內容界線。",
+                "action": "自願撰寫採用前說明草稿交作者確認，未保證全套使用。",
+                "tradeoff": "增加文書，可能要重改。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被他那句沒效率刺到，拿自己的一次自習紀錄請他挑毛病。",
+              "action": "邀同事檢視本人去識別的自習安排紀錄並提出批評，不交學生個資。",
+              "tradeoff": "暴露自己的失敗，可能更難堪。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 277786448
+            },
+            "selectedIds": [
+              2,
+              3,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 3,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "8e6076719b399de5c7e72aa117f31497d2978749ff623a70ff04a01b093eeda3"
+          },
+          "previousConsequenceDirections": {
+            "A": "找到資源可比較，找不到仍需原支持；作者可能覺得自己的教材不被信任。",
+            "B": "同事可能接受或不滿，教師須面對原安排未必適合每人。",
+            "C": "同事可指出問題或認為資料不足，教師須承受不被肯定，不要求對方改口。",
+            "D": "同事可能失望，學生可能只挑需要部分；必要支持不以選用為條件。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "932a042b8c4d28b349dd5614b4575ab269aab98454e355a1bb28cc3aeb65c056",
+    "draftSha256": "af62c537e553fc3e5a6861c1f04332b7d28bb20fbaeb789fb28d4ff047bb09e9",
     "seedAssignmentVersion": 1
   }
 }

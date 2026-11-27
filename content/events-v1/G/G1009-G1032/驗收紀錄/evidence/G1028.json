@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e3d6bedb5643f1051d4681a61523821306acab2e21a5588cee2c05f19b41e75c",
+      "checkedAt": "2026-11-27T16:30:48.650Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只在固定一段時間討論班務，其他課間不用守著我。",
+            "action": "提出有限班務交流時段，不要求學生待命。",
+            "tradeoff": "少即時協助，須守約。"
+          },
+          {
+            "id": 2,
+            "text": "邀他自己選一件有興趣的公開班務，不做私人跑腿。",
+            "action": "提出可拒絕的公開班務選擇，不新增超負荷職責。",
+            "tradeoff": "可能沒人願做其他工作。"
+          },
+          {
+            "id": 3,
+            "text": "這週不再接他的額外協助，讓他自己的下課自己用。",
+            "action": "婉拒本人非必要額外幫忙，不撤必要幹部權責。",
+            "tradeoff": "保住空間，學生可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意談，他自己最想學的到底是什麼。",
+            "action": "提出自願興趣短談，不將服務當學習資格。",
+            "tradeoff": "佔時間，可能說不出。"
+          },
+          {
+            "id": 5,
+            "text": "提供校內現有自願服務資訊，不替他報名。",
+            "action": "提供合法自願服務入口，未安排任務或轉介。",
+            "tradeoff": "可能增加他想扛的工作。"
+          },
+          {
+            "id": 6,
+            "text": "徵得他願意後，和家長談談『分擔』不等於一直跟著。",
+            "action": "提出在合意與必要知情範圍內的家庭交流邀請，不責怪家長。",
+            "tradeoff": "增加聯絡，可能被誤解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想自己拿一張紙，笑著邀他跟我比誰能好好休息五分鐘。",
+          "action": "提出不作考核的自願休息小玩笑，教師實際留一段可用課間自行休息，不要求學生看守。",
+          "tradeoff": "可能顯得幼稚，少做一點工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3598964730
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "1a4528f1ee915b3f54441b1dfe6412e10f57a906bc0948e601808a5d43f4d9b7"
+      },
+      "consequenceDirections": {
+        "A": "學生可不選，教師仍自行負責必要分工，不能把選擇當全天授權。",
+        "B": "學生或家長可拒額外談話，教師仍維持隱私界線。",
+        "C": "學生可不接梗或終於離開，教師不能將休息比賽變新服從任務。",
+        "D": "學生可拒談或提出新目標，教師不保證能提供機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f77e1c32d1f6f6ffaf6f1898411f6b44a9abcd1d4cd3eb98b994a1b5061ff483",
+    "draftSha256": "e3d6bedb5643f1051d4681a61523821306acab2e21a5588cee2c05f19b41e75c",
     "seedAssignmentVersion": 1
   }
 }

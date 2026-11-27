@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "68c76731b2931cc852df85b9cdaed6c9ac75c056506b6fe307777775423bb5e7",
+      "checkedAt": "2026-11-27T16:30:48.626Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我自己吃帶來的，不攔別人買。",
+            "action": "選擇本人原有食物，停止替成人朋友決定購食。",
+            "tradeoff": "安心些，可能顯得疏離。"
+          },
+          {
+            "id": 2,
+            "text": "問店家能不能說明保存與現做方式，再自己決定。",
+            "action": "提出消費者食物處理詢問，未將口頭答覆當檢驗證明。",
+            "tradeoff": "多問可能尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "另邀朋友聊聊這攤的故事，不要求我先吃。",
+            "action": "提出私人聽經營故事的邀請，不以購食換交情。",
+            "tradeoff": "花聊天時間，可能被拒。"
+          },
+          {
+            "id": 4,
+            "text": "我離開去買自己能接受的食物，再回來敘舊。",
+            "action": "自行另購合適食物，不要求朋友跟隨或代付。",
+            "tradeoff": "多花路程與錢。"
+          },
+          {
+            "id": 5,
+            "text": "提議這次各買各的，不再集體訂餐。",
+            "action": "提出成人各自採買的建議，不代全體同意。",
+            "tradeoff": "少集體壓力，野餐較零散。"
+          },
+          {
+            "id": 6,
+            "text": "不再延伸攤位話題，邀大家接著聊近況。",
+            "action": "主動轉回私人近況交流，不刪除必要事實澄清。",
+            "tradeoff": "能續聚，尷尬可能未解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點嘴硬，想先承認自己餓了，請朋友幫我挑一份不必碰那攤的點心。",
+          "action": "邀朋友自願從其他可選食物提供建議，未索取或要求代買。",
+          "tradeoff": "放下姿態，可能被虧。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3602626412
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "b4ec6b290552864d6f07d1289e03d04845bd27d44ddce9531ffe524841818fbf"
+      },
+      "consequenceDirections": {
+        "A": "朋友可能取笑或不悅，教師需承受顯眼的不同選擇。",
+        "B": "朋友可能接話或覺得被迴避，教師不能保證氣氛回來。",
+        "C": "朋友可願講或不想談，教師不得藉故事當安全背書。",
+        "D": "朋友可拒絕或笑出來，教師仍自行付款與判斷；不能假定和好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ffd835c100144b9a683b512abbb432c68d3a9116d986e993533eed24785f4d0e",
+    "draftSha256": "68c76731b2931cc852df85b9cdaed6c9ac75c056506b6fe307777775423bb5e7",
     "seedAssignmentVersion": 1
   }
 }

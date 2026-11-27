@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cb0b27645478ebad1520d1efa43a04469d67044f913b0bcb72e3733d224b3387",
+      "checkedAt": "2026-11-27T04:57:56.088Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請家長先依承辦確認的方式帶回，不在班上臨時分送",
+            "action": "導師已請家長先依承辦確認的方式帶回，不在班上臨時分送",
+            "tradeoff": "心力暫時沒用在原想幫的人身上，還要處理保存"
+          },
+          {
+            "id": 2,
+            "text": "若承辦確認可供應，透過不公開身分的方式讓學生自選",
+            "action": "導師已若承辦確認可供應，透過不公開身分的方式讓學生自選",
+            "tradeoff": "仍有人可能不收，也不能讓人因家境被指定"
+          },
+          {
+            "id": 3,
+            "text": "將可用餐點交學校既有支援管道，不由你私下挑人",
+            "action": "導師已將可用餐點交學校既有支援管道，不由你私下挑人",
+            "tradeoff": "須符合管道規則，可能無法全數接收"
+          },
+          {
+            "id": 4,
+            "text": "說明現有供餐與急需協助方式，請家長下次先問承辦再準備",
+            "action": "導師已說明現有供餐與急需協助方式，請家長下次先問承辦再準備",
+            "tradeoff": "少了即興幫忙的便利，也不保證每次都有需求"
+          },
+          {
+            "id": 5,
+            "text": "請家長保留想提供的數量與可用時段，先不承諾固定捐餐",
+            "action": "導師已請家長保留想提供的數量與可用時段，先不承諾固定捐餐",
+            "tradeoff": "需要來回核對，家庭也可改變意願"
+          },
+          {
+            "id": 6,
+            "text": "向承辦提出先詢問需求、再決定是否收取的做法，不接受先替學生保留",
+            "action": "導師已向承辦提出先詢問需求、再決定是否收取的做法，不接受先替學生保留",
+            "tradeoff": "流程可能較慢，家長也可能不認同"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你怕再一盒盒替人做人情，明說自己不擔任私人配餐人，請餐食承辦直接向家長說明接收結果",
+          "action": "導師已將私人送餐接收說明交由餐食承辦直接承接，未放棄必要供餐、食安或學生照護，不指定學生領取",
+          "tradeoff": "家長可能覺得你抽身，需確實交接而不是放著不管"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2827366526
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "61e65edc8a23458047cc3bd20c1191a463ecd6a77d3cdd828bf21406f69ce9e2"
+      },
+      "consequenceDirections": {
+        "A": "專業窗口接到實際餐盒，你少了逐個推銷的角色，卻仍須協助班內真正的急迫需求。",
+        "B": "需要者有選擇機會，未領餐點仍須按食安時限處理。",
+        "C": "家長的準備可有適當去處，卻看不到自己原想像的逐一交付。",
+        "D": "後續好意能對上實際條件，今天已送到的餐仍須另處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f5b2d7d6bea55d06ed82cbd170cbd59a17b1322a3c59364347d15a1ae115c272",
+    "draftSha256": "cb0b27645478ebad1520d1efa43a04469d67044f913b0bcb72e3733d224b3387",
     "seedAssignmentVersion": 1
   }
 }

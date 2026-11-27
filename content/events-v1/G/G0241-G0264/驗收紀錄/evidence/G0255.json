@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c0248f7750a5f45ef158b9264c1004dce79d333059187fdc7f38563c2959527b",
+      "checkedAt": "2026-11-27T04:57:56.082Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "亮出印錯的地方，這題作廢，不另補勝負",
+            "action": "導師已亮出印錯的地方，這題作廢，不另補勝負",
+            "tradeoff": "大家白忙一輪，同事可能很不甘心"
+          },
+          {
+            "id": 2,
+            "text": "換一張難度相近的正確卡，只給原約的一個提示",
+            "action": "導師已換一張難度相近的正確卡，只給原約的一個提示",
+            "tradeoff": "仍要確認新卡，短空檔可能不夠猜完"
+          },
+          {
+            "id": 3,
+            "text": "把剩餘時間用來查清分類，不再進行搶答",
+            "action": "導師已把剩餘時間用來查清分類，不再進行搶答",
+            "tradeoff": "失去遊戲刺激，還可能查到時間結束"
+          },
+          {
+            "id": 4,
+            "text": "請參加者各自選是否繼續無勝負討論，不把午休全留住",
+            "action": "導師已請參加者各自選是否繼續無勝負討論，不把午休全留住",
+            "tradeoff": "人可能立刻散掉，教師要接受沒有熱鬧收尾"
+          },
+          {
+            "id": 5,
+            "text": "保留錯卡作待核對資料，改天有共同空檔再談，不占現在剩餘休息",
+            "action": "導師已保留錯卡作待核對資料，改天有共同空檔再談，不占現在剩餘休息",
+            "tradeoff": "要記得後續回覆，不能只藏起來"
+          },
+          {
+            "id": 6,
+            "text": "請同事指出提示在哪一步把人帶錯，供你修正自己的出題方式",
+            "action": "導師已請同事指出提示在哪一步把人帶錯，供你修正自己的出題方式",
+            "tradeoff": "要面對方法也有限制，不能把卡錯全算玩家錯"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很不服一張印錯卡毀了出題人的面子，請他反過來口頭考你一題，換你只聽一個提示",
+          "action": "導師已邀同事自願在剩餘私人空檔口頭出題，由本人依單提示猜答，不賭金錢、不延誤勤務，原錯題另作廢",
+          "tradeoff": "你可能立刻猜錯，也得在休息結束前停"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 525210506
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "90079b2462d7b1e3b5be03f3f8f303b3f291926e4fe7219109a8ef1f6283d9b8"
+      },
+      "consequenceDirections": {
+        "A": "同事能知道自己卡住並非全因不會猜，但查證也可能暫時沒有結論。",
+        "B": "有人保住休息，有人仍能談題目，但共同一局就此結束。",
+        "C": "同事從被帶著猜改成出題，你得承擔在熟人面前丟臉的風險，不再偷偷補勝負。",
+        "D": "今天能準時停下，同事卻可能覺得最接近解開的一刻被切斷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1a0a349f4d0f9c12da9c712d3c2af7845c0fc37ef19ada6c2b1c53f9223c1efa",
+    "draftSha256": "c0248f7750a5f45ef158b9264c1004dce79d333059187fdc7f38563c2959527b",
     "seedAssignmentVersion": 1
   }
 }

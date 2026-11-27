@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a2a201ee96ca5322144d3a5f0813070d134a5916dda15ae41d5cc5c3e1ee44a2",
+      "checkedAt": "2026-11-27T04:57:56.083Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原先聽見的人逐項更正誰做哪一段，不重複未核實猜測",
+            "action": "導師已向原先聽見的人逐項更正誰做哪一段，不重複未核實猜測",
+            "tradeoff": "你得公開承認誤說，可能被追問更多"
+          },
+          {
+            "id": 2,
+            "text": "依課程規則讓兩人各自說明完成部分，不把示範變成對質",
+            "action": "導師已依課程規則讓兩人各自說明完成部分，不把示範變成對質",
+            "tradeoff": "多占課程時間，也可能顯出仍有不懂之處"
+          },
+          {
+            "id": 3,
+            "text": "先停止使用原件作公開示例，另用自己的材料接續課程",
+            "action": "導師已先停止使用原件作公開示例，另用自己的材料接續課程",
+            "tradeoff": "臨時換材麻煩，也讓原件暫時失去表現機會"
+          },
+          {
+            "id": 4,
+            "text": "私下如實回答你為何點名，讓他回應而不要求接受理由",
+            "action": "導師已私下如實回答你為何點名，讓他回應而不要求接受理由",
+            "tradeoff": "要聽不滿，作品處理仍須另做"
+          },
+          {
+            "id": 5,
+            "text": "把可核對的工作經過交任課老師確認，不先判定誰應負全責",
+            "action": "導師已把可核對的工作經過交任課老師確認，不先判定誰應負全責",
+            "tradeoff": "需要等有權者查明，不能只憑你原話處分"
+          },
+          {
+            "id": 6,
+            "text": "和兩人談清楚以後示範協助可到哪裡，各人可拒絕的部分",
+            "action": "導師已和兩人談清楚以後示範協助可到哪裡，各人可拒絕的部分",
+            "tradeoff": "要重新協調，也不能以未同意未來幫忙當作不合作"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你想到自己總拿現成學生作品救場，決定這次額外示範改由你親手從頭做一份，不再借這件撐進度",
+          "action": "導師已承接本人非必要示範的原創製作，不以學生繼續供件交換更正，保留原事件必要查核",
+          "tradeoff": "花自己的備課時間，也可能做得不如學生順手"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1748244793
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "3fcf6e9e0dfe27353520f8b281225052aff3e42f66246bc74ae13d43332d5b98"
+      },
+      "consequenceDirections": {
+        "A": "實際能力較能辨認，卻不能用說得流利直接替作者查核下結論。",
+        "B": "投入有界線，原作者仍須自己完成課程必要部分。",
+        "C": "幫忙者不再被當成整件代做，原作者也不能把真正接受的協助抹掉。",
+        "D": "兩人不用繼續扛你的示範需求，你得接受自己重做也會失誤；原先誤說仍須更正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e15f8b56ca02af21111f3c9679a69e8e4af987d408642059e4537f208f42f57",
+    "draftSha256": "a2a201ee96ca5322144d3a5f0813070d134a5916dda15ae41d5cc5c3e1ee44a2",
     "seedAssignmentVersion": 1
   }
 }

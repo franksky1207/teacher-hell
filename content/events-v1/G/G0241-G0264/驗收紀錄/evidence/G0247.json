@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90d957b277a7e9d7849863b7f5b35b50cbe1c64349cb05f2d739efa188f9e8c6",
+      "checkedAt": "2026-11-27T04:57:56.075Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "清楚說明自己剛才的笑不代表同意模仿本人，向在場者更正",
+            "action": "導師已清楚說明自己剛才的笑不代表同意模仿本人，向在場者更正",
+            "tradeoff": "得承認自己帶起的氣氛，也可能被嫌雙重標準"
+          },
+          {
+            "id": 2,
+            "text": "把原漫畫留在作者手上，談清楚僅可保留的範圍，不繼續演人",
+            "action": "導師已把原漫畫留在作者手上，談清楚僅可保留的範圍，不繼續演人",
+            "tradeoff": "要核對影像與傳播規則，也不能保證全桌不再私下學"
+          },
+          {
+            "id": 3,
+            "text": "請願意的同學把笑點改成虛構校務情節，不指涉可辨識個人",
+            "action": "導師已請願意的同學把笑點改成虛構校務情節，不指涉可辨識個人",
+            "tradeoff": "要重想內容，也可能不如原來好笑"
+          },
+          {
+            "id": 4,
+            "text": "私下問作者原本想讓你看到哪一點，不讓全桌幫他答",
+            "action": "導師已私下問作者原本想讓你看到哪一點，不讓全桌幫他答",
+            "tradeoff": "要另留時間，其他人暫時聽不到結果"
+          },
+          {
+            "id": 5,
+            "text": "讓桌邊各自回到原定課間安排，另約本人談作品用途",
+            "action": "導師已讓桌邊各自回到原定課間安排，另約本人談作品用途",
+            "tradeoff": "當下歡笑中斷，也得記得後續約談"
+          },
+          {
+            "id": 6,
+            "text": "以不展示原畫的方式說明可以批評具體校務、不拿外貌作嘲弄",
+            "action": "導師已以不展示原畫的方式說明可以批評具體校務、不拿外貌作嘲弄",
+            "tradeoff": "可能有人覺得你突然說教，也須容許合理批評存在"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你忽然不想再替主任猜會不會生氣，自己另畫一隻明指你的笨貓，只同意大家拿你的自畫像開這一次玩笑",
+          "action": "導師已提供本人自願自畫像作有限度現場分享，不要求學生畫圖、不准擴大嘲弄他人或另行傳播",
+          "tradeoff": "你的面子會成笑點，也不能因此替主任補授權"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1682010730
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "660287d71cdc3de545483cf6c9d5c87fee66dfce00e58d145bb2240936bf8894"
+      },
+      "consequenceDirections": {
+        "A": "學生能分清本人願意被笑與代別人答應不同，但你可能發現全桌學你比學主任還像。",
+        "B": "學生知道不是只怪他一人，但笑過之後的界線仍可能難以接受。",
+        "C": "親近師生能直接說清楚，作者可能仍只想分享好笑的圖，不想談大道理。",
+        "D": "學生能談真正的不滿，卻可能開始問你願不願聽那些不漂亮的話。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b0bf527d1d29e740af5aa138e7326fa71ce792fce21fe86d8261b08eac8f7831",
+    "draftSha256": "90d957b277a7e9d7849863b7f5b35b50cbe1c64349cb05f2d739efa188f9e8c6",
     "seedAssignmentVersion": 1
   }
 }

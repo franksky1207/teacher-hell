@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "92566fb21fdfab7e8fd1164eb19182e89974062259845a760af00c20e71e5c21",
+      "checkedAt": "2026-11-27T04:57:56.081Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請發起者停止轉貼你的私人號碼，向已收者更正使用範圍",
+            "action": "導師已請發起者停止轉貼你的私人號碼，向已收者更正使用範圍",
+            "tradeoff": "聯絡會少一個方便入口，也可能有人不高興"
+          },
+          {
+            "id": 2,
+            "text": "向學校提出由現有正式窗口接一般問題的需求",
+            "action": "導師已向學校提出由現有正式窗口接一般問題的需求",
+            "tradeoff": "要等權責單位確認，不能先保證有人輪值"
+          },
+          {
+            "id": 3,
+            "text": "向本班家長清楚說明一般回覆時段與有效急迫聯絡方式",
+            "action": "導師已向本班家長清楚說明一般回覆時段與有效急迫聯絡方式",
+            "tradeoff": "要維持一致，也得依約回覆"
+          },
+          {
+            "id": 4,
+            "text": "請家長先整理常見的一般問題，不收其他家庭私事，交學校評估",
+            "action": "導師已請家長先整理常見的一般問題，不收其他家庭私事，交學校評估",
+            "tradeoff": "整理需要時間，不能取代正式案件處理"
+          },
+          {
+            "id": 5,
+            "text": "依既有授權，讓可由行政答的問題直接轉適當承辦，不全由你中轉",
+            "action": "導師已依既有授權，讓可由行政答的問題直接轉適當承辦，不全由你中轉",
+            "tradeoff": "家長要習慣不同窗口，必要資料須控制範圍"
+          },
+          {
+            "id": 6,
+            "text": "和發起者另約一次短談，釐清她希望改的流程，不以群組聲量代替全體同意",
+            "action": "導師已和發起者另約一次短談，釐清她希望改的流程，不以群組聲量代替全體同意",
+            "tradeoff": "你要另留時間，也可能聽到與其他家長不同的需求"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很想有一晚不盯手機，先取消自己原訂的非必要線上家長閒聊，改用已公告的一般回覆時段",
+          "action": "導師已取消本人可決定的非必要晚間即時閒聊，保留正式急迫管道及既有必辦聯繫，不擅自關閉學校窗口",
+          "tradeoff": "少一次熟悉互動，有人可能覺得你退得太快"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2593592034
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "8eb83a20bb334251e01e89c79544afa04a7cb16e9f1d01d88e521f1fa8757925"
+      },
+      "consequenceDirections": {
+        "A": "私人開放不再無限擴大，一般問題仍須有正式路徑可走。",
+        "B": "家長可預期何時得到答覆，但不能把非急件都改標急件求即時回。",
+        "C": "私人夜晚不再被群組默認占用，正式急件仍有人接，下一次一般回覆也須真的做到。",
+        "D": "共同困擾有具體內容，原群組也可能發現不是每件事都適合共同討論。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "754f640b9187569feb0da6eef1e59072d365c1e152190eb2edde06a862e9ddd9",
+    "draftSha256": "92566fb21fdfab7e8fd1164eb19182e89974062259845a760af00c20e71e5c21",
     "seedAssignmentVersion": 1
   }
 }

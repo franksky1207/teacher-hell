@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7ea81dc9fe869473c407653e118434ea6ef40d4b8d007dc7c30485415cda906f",
+      "checkedAt": "2026-11-27T04:57:56.069Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拿這題的反例說明限制，換掉五題都做同型的安排",
+            "action": "導師已拿這題的反例說明限制，換掉五題都做同型的安排",
+            "tradeoff": "需重選題目，少了原先快速做完的成就感"
+          },
+          {
+            "id": 2,
+            "text": "讓他們先短試原方法，再核對哪些地方解不通",
+            "action": "導師已讓他們先短試原方法，再核對哪些地方解不通",
+            "tradeoff": "要控制時間且當場核正，不能讓錯誤當答案"
+          },
+          {
+            "id": 3,
+            "text": "讓學生保留揪團，自行從核對過的題目選兩種練",
+            "action": "導師已讓學生保留揪團，自行從核對過的題目選兩種練",
+            "tradeoff": "教師少了控制順序的方便"
+          },
+          {
+            "id": 4,
+            "text": "請任課老師提供這個單元的可靠練習建議",
+            "action": "導師已請任課老師提供這個單元的可靠練習建議",
+            "tradeoff": "得配合任課者空檔，今天未必全拿得到"
+          },
+          {
+            "id": 5,
+            "text": "先各做一題，再依真正卡住的地方分開練",
+            "action": "導師已先各做一題，再依真正卡住的地方分開練",
+            "tradeoff": "要看多份答案，不能整桌同一速度"
+          },
+          {
+            "id": 6,
+            "text": "陪他查網紅原話與適用條件，不只憑同學轉述",
+            "action": "導師已陪他查網紅原話與適用條件，不只憑同學轉述",
+            "tradeoff": "占掉練題時間，原影片也可能說不清楚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被紅豆餅香分心，決定先自費買自己的點心，讓這桌照原定空檔自行念，不接下主持",
+          "action": "導師已先指出原方法不可當通則並提供可靠查詢處，於非當值空檔自費購買本人點心，未取用學生食物或承諾主持",
+          "tradeoff": "少了你的即時引導，問題須另約回應"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1469285504
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "02432083f903478b939c95fbc69267d5d2d6aa1581ead24970a6ce035d54cbd9"
+      },
+      "consequenceDirections": {
+        "A": "學生可親自看見漏掉的條件，也可能嫌白做了一輪，須留時間核對。",
+        "B": "學生能自己維持讀書會，也可能再度卡住；你的休息保住了，但已知錯誤仍須留下明確提醒。",
+        "C": "學伴能按需求選題，可能意見不一，原定五題進度得放下。",
+        "D": "學生知道宣傳省略了什麼，卻仍須另外補練漏掉的概念。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8318cfa051458c92b3c43330862e8105a228e903eb10f2c9f1e5f8fc9dd8cc5d",
+    "draftSha256": "7ea81dc9fe869473c407653e118434ea6ef40d4b8d007dc7c30485415cda906f",
     "seedAssignmentVersion": 1
   }
 }

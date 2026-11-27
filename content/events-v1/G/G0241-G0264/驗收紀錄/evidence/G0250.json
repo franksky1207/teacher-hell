@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0b3a5c9ff39346c5008abc08b06786f0089c239c86c06cc2c6df24a09784d6cc",
+      "checkedAt": "2026-11-27T04:57:56.078Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "到別家兩人都接受的店，不再等這個位置",
+            "action": "導師已到別家兩人都接受的店，不再等這個位置",
+            "tradeoff": "要多走一段路，也可能找不到同樣便宜的選擇"
+          },
+          {
+            "id": 2,
+            "text": "改買外帶，在可停留的地方短聊再各自離開",
+            "action": "導師已改買外帶，在可停留的地方短聊再各自離開",
+            "tradeoff": "少了舒適座位，天候與場地須合適"
+          },
+          {
+            "id": 3,
+            "text": "各自安排，他留在原店等，你依自己的時間離開",
+            "action": "導師已各自安排，他留在原店等，你依自己的時間離開",
+            "tradeoff": "今晚少了共同休息，可能有點生分"
+          },
+          {
+            "id": 4,
+            "text": "訂一個雙方都能接受的等候截止時間，沒輪到就離開",
+            "action": "導師已訂一個雙方都能接受的等候截止時間，沒輪到就離開",
+            "tradeoff": "等待仍會吃掉空檔，也得真的依約停"
+          },
+          {
+            "id": 5,
+            "text": "今天不消費，改在安全路段一起散步一小段",
+            "action": "導師已今天不消費，改在安全路段一起散步一小段",
+            "tradeoff": "喝不到原想要的咖啡，也可能有人不想走"
+          },
+          {
+            "id": 6,
+            "text": "詢問店家其他合法可用座位，接受不能保證安靜的答覆",
+            "action": "導師已詢問店家其他合法可用座位，接受不能保證安靜的答覆",
+            "tradeoff": "可能仍吵，也不能要求店家趕走別人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再花錢等安靜，今天先不買，改邀他下次到你家各帶飲料坐坐",
+          "action": "導師已取消本人尚未成立的咖啡消費，提出雙方自願且另約時間的私人到訪邀請，不代取消同事訂單或要求赴約",
+          "tradeoff": "要提供自己的私人空間與時間，他也可以不接受，今晚聚會仍會落空"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4259830312
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "68e32ad1c102a93d8166269accd4dc70909a2fa153710c495a0162f3b8fb8b3c"
+      },
+      "consequenceDirections": {
+        "A": "兩人能留下一點相處，卻不能把站著喝當成對方原本想要的休息。",
+        "B": "同事能留住習慣，你也不用一直看鐘，之後是否再約須重新談。",
+        "C": "相處不必依賴一張桌子，卻不能假設散步就能取代安靜坐著。",
+        "D": "同事可能喜歡不用候位，也可能不自在進你家；你得承擔真正招待的時間，不是一句改天就能消除今晚的失望。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意核讀發現原情緒候選仍落在普通候選行動範圍內；改成不同的私人邀約、成人試講或承辦自主持說明，重新確認行動與代價後依原工具真實重抽一次，保留原抽選及後果，不指定組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "到別家兩人都接受的店，不再等這個位置",
+                "action": "導師已到別家兩人都接受的店，不再等這個位置",
+                "tradeoff": "要多走一段路，也可能找不到同樣便宜的選擇"
+              },
+              {
+                "id": 2,
+                "text": "改買外帶，在可停留的地方短聊再各自離開",
+                "action": "導師已改買外帶，在可停留的地方短聊再各自離開",
+                "tradeoff": "少了舒適座位，天候與場地須合適"
+              },
+              {
+                "id": 3,
+                "text": "各自安排，他留在原店等，你依自己的時間離開",
+                "action": "導師已各自安排，他留在原店等，你依自己的時間離開",
+                "tradeoff": "今晚少了共同休息，可能有點生分"
+              },
+              {
+                "id": 4,
+                "text": "訂一個雙方都能接受的等候截止時間，沒輪到就離開",
+                "action": "導師已訂一個雙方都能接受的等候截止時間，沒輪到就離開",
+                "tradeoff": "等待仍會吃掉空檔，也得真的依約停"
+              },
+              {
+                "id": 5,
+                "text": "今天不消費，改在安全路段一起散步一小段",
+                "action": "導師已今天不消費，改在安全路段一起散步一小段",
+                "tradeoff": "喝不到原想要的咖啡，也可能有人不想走"
+              },
+              {
+                "id": 6,
+                "text": "詢問店家其他合法可用座位，接受不能保證安靜的答覆",
+                "action": "導師已詢問店家其他合法可用座位，接受不能保證安靜的答覆",
+                "tradeoff": "可能仍吵，也不能要求店家趕走別人"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "你突然不想再用一杯咖啡證明自己還有社交力，坦白今天要獨處，回家前不再另約活動",
+              "action": "導師已告知同事本人今晚取消未成立的私人聚會、改為獨處，不替對方取消訂單或要求費用補償",
+              "tradeoff": "對方可能失落，你也失去難得有人陪的空檔"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1355942250
+            },
+            "selectedIds": [
+              3,
+              1,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 1,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "f570477141f5f2583e9a98d7363409d1b1005d341e9f84e17dbcdf8744f508cd"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事能留住習慣，你也不用一直看鐘，之後是否再約須重新談。",
+            "B": "休息有機會真正開始，同事卻得放下熟悉的安全感。",
+            "C": "相處不必依賴一張桌子，卻不能假設散步就能取代安靜坐著。",
+            "D": "同事知道這不是店家不夠好，而是你今天不想聊天；彼此仍可能需要適應拒絕邀約的新說法。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3b2b025619c6f74dca7f6409461f913af8b1743ea04a834aaea7ca2a7cd11b24",
+    "draftSha256": "0b3a5c9ff39346c5008abc08b06786f0089c239c86c06cc2c6df24a09784d6cc",
     "seedAssignmentVersion": 1
   }
 }

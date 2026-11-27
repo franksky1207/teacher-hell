@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "93776b9665e39b9bbf0bec9f3647fb54ca17b720bf1251ea671bdf5d2c0f59ec",
+      "checkedAt": "2026-11-27T04:57:56.073Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留其他自願者的慶祝，刪掉點名與輪流吹蠟燭的環節",
+            "action": "導師已保留其他自願者的慶祝，刪掉點名與輪流吹蠟燭的環節",
+            "tradeoff": "有人期待的熱鬧會減少，也要先問其他參與者"
+          },
+          {
+            "id": 2,
+            "text": "讓他直接回到原本可去的休息位置，不要求告別或解釋",
+            "action": "導師已讓他直接回到原本可去的休息位置，不要求告別或解釋",
+            "tradeoff": "同學可能覺得突然，教師要擋住追拍"
+          },
+          {
+            "id": 3,
+            "text": "改成每人自願留下祝福，不指定誰站中心",
+            "action": "導師已改成每人自願留下祝福，不指定誰站中心",
+            "tradeoff": "流程變慢，可能有人完全不參加"
+          },
+          {
+            "id": 4,
+            "text": "先問他願意保留哪一小段參與，再由本人決定",
+            "action": "導師已先問他願意保留哪一小段參與，再由本人決定",
+            "tradeoff": "他得再想一下，不能把商量變成說服大會"
+          },
+          {
+            "id": 5,
+            "text": "徵得相關人同意，把慶祝延到條件談清楚的另一次空檔",
+            "action": "導師已徵得相關人同意，把慶祝延到條件談清楚的另一次空檔",
+            "tradeoff": "食物保存與原出資安排須照規定處理"
+          },
+          {
+            "id": 6,
+            "text": "讓各位被慶祝者私下選要不要公開接受祝賀，不由帶頭者代答",
+            "action": "導師已讓各位被慶祝者私下選要不要公開接受祝賀，不由帶頭者代答",
+            "tradeoff": "要逐一確認，也可能發現很多人不想上場"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也受夠被拱著帶氣氛，撤掉自己原要演的慶生搞笑橋段，今天不當主持人",
+          "action": "導師已取消本人非必要搞笑表演並退出自願主持，保留現場必要照看、不強迫學生接任或拍攝",
+          "tradeoff": "學生少了一段期待，你也可能被說掃興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3801606606
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "cad968665e0109f78b16e281e05042aaace5cf65e7bf323894760b481e3a2631"
+      },
+      "consequenceDirections": {
+        "A": "活動不必因一人拒絕全取消，但主辦者仍得接受版本改變。",
+        "B": "他可能選不具名留場，也可能最後仍想走，成人須真的接受。",
+        "C": "他能真的退出，卻可能擔心朋友之後把氣氛冷掉怪到自己身上。",
+        "D": "活動若繼續須由自願者依規則安排，教師不再靠自己的表演逼大家笑，但必要照看仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7361e189895fb535e4f8c4ff1d0f2ceb7ed86f65ee122daf45b8c2cd90fbd92d",
+    "draftSha256": "93776b9665e39b9bbf0bec9f3647fb54ca17b720bf1251ea671bdf5d2c0f59ec",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "66d2f91a7800b3e324a4cc6d00f51bd0babe2896323b9dd82b8baeb3bb86632f",
+      "checkedAt": "2026-11-27T04:57:56.081Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓他依自選演法試完短段，保留隨時退出",
+            "action": "導師已讓他依自選演法試完短段，保留隨時退出",
+            "tradeoff": "要占用全班時間，也不能用試過就鎖定他出演"
+          },
+          {
+            "id": 2,
+            "text": "改成和自願同學對讀，先不面對全班演",
+            "action": "導師已改成和自願同學對讀，先不面對全班演",
+            "tradeoff": "要徵求搭檔意願，舞台練習也會減少"
+          },
+          {
+            "id": 3,
+            "text": "請他再提一個也願意試的角色，兩個都留作選擇",
+            "action": "導師已請他再提一個也願意試的角色，兩個都留作選擇",
+            "tradeoff": "多做準備，不能把第二個當成人指定的退路"
+          },
+          {
+            "id": 4,
+            "text": "讓全組依同一個自選試讀方式輪流，不先由朋友代分",
+            "action": "導師已讓全組依同一個自選試讀方式輪流，不先由朋友代分",
+            "tradeoff": "會拉長分角時間，也可能有角色撞選"
+          },
+          {
+            "id": 5,
+            "text": "私下問他希望你怎樣協助擋掉評論，不替他說明動機",
+            "action": "導師已私下問他希望你怎樣協助擋掉評論，不替他說明動機",
+            "tradeoff": "要再留時間，他也可能只想直接演"
+          },
+          {
+            "id": 6,
+            "text": "請組員只回應台詞和動作的具體效果，不評論他本人像不像反派",
+            "action": "導師已請組員只回應台詞和動作的具體效果，不評論他本人像不像反派",
+            "tradeoff": "要示範如何回饋，可能一時沒人敢說"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想演壞人，問他願不願意讓你當一次對手，照他的段落配合演，不搶最後那句",
+          "action": "導師已邀學生自願與本人短段對戲，採其自選角色並保留退出，不藉試演確定正式角色或代他同意公開錄影",
+          "tradeoff": "你可能演得太用力，也會花掉原本講評空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3652671077
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "60bd13b32424867b113d96130fc6e1807a021deb2d7a8b68d51f475f4d67ce37"
+      },
+      "consequenceDirections": {
+        "A": "學生能試真正對戲，卻可能被教師的表演蓋過，需要由你克制而非再叫他讓位。",
+        "B": "學生能聽到可改的地方，卻仍須接受不全是稱讚。",
+        "C": "他能比較自己要什麼，但同伴可能仍只想接受原來替他選的那個。",
+        "D": "自主不只落在一人身上，最後仍須協調同一角色多人想演的情形。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "12155f8c628c162d9368a0fda3339dccbf61e56ed38528f817833c96fba9898d",
+    "draftSha256": "66d2f91a7800b3e324a4cc6d00f51bd0babe2896323b9dd82b8baeb3bb86632f",
     "seedAssignmentVersion": 1
   }
 }

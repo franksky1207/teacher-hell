@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b9e437ecf882208fb5a4edc2811271ab14f1e9f0a83add12fd1bf042fc90bbe3",
+      "checkedAt": "2026-11-27T04:57:56.093Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他把提議送回小組，由大家依原方式決定主持",
+            "action": "導師已請他把提議送回小組，由大家依原方式決定主持",
+            "tradeoff": "未必輪得到他，也要接受其他人的準備"
+          },
+          {
+            "id": 2,
+            "text": "讓他在自願且安排許可下示範一小段，不承諾主持",
+            "action": "導師已讓他在自願且安排許可下示範一小段，不承諾主持",
+            "tradeoff": "舞台較小，得清楚區分試演與正式任命"
+          },
+          {
+            "id": 3,
+            "text": "直接拒絕私下推薦，說明你不替未討論的人選背書",
+            "action": "導師已直接拒絕私下推薦，說明你不替未討論的人選背書",
+            "tradeoff": "可能傷到他的興頭，合作氣氛變僵"
+          },
+          {
+            "id": 4,
+            "text": "請他先聽其他同仁的提案，再自選願意合作的部分",
+            "action": "導師已請他先聽其他同仁的提案，再自選願意合作的部分",
+            "tradeoff": "需要讓出說話時間，也可能找不到合意搭檔"
+          },
+          {
+            "id": 5,
+            "text": "和他私下談這次稱讚中真正做好的事，不急著安排下一個頭銜",
+            "action": "導師已和他私下談這次稱讚中真正做好的事，不急著安排下一個頭銜",
+            "tradeoff": "今天得不到新舞台，也要聽他對落空的反應"
+          },
+          {
+            "id": 6,
+            "text": "請承辦說明下一次角色需求與徵詢時間，讓有意者都能提出",
+            "action": "導師已請承辦說明下一次角色需求與徵詢時間，讓有意者都能提出",
+            "tradeoff": "要等待資訊，可能有人更符合需求"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被他的高興感染，提議兩人下班自願練一段雙人開場，只當私人玩票，不拿去逼小組排你們",
+          "action": "導師已提出雙方自願的私人短演邀約，不占教學勤務、不承諾正式主持或替小組安排工作",
+          "tradeoff": "用掉私人時間，也可能兩人都演得很尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 594542538
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "7be0e35d43e917cf49491ac4fef59e4249a80b94c66020e15f04f64f679ae651"
+      },
+      "consequenceDirections": {
+        "A": "表揚有具體內容，卻不再每次都靠新的任務維持高興。",
+        "B": "他的興致能有不靠職位的出口，你則可能發現自己也很想搶麥克風，不能把合玩又當正式任用。",
+        "C": "小組不會收到你代答應的壓力，同事卻可能覺得被熟人潑冷水。",
+        "D": "稿子能有實際回饋，他卻可能仍把大家笑聲當成已被選中。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c3885cca1ec7b0eb00224e37eb375aabc3ffbeceb0e995f1829d8e8b3162597d",
+    "draftSha256": "b9e437ecf882208fb5a4edc2811271ab14f1e9f0a83add12fd1bf042fc90bbe3",
     "seedAssignmentVersion": 1
   }
 }

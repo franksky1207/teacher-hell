@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "43acbe0d00facd0a3ba2b6ae6b020008b0e2360d42914fb3c061942e0055b82f",
+      "checkedAt": "2026-11-27T04:57:56.077Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "借傘但各走各的，先約好歸還方式",
+            "action": "導師已借傘但各走各的，先約好歸還方式",
+            "tradeoff": "要負責保管，也少了同行聊天"
+          },
+          {
+            "id": 2,
+            "text": "婉拒傘，邀他自願走一小段有遮蔽的安全步道",
+            "action": "導師已婉拒傘，邀他自願走一小段有遮蔽的安全步道",
+            "tradeoff": "他可能不想繞路，不能拿同行當退禮交換"
+          },
+          {
+            "id": 3,
+            "text": "說明不習慣受贈，請他把備傘留著，自己用原有安全返程方式",
+            "action": "導師已說明不習慣受贈，請他把備傘留著，自己用原有安全返程方式",
+            "tradeoff": "可能顯得生分，你也得自行處理雨勢改變"
+          },
+          {
+            "id": 4,
+            "text": "接受一次短借，只走到約好的遮蔽處便還他",
+            "action": "導師已接受一次短借，只走到約好的遮蔽處便還他",
+            "tradeoff": "自己的路線會受限制，也要讓他真有時間接回"
+          },
+          {
+            "id": 5,
+            "text": "先問他是真的擔心天候，還是想找人一起走，再說明自己的想法",
+            "action": "導師已先問他是真的擔心天候，還是想找人一起走，再說明自己的想法",
+            "tradeoff": "要面對可能不同的期待，未必談得很順"
+          },
+          {
+            "id": 6,
+            "text": "若雨勢或身體狀況不再合適，停止散步，改用安全交通",
+            "action": "導師已若雨勢或身體狀況不再合適，停止散步，改用安全交通",
+            "tradeoff": "會失去想慢走的空檔，也可能增加費用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很想把這場小雨畫下來，請他把傘收回，自己去獲准停留的遮蔽處速寫幾分鐘",
+          "action": "導師已拒絕未成立的贈傘，告知同事後自行於安全遮蔽處短暫作畫，依天候與返程條件隨時停止",
+          "tradeoff": "花自己的空檔，畫完未必像樣，也不延留同事"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1947559136
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "9ab9554203a0bf1567f6a5f698662a14f8526755521e91e80ded9b431ab83b10"
+      },
+      "consequenceDirections": {
+        "A": "你能保住自己的散步節奏，同事卻可能發現原本其實期待一起走。",
+        "B": "返家不用為了證明自己喜歡雨而硬撐，但同事也不能把安全改道當作你接受贈物。",
+        "C": "你的消遣可以被分享，但兩人得在時間與天候容許處各自結束。",
+        "D": "你留下看雨的私人時間，同事可能笑你怪，但不必靠受贈或同行才能表達感謝。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b26bf31c6cd3c2a4dccce60158f13b413576867a68b55d8ef9d7aee5bacd71f0",
+    "draftSha256": "43acbe0d00facd0a3ba2b6ae6b020008b0e2360d42914fb3c061942e0055b82f",
     "seedAssignmentVersion": 1
   }
 }

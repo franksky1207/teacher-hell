@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "743f10d6521f22454db7a4a844dbf528b85f1ffaf77600b451df4af9bdb489e0",
+      "checkedAt": "2026-11-27T04:57:56.080Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向場地承辦追問進度，約定一次明確回覆時間",
+            "action": "導師已向場地承辦追問進度，約定一次明確回覆時間",
+            "tradeoff": "要持續追蹤，也不能保證有空間"
+          },
+          {
+            "id": 2,
+            "text": "在獲准的課內空檔安排一小段自願共讀，不收費",
+            "action": "導師已在獲准的課內空檔安排一小段自願共讀，不收費",
+            "tradeoff": "壓縮你可調整的內容，不能取代所有課外相聚"
+          },
+          {
+            "id": 3,
+            "text": "提供已確認開放的公共閱讀資源，由學生與家庭自行評估",
+            "action": "導師已提供已確認開放的公共閱讀資源，由學生與家庭自行評估",
+            "tradeoff": "地點、交通與使用規則仍有成本"
+          },
+          {
+            "id": 4,
+            "text": "讓各人自行決定是否赴約與點餐，不把缺席當不合群",
+            "action": "導師已讓各人自行決定是否赴約與點餐，不把缺席當不合群",
+            "tradeoff": "小群可能湊不齊，也要處理若有的具體施壓"
+          },
+          {
+            "id": 5,
+            "text": "請發起者重問大家真正能負擔的條件，不公開誰預算不足",
+            "action": "導師已請發起者重問大家真正能負擔的條件，不公開誰預算不足",
+            "tradeoff": "要重談原約，可能有人不願改"
+          },
+          {
+            "id": 6,
+            "text": "若場地申請確定不成，直接告知結果並撤回未成立的留校期待",
+            "action": "導師已若場地申請確定不成，直接告知結果並撤回未成立的留校期待",
+            "tradeoff": "學生可能失望，教師也不能硬找一間未准的空教室"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再替一張消費菜單找答案，提議由你拿自己的書到已獲准的開放閱讀區待一小段，想共讀的人自願來",
+          "action": "導師已於現行開放規則容許的合法空檔提出本人短時閱讀邀請，不預占座位、不代家庭核准延留或承諾常態看管",
+          "tradeoff": "花你的休息時間，座位不能保留給特定人，也不保證每人都有位"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1535718909
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "822cbee538a68b1b18524c48e1fa38ce6b61a0cef1a85792d50594bbc8ee0466"
+      },
+      "consequenceDirections": {
+        "A": "學生保有不消費的選擇，仍可能遺憾錯過朋友共同話題。",
+        "B": "等待能告一段落，學生仍須自行決定課外去處。",
+        "C": "學生可有不需付款的短暫共讀，卻不能把教師到場當成整段課外帶隊或固定陪讀承諾。",
+        "D": "學生不必只在付費店家見面，但不能由導師保證每人都方便。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "369b856009465d1314d42e22c74119c912fe5231d5b276c54b2d63fb2ca4b5cd",
+    "draftSha256": "743f10d6521f22454db7a4a844dbf528b85f1ffaf77600b451df4af9bdb489e0",
     "seedAssignmentVersion": 1
   }
 }

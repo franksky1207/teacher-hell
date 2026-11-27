@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ea741de63424edfe9a29d7124178eb41356ce9ea72c2e364f0b48d7db301e322",
+      "checkedAt": "2026-11-27T04:57:56.089Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由成人接手必要搬運，學生不用再證明速度",
+            "action": "導師已由成人接手必要搬運，學生不用再證明速度",
+            "tradeoff": "需要適當人力，展示可能延後"
+          },
+          {
+            "id": 2,
+            "text": "在成人確認下，空手比較合法路線，不走已封住的危險段",
+            "action": "導師已在成人確認下，空手比較合法路線，不走已封住的危險段",
+            "tradeoff": "要多花時間，也不代表之後可以搬任何物件"
+          },
+          {
+            "id": 3,
+            "text": "改在原安全位置展示，不再為這次活動搬件",
+            "action": "導師已改在原安全位置展示，不再為這次活動搬件",
+            "tradeoff": "觀眾位置與動線須重排，效果可能較差"
+          },
+          {
+            "id": 4,
+            "text": "取消這次非必要搬件展示，保留正常課程成果確認",
+            "action": "導師已取消這次非必要搬件展示，保留正常課程成果確認",
+            "tradeoff": "少了公開成果，也可能令準備的人失望"
+          },
+          {
+            "id": 5,
+            "text": "私下聽他為什麼非得被同學覺得敢，不用當眾重演剛才",
+            "action": "導師已私下聽他為什麼非得被同學覺得敢，不用當眾重演剛才",
+            "tradeoff": "花一段時間，搬運仍須成人另作安排"
+          },
+          {
+            "id": 6,
+            "text": "和班上約定搬運前先由成人確認物件與路線，不用誰先答應就推他去",
+            "action": "導師已和班上約定搬運前先由成人確認物件與路線，不用誰先答應就推他去",
+            "tradeoff": "教師要承擔前置工作，流程較慢"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被敢不敢三個字弄得火大，撤掉自己原訂的搬件速度小獎，今天不再比誰先到",
+          "action": "導師已取消本人可決定的非必要搬運速度獎勵，保留必要安全處置與公平課程確認，不以撤獎懲罰提出風險者",
+          "tradeoff": "少了競賽趣味，也得承認是你讓速度有了獎勵"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 669886756
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "80d5c48539446634ed395edf52b9e4552ce07ad4d521a87c65b4a4d6f29510fd"
+      },
+      "consequenceDirections": {
+        "A": "學生能看見繞路的實際條件，但不能把走過一次當成永遠安全。",
+        "B": "學生可以不再靠搶快換注意，但有人可能不滿獎勵臨時撤回，需要你自己解釋。",
+        "C": "下次不用靠學生自己踩到風險才停，卻不能把規則念完就取代現場確認。",
+        "D": "作品仍能被看見，原先想比快的人卻失去表現機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cfe2a2081d494253b3fb6f0fd91a0f9aa4df3871109a78bc251a1ea6130769f7",
+    "draftSha256": "ea741de63424edfe9a29d7124178eb41356ce9ea72c2e364f0b48d7db301e322",
     "seedAssignmentVersion": 1
   }
 }

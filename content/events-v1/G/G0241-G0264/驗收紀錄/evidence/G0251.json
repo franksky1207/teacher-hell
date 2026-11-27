@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f1f1e0cf8da128e3d375b10c7706432a295ac7165ae51b09e8287c930f36b869",
+      "checkedAt": "2026-11-27T04:57:56.079Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天公共設備不再播歌，讓大家照原規定休息",
+            "action": "導師已今天公共設備不再播歌，讓大家照原規定休息",
+            "tradeoff": "想一起聽的人失望，你也得說明不是只因某人反對"
+          },
+          {
+            "id": 2,
+            "text": "若校規允許，讓他用自己的耳機自聽，不占公共設備",
+            "action": "導師已若校規允許，讓他用自己的耳機自聽，不占公共設備",
+            "tradeoff": "須不妨礙必要聯繫與休息規則，也不能讓音漏出去"
+          },
+          {
+            "id": 3,
+            "text": "另約非午休的自願分享時段，先確認參加與音量條件",
+            "action": "導師已另約非午休的自願分享時段，先確認參加與音量條件",
+            "tradeoff": "今天聽不到，也可能最後沒人想來"
+          },
+          {
+            "id": 4,
+            "text": "若所有受影響者真同意且校規准許，只播一段並保留隨時停止",
+            "action": "導師已若所有受影響者真同意且校規准許，只播一段並保留隨時停止",
+            "tradeoff": "確認耗時，任何人不願意就不能播"
+          },
+          {
+            "id": 5,
+            "text": "和班務學生釐清設備工作只到哪裡，不把幫忙操作等同選曲權",
+            "action": "導師已和班務學生釐清設備工作只到哪裡，不把幫忙操作等同選曲權",
+            "tradeoff": "他可能覺得權利突然縮小，教師也要重交代"
+          },
+          {
+            "id": 6,
+            "text": "請他提出一個不打擾人的午休安排，教師只核對規則",
+            "action": "導師已請他提出一個不打擾人的午休安排，教師只核對規則",
+            "tradeoff": "他得自己想，不一定比聽歌有趣"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想把這幾分鐘留給自己，取消原先自願的午間點歌陪聊，不再當這段休息的DJ",
+          "action": "導師已取消本人非必要點歌互動，維持既有照看與正常午休規範，不擅離值勤或禁止合法個人休息",
+          "tradeoff": "少了學生期待的互動，必要照看仍須持續"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4242630669
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "dafe76b5ea7f7c6aadc4eef357cd45dce7ec3f332d19f35210c541c7f095b634"
+      },
+      "consequenceDirections": {
+        "A": "安靜能恢復，學生仍需另外安排自己的解悶方式。",
+        "B": "他能保有私人選曲，其他人不必陪聽，但共同分享的期待會落空。",
+        "C": "他不用猜老師會偏愛哪首，卻可能嫌你退出得太快，你則能真正安靜休息。",
+        "D": "自主不必綁在全班陪聽上，但校規若限制某活動仍須改案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29c91341ebbf0ecbe639341ceaa0bb0f90e79370a2e44eae4afe35f0502ccfa6",
+    "draftSha256": "f1f1e0cf8da128e3d375b10c7706432a295ac7165ae51b09e8287c930f36b869",
     "seedAssignmentVersion": 1
   }
 }

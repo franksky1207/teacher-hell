@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "03da6b43cc2fbd644e784868045e448cb3675049dba600798f97132b7efa9264",
+      "checkedAt": "2026-11-27T04:57:56.072Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說清楚課堂方法不等於教師支持集體加練，課外邀約由各人自選",
+            "action": "導師已說清楚課堂方法不等於教師支持集體加練，課外邀約由各人自選",
+            "tradeoff": "他得向隊員重新說明，可能有點沒面子"
+          },
+          {
+            "id": 2,
+            "text": "請他把加練改成真正可拒絕的邀請，不把固定上線算作同意",
+            "action": "導師已請他把加練改成真正可拒絕的邀請，不把固定上線算作同意",
+            "tradeoff": "小隊可能湊不齊，原計畫得縮小"
+          },
+          {
+            "id": 3,
+            "text": "在課內比較一次不同試錯方式，不接手私人隊伍安排",
+            "action": "導師已在課內比較一次不同試錯方式，不接手私人隊伍安排",
+            "tradeoff": "要用課程可調整時間，不能轉成遊戲教練課"
+          },
+          {
+            "id": 4,
+            "text": "請每位組員各說自己想改善什麼，不先由隊長訂全隊目標",
+            "action": "導師已請每位組員各說自己想改善什麼，不先由隊長訂全隊目標",
+            "tradeoff": "意見可能分散，無法立刻定案"
+          },
+          {
+            "id": 5,
+            "text": "鼓勵他先在自己的私人練習試用，再決定是否邀人",
+            "action": "導師已鼓勵他先在自己的私人練習試用，再決定是否邀人",
+            "tradeoff": "少了全隊一起驗證的速度"
+          },
+          {
+            "id": 6,
+            "text": "讓隊員自行重談固定上線的內容，你不替任何人調課外時程",
+            "action": "導師已讓隊員自行重談固定上線的內容，你不替任何人調課外時程",
+            "tradeoff": "教師聽不到全部協商，也不能保證最後相處融洽"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到大家把你講得像攻略，忍不住請他們出一個不需登入的遊戲情境，看看你這套會不會也卡住",
+          "action": "導師已邀學生自願口述非涉密遊戲情境供本人討論，不登入、付費、加練或承接私人隊伍管理",
+          "tradeoff": "你可能答得很外行，也要守住合法空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4079562275
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "87c946ffa22038e8afdfbcf15f97cc5308068af2b2d1dd82c34bf0d65995f872"
+      },
+      "consequenceDirections": {
+        "A": "學生能看見提示的作用，課外成效卻不由教師保證。",
+        "B": "學生能看見教法不是萬用招式，你得接受在他們熟悉的題目上輸得很明顯。",
+        "C": "同學不用把教師名字當參加理由，隊長仍須面對有人不想練。",
+        "D": "學生可以保留純娛樂的時間，隊長卻可能覺得大家不再追隨自己。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "65a30ae12792310571be8dcf58c03f24e14439ee0d122d4ca31ec222172e2260",
+    "draftSha256": "03da6b43cc2fbd644e784868045e448cb3675049dba600798f97132b7efa9264",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3a3b6a30190634474f72bc80315d534779051afa920c5dddcc581a19d20d1116",
+      "checkedAt": "2026-11-27T04:57:56.074Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請全組各自交出目前實際完成的部分，不以完成量公開排名",
+            "action": "導師已請全組各自交出目前實際完成的部分，不以完成量公開排名",
+            "tradeoff": "要逐份確認，也可能仍有人拖延"
+          },
+          {
+            "id": 2,
+            "text": "讓他私下完成約好的那題，再給具體回饋",
+            "action": "導師已讓他私下完成約好的那題，再給具體回饋",
+            "tradeoff": "你得留一段時間，整組問題暫未處理完"
+          },
+          {
+            "id": 3,
+            "text": "安排每人一小段獨立起步，不等全組一起交齊",
+            "action": "導師已安排每人一小段獨立起步，不等全組一起交齊",
+            "tradeoff": "課內進度可能變散，教師須分別協助"
+          },
+          {
+            "id": 4,
+            "text": "依課程規則縮減尚未開始且非必要的加碼，保留核心練習",
+            "action": "導師已依課程規則縮減尚未開始且非必要的加碼，保留核心練習",
+            "tradeoff": "練習量減少，也須一致適用"
+          },
+          {
+            "id": 5,
+            "text": "私下問他想不想由你說明收件安排，不公開他的原話",
+            "action": "導師已私下問他想不想由你說明收件安排，不公開他的原話",
+            "tradeoff": "他可能不願多談，你也要另處理同伴誤解"
+          },
+          {
+            "id": 6,
+            "text": "重新說清楚未完成可以怎麼交、怎麼求助，不要求學生假裝已做完",
+            "action": "導師已重新說清楚未完成可以怎麼交、怎麼求助，不要求學生假裝已做完",
+            "tradeoff": "要占課堂時間，仍須按規則追蹤缺交"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再玩猜桌底藏幾本，今天親自逐桌收這一輪，請班務同學也先回自己的作業",
+          "action": "導師已親自進行本輪正常作業點收，不搜索私人書包、不要求學生代查同學，依課程規則處理未完成部分",
+          "tradeoff": "花掉你的時間，可能只收到一疊空白"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2369539906
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "8316328b0176ce8ec809f70b6359f92d8fd8326611187b9945d2b4775c4de55a"
+      },
+      "consequenceDirections": {
+        "A": "進度能被看見，先交的人不必替其他人作證，教師則多了核對工作。",
+        "B": "學生不用互相追問誰藏了什麼，教師則要自己面對真實進度，不能收完就算學會。",
+        "C": "他能自行回到學習，不必靠揭露同伴證明，但其他人的缺口仍要接續。",
+        "D": "不願跟著藏的人有出路，原來用集體拖延避免丟臉的方式會失效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e1b5748741943973c406b28e4da4cfdd4fd76f95e7f57daa996ccc22554767fa",
+    "draftSha256": "3a3b6a30190634474f72bc80315d534779051afa920c5dddcc581a19d20d1116",
     "seedAssignmentVersion": 1
   }
 }

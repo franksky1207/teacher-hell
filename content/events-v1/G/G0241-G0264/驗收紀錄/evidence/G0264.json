@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "408042d72ea2a4701da4591ab000dd7b4100f2cd5480ad760d42e57d4ba442b4",
+      "checkedAt": "2026-11-27T04:57:56.093Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵得相關人同意，比聽兩版同一段，再各說一個具體差別",
+            "action": "導師已徵得相關人同意，比聽兩版同一段，再各說一個具體差別",
+            "tradeoff": "會占用時間，舊版不夠好也會被聽見"
+          },
+          {
+            "id": 2,
+            "text": "請作者選一段想保留、不再重改的部分，再聽其他建議",
+            "action": "導師已請作者選一段想保留、不再重改的部分，再聽其他建議",
+            "tradeoff": "作品未必最精緻，也要接受保留處仍有人不喜歡"
+          },
+          {
+            "id": 3,
+            "text": "請每位組員先寫一句具體回饋，再輪流談",
+            "action": "導師已請每位組員先寫一句具體回饋，再輪流談",
+            "tradeoff": "即興互動減少，可能有人仍寫不出來"
+          },
+          {
+            "id": 4,
+            "text": "依雙方意願重分下一次修訂，不再默認作者包辦全部",
+            "action": "導師已依雙方意願重分下一次修訂，不再默認作者包辦全部",
+            "tradeoff": "要協調新工作，有人可能不願多接"
+          },
+          {
+            "id": 5,
+            "text": "讓他先私下問一位願意說真話的組員，再決定是否全組播放",
+            "action": "導師已讓他先私下問一位願意說真話的組員，再決定是否全組播放",
+            "tradeoff": "少了全體即時比較，也可能仍怕問到不喜歡的答案"
+          },
+          {
+            "id": 6,
+            "text": "先確認各人要回饋的內容與分享範圍，今天不急著選定最終版",
+            "action": "導師已先確認各人要回饋的內容與分享範圍，今天不急著選定最終版",
+            "tradeoff": "進度延後，也得留後續完成時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己很想試那個反派聲線，請他自願教你一句，再拿你的版本當不計分的比較",
+          "action": "導師已邀作者在合法空檔自願指導本人一句台詞，僅以本人聲音作非評量比較，不擅錄他人或改作者版本",
+          "tradeoff": "你可能模仿得很爛，也會用掉自己的講評空檔"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3337965629
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "02fca6e5d02e1a9f06e0021b94e2e18e8e8ee0de5920677717f83cb4ce4ec414"
+      },
+      "consequenceDirections": {
+        "A": "改稿可成共同過程，他則要接受別人做出的音色不完全照自己的想像。",
+        "B": "不敢直說的人有準備時間，但教師不能把具體回饋變成人人必須挑毛病。",
+        "C": "聲音不會因先做完就成唯一可用版本，但作者可能對辛苦暫時沒定案很失落。",
+        "D": "組員可以先對不牽涉同學成績的版本直說差異，卻不能讓你的表演蓋過真正要談的劇尾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "401b1b1cc5222f4020b36a43aca37b54d2dbe4fdbfc6347c6ba6c789c640ce4a",
+    "draftSha256": "408042d72ea2a4701da4591ab000dd7b4100f2cd5480ad760d42e57d4ba442b4",
     "seedAssignmentVersion": 1
   }
 }

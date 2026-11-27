@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3abc7df3353f0ddad7554af9cc6bef07504fd5571d217213d38c99298ffcd057",
+      "checkedAt": "2026-11-27T04:57:56.071Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "找安全且不擋路的位置，請自願同學持機拍一張",
+            "action": "導師已找安全且不擋路的位置，請自願同學持機拍一張",
+            "tradeoff": "要取得所有入鏡者同意，成品不會和原構圖一樣"
+          },
+          {
+            "id": 2,
+            "text": "今天不拍，清楚告訴他你不想把路過變成拍照安排",
+            "action": "導師已今天不拍，清楚告訴他你不想把路過變成拍照安排",
+            "tradeoff": "他可能失落，你也須接受氣氛冷下來"
+          },
+          {
+            "id": 3,
+            "text": "問他最想記住今天哪件事，先聽完再談要不要拍",
+            "action": "導師已問他最想記住今天哪件事，先聽完再談要不要拍",
+            "tradeoff": "多花短暫空檔，不能保證最後有照片"
+          },
+          {
+            "id": 4,
+            "text": "若雙方願意，改約獲准的空檔與場地拍攝",
+            "action": "導師已若雙方願意，改約獲准的空檔與場地拍攝",
+            "tradeoff": "要再約一次，不能無限期只說改天"
+          },
+          {
+            "id": 5,
+            "text": "讓他選擇保留不含他人的場景照，不再要求你入鏡",
+            "action": "導師已讓他選擇保留不含他人的場景照，不再要求你入鏡",
+            "tradeoff": "少了合照的意味，也要符合場地拍攝規定"
+          },
+          {
+            "id": 6,
+            "text": "只合意拍一張後結束，不逐次重擺與補拍",
+            "action": "導師已只合意拍一張後結束，不逐次重擺與補拍",
+            "tradeoff": "照片可能不完美，界線須事先說清楚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天實在不想再對鏡頭笑，請他自願幫你畫一張很醜也沒關係的速寫，自己坐一分鐘",
+          "action": "導師已在安全可停留處邀學生自願作短暫本人速寫，不列作業、不要求贈送或公開，未恢復原高處架機",
+          "tradeoff": "他可以拒絕，畫畫也未必是他喜歡的方式"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 746794926
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "f802eca5c18af5d84f970d5a2f30700a6f758d5193810c4b6d0d28abae17dab3"
+      },
+      "consequenceDirections": {
+        "A": "學生可能說出真正想被注意的事，也可能只想自拍，不願再談。",
+        "B": "兩人能有不靠合照的相處，卻可能留下比自拍更滑稽的成品，也占掉你的空檔。",
+        "C": "他能記錄那個轉角，可能仍覺得不夠，不能把替代照說成已滿足原期待。",
+        "D": "照片能留下，學生可能仍嫌姿勢不同，不能為重現而回到危險位置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "609a43ffa0f09dbe706ca499bfa316f337dddbaada1c4520c9f846a612063037",
+    "draftSha256": "3abc7df3353f0ddad7554af9cc6bef07504fd5571d217213d38c99298ffcd057",
     "seedAssignmentVersion": 1
   }
 }

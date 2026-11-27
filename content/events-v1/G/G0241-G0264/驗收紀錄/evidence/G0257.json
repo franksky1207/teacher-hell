@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a91f54c0bacc3e04ac3421cd00399d821105241fcf57094eecd580bf081e82b8",
+      "checkedAt": "2026-11-27T04:57:56.086Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核對現行可回電的時間，查清後直接告訴本人",
+            "action": "導師已核對現行可回電的時間，查清後直接告訴本人",
+            "tradeoff": "規定內可選時段可能很少"
+          },
+          {
+            "id": 2,
+            "text": "和家長確認由成人彼此直接聯繫，不再靠孩子轉兩邊訊息",
+            "action": "導師已和家長確認由成人彼此直接聯繫，不再靠孩子轉兩邊訊息",
+            "tradeoff": "要取得適當聯繫同意，成人未必願改"
+          },
+          {
+            "id": 3,
+            "text": "陪他準備一句可依規定使用的回覆，不代替他與家人爭吵",
+            "action": "導師已陪他準備一句可依規定使用的回覆，不代替他與家人爭吵",
+            "tradeoff": "他要自己開口，也可能受到家人不滿"
+          },
+          {
+            "id": 4,
+            "text": "由他決定是否申請規則內的固定聯絡安排，再交校方確認",
+            "action": "導師已由他決定是否申請規則內的固定聯絡安排，再交校方確認",
+            "tradeoff": "申請不保證核准，也須保留急件路徑"
+          },
+          {
+            "id": 5,
+            "text": "私下聽他擔心拒接後會發生什麼，必要時提供適當協助",
+            "action": "導師已私下聽他擔心拒接後會發生什麼，必要時提供適當協助",
+            "tradeoff": "談話可能較重，不能把所有事當作一般家規"
+          },
+          {
+            "id": 6,
+            "text": "透過正式窗口向家庭說明課中規範與有效急件方式",
+            "action": "導師已透過正式窗口向家庭說明課中規範與有效急件方式",
+            "tradeoff": "家長可能覺得不方便，也需要確認真的收得到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再看手機收放像拉鋸，請窗口和家庭直接訂一個確認時間，自己退出日常傳話那一層",
+          "action": "導師已向現行合格窗口完成家庭日常聯絡協調交接，不新增特許用機或放棄急迫照護，學生不被強制承擔中介",
+          "tradeoff": "要確實交接，家庭可能仍想只找你"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2379612038
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "2454a365d773e27ec92d731b2e33ab43271579a64d588195d2d1a11803acd797"
+      },
+      "consequenceDirections": {
+        "A": "學生少了一道等你轉述的關卡，你也少接零碎訊息，但必要班級照顧不能一併退出。",
+        "B": "孩子不必一人替學校解釋，成人卻須自己負起聯絡責任。",
+        "C": "學生的中介負荷可能降低，但不能保證所有家庭溝通立刻順暢。",
+        "D": "教師能辨識是否有額外支持需求，日常回電問題仍須另定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8224ba9e2e9a80d8a60dafd7648a9394395a6f287e20d4497af3217b493c4a5e",
+    "draftSha256": "a91f54c0bacc3e04ac3421cd00399d821105241fcf57094eecd580bf081e82b8",
     "seedAssignmentVersion": 1
   }
 }

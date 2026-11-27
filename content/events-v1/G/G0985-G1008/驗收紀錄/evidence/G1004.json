@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd83a0894940e96f033f0f7e70bc9cb8ebac5aa55424e04e69d261275cf406f3",
+      "checkedAt": "2026-11-27T16:20:58.421Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另聽孩子說想看什麼，再決定要不要提供教學意見。",
+            "action": "邀學生自願談見習目的，不把談話當送件條件。",
+            "tradeoff": "有本人聲音，需另排時間。"
+          },
+          {
+            "id": 2,
+            "text": "只就已核實的學習目標提供有限意見。",
+            "action": "依可核實資料提供教學意見，不保證場所安全或核准。",
+            "tradeoff": "幫助說明，可能被誤當全面背書。"
+          },
+          {
+            "id": 3,
+            "text": "不加寫個別推薦，讓權責者直接審申請。",
+            "action": "婉拒非必要推薦，維持合法資訊及送辦協助。",
+            "tradeoff": "保住時間，家長可能失望。"
+          },
+          {
+            "id": 4,
+            "text": "邀家長把兩千字換成孩子自選的觀察問題。",
+            "action": "建議家庭自願簡化非必要心得要求，不替校方免除正式要求。",
+            "tradeoff": "減少加碼，家長可能認為不夠認真。"
+          },
+          {
+            "id": 5,
+            "text": "問學校是否有既有職場探索資源可比較。",
+            "action": "查詢現有生涯探索資訊，未替學生報名或取得參訪。",
+            "tradeoff": "多一個參照，可能不合興趣。"
+          },
+          {
+            "id": 6,
+            "text": "提出把私人邀請轉成未來自願課堂職涯分享。",
+            "action": "向權責者提出邀業者分享的建議，未取得業者、校方或學生同意。",
+            "tradeoff": "擴大接觸，需程序且未必成。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我對那個設計桌也好奇，自己先找公開資訊弄懂，再跟孩子聊。",
+          "action": "以本人私人時間閱讀工作室合法公開資訊，另提出成人可提供的職涯討論邀請，不冒充現勘。",
+          "tradeoff": "滿足好奇，耗私人時間且可能看不懂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4274639457
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "74cbbfe88f8707dfcd94ae92307eb00a6de1fce20a2ff7b0cbebb8a42f20b5ca"
+      },
+      "consequenceDirections": {
+        "A": "業者可拒絕，家長可能不願牽線；不能據此替這次個案核准。",
+        "B": "孩子可提出自己問題或不想寫，是否核准仍依原程序。",
+        "C": "孩子可拒談，教師也可能發現資訊不足；公開資料不當安全認證。",
+        "D": "家庭可能採用或仍選原案，導師須接受不被採納。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bf4915e0d49a5769f6fc461d13d03349dab7e25d17d8a718eb1d11a428b70e7e",
+    "draftSha256": "dd83a0894940e96f033f0f7e70bc9cb8ebac5aa55424e04e69d261275cf406f3",
     "seedAssignmentVersion": 1
   }
 }

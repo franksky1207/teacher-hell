@@ -15,14 +15,82 @@
     "G04",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "429bb77dbbd9e7f5d3d7b12b3efd5b9475e9a3abc853ae45cb4cdd670f569312",
+      "checkedAt": "2026-11-27T16:20:58.399Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀他談今後哪些提醒適合一對一說。",
+            "action": "提出必要知情之外的溝通方式協商邀請，不改法定通報。",
+            "tradeoff": "釐清合作，增加談話時間。"
+          },
+          {
+            "id": 2,
+            "text": "向主管提出群組資訊分層的建議。",
+            "action": "提出一般群組與個案必要聯繫範圍的制度建議，未獲核准。",
+            "tradeoff": "減少擴散風險，需行政協調。"
+          },
+          {
+            "id": 3,
+            "text": "提供自己未來可固定回覆非緊急訊息的時段。",
+            "action": "提出本人非緊急回覆時段供協作，不承諾全天待命。",
+            "tradeoff": "降低等不到人的猜測，教師須守約。"
+          },
+          {
+            "id": 4,
+            "text": "邀科任自願討論一般關心怎麼問，不談這名學生。",
+            "action": "提出成人間以去識別例子討論關心方式的邀請。",
+            "tradeoff": "有具體練習，需時間且可能冷場。"
+          },
+          {
+            "id": 5,
+            "text": "不加開會談，先各自完成原必要工作。",
+            "action": "婉拒追加非必要會談，維持必要照護與交接。",
+            "tradeoff": "省去當日負擔，心結可能留下。"
+          },
+          {
+            "id": 6,
+            "text": "問學生願不願意選一個安心的大人，之後由那人作額外聯絡。",
+            "action": "提出學生可自願選擇額外支持窗口的邀請，未指定他人接案。",
+            "tradeoff": "讓支持較可掌握，需徵詢且未必有人可接。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣的是他一句『等你』，私下把自己的委屈講清楚。",
+          "action": "向職員另表達本人被歸責的感受與合作界線，不要求撤回真實工作批評。",
+          "tradeoff": "不再憋著，可能吵起來。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1482135400
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "dbabda837dc17fda7d9e00983e7345df2a13e6f353997080a8205a15989643cf"
+      },
+      "consequenceDirections": {
+        "A": "職員可能願意面對舊不滿或更防衛；私人談話不能替代對學生的必要處理。",
+        "B": "科任可拒絕或帶出新困難，不能將其出席等同本案已修復。",
+        "C": "主管可能採納或認為現制足夠，職員可能感到被究責；本案保密不等制度完成。",
+        "D": "職員可能願談或認為被管，教師須保留緊急共享空間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "26f26b19389d5b97732d713f9576fb597820ea5b7d430fca0e3593537ee1106c",
+    "draftSha256": "429bb77dbbd9e7f5d3d7b12b3efd5b9475e9a3abc853ae45cb4cdd670f569312",
     "seedAssignmentVersion": 1
   }
 }

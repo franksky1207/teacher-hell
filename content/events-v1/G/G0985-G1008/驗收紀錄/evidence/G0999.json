@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "97729c569b18ada791f0bb4b0247e981c1753b7b29347d4dd364a9fd419f0855",
+      "checkedAt": "2026-11-27T16:20:58.411Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另約十分鐘，只談他最卡的一個問題。",
+            "action": "提出一次有限時段的成人交流邀請，未承諾整篇指導。",
+            "tradeoff": "有集中討論，擠掉私人空檔。"
+          },
+          {
+            "id": 2,
+            "text": "請他把想問的寫下來，我有空再決定能回哪一項。",
+            "action": "邀同事自願提供具體問題，不承諾全答或即時回覆。",
+            "tradeoff": "避免走廊久談，可能仍需閱讀。"
+          },
+          {
+            "id": 3,
+            "text": "提供校內成人讀書會的現有資訊。",
+            "action": "提供既有自願教師交流管道，未替其報名或找人介入。",
+            "tradeoff": "多一個出口，同事可能覺得被推走。"
+          },
+          {
+            "id": 4,
+            "text": "我不接論文討論，改邀他單純一起吃午餐。",
+            "action": "提出不談研究的私人午餐邀約，未取得同意。",
+            "tradeoff": "保留交情，耗休息與餐費。"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意讓我只讀一小段，當一般讀者提問題。",
+            "action": "提出有限成人試讀邀請，不代其撰寫或承諾專業審查。",
+            "tradeoff": "有讀者回饋，增加閱讀時間。"
+          },
+          {
+            "id": 6,
+            "text": "今天先不加任何約，我把空堂留給自己。",
+            "action": "婉拒當日所有額外論文交流，維持必要工作聯絡。",
+            "tradeoff": "保住時間，同事可能失落。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想講自己的事，邀他下班輪流各說五分鐘，不准只有他一個人講。",
+          "action": "提出成人私人互相傾聽的有限邀約，未代其接受或占工作時段。",
+          "tradeoff": "滿足自己想被聽見，可能被嫌計較。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3770592610
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "889c49e16fae50a6a084fc9840faf87906a56407b9a212a825f294c7e70dd126"
+      },
+      "consequenceDirections": {
+        "A": "同事可能願限縮或仍講不停，導師須守住時段，不延誤到班。",
+        "B": "他可拒絕或發現自己還說不清楚，導師可能看不懂須坦承。",
+        "C": "他可能另找人或覺得被拒，導師承擔親近互動減少的代價。",
+        "D": "同事可接受或不滿，兩人可能發現話題不合；不以邀約交換教學配合。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eba70899797613d0dc2707fe91caf603701b90dd6572df08d43a8b48f2cf2dd2",
+    "draftSha256": "97729c569b18ada791f0bb4b0247e981c1753b7b29347d4dd364a9fd419f0855",
     "seedAssignmentVersion": 1
   }
 }

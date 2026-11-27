@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "59128d7e98ed4753c3aa7c8ca208b019138df0ee48ff487aaf4e6b8b6838236d",
+      "checkedAt": "2026-11-27T16:20:58.386Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子另講一次，這三題到底卡在哪。",
+            "action": "提出學生自願學習困難短談，不代替命題申覆。",
+            "tradeoff": "多聽本人，需另排時間。"
+          },
+          {
+            "id": 2,
+            "text": "我把已公開的課程目標整理給家長看。",
+            "action": "整理合法可公開的課程目標供家長比較。",
+            "tradeoff": "資訊完整，耗整理時間。"
+          },
+          {
+            "id": 3,
+            "text": "請任課老師願意的話，另約一次三方說明。",
+            "action": "提出任課者、家長與導師共同說明的邀請，未獲同意。",
+            "tradeoff": "少轉述，排程不易。"
+          },
+          {
+            "id": 4,
+            "text": "先不追加分析，讓既有查核結果出來再談。",
+            "action": "不另加非必要分析會談，按原約定等待權責查核。",
+            "tradeoff": "保住工作時間，家長可能不滿。"
+          },
+          {
+            "id": 5,
+            "text": "提供現有自願練習資訊，讓家庭自己比較。",
+            "action": "提供已有的合法練習資源資訊，不代學生報名或保證效果。",
+            "tradeoff": "有資源可選，未必對準卡點。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長提供下次考後說明最想先知道的項目。",
+            "action": "徵詢未來考後說明的資訊需求，不要求其再整理全卷。",
+            "tradeoff": "改善未來溝通，當下未必有幫助。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不甘心被說不認真，拿自己的備課筆記說一次我怎麼準備。",
+          "action": "以本人可分享且無學生個資的備課片段說明投入，不替他科證明命題合法。",
+          "tradeoff": "表達被誤解，耗時間且可能顯得防衛。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3296549379
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "b3d9af80fa4b3d67a4422dcf9cee7af65eb6305a5925db05bd359dc071076d06"
+      },
+      "consequenceDirections": {
+        "A": "家長可能看見工作或認為在訴苦，導師須承受專業再次被挑戰。",
+        "B": "家長可能給出具體需求或嫌徒增工作，教師須自行評估可提供範圍。",
+        "C": "孩子可能指出沒聽懂的地方或拒談；家長可能覺得導師在轉移超綱問題。",
+        "D": "家長可能理解考題差異或質疑目標太籠統；不把目標視為已教過的證明。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "48cb80c7146ec6a04f62a791bf996e0d387b7cc5ab903479faf022bae616e7fb",
+    "draftSha256": "59128d7e98ed4753c3aa7c8ca208b019138df0ee48ff487aaf4e6b8b6838236d",
     "seedAssignmentVersion": 1
   }
 }

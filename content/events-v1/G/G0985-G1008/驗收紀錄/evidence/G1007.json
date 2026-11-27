@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "54012a63f4d906ff13d477fcf2f66aaa8988630aaec2cada1fd0b2003ac6b687",
+      "checkedAt": "2026-11-27T16:20:58.425Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先撤掉自己加的非必要背誦，兩週後再看。",
+            "action": "停止本人額外重複背誦任務，保留必要學習目標，未代他科免作業。",
+            "tradeoff": "少一項負荷，教師少即時檢核。"
+          },
+          {
+            "id": 2,
+            "text": "我邀各科一起談，不先答應全部免掉。",
+            "action": "提出跨科負荷協調邀請，未替他科更改作業。",
+            "tradeoff": "可形成整體安排，需排程。"
+          },
+          {
+            "id": 3,
+            "text": "先問四位學生各自哪個時段可行。",
+            "action": "自願另聽個別學生對額外補救時段的選擇，不公開其成績。",
+            "tradeoff": "回到本人安排，增加聯絡時間。"
+          },
+          {
+            "id": 4,
+            "text": "提供校內既有課輔資訊，讓他不用一人全扛。",
+            "action": "查詢並提供現有支援資訊，未取得人力或替人報名。",
+            "tradeoff": "多一條可能，名額未必有。"
+          },
+          {
+            "id": 5,
+            "text": "這次不另加聯合計畫，各自先做課內必要支持。",
+            "action": "婉拒額外聯合補救方案，維持各自正常課內支持。",
+            "tradeoff": "避免疲勞加碼，少一次共同實作。"
+          },
+          {
+            "id": 6,
+            "text": "我願替他整理一份可重複用的空白練習版型。",
+            "action": "自願製作供同事選用的空白版型，不代出題或保證適用。",
+            "tradeoff": "分擔製作，佔本人備課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累，這次想跟他約好一起準時下班，別把免費留校當合作條件。",
+          "action": "提出於完成必要工作後共同準時下班的成人自願邀約，本次不接受以額外無償留校交換減量；不代對方取消已成立義務。",
+          "tradeoff": "坦白想休息，可能被同事說不領情，也放棄這次額外留校協作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2265121415
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "d4c8dfe1127cf60a3491628f91ab1f3b746f8f3ef7a0314dce96153d83b0a5fc"
+      },
+      "consequenceDirections": {
+        "A": "同事可能理解或不滿，學生仍依法獲支持；不以拒聯合等於不用處理學習困難。",
+        "B": "同事可用或不用，可能要重改；教師須承受心血未被採納。",
+        "C": "同事可以拒絕同行或主張自己仍要做，導師須承受其失望；學生必要學習支持及合法已約安排另共同維持。",
+        "D": "同事可接受或認為不合方法，教師不能把資源資訊當已分擔工作。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒雙方各少加一件可能涵蓋普通1撤額外背誦，改為拒絕無償留校交換與本人下班邀約，減量與否仍另依教學責任處理。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我先撤掉自己加的非必要背誦，兩週後再看。",
+                "action": "停止本人額外重複背誦任務，保留必要學習目標，未代他科免作業。",
+                "tradeoff": "少一項負荷，教師少即時檢核。"
+              },
+              {
+                "id": 2,
+                "text": "我邀各科一起談，不先答應全部免掉。",
+                "action": "提出跨科負荷協調邀請，未替他科更改作業。",
+                "tradeoff": "可形成整體安排，需排程。"
+              },
+              {
+                "id": 3,
+                "text": "先問四位學生各自哪個時段可行。",
+                "action": "自願另聽個別學生對額外補救時段的選擇，不公開其成績。",
+                "tradeoff": "回到本人安排，增加聯絡時間。"
+              },
+              {
+                "id": 4,
+                "text": "提供校內既有課輔資訊，讓他不用一人全扛。",
+                "action": "查詢並提供現有支援資訊，未取得人力或替人報名。",
+                "tradeoff": "多一條可能，名額未必有。"
+              },
+              {
+                "id": 5,
+                "text": "這次不另加聯合計畫，各自先做課內必要支持。",
+                "action": "婉拒額外聯合補救方案，維持各自正常課內支持。",
+                "tradeoff": "避免疲勞加碼，少一次共同實作。"
+              },
+              {
+                "id": 6,
+                "text": "我願替他整理一份可重複用的空白練習版型。",
+                "action": "自願製作供同事選用的空白版型，不代出題或保證適用。",
+                "tradeoff": "分擔製作，佔本人備課。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想省力，提議乾脆各自少加一件，別再比誰留得晚。",
+              "action": "提出雙方各減一項非必要額外工作的協商，未決定對方刪哪項。",
+              "tradeoff": "坦白不想加班，可能被說沒熱忱。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2216155326
+            },
+            "selectedIds": [
+              6,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 6,
+              "D": 1
+            },
+            "optionsDigest": "46e3a3496fcaab3e19014d7c52cfc1a6c1c8b5680f89e66ed875054667d9e88d"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事可接受或拒絕，導師需具體說明自己可減的工作；必要支持不減。",
+            "B": "同事可接受或認為不合方法，教師不能把資源資訊當已分擔工作。",
+            "C": "同事可用或不用，可能要重改；教師須承受心血未被採納。",
+            "D": "同事可能願接續協商或仍嫌不足，學生也可能無法留校；不預設合作已成立。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b61592bd7feff93c832eecdc8a309d42d260c51f396e4c4195f21f2686619a11",
+    "draftSha256": "54012a63f4d906ff13d477fcf2f66aaa8988630aaec2cada1fd0b2003ac6b687",
     "seedAssignmentVersion": 1
   }
 }

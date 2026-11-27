@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20ae583b44e187068b8172981a3dcb2b35d0c107ded77d21fd579d08b810ea80",
+      "checkedAt": "2026-11-27T16:20:58.413Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他出席一次制度意見說明，不代主管答應。",
+            "action": "提出一次自願陪同制度意見說明，未核准全校改制。",
+            "tradeoff": "減少轉述，佔教師時間。"
+          },
+          {
+            "id": 2,
+            "text": "把他的五條整理成可逐項回覆的提問。",
+            "action": "在同意範圍協助整理制度問題，不改其主張或代送新個資。",
+            "tradeoff": "便於對焦，花整理時間。"
+          },
+          {
+            "id": 3,
+            "text": "我先停止自己額外拍攝學生，保留必要工作紀錄。",
+            "action": "暫停本人自願宣傳性拍攝，不停止依法必要且有依據的紀錄。",
+            "tradeoff": "減少額外曝光，少了日常相片。"
+          },
+          {
+            "id": 4,
+            "text": "邀孩子選擇要不要用作品本身記下這次得獎。",
+            "action": "提出只記作品、不揭身分的自願紀念方案，未取得公開同意。",
+            "tradeoff": "保留成就，可能仍不想留下。"
+          },
+          {
+            "id": 5,
+            "text": "向承辦詢問既有家長參與制度討論的方式。",
+            "action": "查詢自願參與制度研議的既有管道，未替家長入列。",
+            "tradeoff": "有參與機會，可能費時且無名額。"
+          },
+          {
+            "id": 6,
+            "text": "不另加陪同或整理，讓權責窗口直接回覆。",
+            "action": "婉拒額外制度協助，維持本案必要追蹤與支持。",
+            "tradeoff": "保住班務時間，家長可能覺得被推開。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想班上的得獎只剩招生照，具名建議改以學生自選作品呈現成果。",
+          "action": "額外具名提出成果呈現方式的教學建議，未取得校方採用或學生授權。",
+          "tradeoff": "表達價值立場，可能與宣傳端衝突。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 121278079
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "5ef9fcc47c023d8b69f1418e186288d6ca83bf2f01a24d5577f6fe417b889624"
+      },
+      "consequenceDirections": {
+        "A": "學生可能鬆口氣或惋惜，家長可能仍要求全校跟進；私人停拍不等於制度已改。",
+        "B": "孩子可拒絕，家長也可能不放心；不能將拒絕當不合群。",
+        "C": "家長可能支持或仍嫌不足，校方可能拒絕；即使採納也須個別合法同意。",
+        "D": "家長可能直接洽窗口或轉向投訴，導師不能因此停止必要回覆。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fef104573a2152c41e99565efacb1dc080cef0b6088a856e5de5e40674a50ba7",
+    "draftSha256": "20ae583b44e187068b8172981a3dcb2b35d0c107ded77d21fd579d08b810ea80",
     "seedAssignmentVersion": 1
   }
 }

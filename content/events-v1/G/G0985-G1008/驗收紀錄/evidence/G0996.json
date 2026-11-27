@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c6dcb6625a1eb24e9dd68b22d3e56494f1b7a544c6108bf78fd828f8dd71c4af",
+      "checkedAt": "2026-11-27T16:20:58.404Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他先別付錢，詢問攝影師有沒有小規模報價。",
+            "action": "提出另詢精簡服務報價的建議，未委託或保證採用。",
+            "tradeoff": "可能符合需求，仍需採購評估。"
+          },
+          {
+            "id": 2,
+            "text": "婉拒商攝，沿用班上原有可用設備。",
+            "action": "決定不採額外商業拍攝，以現有資源安排自願成果紀錄。",
+            "tradeoff": "成本較低，成品可能較普通。"
+          },
+          {
+            "id": 3,
+            "text": "邀他改分享挑選照片的方法，不用再請人。",
+            "action": "提出家長自願提供選片經驗的邀請，未要求其工作。",
+            "tradeoff": "承接參與感，可能增加其負擔。"
+          },
+          {
+            "id": 4,
+            "text": "請學生先說想留下什麼，再決定要不要外包。",
+            "action": "安排自願成果紀錄需求討論，未決定聘用。",
+            "tradeoff": "回到學生需要，佔班務時間。"
+          },
+          {
+            "id": 5,
+            "text": "向行政詢問現有校方攝影支援。",
+            "action": "查詢校方既有設備與人力支援，尚未取得。",
+            "tradeoff": "或可省錢，未必排得出。"
+          },
+          {
+            "id": 6,
+            "text": "只邀他看看完成後願意公開的成果，不要求再出力。",
+            "action": "提出日後觀看合法公開成果的邀請，不分配家長額外任務。",
+            "tradeoff": "降低回報壓力，家長可能覺得只能旁觀。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他只能付錢，願意多約一次視訊，邀他聽孩子介紹作品。",
+          "action": "提出家長與願意的孩子於合宜時段自願視訊介紹作品的邀請，未獲同意或排定，不公開錄影。",
+          "tradeoff": "用自己的額外協調時間換遠端相聚，可能約不成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3523868381
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "3d274cf61e05b163ee90019af7a61632855ee034c832831f117987ed2b653258"
+      },
+      "consequenceDirections": {
+        "A": "家長可能願問或覺得太小氣，攝影師可拒接；同意與預算程序不被跳過。",
+        "B": "學生可能只想留作品不留人，家長可能覺得原提案沒被珍惜；不得以票數迫人拍照。",
+        "C": "家長可能欣慰、孩子也可能不願在鏡頭前講，導師須尊重雙方；視訊不以出資為條件，也不代表已安排成功。",
+        "D": "他可能願看或不感興趣，教師需接受其不參與；不因此減少孩子機會。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒自行拍攝與普通2沿用現有設備近於同一行動，改為遠端親子作品介紹邀請，承接家長缺席感。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請他先別付錢，詢問攝影師有沒有小規模報價。",
+                "action": "提出另詢精簡服務報價的建議，未委託或保證採用。",
+                "tradeoff": "可能符合需求，仍需採購評估。"
+              },
+              {
+                "id": 2,
+                "text": "婉拒商攝，沿用班上原有可用設備。",
+                "action": "決定不採額外商業拍攝，以現有資源安排自願成果紀錄。",
+                "tradeoff": "成本較低，成品可能較普通。"
+              },
+              {
+                "id": 3,
+                "text": "邀他改分享挑選照片的方法，不用再請人。",
+                "action": "提出家長自願提供選片經驗的邀請，未要求其工作。",
+                "tradeoff": "承接參與感，可能增加其負擔。"
+              },
+              {
+                "id": 4,
+                "text": "請學生先說想留下什麼，再決定要不要外包。",
+                "action": "安排自願成果紀錄需求討論，未決定聘用。",
+                "tradeoff": "回到學生需要，佔班務時間。"
+              },
+              {
+                "id": 5,
+                "text": "向行政詢問現有校方攝影支援。",
+                "action": "查詢校方既有設備與人力支援，尚未取得。",
+                "tradeoff": "或可省錢，未必排得出。"
+              },
+              {
+                "id": 6,
+                "text": "只邀他看看完成後願意公開的成果，不要求再出力。",
+                "action": "提出日後觀看合法公開成果的邀請，不分配家長額外任務。",
+                "tradeoff": "降低回報壓力，家長可能覺得只能旁觀。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看那份報價就頭痛，這回我願意多花點時間拍，直接把外包提案收掉。",
+              "action": "婉拒本次外包，額外承諾本人可用時間製作合意且合法的簡單成果照片。",
+              "tradeoff": "以自己時間換少協調，可能拍得不夠專業。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2881923216
+            },
+            "selectedIds": [
+              6,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 6,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "af12aee8c3e4187011665b404c5716a3911ecb34c19fa8258912df0d50db0acd"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可能失落或接受，學生仍可不入鏡；教師需自行花拍攝時間。",
+            "B": "他可能願看或不感興趣，教師需接受其不參與；不因此減少孩子機會。",
+            "C": "家長可能願問或覺得太小氣，攝影師可拒接；同意與預算程序不被跳過。",
+            "D": "家長可能釋懷或不滿效果，教師須履行有限拍攝承諾；不能強迫學生配合或要求免費重拍無限次。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "70aa72169048a9893e4f6a149415fc5c04c196ed7587b153c805fdccd19ac7ec",
+    "draftSha256": "c6dcb6625a1eb24e9dd68b22d3e56494f1b7a544c6108bf78fd828f8dd71c4af",
     "seedAssignmentVersion": 1
   }
 }

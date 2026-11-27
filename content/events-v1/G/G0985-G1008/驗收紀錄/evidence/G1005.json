@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3f0b1ea76be45bb6c2c0cae6ad3eed0ec05b7bf42d1cde71752121cf1e73c663",
+      "checkedAt": "2026-11-27T16:20:58.422Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在班會談一次，想休息的人怎麼拒絕揪球。",
+            "action": "安排非個案化的自願相處討論，不揭傷者資料。",
+            "tradeoff": "多練表達，佔班會。"
+          },
+          {
+            "id": 2,
+            "text": "邀校護提供已有的運動前後提醒資訊。",
+            "action": "詢問可提供的通用衛教資料，未安排入班或代其授課。",
+            "tradeoff": "有專業來源，仍需讀取。"
+          },
+          {
+            "id": 3,
+            "text": "問學生願不願意另談，為什麼上次沒告訴我。",
+            "action": "提出自願信任短談，不把回答當照護條件。",
+            "tradeoff": "可能了解顧慮，需課間時間。"
+          },
+          {
+            "id": 4,
+            "text": "不加新活動，照原照護安排走。",
+            "action": "不追加非必要班級活動，維持已確認的追蹤與支持。",
+            "tradeoff": "少增工作，班級文化未必改變。"
+          },
+          {
+            "id": 5,
+            "text": "向體育教師提議課內多一種合宜參與方式。",
+            "action": "提出符合醫護限制的課內參與選擇建議，未代體育教師核定。",
+            "tradeoff": "可能減少被排除感，需協調。"
+          },
+          {
+            "id": 6,
+            "text": "問家長願不願意說說，孩子平常怎麼談運動。",
+            "action": "提出自願一般生活交流，不追加健康資料蒐集。",
+            "tradeoff": "多一個視角，家長可能不便回覆。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被她笑著堵得沒話說，請她教我一句不會把學生嚇跑的關心話。",
+          "action": "邀校護自願以成人對話示範一般關心措辭，不代做諮商。",
+          "tradeoff": "承認自己嘴笨，耗她時間且可能被婉拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1892166284
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "b3c2daee5561575ec1cdac1bf04a5a14aafe71fdb7e0c7471983493a98f57b8d"
+      },
+      "consequenceDirections": {
+        "A": "校護可能給一句例子或提醒沒有萬用說法，導師須自行承擔開口的尷尬。",
+        "B": "學生可能說出同儕壓力或覺得無聊，校護不一定看得到改變；醫療建議仍共同維持。",
+        "C": "他可沉默或說怕被禁球，教師須接受不被信任的可能。",
+        "D": "校護可能提供或無適合版本，教師不能把通用資料當個別醫囑。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8d99a11a6f247e2a9e020b6d98b4e3ed8b911353ec329d5be58aea811bb5f261",
+    "draftSha256": "3f0b1ea76be45bb6c2c0cae6ad3eed0ec05b7bf42d1cde71752121cf1e73c663",
     "seedAssignmentVersion": 1
   }
 }

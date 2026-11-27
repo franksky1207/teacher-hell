@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "291e1261e62a0270083b58241738888879201a01c7ed4b25cbf1e5853903de4c",
+      "checkedAt": "2026-11-27T16:20:58.409Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改用全班有權使用的簡單文字版，重新確認願買的人。",
+            "action": "提出不用爭議圖像的文字設計並重新徵詢自願購買意向，未下單。",
+            "tradeoff": "或可趕上，成品較簡單。"
+          },
+          {
+            "id": 2,
+            "text": "接受延後，等原圖授權與價格確定再問大家。",
+            "action": "決定不趕本學期交期，待必要條件確定再徵詢。",
+            "tradeoff": "保留原設計可能，等待更久。"
+          },
+          {
+            "id": 3,
+            "text": "詢問別家同規格與交期，先不承諾換商。",
+            "action": "查詢替代廠商公開報價條件，未取得貨或簽約。",
+            "tradeoff": "多比較，教師與股長多一輪工作。"
+          },
+          {
+            "id": 4,
+            "text": "提議這次不買實體徽章，留下班級數位圖樣就好。",
+            "action": "提出取消未成立的非必要採購、保留合法數位設計的方案，徵詢原參與者。",
+            "tradeoff": "免去製作，實體期待落空。"
+          },
+          {
+            "id": 5,
+            "text": "我約一段時間直接跟廠商談，不讓股長每天代問。",
+            "action": "提出成人與廠商一次集中諮詢，不讓學生代決採購。",
+            "tradeoff": "減少轉述，佔教師時間。"
+          },
+          {
+            "id": 6,
+            "text": "請股長暫停額外跑辦公室，非緊急疑問用一次彙整。",
+            "action": "提出固定彙整非緊急疑問的方式，必要期限告知照常。",
+            "tradeoff": "少日常來回，學生可能感到被擋。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想要一枚，但不願讓全班替我的急付錢，我自己放棄本學期拿到。",
+          "action": "明確放棄教師本人本學期取得徽章的私人期待，不以此催學生選擇。",
+          "tradeoff": "少一份共同催促，教師失去原想收藏的物件。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 623657270
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "8f5f29e9553d6fc8b9391a973160afcbf0495ad71bf59450b7bf181db0cff91f"
+      },
+      "consequenceDirections": {
+        "A": "學生可能感到壓力減少或覺得老師退出，仍各自決定是否等待；不代全班取消訂購。",
+        "B": "股長可同意或繼續焦慮，教師須按約回覆而不把沉默當結案。",
+        "C": "同學可能同意或抗議，股長可能鬆口氣或失落；不沒收設計作者權利。",
+        "D": "學生可能失望或願等，廠商可能改價；不得先收款綁住選擇。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "21049fa6f6b6fd9ddbc779aca0fcb82ae744c051cb86c30c16635f026aa07e27",
+    "draftSha256": "291e1261e62a0270083b58241738888879201a01c7ed4b25cbf1e5853903de4c",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9b494a6d87a4ebfd06a51d64bd77f1013a2e9380d6274bbd444114b3f1d9342c",
+      "checkedAt": "2026-11-27T16:20:58.401Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "替店家整理常見問題，回答仍由店家自己確認。",
+            "action": "自願彙整公開常見提問交店家參考，不代其報價。",
+            "tradeoff": "減少重複問答，花整理時間。"
+          },
+          {
+            "id": 2,
+            "text": "只附店家聯絡方式，這次不再介入。",
+            "action": "提供店家允許公開的聯絡資訊後停止額外媒合。",
+            "tradeoff": "保住私人晚上，鄰居需自行詢問。"
+          },
+          {
+            "id": 3,
+            "text": "問店家能不能自己開單，我只幫轉一次。",
+            "action": "詢問店家自行建立正式訂購方式的意願，未取得承諾或代收款。",
+            "tradeoff": "可能形成清楚入口，仍需聯絡。"
+          },
+          {
+            "id": 4,
+            "text": "我願意只統計不含姓名的需求數，讓店家評估。",
+            "action": "徵詢自願匿名意向並僅交匯總數，不當正式訂單。",
+            "tradeoff": "幫店家估量，意向可能不成交。"
+          },
+          {
+            "id": 5,
+            "text": "邀附近願意的人自己去店裡看，不再隔空猜。",
+            "action": "提出自願到店了解的私人邀請，未預約包場或替人下單。",
+            "tradeoff": "能直接看貨，花出門時間。"
+          },
+          {
+            "id": 6,
+            "text": "暫時關掉貼文留言，留清楚的店家資訊。",
+            "action": "在澄清與必要回覆完成後，暫停本人貼文新增留言，不刪已成立交易紀錄。",
+            "tradeoff": "止住通知，可能被說不耐煩。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是愛湊熱鬧，願意當一次主揪，但先跟店家把數量與責任談清楚。",
+          "action": "提出僅一次、須雙方另確認條件的代訂協商，未成立訂單或收款。",
+          "tradeoff": "滿足號召慾，將增加整理與分貨責任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1228496209
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "bb9c788965b22afc84ebd181711a25d898e09d165cb5d0a9d7342c5dc9d7e479"
+      },
+      "consequenceDirections": {
+        "A": "店家可不同意，鄰居可不參加；若未談成維持資訊分享，不憑衝動先收錢。",
+        "B": "店家可能高估需求，教師須明示非保證購買；鄰居仍各自決定。",
+        "C": "鄰居可能理解或嫌麻煩，店家需自行接洽；教師不承擔訂單。",
+        "D": "有人可能同行或沒人來，店家可能忙不過來；不強迫購物。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "91bc08455b3e71a596aeb488fd7d72a52eedf371865163d99e1b1bc40d934711",
+    "draftSha256": "9b494a6d87a4ebfd06a51d64bd77f1013a2e9380d6274bbd444114b3f1d9342c",
     "seedAssignmentVersion": 1
   }
 }

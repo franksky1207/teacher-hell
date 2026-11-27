@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0262941623f127308ec081e90833839d7e0be8cacdea3b760e65edec74046cd2",
+      "checkedAt": "2026-11-27T16:20:58.397Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先別替我留搭檔，讓他們自己組隊。",
+            "action": "婉拒保留本人配對名額，球友可另組隊。",
+            "tradeoff": "少了壓力，可能失去參賽組合。"
+          },
+          {
+            "id": 2,
+            "text": "問他們願不願意把練球心得傳給我看。",
+            "action": "提出遠端接收自願戰術心得的請求，不要求錄下他人。",
+            "tradeoff": "保持連結，需花閱讀時間。"
+          },
+          {
+            "id": 3,
+            "text": "這次聯賽我先撤報，照規定處理退費。",
+            "action": "提出本人退出非必要聯賽申請，未取得退費。",
+            "tradeoff": "專心休養，放棄本次名次。"
+          },
+          {
+            "id": 4,
+            "text": "改邀他們另一天吃飯，不把碰面綁在上場。",
+            "action": "提出恢復期內可行的私人聚餐邀請，未取得同意或訂位。",
+            "tradeoff": "保留交情，花錢且未必約得成。"
+          },
+          {
+            "id": 5,
+            "text": "我先只看自己的舊比賽，整理想改的戰術。",
+            "action": "在不影響休養下觀看本人合法持有的舊影像並整理戰術筆記。",
+            "tradeoff": "有參與感，耗休息且可能鑽牛角尖。"
+          },
+          {
+            "id": 6,
+            "text": "暫時不追球群，等我想看時再看。",
+            "action": "暫停本人非必要球群動態提醒，不阻斷必要賽務聯絡。",
+            "tradeoff": "少受刺激，也可能錯過聊天。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是不服輸，問球友要不要坐著畫球路，比誰想得快。",
+          "action": "在安全照護限制內向球友提出以紙圖解球路的成人自願小挑戰，不做身體測試。",
+          "tradeoff": "保留好勝心，可能被笑太認真。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 769386052
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "fa08e604bfd2f78bc71b7e2fd30c3ba8b55a7b50f3de037f29c1da09daf76b11"
+      },
+      "consequenceDirections": {
+        "A": "主辦可能依條款不退錢，球友可能可惜；退出不取代傷勢照護。",
+        "B": "球友可能體諒或另找到默契搭檔，導師須接受復原後未必有原位。",
+        "C": "球友可接招或拒絕，教師可能輸在紙上；不能把桌上表現當復出依據。",
+        "D": "球友可能少來邀約，導師可能安心或覺得被落下；必要退出通知另照規定處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a48d1e4eee658a5acd3c2933fca8dbbd56bcc2998d528f95e93a06185733be7b",
+    "draftSha256": "0262941623f127308ec081e90833839d7e0be8cacdea3b760e65edec74046cd2",
     "seedAssignmentVersion": 1
   }
 }

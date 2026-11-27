@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4646ff37bdcfb15bc417b2afafd70c84a7ef6a4a3c476e787e00599cb52f997e",
+      "checkedAt": "2026-11-27T16:20:58.420Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他直接說幾個具體課堂片段，不靠匿名小卡猜。",
+            "action": "提出成人間自願具體觀察交流，不要求學生自證清醒。",
+            "tradeoff": "資訊較清楚，他可能不自在。"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意把卡改成課堂整理提醒。",
+            "action": "邀原作者自願改寫非食品、非醫療效果的學習提示，未取得同意。",
+            "tradeoff": "保留製作心意，增加改稿工作。"
+          },
+          {
+            "id": 3,
+            "text": "我不採這套卡，請他把私人製作收回。",
+            "action": "婉拒使用自願小卡，請物主收回，不沒收或丟棄。",
+            "tradeoff": "界線清楚，可能傷熱心。"
+          },
+          {
+            "id": 4,
+            "text": "我用自己的課試一段短暫轉換活動。",
+            "action": "在本人授課權限內加入合宜的短活動轉換，不作治療。",
+            "tradeoff": "可能改變注意節奏，少一段講述。"
+          },
+          {
+            "id": 5,
+            "text": "向他提供校內成人教學交流資訊。",
+            "action": "提供既有自願教學交流管道，不替其報名或邀第三人介入。",
+            "tradeoff": "有同儕交流機會，也可能感到被推開。"
+          },
+          {
+            "id": 6,
+            "text": "另邀學生自願談哪種上課節奏比較跟得上。",
+            "action": "提出不具名、自願的教學節奏回饋，不問睡眠病史。",
+            "tradeoff": "多聽學生，需整理時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕講破尷尬，乾脆把自己課堂打瞌睡的窘事說給他聽。",
+          "action": "私下分享本人曾作為學習者打瞌睡的經驗，不揭學生資訊或合理化失職。",
+          "tradeoff": "可拉近距離，自己丟面子且可能被誤解。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3284642688
+        },
+        "selectedIds": [
+          1,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "8ac0aea1423cc6bc90624a597c94c7e5d1ecf047e2ec5685119116c7eb297efc"
+      },
+      "consequenceDirections": {
+        "A": "同事可能笑出來或認為答非所問，導師須承擔交流失敗而非靠笑話結案。",
+        "B": "他可拒絕或改成可用版本，學生也可不使用；不保證因此不睡。",
+        "C": "同事可能願講或更迴避，教師須分辨觀察與推論，不把片段定為疾病。",
+        "D": "同事可能安心或失落，導師不因婉拒停止必要學習支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "57bda6cc5586624d89367e9b0798265abee812d3856fb398e15b2bc7b150cc52",
+    "draftSha256": "4646ff37bdcfb15bc417b2afafd70c84a7ef6a4a3c476e787e00599cb52f997e",
     "seedAssignmentVersion": 1
   }
 }

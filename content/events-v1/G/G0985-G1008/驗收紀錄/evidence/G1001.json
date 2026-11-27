@@ -16,14 +16,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d617165f8164d983b40e989cba4a88aa3c0213efbf75aab403b53b165435e55e",
+      "checkedAt": "2026-11-27T16:20:58.415Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他把自己的筆記改成不宣稱押題的版本。",
+            "action": "提出由學生自願重整本人筆記的邀請，不將更正版交件當必要更正條件。",
+            "tradeoff": "保留心血，仍需修改時間。"
+          },
+          {
+            "id": 2,
+            "text": "在我的課內增加一次讀本重點的自願提問時間。",
+            "action": "在必要支持外增設課內短問答，不代學生完成閱讀。",
+            "tradeoff": "有額外釐清，壓縮其他可調教學。"
+          },
+          {
+            "id": 3,
+            "text": "另邀他談談為什麼這麼想當大家的救星。",
+            "action": "提出自願談同儕期待的邀請，不預設認錯或心理診斷。",
+            "tradeoff": "有情緒空間，需時間且他可能反感。"
+          },
+          {
+            "id": 4,
+            "text": "只保留已核對正確的內容供他私人自用。",
+            "action": "協助標出其本人筆記可自用的正確部分，不另對全班背書押題。",
+            "tradeoff": "減少重工，失去公開分享成就。"
+          },
+          {
+            "id": 5,
+            "text": "用虛構例子談一次『大考建議不等於段考範圍』。",
+            "action": "安排不點名本案的短資訊辨識活動。",
+            "tradeoff": "可減少類似混淆，佔課時。"
+          },
+          {
+            "id": 6,
+            "text": "不要求他再做教材，讓他先把自己的課讀完。",
+            "action": "停止對其自願整理工作的額外期待，不追加修包任務。",
+            "tradeoff": "保住備考，班上少一份共用筆記。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想知道他到底花了多少力氣，願意留下來聽他講編排怎麼做。",
+          "action": "自願另花可用時間聽學生介紹整理技術，不認可錯誤範圍。",
+          "tradeoff": "讓努力被看見，佔教師休息且可能被誤當稱讚誤導。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2067141112
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "0edab47f0f7a913e0a05387af7e135ca75fe08a515495fb61595ab78f5f42f91"
+      },
+      "consequenceDirections": {
+        "A": "他可能覺得至少有用或仍不甘心，導師須花核對時間；未確認部分不當已正確。",
+        "B": "他可能願講或還在賭氣，導師須分清技術投入與資訊錯誤，不替網紅背書。",
+        "C": "同學可能理解或仍猜出原編者，教師須避免嘲弄與影射。",
+        "D": "他可能吐露壓力或否認，教師不得逼其接受救星標籤。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a991cf6d3173a0b322c08bf7eb4949003f455a59d68047b861731145803ef9eb",
+    "draftSha256": "d617165f8164d983b40e989cba4a88aa3c0213efbf75aab403b53b165435e55e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "71ce3f6882d1a919f4219a9042717e7af0d882955d890907a0ea8f2964a7c538",
+      "checkedAt": "2026-11-27T16:20:58.418Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "自願分擔我有權確認的一段事實整理。",
+            "action": "另分擔本人知情且有權處理的事實摘要，不代職員核定條文。",
+            "tradeoff": "減少一人負擔，自己的下班延後。"
+          },
+          {
+            "id": 2,
+            "text": "我今天不加做，讓他依原分工完成。",
+            "action": "婉拒額外代整工作，維持本人必要紀錄與回覆。",
+            "tradeoff": "守住下班，職員可能覺得孤立。"
+          },
+          {
+            "id": 3,
+            "text": "向主管提出未來談話時間與文書工時分開排。",
+            "action": "提出長期工作排程建議，不減必要程序。",
+            "tradeoff": "或可少拖人，需溝通且未必採納。"
+          },
+          {
+            "id": 4,
+            "text": "邀他另看既有範本哪些欄位常重複。",
+            "action": "提出成人非緊急範本檢視邀請，不自行刪除法定欄位。",
+            "tradeoff": "可找重工，另耗一次時間。"
+          },
+          {
+            "id": 5,
+            "text": "詢問有沒有可核准的分段完成時程。",
+            "action": "在必要期限內向權責者詢問分段完成紀錄可能，未獲展延。",
+            "tradeoff": "避免疲勞硬寫，可能不准。"
+          },
+          {
+            "id": 6,
+            "text": "以後我把額外談話準備改成一頁具體問題。",
+            "action": "調整本人後續可自主的非必要談話準備格式，不省必要詢問。",
+            "tradeoff": "較集中，可能放棄細節。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想今晚只剩這張表，邀他下班去吃碗熱麵，工作不帶上桌。",
+          "action": "提出完成必要交接後的私人用餐邀約，不替其接受或拖延期限。",
+          "tradeoff": "保留同事情誼，花私人時間錢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3311141520
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "2f9ba9c6a7098a55626ad298b7ceba45ce1578938e23ee082b225001deac9dc3"
+      },
+      "consequenceDirections": {
+        "A": "職員可能認為有用或不夠，導師須面對準備不周的可能；原學生權益共同維持。",
+        "B": "職員可拒絕或仍忍不住談條文，導師須面對無法放鬆；不以吃飯掩蓋程序問題。",
+        "C": "主管可能重排或維持原制，職員可能支持或覺得被干預。",
+        "D": "權責者可拒絕或指示完成順序，未核准前仍遵原期限，不虛填完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fc4b56ea8e2a221391c8423eb9f0bc70673c5887ecd7dd7473cc3ed5e823d980",
+    "draftSha256": "71ce3f6882d1a919f4219a9042717e7af0d882955d890907a0ea8f2964a7c538",
     "seedAssignmentVersion": 1
   }
 }

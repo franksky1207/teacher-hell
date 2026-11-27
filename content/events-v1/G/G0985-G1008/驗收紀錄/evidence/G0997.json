@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1032101cc6abbfcd2c18388ff5be0862756c7c198a94663f22b26c49d404ce0c",
+      "checkedAt": "2026-11-27T16:20:58.407Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用他的圖公告全班進度，但個人完成與否不交給股長管。",
+            "action": "採用已核對的圖作共同公告，個人學習由教師負責。",
+            "tradeoff": "利用好工具，維護工作仍在教師。"
+          },
+          {
+            "id": 2,
+            "text": "把他的圖改成每個人自己留的空白版。",
+            "action": "在作者同意下提供可自填進度的空白樣式，不收回個人紀錄。",
+            "tradeoff": "較自主，需改版且有人不用。"
+          },
+          {
+            "id": 3,
+            "text": "請他說明一遍怎麼讀，再讓大家自願試用。",
+            "action": "邀作者自願示範讀圖，未委託督導同學。",
+            "tradeoff": "減少誤讀，佔課間且可能冷場。"
+          },
+          {
+            "id": 4,
+            "text": "先保留我的表，另外邀他教我怎麼改清楚。",
+            "action": "邀股長自願給原表版面建議，暫維持已可讀的原公告。",
+            "tradeoff": "保留教師習慣，學生可能覺得成果沒被用。"
+          },
+          {
+            "id": 5,
+            "text": "問他願不願意和任課老師核對一次呈現方式。",
+            "action": "提出有教師在場的自願工具交流邀請，不交學生代核課務。",
+            "tradeoff": "可接多科需要，需排程。"
+          },
+          {
+            "id": 6,
+            "text": "這輪不加抽問，把早自習保留自主複習。",
+            "action": "不採股長提議的新抽問安排，維持原必要學習支持與自主複習。",
+            "tradeoff": "少一項壓力，教師較難即時掌握。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被他嫌亂我還真不服，想跟他各排一版，讓同學試讀哪個好找。",
+          "action": "邀股長參與成人教師與學生自願排版比較，用不含個資內容作查找試讀。",
+          "tradeoff": "保留較勁趣味，增加製作時間且教師可能輸。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 620707931
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "7fb5070cbc41adccbf675d15a427b8431271ac706a182812d890553f10d6ba9b"
+      },
+      "consequenceDirections": {
+        "A": "學生可能鬆口氣或需要更多引導，股長可能覺得努力落空；不省略必要評量。",
+        "B": "任課者或學生可拒絕，格式可能無法通用；未成立不當已跨科採用。",
+        "C": "他可能願講或緊張，其他人可能仍看不懂，教師需提供必要清楚資訊。",
+        "D": "股長可拒絕，試讀者可指出教師版本更難讀；不以勝負決定誰有教師權限。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3c120a538a2d941eb963fc33f992821c3f8c5b1689b685abd7b1cc3e9baa3789",
+    "draftSha256": "1032101cc6abbfcd2c18388ff5be0862756c7c198a94663f22b26c49d404ce0c",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d97e26587a0940e08a999c884de87c490f9361f1cd3f394211bc09bd12382532",
+      "checkedAt": "2026-11-27T04:18:14.706Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天依校規收妥主機，讓本人確認物品與合法領回方式",
+            "action": "導師已今天依校規收妥主機，讓本人確認物品與合法領回方式",
+            "tradeoff": "這次遊戲不能繼續，學生可能覺得邀請落空"
+          },
+          {
+            "id": 2,
+            "text": "問新同學願意參加哪一種不接線且符合規定的小活動，再邀其他人加入",
+            "action": "導師已問新同學願意參加哪一種不接線且符合規定的小活動，再邀其他人加入",
+            "tradeoff": "未必有人喜歡同一種，教師不能替新生答應"
+          },
+          {
+            "id": 3,
+            "text": "若校規允許，協助學生提出另時另地的設備使用申請",
+            "action": "導師已若校規允許，協助學生提出另時另地的設備使用申請",
+            "tradeoff": "可能不獲准，也須有合適成人與場地安排"
+          },
+          {
+            "id": 4,
+            "text": "請他只說明剛才如何叫停與哪裡有危險，不要求再接一次示範",
+            "action": "導師已請他只說明剛才如何叫停與哪裡有危險，不要求再接一次示範",
+            "tradeoff": "可能覺得自己又被檢討，也會用掉一段空檔"
+          },
+          {
+            "id": 5,
+            "text": "安排兩三位自願同學帶新同學熟悉可用的校內休息空間",
+            "action": "導師已安排兩三位自願同學帶新同學熟悉可用的校內休息空間",
+            "tradeoff": "要符合當時出入規範，也得取得新生同意"
+          },
+          {
+            "id": 6,
+            "text": "讓學生先把主機用途、線路需求和保管方式畫給負責成人確認，不急著排下一場",
+            "action": "導師已讓學生先把主機用途、線路需求和保管方式畫給負責成人確認，不急著排下一場",
+            "tradeoff": "要自己整理條件，也不能把畫圖當成安全核准"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實也對那款遊戲好奇，請他在設備已收妥後只用嘴巴教你怎麼玩，你當場用紙筆試排一個回合",
+          "action": "導師已邀學生自願以口述和紙筆介紹遊戲規則，未重接設備、要求展示帳號或繞過校規",
+          "tradeoff": "玩法可能被你理解得很荒唐，也不等於全班獲准玩主機"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2237426866
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "59218d246e20b2884a8aea56f7fe62e802d08794a37f7189fbd9230ca9d1a24b"
+      },
+      "consequenceDirections": {
+        "A": "他能保留分享興趣的機會，新同學可以自由加入或不加入，卻少了實際操作的刺激。",
+        "B": "邀請不再只剩主機一條路，但氣氛可能沒有原先熱鬧。",
+        "C": "學生能學到活動成立的條件，但今天不會因送出申請就直接開機。",
+        "D": "新同學可能找到自己的去處，原想用遊戲交朋友的人則得接受不一定同行。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c18a1f0bd0cb9956ef9619600ef28c6796e6101f223bacaac6becd916154e41a",
+    "draftSha256": "d97e26587a0940e08a999c884de87c490f9361f1cd3f394211bc09bd12382532",
     "seedAssignmentVersion": 1
   }
 }

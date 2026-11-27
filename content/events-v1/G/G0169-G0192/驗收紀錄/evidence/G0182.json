@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bfe3ec360d3628e228f919d0dd15ba88ea85897c355a88dcc235ff1805b297cd",
+      "checkedAt": "2026-11-27T04:18:14.702Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把目前查證到哪裡如實說清楚，約一個確實能回覆進度的時間",
+            "action": "導師已把目前查證到哪裡如實說清楚，約一個確實能回覆進度的時間",
+            "tradeoff": "未必當場給得出試作日期，你也必須依約回覆"
+          },
+          {
+            "id": 2,
+            "text": "先找可信教材或合適專業協助，核實一小段再決定是否進班",
+            "action": "導師已先找可信教材或合適專業協助，核實一小段再決定是否進班",
+            "tradeoff": "需要等待資源，不能直接靠學生家庭經驗代替查證"
+          },
+          {
+            "id": 3,
+            "text": "和他確認是否願意協助、願意做到哪裡，不把他的熟悉當成全程教學資格",
+            "action": "導師已和他確認是否願意協助、願意做到哪裡，不把他的熟悉當成全程教學資格",
+            "tradeoff": "他可能拒絕，也不能獨自負責內容正確"
+          },
+          {
+            "id": 4,
+            "text": "把本次先改為不依賴手語熟練度的無障礙溝通體驗，說明不等於學會手語",
+            "action": "導師已把本次先改為不依賴手語熟練度的無障礙溝通體驗，說明不等於學會手語",
+            "tradeoff": "原先期待的手勢活動要延後，也須避免模擬障礙的獵奇做法"
+          },
+          {
+            "id": 5,
+            "text": "在正確資源就緒後，向願意參與者安排小範圍試作，不要求全班公開演出",
+            "action": "導師已在正確資源就緒後，向願意參與者安排小範圍試作，不要求全班公開演出",
+            "tradeoff": "參與人數少，課程推展會比較慢"
+          },
+          {
+            "id": 6,
+            "text": "明確撤回尚無法履行的近期承諾，請他決定是否仍想參與後續準備",
+            "action": "導師已明確撤回尚無法履行的近期承諾，請他決定是否仍想參與後續準備",
+            "tradeoff": "要承認你答應得太快，學生可能不再願意等"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也很想把一個手勢真的做好，請他今天只看你練過且已查證的那一句，允許他直接說哪裡看不懂",
+          "action": "導師已在合法空檔邀學生自願觀看本人一個經可信資源核對的手勢練習並回饋，未要求家庭提供免費教學",
+          "tradeoff": "你的不熟練會露出來，也可能得重新練"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3559874983
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "27034e4d13c6c3ae42cd76c9b556c833a7055a325ccbdf7be935649c2d645078"
+      },
+      "consequenceDirections": {
+        "A": "對方不用繼續追問一個虛構日期，未來仍須等條件足夠才能另約。",
+        "B": "練習較不容易傳錯，學生的熱情則可能在等待中減退。",
+        "C": "學生能分享自己選的部分，教師仍須負責適當資源與教學安排。",
+        "D": "學生能把期待放在一個真實的小進展上，但這次私人練習不等於全班活動已經辦成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1f7445fac300a8251d708850f571e0bd096de4af90293067e9e002aac44adbf4",
+    "draftSha256": "bfe3ec360d3628e228f919d0dd15ba88ea85897c355a88dcc235ff1805b297cd",
     "seedAssignmentVersion": 1
   }
 }

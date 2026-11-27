@@ -16,14 +16,82 @@
     "G08",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f506ff7892cb081a1188c5deb361547dd11e1e6193d9237baf39f44bcc05e163",
+      "checkedAt": "2026-11-27T04:18:14.698Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先取得他同意，只把可核對的工時另抄成正式資料，不沿用玩笑措辭",
+            "action": "導師已先取得他同意，只把可核對的工時另抄成正式資料，不沿用玩笑措辭",
+            "tradeoff": "要重新整理，原作的幽默也會消失"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願意署名共同提出，讓他先確認每一句話",
+            "action": "導師已問他是否願意署名共同提出，讓他先確認每一句話",
+            "tradeoff": "他可能拒絕，也須承擔被詢問估算依據的時間"
+          },
+          {
+            "id": 3,
+            "text": "把原紙留在店裡，自己依親身工作經驗另寫需求",
+            "action": "導師已把原紙留在店裡，自己依親身工作經驗另寫需求",
+            "tradeoff": "你得自己負責全部說法，不能借他的名字加重份量"
+          },
+          {
+            "id": 4,
+            "text": "暫不送任何資料，先請他說哪些估算只是好笑、哪些真的做過",
+            "action": "導師已暫不送任何資料，先請他說哪些估算只是好笑、哪些真的做過",
+            "tradeoff": "今天談不成正式建議，也可能發現數字需大改"
+          },
+          {
+            "id": 5,
+            "text": "先向有權責窗口約一段工作分配討論，只說問題不附這張報價單",
+            "action": "導師已先向有權責窗口約一段工作分配討論，只說問題不附這張報價單",
+            "tradeoff": "少了具體文件支撐，可能需要再補資料"
+          },
+          {
+            "id": 6,
+            "text": "在他同意後，把不涉及個人與校務秘密的一小段改成匿名例子，先徵詢同事對工作量的實際意見",
+            "action": "導師已在他同意後，把不涉及個人與校務秘密的一小段改成匿名例子，先徵詢同事對工作量的實際意見",
+            "tradeoff": "匿名未必猜不出來源，使用範圍須先說清楚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天只想笑，不想把每張餐巾紙都變成提案，請他准你留下私人收藏，今晚不再談公事",
+          "action": "導師已徵詢原作者同意保留私人副本並停止今晚非必要公務討論，未擅自流通或撤銷必要工作處理",
+          "tradeoff": "眼前加碼工作沒有因此減少，他也可能覺得心力暫時白費"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3780962975
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "5ad7b61c1fadf2acd1822da8a4de516b5036832957e67b37b27900bafd819e61"
+      },
+      "consequenceDirections": {
+        "A": "玩笑與事實有機會分清，但急著處理的工作仍繼續增加。",
+        "B": "兩人能保住一次純粹的下班聊天，但你之後仍得自己處理原本抱怨的事。",
+        "C": "你能先確認討論管道，同事的原作不會在沒有準備下被展示。",
+        "D": "能知道是否是共同困擾，但也可能使私下玩笑開始流傳。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "995677146b831e8cbb8349c60b8af295a25f8cf5d3ec8ba58f5661880f96595e",
+    "draftSha256": "f506ff7892cb081a1188c5deb361547dd11e1e6193d9237baf39f44bcc05e163",
     "seedAssignmentVersion": 1
   }
 }

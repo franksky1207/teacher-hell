@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "af70dffa9e6840bcdd291a41718ade66c5723ca9c5644f47adda958752c1ed09",
+      "checkedAt": "2026-11-27T04:18:14.710Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收回這次公開請託，向全班說明調解由有權成人負責",
+            "action": "導師已收回這次公開請託，向全班說明調解由有權成人負責",
+            "tradeoff": "你得接手談話，班務時間可能拉長"
+          },
+          {
+            "id": 2,
+            "text": "私下問他是否仍願意以朋友身分關心，明說不需要回報內容",
+            "action": "導師已私下問他是否仍願意以朋友身分關心，明說不需要回報內容",
+            "tradeoff": "他可能完全不願參與，你也失去一個熟悉同儕的訊息來源"
+          },
+          {
+            "id": 3,
+            "text": "如實說明你為何總想到他，再讓他指出這份肯定造成哪些壓力",
+            "action": "導師已如實說明你為何總想到他，再讓他指出這份肯定造成哪些壓力",
+            "tradeoff": "要聽見對自己作法的不滿，也不能靠說理由要求他繼續"
+          },
+          {
+            "id": 4,
+            "text": "請負責同儕分歧的適任成人協同處理，不再叫他傳話",
+            "action": "導師已請負責同儕分歧的適任成人協同處理，不再叫他傳話",
+            "tradeoff": "要配合對方時段，也須控制必要知情範圍"
+          },
+          {
+            "id": 5,
+            "text": "和他約好日後班務請託先私下詢問範圍，不以公開點名取得答應",
+            "action": "導師已和他約好日後班務請託先私下詢問範圍，不以公開點名取得答應",
+            "tradeoff": "教師要改變臨場習慣，其他學生也可能要求同樣方式"
+          },
+          {
+            "id": 6,
+            "text": "重新檢視班上哪些關係工作總落在少數人身上，和全班談必要與自願的界線",
+            "action": "導師已重新檢視班上哪些關係工作總落在少數人身上，和全班談必要與自願的界線",
+            "tradeoff": "可能帶出其他不滿，眼前爭執仍須另行處理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被當眾問得有點掛不住，先把自己原訂的講評停掉，讓全班各寫一件不想再被默認要做的事",
+          "action": "導師已暫停本人非必要講評並開放不記名自述被默認的工作，不要求揭露他人隱私或公開指責，必要爭執處理照常進行",
+          "tradeoff": "會打亂你的班務安排，也可能收到刺耳意見"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2029991114
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "bb46b460dbdfb5f19bc5d1d02b99a5e24f01b8522c74772323ad44f1af0e1923"
+      },
+      "consequenceDirections": {
+        "A": "學生可能知道自己被重用的原因，卻仍有權覺得這並不公平。",
+        "B": "爭執能有正式承接，但學生不會立刻得到朋友都不怪他的保證。",
+        "C": "他的提問不再只是個人抗議，其他隱形工作可能浮出來；你則要接受很多事未必能立刻回覆。",
+        "D": "朋友關係不再被當成教師任務，但正式處理仍須另有成人管道。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "289ca249154d89971e4edc5286c3d939f7553803b8a716319bfff58195c0101f",
+    "draftSha256": "af70dffa9e6840bcdd291a41718ade66c5723ca9c5644f47adda958752c1ed09",
     "seedAssignmentVersion": 1
   }
 }

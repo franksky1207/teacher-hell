@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "28d784fe0797a002fba2c35c56031fc8060150a938c36ae26caf262be7c5512b",
+      "checkedAt": "2026-11-27T04:18:14.702Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拿出原先答應的免費等效練習，讓他試同一個概念再比較",
+            "action": "導師已拿出原先答應的免費等效練習，讓他試同一個概念再比較",
+            "tradeoff": "你要準備合適題目，也不能保證另一份就比較容易"
+          },
+          {
+            "id": 2,
+            "text": "請他圈出真正讀不懂的一頁，先處理眼前的學習問題",
+            "action": "導師已請他圈出真正讀不懂的一頁，先處理眼前的學習問題",
+            "tradeoff": "暫時不談整本值不值得，其他同學仍在等他的說法"
+          },
+          {
+            "id": 3,
+            "text": "陪他準備向同學更正推薦的說法，由他決定何時開口",
+            "action": "導師已陪他準備向同學更正推薦的說法，由他決定何時開口",
+            "tradeoff": "他得面對自己先前說得太滿，不能要求同學馬上原諒"
+          },
+          {
+            "id": 4,
+            "text": "協助他查清販售與退換規則，由本人及家長依規定決定是否詢問",
+            "action": "導師已協助他查清販售與退換規則，由本人及家長依規定決定是否詢問",
+            "tradeoff": "退換不一定成立，教師也不代辦交易"
+          },
+          {
+            "id": 5,
+            "text": "提供校內可合法借閱的相關教材資訊，不指定一定要換哪本",
+            "action": "導師已提供校內可合法借閱的相關教材資訊，不指定一定要換哪本",
+            "tradeoff": "借閱數量與期限有限，自己也要比較"
+          },
+          {
+            "id": 6,
+            "text": "用不點名的廣告例子帶全班辨認宣傳承諾，不替任何商品背書",
+            "action": "導師已用不點名的廣告例子帶全班辨認宣傳承諾，不替任何商品背書",
+            "tradeoff": "會占一段課程，當事人仍可能怕同學猜到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點不服那句一週學會，請他選一題來考你，你把自己讀題、卡住和查資料的過程攤給他看",
+          "action": "導師已邀學生自選一題供本人示範真實解題與查證，未保證即時解出或替商品作推薦",
+          "tradeoff": "你可能當場不會，還得花時間查證，不能把表演當正解"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2898337903
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "6027857dfcd3e9a1cb5e22b9bc95f00269af017e1cfd291013ec52a51a8570f8"
+      },
+      "consequenceDirections": {
+        "A": "學生能看出是內容難度還是版面不合習慣，卻不會因此自動退回已花的錢。",
+        "B": "學生看見連教師也得停下來想，卻可能更想問為何課本和廣告都講得那麼快。",
+        "C": "學生能知道時間標語未必適用每個人，已受影響的購買仍須各自處理。",
+        "D": "家庭不必立刻再買一本，但學生得安排借閱與歸還，不能永遠占用公用書。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "23f5c0066cc021411d10cc81e809d9eade74e6ba8d36243a0f61814f93a691c6",
+    "draftSha256": "28d784fe0797a002fba2c35c56031fc8060150a938c36ae26caf262be7c5512b",
     "seedAssignmentVersion": 1
   }
 }

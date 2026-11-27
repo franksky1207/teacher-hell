@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "04b22a9b54071ca3173b9f0dc0c81f1663aaf5df5ecb2ea0ddfc061114586de1",
+      "checkedAt": "2026-11-27T04:18:14.707Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把你可調整的一小段試講時間讓給他，先約定明確的停止點",
+            "action": "導師已把你可調整的一小段試講時間讓給他，先約定明確的停止點",
+            "tradeoff": "你自己的練習會減少，他也只能練有限內容"
+          },
+          {
+            "id": 2,
+            "text": "協助他申請校內合規的練習空間與空檔",
+            "action": "導師已協助他申請校內合規的練習空間與空檔",
+            "tradeoff": "未必排得到，也不能為了練聲妨礙別班"
+          },
+          {
+            "id": 3,
+            "text": "先讓他在稿上標呼吸、重音與停頓，出聲留到獲准時段",
+            "action": "導師已先讓他在稿上標呼吸、重音與停頓，出聲留到獲准時段",
+            "tradeoff": "不能立刻試音色，練習感可能很弱"
+          },
+          {
+            "id": 4,
+            "text": "把你有權調整的本次作業改為現場一次完成，不要求家庭反覆錄製",
+            "action": "導師已把你有權調整的本次作業改為現場一次完成，不要求家庭反覆錄製",
+            "tradeoff": "成品可能不精緻，也得對全班說明相同規則"
+          },
+          {
+            "id": 5,
+            "text": "陪他整理可以和兄姊協商的練習時長與安靜時段，不代替家人答應",
+            "action": "導師已陪他整理可以和兄姊協商的練習時長與安靜時段，不代替家人答應",
+            "tradeoff": "家裡未必有可行時段，協商也可能再起爭執"
+          },
+          {
+            "id": 6,
+            "text": "請任課專長教師提供一項適合先練的技巧，不直接要求模仿整個配音員",
+            "action": "導師已請任課專長教師提供一項適合先練的技巧，不直接要求模仿整個配音員",
+            "tradeoff": "需等對方可用時間，也可能改變他的原先目標"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被那句台詞勾起興致，請他和你在合規時段各讀一次同段，互相只說一個聽到的差別",
+          "action": "導師已邀學生在獲准時空自願與本人輪讀一段並比較聲音，未要求家庭提供錄製或陪練",
+          "tradeoff": "你自己的聲音可能很好笑，原訂試講內容也會減少"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1288635202
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "c9cf7cc742d736c28e03b89d39590bc6ec577aa24f68f468a437a8242bcba867"
+      },
+      "consequenceDirections": {
+        "A": "他有一遍可以出聲的機會，仍得接受不夠完美就先停下。",
+        "B": "他能從真實對比聽見節奏，而非只追偶像的音色，卻可能發現教師示範也沒有比較好。",
+        "C": "他能集中改善一個發聲問題，但不一定很快聽起來像偶像。",
+        "D": "學生能帶著具體安排討論，但家人的休息需求不能因此被取消。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4105f3634754326e7f433c18b059c1d796013c85bed3a98950912af8d1d3d0b5",
+    "draftSha256": "04b22a9b54071ca3173b9f0dc0c81f1663aaf5df5ecb2ea0ddfc061114586de1",
     "seedAssignmentVersion": 1
   }
 }

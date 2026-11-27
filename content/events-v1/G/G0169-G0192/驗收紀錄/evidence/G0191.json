@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f80f2aabbfa0b0cac2c23cd112004066da9d671d420e9337b4b0b087f6cfa1d1",
+      "checkedAt": "2026-11-27T04:18:14.710Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他訂出有截止時間的短期換手，休息後再確認能否恢復",
+            "action": "導師已和他訂出有截止時間的短期換手，休息後再確認能否恢復",
+            "tradeoff": "要記得回頭核對，不能把短期變成默認永久"
+          },
+          {
+            "id": 2,
+            "text": "讓他在健康與負荷容許下自選一項小工作，其餘由同意的替補承接",
+            "action": "導師已讓他在健康與負荷容許下自選一項小工作，其餘由同意的替補承接",
+            "tradeoff": "分工要重寫，也可能沒有合適小項"
+          },
+          {
+            "id": 3,
+            "text": "先問替補同學願意做到哪裡，再和兩人重排必要工作",
+            "action": "導師已先問替補同學願意做到哪裡，再和兩人重排必要工作",
+            "tradeoff": "可能發現現有人手仍不足"
+          },
+          {
+            "id": 4,
+            "text": "讓他今天先完成休息與必要健康確認，恢復班務的事另約時間談",
+            "action": "導師已讓他今天先完成休息與必要健康確認，恢復班務的事另約時間談",
+            "tradeoff": "他可能覺得又被請走，也要有明確回談時間"
+          },
+          {
+            "id": 5,
+            "text": "和全班說明輪值請求調整的簡單通知方式，不公開他疲勞的細節",
+            "action": "導師已和全班說明輪值請求調整的簡單通知方式，不公開他疲勞的細節",
+            "tradeoff": "要占一段班務時間，也須避免大家對號入座"
+          },
+          {
+            "id": 6,
+            "text": "把非必要的值日加碼項目取消，保留真正需要有人完成的內容",
+            "action": "導師已把非必要的值日加碼項目取消，保留真正需要有人完成的內容",
+            "tradeoff": "原本維持得漂亮的部分可能變簡單"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也厭倦每天盯這張表，提議在可行範圍內試一次由自願小組自行報完成、你只核對必要結果",
+          "action": "導師已在必要班務有保障的前提下提出自願小組短期自行分配與回報方式，保留成人核對責任，不取消健康協助",
+          "tradeoff": "你少了逐項指揮，卻得接受安排不完全照你的習慣"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1183859204
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "053627c9ea1927e6466e88ec7458ca15d1246e564f68e87cc7fc9c8e850a22a5"
+      },
+      "consequenceDirections": {
+        "A": "以後不用先劃掉名字才被注意，臨時退出的交接仍需成人協調。",
+        "B": "他能真的休息，替補也知道不是無限期接任。",
+        "C": "他仍有參與感，但不能為證明自己有用而又把整份扛回去。",
+        "D": "學生能自己協調部分流程，但若漏掉必要工作，你仍須介入而不能把責任推回學生。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4bb7cf3a5f60c7cc18954f1d4d2f473cf3abffef8f8d5876a57c33e5a21d1501",
+    "draftSha256": "f80f2aabbfa0b0cac2c23cd112004066da9d671d420e9337b4b0b087f6cfa1d1",
     "seedAssignmentVersion": 1
   }
 }

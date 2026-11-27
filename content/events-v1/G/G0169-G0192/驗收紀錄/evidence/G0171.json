@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1da10ff359240482485f3dec248889a86b3cba397547745c4ffd734c897f55f6",
+      "checkedAt": "2026-11-27T04:18:14.692Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他向受影響的教師說明經過並致歉，不把道歉當成取得繼續唱的交換",
+            "action": "導師已陪他向受影響的教師說明經過並致歉，不把道歉當成取得繼續唱的交換",
+            "tradeoff": "會用掉練習時間，也可能聽到對方直接表達不滿"
+          },
+          {
+            "id": 2,
+            "text": "回班改成不出聲的節拍與手勢練習",
+            "action": "導師已回班改成不出聲的節拍與手勢練習",
+            "tradeoff": "少了實際發聲，原先的口語配合練不到"
+          },
+          {
+            "id": 3,
+            "text": "向場地承辦詢問可供發聲的地點，獲准再移動",
+            "action": "導師已向場地承辦詢問可供發聲的地點，獲准再移動",
+            "tradeoff": "可能沒有可用空間，搬動也會壓縮練習時間"
+          },
+          {
+            "id": 4,
+            "text": "在確認不影響他班的條件下，只由自願小組試一段，其餘留班做既定工作",
+            "action": "導師已在確認不影響他班的條件下，只由自願小組試一段，其餘留班做既定工作",
+            "tradeoff": "不是每個人都能練到，也要有合規成人照看"
+          },
+          {
+            "id": 5,
+            "text": "先請他與班務同學核對下次練習要問的窗口、時地與音量，不再靠轉述",
+            "action": "導師已先請他與班務同學核對下次練習要問的窗口、時地與音量，不再靠轉述",
+            "tradeoff": "今天的成果較少，也須查到實際可用資訊"
+          },
+          {
+            "id": 6,
+            "text": "今天結束這段發聲練習，將必要內容排回可使用的課內時段",
+            "action": "導師已今天結束這段發聲練習，將必要內容排回可使用的課內時段",
+            "tradeoff": "其他課程內容得騰出空間，進度可能延後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被那段節奏逗得很想試，請他在不出聲的版本裡當你的教練，讓你一個人先把手腳打對",
+          "action": "導師已在不影響他班與既定照看的範圍內邀領練學生自願指導本人短暫無聲節奏，未重新占用走廊發聲",
+          "tradeoff": "只練到你，學生可能覺得老師把班務時間拿去玩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2545994357
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "7248076685c3c077a966a43c203f02402824a96f54ff84cd64134b4dbade3b15"
+      },
+      "consequenceDirections": {
+        "A": "班務能繼續一部分，之後仍要找合法時段確認聲音與節奏是否合得上。",
+        "B": "他能用熟悉的節奏教一個不熟練的大人，卻得接受全班的發聲成果今天沒有補回來。",
+        "C": "不再臨時尋找走廊空檔，領練學生卻可能對今天白忙一場很失落。",
+        "D": "他得面對錯信消息造成的影響，但是否另有場地仍須重新確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "602179b1117cd74d7594f17a909fbf6333f176bed22213470ef919548f04b2fd",
+    "draftSha256": "1da10ff359240482485f3dec248889a86b3cba397547745c4ffd734c897f55f6",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "08da3a76f5f353a7e591d8bd5a0f5a92d4838873ca90c527b8b9b78de9ef15e3",
+      "checkedAt": "2026-11-27T04:18:14.695Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把眼前工作分成全班必要分擔與真正自願的部分，逐項說清楚",
+            "action": "導師已把眼前工作分成全班必要分擔與真正自願的部分，逐項說清楚",
+            "tradeoff": "要花時間重新解釋，也可能發現原先分法不合理"
+          },
+          {
+            "id": 2,
+            "text": "請他先私下說明這次最不想接的是什麼，不要求公開家中談話",
+            "action": "導師已請他先私下說明這次最不想接的是什麼，不要求公開家中談話",
+            "tradeoff": "他得另外留一小段時間，其他同學也仍在等"
+          },
+          {
+            "id": 3,
+            "text": "讓願意協助的人自行提出可承擔的範圍，再看工作是否足夠完成",
+            "action": "導師已讓願意協助的人自行提出可承擔的範圍，再看工作是否足夠完成",
+            "tradeoff": "可能沒人接完整份，你得接受縮小活動"
+          },
+          {
+            "id": 4,
+            "text": "把這件非必要班務先撤回，由你完成最低限度的部分",
+            "action": "導師已把這件非必要班務先撤回，由你完成最低限度的部分",
+            "tradeoff": "你增加自己的工作，原訂成果也可能變簡單"
+          },
+          {
+            "id": 5,
+            "text": "請全班在不記名紙條上寫可做與不想做的班務，供後續排定使用",
+            "action": "導師已請全班在不記名紙條上寫可做與不想做的班務，供後續排定使用",
+            "tradeoff": "整理需要時間，也不能保證每項偏好都能滿足"
+          },
+          {
+            "id": 6,
+            "text": "保留自願工作，先公布退出與交接方式，不要求學生說服教師才准拒絕",
+            "action": "導師已保留自願工作，先公布退出與交接方式，不要求學生說服教師才准拒絕",
+            "tradeoff": "交接可能降低效率，也要防止臨時留下無人處理的必要事項"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點怕大家以後什麼都先問，乾脆把這件你自己也不太想辦的加碼活動取消，今天不再徵人",
+          "action": "導師已取消本人可決定的非必要加碼活動，不取消法定或既定必要班務，也未處罰提出拒絕的學生",
+          "tradeoff": "少了一項可能有趣的活動，你也須向期待的人說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 870298307
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "548b40f2fea45e22f46614e57a204c40dbfec154987ac8bfb113ebb2ce61d055"
+      },
+      "consequenceDirections": {
+        "A": "拒絕不會立刻招來新任務，卻有人可能覺得全班因幾句詢問就失去機會。",
+        "B": "學生知道拒絕哪一段不會受罰，但必要工作仍須依公平方式安排。",
+        "C": "教師能知道是工作內容、負荷還是怕被定型，卻不能只替一人保留拒絕機會。",
+        "D": "不敢跟著大聲問的人也能表態，但必要工作的公平分配仍須另外討論。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2636b2257e9264a88eef725db6a765da4a15e779ed7866dcd279580519db8a84",
+    "draftSha256": "08da3a76f5f353a7e591d8bd5a0f5a92d4838873ca90c527b8b9b78de9ef15e3",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "404990d60a4b9a54cdba5b3b60bec642ee9f0455f6a5ed53de2760179a0e4db8",
+      "checkedAt": "2026-11-27T04:18:14.704Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只請目擊學生說明成人必要知道的事，確認後讓他依安全原安排離開",
+            "action": "導師已只請目擊學生說明成人必要知道的事，確認後讓他依安全原安排離開",
+            "tradeoff": "無法當場把兩人的不滿談完，後續可能還要必要聯繫"
+          },
+          {
+            "id": 2,
+            "text": "讓傷者直接向負責成人說出擔心，由有權者說明回場須確認的條件",
+            "action": "導師已讓傷者直接向負責成人說出擔心，由有權者說明回場須確認的條件",
+            "tradeoff": "他可能聽到不想接受的限制，不能先保證下一次一定上場"
+          },
+          {
+            "id": 3,
+            "text": "私下問目擊者願意怎麼向好友解釋求助，不要求立刻和好",
+            "action": "導師已私下問目擊者願意怎麼向好友解釋求助，不要求立刻和好",
+            "tradeoff": "要再花短時間，好友也可能暫時不想聽"
+          },
+          {
+            "id": 4,
+            "text": "向必要知情的同伴說明不轉傳傷情與揣測，也不得把通報叫作背叛",
+            "action": "導師已向必要知情的同伴說明不轉傳傷情與揣測，也不得把通報叫作背叛",
+            "tradeoff": "可能有人繼續私下議論，教師須依具體行為處理"
+          },
+          {
+            "id": 5,
+            "text": "協助目擊學生在本人同意下通知家人目前已完成必要說明與預計返家安排",
+            "action": "導師已協助目擊學生在本人同意下通知家人目前已完成必要說明與預計返家安排",
+            "tradeoff": "家人可能仍不高興，也不能用校務要求無限延留"
+          },
+          {
+            "id": 6,
+            "text": "在適當後續時段，請負責教師檢視學生為何以為受傷就會長期失去練習機會",
+            "action": "導師已在適當後續時段，請負責教師檢視學生為何以為受傷就會長期失去練習機會",
+            "tradeoff": "需要核實原規則，不能直接認定教師曾不當排除"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被那句「不要講」惹火，不想再讓學生替成人跑腿；請現場權責人明列後續聯繫由哪位成人接手，今天不再叫目擊者回來傳話",
+          "action": "導師已與權責人確認後續成人聯絡責任，停止要求目擊學生代傳傷情，仍保留依法必要查證與聯繫",
+          "tradeoff": "成人要多做直接聯繫，不能再圖學生就在旁邊方便"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 698236836
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "b3d09cef50237884ae545c8606272bc6c19d26b3f43431ab1a36b2f6dc243f43"
+      },
+      "consequenceDirections": {
+        "A": "他能表明不是要害人失去機會，兩人仍可能各自生氣一陣子。",
+        "B": "怕被排除的原因能被聽見，但照護與回場仍按實際狀況決定。",
+        "C": "家庭分工不必全數延誤，傷情處理也不靠他留在場邊反覆說服。",
+        "D": "目擊者可以真的離開處理家事，傷者可能不習慣直接對成人說，但必要資訊不會被同學卡住。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c01a53b185ba65365a4a7c0f1a6dcfb8d0f2caae2df41b024eacd3157f8b7bd",
+    "draftSha256": "404990d60a4b9a54cdba5b3b60bec642ee9f0455f6a5ed53de2760179a0e4db8",
     "seedAssignmentVersion": 1
   }
 }

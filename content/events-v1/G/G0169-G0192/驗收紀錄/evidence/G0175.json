@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "75f03abb4da11dbd9f93a04efe72882fe469146ffdc2118ecfc3a61126fcc2d4",
+      "checkedAt": "2026-11-27T04:18:14.696Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先讓每人完成原先準備的段落，再討論是否調整",
+            "action": "導師已先讓每人完成原先準備的段落，再討論是否調整",
+            "tradeoff": "笑話與開場可能重複，時間也會拉長"
+          },
+          {
+            "id": 2,
+            "text": "請他徵得組員同意，把笑話移到段落間當過場",
+            "action": "導師已請他徵得組員同意，把笑話移到段落間當過場",
+            "tradeoff": "原本練好的接法要重排，也可能遭拒"
+          },
+          {
+            "id": 3,
+            "text": "讓各人重新說明願意接下的內容，再決定是否交換難段",
+            "action": "導師已讓各人重新說明願意接下的內容，再決定是否交換難段",
+            "tradeoff": "得花時間重分工，也不能把多做當成自動抵銷"
+          },
+          {
+            "id": 4,
+            "text": "先分別聽被打斷者與他的想法，再安排簡短的共同討論",
+            "action": "導師已先分別聽被打斷者與他的想法，再安排簡短的共同討論",
+            "tradeoff": "暫時停下練習，其他組員得做既定準備"
+          },
+          {
+            "id": 5,
+            "text": "讓全組試一次有明確交接訊號的開場，不先改每人的台詞",
+            "action": "導師已讓全組試一次有明確交接訊號的開場，不先改每人的台詞",
+            "tradeoff": "會顯得比較刻意，也要再練一遍"
+          },
+          {
+            "id": 6,
+            "text": "由全組共同決定笑話是否保留，不用現場笑聲直接當表決",
+            "action": "導師已由全組共同決定笑話是否保留，不用現場笑聲直接當表決",
+            "tradeoff": "結果可能不是他期待的，討論也可能卡住"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被那個笑話逗到了，請他自願在你另有安排的課末空檔單獨演一次，這組現在照原分工重來",
+          "action": "導師已提出在本人可調整的非必要課末空檔讓學生自願獨立短演，原小組表現與評分機會不減",
+          "tradeoff": "占掉你原可收尾的時間，也可能讓人覺得搶話還多了舞台"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4201003441
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "773eb821de2878b0bbd087c0e3242ed4ef568045c9574b66555f77259d468fb3"
+      },
+      "consequenceDirections": {
+        "A": "不想公開爭論的人能說出意見，但教師也可能發現兩人對原分工理解不同。",
+        "B": "好笑與是否合適能分開談，但少數人的不舒服仍需要被聽見。",
+        "C": "他不用把所有準備塞進組員的開場，卻須接受額外演出不是對搶話的獎勵或正式評分。",
+        "D": "他有機會承擔新工作，但被搶話的人仍可要求自己的表現機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a8a9560d082ac16e488fa543eedaa671998d2d3c0f0571fc34404108b40da438",
+    "draftSha256": "75f03abb4da11dbd9f93a04efe72882fe469146ffdc2118ecfc3a61126fcc2d4",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ec72100e9e34851d530ccd40a073c6706753b8a42ce969d29ed6c16706341cb3",
+      "checkedAt": "2026-11-27T04:18:14.691Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向看見安置的學生說明此事尚未認定，門口座位不是公布處分的地方",
+            "action": "導師已向看見安置的學生說明此事尚未認定，門口座位不是公布處分的地方",
+            "tradeoff": "得承認安排不妥，也可能引來更多問題"
+          },
+          {
+            "id": 2,
+            "text": "私下讓當事學生說出坐在門口時聽見什麼，不要求他立刻接受你的說明",
+            "action": "導師已私下讓當事學生說出坐在門口時聽見什麼，不要求他立刻接受你的說明",
+            "tradeoff": "要面對自己安排造成的感受，談話也可能比預期久"
+          },
+          {
+            "id": 3,
+            "text": "與值勤職員確認以後遇到類似情形的合規等候位置與交接方式",
+            "action": "導師已與值勤職員確認以後遇到類似情形的合規等候位置與交接方式",
+            "tradeoff": "需要占用他有限的工作時間，且須經相關單位同意"
+          },
+          {
+            "id": 4,
+            "text": "整理你實際見到的筆記情況交給有權教師，不加上動機或處分建議",
+            "action": "導師已整理你實際見到的筆記情況交給有權教師，不加上動機或處分建議",
+            "tradeoff": "暫時無法給全班一個明確結論"
+          },
+          {
+            "id": 5,
+            "text": "向確實使用綽號的人個別說明停止散播與更正的要求，必要處置依程序進行",
+            "action": "導師已向確實使用綽號的人個別說明停止散播與更正的要求，必要處置依程序進行",
+            "tradeoff": "要逐一確認誰實際說過，不能只憑傳聞指責"
+          },
+          {
+            "id": 6,
+            "text": "重新檢視自己要求學生離開原位的班級做法，與權責同仁討論可行替代",
+            "action": "導師已重新檢視自己要求學生離開原位的班級做法，與權責同仁討論可行替代",
+            "tradeoff": "短期內得改掉熟悉的管教習慣，也可能遭同事質疑"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想反駁他語氣太重，最後把話改成請他正式記下這次動線事件，連同你的安排一起交主管看",
+          "action": "導師已請值勤人員依職責如實記錄動線事件並納入自身安排，未要求對方替學生行為作未查證判定",
+          "tradeoff": "疏漏會留下正式紀錄，也可能被要求說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2275506079
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "a115821b1aca8e144fc035df9700f9bcf0c075d6bad1e439c0feba46d9e4abbf"
+      },
+      "consequenceDirections": {
+        "A": "能辨認哪些稱呼已經傳出，學生卻可能仍不願意再相信這是冷靜安排。",
+        "B": "外傳稱呼有具體處理對象，但更正可能仍追不上原來的笑話。",
+        "C": "旁觀者不再能把椅子當成定罪證據，已傳出去的說法仍須持續處理。",
+        "D": "值勤者不必獨自扛下清場爭執，你則要面對主管對公開安置與通行的共同檢視。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d4f28c30f31594b22cdd3e1fd24a93dc19e38e7c47313c9d659ad98fa727ca8e",
+    "draftSha256": "ec72100e9e34851d530ccd40a073c6706753b8a42ce969d29ed6c16706341cb3",
     "seedAssignmentVersion": 1
   }
 }

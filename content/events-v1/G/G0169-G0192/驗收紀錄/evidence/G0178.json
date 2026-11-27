@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6b8fcaf0c14854836aeeb7c1627844ac0c2c463e6c43d085bfaed3d117db717c",
+      "checkedAt": "2026-11-27T04:18:14.699Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請兩人各自只選一項今天確實做得到的工作，剩下由你重排",
+            "action": "導師已請兩人各自只選一項今天確實做得到的工作，剩下由你重排",
+            "tradeoff": "成果可能比預定少，你得接住未分出的部分"
+          },
+          {
+            "id": 2,
+            "text": "把收尾排進可調整的課內時段，不要求任何人放學留下",
+            "action": "導師已把收尾排進可調整的課內時段，不要求任何人放學留下",
+            "tradeoff": "會壓縮其他內容，也須符合實際課表權責"
+          },
+          {
+            "id": 3,
+            "text": "讓願意的人接手前，先當場試做最後一步，確認真的會再交接",
+            "action": "導師已讓願意的人接手前，先當場試做最後一步，確認真的會再交接",
+            "tradeoff": "耗掉眼前準備時間，也可能發現仍做不到"
+          },
+          {
+            "id": 4,
+            "text": "刪去本次成果非必要的最後加工，先交可使用的版本",
+            "action": "導師已刪去本次成果非必要的最後加工，先交可使用的版本",
+            "tradeoff": "外觀或完整度降低，不能再要求學生私下補回"
+          },
+          {
+            "id": 5,
+            "text": "徵求其他同學自願承接一小項，明訂今天可停下的時間",
+            "action": "導師已徵求其他同學自願承接一小項，明訂今天可停下的時間",
+            "tradeoff": "可能沒人加入，也得重新教交接"
+          },
+          {
+            "id": 6,
+            "text": "若規定容許，提出正式延後完成期限的安排，不把家務當成不負責",
+            "action": "導師已若規定容許，提出正式延後完成期限的安排，不把家務當成不負責",
+            "tradeoff": "延期需要權責方同意，也會拖到後續使用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再替成品撐面子，決定取消自己原訂拿它對外展示的安排，班上只做到課程需要的程度",
+          "action": "導師已取消本人可決定的非必要成果展示，保留既定課程必要要求，不私下要求補工或占用陪診時間",
+          "tradeoff": "你少一次展示成果，學生也可能可惜作品沒被看見"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2670029139
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "58f8bcbaff61131fcea0288c90f033b935291fd7b72915e1033e797d6c304123"
+      },
+      "consequenceDirections": {
+        "A": "家庭陪診不再和班級工作搶時間，課內進度則需要取捨。",
+        "B": "學生不用趕著在今天完工，但家庭安排與下次可用時間仍要重算。",
+        "C": "朋友不用只靠一句我可以扛責任，但未完成的工作仍須另找安排。",
+        "D": "額外加工不再為了教師的展示而存在，但兩位學生仍可自願保留日後完善的想法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f17363adf1b80f0ca9593d2c62ffca7fbd90d93d4ea5f5296bc937560640a7c",
+    "draftSha256": "6b8fcaf0c14854836aeeb7c1627844ac0c2c463e6c43d085bfaed3d117db717c",
     "seedAssignmentVersion": 1
   }
 }

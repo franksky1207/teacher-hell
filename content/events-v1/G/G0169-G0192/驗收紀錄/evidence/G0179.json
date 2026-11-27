@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4ef8e302819b5ce13f4c4a016c5d6ff4c94fb8ee8ca1e890d854169f32ec0a2f",
+      "checkedAt": "2026-11-27T04:18:14.701Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他拿出示例完成原本要說的部分，你暫停往下講",
+            "action": "導師已請他拿出示例完成原本要說的部分，你暫停往下講",
+            "tradeoff": "後面進度要延後，你也得承認剛才判斷太快"
+          },
+          {
+            "id": 2,
+            "text": "當場說明是你們對時間有不同判斷，不讓學生把收起示例解讀成沒備課",
+            "action": "導師已當場說明是你們對時間有不同判斷，不讓學生把收起示例解讀成沒備課",
+            "tradeoff": "會暴露教師合作的不一致，仍要安排內容如何補足"
+          },
+          {
+            "id": 3,
+            "text": "先讓學生寫下這題最不清楚的一點，再和同事依實際問題決定補充範圍",
+            "action": "導師已先讓學生寫下這題最不清楚的一點，再和同事依實際問題決定補充範圍",
+            "tradeoff": "要占用課堂時間，教師原定流程也會被打斷"
+          },
+          {
+            "id": 4,
+            "text": "把後面可延後的練習移開，和同事共同重排剩下時間",
+            "action": "導師已把後面可延後的練習移開，和同事共同重排剩下時間",
+            "tradeoff": "部分原定工作今天做不完"
+          },
+          {
+            "id": 5,
+            "text": "在適當短暫停頓時和他核對一個繼續或暫停的訊號，再依共同決定帶課",
+            "action": "導師已在適當短暫停頓時和他核對一個繼續或暫停的訊號，再依共同決定帶課",
+            "tradeoff": "需要學生先有可自行進行的既定任務，不能放著全班爭執"
+          },
+          {
+            "id": 6,
+            "text": "課後依約向他說清楚自己為何想略過，並聽他要保留示例的理由",
+            "action": "導師已課後依約向他說清楚自己為何想略過，並聽他要保留示例的理由",
+            "tradeoff": "今天學生的疑問須另有必要回應，不能只把所有問題留到課後"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也有點氣他什麼都不說，乾脆把自己原訂的漂亮總結撤掉，請學生用剛才沒懂的地方反問兩位老師",
+          "action": "導師已將本人非必要總結改為學生自願針對內容提問，與共同授課教師協調必要答覆，不將兩人私人爭執交學生裁決",
+          "tradeoff": "少了順暢收尾，兩個人都可能被問倒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4137540265
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "f445629ef17ee5facad7471d7023e7843459343036329002ee26c28f402b4065"
+      },
+      "consequenceDirections": {
+        "A": "兩人能較安穩接續，但當下被誤會沒準備的感受仍待處理。",
+        "B": "學生不用替教師選邊，而是直接指出理解斷點，教師得一起面對沒有預演過的提問。",
+        "C": "學生能看到同事確實準備過，但兩人對詳略的分歧也變得可見。",
+        "D": "兩人的合作習慣有機會調整，但同事可能不滿你仍選擇事後才談。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dfdcb20183b5806ea45de9fae74984408fa70e3ccd02389555c58185d40519ad",
+    "draftSha256": "4ef8e302819b5ce13f4c4a016c5d6ff4c94fb8ee8ca1e890d854169f32ec0a2f",
     "seedAssignmentVersion": 1
   }
 }

@@ -17,14 +17,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "112f770e961539422e1a312e53ddc1fa38fde440e7dcd3cb2e3cb19c79b4d1bd",
+      "checkedAt": "2026-11-27T04:18:14.689Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向同桌說明今天不再指定他接梗，想聊天的人自己開話題",
+            "action": "導師已向同桌說明今天不再指定他接梗，想聊天的人自己開話題",
+            "tradeoff": "氣氛可能突然冷下來，你也得看著玩笑別再繞回他身上"
+          },
+          {
+            "id": 2,
+            "text": "私下問他想用什麼說法拒絕聊天，由他決定要不要告訴同桌",
+            "action": "導師已私下問他想用什麼說法拒絕聊天，由他決定要不要告訴同桌",
+            "tradeoff": "需要他多想一句話，不能保證同學立刻領會"
+          },
+          {
+            "id": 3,
+            "text": "午餐後另約他談睡眠與追直播的安排，不在餐桌上追問",
+            "action": "導師已午餐後另約他談睡眠與追直播的安排，不在餐桌上追問",
+            "tradeoff": "今天的疲倦不會立刻消失，也得另留談話時間"
+          },
+          {
+            "id": 4,
+            "text": "在他同意下，協助他準備向家人提出的具體用機時間與休息安排",
+            "action": "導師已在他同意下，協助他準備向家人提出的具體用機時間與休息安排",
+            "tradeoff": "家人可能不接受，教師不能代替家庭撤銷管教"
+          },
+          {
+            "id": 5,
+            "text": "提供不受打擾且符合午餐管理的另一個座位，讓他自行選擇要不要移動",
+            "action": "導師已提供不受打擾且符合午餐管理的另一個座位，讓他自行選擇要不要移動",
+            "tradeoff": "換位可能引來注意，原桌同學也可能覺得被拒絕"
+          },
+          {
+            "id": 6,
+            "text": "帶全班改聊人人可自由回答的日常問題，不點他，也不追問沒答的人",
+            "action": "導師已帶全班改聊人人可自由回答的日常問題，不點他，也不追問沒答的人",
+            "tradeoff": "會占用你的用餐時間，話題也未必熱絡"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想好好吃一頓，索性宣布今天不開你的午餐笑話時間，自己坐下吃，不再替這桌找話題",
+          "action": "導師已取消本人自願帶領的午餐笑話時間，維持正常用餐與照看，不禁止學生合法交談",
+          "tradeoff": "少了大家期待的熱鬧，你也得接受這餐安靜得有點尷尬"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 333910001
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "e0fae88021a1d4c9d0dfbd0c4bf7b8da149df847a7a9c96d9b362821222aacf9"
+      },
+      "consequenceDirections": {
+        "A": "他能暫時離開接梗壓力，但下次回原桌仍要處理相處方式。",
+        "B": "他能自己劃出界線，也可能選擇什麼都不解釋，留下同儕的疑問。",
+        "C": "學生不用接你的場，其他同學可以自行聊天，卻可能發現教師不再幫忙後也沒人願意先開口。",
+        "D": "他有機會說出可履行的方案，也須面對先前熬夜造成的不信任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -45,7 +113,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0948922a8170c5f065df1b264865e176c9c2ff6d17d373d8933bdb7e956f4e95",
+    "draftSha256": "112f770e961539422e1a312e53ddc1fa38fde440e7dcd3cb2e3cb19c79b4d1bd",
     "seedAssignmentVersion": 1
   }
 }

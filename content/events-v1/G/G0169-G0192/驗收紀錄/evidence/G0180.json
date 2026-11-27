@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d34c818a4243ad13749db82638c45bcd379c3e6f2057909e4b33bcac4cad46dc",
+      "checkedAt": "2026-11-27T04:18:14.701Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請有權責的窗口一對一核對接送人與地點，確認後再交接",
+            "action": "導師已請有權責的窗口一對一核對接送人與地點，確認後再交接",
+            "tradeoff": "要等核實，不能只憑學生指路就直接帶走"
+          },
+          {
+            "id": 2,
+            "text": "和已核實的家人約在學校准許的會合處，由適當成人完成交接",
+            "action": "導師已和已核實的家人約在學校准許的會合處，由適當成人完成交接",
+            "tradeoff": "家人可能得繞路，等待時間會拉長"
+          },
+          {
+            "id": 3,
+            "text": "陪他重看剛才廣播的實際內容，只辨認訊息在說誰，不再播放個人資訊",
+            "action": "導師已陪他重看剛才廣播的實際內容，只辨認訊息在說誰，不再播放個人資訊",
+            "tradeoff": "核對需要時間，也不能代替實際接送安排"
+          },
+          {
+            "id": 4,
+            "text": "和他畫出本次確認過的接送位置與可詢問窗口，交本人留用",
+            "action": "導師已和他畫出本次確認過的接送位置與可詢問窗口，交本人留用",
+            "tradeoff": "要確認路線與標示正確，之後若改動仍須更新"
+          },
+          {
+            "id": 5,
+            "text": "問他是否願意由已核實且同樣獲准同行的人陪著到正確集合處",
+            "action": "導師已問他是否願意由已核實且同樣獲准同行的人陪著到正確集合處",
+            "tradeoff": "對方須真正有同意與資格，不能隨便找學生代管"
+          },
+          {
+            "id": 6,
+            "text": "把這次造成誤會的公共集合指示回報承辦，請其確認是否需要調整",
+            "action": "導師已把這次造成誤會的公共集合指示回報承辦，請其確認是否需要調整",
+            "tradeoff": "改善未必立刻發生，也不能把他的家庭情況寫進公開回報"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被幾處集合點弄得很煩，請現場權責人接手已核實的交接，自己結束這次額外陪走，不再當私人帶路的人",
+          "action": "導師已向現場有權成人完成必要資訊與照護交接後結束額外陪走，未讓學生獨自前往未確認場所",
+          "tradeoff": "得確實交接，也可能讓學生失望不能一直由你陪著"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1934208936
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "319adf3156e7495080038280f259ea1eb7da74896b1ff60e81b0c6b14e0c64ac"
+      },
+      "consequenceDirections": {
+        "A": "熟悉的人可能降低慌張，交接責任仍由有權成人掌握。",
+        "B": "原本分散的兩邊有明確碰面點，學生卻可能更怕讓家人覺得自己添麻煩。",
+        "C": "下次可能較不容易排錯線，但今天仍須照確認後的安排離校。",
+        "D": "學生仍有合格成人協助，你則保住原本的工作或下班安排，之後還得說明不是不願再理他。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ce5cae568be149fd35f3d8520af0c9bfa145cba76a05f32c5492051c2d8b0712",
+    "draftSha256": "d34c818a4243ad13749db82638c45bcd379c3e6f2057909e4b33bcac4cad46dc",
     "seedAssignmentVersion": 1
   }
 }

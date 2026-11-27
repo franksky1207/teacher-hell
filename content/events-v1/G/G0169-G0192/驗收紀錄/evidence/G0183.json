@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e641664a8b6a2ede19768695075856ade37c625871304204de8dd99e8fa69fef",
+      "checkedAt": "2026-11-27T04:18:14.703Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "協助向有權單位提出短時請假與合格人力接續的申請",
+            "action": "導師已協助向有權單位提出短時請假與合格人力接續的申請",
+            "tradeoff": "要等核可與交接，不能擅自把班交給學生"
+          },
+          {
+            "id": 2,
+            "text": "在你確有資格且獲准的前提下，提出由你承接一段必要照看",
+            "action": "導師已在你確有資格且獲准的前提下，提出由你承接一段必要照看",
+            "tradeoff": "你的原有工作要另作合法安排，不能一人兼顧兩處"
+          },
+          {
+            "id": 3,
+            "text": "請課務評估正式調整當日可換的授課順序",
+            "action": "導師已請課務評估正式調整當日可換的授課順序",
+            "tradeoff": "會牽動其他教師與班級，不能私下自行換課"
+          },
+          {
+            "id": 4,
+            "text": "協助他把交接教材與學生目前進度整理給接續教師",
+            "action": "導師已協助他把交接教材與學生目前進度整理給接續教師",
+            "tradeoff": "要占用短暫準備時間，不能因此延誤必要就醫"
+          },
+          {
+            "id": 5,
+            "text": "請行政撤去他就醫前後的非必要談話與額外報告",
+            "action": "導師已請行政撤去他就醫前後的非必要談話與額外報告",
+            "tradeoff": "對方可能不同意，必要課務仍須正式接續"
+          },
+          {
+            "id": 6,
+            "text": "若醫療與權責安排允許，協助把後續課堂改由合格接續者帶可自作的練習",
+            "action": "導師已若醫療與權責安排允許，協助把後續課堂改由合格接續者帶可自作的練習",
+            "tradeoff": "原定口語講解要延後，不能把病中教師留在現場硬撐"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很怕看他又拖到診所關門，徵得同意後直接替他打電話詢問能否保留近期診次，不再只勸他快去",
+          "action": "導師已徵得同事同意向診所詢問接診時段，不提供未同意的病情資料，離校仍依正式請假與照看交接辦理",
+          "tradeoff": "診所不一定答應，也不能替醫師判定病情"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2894017571
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "e8b597cf6ea9e0bb0cc90c855eb2bfa92d7b04583b6fb199cb368d40049f693d"
+      },
+      "consequenceDirections": {
+        "A": "支援者不必臨場猜進度，同事仍需接受別人不會完全照自己的方式帶。",
+        "B": "有限空檔不再全被零碎工作吃掉，但牙痛並不會因少一份報告就消失。",
+        "C": "學生仍有可完成的課程，同事卻需另找適當時機補充必要說明。",
+        "D": "有明確接診資訊能讓交接更好安排，但若沒有名額，仍須轉向適當醫療資源。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9a8d94ee3e84ae04d28f0db3b88792b6e2b9ab76907b5b2f452aa19b1c294a7e",
+    "draftSha256": "e641664a8b6a2ede19768695075856ade37c625871304204de8dd99e8fa69fef",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3c3b46218cee014aaa4ce8c3859feeea0694996c388f63655540e566fb2467d3",
+      "checkedAt": "2026-11-27T04:18:14.697Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "指出上次一個確實有效和一個卡住的地方，和他核對今天要改什麼",
+            "action": "導師已指出上次一個確實有效和一個卡住的地方，和他核對今天要改什麼",
+            "tradeoff": "需要面對不成功的部分，回饋不能只剩稱讚"
+          },
+          {
+            "id": 2,
+            "text": "請他自行選一小段願意再帶的內容，先約定你只在何時協助",
+            "action": "導師已請他自行選一小段願意再帶的內容，先約定你只在何時協助",
+            "tradeoff": "課程分工得重排，試的範圍也比他原備課少"
+          },
+          {
+            "id": 3,
+            "text": "和他先互演一次，由你扮演可能卡住的學生",
+            "action": "導師已和他先互演一次，由你扮演可能卡住的學生",
+            "tradeoff": "占用備課空檔，成人模擬也不能完全代表學生"
+          },
+          {
+            "id": 4,
+            "text": "請他今天先觀察一組實際討論，將新版留待有根據時再用",
+            "action": "導師已請他今天先觀察一組實際討論，將新版留待有根據時再用",
+            "tradeoff": "他可能覺得再次被擋下，準備暫時派不上用場"
+          },
+          {
+            "id": 5,
+            "text": "把今天需要他承擔的協助逐項說清楚，讓他判斷是否接受",
+            "action": "導師已把今天需要他承擔的協助逐項說清楚，讓他判斷是否接受",
+            "tradeoff": "清楚需求可能沒有他期待的主帶機會"
+          },
+          {
+            "id": 6,
+            "text": "若他只想補償上次失誤，明說不必加碼，今天可照原核定分工進行",
+            "action": "導師已若他只想補償上次失誤，明說不必加碼，今天可照原核定分工進行",
+            "tradeoff": "他可能仍覺得沒有展現改變的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實很想看他的新招，申請把自己原要示範的一段讓給他，說明你也會坐下來當學習者",
+          "action": "導師已在合規協同範圍內與同事協議讓出本人示範段落，保留必要支援與學生照看，不額外派定未同意工作",
+          "tradeoff": "要調整你的進度，也可能發現新招仍不順"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1523920622
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4a236a9caccf383f37522c71c7595211915a82f1b66955342cfeb53ce99f6346"
+      },
+      "consequenceDirections": {
+        "A": "他能看見學生真正怎麼想，但需要明確說明觀察不是變相請他別來。",
+        "B": "同事不必用更多無償準備換取肯定，新的示例則得另外找合適用途。",
+        "C": "他能在清楚邊界內嘗試，卻未必立刻證明整份新版示例都有用。",
+        "D": "他取得正式且自願的主帶機會，你則不能因為是自己力薦就搶著替他補完。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0fa83cd2722fa2d2cd772d180f84c089de08bac4a485a137f1f0ead86dfefe4b",
+    "draftSha256": "3c3b46218cee014aaa4ce8c3859feeea0694996c388f63655540e566fb2467d3",
     "seedAssignmentVersion": 1
   }
 }

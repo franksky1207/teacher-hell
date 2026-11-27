@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf63a85c54405b611e121608294f5d26fbd3019aceb96ded5d945599f257ba7a",
+      "checkedAt": "2026-11-27T04:18:14.694Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先說明椅子原先的用途，再請他自願協助恢復安全座位",
+            "action": "導師已先說明椅子原先的用途，再請他自願協助恢復安全座位",
+            "tradeoff": "會讓同學知道你沒有先交代，他也可以不再代勞"
+          },
+          {
+            "id": 2,
+            "text": "等訪客到場後，請對方從獲准的位置中自行選座",
+            "action": "導師已等訪客到場後，請對方從獲准的位置中自行選座",
+            "tradeoff": "開場會多一段安排時間，也可能打亂原先動線"
+          },
+          {
+            "id": 3,
+            "text": "請學生說明平常怎麼判斷哪些椅子要收，和你核對容易誤會的情形",
+            "action": "導師已請學生說明平常怎麼判斷哪些椅子要收，和你核對容易誤會的情形",
+            "tradeoff": "會暫用課前時間，也可能發現不只今天交代不清"
+          },
+          {
+            "id": 4,
+            "text": "由你自己搬回需要的椅子，讓他先準備上課",
+            "action": "導師已由你自己搬回需要的椅子，讓他先準備上課",
+            "tradeoff": "你得處理眼前雜務，原定開場可能晚一點"
+          },
+          {
+            "id": 5,
+            "text": "與班務同學約定臨時移位要留下簡短用途與恢復時間，僅標必要資訊",
+            "action": "導師已與班務同學約定臨時移位要留下簡短用途與恢復時間，僅標必要資訊",
+            "tradeoff": "教師自己也得遵守，教室會多一些簡短標示"
+          },
+          {
+            "id": 6,
+            "text": "私下告訴他，指出是老師移動並不等於頂嘴，讓他選下次方便的提醒方式",
+            "action": "導師已私下告訴他，指出是老師移動並不等於頂嘴，讓他選下次方便的提醒方式",
+            "tradeoff": "學生不一定立即敢說，教師之後也須用反應證明"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再被自己那套座位順序綁住，徵得相關同學同意，把今天的訪談改成獲准空間裡一個小圓圈",
+          "action": "導師已在場地許可與安全條件下調整本次活動座位為小圓圈，不擅占他班空間或強迫學生搬動重物",
+          "tradeoff": "要重排安全動線，也可能少了前後整齊的座位"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 249686480
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "963b61a13eac16f2bb2c45a53a3683a76e1694828e8d3913de8c9917caf6e8fb"
+      },
+      "consequenceDirections": {
+        "A": "來客有位子可坐，學生卻不必靠猜老師眼神決定下一步。",
+        "B": "訪客不必坐教師指定的位置，學生也看見椅子不是永遠只能回原處。",
+        "C": "訪客與學生可以直接看見彼此，原先依賴固定位置的班務卻得暫時重做。",
+        "D": "復位工作能有較明確的依據，但不能期待一談完就涵蓋所有臨時變動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4a2093250c2151e35cfb03d72dfed6487407047946d04d586172d26cc339f088",
+    "draftSha256": "bf63a85c54405b611e121608294f5d26fbd3019aceb96ded5d945599f257ba7a",
     "seedAssignmentVersion": 1
   }
 }

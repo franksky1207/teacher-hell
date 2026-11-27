@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9007a89580c22d76eac94935314aefe469f9c39eb48d1a624b3ed139ad8aa372",
+      "checkedAt": "2026-11-27T04:18:14.693Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他先憑記憶補出自己能寫的部分，再一起找缺口",
+            "action": "導師已請他先憑記憶補出自己能寫的部分，再一起找缺口",
+            "tradeoff": "補出的內容可能不完整，也需要多花時間"
+          },
+          {
+            "id": 2,
+            "text": "提供任課教師准許使用的課程資料，讓他自行對照漏掉的段落",
+            "action": "導師已提供任課教師准許使用的課程資料，讓他自行對照漏掉的段落",
+            "tradeoff": "需要找到合適資料，學生可能仍看不出關鍵"
+          },
+          {
+            "id": 3,
+            "text": "請他自己決定要向同桌問哪一個問題，借閱方式由雙方同意",
+            "action": "導師已請他自己決定要向同桌問哪一個問題，借閱方式由雙方同意",
+            "tradeoff": "同桌可以拒絕，問題也未必一次問得明白"
+          },
+          {
+            "id": 4,
+            "text": "和他約定什麼情況先自己記、什麼情況主動求助，下一次照這個範圍試",
+            "action": "導師已和他約定什麼情況先自己記、什麼情況主動求助，下一次照這個範圍試",
+            "tradeoff": "需要再觀察，規則也可能得調整"
+          },
+          {
+            "id": 5,
+            "text": "安排他向任課老師核對一個最不懂的概念，筆記先不求補得漂亮",
+            "action": "導師已安排他向任課老師核對一個最不懂的概念，筆記先不求補得漂亮",
+            "tradeoff": "要配合授課者時間，空白暫時仍在"
+          },
+          {
+            "id": 6,
+            "text": "私下問疲勞是否仍影響今天其他課，提供適當且自願的健康協助",
+            "action": "導師已私下問疲勞是否仍影響今天其他課，提供適當且自願的健康協助",
+            "tradeoff": "可能談到不想公開的作息，筆記問題也不會當場解完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實很想直接替他補完，決定今天把自己整理好的答案先收進抽屜，陪他列出一張由他自己帶去問的問題單",
+          "action": "導師已暫不交付本人整理的完整答案，陪學生自擬問題單並安排可求助對象，未扣留他本有權取得的教材與必要協助",
+          "tradeoff": "你得忍著看空白，他也可能嫌寫問題比抄答案更累"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1267631111
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "a46a4a74421194a3876ae9906bc1907b1fa919a010cc6f9780bebfbc8cfeac6b"
+      },
+      "consequenceDirections": {
+        "A": "同儕支援變成具體請教，而非默認整段抄好交給他。",
+        "B": "教師能分辨是否需要額外照顧，不能把想自己記筆記一概當成硬撐。",
+        "C": "學生能把困難帶去主動詢問，若問不明白仍須重新找協助，不會憑一張單子就突然獨立。",
+        "D": "學習重點可能先接上，學生卻要接受本子沒有立刻恢復完整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "709d3671b68bdb3a5cc70baaf37a18beea8f8b5ae4d0cd74b7533532ec6d022e",
+    "draftSha256": "9007a89580c22d76eac94935314aefe469f9c39eb48d1a624b3ed139ad8aa372",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6df07321ff4b442e1643d078a9e72f6f7a1e23156da6803782d68f188ec30922",
+      "checkedAt": "2026-11-27T04:18:14.706Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說明你知道可以問價，但這次願意按標價支持熟識的攤商",
+            "action": "導師已說明你知道可以問價，但這次願意按標價支持熟識的攤商",
+            "tradeoff": "同事可能不認同這筆花費，也不能要求他往後照做"
+          },
+          {
+            "id": 2,
+            "text": "請他幫忙比較下一樣尚未購買的物品，先說好你的預算",
+            "action": "導師已請他幫忙比較下一樣尚未購買的物品，先說好你的預算",
+            "tradeoff": "會多走幾攤，也可能最後什麼都不買"
+          },
+          {
+            "id": 3,
+            "text": "問他平常怎麼開口詢價，只把這次當私人經驗交流",
+            "action": "導師已問他平常怎麼開口詢價，只把這次當私人經驗交流",
+            "tradeoff": "要聽完和自己不同的習慣，也未必馬上用得上"
+          },
+          {
+            "id": 4,
+            "text": "今天先各自逛，約好離開時是否聯絡，不勉強全程同行",
+            "action": "導師已今天先各自逛，約好離開時是否聯絡，不勉強全程同行",
+            "tradeoff": "失去一起閒聊的時間，對方可能覺得被婉拒"
+          },
+          {
+            "id": 5,
+            "text": "和他改逛不涉及購買的小吃展示與公共攤區，今天不再替彼此挑東西",
+            "action": "導師已和他改逛不涉及購買的小吃展示與公共攤區，今天不再替彼此挑東西",
+            "tradeoff": "可能錯過想買的物品，也須各付自己的花費"
+          },
+          {
+            "id": 6,
+            "text": "清楚告訴他可以提建議，但成交後不替你向店家追討折價",
+            "action": "導師已清楚告訴他可以提建議，但成交後不替你向店家追討折價",
+            "tradeoff": "說得直接可能有點掃興，他也可能本來就沒這個意思"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你忽然也想試一次他那種砍價法，請他陪你到下一個可議價的攤位，由你自己開口，對方拒絕就算了",
+          "action": "導師已邀同事自願陪同本人在尚未交易且可議價的攤位詢價，尊重店家拒絕，不重談已完成交易",
+          "tradeoff": "你可能緊張到說不出口，也可能被店家直接回絕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3436685155
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "dd5633ff98fa86e99a911ead142f4e845eadc9d5f096df12f315abe933ab135a"
+      },
+      "consequenceDirections": {
+        "A": "同事不必繼續為一句話道歉，你則可能發現殺價未必等於不體諒。",
+        "B": "他的經驗有具體用途，但你仍保留不採用推薦的權利。",
+        "C": "兩人能按自己的消費步調走，日後是否再約可能變得猶豫。",
+        "D": "兩人能把僵住的建議變成一次新嘗試，卻不保證省到錢或買得更滿意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2e35261e8dd34f780187f4aa5755e58d40e9f8dc1f4535d25a093005476da7c8",
+    "draftSha256": "6df07321ff4b442e1643d078a9e72f6f7a1e23156da6803782d68f188ec30922",
     "seedAssignmentVersion": 1
   }
 }

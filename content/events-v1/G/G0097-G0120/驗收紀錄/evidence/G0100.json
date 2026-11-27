@@ -19,25 +19,25 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "4e8c430e46fc386c941e364b90d9cf5b263d2dfd700ccb8d91a8bbe7c162c176",
-      "checkedAt": "2026-11-27T03:04:45.468Z",
+      "sourceVersion": "dd4f228f9bdaaceed61693c82d9621d176e8535021cb59bb71fd3ba90e4845f5",
+      "checkedAt": "2026-11-27T03:34:18.778Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
             "id": 1,
-            "text": "說清只走幾手，到點就停。",
+            "text": "先說好只走幾手，到時間就停。",
             "action": "導師已說清只走幾手，到點就停。",
             "tradeoff": "可試玩但未完局。"
           },
           {
             "id": 2,
-            "text": "另約無旁觀者的合意棋局。",
+            "text": "另約雙方方便、沒有人圍觀的一局。",
             "action": "導師已另約無旁觀者的合意棋局。",
             "tradeoff": "較安靜但需排時。"
           },
           {
             "id": 3,
-            "text": "接受這局並先約定旁人不代走。",
+            "text": "接受這局，先說好旁人不能代走。",
             "action": "導師已接受這局並先約定旁人不代走。",
             "tradeoff": "有挑戰但休息被占。"
           },
@@ -49,19 +49,19 @@
           },
           {
             "id": 5,
-            "text": "直接婉拒，保留今日獨處。",
+            "text": "直接婉拒，今天想自己休息。",
             "action": "導師已直接婉拒，保留今日獨處。",
             "tradeoff": "休息完整但同事可能掃興。"
           },
           {
             "id": 6,
-            "text": "請同事先問可參與者，你自行旁觀。",
+            "text": "請同事問其他人誰想下，你先看就好。",
             "action": "導師已請同事先問可參與者，你自行旁觀。",
             "tradeoff": "保留交友但自己少練。"
           }
         ],
         "emotionalCandidate": {
-          "text": "請同事先收棋，承認自己怕輸又怕被看，改邀他到校內合規空間散步。",
+          "text": "請他先收棋，承認自己怕輸又怕被看，改邀到校內能散步的地方走走。",
           "action": "導師已請同事先收棋，承認自己怕輸又怕被看，改邀他到校內合規空間散步。",
           "tradeoff": "保留交友卻放棄對弈，對方可能掃興。"
         },
@@ -81,7 +81,7 @@
           "C": 6,
           "D": "emotional"
         },
-        "optionsDigest": "280ef22673fa86de912d6bb84a77713de84e70870a53eed7de9412ca90b12016"
+        "optionsDigest": "5755871457e0b0e278c7ca66788c4d824bb66446138547b46e09e8f8cf5f07b1"
       },
       "consequenceDirections": {
         "A": "同事可接受或失望；時間可控。",
@@ -163,7 +163,13 @@
           }
         }
       ],
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／2026-11-27自然語言品質修正：逐篇核讀、修稿及語意複核（非獨立審查者）",
+      "languageRevision": {
+        "baseline": "141d253f624ae83d27a383367789e9c0c55e9c64",
+        "scope": "自然語言完整核讀；開場敘事與候選顯示文字定向潤飾，實質行動及原抽選維持，另有實質修正時記於抽選歷史。",
+        "reviewer": "Codex／本輪完整核讀開場、人物對話、七候選及最終四選項，對照原客觀行動、知情與代價作語意複核",
+        "reviewedAt": "2026-11-27T03:34:18.777Z"
+      }
     },
     "stage2": {
       "status": "not_started",
@@ -184,7 +190,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4e8c430e46fc386c941e364b90d9cf5b263d2dfd700ccb8d91a8bbe7c162c176",
+    "draftSha256": "dd4f228f9bdaaceed61693c82d9621d176e8535021cb59bb71fd3ba90e4845f5",
     "seedAssignmentVersion": 1
   }
 }

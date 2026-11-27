@@ -15,14 +15,155 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6732af35874ecee98889b5b40cbb4b296a81f1c667eba189896a5945906c4ef8",
+      "checkedAt": "2026-11-27T15:12:48.823Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原課務由成人接設備，他這節不額外測。",
+            "action": "導師已停止本人本節非必要學生測試需求，維持原成人必要設備接續。",
+            "tradeoff": "他可能怕失職"
+          },
+          {
+            "id": 2,
+            "text": "保留一項原校規允許的低風險測試，完成就停，不連測三遍。",
+            "action": "導師已限縮本次非必要低風險班務測試範圍，不授設備管理或維修權。",
+            "tradeoff": "他可能還想確認"
+          },
+          {
+            "id": 3,
+            "text": "向原資訊窗口申請正式技術檢查，不讓他當保固。",
+            "action": "導師已提出既有設備技術支持需求，未取得服務或修復結果。",
+            "tradeoff": "可能要等"
+          },
+          {
+            "id": 4,
+            "text": "這節採原合法不投影的報告方式，不加設備試驗。",
+            "action": "導師已在可調一般教學範圍採有限非投影替代，不新增練習負擔。",
+            "tradeoff": "少了畫面"
+          },
+          {
+            "id": 5,
+            "text": "將原可公開操作步驟給報告者自願先看，成人仍接必要部分。",
+            "action": "導師已提供校方既有有限操作資訊，不授同學管理權或取得理解結果。",
+            "tradeoff": "需要時間"
+          },
+          {
+            "id": 6,
+            "text": "他若願，私下只說最怕哪一種失敗，我不當場考設備。",
+            "action": "導師已提出有限自願擔憂回饋邀請，未取得參與或心理診斷。",
+            "tradeoff": "可能仍說不出來"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己開不了就出糗，乾脆拿紙寫一個明說是假設的斷線情況，請他若願意只說下一步找誰；這回不用他替機器保證。",
+          "action": "導師已以本人自製無識別紙例提出有限自願故障接續口述模擬，不操作真設備、未取得參與或認定實際故障。",
+          "tradeoff": "老師也得把不會處理的地方攤開，課內彈性少一段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1680872763
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "245e75545791bec3b7b65e3850e89d896977ee1e55bbdfe064335c244adc10c9"
+      },
+      "consequenceDirections": {
+        "A": "可保報告權益，不能擅改正式評量要求。",
+        "B": "可聽具體焦慮，不以談話取代技術保障。",
+        "C": "可減焦慮，不把接回當處罰。",
+        "D": "新紙上假情境只練依法求助與原備援，不與真設備測試或成人操作相同，不拿模擬結果當技術安全證明。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒教師接當節設備仍可能被普通1成人接設備涵蓋；改為明示虛構的紙上故障接續情境。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "原課務由成人接設備，他這節不額外測。",
+                "action": "導師已停止本人本節非必要學生測試需求，維持原成人必要設備接續。",
+                "tradeoff": "他可能怕失職"
+              },
+              {
+                "id": 2,
+                "text": "保留一項原校規允許的低風險測試，完成就停，不連測三遍。",
+                "action": "導師已限縮本次非必要低風險班務測試範圍，不授設備管理或維修權。",
+                "tradeoff": "他可能還想確認"
+              },
+              {
+                "id": 3,
+                "text": "向原資訊窗口申請正式技術檢查，不讓他當保固。",
+                "action": "導師已提出既有設備技術支持需求，未取得服務或修復結果。",
+                "tradeoff": "可能要等"
+              },
+              {
+                "id": 4,
+                "text": "這節採原合法不投影的報告方式，不加設備試驗。",
+                "action": "導師已在可調一般教學範圍採有限非投影替代，不新增練習負擔。",
+                "tradeoff": "少了畫面"
+              },
+              {
+                "id": 5,
+                "text": "將原可公開操作步驟給報告者自願先看，成人仍接必要部分。",
+                "action": "導師已提供校方既有有限操作資訊，不授同學管理權或取得理解結果。",
+                "tradeoff": "需要時間"
+              },
+              {
+                "id": 6,
+                "text": "他若願，私下只說最怕哪一種失敗，我不當場考設備。",
+                "action": "導師已提出有限自願擔憂回饋邀請，未取得參與或心理診斷。",
+                "tradeoff": "可能仍說不出來"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也很想一切順到不用管，這次自己站在原成人操作位接一節；真斷線就由我照備案換，不叫他用整個下課替我保證。",
+              "action": "導師已在本人原設備使用資格及課務範圍安排當節有限操作接續，不維修、保證連線或免其他必要照看。",
+              "tradeoff": "自己少巡看時間，還可能當場卡住"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 262336604
+            },
+            "selectedIds": [
+              6,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 4,
+              "D": 5
+            },
+            "optionsDigest": "83010b62ee735892ed62fdb8512a5f6c475f4671510b17a44643f7c79628fb98"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師承擔當節具體設備接續，不越技術權限，與停止學生測試不同在本人在場操作安排。",
+            "B": "可聽具體焦慮，不以談話取代技術保障。",
+            "C": "可保報告權益，不能擅改正式評量要求。",
+            "D": "可減只靠一人，資訊不等所有人會用。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e63e5634526d5a6801d26c791cb2ae2d0ff0322c0ace090a1438fdab6e7e725",
+    "draftSha256": "6732af35874ecee98889b5b40cbb4b296a81f1c667eba189896a5945906c4ef8",
     "seedAssignmentVersion": 1
   }
 }

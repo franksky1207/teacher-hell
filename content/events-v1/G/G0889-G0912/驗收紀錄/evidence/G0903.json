@@ -16,14 +16,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ff485ddb60b826009b2db7aa3e8d4a97333dc38527dd25940cafc7cc757c41e4",
+      "checkedAt": "2026-11-27T15:12:48.833Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本段用原正確教法繼續，不另比較版本。",
+            "action": "導師已維持本人原合法教學方式，不撤學生正常提問權。",
+            "tradeoff": "他可能覺得質疑沒被聽"
+          },
+          {
+            "id": 2,
+            "text": "把兩種正確可行路徑並排，明示原漏步已補正。",
+            "action": "導師已在授課範圍提供有限正確方法比較，不重新散布未更正版。",
+            "tradeoff": "花課內彈性"
+          },
+          {
+            "id": 3,
+            "text": "他願意的話，私下只問一處最難懂的老師步驟。",
+            "action": "導師已提出有限自願教學困難回饋邀請，未取得參與或理解結果。",
+            "tradeoff": "其他同學未同步聽"
+          },
+          {
+            "id": 4,
+            "text": "以教師自編中性反例練條件判斷，不用他的紙。",
+            "action": "導師已安排有限無識別概念練習，不公開學生原稿。",
+            "tradeoff": "少了原作者參與"
+          },
+          {
+            "id": 5,
+            "text": "原班務只保留收發，不再請學生轉達答案。",
+            "action": "導師已停止本人非必要學生答案轉發需求，維持原合法收發。",
+            "tradeoff": "他少一項能幹位置"
+          },
+          {
+            "id": 6,
+            "text": "讓各人自願寫一個仍未懂的條件，我在原課內選共通部分回。",
+            "action": "導師已提供有限自願疑問蒐集方式，不承諾全答或改正式評量。",
+            "tradeoff": "回得不完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點不服被嫌繞，讓他自願挑我一個真正多餘的步驟；找到了我就從自己下一份示例刪掉，不讓學生只負責替我抄。",
+          "action": "導師已提出限本人有權示例的有限自願刪步檢視及修改承諾，未取得挑錯結果或改完新稿。",
+          "tradeoff": "可能真的被挑中，還要自己改稿"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2283856000
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "58caf77855d6eae531a849f9cc9a24306e9e0292399f8dbc74cb7e16bfd76caa"
+      },
+      "consequenceDirections": {
+        "A": "可接多方需要，不加必交負擔。",
+        "B": "可補概念，不借隱名仍可識別細節羞辱。",
+        "C": "教師接受本人方法被具體修訂，不以輸贏留已知錯誤或要求公開辯倒。",
+        "D": "可回本人困難，不逼公開認錯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0d77135a014a1427773038a6406eaf19fb9aac8cea383c31948fbb2da39a05b7",
+    "draftSha256": "ff485ddb60b826009b2db7aa3e8d4a97333dc38527dd25940cafc7cc757c41e4",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "686e11fbca05e878386061bffce8d3d596c63925a5897249ec463fcdec4446b2",
+      "checkedAt": "2026-11-27T15:12:48.840Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由原正式安全電子管道提供正確資訊，不另送紙。",
+            "action": "導師已透過原合法管道提供有限修正學習資訊，不新增送件或取得閱讀結果。",
+            "tradeoff": "讀紙習慣不符"
+          },
+          {
+            "id": 2,
+            "text": "依原校方允許方式補正紙件，再由正式接續交付。",
+            "action": "導師已提出限原權限的正確紙件製作及交接需求，未完成送達。",
+            "tradeoff": "要等重製"
+          },
+          {
+            "id": 3,
+            "text": "若雙方及必要家長同意且安全可行，受理他的有限自願帶件。",
+            "action": "導師已提出需原規範及相關同意的有限帶件方案，未取得同意、地址或交付。",
+            "tradeoff": "可能被拒，也用他的時間"
+          },
+          {
+            "id": 4,
+            "text": "同學健康可行再按原課內方式補回必要部分，不追加當日任務。",
+            "action": "導師已提供原健康條件下有限學習接續方案，不要求當日病中完成。",
+            "tradeoff": "進度較慢"
+          },
+          {
+            "id": 5,
+            "text": "只請熱心學生自願核對自己已傳筆記是否含舊題，必要更正由成人接。",
+            "action": "導師已提出有限自願本人傳送內容核對邀請，未取得資料或完成全範圍修正。",
+            "tradeoff": "要再看一遍"
+          },
+          {
+            "id": 6,
+            "text": "這次不再請學生搬送，原成人依法安排可行交接。",
+            "action": "導師已停止本人非必要學生帶件需求，提出原成人交接接續，不宣稱已送達。",
+            "tradeoff": "成人要多做"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點不好意思讓他空袋等，自己在原工作允許時間先把修正頁整理好，再問他願不願只在校內幫我裝訂正確版本；不讓他替我跑病人家。",
+          "action": "導師已在原教學權限製作有限正確修正頁並提出自願校內裝訂邀請，未取得參與或完成交付。",
+          "tradeoff": "自己少空檔，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3281511210
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "1f4be95f8cab246b7c95b3bf9fff2cff1e451503e54e08c2b9bf818b4dfcb57f"
+      },
+      "consequenceDirections": {
+        "A": "可保角色，不把停止送件當罰熱心。",
+        "B": "可顧健康，不能因此無限拖必要支持。",
+        "C": "可補線索，不讓他替教師全權更正。",
+        "D": "教師親自製作新可用材料、提出有限安全校內協作，不以裝訂當送達或健康改善。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "89c21187ad372ca139d3b65cc6581a196a6bf09a6cc05032a2ee577652b7ea5b",
+    "draftSha256": "686e11fbca05e878386061bffce8d3d596c63925a5897249ec463fcdec4446b2",
     "seedAssignmentVersion": 1
   }
 }

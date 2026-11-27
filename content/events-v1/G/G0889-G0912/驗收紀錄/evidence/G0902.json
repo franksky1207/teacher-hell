@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "97fea81c17a1c10ecb3e98b17c395ac52e2fff1c67a89eb45bf643f028bb5477",
+      "checkedAt": "2026-11-27T15:12:48.833Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只圈一處最影響理解的問題，不直接改句。",
+            "action": "導師已在原允許指導範圍提供有限問題標記，不代寫或保證評審結果。",
+            "tradeoff": "其他亂處還在"
+          },
+          {
+            "id": 2,
+            "text": "用原可用空檔請他口頭講目的，我只追問一個缺口。",
+            "action": "導師已提出限原允許範圍的有限指導問答邀請，未取得參與或完成改稿。",
+            "tradeoff": "可能得重講"
+          },
+          {
+            "id": 3,
+            "text": "幫他把原段落標成結構圖，不補新內容。",
+            "action": "導師已在合法權限作有限原文結構標記，不新增企劃內容。",
+            "tradeoff": "要時間"
+          },
+          {
+            "id": 4,
+            "text": "這次婉拒額外看稿，原正式支持資訊照常提供。",
+            "action": "導師已婉拒本人非必要額外審稿邀請，不撤必要職務協作。",
+            "tradeoff": "同事可能失望"
+          },
+          {
+            "id": 5,
+            "text": "向原競賽承辦詢問既有指導支援，不替人承諾。",
+            "action": "導師已提出現有合法競賽支援查詢，未取得人力或授權。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 6,
+            "text": "請同事依原程序申請工作重排，我不替他填評分或進度。",
+            "action": "導師已提供既有工作調整管道資訊，不代申請或核准。",
+            "tradeoff": "要承認負荷"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看看自己是不是真有他說的專業，拿自己一段無關本案的短文作結構示範；他的學生稿不由我接寫。",
+          "action": "導師已製作本人有權使用的有限虛構結構示例，不代寫學生企劃或取得採用。",
+          "tradeoff": "自己要多做，示範也可能不好懂"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3845336651
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "5007fe983a0e98a6d7e07bc4adf481b8cd288ebf6a352d19976045f98dbe1a7d"
+      },
+      "consequenceDirections": {
+        "A": "可有限回饋，不把一圈當全稿已合格。",
+        "B": "可守負荷，不把拒絕當學生不值得。",
+        "C": "教師提供新自有例子，不取代競賽作者工作或保證同事照做有效。",
+        "D": "可找邏輯，不要求學生替教師說服。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6f85eb290b4f7a10d6115c350614cc03e2cdf855fad2a50e24ed46d3f95bee36",
+    "draftSha256": "97fea81c17a1c10ecb3e98b17c395ac52e2fff1c67a89eb45bf643f028bb5477",
     "seedAssignmentVersion": 1
   }
 }

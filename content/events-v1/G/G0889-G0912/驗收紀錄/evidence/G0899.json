@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e38f91ed68821102b0121ae093ad42b4cf875074c9b0dd82423931be0a074553",
+      "checkedAt": "2026-11-27T15:12:48.831Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原耳機規範維持，不新增全班試用。",
+            "action": "導師已維持原合法一般安排，不新增設備使用或取消必要個別支持。",
+            "tradeoff": "他會失望"
+          },
+          {
+            "id": 2,
+            "text": "在原可調短段用現有教室時計分段讀書，不播聲。",
+            "action": "導師已在本人權限安排有限無聲分段練習，不新增學生私機使用。",
+            "tradeoff": "沒有白噪音那一半"
+          },
+          {
+            "id": 3,
+            "text": "向原課務權責提出有限自願試用評估，不先答應。",
+            "action": "導師已提出需校規及可及條件允許的有限試用申請，未獲准或上機。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 4,
+            "text": "請他自願用假例畫方法，不公開自己的私人學習紀錄。",
+            "action": "導師已提出有限自願方法說明邀請，未取得作品或參與。",
+            "tradeoff": "少了實測說服力"
+          },
+          {
+            "id": 5,
+            "text": "提供既有合法學習方法資訊讓大家自選，不增加作業。",
+            "action": "導師已提供現有有限自願學習資訊，不交付新必做量。",
+            "tradeoff": "不一定有人照做"
+          },
+          {
+            "id": 6,
+            "text": "這段改成各人原可用方式安靜學習，不統一計時。",
+            "action": "導師已停止本人非必要統一方法要求，維持原合法自主學習範圍。",
+            "tradeoff": "看不到共同實驗"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道自己是不是一直分心，這小段我和願意的人各自紙上記一次分心，不比成績；不讓他替我當宣傳大使。",
+          "action": "導師已安排本人有限非敏感分心自記並提出自願參與，不取得資料或證實方法優劣。",
+          "tradeoff": "老師可能最常走神，還花可調時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2295475828
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "73fd787d9a3df9c321ee2d1bee04ee844f5b44c5bfc551ec7796d8602f1a766d"
+      },
+      "consequenceDirections": {
+        "A": "可說步驟，不以個人成功強加全班。",
+        "B": "教師自願投入新的自我觀察，不與普通無聲計時同動作，不收私人內容或硬比效果。",
+        "C": "可守合法規則，不忽略需要合理調整者。",
+        "D": "可查條件，不要求每人戴耳機。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c98aa2392134ac7d797af675d33628d29e2cfd2c76be22b2fedd47a359e0543",
+    "draftSha256": "e38f91ed68821102b0121ae093ad42b4cf875074c9b0dd82423931be0a074553",
     "seedAssignmentVersion": 1
   }
 }

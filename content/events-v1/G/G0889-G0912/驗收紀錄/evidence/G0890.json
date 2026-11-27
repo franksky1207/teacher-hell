@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3265052df84fb4f8254c037ec59a0f954d63555a7d9265ad3903140603e9a0ea",
+      "checkedAt": "2026-11-27T15:12:48.822Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請原設施人員確認適用位置再用，不自己施工。",
+            "action": "導師已提出原設施評估及使用需求，未取得核准或完成施工。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 2,
+            "text": "這次不領用這批，維持已核可安全接續。",
+            "action": "導師已婉拒本人未核定物資領用，維持必要安全處理，不私棄校產。",
+            "tradeoff": "他可能更不滿"
+          },
+          {
+            "id": 3,
+            "text": "請原主管協調物資分配，不讓最後幾捲只按私下關係決定。",
+            "action": "導師已提出限原權責的物資配置確認，未核定分配或移轉。",
+            "tradeoff": "程序更慢"
+          },
+          {
+            "id": 4,
+            "text": "提供本人看見的積水位置給承辦，不另推原因。",
+            "action": "導師已提交有限非敏感位置資訊，不判定設施原因或施工方式。",
+            "tradeoff": "還沒有新設備"
+          },
+          {
+            "id": 5,
+            "text": "向原權責查是否已有其他核准防滑措施，不疊加未知材料。",
+            "action": "導師已查詢既有核可設施措施，不自行施工或保證效果。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 6,
+            "text": "本次只完成必要工作聯繫，不在桌邊重談上次抽檢。",
+            "action": "導師已停止本人非必要舊事爭辯，維持原必要資訊與配合。",
+            "tradeoff": "舊氣還在"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句針對刺到，私下提出上次我確實沒接好的部分，請他給我一個原正式補正時點；不拿這幾捲當和解交換。",
+          "action": "導師已提出本人前次工作缺漏的有限正式補正需求，未取得時點、原諒或本次施工核准。",
+          "tradeoff": "得承認自己失誤，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 435180663
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "376799b1b876295ad28917c5c699e6978bde7f3d16268fd5688d92ff9eb87c76"
+      },
+      "consequenceDirections": {
+        "A": "可不亂用，不把拒領當可放任原濕滑。",
+        "B": "可保公平，不擅調給別班。",
+        "C": "教師主動處理前次具體工作缺口，不將道歉當本次安全保障或要求他放下不滿。",
+        "D": "可查可用方案，查詢不等改善已到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3fc5cd369620f72db8ce784e31bd95517ad674bfe5a4c2613ff03db9778bca13",
+    "draftSha256": "3265052df84fb4f8254c037ec59a0f954d63555a7d9265ad3903140603e9a0ea",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd773a5b40bed772f31d6c67c18589ee47a0e95fd5bf6e2a3171cd3047879191",
+      "checkedAt": "2026-11-27T15:12:48.823Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次只提出自己最可行的一套，讓大家依真實條件決定。",
+            "action": "玩家已提出本人有限單一流程建議，未取得共同定案或訂位。",
+            "tradeoff": "有人會不滿"
+          },
+          {
+            "id": 2,
+            "text": "把兩套原稿都交有權家人，請他們自行決定，我不再合稿。",
+            "action": "玩家已提出原權利範圍的有限籌備交接，未取得他人承接同意或定案。",
+            "tradeoff": "失去漂亮成品的掌握"
+          },
+          {
+            "id": 3,
+            "text": "原聚會必要資訊留著，非急節目先不排。",
+            "action": "玩家已停止本人未定的非必要節目細排，保留原必要資訊與他人已定權益。",
+            "tradeoff": "氣氛比較平淡"
+          },
+          {
+            "id": 4,
+            "text": "詢問親戚願不願自己做合稿，我只核對自己答應的那段。",
+            "action": "玩家已提出限本人原責任範圍的自願合稿協作邀請，未取得同意或成品。",
+            "tradeoff": "可能又聽抱怨"
+          },
+          {
+            "id": 5,
+            "text": "今晚停止非急籌備，明確給一個本人可回覆的既有空檔。",
+            "action": "玩家已暫停本人當晚非急籌備並提出有限回覆時點，不承諾合稿或變動他人行程。",
+            "tradeoff": "他們要等"
+          },
+          {
+            "id": 6,
+            "text": "用一張簡表列清兩套差異，這次不再做第三套。",
+            "action": "玩家已製作本人可用的有限方案差異說明，不取得選擇同意或新增預約。",
+            "tradeoff": "還得整理，也可能更難選"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我這次不想再撐整場好看，提出退出所有非必要籌備，只依原同意當普通出席者；該有的照顧仍接好，別再找我合第三版。",
+          "action": "玩家已向原親友提出本人退出非必要整體籌備、保留原正常出席的意願，未取得替任或更動他人約定，必要照顧依原安排接續。",
+          "tradeoff": "親戚可能認為賭氣，聚會也可能沒人願統籌"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1494448525
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "1be08b05d46323c57cd6db119ba6c985fad5e9c1e41205c83783c44da0b0d28a"
+      },
+      "consequenceDirections": {
+        "A": "與普通2只交稿停止合稿不同在退出整體非必要協調，需如實完成本人原應有交接，不能將必要照護一起丟下。",
+        "B": "可限未定內容，不擅取消他人已確認安排。",
+        "C": "可有資訊，不替所有人決策。",
+        "D": "可分工，邀請不等已接手。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒退出未定主持欠缺原情境已存在主持角色的支撐；改為直接承接原確有的整體籌備退出提議。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次只提出自己最可行的一套，讓大家依真實條件決定。",
+                "action": "玩家已提出本人有限單一流程建議，未取得共同定案或訂位。",
+                "tradeoff": "有人會不滿"
+              },
+              {
+                "id": 2,
+                "text": "把兩套原稿都交有權家人，請他們自行決定，我不再合稿。",
+                "action": "玩家已提出原權利範圍的有限籌備交接，未取得他人承接同意或定案。",
+                "tradeoff": "失去漂亮成品的掌握"
+              },
+              {
+                "id": 3,
+                "text": "原聚會必要資訊留著，非急節目先不排。",
+                "action": "玩家已停止本人未定的非必要節目細排，保留原必要資訊與他人已定權益。",
+                "tradeoff": "氣氛比較平淡"
+              },
+              {
+                "id": 4,
+                "text": "詢問親戚願不願自己做合稿，我只核對自己答應的那段。",
+                "action": "玩家已提出限本人原責任範圍的自願合稿協作邀請，未取得同意或成品。",
+                "tradeoff": "可能又聽抱怨"
+              },
+              {
+                "id": 5,
+                "text": "今晚停止非急籌備，明確給一個本人可回覆的既有空檔。",
+                "action": "玩家已暫停本人當晚非急籌備並提出有限回覆時點，不承諾合稿或變動他人行程。",
+                "tradeoff": "他們要等"
+              },
+              {
+                "id": 6,
+                "text": "用一張簡表列清兩套差異，這次不再做第三套。",
+                "action": "玩家已製作本人可用的有限方案差異說明，不取得選擇同意或新增預約。",
+                "tradeoff": "還得整理，也可能更難選"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我實在不想再說可以，直接回自己這次不主持，只負責原答應且能做完的聯絡；漂不漂亮讓別人接，我也想坐著吃。",
+              "action": "玩家已提出本人退出未定非必要主持的意願並限定既有可行聯絡責任，未取得替任或改全家安排。",
+              "tradeoff": "像賭氣，親戚也可能沒人願接"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3661642609
+            },
+            "selectedIds": [
+              6,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 6,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "726768b6b248ec78d300c55f6598f731100f643c9efedc26e4813b8f56329249"
+          },
+          "previousConsequenceDirections": {
+            "A": "可限本人投入，不代全家同意。",
+            "B": "可有資訊，不替所有人決策。",
+            "C": "可限未定內容，不擅取消他人已確認安排。",
+            "D": "玩家撤回尚未正式定案的非必要主持意願，原必要責任照實交接，不把取消自己角色當取消全家聚會。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d172d355ffae0b54266cd76e4fd6193f474e21158e920c85c1471a21dbbf742a",
+    "draftSha256": "dd773a5b40bed772f31d6c67c18589ee47a0e95fd5bf6e2a3171cd3047879191",
     "seedAssignmentVersion": 1
   }
 }

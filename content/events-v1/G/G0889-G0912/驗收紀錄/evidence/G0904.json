@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2999976ea553db1aa59f1712361c6a3bc9f0a2ed8b00031ee3f15916090469f9",
+      "checkedAt": "2026-11-27T15:12:48.834Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原程序申請可行短時段，健康允許再共同跑。",
+            "action": "導師已提出有限共同跑步時段申請，未獲准、取得參與同意或完成圈數。",
+            "tradeoff": "要等且可能分段"
+          },
+          {
+            "id": 2,
+            "text": "與他協商改為原安全範圍的共同散步，不單方替換。",
+            "action": "導師已提出需本人自願的有限履行替代邀請，未取得同意或完成。",
+            "tradeoff": "不是他原來想的跑"
+          },
+          {
+            "id": 3,
+            "text": "依可行條件提議分次完成，不趕一次五圈。",
+            "action": "導師已提出限原合法時段的有限分段履行方案，未核准或實際跑完。",
+            "tradeoff": "等待拉長"
+          },
+          {
+            "id": 4,
+            "text": "請原有權者確認是否可在原運動時段加入一次有限陪練，不占別課。",
+            "action": "導師已提出限原運動權責的有限共同參與需求，未取得核准或改課。",
+            "tradeoff": "不一定有條件"
+          },
+          {
+            "id": 5,
+            "text": "目前確無可行條件時如實回覆，請原正常親師管道共同協商，不再添新獎勵。",
+            "action": "導師已提出原管道有限承諾協商需求並說明已知限制，未免履行或確定新約。",
+            "tradeoff": "他可能覺得被拖"
+          },
+          {
+            "id": 6,
+            "text": "讓他自願提出兩個本人真的可行的時段，再交原權責評估。",
+            "action": "導師已提出有限自願可行時段詢問，未取得資料、核准或約定成立。",
+            "tradeoff": "還要再等"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是怕跑到最後被他笑，提議這回他若願意只當原安全處的計圈觀察者，圈數由我依體能分段跑；不要他陪我證明還年輕。",
+          "action": "導師已提出需自願及正式允許的本人跑步、學生有限觀察替代方案，未取得同意或完成圈數。",
+          "tradeoff": "共同跑的樂趣沒了，我也可能跑不完"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4279303057
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "5a5cd89d7b73223fcbbbc176df128072de6275853e03bd1c849bd4245773978a"
+      },
+      "consequenceDirections": {
+        "A": "可顧體能，不讓分次超過校規或成新故事追蹤。",
+        "B": "教師提出不同角色的可拒絕替代，須本人及原規範同意，不假稱已履約或把學生當安全照看成人。",
+        "C": "可有陪伴，未同意原承諾不算已結。",
+        "D": "可履約，不用申請當場地已准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e3187438165d0eb8df156a06f04b1ca0ab161b25d9bfa2400e402eb61b5c5c40",
+    "draftSha256": "2999976ea553db1aa59f1712361c6a3bc9f0a2ed8b00031ee3f15916090469f9",
     "seedAssignmentVersion": 1
   }
 }

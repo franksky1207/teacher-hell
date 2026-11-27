@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1d88a2f9ef8dc5fe2009013d6d4576b89a8d24556a46b0207940059fa0dc6e8b",
+      "checkedAt": "2026-11-27T15:12:48.832Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把原已核實部分依規交付，未定另按原時限補。",
+            "action": "導師已按必要知情交付原可確認的有限資訊並明列待核，不虛構完整。",
+            "tradeoff": "他得看兩次"
+          },
+          {
+            "id": 2,
+            "text": "用原核准安全電子管道給同一份正式資訊，不讓他拿紙等。",
+            "action": "導師已透過原合法管道提出有限資訊交接，不擴大資料收受權或保證讀取。",
+            "tradeoff": "他得改取用習慣"
+          },
+          {
+            "id": 3,
+            "text": "向原權責申請調整非急交件時點，先回真實狀況。",
+            "action": "導師已提出有限交件時程調整需求，未獲准或免必要通知。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 4,
+            "text": "請原有權窗口接續本案確認，不請科任留下等。",
+            "action": "導師已提出既有正式窗口接續需求，未取得承接或完整資料。",
+            "tradeoff": "要多一個聯繫"
+          },
+          {
+            "id": 5,
+            "text": "在原可用時段自己完成最後一項合法核對，請他照原行程走。",
+            "action": "導師已承接本人職權內有限末項核對，不宣稱取得尚未核實結果或延他人時間。",
+            "tradeoff": "自己午休少"
+          },
+          {
+            "id": 6,
+            "text": "今天不加其他協作問題，只完成原必要交接。",
+            "action": "導師已停止本人非必要午間追加協作需求，維持原正式交接。",
+            "tradeoff": "少了順便商量的方便"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把那句說好的守住，下一次這類名單由我在約定前依原流程送到他的正式收件處，不再讓他站桌旁提醒。",
+          "action": "導師已在本人可行工作範圍承諾下次按原正式管道主動交接，未宣稱文件已送或所有內容已核。",
+          "tradeoff": "自己得提早排時間，也不能保證未定資訊變定案"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3889973587
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "495ae8ee1390788f2bfc9364793f5eb9b1c40905d91c8ce0eb6c9de6ac91b60e"
+      },
+      "consequenceDirections": {
+        "A": "可守約，不因此省必要內容。",
+        "B": "可重排，不單方拖延承諾。",
+        "C": "可承擔工作，不以趕快亂核。",
+        "D": "教師作有限未來主動交件承諾，不代替當次必要查核或承諾未知名單。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1f0d6e0a1e3530eae098a2e29b129fec46a7aadccc9ccc12cc7dc30479c9c64e",
+    "draftSha256": "1d88a2f9ef8dc5fe2009013d6d4576b89a8d24556a46b0207940059fa0dc6e8b",
     "seedAssignmentVersion": 1
   }
 }

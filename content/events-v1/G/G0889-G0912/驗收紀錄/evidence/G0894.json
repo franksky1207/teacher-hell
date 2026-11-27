@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b6929d34303eb08b152cffa889102aafcec0975e0fb38688768a18d610b7104",
+      "checkedAt": "2026-11-27T15:12:48.825Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不試私人工具，維持原正式記錄。",
+            "action": "導師已婉拒本人非必要私人工具試用，維持原合法紀錄。",
+            "tradeoff": "他的心力沒用上"
+          },
+          {
+            "id": 2,
+            "text": "用教師自編假資料作一次離線測試，不含真名。",
+            "action": "導師已在原允許設備範圍安排有限無識別離線測試，不輸入真資料或核准上線。",
+            "tradeoff": "只知道部分功能"
+          },
+          {
+            "id": 3,
+            "text": "把功能提案送原資訊權責評估，不先安裝使用。",
+            "action": "導師已提出有限正式功能評估需求，未獲准或取得服務。",
+            "tradeoff": "可能等很久"
+          },
+          {
+            "id": 4,
+            "text": "請他自願只畫步驟給我，不交原檔也不負責維護。",
+            "action": "導師已提出有限自願流程說明邀請，未取得檔案或新增班務。",
+            "tradeoff": "看不到自動跑"
+          },
+          {
+            "id": 5,
+            "text": "向校方查現有核准工具是否已有相同功能。",
+            "action": "導師已查詢既有正式工具資訊，不取得新系統或匯入資料。",
+            "tradeoff": "可能沒有"
+          },
+          {
+            "id": 6,
+            "text": "只調整我自己重抄的非必要紙面統計，不改原正式紀錄。",
+            "action": "導師已在本人權限停止非必要重複抄記，維持正式資料原流程。",
+            "tradeoff": "還是手動"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不想再裝成什麼都會，問他願不願只用假表教我看一個公式；學的是我，不讓他以後替我修整套。",
+          "action": "導師已提出限假資料的有限自願公式教學邀請，未取得參與、檔案或正式使用許可。",
+          "tradeoff": "老師可能一直問笨問題，也占他的自願時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4040989284
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "df6bfc9f8a19965d15c13c3c081ead943c39e8863f1ca5a5939911958f21d554"
+      },
+      "consequenceDirections": {
+        "A": "教師承接本人學習角色與負擔，不與測功能相混，不索真資料或免費維護。",
+        "B": "可看方法，不等正式系統合格。",
+        "C": "可說設計，不將分享變程式代工。",
+        "D": "可找正式資源，查詢不是取得帳號或授權。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2b4c08a35c0bb4a5982862050c7bddb6b2ed17a0339f3521c589e8b447014d32",
+    "draftSha256": "2b6929d34303eb08b152cffa889102aafcec0975e0fb38688768a18d610b7104",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "81132612579ebca44adce2edd67b6de13abcf220b71811f3fc52dbae3e925174",
+      "checkedAt": "2026-11-27T15:12:48.829Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只走原校內助學評估，不接受本次私下指定供款。",
+            "action": "導師已婉拒本人非必要指定私援，維持原必要支持與合法助學途徑。",
+            "tradeoff": "善意暫時沒去處"
+          },
+          {
+            "id": 2,
+            "text": "向原助學窗口詢問是否能合法受理不指定受助者的捐助。",
+            "action": "導師已查詢既有合法非指定捐助方式，未取得款項或核准。",
+            "tradeoff": "他無法確保幫這位"
+          },
+          {
+            "id": 3,
+            "text": "先請原適任者依法與本人及監護人確認需求，不提私人出資者。",
+            "action": "導師已提出限必要知情的需求確認接續，未取得意願、資料或配鏡。",
+            "tradeoff": "需等意願"
+          },
+          {
+            "id": 4,
+            "text": "提供原正式助學資訊給出資家長，不讓他追個案。",
+            "action": "導師已提供現有合法捐助資訊，不透露個案或授追蹤權。",
+            "tradeoff": "沒有他想的即時成果"
+          },
+          {
+            "id": 5,
+            "text": "若需求與意願確認，再向原權責申請符合選店自主的支持方案。",
+            "action": "導師已提出以需求意願及合法自主為前提的方案評估需求，未核准或完成援助。",
+            "tradeoff": "不一定准，也要等待"
+          },
+          {
+            "id": 6,
+            "text": "本次不接名片代辦，由原家長自行決定是否正式捐助。",
+            "action": "導師已拒絕本人非必要指定店家代辦角色，不收款或安排離校。",
+            "tradeoff": "他可能失望"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想快點幫到，但不想孩子欠我一副眼鏡，自己把原可公開的助學路徑整理成一般資訊給全班，不讓誰被點出來。",
+          "action": "導師已製作並提供本人有權公開的有限一般助學資訊，不揭個案或保證取得補助。",
+          "tradeoff": "得多整理，當事人也未必使用"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1182414551
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "16bb0141fe0a43fd4cef0a42828159a803f077e36914e5a2fa6a571efe029ff1"
+      },
+      "consequenceDirections": {
+        "A": "教師主動提供普遍可得資訊而非個案施恩，不以廣發資料代必要個別關心。",
+        "B": "可保選擇，不讓拒款等於不幫學生。",
+        "C": "可分捐與掌控，查詢不是已收錢。",
+        "D": "可分開多項條件，不用匿名出資遮家庭知情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7d84c105d2c0545914fcb33980593fdcdcad21fb6f49ddd8df39deb8ab48fecd",
+    "draftSha256": "81132612579ebca44adce2edd67b6de13abcf220b71811f3fc52dbae3e925174",
     "seedAssignmentVersion": 1
   }
 }

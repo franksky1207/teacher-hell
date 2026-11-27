@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "42281dc00d281b4517a4a166973ff26af737ad73c5e39d7c38ddfca411a6234c",
+      "checkedAt": "2026-11-27T15:12:48.826Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只說明原合法判準及合理調整界線，不說個人理由。",
+            "action": "導師已提供限可公開的有限判準說明，不披第三人或交出處分權。",
+            "tradeoff": "他可能仍覺得不一樣"
+          },
+          {
+            "id": 2,
+            "text": "將仍有實務爭議的條款交原權責檢視，未定前按現行合法規則。",
+            "action": "導師已提出有限條款實務檢視需求，未核定新規或撤必要處理。",
+            "tradeoff": "要等"
+          },
+          {
+            "id": 3,
+            "text": "這次停止本人非必要幹部查分任務，改由成人查核。",
+            "action": "導師已停止本人新增非必要同儕查分需求，維持成人必要核實。",
+            "tradeoff": "他失去想證明的位置"
+          },
+          {
+            "id": 4,
+            "text": "讓他自願用教師虛構例子試說哪項條件不足，不談真同學。",
+            "action": "導師已提出有限無識別規則辨識練習邀請，未取得參與或個案結論。",
+            "tradeoff": "不像立刻有答案"
+          },
+          {
+            "id": 5,
+            "text": "原班務只記本人實際做過的工作，不再記別人缺失。",
+            "action": "導師已限本人可調班務紀錄為有限自有實作，不移轉正式必要查核。",
+            "tradeoff": "比較成果變少"
+          },
+          {
+            "id": 6,
+            "text": "提供既有正當異議管道，這次不加桌邊辯論。",
+            "action": "導師已提供原合法異議資訊並結束非急延伸爭辯，不取得裁定。",
+            "tradeoff": "他可能覺得你躲"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被自己的條文追到有點不服，拿我當初寫的草稿公開一處真含糊，自己先申請改清楚，不叫他替我圓。",
+          "action": "導師已提出本人原規範中可核實含糊處的有限改寫建議，未獲准或追溯改個案。",
+          "tradeoff": "要承認原本寫不周，也可能引來更多疑問"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1583809901
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "51c7639504a5ddd349f1a2788ac6f9cd45adf268ed387f7f6750cf6597d0b450"
+      },
+      "consequenceDirections": {
+        "A": "可改實際蒐集，不要幹部替全班背公正。",
+        "B": "可限權責，不禁止正當安全反映。",
+        "C": "可正式釐清，不把提案當已廢。",
+        "D": "教師提交本人可確認的具體文字改善，不虛構缺陷或以自責取代必要公允處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc84bbf324068de9b2ba80144f55392e4f96b02568ef323748d083a0213db892",
+    "draftSha256": "42281dc00d281b4517a4a166973ff26af737ad73c5e39d7c38ddfca411a6234c",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "99f81177ace34744e907f0085b131d9dd3ee3ddba3bfad1135633e8a86d6711b",
+      "checkedAt": "2026-11-27T15:12:48.830Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只把本人實際宣導與現場接續記清交原窗口。",
+            "action": "導師已提交本人可核實的有限工作資訊，不以紀錄代設施處理。",
+            "tradeoff": "看起來像文件多"
+          },
+          {
+            "id": 2,
+            "text": "在原班務短段只確認學生知道哪條現行安全路，不重演追跑。",
+            "action": "導師已安排有限現行安全資訊確認，不新增危險演練。",
+            "tradeoff": "用掉班務時間"
+          },
+          {
+            "id": 3,
+            "text": "請原設施權責提供真實維修狀態，由原窗口回。",
+            "action": "導師已提出有限正式維修狀態需求，未取得完工或通行核准。",
+            "tradeoff": "仍可能等不到日期"
+          },
+          {
+            "id": 4,
+            "text": "原可調課間安排改在既有安全活動區，不靠待修段。",
+            "action": "導師已在原權限安排有限安全活動位置，不解除隔離或代核路線。",
+            "tradeoff": "活動空間小"
+          },
+          {
+            "id": 5,
+            "text": "邀職員在原工作可行時段與我只核一項資訊斷點。",
+            "action": "導師已提出有限自願工作資訊核對邀請，未取得參與或專業結論。",
+            "tradeoff": "他可能覺得還要重說"
+          },
+          {
+            "id": 6,
+            "text": "本次不加全班長訓話，原必要個別提醒照實做。",
+            "action": "導師已停止本人非必要公開長訓話，維持必要具體安全回饋。",
+            "tradeoff": "有人覺得不夠嚴"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕一句有講過只是保我面子，這次自願在原安全課間站點多留一段觀察實際走法，回報我真的看見的，不讓學生演給我看。",
+          "action": "導師已在原合法工作及安全站點安排本人有限額外觀察，不試走危險區或宣稱已改善。",
+          "tradeoff": "自己的休息少，也可能看到原提醒沒效果"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3820649282
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "4d328a2d3206c44737579540d4aa3cac1a3ad1d49c0d2e14f8f749bcf57bb0b9"
+      },
+      "consequenceDirections": {
+        "A": "可調非必要活動，不把學生正常如廁動線擅斷。",
+        "B": "教師增加本人有限在場觀察，不取代專業封鎖、必要照看或要求他人加班。",
+        "C": "可有真實資訊，不冒已無風險。",
+        "D": "可找工作接縫，不把邀請當共同巡檢已做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3b532b83a4a39033f18b60b561153723684f96a18b593a4ec09730f2e69f56c3",
+    "draftSha256": "99f81177ace34744e907f0085b131d9dd3ee3ddba3bfad1135633e8a86d6711b",
     "seedAssignmentVersion": 1
   }
 }

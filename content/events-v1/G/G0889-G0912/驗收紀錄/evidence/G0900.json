@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d5fd55210cb6cdb6a49c2238abcfe2636c5f42778fca4c6f6f6c2d6bdbdc07da",
+      "checkedAt": "2026-11-27T15:12:48.831Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請原負責成人在既有安全路線依次搬，不加學生協作。",
+            "action": "導師已依原合法安全安排提出有限逐件成人搬運接續，不讓學生搬重物。",
+            "tradeoff": "速度慢"
+          },
+          {
+            "id": 2,
+            "text": "把本人能確認的現行分流畫成簡圖，供原成人核。",
+            "action": "導師已製作有限現行路線示意供權責核對，未新增動線核准。",
+            "tradeoff": "要時間"
+          },
+          {
+            "id": 3,
+            "text": "申請延後非急桌椅調整，原必要通道先維持。",
+            "action": "導師已提出有限非急搬動展延需求，未獲准或撤必要安全處理。",
+            "tradeoff": "佈置晚完成"
+          },
+          {
+            "id": 4,
+            "text": "只搬原必要幾件，其餘在原核可位置不動。",
+            "action": "導師已在本人可調範圍限縮非必要新搬動，不更改安全核准。",
+            "tradeoff": "新座位樣子不完整"
+          },
+          {
+            "id": 5,
+            "text": "向總務查既有合適搬運人力，不讓他一人加班。",
+            "action": "導師已提出既有安全搬運人力需求，未取得人力或完成搬運。",
+            "tradeoff": "可能等不到"
+          },
+          {
+            "id": 6,
+            "text": "原工作之外不再爭論誰不嚴謹，先照已核安全方式接。",
+            "action": "導師已停止本人非必要專業互評爭辯，維持原安全搬動接續。",
+            "tradeoff": "關係仍僵"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想讓出力的人一直替我盯，自己在原安全站點接一段現場聯繫，讓他只做本人願做且適任的一項，不再兩頭跑。",
+          "action": "導師已在本人原職務範圍承接有限現場聯繫並提出需同事同意的分工調整，未取得答應或免必要安全。",
+          "tradeoff": "自己少處理其他事，還可能被提醒漏話"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1376520880
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "7a171365b6e597ef890db12e6ec74dd2e8314152a5b0c3986613764e808ea94d"
+      },
+      "consequenceDirections": {
+        "A": "可找正式支援，查詢不等已到。",
+        "B": "可保原接續，不冒搬完結果。",
+        "C": "教師承接有限成人聯繫工作，不指派他人超能力搬運或假稱取代專業檢查。",
+        "D": "可有共用資訊，不以教師圖代專業判斷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ec3ed57c7b9987f0b156ec172a41394b0015a52123d67e1bf68fbf74173c34fe",
+    "draftSha256": "d5fd55210cb6cdb6a49c2238abcfe2636c5f42778fca4c6f6f6c2d6bdbdc07da",
     "seedAssignmentVersion": 1
   }
 }

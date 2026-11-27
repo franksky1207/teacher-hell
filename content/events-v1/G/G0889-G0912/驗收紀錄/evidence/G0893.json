@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3715e718b4448c9803cefbb77faa52b1ba1b2bfcc9c11e55f3e409216a77a989",
+      "checkedAt": "2026-11-27T15:12:48.825Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照原正式流程送正確週次申請，未准守原課。",
+            "action": "導師已提出正確週次的原程序申請，未獲准或換課。",
+            "tradeoff": "要再等"
+          },
+          {
+            "id": 2,
+            "text": "這次不換，撤回本人未核定的調課意願。",
+            "action": "導師已撤回本人未定調課需求，維持原有效安排。",
+            "tradeoff": "原想方便的安排沒了"
+          },
+          {
+            "id": 3,
+            "text": "請課務提供既有系統可查的真實狀態，不再靠群聊說完成。",
+            "action": "導師已查詢原正式課務狀態資訊，不取得調課或他人簽署。",
+            "tradeoff": "要多查一步"
+          },
+          {
+            "id": 4,
+            "text": "同事若願，兩人只核一次日期、班級與節次，再各自按原職權送。",
+            "action": "導師已提出有限自願申請資訊核對邀請，未取得答應或正式核准。",
+            "tradeoff": "花一小段時間"
+          },
+          {
+            "id": 5,
+            "text": "這次後續通知由我只轉原已核定版本，不請他代發。",
+            "action": "導師已停止本人此案非必要代發需求，限定本人通知依原核定資訊，不宣稱已有核准。",
+            "tradeoff": "自己多做"
+          },
+          {
+            "id": 6,
+            "text": "向主管申請在原可行範圍調整本人非急工作，再辦原文件。",
+            "action": "導師已提出本人有限非急工作調整申請，未獲准或免原必要責任。",
+            "tradeoff": "可能不准"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那句換好了嚇到，這次陪他在原允許空檔把正確週次寫在自己的紙上，只有真的核准才共同勾；不再互相嘴上說好了。",
+          "action": "導師已提出需同事自願的有限雙人調課狀態對照方式，未取得參與或更動正式程序。",
+          "tradeoff": "要彼此多等一下，也可能被嫌小題大作"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1778500745
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "f8690e8b9dda0f30259040edbc28003e8a24f10f0c35eddd9d3eba3c66410c77"
+      },
+      "consequenceDirections": {
+        "A": "可有來源，查詢不等核准。",
+        "B": "可減誤聽，不把合看當代簽。",
+        "C": "可減轉述，不限制其正常工作資訊傳達。",
+        "D": "教師提出具體雙人狀態核對承諾，不建立新核准制度或把勾紙當校方同意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5ae430ec24137e7228dbe56791a133387c5af4c3fbe3072ebf47f3989f31ffae",
+    "draftSha256": "3715e718b4448c9803cefbb77faa52b1ba1b2bfcc9c11e55f3e409216a77a989",
     "seedAssignmentVersion": 1
   }
 }

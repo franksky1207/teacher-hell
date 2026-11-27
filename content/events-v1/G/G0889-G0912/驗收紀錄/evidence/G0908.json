@@ -15,14 +15,155 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cbc93a7cfacb3c8ee09ba9de173d712273549252d0f4b49fecd99ff115cc7815",
+      "checkedAt": "2026-11-27T15:12:48.838Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "停止本人非必要佈置加做，原可用成果就到這裡。",
+            "action": "玩家已停止本人非必要新增佈置工作，維持原必要班務。",
+            "tradeoff": "不夠完美"
+          },
+          {
+            "id": 2,
+            "text": "向主管申請調整本人非急工作，說清真實負荷。",
+            "action": "玩家已提交本人有限工作負荷調整申請，未獲准或取得支援。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 3,
+            "text": "只保留現有可安全展示部分，原權利允許下收起未完成裝飾。",
+            "action": "玩家已在本人管理權限限縮非必要展示範圍，不更改真實工作紀錄。",
+            "tradeoff": "觀摩可能空一角"
+          },
+          {
+            "id": 4,
+            "text": "向原有權成人請求一段可行班務接續，自己先按健康需要休息。",
+            "action": "玩家已提出限既有制度的有限成人支援需求，未取得人力或免必要照看。",
+            "tradeoff": "未必有人"
+          },
+          {
+            "id": 5,
+            "text": "這次不拍新佈置成果照，原必要交件用真實現況。",
+            "action": "玩家已停止本人非必要新增成果拍攝，依原程序提供真實現況，不取得新照片。",
+            "tradeoff": "少了一張漂亮展示"
+          },
+          {
+            "id": 6,
+            "text": "依原正常工作程序請主管確認最低必要交件，不自己再加一層。",
+            "action": "玩家已提出有限必要交件範圍確認，未核准省略正式項目。",
+            "tradeoff": "可能被看出焦慮"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我一看自己最得意那張海報就想再修，今天偏把這張已完成、可自主決定的裝飾收起來，不再靠它證明我撐得住。",
+          "action": "玩家已在本人合法管理及作品權利範圍收起一張已完成的非必要自製裝飾，不撤必要標示、他人作品或應交事實。",
+          "tradeoff": "少了自己最滿意的一角，主管也可能問為什麼"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 12480973
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "2dae544b8a68fc8e2ed49710c3d8478f68b3069a0d43616b0679977b1eeaeda9"
+      },
+      "consequenceDirections": {
+        "A": "可求助，未接妥不把學生丟下。",
+        "B": "可減耗損，不免必要教室安全。",
+        "C": "與停止新增或收未完成品不同，是放掉已完成且最想展示的個人成果；不以撤裝飾隱匿必要紀錄或要求學生安慰。",
+        "D": "可限範圍，不把藏起來當完成。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒假設尚未定稿的個人亮點解說可撤，原情境未成立；改為實際收起原已完成且可自主決定的自製裝飾。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "停止本人非必要佈置加做，原可用成果就到這裡。",
+                "action": "玩家已停止本人非必要新增佈置工作，維持原必要班務。",
+                "tradeoff": "不夠完美"
+              },
+              {
+                "id": 2,
+                "text": "向主管申請調整本人非急工作，說清真實負荷。",
+                "action": "玩家已提交本人有限工作負荷調整申請，未獲准或取得支援。",
+                "tradeoff": "可能不准"
+              },
+              {
+                "id": 3,
+                "text": "只保留現有可安全展示部分，原權利允許下收起未完成裝飾。",
+                "action": "玩家已在本人管理權限限縮非必要展示範圍，不更改真實工作紀錄。",
+                "tradeoff": "觀摩可能空一角"
+              },
+              {
+                "id": 4,
+                "text": "向原有權成人請求一段可行班務接續，自己先按健康需要休息。",
+                "action": "玩家已提出限既有制度的有限成人支援需求，未取得人力或免必要照看。",
+                "tradeoff": "未必有人"
+              },
+              {
+                "id": 5,
+                "text": "這次不拍新佈置成果照，原必要交件用真實現況。",
+                "action": "玩家已停止本人非必要新增成果拍攝，依原程序提供真實現況，不取得新照片。",
+                "tradeoff": "少了一張漂亮展示"
+              },
+              {
+                "id": 6,
+                "text": "依原正常工作程序請主管確認最低必要交件，不自己再加一層。",
+                "action": "玩家已提出有限必要交件範圍確認，未核准省略正式項目。",
+                "tradeoff": "可能被看出焦慮"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想再用一面牆證明自己沒事，自己把那張尚未定稿的個人觀摩解說撤回，請承辦照現況列，不再替我寫成無懈可擊。",
+              "action": "玩家已提出撤回本人未定非必要個人亮點解說的意願並要求真實現況呈現，不改他人原稿或正式結論。",
+              "tradeoff": "自己會顯得沒準備好，也可能引來追問"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 570432411
+            },
+            "selectedIds": [
+              6,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "e250e275e768d34cd3cf627209fe863e3bc6f999a30d3d0901ab210f5f83cb5e"
+          },
+          "previousConsequenceDirections": {
+            "A": "可限範圍，不把藏起來當完成。",
+            "B": "可釐清負荷，詢問不等准減項。",
+            "C": "可減包裝，不以停止拍照遮錯誤。",
+            "D": "玩家撤回本人未定的非必要自我包裝提案，原必要說明與安全不撤，不假設已獲評鑑。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e4d1e3f0d78393380f389379ce7caaab37b7be89d24d8b2fff06c364ed82a144",
+    "draftSha256": "cbc93a7cfacb3c8ee09ba9de173d712273549252d0f4b49fecd99ff115cc7815",
     "seedAssignmentVersion": 1
   }
 }

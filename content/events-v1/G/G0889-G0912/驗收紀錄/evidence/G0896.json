@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "01ce23afbf58a72a47cd49cdeadda9fca4a6415fb336f69b40a321a6f930144d",
+      "checkedAt": "2026-11-27T15:12:48.827Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原期限收，不為這通訊息另加全班催繳。",
+            "action": "導師已維持原合法收件時程，停止本人非必要加催，不變更截止。",
+            "tradeoff": "她覺得不積極"
+          },
+          {
+            "id": 2,
+            "text": "在原允許範圍提供不識別的完成比例，不交名單。",
+            "action": "導師已提供本人可核實的有限去識別進度，不披家庭或學生名單。",
+            "tradeoff": "她可能想更多細節"
+          },
+          {
+            "id": 3,
+            "text": "只對真正缺件者依原正常方式個別提醒。",
+            "action": "導師已依本人原職權發出有限必要個別缺件提醒，不外洩名單。",
+            "tradeoff": "教師多工"
+          },
+          {
+            "id": 4,
+            "text": "請原承辦確認是否確有影響後續作業的風險，不聽傳聞加碼。",
+            "action": "導師已提出原權責的有限收件影響確認，未取得新期限或結果。",
+            "tradeoff": "要再查"
+          },
+          {
+            "id": 5,
+            "text": "本次必要資訊答完就結束非急聊天，原管道照開。",
+            "action": "導師已結束本人非急延伸聯繫，維持必要回覆。",
+            "tradeoff": "她會覺得你不領好意"
+          },
+          {
+            "id": 6,
+            "text": "就上回說明速度另約原可用短段聽一項具體建議，不混入這份回條。",
+            "action": "導師已提出可拒絕的有限前次溝通回饋邀請，未取得參與或承諾改制。",
+            "tradeoff": "要時間，也可能不願"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每收一張就交一次進度，這件只在原承辦節點整理回覆，不再接她額外的逐張追問；我自己也照這個界線。",
+          "action": "導師已明示本人本案非必要逐張即時回報的界線，維持原正式節點與必要通知。",
+          "tradeoff": "少了和氣的即時互動，可能被嫌冷"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1414639956
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "f46cacfebc9b5c3aaab9d3d94514774657aeb56e04c53dbc99b79a5743792458"
+      },
+      "consequenceDirections": {
+        "A": "可精準，不公開羞辱或讓家長代管。",
+        "B": "可保資訊，不把比例當個案原因。",
+        "C": "可保時間，不拒正當具體問題。",
+        "D": "教師拒額外非急即時報數服務，不削必要進度與急迫通知，也不單方面取消已承諾事項。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "44f2fefeda99dc6927e1ef6ad6be487760647b5fe7d9f94a44fa39ad585bb2b3",
+    "draftSha256": "01ce23afbf58a72a47cd49cdeadda9fca4a6415fb336f69b40a321a6f930144d",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G04",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "750a0df4be53596550e46344a92f6e264115cef04abdcdc0c109ac815a5360aa",
+      "checkedAt": "2026-11-27T15:12:48.841Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只用原允許的私下方式確認本人狀況，不公開說明。",
+            "action": "導師已提出原合法私下有限本人關心接續，不公開個案或刪真實出勤。",
+            "tradeoff": "其他人未必知道你有處理"
+          },
+          {
+            "id": 2,
+            "text": "原班級通知只說一般上課安排，不加遲到例子。",
+            "action": "導師已限縮本人非必要公開點名敘述，維持原真實出勤與保護。",
+            "tradeoff": "紀律感較不顯眼"
+          },
+          {
+            "id": 3,
+            "text": "請輔導同仁按原職權接個別談話，我維持班級照看。",
+            "action": "導師已提出限必要知情的既有輔導接續需求，未取得安排或免本人照看。",
+            "tradeoff": "要協調，也可能不同意"
+          },
+          {
+            "id": 4,
+            "text": "向原主管確認這次合理程序調整的紀錄方式，不先開新門檻。",
+            "action": "導師已提出原權責的有限紀錄方式確認，未核定新制度。",
+            "tradeoff": "要多一個聯繫"
+          },
+          {
+            "id": 5,
+            "text": "學生若願，只提供一個可用求助方式，不強問昨夜。",
+            "action": "導師已提供既有有限求助資訊，不取得自述或診斷。",
+            "tradeoff": "可能不會立即用"
+          },
+          {
+            "id": 6,
+            "text": "我給自己做一張不寫人名的處理提醒卡，夾在自己的點名資料裡；先私下確認，再照真實情況記。",
+            "action": "導師已依現行合法必要流程製作本人限閱的無識別程序提示卡，不新增學生紀錄、權利門檻或改出勤事實。",
+            "tradeoff": "自己多做一份，也不能保證再忙都不會漏"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己急著說話反而弄砸，這一小段先請原在場適任同仁自願在班級安全處陪我接人；不獨自演什麼都會的導師。",
+          "action": "導師已提出限原合法時段與場地的適任成人自願共同在場邀請，未取得參與或完成學生接續。",
+          "tradeoff": "要承認自己沒把握，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 737526893
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "2dbe5852f8e8fec7cb184c3aafbd6b683055cc261d4c833baf21e6a2dcfe8771"
+      },
+      "consequenceDirections": {
+        "A": "可有正當依據，不將申請延誤必要保護。",
+        "B": "可分工，請求不是服務已到。",
+        "C": "可保自主，不能以不說當沒有需要。",
+        "D": "教師提出有限共同在場支持，不要求輔導者超時或讓必要支持僅此分支才有。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6取消非必要出勤表揚缺少原情境支撐；改為教師製作自用無識別流程提示卡。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只用原允許的私下方式確認本人狀況，不公開說明。",
+                "action": "導師已提出原合法私下有限本人關心接續，不公開個案或刪真實出勤。",
+                "tradeoff": "其他人未必知道你有處理"
+              },
+              {
+                "id": 2,
+                "text": "原班級通知只說一般上課安排，不加遲到例子。",
+                "action": "導師已限縮本人非必要公開點名敘述，維持原真實出勤與保護。",
+                "tradeoff": "紀律感較不顯眼"
+              },
+              {
+                "id": 3,
+                "text": "請輔導同仁按原職權接個別談話，我維持班級照看。",
+                "action": "導師已提出限必要知情的既有輔導接續需求，未取得安排或免本人照看。",
+                "tradeoff": "要協調，也可能不同意"
+              },
+              {
+                "id": 4,
+                "text": "向原主管確認這次合理程序調整的紀錄方式，不先開新門檻。",
+                "action": "導師已提出原權責的有限紀錄方式確認，未核定新制度。",
+                "tradeoff": "要多一個聯繫"
+              },
+              {
+                "id": 5,
+                "text": "學生若願，只提供一個可用求助方式，不強問昨夜。",
+                "action": "導師已提供既有有限求助資訊，不取得自述或診斷。",
+                "tradeoff": "可能不會立即用"
+              },
+              {
+                "id": 6,
+                "text": "本次不加原非必要出勤表揚或比較，照原必要教學接續。",
+                "action": "導師已停止本人非必要出勤比較性發言，維持原課程及必要資訊。",
+                "tradeoff": "班上少了原習慣的開場"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕自己急著說話反而弄砸，這一小段先請原在場適任同仁自願在班級安全處陪我接人；不獨自演什麼都會的導師。",
+              "action": "導師已提出限原合法時段與場地的適任成人自願共同在場邀請，未取得參與或完成學生接續。",
+              "tradeoff": "要承認自己沒把握，也可能被拒"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 180022384
+            },
+            "selectedIds": [
+              6,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 3,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "c36d2d5914b252123795cf4a79248f3f8eb72ca0ea606d8893e2048b77f9366d"
+          },
+          "previousConsequenceDirections": {
+            "A": "僅原確有可調內容才能停止，不新造活動。",
+            "B": "可分工，請求不是服務已到。",
+            "C": "可有正當依據，不將申請延誤必要保護。",
+            "D": "教師提出有限共同在場支持，不要求輔導者超時或讓必要支持僅此分支才有。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60a9a45437d37af3c7851321fcc159bf81c741ceca63af6a79fc369cc9296186",
+    "draftSha256": "750a0df4be53596550e46344a92f6e264115cef04abdcdc0c109ac815a5360aa",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c25db4c994fb1487297c3bbaf6e7ebf94a0ca901a2db65af96d2e2aa87eec067",
+      "checkedAt": "2026-11-27T15:12:48.837Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原班務時間講一般正確接送資訊，不提個案。",
+            "action": "導師已提供限可公開的有限一般接送說明，不公開學生或家庭身份。",
+            "tradeoff": "他可能覺得不夠重"
+          },
+          {
+            "id": 2,
+            "text": "由原有權者依已核事實個別聯繫相關家長。",
+            "action": "導師已提出限必要知情的原交通個別聯繫需求，不代裁交通違規。",
+            "tradeoff": "不會全班一起聽"
+          },
+          {
+            "id": 3,
+            "text": "請原交通窗口確認雨天現行接送安排，再用正確資訊回班。",
+            "action": "導師已提出既有合法雨天接送資訊需求，未取得新路線或許可。",
+            "tradeoff": "要再查"
+          },
+          {
+            "id": 4,
+            "text": "只用教師自編無識別轉角圖，讓願意者指出看不見哪裡。",
+            "action": "導師已安排有限中性視線示例，不使用真車牌或試走車道。",
+            "tradeoff": "用掉原可調短段"
+          },
+          {
+            "id": 5,
+            "text": "本次不加早自習長訓話，原必要安全提醒照原方式做。",
+            "action": "導師已停止本人非必要公開長訓話，維持必要具體安全回饋。",
+            "tradeoff": "對方會不快"
+          },
+          {
+            "id": 6,
+            "text": "與生輔在原允許工作短段只確認未來家長聯繫分工。",
+            "action": "導師已提出有限正式工作分工確認，未取得同意或新增人力。",
+            "tradeoff": "要花兩人時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想站在乾辦公室只回收到，申請自己在下一個原合法雨天站點多看一段接送；看的是家長怎麼停，不先拿孩子出氣。",
+          "action": "導師已提出本人限原安全站點的有限接送觀察申請，未獲准、出勤或取得交通指揮權。",
+          "tradeoff": "自己的原空檔少，還得接受看法被修正"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 282525569
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "b4121808e8fa96304a7b41d26a20d9b8d47a36b6e4356b24b4a2d25ebb80fed9"
+      },
+      "consequenceDirections": {
+        "A": "可保教育，不以無名仍能反推線索羞辱。",
+        "B": "可減重複，不移轉交通專業給導師。",
+        "C": "可找真正行為者，請求不等已通知完成。",
+        "D": "教師申請有限實地觀察投入，不擅指揮交通或取代專業導護，必要當日處理原已共同完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d206455a60759b8eb8181550ed82c8f0f0ed319c4b39510e89c73b23fad65968",
+    "draftSha256": "c25db4c994fb1487297c3bbaf6e7ebf94a0ca901a2db65af96d2e2aa87eec067",
     "seedAssignmentVersion": 1
   }
 }

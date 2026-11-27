@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a79407c8f3ffd4990f309e51c23b634b7965104d244f0428abee5075072f4668",
+      "checkedAt": "2026-11-27T15:12:48.836Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原公平合法換位方式，不採指定名單。",
+            "action": "導師已婉拒本人以指定同儕名單配位，維持原合法安排。",
+            "tradeoff": "她可能覺得沒幫"
+          },
+          {
+            "id": 2,
+            "text": "請孩子本人自願說明一項學習環境需要，不問想靠誰。",
+            "action": "導師已提出有限自願環境需求詢問，未取得資料或定座。",
+            "tradeoff": "不一定和家長同看法"
+          },
+          {
+            "id": 3,
+            "text": "在原合法可行集合內，提出較少干擾的位置供成人評估。",
+            "action": "導師已提出限本人班務權限的有限位置評估方案，未完成換位或保證成效。",
+            "tradeoff": "未必符合指定朋友"
+          },
+          {
+            "id": 4,
+            "text": "邀原輔導或任課者依必要知情回饋實際分心情況。",
+            "action": "導師已提出原職權內有限學習觀察協作需求，未取得回覆或診斷。",
+            "tradeoff": "要時間"
+          },
+          {
+            "id": 5,
+            "text": "提供本班現有可公開的換位原則，不開個別同儕評比。",
+            "action": "導師已提供有限合法換位資訊，不披同學資料或新優先。",
+            "tradeoff": "沒有她想要的精準選人"
+          },
+          {
+            "id": 6,
+            "text": "本次不加私人座位協商，建議走原正式反映方式。",
+            "action": "導師已停止本人非必要指定同儕協商，保留原正常程序。",
+            "tradeoff": "親師關係可能僵"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想用幾個乖孩子替自己省事，這次把自己原可調的巡看路線改到他那區，多接一段課內觀察，先不換同學。",
+          "action": "導師已在本人合法授課及照看範圍調整有限巡看安排，不承諾改善或變更座位。",
+          "tradeoff": "自己要多看，也可能仍看不到真正卡點"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 452003348
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "92c2c80145eb12cbf161c2b2384126e1fd86989501e38c1531278fe4e308aaa8"
+      },
+      "consequenceDirections": {
+        "A": "可看本人，不把一次自述當全部原因。",
+        "B": "可設界線，不阻正常求助或申訴。",
+        "C": "可保多方權益，不忽略本人必要需求。",
+        "D": "教師投入本人有限實際觀察，不令其他學生管人、不替代必要座位合理調整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "28ec40c351f4f8d8e64f3f627610da1cf794548d76f4c2e82b75131aba136ce8",
+    "draftSha256": "a79407c8f3ffd4990f309e51c23b634b7965104d244f0428abee5075072f4668",
     "seedAssignmentVersion": 1
   }
 }

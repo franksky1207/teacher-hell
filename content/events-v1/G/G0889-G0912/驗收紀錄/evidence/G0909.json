@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "38f0982b06c0482b6d119c4344898ca0b502f69cafc372e73a59fd6e00180de0",
+      "checkedAt": "2026-11-27T15:12:48.839Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依店規能改的部分改成對方願意的素食，原已做費用我承擔該付的。",
+            "action": "玩家已提出限店規及實際飲食條件的改單需求並確認本人應付費，不宣稱全數改成或取得餐點。",
+            "tradeoff": "自己多花，也未必全能改"
+          },
+          {
+            "id": 2,
+            "text": "原已做餐由原願吃者自選，另讓對方自行點可食一份。",
+            "action": "玩家已提出自願餐點分配及本人自選點餐方式，不取得共同分帳同意或新餐。",
+            "tradeoff": "菜會多"
+          },
+          {
+            "id": 3,
+            "text": "我不再替全桌點，餘下各人依店規自己決定。",
+            "action": "玩家已停止本人新增全桌代點，維持原應付訂單及飲食安全接續。",
+            "tradeoff": "失去主持的方便"
+          },
+          {
+            "id": 4,
+            "text": "詢問可否將我自己負責的多餘可食部分外帶，不再加菜。",
+            "action": "玩家已提出限店規與食安的本人份量外帶需求，未取得包裝或完成取餐。",
+            "tradeoff": "自己回家吃好多天的期待未必安全可行"
+          },
+          {
+            "id": 5,
+            "text": "只向朋友確認今後願公開的飲食提醒，不問健康檢查細節。",
+            "action": "玩家已提出可拒絕的有限未來飲食偏好詢問，不索病歷或代全桌作決定。",
+            "tradeoff": "有點掃興"
+          },
+          {
+            "id": 6,
+            "text": "今天不再追大家誇點得好，只按原約吃完結帳。",
+            "action": "玩家已停止本人非必要點餐成果評語邀請，維持原費用及飲食安排。",
+            "tradeoff": "少了自己想要的肯定"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點吃味那句不用動腦落空，自己另點一份願吃的素食，陪他從這一盤開始；別再讓他像來了另一桌。",
+          "action": "玩家已依店規自費提出本人素食餐點訂購，不保證已取得、共食同意或抵原訂費用。",
+          "tradeoff": "自己多付一份，原肉菜也要處理"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2975787032
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "c8ea39083725c59b1344576691facc5118652c277bd62181ecf8570b9fc40749"
+      },
+      "consequenceDirections": {
+        "A": "玩家改本人實際餐點選擇及花費，需店規和食安，不要求對方感謝或讓健康選擇替自己加分。",
+        "B": "可結束討好，必要可食替代仍共同接好。",
+        "C": "可回食物需要，不拿改單當人人滿意。",
+        "D": "可少誤會，不把確認當永久不變。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "96addc1737c140698454f7e8e7c2ff216a18636c38aa8b36db573cc2e1215627",
+    "draftSha256": "38f0982b06c0482b6d119c4344898ca0b502f69cafc372e73a59fd6e00180de0",
     "seedAssignmentVersion": 1
   }
 }

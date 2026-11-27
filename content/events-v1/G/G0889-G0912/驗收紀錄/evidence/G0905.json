@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9f28a87332dec92018445b08e09499990d6bc1232e2c10cb025c4d5a5bebd3ad",
+      "checkedAt": "2026-11-27T15:12:48.835Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按原已說明的公平方式抽順序，不先給任何組名次。",
+            "action": "導師已提出原班務允許的公平順序抽籤方式，未執行或指定結果。",
+            "tradeoff": "他失去熟人方便"
+          },
+          {
+            "id": 2,
+            "text": "依原可行時段讓各組自願交一個偏好，由我整合。",
+            "action": "導師已受理有限組別偏好提案，不取得定案或代各組同意。",
+            "tradeoff": "要等大家"
+          },
+          {
+            "id": 3,
+            "text": "保留原既有輪替次序，今天不另協商。",
+            "action": "導師已維持原合法可用輪替方式，不更改必要條件。",
+            "tradeoff": "彈性少"
+          },
+          {
+            "id": 4,
+            "text": "雙方若都願意，可依原規範提出互換，由成人核。",
+            "action": "導師已提供原規則內的自願換序途徑，未取得同意或核准。",
+            "tradeoff": "未必換成"
+          },
+          {
+            "id": 5,
+            "text": "把未定順序留到原班會公開討論，不在桌邊先排。",
+            "action": "導師已停止本人非必要桌邊定序，提出原班會有限討論安排，未定案。",
+            "tradeoff": "他要再等"
+          },
+          {
+            "id": 6,
+            "text": "只先確認節目需要哪些實際條件，不先填組名位置。",
+            "action": "導師已提出有限節目需求核對，不取得個別時段或優先。",
+            "tradeoff": "看不到立即結果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想少盯一次鐘，問他願不願當這段自願計時員，順序我照原程序排，熟歸熟，第二個不送。",
+          "action": "導師已提出可拒絕的有限安全計時協作邀請，不取得承接或移轉核准權。",
+          "tradeoff": "他可能以為親近只換來多做事，我也得接受拒絕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1631301597
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "960c5c3a9a696eab0a98d6f9b0b36454955bcdee925e1658aaef7c819aac5fea"
+      },
+      "consequenceDirections": {
+        "A": "可減私下差異，不提前公開私人求助。",
+        "B": "可有自主，不讓學生代別組答應。",
+        "C": "可有明確機會分配，不手挑或改必要合理調整。",
+        "D": "教師以真實私人省力提出新有限分工，不以勞務換優先或嘉獎，必要成人主持仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b2802f8da995128abd2c2a63a700b01ac22eb801e77fb46207af2c8061be1102",
+    "draftSha256": "9f28a87332dec92018445b08e09499990d6bc1232e2c10cb025c4d5a5bebd3ad",
     "seedAssignmentVersion": 1
   }
 }

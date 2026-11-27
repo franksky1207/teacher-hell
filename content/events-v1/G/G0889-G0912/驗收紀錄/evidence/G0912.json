@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ee82a5b7ebb14d10e80f1cce1808fd87750841d0d0809c99449bffb228e28c41",
+      "checkedAt": "2026-11-27T15:12:48.842Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持原合規自習，提供科任可公開的補教資訊供自願申請。",
+            "action": "導師已維持原合法留校接續並提供既有申請資訊，不改名單或取得輔導。",
+            "tradeoff": "他熱情被擋"
+          },
+          {
+            "id": 2,
+            "text": "向原課務提出有限替代自習申請，待本人與相關方同意。",
+            "action": "導師已提出需原核可及自願的有限留校替代方案，未取得安排或移轉學生。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 3,
+            "text": "請他在原本科可調短段處理一題，不加留校。",
+            "action": "導師已提出限原任課職權的有限課內補教建議，未取得同意或改課。",
+            "tradeoff": "能補的少"
+          },
+          {
+            "id": 4,
+            "text": "查原校內正式補教時段是否有適任資源，不只靠他一人。",
+            "action": "導師已查詢既有合法補教資訊，未取得人力、時段或服務。",
+            "tradeoff": "可能沒有空位"
+          },
+          {
+            "id": 5,
+            "text": "只請科任提供本人有權分享的一題思路文字，不收學生新作業。",
+            "action": "導師已提出有限自願合法解題說明需求，未取得稿件或學習效果。",
+            "tradeoff": "沒即時互動"
+          },
+          {
+            "id": 6,
+            "text": "本次不再額外動員學生，自願選擇仍依原程序開放。",
+            "action": "導師已停止本人非必要留校動員，維持原合法申請與健康安排。",
+            "tradeoff": "同事可能覺得白準備"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被他那句陪著弄懂說動，申請原允許短段自己一起看一題，三個人若不願就不加；不是把孩子送走我就完成了。",
+          "action": "導師已提出需原課務及雙方自願的有限協同觀察支持，未取得核准、參與或教學結果。",
+          "tradeoff": "自己要重排可調時間，也可能幫不上本科細節"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2111734141
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "9d2b33fe7d626d0883ff3873f39ab48b666b24464a32e57cfc891ccd7ffe1121"
+      },
+      "consequenceDirections": {
+        "A": "教師提出有限協同在場支持，不越授課資格代教、不用同行取代原必要同意。",
+        "B": "可查支援，不把詢問當名額已到。",
+        "C": "可保不參加權，不停正常支持。",
+        "D": "可回原授課，不把額外陪讀當必要門檻。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29981df7d0fba364bd316cc9ff9cae48560c7b63b5a8f7645dfad19bd0e9ff34",
+    "draftSha256": "ee82a5b7ebb14d10e80f1cce1808fd87750841d0d0809c99449bffb228e28c41",
     "seedAssignmentVersion": 1
   }
 }

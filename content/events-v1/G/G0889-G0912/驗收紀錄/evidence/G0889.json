@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3b7f85100472ebb8d1455445c8fa590da0e3ea752607b400a7278d1098a833d8",
+      "checkedAt": "2026-11-27T15:12:48.820Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只交本人可核實的本班事實，不替別班彙整。",
+            "action": "導師已提供本人有權確認的有限本班資訊，不代簽或核定其他班。",
+            "tradeoff": "少了大家一起省事"
+          },
+          {
+            "id": 2,
+            "text": "提出只共用空白欄位，內容各自填。",
+            "action": "導師已提出限非內容的共用版式方案，未取得使用同意或完成全校文件。",
+            "tradeoff": "每人仍要寫"
+          },
+          {
+            "id": 3,
+            "text": "向原主管申請本件合理展延。",
+            "action": "導師已提交本人可核實的有限展延需求，未獲准或撤正式責任。",
+            "tradeoff": "可能不准"
+          },
+          {
+            "id": 4,
+            "text": "自己整理本班三個事實要點，請同事只協助排版。",
+            "action": "導師已提出需同事自願的有限格式協作邀請，未取得答應或成品。",
+            "tradeoff": "他可拒，自己仍需整理"
+          },
+          {
+            "id": 5,
+            "text": "邀原教學協作在可用時段口頭釐清一個跨科問題，各自如實記。",
+            "action": "導師已提出有限正式工作釐清邀請，未取得會議或定論。",
+            "tradeoff": "多花一段時間"
+          },
+          {
+            "id": 6,
+            "text": "向承辦詢問可否用本班既有合法教學日誌摘要填報，不再重抄同一份內容。",
+            "action": "導師已提出限既有合法本班資料的填報可行性詢問，未取得替代受理或完成正式交件。",
+            "tradeoff": "可能不被接受，還是得回原格式"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累到不想再替漂亮話找證據，這次本班就寫一項真的沒做到，署自己的名，不借公版說已改善。",
+          "action": "導師已在原必要知情範圍提交本人具名的真實未完成事項，不虛寫改善或擴散個資。",
+          "tradeoff": "主管可能追問，自己不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2768037876
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "63b878061379befae0e1fdf7450a2670a84cf067addcdc6181179c1e0cde5c47"
+      },
+      "consequenceDirections": {
+        "A": "教師主動揭露真實未完成工作，不用自責替代必要交件或冒其他人責任。",
+        "B": "可省格式，不把同格式當同情形。",
+        "C": "可限分工，不拿熱心當當然代工。",
+        "D": "可保真實，不代表別班可寫假。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6停止額外分析圖缺少存在前提且與普通1交真實本班資訊過近；改為既有日誌資料替代重抄的查詢。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只交本人可核實的本班事實，不替別班彙整。",
+                "action": "導師已提供本人有權確認的有限本班資訊，不代簽或核定其他班。",
+                "tradeoff": "少了大家一起省事"
+              },
+              {
+                "id": 2,
+                "text": "提出只共用空白欄位，內容各自填。",
+                "action": "導師已提出限非內容的共用版式方案，未取得使用同意或完成全校文件。",
+                "tradeoff": "每人仍要寫"
+              },
+              {
+                "id": 3,
+                "text": "向原主管申請本件合理展延。",
+                "action": "導師已提交本人可核實的有限展延需求，未獲准或撤正式責任。",
+                "tradeoff": "可能不准"
+              },
+              {
+                "id": 4,
+                "text": "自己整理本班三個事實要點，請同事只協助排版。",
+                "action": "導師已提出需同事自願的有限格式協作邀請，未取得答應或成品。",
+                "tradeoff": "他可拒，自己仍需整理"
+              },
+              {
+                "id": 5,
+                "text": "邀原教學協作在可用時段口頭釐清一個跨科問題，各自如實記。",
+                "action": "導師已提出有限正式工作釐清邀請，未取得會議或定論。",
+                "tradeoff": "多花一段時間"
+              },
+              {
+                "id": 6,
+                "text": "先不加額外分析圖，本班用原必要格式交真實簡要內容。",
+                "action": "導師已限縮本人非必要圖表延伸，完成可核實的本班必要內容，不代他班填寫。",
+                "tradeoff": "看起來比較素"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也累到不想再替漂亮話找證據，這次本班就寫一項真的沒做到，署自己的名，不借公版說已改善。",
+              "action": "導師已在原必要知情範圍提交本人具名的真實未完成事項，不虛寫改善或擴散個資。",
+              "tradeoff": "主管可能追問，自己不好看"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3219471862
+            },
+            "selectedIds": [
+              6,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "a89169f5cfb756c1b4d95d437f21a2807ec18a0052575e1d17d4732d5343a6b1"
+          },
+          "previousConsequenceDirections": {
+            "A": "可限非必要工量，不省規定必要項。",
+            "B": "可限分工，不拿熱心當當然代工。",
+            "C": "可保真實，不代表別班可寫假。",
+            "D": "教師主動揭露真實未完成工作，不用自責替代必要交件或冒其他人責任。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "50178883707f2a91917754be2550bdfce089f5d87dac1616f4587b57d1ca7490",
+    "draftSha256": "3b7f85100472ebb8d1455445c8fa590da0e3ea752607b400a7278d1098a833d8",
     "seedAssignmentVersion": 1
   }
 }

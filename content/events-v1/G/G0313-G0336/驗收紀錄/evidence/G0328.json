@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "164cc50fbd435f1480bd7c3cbb1994304f73b1624d3fdf1b42bf1b580ff98369",
+      "checkedAt": "2026-11-27T05:20:42.394Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用具體表現重寫含糊評語，送達原接收者",
+            "action": "導師已用具體表現重寫含糊評語，送達原接收者",
+            "tradeoff": "要整理觀察，也可能發現原紀錄不夠完整"
+          },
+          {
+            "id": 2,
+            "text": "保留原核實觀察，刪去不應有的動機暗示",
+            "action": "導師已保留原核實觀察，刪去不應有的動機暗示",
+            "tradeoff": "結果未必改變，家長可能仍不滿"
+          },
+          {
+            "id": 3,
+            "text": "依一致規則給孩子短段說明機會，不由家人代答",
+            "action": "導師已依一致規則給孩子短段說明機會，不由家人代答",
+            "tradeoff": "要正式可用時段，也不先承諾更改結果"
+          },
+          {
+            "id": 4,
+            "text": "如實說明你寫原評語時看到什麼，接受家長追問",
+            "action": "導師已如實說明你寫原評語時看到什麼，接受家長追問",
+            "tradeoff": "談話可能久，也不能拿工作忙作全部理由"
+          },
+          {
+            "id": 5,
+            "text": "約定更正的明確回覆時間與方式，不讓全家輪流催",
+            "action": "導師已約定更正的明確回覆時間與方式，不讓全家輪流催",
+            "tradeoff": "你要履約，也不能虛構已辦事項"
+          },
+          {
+            "id": 6,
+            "text": "請家長只補充已知陪練範圍，其餘由孩子自行陳述",
+            "action": "導師已請家長只補充已知陪練範圍，其餘由孩子自行陳述",
+            "tradeoff": "可能少掉長輩最想證明的部分"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再用四個字打發一家的猜謎，把自己這次講評中同類模糊句逐一換成可理解的觀察",
+          "action": "導師已定向修訂本人本次講評的同類模糊表述，只依既有可核對觀察補寫，不重判無關學生或洩漏他人資料",
+          "tradeoff": "增加你的批改時間，也可能讓自己發現不只一處寫得不清"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1498446965
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "77181d5017d84c50cb5c62bfd86e9f6c9c999d4b99035021895a329b885b6ba8"
+      },
+      "consequenceDirections": {
+        "A": "家庭能有穩定預期，但實際內容仍須經查證。",
+        "B": "其他學生也得到較可用的說明，家長卻不能把全面修句當成孩子結果必須變好。",
+        "C": "能分清記熟與理解，卻不能再用一句評語替代實際依據。",
+        "D": "原決定有可核對脈絡，但家長仍可認為措辭不妥。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e20899285895b488e58f925953d91e40596085ae47dcd9b52997bad8bde0a397",
+    "draftSha256": "164cc50fbd435f1480bd7c3cbb1994304f73b1624d3fdf1b42bf1b580ff98369",
     "seedAssignmentVersion": 1
   }
 }

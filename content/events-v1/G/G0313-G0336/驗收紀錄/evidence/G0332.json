@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "51793603d0de2134f2f8b2f86a797d8f81f8fa2c141618750e98bb8d9e5e8c1f",
+      "checkedAt": "2026-11-27T05:20:42.396Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只向已知受影響的小組澄清，不擴大全班點名",
+            "action": "導師已只向已知受影響的小組澄清，不擴大全班點名",
+            "tradeoff": "需要核對接收範圍，也可能還有未知轉述者"
+          },
+          {
+            "id": 2,
+            "text": "由你在原交流範圍說明沒有評定，不讓學生獨自背更正",
+            "action": "導師已由你在原交流範圍說明沒有評定，不讓學生獨自背更正",
+            "tradeoff": "你得承擔詢問，也不公開消息來源"
+          },
+          {
+            "id": 3,
+            "text": "給學生一句可直接轉達的簡短更正，不加入誰傳的",
+            "action": "導師已給學生一句可直接轉達的簡短更正，不加入誰傳的",
+            "tradeoff": "他要自己開口，對方也未必立刻相信"
+          },
+          {
+            "id": 4,
+            "text": "依原時程提供具體練習回饋，不用名次解釋目光",
+            "action": "導師已依原時程提供具體練習回饋，不用名次解釋目光",
+            "tradeoff": "要花時間，也不可讓不存在的決定等到那時才澄清"
+          },
+          {
+            "id": 5,
+            "text": "請他只補充自己確知的傳播範圍，不代查其他同學",
+            "action": "導師已請他只補充自己確知的傳播範圍，不代查其他同學",
+            "tradeoff": "資訊有限，必要查明仍由成人處理"
+          },
+          {
+            "id": 6,
+            "text": "和班上說清觀察不等於評定，不用這次當事人作例子",
+            "action": "導師已和班上說清觀察不等於評定，不用這次當事人作例子",
+            "tradeoff": "可能有人猜出背景，也要維持隱私"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點受不了連站哪裡都變預言，暫停自己原打算發的趣味預測名單，回到具體回饋",
+          "action": "導師已取消本人未成立的非必要趣味預測，維持正式回饋規則與必要澄清，不以此禁止學生合法討論",
+          "tradeoff": "少了你覺得有趣的話題，也得承認曾鼓勵大家猜"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2672651159
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "2f59138a5e85ed100d9867195dfdebe75c5da76a01d345847e604f7d11107203"
+      },
+      "consequenceDirections": {
+        "A": "往後較不會把教師看一眼當定案，但仍不能取代本次定向更正。",
+        "B": "教師不再把目光包成暗示，學生卻可能失望少了遊戲，你仍須回應真正學習需要。",
+        "C": "學生有可靠說法，但不能變成替教師四處辯解的任務。",
+        "D": "同學不必在傳話者中找戰犯，教師卻可能接到更多想問名次的人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f3c2f966b7c86498add0e61420b97822d7609243abc8fc970789335b687d6696",
+    "draftSha256": "51793603d0de2134f2f8b2f86a797d8f81f8fa2c141618750e98bb8d9e5e8c1f",
     "seedAssignmentVersion": 1
   }
 }

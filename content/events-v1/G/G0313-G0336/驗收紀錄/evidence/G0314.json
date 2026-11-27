@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1976a415e1d4f048dfe1e1deefea8b690c62486abbefc9c0ca684038ddbd7a8d",
+      "checkedAt": "2026-11-27T05:20:42.383Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照常收願意交的作業，不讓他代全組宣布抵制",
+            "action": "導師已照常收願意交的作業，不讓他代全組宣布抵制",
+            "tradeoff": "可能讓他覺得被孤立，也須處理具體施壓"
+          },
+          {
+            "id": 2,
+            "text": "依一致規則讓他先補必要短段，不拿家計交換例外",
+            "action": "導師已依一致規則讓他先補必要短段，不拿家計交換例外",
+            "tradeoff": "要留正式可用時間，其他缺口仍在"
+          },
+          {
+            "id": 3,
+            "text": "保留核實的遲交結果，另處理你那句帶壞人的失言",
+            "action": "導師已保留核實的遲交結果，另處理你那句帶壞人的失言",
+            "tradeoff": "學生可能仍不接受結果"
+          },
+          {
+            "id": 4,
+            "text": "聽他把原不交約定與自己參與的部分說清楚，不公開家庭細節",
+            "action": "導師已聽他把原不交約定與自己參與的部分說清楚，不公開家庭細節",
+            "tradeoff": "要花談話時間，也可能發現不只一人發起"
+          },
+          {
+            "id": 5,
+            "text": "和任課老師核對作業量與可行補做方式，不先說抗議都是藉口",
+            "action": "導師已和任課老師核對作業量與可行補做方式，不先說抗議都是藉口",
+            "tradeoff": "需配合對方，不能保證縮量"
+          },
+          {
+            "id": 6,
+            "text": "提供不必公開家況的正式求助方式，由本人決定是否使用",
+            "action": "導師已提供不必公開家況的正式求助方式，由本人決定是否使用",
+            "tradeoff": "他可能不想再講，也不能用轉介代替眼前回應"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再靠大聲結束這場，請適任同仁一起接續這次談話，自己先停止追加說教",
+          "action": "導師已邀必要知情且適任成人協同後續談話，保持學生原有陳述與支持權，不以多人談話施壓或延留",
+          "tradeoff": "要多一位必要成人知情，也須有合適時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2830859097
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "b23125140ebcb385b72a2ae9ad520ec9bc90c47149668782a93df020ebc53faa"
+      },
+      "consequenceDirections": {
+        "A": "學生可能比較敢說，也可能覺得事情被弄大；你仍得面對同仁對自己失言的提醒。",
+        "B": "他能開始一部分，卻不能把願意補就當所有原紀錄消失。",
+        "C": "真正教學問題能被看見，學生仍須承擔自己的可核實行為。",
+        "D": "家庭負荷有額外支援入口，但不是拿揭露欠款換教師相信。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "abbbddf7dc1dc7b8f3032ce7bf6ee0b9650743dcbed1a0d56b74867d4d5b2fb4",
+    "draftSha256": "1976a415e1d4f048dfe1e1deefea8b690c62486abbefc9c0ca684038ddbd7a8d",
     "seedAssignmentVersion": 1
   }
 }

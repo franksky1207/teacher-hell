@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b6420b275fb326feef621507cf3eafd8819b2e9c8f1f8f560faf93060bd0df11",
+      "checkedAt": "2026-11-27T05:20:42.389Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持停用原歌，逐項說明實際不合適的部分",
+            "action": "導師已維持停用原歌，逐項說明實際不合適的部分",
+            "tradeoff": "要面對不滿，也不能拿教師身分取代理由"
+          },
+          {
+            "id": 2,
+            "text": "讓合規替案依原許可方式重投，先說清範圍",
+            "action": "導師已讓合規替案依原許可方式重投，先說清範圍",
+            "tradeoff": "會多占班會時間，也可能還是沒有共識"
+          },
+          {
+            "id": 3,
+            "text": "改做其他課程允許的班會活動，歌單問題另約處理",
+            "action": "導師已改做其他課程允許的班會活動，歌單問題另約處理",
+            "tradeoff": "今天少了原本期待，教師必須真的回覆"
+          },
+          {
+            "id": 4,
+            "text": "請各人自行決定是否參加非必要歌唱，不由帶頭者代答",
+            "action": "導師已請各人自行決定是否參加非必要歌唱，不由帶頭者代答",
+            "tradeoff": "可能使隊形散掉，也須防止互相施壓"
+          },
+          {
+            "id": 5,
+            "text": "重訂今後淘汰前先說明的方式，兼顧必要即刻停用",
+            "action": "導師已重訂今後淘汰前先說明的方式，兼顧必要即刻停用",
+            "tradeoff": "教師要多做回覆，不保證所有提案能過"
+          },
+          {
+            "id": 6,
+            "text": "私下聽他對被略過的感受，不以談心交換全班復唱",
+            "action": "導師已私下聽他對被略過的感受，不以談心交換全班復唱",
+            "tradeoff": "多花時間，未必當場和好"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被問得有點惱，主動把這次略過票數的經過交班務主管檢視，連你怎麼決定都寫明",
+          "action": "導師已如實提交本人班務決定與未說明過程供正常主管檢視，不公開學生私人投票、不預設責任或改必要停用",
+          "tradeoff": "自己的疏漏會留紀錄，也不保證主管支持你"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3336217280
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "ca89e22dbf5f1f9e63ecdab9184b044005adbd498c93372657942187e06887ae"
+      },
+      "consequenceDirections": {
+        "A": "同學不用用唱不唱證明站哪邊，他卻可能覺得影響力被削弱。",
+        "B": "學生知道教師不是只要求別人交代，卻不能把上交紀錄當成保證重播原歌。",
+        "C": "罷唱不會被強迫拆解成人人上台，原提案也不能就此消失。",
+        "D": "學生知道提案不是沒被看見，仍可能不認同你的判斷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c3c2bbab4ef09bd447e1e13e9a9827c7079d47cd54dc6098b5995e37b8d83eb9",
+    "draftSha256": "b6420b275fb326feef621507cf3eafd8819b2e9c8f1f8f560faf93060bd0df11",
     "seedAssignmentVersion": 1
   }
 }

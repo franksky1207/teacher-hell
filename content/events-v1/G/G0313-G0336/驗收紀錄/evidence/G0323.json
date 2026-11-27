@@ -15,14 +15,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c0cfcc97178f15ba2207326d2e5c7dde3b1fc370618708ab29b295068b19f015",
+      "checkedAt": "2026-11-27T05:20:42.391Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先在校內辨認路況與危險點，今天仍照原核准方式離校",
+            "action": "導師已先在校內辨認路況與危險點，今天仍照原核准方式離校",
+            "tradeoff": "沒有真正走過，還須家庭另確認現場"
+          },
+          {
+            "id": 2,
+            "text": "取得家庭與校方必要確認後，只試清楚可回頭的一段",
+            "action": "導師已取得家庭與校方必要確認後，只試清楚可回頭的一段",
+            "tradeoff": "可能今天做不到，也須有適當成人與聯繫安排"
+          },
+          {
+            "id": 3,
+            "text": "請家人先陪第一回，由學生提出想自己判斷的部分",
+            "action": "導師已請家人先陪第一回，由學生提出想自己判斷的部分",
+            "tradeoff": "家人要有時間，也可能覺得本來就教過"
+          },
+          {
+            "id": 4,
+            "text": "請他說出走錯或接不上時找誰，讓家庭核對方案",
+            "action": "導師已請他說出走錯或接不上時找誰，讓家庭核對方案",
+            "tradeoff": "可能發現聯繫不足，會延後試行"
+          },
+          {
+            "id": 5,
+            "text": "提供正式交通資訊，家庭與本人自行確認現況",
+            "action": "導師已提供正式交通資訊，家庭與本人自行確認現況",
+            "tradeoff": "資料未必含所有細節，不能照舊截圖一直用"
+          },
+          {
+            "id": 6,
+            "text": "和家庭釐清採買交通負荷，提供可自願使用的支持",
+            "action": "導師已和家庭釐清採買交通負荷，提供可自願使用的支持",
+            "tradeoff": "可能談到不願多說的家務，也未必能立即減量"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想每回只叫學生小心，先把自己常講卻沒查證的捷徑建議從班級資訊裡撤下，重新核對後再說",
+          "action": "導師已撤回本人未核實的非必要路線建議並啟動正式資料核對，不代核准外出或改變當日原有安全離校安排",
+          "tradeoff": "你要承認自己也可能憑習慣，也花時間補查"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3229490432
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "fd0b3c8a35923af6f17969a12462afd31e3c2a8ca256e1d8d9c94b2e226974af"
+      },
+      "consequenceDirections": {
+        "A": "他有可靠起點，仍要實際核對道路與允許條件。",
+        "B": "他能先看清風險，自主練習卻不會因一張圖就算完成。",
+        "C": "學生不必為配合教師話語硬走熟路，卻仍不能把撤下舊建議當作今天已准新路線。",
+        "D": "學生可逐步嘗試，不能靠敬重教師就取代真實安全條件。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "01522c909b2efe2675753814b13b55d780a2316aa3779d29564dd547017fab66",
+    "draftSha256": "c0cfcc97178f15ba2207326d2e5c7dde3b1fc370618708ab29b295068b19f015",
     "seedAssignmentVersion": 1
   }
 }

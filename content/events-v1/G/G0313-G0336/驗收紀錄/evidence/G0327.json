@@ -15,14 +15,155 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "754868c2a08420722528a9f3d9b675580a41bcec2ead0a54e72317afd1d54f1c",
+      "checkedAt": "2026-11-27T05:20:42.394Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓全班直接談哪個教法有用，不附個人成績",
+            "action": "導師已讓全班直接談哪個教法有用，不附個人成績",
+            "tradeoff": "可能只得到零碎感受，也不拿來當唯一成效證明"
+          },
+          {
+            "id": 2,
+            "text": "保留真正自願的匿名反思，先說清楚用途",
+            "action": "導師已保留真正自願的匿名反思，先說清楚用途",
+            "tradeoff": "匿名未必猜不出，也須控制使用範圍"
+          },
+          {
+            "id": 3,
+            "text": "清楚拒絕班級平均比輸贏，不把其他教師拉進來",
+            "action": "導師已清楚拒絕班級平均比輸贏，不把其他教師拉進來",
+            "tradeoff": "他可能失望，也得接受好意被擋下"
+          },
+          {
+            "id": 4,
+            "text": "請他說一段自己確實理解的方法，留在課內交流",
+            "action": "導師已請他說一段自己確實理解的方法，留在課內交流",
+            "tradeoff": "占用短時間，也不能代替他人發言"
+          },
+          {
+            "id": 5,
+            "text": "私下問被影響的組員需要什麼，不讓帶頭者代答",
+            "action": "導師已私下問被影響的組員需要什麼，不讓帶頭者代答",
+            "tradeoff": "要另外花時間，可能聽到不願公開的困難"
+          },
+          {
+            "id": 6,
+            "text": "把這次額外成果宣傳取消，必要課業回到原要求",
+            "action": "導師已把這次額外成果宣傳取消，必要課業回到原要求",
+            "tradeoff": "少了大家想完成的成品，也要說明並非努力無價值"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也有點想贏，改請同事看你一小段課，不叫學生交分數替你作證",
+          "action": "導師已向合適同事與校內窗口提出自願短段觀課邀請，依現行規定安排，不提供學生個人成績比較或指定評比結果",
+          "tradeoff": "要經學校與同事同意，也可能被看出不少問題，不能要求只寫稱讚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2975411338
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "32d67cc8e8a0ecf8daa424f4f0cf5f5f8e2ed7df6d282859549f2f68d2622286"
+      },
+      "consequenceDirections": {
+        "A": "學生不用再準備教師戰績，卻仍可在合法範圍表達個人感謝。",
+        "B": "感受可被看見，學生仍有不參與權，教師不能挑最漂亮的當全班結論。",
+        "C": "同事可能答應並提出實際教學問題，也可能沒有空；你要承擔成人專業回饋，而不是再讓學生證明你比誰好。",
+        "D": "新安排能顧到真正壓力，但不能逼對方指控誰帶頭。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意核讀發現原情緒撤回成果分享仍過近普通候選取消宣傳；改為邀成人同事依規定短段觀課，以教師承受專業回饋取代學生交分數作證。依原工具真實重抽一次，保留原抽選與後果，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "讓全班直接談哪個教法有用，不附個人成績",
+                "action": "導師已讓全班直接談哪個教法有用，不附個人成績",
+                "tradeoff": "可能只得到零碎感受，也不拿來當唯一成效證明"
+              },
+              {
+                "id": 2,
+                "text": "保留真正自願的匿名反思，先說清楚用途",
+                "action": "導師已保留真正自願的匿名反思，先說清楚用途",
+                "tradeoff": "匿名未必猜不出，也須控制使用範圍"
+              },
+              {
+                "id": 3,
+                "text": "清楚拒絕班級平均比輸贏，不把其他教師拉進來",
+                "action": "導師已清楚拒絕班級平均比輸贏，不把其他教師拉進來",
+                "tradeoff": "他可能失望，也得接受好意被擋下"
+              },
+              {
+                "id": 4,
+                "text": "請他說一段自己確實理解的方法，留在課內交流",
+                "action": "導師已請他說一段自己確實理解的方法，留在課內交流",
+                "tradeoff": "占用短時間，也不能代替他人發言"
+              },
+              {
+                "id": 5,
+                "text": "私下問被影響的組員需要什麼，不讓帶頭者代答",
+                "action": "導師已私下問被影響的組員需要什麼，不讓帶頭者代答",
+                "tradeoff": "要另外花時間，可能聽到不願公開的困難"
+              },
+              {
+                "id": 6,
+                "text": "把這次額外成果宣傳取消，必要課業回到原要求",
+                "action": "導師已把這次額外成果宣傳取消，必要課業回到原要求",
+                "tradeoff": "少了大家想完成的成品，也要說明並非努力無價值"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "你聽到最好也有點飄，乾脆把自己的教學成果分享暫時撤下，不用這群學生替你湊漂亮圖表",
+              "action": "導師已撤回本人非必要教學成果分享中的學生表現圖表方案，必要評量資料仍依法處理，不取消學生正常表意",
+              "tradeoff": "少一次自我展示，也須向承辦說明"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2289868931
+            },
+            "selectedIds": [
+              6,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 6,
+              "D": 2
+            },
+            "optionsDigest": "125cbc816e5d61151104abec2cca35718a29648f3e65b1385bdfa6679faa841e"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生的肯定不再被你帶去比輸贏，但他可能失望心意沒被公開，你得接受而不再偷偷借數字。",
+            "B": "肯定不會變成競爭材料，教師仍須給努力一個正常回應。",
+            "C": "學生不用再準備教師戰績，卻仍可在合法範圍表達個人感謝。",
+            "D": "感受可被看見，學生仍有不參與權，教師不能挑最漂亮的當全班結論。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f4c210458437aef7e16f2e34cddf2a8f83feafccf2b98fdfa809932e6c9940d0",
+    "draftSha256": "754868c2a08420722528a9f3d9b675580a41bcec2ead0a54e72317afd1d54f1c",
     "seedAssignmentVersion": 1
   }
 }

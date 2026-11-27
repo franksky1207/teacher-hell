@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5fdfba61fe447f7aaaf1e9549f15a750ae11864baa3c26b961f06b3ea814a595",
+      "checkedAt": "2026-11-27T05:20:42.394Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他向原聽見者自行更正，不替他代說",
+            "action": "導師已請他向原聽見者自行更正，不替他代說",
+            "tradeoff": "他要面對尷尬，你也不保證別人怎麼看"
+          },
+          {
+            "id": 2,
+            "text": "把未成熟例子撤出本次交流，必要更正照辦",
+            "action": "導師已把未成熟例子撤出本次交流，必要更正照辦",
+            "tradeoff": "少了一段內容，也得向承辦解釋"
+          },
+          {
+            "id": 3,
+            "text": "共同向原接收者說明各自貢獻，先核對文字",
+            "action": "導師已共同向原接收者說明各自貢獻，先核對文字",
+            "tradeoff": "你要花時間，也不能被要求替他承擔所有說法"
+          },
+          {
+            "id": 4,
+            "text": "先把這次例子核對清楚，僅在雙方同意範圍再使用",
+            "action": "導師已先把這次例子核對清楚，僅在雙方同意範圍再使用",
+            "tradeoff": "會慢下來，不能靠補名字就直接發"
+          },
+          {
+            "id": 5,
+            "text": "和他重訂日後交換素材可分享到哪裡，不推定熟人都同意",
+            "action": "導師已和他重訂日後交換素材可分享到哪裡，不推定熟人都同意",
+            "tradeoff": "少了隨手互換的便利，也可能使關係拘謹"
+          },
+          {
+            "id": 6,
+            "text": "私下聽他怕被說搶功的部分，不答應替他保密到底",
+            "action": "導師已私下聽他怕被說搶功的部分，不答應替他保密到底",
+            "tradeoff": "會聽到不舒服的期待，也不能以談心延後必要更正"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你心裡很不舒服，暫停自己下一次自願交換新素材，只提供原已答應的必要部分",
+          "action": "導師已暫停本人尚未承諾的額外自願素材交流，履行既有授權與必要職務，不扣留同事有權取得的資料或阻擋更正",
+          "tradeoff": "少一條熟悉合作管道，也可能令對方覺得受罰"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 134540237
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "e3cf410e65ff9b4d1a0f1953aac1cecedf47430e9ba345619df62394ba54e2c9"
+      },
+      "consequenceDirections": {
+        "A": "同事的迴避被理解，卻不會因此取得隱藏來源的許可。",
+        "B": "有用做法能留住，卻須接受部分原稿可能不能用。",
+        "C": "合作脈絡能被辨認，兩人的貢獻仍不必被寫成完全一樣。",
+        "D": "你能重新確立私人分享界線，同事仍有正常工作資源，不必用新親近換取原錯誤被放過。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "33c998c20e85e073b2cc484a029a47dcb68b24596df4b29d43866c2772e7dd41",
+    "draftSha256": "5fdfba61fe447f7aaaf1e9549f15a750ae11864baa3c26b961f06b3ea814a595",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fa4c29cd2862105050bea319f251ecbd42d0587784b956eefff11614779ed452",
+      "checkedAt": "2026-11-27T05:20:42.381Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他在合適地方遮去或洗掉號碼，不當眾檢查制服",
+            "action": "導師已陪他在合適地方遮去或洗掉號碼，不當眾檢查制服",
+            "tradeoff": "要他同意處理，也可能留下痕跡"
+          },
+          {
+            "id": 2,
+            "text": "請已抄到的人停止使用與轉傳，按必要範圍更正",
+            "action": "導師已請已抄到的人停止使用與轉傳，按必要範圍更正",
+            "tradeoff": "要核實接收者，不能搜所有人私物"
+          },
+          {
+            "id": 3,
+            "text": "與家人確認一個不占課的固定聯繫時段",
+            "action": "導師已與家人確認一個不占課的固定聯繫時段",
+            "tradeoff": "可能少接臨時機會，家庭也要調整"
+          },
+          {
+            "id": 4,
+            "text": "把急件聯絡直接交現有校方窗口確認，不讓同桌傳話",
+            "action": "導師已把急件聯絡直接交現有校方窗口確認，不讓同桌傳話",
+            "tradeoff": "要完整交接，也不能承諾所有工作訊息都算急件"
+          },
+          {
+            "id": 5,
+            "text": "私下提供家庭可自願申請的支持資訊，不要求說給全班聽",
+            "action": "導師已私下提供家庭可自願申請的支持資訊，不要求說給全班聽",
+            "tradeoff": "可能需要後續程序，也未必立刻解決收入"
+          },
+          {
+            "id": 6,
+            "text": "請他自己選一個安全的私人記錄方法，不再把號碼露在外面",
+            "action": "導師已請他自己選一個安全的私人記錄方法，不再把號碼露在外面",
+            "tradeoff": "需要練習新習慣，也不能以記法代替校內規則"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你看那串號碼越看越煩，取消自己原訂讓全班畫制服塗鴉的趣味示範，不再拿袖口當話題",
+          "action": "導師已取消本人非必要袖口塗鴉示範，保留正常服儀、隱私及支持處理，不公開學生家計或處罰被仿寫者",
+          "tradeoff": "少一項你想帶的活動，也得避免讓人猜是誰害取消"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1555787691
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "f5097e647ab30254c2a77ed71bb529e87c20faa965d0b829309c933d0449d6ba"
+      },
+      "consequenceDirections": {
+        "A": "私人電話不再一直可見，但已被抄走的部分仍須另外處理。",
+        "B": "學生不用隨時盯訊息，卻須面對工作安排可能因此改變。",
+        "C": "教師不再替仿寫風潮加熱，學生仍可保留合法個人創作，但不能把電話當可玩素材。",
+        "D": "重要通知有正式路徑，教師仍須說清楚可受理範圍。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a28203ba83b0793984945dbbf9332274f0c10d0226ff19144a95ac3eaba4dfff",
+    "draftSha256": "fa4c29cd2862105050bea319f251ecbd42d0587784b956eefff11614779ed452",
     "seedAssignmentVersion": 1
   }
 }

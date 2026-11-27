@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8fd21c63de01f4e11538a7a338f0c21abd72a55e648d23afc58f2260e8242c5a",
+      "checkedAt": "2026-11-27T05:20:42.398Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只收下原約最後一期，不再提續購",
+            "action": "導師已只收下原約最後一期，不再提續購",
+            "tradeoff": "共同習慣會停，你也得接受往後沒有新刊"
+          },
+          {
+            "id": 2,
+            "text": "雙方願意就一起翻完，不另約訂閱",
+            "action": "導師已雙方願意就一起翻完，不另約訂閱",
+            "tradeoff": "要留私人時間，也可能聊到不想談的告別"
+          },
+          {
+            "id": 3,
+            "text": "坦白你過去主要看其中一欄，讓他自行決定往後怎麼讀",
+            "action": "導師已坦白你過去主要看其中一欄，讓他自行決定往後怎麼讀",
+            "tradeoff": "可能令他失落，也不用假裝每頁都珍惜"
+          },
+          {
+            "id": 4,
+            "text": "為擅自期待他續買道歉，聽完不滿再談物件交付",
+            "action": "導師已為擅自期待他續買道歉，聽完不滿再談物件交付",
+            "tradeoff": "你得承受批評，也不保證立刻恢復親近"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，請他自己選一則最想留下的合法剪報，只供合規私人留存",
+            "action": "導師已若他願意，請他自己選一則最想留下的合法剪報，只供合規私人留存",
+            "tradeoff": "不能任意複製整刊，也可能一則都不想選"
+          },
+          {
+            "id": 6,
+            "text": "讓他自己保留最後一期，不勉強照原約交給你",
+            "action": "導師已讓他自己保留最後一期，不勉強照原約交給你",
+            "tradeoff": "你少一份熟悉閱讀，也得明說不怪他"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很捨不得那段閒聊，邀他以後偶爾只來喝杯各自準備的茶，不用帶任何東西",
+          "action": "導師已提出不附帶物資、雙方自願的偶爾私人飲茶邀請，不代人續訂或設定新定期義務，原刊依法處理",
+          "tradeoff": "需要私人時間，也不能把偶爾又訂成固定打卡"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2241240684
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "0532b164244d4ecb7aa684262ca24091b18e28e381b2ebd24bad0560dd3bb7b7"
+      },
+      "consequenceDirections": {
+        "A": "物件能留給更想保存的人，兩人仍須適應日後少了固定相遇。",
+        "B": "最後一期有一段共同閱讀，卻不會因此阻止原習慣結束。",
+        "C": "習慣可留下小片段，卻不必延長為下一個每月任務。",
+        "D": "同事可以保留相處而不續購，卻可能根本想完整結束這段節奏，你要接受拒絕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4fda45adecbad1a15b15503b4e1e6de7f63a18646cb40e28964d96ec31671f87",
+    "draftSha256": "8fd21c63de01f4e11538a7a338f0c21abd72a55e648d23afc58f2260e8242c5a",
     "seedAssignmentVersion": 1
   }
 }

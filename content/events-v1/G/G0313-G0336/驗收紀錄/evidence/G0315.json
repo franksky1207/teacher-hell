@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ccc02d7c200212c043052ba0e27487b93bf695626d3151d323894ceb5ab389b4",
+      "checkedAt": "2026-11-27T05:20:42.384Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由教師接下必要學科問題，不讓學生當固定問答台",
+            "action": "導師已由教師接下必要學科問題，不讓學生當固定問答台",
+            "tradeoff": "教師工作增加，也須依學科資格轉合適任課者"
+          },
+          {
+            "id": 2,
+            "text": "讓其餘人先各自試題，不等他開口才開始",
+            "action": "導師已讓其餘人先各自試題，不等他開口才開始",
+            "tradeoff": "有人會卡住，也要留下可用求助方式"
+          },
+          {
+            "id": 3,
+            "text": "另設可退出的短分享，只有本人真願意才排",
+            "action": "導師已另設可退出的短分享，只有本人真願意才排",
+            "tradeoff": "要另找合規時段，也可能完全不辦"
+          },
+          {
+            "id": 4,
+            "text": "和他確認今天要保留哪些不被打擾的時間，不公開家庭原因",
+            "action": "導師已和他確認今天要保留哪些不被打擾的時間，不公開家庭原因",
+            "tradeoff": "教師須履行，也不能把他隔成受保護的特殊座位"
+          },
+          {
+            "id": 5,
+            "text": "請同學把問題集中交任課窗口，不再逐個排他身旁",
+            "action": "導師已請同學把問題集中交任課窗口，不再逐個排他身旁",
+            "tradeoff": "即時互動減少，也可能寫不清問題"
+          },
+          {
+            "id": 6,
+            "text": "把讀書會的帶領角色改成自願輪替，每人只承接會的部分",
+            "action": "導師已把讀書會的帶領角色改成自願輪替，每人只承接會的部分",
+            "tradeoff": "協調需要時間，也不能再推一個不敢拒絕的人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也厭倦整間教室都在等同一個人，撤掉自己原想請他做的課後示範，改由你備一個新例題",
+          "action": "導師已撤回尚未成立的非必要課後學生示範請託，承擔本人原創例題準備，不免除必要教學或要求他另錄素材",
+          "tradeoff": "增加你的備課，也可能沒有他那麼會講"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1221031196
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "1f0c2fe342f868eb31ba740ad9a912b7258eea50dee401bd1dee653ac7a6d039"
+      },
+      "consequenceDirections": {
+        "A": "學生不必因有能力又被多留一次，教師則要承擔自己需要的教學素材，而非再私下拜託他救場。",
+        "B": "他能分享而不交出全部自習，同學不能把曾教過當每日義務。",
+        "C": "他不用每次當場拒絕，教師卻得實際回應收來的疑問。",
+        "D": "他能真正用自己的時段讀書，同學卻要學習等正常求助安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8e3e4a38c9cf9772f541078b8126fda6d847b2a059ef6b65cc86e7919bb6d2ba",
+    "draftSha256": "ccc02d7c200212c043052ba0e27487b93bf695626d3151d323894ceb5ab389b4",
     "seedAssignmentVersion": 1
   }
 }

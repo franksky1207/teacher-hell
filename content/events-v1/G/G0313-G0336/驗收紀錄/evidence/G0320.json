@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "db2f4bacf9248036e59c96392de5384665814025433bdadb910ba7345d11ca53",
+      "checkedAt": "2026-11-27T05:20:42.388Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這次名次，各組只補自己必要未清處",
+            "action": "導師已取消這次名次，各組只補自己必要未清處",
+            "tradeoff": "少了競賽成就，也要確認工作公平"
+          },
+          {
+            "id": 2,
+            "text": "請組長逐段說明確實做過哪裡，不逼他替別組作證",
+            "action": "導師已請組長逐段說明確實做過哪裡，不逼他替別組作證",
+            "tradeoff": "可能當場難堪，需要核對而非只聽自述"
+          },
+          {
+            "id": 3,
+            "text": "讓各組各自解說成果，不先由一人統整評價",
+            "action": "導師已讓各組各自解說成果，不先由一人統整評價",
+            "tradeoff": "花更多時間，也可能說法不一致"
+          },
+          {
+            "id": 4,
+            "text": "由成人依現場與紀錄確認，不再讓學生互判名次",
+            "action": "導師已由成人依現場與紀錄確認，不再讓學生互判名次",
+            "tradeoff": "教師工作增加，回覆會較慢"
+          },
+          {
+            "id": 5,
+            "text": "私下談他急著宣布時想得到什麼，另處理實際誤認",
+            "action": "導師已私下談他急著宣布時想得到什麼，另處理實際誤認",
+            "tradeoff": "要聽他的在意，也不能以談心免除更正"
+          },
+          {
+            "id": 6,
+            "text": "向實際聽到的人更正分工，不重複用作弊者貼標籤",
+            "action": "導師已向實際聽到的人更正分工，不重複用作弊者貼標籤",
+            "tradeoff": "你要控制範圍，也可能被追問為何原先沒看清"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也看膩站在旁邊評快慢，親自補一處你可安全處理的必要小區，這次不把全班再留著比",
+          "action": "導師已自願承接一處安全且必要的小範圍補清，正常核對各組實際責任，不危險操作或延留學生作比較",
+          "tradeoff": "花自己的時間，不能把成人補工當作原責任全消失"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2010844222
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "7632c152c5c113b91326026b1032f954028158a611212649e28318352bf159ed"
+      },
+      "consequenceDirections": {
+        "A": "別組工作不會被一句話吞掉，但不能變成公開互控。",
+        "B": "學生可以按確認的安排離開，教師卻要真的做完那塊，往後仍需合理分工。",
+        "C": "領功有可確認範圍，教師也可能發現原分工本來就有重疊。",
+        "D": "別組成果能被還原，組長仍須面對自己說得太滿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3d79b07db6f7773c8d987424caf873b0a4df39ad6babf7724445587fbd8f75eb",
+    "draftSha256": "db2f4bacf9248036e59c96392de5384665814025433bdadb910ba7345d11ca53",
     "seedAssignmentVersion": 1
   }
 }

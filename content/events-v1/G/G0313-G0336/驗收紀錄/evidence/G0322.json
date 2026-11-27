@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7bd6db52dea79cbfc6debd51a0cc57b30ca589687097da6f27d5f25bd885afcd",
+      "checkedAt": "2026-11-27T05:20:42.390Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改成多名自願且適任者一起做，不留兩人單獨",
+            "action": "導師已改成多名自願且適任者一起做，不留兩人單獨",
+            "tradeoff": "要重排人力，也可能沒人能即時加入"
+          },
+          {
+            "id": 2,
+            "text": "由你在場陪一段，先訂清楚起止與工作範圍",
+            "action": "導師已由你在場陪一段，先訂清楚起止與工作範圍",
+            "tradeoff": "占用你的工作時間，離開前仍須有合適接續"
+          },
+          {
+            "id": 3,
+            "text": "撤回這次尚未完成的自願承諾，必要部分另排",
+            "action": "導師已撤回這次尚未完成的自願承諾，必要部分另排",
+            "tradeoff": "作品可能延後，也要向相關人說明"
+          },
+          {
+            "id": 4,
+            "text": "讓他自選一項可獨立安全完成的小工作，不必與原同桌配對",
+            "action": "導師已讓他自選一項可獨立安全完成的小工作，不必與原同桌配對",
+            "tradeoff": "分工改變，可能少了原先合作效果"
+          },
+          {
+            "id": 5,
+            "text": "在雙方各自願意下談清楚哪些玩笑要停，不強制共同談話",
+            "action": "導師已在雙方各自願意下談清楚哪些玩笑要停，不強制共同談話",
+            "tradeoff": "可能一方不願，教師仍須正常查明與處理"
+          },
+          {
+            "id": 6,
+            "text": "把班角做法縮成現有人手能安全完成的版本，不追原大布置",
+            "action": "導師已把班角做法縮成現有人手能安全完成的版本，不追原大布置",
+            "tradeoff": "外觀變簡單，原準備可能用不到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然不想再把班角當自己的展示，撤掉這次原要對外送的非必要成品照，只確認課內需要的部分",
+          "action": "導師已取消本人可決定的非必要班角成果照片分享，不取消必要教學或安全查明，也不迫使學生繼續配對",
+          "tradeoff": "少一次你想分享的成果，也可能讓學生可惜"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4125531637
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "5f69923e52114e0164306a87d1419c061c7461c26a42842673cff8e67e44676e"
+      },
+      "consequenceDirections": {
+        "A": "他能按自己提出的條件開始，不能把短陪變成日後永遠教師在旁才做。",
+        "B": "班務有較可預期的相處條件，但具體玩笑仍須另外核實。",
+        "C": "兩人不用為你的展示期待趕著恢復合作，必要班務與相處問題仍要正常承接。",
+        "D": "相處界線有機會清楚，卻不能把願意坐下當成已和好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29d8b94db3f3f76603915a0c71e240ffe2ff763bb36a45f0a6c2fccaa05383a3",
+    "draftSha256": "7bd6db52dea79cbfc6debd51a0cc57b30ca589687097da6f27d5f25bd885afcd",
     "seedAssignmentVersion": 1
   }
 }

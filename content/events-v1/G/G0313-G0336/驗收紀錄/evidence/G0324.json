@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0e6957c3c3d7e841a3b4b2caa37fd5ebd20c2bdb7818c2222be58f98fe00f1d2",
+      "checkedAt": "2026-11-27T05:20:42.392Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "如實說明原先判斷，承認公開宣布不等於本人同意",
+            "action": "導師已如實說明原先判斷，承認公開宣布不等於本人同意",
+            "tradeoff": "要面對家長批評，也不能只拿想幫忙當理由"
+          },
+          {
+            "id": 2,
+            "text": "提供已核實可用的學習安排與回覆時間，不先開空頭承諾",
+            "action": "導師已提供已核實可用的學習安排與回覆時間，不先開空頭承諾",
+            "tradeoff": "資源可能有限，也須取得必要同意"
+          },
+          {
+            "id": 3,
+            "text": "改成全班可自選的一般求助入口，不公開個別原因",
+            "action": "導師已改成全班可自選的一般求助入口，不公開個別原因",
+            "tradeoff": "教師需承接更多人，不能只換名稱仍固定同一人"
+          },
+          {
+            "id": 4,
+            "text": "先私下問孩子想怎樣得到協助，不讓家長代答",
+            "action": "導師已先私下問孩子想怎樣得到協助，不讓家長代答",
+            "tradeoff": "要另找本人時間，也可能拒談"
+          },
+          {
+            "id": 5,
+            "text": "在必要範圍向原聽見者更正未定安排，不重複點名細節",
+            "action": "導師已在必要範圍向原聽見者更正未定安排，不重複點名細節",
+            "tradeoff": "你須承認話說太早，也需避免再次擴散"
+          },
+          {
+            "id": 6,
+            "text": "請適當任課或輔導窗口共同確認需求，不讓導師一人先排好",
+            "action": "導師已請適當任課或輔導窗口共同確認需求，不讓導師一人先排好",
+            "tradeoff": "多一位必要成人知情，也要配合時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再靠一句等我安排撐著，正式撤回自己原訂卻未核定的私人加課計畫，請課務按現有支援重排",
+          "action": "導師已撤回本人尚未核定的非必要私下加課意向，向正式課務提出支援確認，不取消既有必要教學與學生求助權",
+          "tradeoff": "少了你想親自救回的機會，也可能讓家長失望"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3044717782
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "3b0762679d3359b8430de06ef91dbb021aea95d6fe055a53072b7c8096c2c811"
+      },
+      "consequenceDirections": {
+        "A": "學習支持有合適承接，但不能藉轉介免除你對原公開宣布的說明。",
+        "B": "同學不會把當時宣告當成既定處分，孩子仍可能對後續說明敏感。",
+        "C": "孩子不用以被宣布的身分參加，實際需求仍須個別確認。",
+        "D": "安排不再依教師私人硬撐，卻須有真實承接，不能把撤計畫當成孩子沒機會了。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4abda226543a092ef14f6484ff2f62e70026fb03d3031ffad4e2a8d8175785d0",
+    "draftSha256": "0e6957c3c3d7e841a3b4b2caa37fd5ebd20c2bdb7818c2222be58f98fe00f1d2",
     "seedAssignmentVersion": 1
   }
 }

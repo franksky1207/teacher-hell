@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5ce199721e71d3cc2f9cb9ad38bfe5ea101e260562058d0f87ffe44b11f411b4",
+      "checkedAt": "2026-11-27T05:20:42.393Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天只完成必要安全整理，其餘依可用時間另排",
+            "action": "導師已今天只完成必要安全整理，其餘依可用時間另排",
+            "tradeoff": "借閱完整度下降，也要清楚說哪些還不能用"
+          },
+          {
+            "id": 2,
+            "text": "保留本輪暫停借閱，給明確恢復條件與回覆",
+            "action": "導師已保留本輪暫停借閱，給明確恢復條件與回覆",
+            "tradeoff": "同學今天借不到，也不能無限期停著"
+          },
+          {
+            "id": 3,
+            "text": "以後由實際到場者確認交接，不把聽說有人當成立",
+            "action": "導師已以後由實際到場者確認交接，不把聽說有人當成立",
+            "tradeoff": "多一道確認，也仍須保障基本用餐"
+          },
+          {
+            "id": 4,
+            "text": "核對本次真正被交代的範圍與時間，再依事實處理",
+            "action": "導師已核對本次真正被交代的範圍與時間，再依事實處理",
+            "tradeoff": "要聽多方說法，不能只看飯盒就判偷懶"
+          },
+          {
+            "id": 5,
+            "text": "請自願且有條件的同學分一小項，原學生只做自己可承擔部分",
+            "action": "導師已請自願且有條件的同學分一小項，原學生只做自己可承擔部分",
+            "tradeoff": "需重新教分工，也可能沒人願意"
+          },
+          {
+            "id": 6,
+            "text": "刪去非必要的重複排序，先讓書角依基本方式運作",
+            "action": "導師已刪去非必要的重複排序，先讓書角依基本方式運作",
+            "tradeoff": "美觀與找書便利下降，必要借閱紀錄仍保留"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也不想再聽空想的替班，今天自己當面接下書角交接，讓他去把飯吃完",
+          "action": "導師已在必要職務與安全安排容許下明確接續本輪書角管理，學生保有正常用餐，不以傳聞人手維持現場",
+          "tradeoff": "花你的時間，也不能把接手變成每天替所有人收尾"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3613151117
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "3a829f17bbb629d72e1b03421412be10581725ad56ec068195a8ab1379617e99"
+      },
+      "consequenceDirections": {
+        "A": "班務不會靠未核實人手運作，若沒人到場仍需成人另排。",
+        "B": "學生知道真正有人接上，不必邊吃邊回頭；你則要面對接手後剩下多少實際工作。",
+        "C": "班務不再為教師細密偏好增加，學生卻可能不習慣新排法。",
+        "D": "責任有具體依據，也可能發現原工作本來就超出空檔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "56833fd55a18b5288bb8b96c09d3a6c36236344f54b3ea40787a82a2b63c6b95",
+    "draftSha256": "5ce199721e71d3cc2f9cb9ad38bfe5ea101e260562058d0f87ffe44b11f411b4",
     "seedAssignmentVersion": 1
   }
 }

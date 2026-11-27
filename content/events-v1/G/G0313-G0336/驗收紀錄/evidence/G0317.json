@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aa83f574b88030b3cf6899e8920368e014a71c24d0e7a1ff40115896673aeea9",
+      "checkedAt": "2026-11-27T05:20:42.386Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "守住只陪到門口的原約，讓他向院方說自己的需要",
+            "action": "導師已守住只陪到門口的原約，讓他向院方說自己的需要",
+            "tradeoff": "他可能失望，你也要承受朋友覺得孤單"
+          },
+          {
+            "id": 2,
+            "text": "陪他先問院方能否緩一分鐘，不替醫師決定",
+            "action": "導師已陪他先問院方能否緩一分鐘，不替醫師決定",
+            "tradeoff": "可能不被允許，也不能影響其他病人的安排"
+          },
+          {
+            "id": 3,
+            "text": "在本人與院方同意下，只等到你原可用的截止時間",
+            "action": "導師已在本人與院方同意下，只等到你原可用的截止時間",
+            "tradeoff": "要準時離開，即使診療還沒結束"
+          },
+          {
+            "id": 4,
+            "text": "協助他詢問合適的院內支持，不把你當必須入診間的人",
+            "action": "導師已協助他詢問合適的院內支持，不把你當必須入診間的人",
+            "tradeoff": "院方服務未必有，也需本人同意"
+          },
+          {
+            "id": 5,
+            "text": "請他自己確認若今天改約的實際代價，不靠猜測放掉診次",
+            "action": "導師已請他自己確認若今天改約的實際代價，不靠猜測放掉診次",
+            "tradeoff": "要聽可能不樂觀的時段，也不代替本人取消"
+          },
+          {
+            "id": 6,
+            "text": "若你真願意且院方允許，限定只陪最初說明、不介入診療",
+            "action": "導師已若你真願意且院方允許，限定只陪最初說明、不介入診療",
+            "tradeoff": "牽涉私人醫療資訊，須有本人明確同意與時間條件"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你其實很怕看牙的聲音，坦白今天不能進去，留一段自己錄的普通加油訊息給他自選要不要聽",
+          "action": "導師已說明本人不入診間，徵詢後提供僅供對方私人收聽的非醫療鼓勵錄音，不錄院內他人或影響醫療流程",
+          "tradeoff": "可能顯得滑稽，也不能代替必要醫療支持"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4160287313
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "d95f9400e487e167418755963f47a343ddbb9c0e7b2375e3e326d174c217e4c1"
+      },
+      "consequenceDirections": {
+        "A": "選擇有真實資訊，但焦慮不會因知道下次何時就完全消失。",
+        "B": "同事可以在候診時聽或不聽，你不再硬扮鎮定，但仍須依原約清楚說再見而非突然消失。",
+        "C": "陪伴沒有無限延長，診療選擇仍由本人與醫療人員決定。",
+        "D": "他有機會先穩住，卻不能把緩一下當成一定保留名額。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cd5cf4fadd1c35e1cd6afad2649703adda9d52dd3aee34e2d3270b5f201fda85",
+    "draftSha256": "aa83f574b88030b3cf6899e8920368e014a71c24d0e7a1ff40115896673aeea9",
     "seedAssignmentVersion": 1
   }
 }

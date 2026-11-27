@@ -15,14 +15,82 @@
     "G03",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d05621d2ca33593fbdf10167e3bcd906abfeadebd71249cd75a75325a4b68de0",
+      "checkedAt": "2026-11-27T05:20:42.386Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "簡單承認就喜歡這味，不再提供私人理由",
+            "action": "導師已簡單承認就喜歡這味，不再提供私人理由",
+            "tradeoff": "話題可能冷掉，也有人仍想接梗"
+          },
+          {
+            "id": 2,
+            "text": "自嘲一小句後結束話題，不把學生的習慣拿來反笑",
+            "action": "導師已自嘲一小句後結束話題，不把學生的習慣拿來反笑",
+            "tradeoff": "你得接受被笑一下，也要守住不針對人的界線"
+          },
+          {
+            "id": 3,
+            "text": "直接說今天不想被討論點餐，自己吃完",
+            "action": "導師已直接說今天不想被討論點餐，自己吃完",
+            "tradeoff": "可能讓學生尷尬，也不等於處罰"
+          },
+          {
+            "id": 4,
+            "text": "只回應這名學生願意說的共同口味，不問搬家細節",
+            "action": "導師已只回應這名學生願意說的共同口味，不問搬家細節",
+            "tradeoff": "你要控制談話範圍，也可能有人想插進來"
+          },
+          {
+            "id": 5,
+            "text": "問老闆菜色怎麼做，把話題移回公開的料理內容",
+            "action": "導師已問老闆菜色怎麼做，把話題移回公開的料理內容",
+            "tradeoff": "要尊重店家忙碌，不能拿他當替你解圍的服務"
+          },
+          {
+            "id": 6,
+            "text": "依你原本安排拿外帶餐離開，不因起鬨改買別款",
+            "action": "導師已依你原本安排拿外帶餐離開，不因起鬨改買別款",
+            "tradeoff": "少了現場相處，也須照正常交易辦理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很不服大家以為你只會這一道，另自費加一份從沒點過的小菜，自己承擔踩雷",
+          "action": "導師已自行付費加點本人新菜，不取消已製作餐點、不借學生付費或要求他人分享，遵守正常餐食與店規",
+          "tradeoff": "多花私人費用，可能根本不好吃"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 621276134
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "d00ef350b6e9a24fac9bd71765968695c2cbeb1732de51e5be4a8eb0b15967fa"
+      },
+      "consequenceDirections": {
+        "A": "他能感到被理解，但不能因親近就形成固定校外私聚。",
+        "B": "學生知道習慣不必向全桌交代，你仍能正常吃自己的餐。",
+        "C": "你能保住自己的晚餐節奏，學生卻可能把離開誤認為你生氣，需要簡短說清。",
+        "D": "學生看到你也會衝動試新，卻不能因此逼你表演吃完或請全桌分享。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9fa6f67b2069735f542ee3f5c16b74336a13a4e66f1455693c5133cac34ae3a9",
+    "draftSha256": "d05621d2ca33593fbdf10167e3bcd906abfeadebd71249cd75a75325a4b68de0",
     "seedAssignmentVersion": 1
   }
 }

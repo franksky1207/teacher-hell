@@ -15,14 +15,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1a320f0112b015bfdd53bcd62dc6db0e0efbd6d558a0dccea3c5f881e69765a9",
+      "checkedAt": "2026-11-27T05:20:42.397Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "使用學校合規備品，由本人選是否接受",
+            "action": "導師已使用學校合規備品，由本人選是否接受",
+            "tradeoff": "可能尺寸與數量有限，也須確認用途"
+          },
+          {
+            "id": 2,
+            "text": "雙方自願且條件合適才借墊，說清保管與歸還",
+            "action": "導師已雙方自願且條件合適才借墊，說清保管與歸還",
+            "tradeoff": "墊子可能磨損，也不能把借用當必須接受"
+          },
+          {
+            "id": 3,
+            "text": "讓同伴從安全可用位置中自選，不把坐墊綁成條件",
+            "action": "導師已讓同伴從安全可用位置中自選，不把坐墊綁成條件",
+            "tradeoff": "可能和學生原想不同，也需兼顧他人動線"
+          },
+          {
+            "id": 4,
+            "text": "請出手學生自己說明剛才為何急，再回應拉人不妥",
+            "action": "導師已請出手學生自己說明剛才為何急，再回應拉人不妥",
+            "tradeoff": "可能有點難堪，不能拿好意當免說明"
+          },
+          {
+            "id": 5,
+            "text": "改用不需坐地的合規活動方式，由教師調整安排",
+            "action": "導師已改用不需坐地的合規活動方式，由教師調整安排",
+            "tradeoff": "原活動氣氛改變，也要顧到必要目標"
+          },
+          {
+            "id": 6,
+            "text": "先各自確認需要什麼，不讓一人的熱心替另一人作答",
+            "action": "導師已先各自確認需要什麼，不讓一人的熱心替另一人作答",
+            "tradeoff": "要多花短時間，可能得到相反意見"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再拿熱心學生當備品櫃，正式向學校提出補足合用坐具的需求，這次不先算他的墊子",
+          "action": "導師已向校內設備承辦提出實際坐具缺口，不私購後逼報帳、不強收學生物件，當下安全安排照常",
+          "tradeoff": "申請未必核准，眼前仍須安全安排"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 936740474
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "1cfde1748d94a46c218ec869657cde675332e903424c45101fa75e9860f18e73"
+      },
+      "consequenceDirections": {
+        "A": "家庭物品不再被默認公用，教師卻不能把送需求當成今天已經有足夠座位。",
+        "B": "換位不再由拉一下決定，私人資源仍由物主掌握。",
+        "C": "兩人能說清差異，教師仍須在實際可用條件裡協調。",
+        "D": "分享有實際同意，原想幫忙的人卻要接受可能被拒絕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75f41753dc40892882d57bdee39267dee08b60ecb922a51f5eaa2b7c813510a7",
+    "draftSha256": "1a320f0112b015bfdd53bcd62dc6db0e0efbd6d558a0dccea3c5f881e69765a9",
     "seedAssignmentVersion": 1
   }
 }

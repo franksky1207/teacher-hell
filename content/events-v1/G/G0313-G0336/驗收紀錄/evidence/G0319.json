@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e5e8f3e42dfa70144b4af4786fe8cdbcd80af9355334a8dac3de5ba97551736",
+      "checkedAt": "2026-11-27T05:20:42.387Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請代敲者只陪坐，由朋友自己決定怎麼說",
+            "action": "導師已請代敲者只陪坐，由朋友自己決定怎麼說",
+            "tradeoff": "同意陪同範圍要清楚，朋友仍可能沉默"
+          },
+          {
+            "id": 2,
+            "text": "讓求助者自行寫一句最想處理的事，不要同伴代填",
+            "action": "導師已讓求助者自行寫一句最想處理的事，不要同伴代填",
+            "tradeoff": "需要安靜與時間，也可能不想寫"
+          },
+          {
+            "id": 3,
+            "text": "私下問求助者想不想留同伴，不因一起來就默認全程在場",
+            "action": "導師已私下問求助者想不想留同伴，不因一起來就默認全程在場",
+            "tradeoff": "代敲者可能失落，教師要保護回應不被責怪"
+          },
+          {
+            "id": 4,
+            "text": "讓兩人先約定哪些可由朋友補充，其他由本人說",
+            "action": "導師已讓兩人先約定哪些可由朋友補充，其他由本人說",
+            "tradeoff": "要核對同意，不能一勞永逸代答"
+          },
+          {
+            "id": 5,
+            "text": "若本人今天只想確認窗口，給明確後續方式，不強迫一次說完",
+            "action": "導師已若本人今天只想確認窗口，給明確後續方式，不強迫一次說完",
+            "tradeoff": "問題暫未展開，必要風險仍須依法處理"
+          },
+          {
+            "id": 6,
+            "text": "請代敲者把自己親見的必要部分分開說，不揣測朋友心理",
+            "action": "導師已請代敲者把自己親見的必要部分分開說，不揣測朋友心理",
+            "tradeoff": "可能只有很少資訊，也得另聽本人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想讓每次求助都得先比膽量，把自己門口那段非必要的排隊說明改成清楚的敲門與急件指示",
+          "action": "導師已於本人可管理範圍修訂門口一般聯繫說明，標明正常敲門、等候與有效急件窗口，未另創處分或阻擋必要求助",
+          "tradeoff": "要依校內安排確認，不能讓正常受理工作失序"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 101658556
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "b1122cff235670443e40891ecaee15afb45175152b40b5eb173a51172a099b81"
+      },
+      "consequenceDirections": {
+        "A": "教師能分辨協助與代言，代敲者卻可能覺得幫得太少。",
+        "B": "幫忙留在場上但不搶話，教師要接受進度沒有代講那麼快。",
+        "C": "學生下次少一層猜教師臉色，你也得真正按說明回應，不能只換張紙。",
+        "D": "同伴經驗能提供必要資訊，卻不會自動成為全部真相。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9f15ac046b57bc22179a680eb6f0222554da42e2f68edbfb306c8d461d36e513",
+    "draftSha256": "3e5e8f3e42dfa70144b4af4786fe8cdbcd80af9355334a8dac3de5ba97551736",
     "seedAssignmentVersion": 1
   }
 }

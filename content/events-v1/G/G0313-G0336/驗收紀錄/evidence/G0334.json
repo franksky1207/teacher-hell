@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "53ec71d26bd8c380bc922f15f45d29a53e3f6539544cac9e81f6b8658ee6cd2c",
+      "checkedAt": "2026-11-27T05:20:42.397Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "引介學校正式捐書窗口，由承辦確認是否適用",
+            "action": "導師已引介學校正式捐書窗口，由承辦確認是否適用",
+            "tradeoff": "不保證接收，也要配合整理與時間"
+          },
+          {
+            "id": 2,
+            "text": "依規定婉拒，具體說明學校目前用不到的原因",
+            "action": "導師已依規定婉拒，具體說明學校目前用不到的原因",
+            "tradeoff": "她可能失落，你也不能只回一句謝謝不用"
+          },
+          {
+            "id": 3,
+            "text": "先請家庭確認孩子是否要留用，不因重複就推定不需要",
+            "action": "導師已先請家庭確認孩子是否要留用，不因重複就推定不需要",
+            "tradeoff": "需要家庭再談，也不能讓孩子被迫捐出"
+          },
+          {
+            "id": 4,
+            "text": "若校方接收可行，僅按核准用途登記，不公開家庭背景",
+            "action": "導師已若校方接收可行，僅按核准用途登記，不公開家庭背景",
+            "tradeoff": "要做正常保管，也不以捐書換表揚"
+          },
+          {
+            "id": 5,
+            "text": "提供其他合法且自願的轉讓資訊，不替家庭撮合交易",
+            "action": "導師已提供其他合法且自願的轉讓資訊，不替家庭撮合交易",
+            "tradeoff": "要自己確認對方與條件，也不保證有人要"
+          },
+          {
+            "id": 6,
+            "text": "先回覆已讀的書況與查詢時程，不讓家長一再猜是否被忽略",
+            "action": "導師已先回覆已讀的書況與查詢時程，不讓家長一再猜是否被忽略",
+            "tradeoff": "你須依約回覆，也不能先承諾接收"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你想到自己也有重複書，先把自己的合法可捐本送去同一窗口確認，不讓家長覺得只有她在被審",
+          "action": "導師已依相同規則提交本人合法可捐書籍供正式窗口評估，不代收家長物件或承諾優先接收",
+          "tradeoff": "花自己的整理時間，也可能你的書照樣不收"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1245354364
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "8f18f8fd5fd16187f3ae4054109ce536faef65c9ea6286ddd083614d8dd5b0a9"
+      },
+      "consequenceDirections": {
+        "A": "拒收不等於嫌二手，家庭可自行處理這本合法私物。",
+        "B": "書能真正被用，家長卻未必看到每次流向與使用者。",
+        "C": "家長能看見規則不是看誰送，卻不能拿你一起送當成她那本一定合格。",
+        "D": "家長有別的去處，教師不再成唯一收受者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f5cc6663c5f806c484b8f67dc57e206a081ef814aa64d2be9c41de30a4720605",
+    "draftSha256": "53ec71d26bd8c380bc922f15f45d29a53e3f6539544cac9e81f6b8658ee6cd2c",
     "seedAssignmentVersion": 1
   }
 }

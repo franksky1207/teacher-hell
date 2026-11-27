@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6f17cfeedd836e047807665d390356c5ad4ff54c63b04fd647ffc01f0ba843c2",
+      "checkedAt": "2026-11-27T05:20:42.392Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由學校窗口向實際接收者更正冒名訊息，不擴大公開內容",
+            "action": "導師已由學校窗口向實際接收者更正冒名訊息，不擴大公開內容",
+            "tradeoff": "需要核對流向，也不能保證外部副本全消失"
+          },
+          {
+            "id": 2,
+            "text": "協助他調整自己仍可控制的澄清內容，只留必要事實",
+            "action": "導師已協助他調整自己仍可控制的澄清內容，只留必要事實",
+            "tradeoff": "要本人同意與正式指引，不能要求刪掉必要證據"
+          },
+          {
+            "id": 3,
+            "text": "約定一次明確進度回覆，說清目前已做與未確認部分",
+            "action": "導師已約定一次明確進度回覆，說清目前已做與未確認部分",
+            "tradeoff": "你要履約，不能先保證哪天全部結束"
+          },
+          {
+            "id": 4,
+            "text": "請合格承辦直接讓本人問進度，減少教師轉述",
+            "action": "導師已請合格承辦直接讓本人問進度，減少教師轉述",
+            "tradeoff": "要完成交接，也可能仍只能得到有限答案"
+          },
+          {
+            "id": 5,
+            "text": "在不展示原圖下向班上說明冒名不代表本人發言",
+            "action": "導師已在不展示原圖下向班上說明冒名不代表本人發言",
+            "tradeoff": "可能引起好奇，也不可讓人猜當事人細節"
+          },
+          {
+            "id": 6,
+            "text": "提供本人自願的支持與必要求助方式，不要求先平靜才受理",
+            "action": "導師已提供本人自願的支持與必要求助方式，不要求先平靜才受理",
+            "tradeoff": "他可能不想再談，情緒也不會立刻停止"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被何時不用證明問得很不安，決定自己向主管如實交代已答應卻未明確回覆的延誤，不把催問寫成學生鬧事",
+          "action": "導師已如實向主管提交本人承諾與回覆時程，明列已辦未辦事項，不洩漏無關私事或預設他人責任",
+          "tradeoff": "留下自己的責任，也可能被要求逐項說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2208370637
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "c5785eb9566c7eeed5ecc5f102adda3ab74332047d87c577e7dc0463e682191e"
+      },
+      "consequenceDirections": {
+        "A": "學生不必一邊受影響一邊做完美求助者，程序仍照事實推進。",
+        "B": "自證不再帶出更多私事，但原來已看過的人仍要適當更正。",
+        "C": "他能問到實際辦理者，你卻仍有班內必要照顧責任。",
+        "D": "學生不必替你守住辦事有進度的面子，但正式說明仍不能憑羞愧跳過查證。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "749f2b2832b0c615aa28deaf453b41ca22c7200d4862f173f6338e74d74257d3",
+    "draftSha256": "6f17cfeedd836e047807665d390356c5ad4ff54c63b04fd647ffc01f0ba843c2",
     "seedAssignmentVersion": 1
   }
 }

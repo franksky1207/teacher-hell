@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bcd00d99c5c368973edd30383f6910631c45db8d0c6c9836145b4494bcfc41e4",
+      "checkedAt": "2026-11-27T05:20:42.399Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先留在自己的科內試用，記下實際有效的條件",
+            "action": "導師已先留在自己的科內試用，記下實際有效的條件",
+            "tradeoff": "進展較慢，也可能有例子完全不適用"
+          },
+          {
+            "id": 2,
+            "text": "邀他自願示範一輪，其他老師自己決定是否參與",
+            "action": "導師已邀他自願示範一輪，其他老師自己決定是否參與",
+            "tradeoff": "需要正式安排與時間，也可能沒人來"
+          },
+          {
+            "id": 3,
+            "text": "拒絕替未在場教師指定試用，不接私下選人",
+            "action": "導師已拒絕替未在場教師指定試用，不接私下選人",
+            "tradeoff": "他可能掃興，也要自己提出正常邀請"
+          },
+          {
+            "id": 4,
+            "text": "請他列一個不適用的例子，一起比較方法邊界",
+            "action": "導師已請他列一個不適用的例子，一起比較方法邊界",
+            "tradeoff": "需要更多準備，也可能打斷興奮"
+          },
+          {
+            "id": 5,
+            "text": "向正式教學交流窗口提出自願分享，不另加固定交件",
+            "action": "導師已向正式教學交流窗口提出自願分享，不另加固定交件",
+            "tradeoff": "承辦未必安排，也須保留教師拒絕權"
+          },
+          {
+            "id": 6,
+            "text": "讓想試的同事自己帶一個題目來談，不由你替每科預選",
+            "action": "導師已讓想試的同事自己帶一個題目來談，不由你替每科預選",
+            "tradeoff": "參與可能很零散，也要各人真的願意"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也有點享受被說有效，卻怕最後變成自己的品牌，主動撤掉草稿上以你命名的那個招式名稱",
+          "action": "導師已將本人可決定的非必要個人命名從交流草稿撤下，保留來源與實際貢獻，不以改名取代教師自願與專業核對",
+          "tradeoff": "少了好記的個人標誌，也可能讓同事不理解"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2274149006
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "c0641248f6d466a82d5824322296b17af2d86a3fe8b129dbf6cdbdb880d1d617"
+      },
+      "consequenceDirections": {
+        "A": "效果不再只看成功案例，但不適用不代表原方法毫無價值。",
+        "B": "教法較不容易被當成向你表忠的選擇，你仍須提供具體內容，不能只改名稱就說沒有壓力。",
+        "C": "經驗能累積，不會因一次順利就變成全科通則。",
+        "D": "方法能依實際學科轉換，原提議者卻須接受不會人人照同一套。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "921fee3dd591d47debdd25f92a79e6119521288c4c1fa6a7d17e441922b28285",
+    "draftSha256": "bcd00d99c5c368973edd30383f6910631c45db8d0c6c9836145b4494bcfc41e4",
     "seedAssignmentVersion": 1
   }
 }

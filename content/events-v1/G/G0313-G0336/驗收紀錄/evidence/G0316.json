@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4bd5b969a6ac90bb9a657cb4d9d6565a0bb5f7c6f7a3e4a546c871eba4233712",
+      "checkedAt": "2026-11-27T05:20:42.385Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先聽實際錯在哪裡，再決定是否影響內容",
+            "action": "導師已先聽實際錯在哪裡，再決定是否影響內容",
+            "tradeoff": "要用時間核對，不一定需要重錄"
+          },
+          {
+            "id": 2,
+            "text": "保留本人同意且不誤導內容的笑聲，照核准範圍使用",
+            "action": "導師已保留本人同意且不誤導內容的笑聲，照核准範圍使用",
+            "tradeoff": "成品不夠整齊，也要接受本人之後依規則撤回未成立使用"
+          },
+          {
+            "id": 3,
+            "text": "取消錄音，改由合適且自願的人現場念核對過的內容",
+            "action": "導師已取消錄音，改由合適且自願的人現場念核對過的內容",
+            "tradeoff": "少了剪輯成果，也須有正式播放安排"
+          },
+          {
+            "id": 4,
+            "text": "今天先用已核准舊版，給新版一個確實能回覆的時間",
+            "action": "導師已今天先用已核准舊版，給新版一個確實能回覆的時間",
+            "tradeoff": "新鮮感延後，你得守住回覆"
+          },
+          {
+            "id": 5,
+            "text": "只做一處必要修正，不再追完美聲線",
+            "action": "導師已只做一處必要修正，不再追完美聲線",
+            "tradeoff": "可能仍有小瑕疵，也須符合播放要求"
+          },
+          {
+            "id": 6,
+            "text": "讓本人選擇交由合格成人接手技術整理，不改他已同意的內容",
+            "action": "導師已讓本人選擇交由合格成人接手技術整理，不改他已同意的內容",
+            "tradeoff": "接手需要時間與授權，對方也未必有空"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想讓廣播別那麼像宣讀，親自錄一句合法、已核對的接話，請他自由決定用不用",
+          "action": "導師已自願錄製本人合法可公開的一句原創接話供作者自選，依核准播放範圍處理，不施壓採用或要求學生加班",
+          "tradeoff": "你可能念得很僵，也多做一段非必要錄音"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4157871362
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ac33041544e9b7c006f595952c7a500c97d4c86c3345aad3b9a3fc832a30d2cf"
+      },
+      "consequenceDirections": {
+        "A": "作品可在有限投入下使用，教師要接受不是每次都像正式錄音室。",
+        "B": "教師不用逼他再熬夜，學生卻可能覺得前面心力沒有被用到。",
+        "C": "班級能留下自然聲音，他卻可能播放後才發現自己不自在。",
+        "D": "他能把教師當可選素材而非必用結語，卻不用因你親錄就犧牲自己想留的版本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aae5289f7f35316486568fb57fa7ae1742460428da5010a26b2f5c0b9725a711",
+    "draftSha256": "4bd5b969a6ac90bb9a657cb4d9d6565a0bb5f7c6f7a3e4a546c871eba4233712",
     "seedAssignmentVersion": 1
   }
 }

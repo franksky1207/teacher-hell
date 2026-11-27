@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3839b92638eb00b5722847d95c033978db058825d9bb380ac4279e907d5bb92c",
+      "checkedAt": "2026-11-27T05:20:42.395Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若雙方同意且你有可用空間，依法安排自取搬運",
+            "action": "導師已若雙方同意且你有可用空間，依法安排自取搬運",
+            "tradeoff": "要付私人搬運成本，也不能臨時擋路存放"
+          },
+          {
+            "id": 2,
+            "text": "陪他照原核准方式交給清運，不臨時改主意",
+            "action": "導師已陪他照原核准方式交給清運，不臨時改主意",
+            "tradeoff": "會捨不得，也不能把惜物當成擱夜理由"
+          },
+          {
+            "id": 3,
+            "text": "先讓同事自己確認是否仍要處理，你不替他作主",
+            "action": "導師已先讓同事自己確認是否仍要處理，你不替他作主",
+            "tradeoff": "時間有限，也可能需要接受原計畫不變"
+          },
+          {
+            "id": 4,
+            "text": "詢問是否有合適接收者能在期限內合法承接，沒人就回原處理",
+            "action": "導師已詢問是否有合適接收者能在期限內合法承接，沒人就回原處理",
+            "tradeoff": "需要聯繫且各方自願，不保證找到人"
+          },
+          {
+            "id": 5,
+            "text": "只留自己與物件的合規私人照片，物件依原安排",
+            "action": "導師已只留自己與物件的合規私人照片，物件依原安排",
+            "tradeoff": "少了實物觸感，也需本人與場地同意"
+          },
+          {
+            "id": 6,
+            "text": "請專業搬運者先估實際可行與費用，再決定是否承接",
+            "action": "導師已請專業搬運者先估實際可行與費用，再決定是否承接",
+            "tradeoff": "要接受估價與時間限制，不能先答應後找不到車"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然承認自己只是想坐一下，不想再多養一張家具；自費請他在合法店家吃一小份告別點心，沙發照原處理",
+          "action": "導師已提出本人自費、對方自願的私人小食邀約，不收受沙發、不延誤既定合法清運或以飲食交換財物同意",
+          "tradeoff": "要由你出邀請成本，他可拒絕，也不延誤交接"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2071577948
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "a759ea6cd6fc9392b8012226880d3191a307144a53eea31289186bb814666516"
+      },
+      "consequenceDirections": {
+        "A": "喜歡能留下記錄，不必真的搬回家，卻可能之後看照片又後悔。",
+        "B": "老家具能繼續用，你卻得承擔它真的進家後占多大位置。",
+        "C": "兩人能為舊物留一次輕鬆收尾，你卻不能拿請客換他接受你的去留決定。",
+        "D": "他能親口決定去留，你的喜歡不會變成替他反悔的命令。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f32c2aad296de7829511eb06f2e23b9ab9c072922e597d30dab60fc05cf4493f",
+    "draftSha256": "3839b92638eb00b5722847d95c033978db058825d9bb380ac4279e907d5bb92c",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,81 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "113725b997ec4f7f74cfaa1f863b0f05287a478569e23351c718cfe87ac0ee41",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀工友跟師傅另談一次，彼此怎麼確認要移梯。",
+            "action": "提出成人施工交接短談邀請，不代定施工安全規程。",
+            "tradeoff": "可釐清默契，需雙方時間。"
+          },
+          {
+            "id": 2,
+            "text": "把搬紙箱延到施工結束後，今天不趕這件班務。",
+            "action": "延期本人可調的非必要紙箱搬運。",
+            "tradeoff": "少一次繞路，整理進度延後。"
+          },
+          {
+            "id": 3,
+            "text": "向總務詢問是否有可借推車，改從別條安全通道運。",
+            "action": "詢問推車借用與安全替代通道，未取得器材。",
+            "tradeoff": "或可省力，須聯絡且未必有車。"
+          },
+          {
+            "id": 4,
+            "text": "我重新把這批用品分小箱，別讓學生一次搬太大。",
+            "action": "於安全位置重新分裝本人負責的用品，減少單次搬運量。",
+            "tradeoff": "較好拿，增加包裝與教師時間。"
+          },
+          {
+            "id": 5,
+            "text": "提出以後搬物與維修時段分開公告的建議。",
+            "action": "向總務提出非緊急搬運與維修排程資訊整合建議。",
+            "tradeoff": "減少偶遇，增加行政協調。"
+          },
+          {
+            "id": 6,
+            "text": "今天不追加討論，照既有分工讓兩邊各自工作。",
+            "action": "婉拒額外協調會談，維持已確認的安全分工。",
+            "tradeoff": "省去時間，尷尬可能留下。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忍不住想笑，問他願不願意用『梯子不能下班』自嘲一句。",
+          "action": "私下邀工友以自願玩笑化解尷尬，不公開影片或學生個資。",
+          "tradeoff": "可能鬆動氣氛，也可能被覺得取笑。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3633558604
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "5bb0f287a2d60d20ee702de0fbe0348d08c3c3d098bc9924bc6930dbcc7d9456"
+      },
+      "consequenceDirections": {
+        "A": "總務可能採納或認為不易預排，工友可能感到問題不只怪他；不影響必要通報。",
+        "B": "工友可能接梗或冷下臉，導師承擔玩笑失敗的人際代價；不淡化移梯風險。",
+        "C": "師傅可能願談或只想離開，工友可能尷尬；必要現場管制照常。",
+        "D": "工友可能鬆口氣或持續找人解釋，師傅也可能不滿；安全責任不因少談減少。"
+      },
+      "semanticReviewed": false
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "de8c8cca805cbd45ff601a96a20680fe8a7a8820d6b13900524d7c611efc1e4f",
+    "draftSha256": "113725b997ec4f7f74cfaa1f863b0f05287a478569e23351c718cfe87ac0ee41",
     "seedAssignmentVersion": 1
   }
 }

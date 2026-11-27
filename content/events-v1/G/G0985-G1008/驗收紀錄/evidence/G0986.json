@@ -15,14 +15,81 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "411ed750154da71d64fd1f218692c2d45407fde29197cafc998177ccebd14191",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問孩子願不願意另跟家長講講被誤會的感受。",
+            "action": "提出自願親子短談邀請，不要求原諒或代替更正。",
+            "tradeoff": "可能解開誤會，佔時間且孩子可拒。"
+          },
+          {
+            "id": 2,
+            "text": "提議保管袋加一層減震墊，先問校方是否適合。",
+            "action": "向權責者提出保管設備減震建議，未改裝或取得核准。",
+            "tradeoff": "或可減少聲響，需費用且不能解決來電原因。"
+          },
+          {
+            "id": 3,
+            "text": "邀全班在下次班會練一次校內求助管道。",
+            "action": "安排不含本案隱私的聯絡管道情境討論。",
+            "tradeoff": "能熟悉方法，佔班會且有人嫌重複。"
+          },
+          {
+            "id": 4,
+            "text": "我今天不再加談，讓親子先自己休息。",
+            "action": "婉拒額外親子協調，保留必要聯絡與支持。",
+            "tradeoff": "保住工作時間，家長可能仍自責。"
+          },
+          {
+            "id": 5,
+            "text": "把這次保管與記錄的落差，另向任課團隊提討論。",
+            "action": "提出未來集中保管情境的處理方式討論，非僅本次記錄更正。",
+            "tradeoff": "可減少重演，需協調且可能意見不一。"
+          },
+          {
+            "id": 6,
+            "text": "問家長願不願意和家人先排一份非緊急備援聯絡表。",
+            "action": "建議家庭自願自行整理成人備援聯絡，不收集全部親友個資。",
+            "tradeoff": "多一個備案，增加家務且未必可行。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被嗡嗡聲弄得焦躁，這段空堂先關掉自己的群組通知。",
+          "action": "將本人非緊急群組通知暫停，用空堂安靜處理工作，保留緊急電話。",
+          "tradeoff": "減少干擾，需稍後回覆累積訊息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2891361937
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "b6b964ba3e560b4b67c2f06122ff99b30a868bbc1a2208d79b8563d7cd244f1e"
+      },
+      "consequenceDirections": {
+        "A": "家長可能等不到即時閒談而不安，導師須按約處理必要回覆；不拿安靜換掉緊急聯繫。",
+        "B": "學生可能問出新問題，家長仍需自行使用成人管道；不點名這戶家庭。",
+        "C": "科任可能認同或覺得被挑戰；學生本次權益仍依法處理，不待制度結論。",
+        "D": "孩子可能願談或不想理家長，導師須尊重；必要記錄處理不等談完。"
+      },
+      "semanticReviewed": false
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c9ded05b193b823d3c371e489eeb4206d7cb5f4ed900a76e2b202a5ff31738ce",
+    "draftSha256": "411ed750154da71d64fd1f218692c2d45407fde29197cafc998177ccebd14191",
     "seedAssignmentVersion": 1
   }
 }

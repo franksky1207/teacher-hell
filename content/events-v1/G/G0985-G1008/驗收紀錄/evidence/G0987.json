@@ -16,14 +16,81 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "3beca6be67f90c24af9d9d29bf0c2f963c2ca55dce979958d68da772e916426d",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後只轉正式來源，其他警訊先不經我擴散。",
+            "action": "為本人設定只轉正式可確認警訊的分享範圍，不漏報實際急迫危險。",
+            "tradeoff": "降低誤傳，放棄搶先提醒的角色。"
+          },
+          {
+            "id": 2,
+            "text": "另做一個找日期的小練習，讓學生用假貼文試找。",
+            "action": "安排使用虛構素材的資訊日期辨識短活動。",
+            "tradeoff": "把錯誤變學習，佔課時且可能被虧。"
+          },
+          {
+            "id": 3,
+            "text": "請主任提供校內可查證的聯絡窗口。",
+            "action": "在完成本案更正之外，詢問未來非緊急訊息的查證協作窗口。",
+            "tradeoff": "減少自行猜測，可能增加等待。"
+          },
+          {
+            "id": 4,
+            "text": "暫停我自發的每日網路資訊分享。",
+            "action": "停止本人非必要的日常網路資訊推送，不停止正式班務聯絡。",
+            "tradeoff": "減少群訊與查讀工作，少了日常分享。"
+          },
+          {
+            "id": 5,
+            "text": "邀願意的家長談談，他們平常怎麼查訊息。",
+            "action": "提出自願成人資訊辨識交流邀請，不要求提供私人帳號。",
+            "tradeoff": "可交流方法，需時間且可能冷場。"
+          },
+          {
+            "id": 6,
+            "text": "不另辦活動，把時間留給原本的課。",
+            "action": "不追加資訊教育活動，照原課程教學並維持必要回覆。",
+            "tradeoff": "保住教學時間，修補信任較慢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很怕大家覺得我不可靠，乾脆自願把這次誤傳做成教師研習的匿名案例。",
+          "action": "另向研習承辦提出分享本人誤傳經驗的邀請，不含家長學生個資，未獲安排。",
+          "tradeoff": "面對自己的丟臉，須整理且可能不被採用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 440432720
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "0dbcbae2ff395eec3d07162dafb0b58f0f4b81e3bc01fe12af334602be0f49fc"
+      },
+      "consequenceDirections": {
+        "A": "同事可能理解或批評，承辦可拒絕；額外分享不取代必要真實更正。",
+        "B": "學生可能很快忘記或仍取笑，家長可能繼續質疑；教師不能省略原範圍更正。",
+        "C": "學生可能很快找到或不感興趣，導師須面對被拿本案開玩笑。",
+        "D": "家長可能安心或覺得導師過度保守；緊急事實仍須即時通報。"
+      },
+      "semanticReviewed": false
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "abb7cc5fd644d62bcd54c06f6574900bfd0b2b12fef069d2d1a4f75dee0de669",
+    "draftSha256": "3beca6be67f90c24af9d9d29bf0c2f963c2ca55dce979958d68da772e916426d",
     "seedAssignmentVersion": 1
   }
 }

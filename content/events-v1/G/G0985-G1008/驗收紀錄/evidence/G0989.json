@@ -15,14 +15,81 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "5646f9e50b7162feb21c55282cc8cea8825d944a472af57a249ab362d7ad4ecd",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向主管提出加排清潔的人力與費用申請。",
+            "action": "在必要評估外提出優先增派清潔資源申請，未獲准。",
+            "tradeoff": "可能提早處理，須申請且排程未必能改。"
+          },
+          {
+            "id": 2,
+            "text": "先讓願意的人換到經確認適合的座位。",
+            "action": "在必要健康安排已維持下提供額外自願換位選擇，不使他人承接不適合位置。",
+            "tradeoff": "改善個人感受，須重排且未必有效。"
+          },
+          {
+            "id": 3,
+            "text": "問總務能不能讓我了解一次正常保養流程。",
+            "action": "提出成人了解設備保養流程的請求，不自行拆洗。",
+            "tradeoff": "有助理解限制，佔時間且未必可安排。"
+          },
+          {
+            "id": 4,
+            "text": "和他約定每週一次集中看非緊急進度，不天天重談。",
+            "action": "提出固定一次非緊急進度討論時段，急迫健康問題仍即時處理。",
+            "tradeoff": "減少來回，學生可能覺得被限縮。"
+          },
+          {
+            "id": 5,
+            "text": "提出以後把教室環境檢視提早排進既有會議。",
+            "action": "向權責者提出長期環境檢視排程建議。",
+            "tradeoff": "或可減少拖延，增加會議準備。"
+          },
+          {
+            "id": 6,
+            "text": "不追加計畫，讓他暫停額外拍照，由成人追進度。",
+            "action": "婉拒學生繼續非必要拍照工作，成人維持原責任追蹤。",
+            "tradeoff": "減輕幹部額外負擔，學生可能失去掌控感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一催我就心虛，我願意陪他坐那排一次，聽他說上課哪裡不舒服。",
+          "action": "在已確認可安全使用環境中，自願用可用課間於其座位附近聽感受，不作暴露試驗或診斷。",
+          "tradeoff": "親身理解位置感受，犧牲休息且可能被當表演。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 342834552
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "f862327d2331e030bfdea9d0ec2ddaadfaeff4f286fe5d26fe4e46c6f04091e6"
+      },
+      "consequenceDirections": {
+        "A": "學生可接受或不願換，座位變動可能影響互動；不以換位代替處理環境。",
+        "B": "他可能安心或更不信任，教師須承受追問；不禁止學生合法表達健康疑慮。",
+        "C": "學生可能接受或繼續催，導師需按約回覆；必要通知不只留到固定日。",
+        "D": "學生可能願說或不領情，導師須接受體感不同；不拿自己無症狀否認學生需要。"
+      },
+      "semanticReviewed": false
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4e5c591b251bdb8dfe1333aece6b5a5eb1871f8ec2eeeda21e44379f2780287e",
+    "draftSha256": "5646f9e50b7162feb21c55282cc8cea8825d944a472af57a249ab362d7ad4ecd",
     "seedAssignmentVersion": 1
   }
 }

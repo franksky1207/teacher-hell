@@ -15,14 +15,154 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "9883ebcd5f6d63f7677d07dad75c74a23d449bf43176679bb5c33b559e18feb0",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我自願支援這節，但不拿監考交換。",
+            "action": "同意依正式程序額外支援一次自習照看，拒絕私下交換。",
+            "tradeoff": "補上支援，失去備課空堂。"
+          },
+          {
+            "id": 2,
+            "text": "我不多接這節，讓他按原正式安排找支援。",
+            "action": "婉拒額外自願支援，維持必要合法調度配合。",
+            "tradeoff": "保住備課，職員需另協調。"
+          },
+          {
+            "id": 3,
+            "text": "提出把額外支援照實登記，再由主管決定補償方式。",
+            "action": "提出正式登記自願支援工時與補償評估方案，尚未獲准。",
+            "tradeoff": "把交換公開化，需協調且可能不准。"
+          },
+          {
+            "id": 4,
+            "text": "我只能幫前面可用的短段，後面得先接好人。",
+            "action": "提出有限時段自願支援方案，須權責者確認完整成人交接後才執行。",
+            "tradeoff": "保留部分備課，增加交接安排。"
+          },
+          {
+            "id": 5,
+            "text": "我願幫他查可用教室資料，不另進班。",
+            "action": "提供一次本人可合法查得的空間資訊協助，未代排人力。",
+            "tradeoff": "減少部分雜務，仍耗時間且不能補缺人。"
+          },
+          {
+            "id": 6,
+            "text": "向主管提議，建立可自願登記的臨時支援名單。",
+            "action": "提出未來自願支援名單建議，不替同事報名。",
+            "tradeoff": "減少臨時求人，需制度討論。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真想換掉那場監考，但自己去問同事，不拿代看自習交換。",
+          "action": "向同事提出依正式程序自願互換監考的詢問，未取得同意或核准，不與本次支援綁定。",
+          "tradeoff": "為自己的時間安排主動求人，可能被拒且仍須照原班表。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2260021236
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "e04d85619b2ba3b66016ca4cee20cfd30e39627ceb839c1ec9042b42895b1039"
+      },
+      "consequenceDirections": {
+        "A": "主管可能提供制度或拒絕，職員可能覺得麻煩；未核准不假定支援成交。",
+        "B": "同事可能願談或拒絕，正式排班權責者也可能不准；導師承擔求人與人情成本，未核准前照原班表，本次支援另作決定。",
+        "C": "職員可能覺得有用或嫌不夠，教師無法保證因此排成。",
+        "D": "他可能理解或失望，不得因拒絕自願工作報復排班；學生照看已接續。"
+      },
+      "semanticReviewed": false,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒拒絕支援與普通2相同，改為自己另找合法監考互換，不把調班與代看自習交換。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我自願支援這節，但不拿監考交換。",
+                "action": "同意依正式程序額外支援一次自習照看，拒絕私下交換。",
+                "tradeoff": "補上支援，失去備課空堂。"
+              },
+              {
+                "id": 2,
+                "text": "我不多接這節，讓他按原正式安排找支援。",
+                "action": "婉拒額外自願支援，維持必要合法調度配合。",
+                "tradeoff": "保住備課，職員需另協調。"
+              },
+              {
+                "id": 3,
+                "text": "提出把額外支援照實登記，再由主管決定補償方式。",
+                "action": "提出正式登記自願支援工時與補償評估方案，尚未獲准。",
+                "tradeoff": "把交換公開化，需協調且可能不准。"
+              },
+              {
+                "id": 4,
+                "text": "我只能幫前面可用的短段，後面得先接好人。",
+                "action": "提出有限時段自願支援方案，須權責者確認完整成人交接後才執行。",
+                "tradeoff": "保留部分備課，增加交接安排。"
+              },
+              {
+                "id": 5,
+                "text": "我願幫他查可用教室資料，不另進班。",
+                "action": "提供一次本人可合法查得的空間資訊協助，未代排人力。",
+                "tradeoff": "減少部分雜務，仍耗時間且不能補缺人。"
+              },
+              {
+                "id": 6,
+                "text": "向主管提議，建立可自願登記的臨時支援名單。",
+                "action": "提出未來自願支援名單建議，不替同事報名。",
+                "tradeoff": "減少臨時求人，需制度討論。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我就想保住那節安靜備課，直接告訴他監考再討厭也不換。",
+              "action": "明確拒絕以本人討厭監考作籌碼，將空堂保留原備課用途。",
+              "tradeoff": "守住私人工作偏好，語氣可能傷及信任。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4004994061
+            },
+            "selectedIds": [
+              1,
+              4,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "e28c498e361301af7ab0d84826d3cf7483a2b9bc7f84907c36543cda159f7c69"
+          },
+          "previousConsequenceDirections": {
+            "A": "職員可能接受或認為分段無用，未接好就不成立；不能留下空班。",
+            "B": "職員可能苦笑或覺得被頂回，導師承擔關係摩擦；與普通拒接相近，須另有具體行動才能保留。",
+            "C": "職員可能感激或以後常來，導師需守住一次範圍；監考不因此改動。",
+            "D": "職員可能覺得有用或嫌不夠，教師無法保證因此排成。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c637452a5195ad096772fd5f1b99baac126b47c441f89733b378f2206ab32c3a",
+    "draftSha256": "9883ebcd5f6d63f7677d07dad75c74a23d449bf43176679bb5c33b559e18feb0",
     "seedAssignmentVersion": 1
   }
 }

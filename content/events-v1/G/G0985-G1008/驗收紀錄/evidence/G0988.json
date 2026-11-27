@@ -15,14 +15,81 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-in-progress",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
+      "status": "in_progress",
+      "sourceVersion": "47a3f4a0b26ad0b25cd8d893fe22163845d183dc7a2a3922c5933cef1e04fa31",
       "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下週我能調的動態活動，先避開他課前。",
+            "action": "調整本人權限內下一次動態活動時段，不占他科授課。",
+            "tradeoff": "減少銜接摩擦，自己的安排較受限。"
+          },
+          {
+            "id": 2,
+            "text": "安排活動結束前的收心時間，不換掉活動本身。",
+            "action": "在本人活動內縮短動態段落，增加整理與安靜銜接。",
+            "tradeoff": "保留活動，實作時間減少。"
+          },
+          {
+            "id": 3,
+            "text": "邀他和我談一次排程，不讓學生夾著傳話。",
+            "action": "提出成人排程協商邀請，不要求學生調停。",
+            "tradeoff": "可正面溝通，他可能拒談。"
+          },
+          {
+            "id": 4,
+            "text": "請課務主管協助長期時段配置，不只兩人私下換。",
+            "action": "提出長期課務配置協調需求，未獲變更核准。",
+            "tradeoff": "有第三方，增加正式協調成本。"
+          },
+          {
+            "id": 5,
+            "text": "這次不追加排程承諾，保留原定下週活動。",
+            "action": "在符合校規及學生支持下維持原活動安排，不承諾特定避課。",
+            "tradeoff": "保住既有規劃，衝突可能持續。"
+          },
+          {
+            "id": 6,
+            "text": "提出讓學生自願回饋活動後最難接哪一段課。",
+            "action": "邀學生就課程銜接自願提供不具名回饋，不評教師人格。",
+            "tradeoff": "有現場線索，需整理且可能意見分散。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想吞著氣，私下跟他直說我不能接受用不講課回應我。",
+          "action": "於必要程序外向同事清楚表達本人受傷與合作界線，不公開羞辱。",
+          "tradeoff": "不再裝和氣，可能引發正面爭執。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 358134682
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "786f5a89e2cc07b95edacac6e4ac94df87b4928593a405145215978ff7a2310a"
+      },
+      "consequenceDirections": {
+        "A": "回饋可能顯示疲勞或無一致問題，導師不能以票數裁定教師對錯。",
+        "B": "同事可能更不滿，學生可能喜歡活動或嫌累；導師須持續正常教學銜接。",
+        "C": "同事可能終於說開或更封閉，教師須承擔關係代價；不以私人衝突阻擋學生補救。",
+        "D": "主管可能安排或維持現狀，同事可能覺得被告狀；必要回報原已完成。"
+      },
+      "semanticReviewed": false
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ef3d871995ee205173e3545f207bc75fc7ff09116b17d67953d10da812a3f946",
+    "draftSha256": "47a3f4a0b26ad0b25cd8d893fe22163845d183dc7a2a3922c5933cef1e04fa31",
     "seedAssignmentVersion": 1
   }
 }

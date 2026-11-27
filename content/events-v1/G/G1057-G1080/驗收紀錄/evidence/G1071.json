@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b412fa951ebb1706ec8d1ca2c6ba0585ff695335a55a4f3f35c46d63db0bb32d",
+      "checkedAt": "2026-11-27T16:56:08.346Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出一個合適用餐空間的正式改善建議。",
+            "action": "向權責者提出不妨礙到校與衛生的用餐空間建議，未獲核准。",
+            "tradeoff": "需協調，可能無空間。"
+          },
+          {
+            "id": 2,
+            "text": "邀家庭說說最卡的接送時段，不收全家行程。",
+            "action": "提出自願一般時段討論，不以交代家務換支持。",
+            "tradeoff": "占聯絡時間。"
+          },
+          {
+            "id": 3,
+            "text": "我彙整不揭戶別的實際矛盾送主管。",
+            "action": "額外整理可核實的準時與用餐衝突資訊，不公開家庭隱私。",
+            "tradeoff": "多文書，可能被說找麻煩。"
+          },
+          {
+            "id": 4,
+            "text": "提供已確認可用的校內餐飲資訊給她比較。",
+            "action": "提供合適公開資訊，不強迫購買或認定人人付得起。",
+            "tradeoff": "可能不合口味與時間。"
+          },
+          {
+            "id": 5,
+            "text": "不加私人生活規劃，照既有權責處理必要問題。",
+            "action": "婉拒額外替家庭排早餐，維持必要規則與權益協助。",
+            "tradeoff": "保住班務，家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "邀孩子自願談一般早餐偏好，不讓大人代選。",
+            "action": "提出不含健康診斷的自願生活偏好交流。",
+            "tradeoff": "需要時間，未必有解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常沒時間吃，願意以自己的早晨經驗具名提意見，不叫這戶當反對代表。",
+          "action": "另以教師本人可核實經驗提交用餐制度意見，不代家長或全班表態。",
+          "tradeoff": "暴露自己的狼狽，可能得罪主管。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 914359306
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "631b526d01ea2bf6b6892189ec2e9d6000aa114257435c4e55c746ab9b894f81"
+      },
+      "consequenceDirections": {
+        "A": "她可另向上反映，教師不能因親近就要求私下忍耐。",
+        "B": "孩子可拒談或有不同偏好，教師不能以偏好否定基本需要。",
+        "C": "主管可不採用，教師不得以無回覆停必要支持。",
+        "D": "家長可能覺得有人懂或仍著急，教師不把具名當規則已改。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "094c828362cb55daef31c2aaff98c495822f51a4519aec48c418dae02ae213f2",
+    "draftSha256": "b412fa951ebb1706ec8d1ca2c6ba0585ff695335a55a4f3f35c46d63db0bb32d",
     "seedAssignmentVersion": 1
   }
 }

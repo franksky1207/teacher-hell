@@ -16,14 +16,155 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "55c85673bb0d2928be0a3ca951c63e444e623d8caf32e35af2db0cb8988294db",
+      "checkedAt": "2026-11-27T16:56:08.337Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他說說影片沒拍到的風險，不要求全班檢討。",
+            "action": "提出自願媒體辨識短談，不重演驚嚇。",
+            "tradeoff": "花課間，他可能覺得說教。"
+          },
+          {
+            "id": 2,
+            "text": "另邀願意的同學提不突然嚇人的歡迎方式。",
+            "action": "徵詢自願低干擾相處提案，未批准新活動。",
+            "tradeoff": "佔時間，可能無趣。"
+          },
+          {
+            "id": 3,
+            "text": "今天不追加互動，照原課程開始。",
+            "action": "不增加非必要活動，維持必要照看與教學。",
+            "tradeoff": "氣氛可能冷一節。"
+          },
+          {
+            "id": 4,
+            "text": "把熱飲改放成人安全可用位置，再依原課務進班。",
+            "action": "改變教師私人熱飲攜帶習慣，不把安全責任推給學生。",
+            "tradeoff": "喝起來不方便，可能冷掉。"
+          },
+          {
+            "id": 5,
+            "text": "用虛構影片分鏡討論短影音為何看起來人人開心。",
+            "action": "安排不辨原班同學的自願分鏡辨識活動。",
+            "tradeoff": "增加備課，可能難懂。"
+          },
+          {
+            "id": 6,
+            "text": "邀他先徵詢合意，再決定要不要辦下一個驚喜。",
+            "action": "提出未來自願活動合意協調方式，不核准任何特定表演。",
+            "tradeoff": "少突然性，他可能掃興。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的嚇得有點火，課間想找願意聽的同事講兩句，不要學生哄我笑。",
+          "action": "提出向合適成人同事私下自願談本人驚嚇感受的請求，不點名學生或揭隱私，不離開必要照看崗位。",
+          "tradeoff": "暴露自己慌張，花休息且可能被婉拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1444640484
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "c1c214448a5938d685504df9ec1420065cbe7d02791195908b9ec07ce11dfbfa"
+      },
+      "consequenceDirections": {
+        "A": "學生可不提，導師不能把提案當全體同意。",
+        "B": "他可拒談或發現剪接省略，教師不以談成才恢復正常相處。",
+        "C": "同事可無空或認為反應太大，教師須承受不被理解；學生正常學習與不被報復的權益所有分支維持。",
+        "D": "學生可能提出不同看法，教師不把一片段推論所有影片造假。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒縮減未建立的趣味開場有取消假活動風險，改為教師另求成人情緒交流，不加學生安慰責任。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他說說影片沒拍到的風險，不要求全班檢討。",
+                "action": "提出自願媒體辨識短談，不重演驚嚇。",
+                "tradeoff": "花課間，他可能覺得說教。"
+              },
+              {
+                "id": 2,
+                "text": "另邀願意的同學提不突然嚇人的歡迎方式。",
+                "action": "徵詢自願低干擾相處提案，未批准新活動。",
+                "tradeoff": "佔時間，可能無趣。"
+              },
+              {
+                "id": 3,
+                "text": "今天不追加互動，照原課程開始。",
+                "action": "不增加非必要活動，維持必要照看與教學。",
+                "tradeoff": "氣氛可能冷一節。"
+              },
+              {
+                "id": 4,
+                "text": "把熱飲改放成人安全可用位置，再依原課務進班。",
+                "action": "改變教師私人熱飲攜帶習慣，不把安全責任推給學生。",
+                "tradeoff": "喝起來不方便，可能冷掉。"
+              },
+              {
+                "id": 5,
+                "text": "用虛構影片分鏡討論短影音為何看起來人人開心。",
+                "action": "安排不辨原班同學的自願分鏡辨識活動。",
+                "tradeoff": "增加備課，可能難懂。"
+              },
+              {
+                "id": 6,
+                "text": "邀他先徵詢合意，再決定要不要辦下一個驚喜。",
+                "action": "提出未來自願活動合意協調方式，不核准任何特定表演。",
+                "tradeoff": "少突然性，他可能掃興。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我是真的被嚇到，這節先少講一段自己可調的趣味引言，安靜坐著批改再開始。",
+              "action": "在不影響必要教學下縮減本人非必要趣味開場，留短段穩定情緒，不要求學生安慰。",
+              "tradeoff": "少互動，可能被當冷臉。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 610615964
+            },
+            "selectedIds": [
+              6,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 3,
+              "D": 4
+            },
+            "optionsDigest": "a0590ca3e1598f8304d2e2e52f1ba42d4f345437120040d51998fcf54a9fbc36"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可能體諒或不安，教師須照常說明課務，不能以沉默懲罰。",
+            "B": "同學可拒絕，教師不能要求學生私人好意全部預審。",
+            "C": "學生可能失落或安心，教師不因被嚇報復評分。",
+            "D": "學生可能注意或不理，教師不能以自己改習慣免除停止驚嚇的共同要求。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1fe09b6f73f56dcf21c92a907a0775590240ae923e93027d4948600a79ca228b",
+    "draftSha256": "55c85673bb0d2928be0a3ca951c63e444e623d8caf32e35af2db0cb8988294db",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1ac8db46e5a61e173d03d23312cd14266b6c301bf328f9078952f001840fd723",
+      "checkedAt": "2026-11-27T16:56:08.328Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他改提沒有媒體與贊助條件的小規模方案。",
+            "action": "邀家長自願重整非宣傳參訪提案，未核准或保證採用。",
+            "tradeoff": "需再協調，可能傷人情。"
+          },
+          {
+            "id": 2,
+            "text": "這次不加校外行程，保留原課務。",
+            "action": "婉拒未成立的額外參訪，不封鎖合法社區學習。",
+            "tradeoff": "少現地體驗，家長失落。"
+          },
+          {
+            "id": 3,
+            "text": "邀工作室依程序作一次校內自願分享。",
+            "action": "提出須核准及合意的校內介紹邀請，不承諾入校。",
+            "tradeoff": "需程序，效果較間接。"
+          },
+          {
+            "id": 4,
+            "text": "我先做一份可合法使用的社區歷史資料。",
+            "action": "整理公開合法資料供本人課程使用，不重製受限照片。",
+            "tradeoff": "增加備課，少現場感。"
+          },
+          {
+            "id": 5,
+            "text": "問學生自願想認識哪種社區工作。",
+            "action": "提出不涉個資的題材偏好討論，不對活動成行保證。",
+            "tradeoff": "佔班務，可能分歧。"
+          },
+          {
+            "id": 6,
+            "text": "提供既有校方社區學習管道給家長自行參考。",
+            "action": "提供合法公開合作資訊，不代申請或取得名額。",
+            "tradeoff": "可能覺得被推開。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每次學社區就變宣傳，願意具名提議下次也看沒有贊助的地方。",
+          "action": "額外向課程端提出未來社區學習涵蓋非贊助場所的建議，自願整理一份合法公開參照資訊，未取得採用。",
+          "tradeoff": "要準備，可能被說掃興。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2537893821
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "260f52917a470749a11c1cbf8e217601b7e8b6eb218efe5f5ae925d5e4a874f5"
+      },
+      "consequenceDirections": {
+        "A": "家長可不用，既有管道不保證接受原提案。",
+        "B": "業者可拒絕、學生可不參加額外安排，未核准不當已排課。",
+        "C": "家長可能覺得心意被否定，課程端可不採用；必要撤回未授權承諾與肖像保護本來所有分支維持。",
+        "D": "學生可能有興趣或無聊，家長可能仍堅持帶路；不等同已參訪。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒移除本人未授權宣傳名義接近共同責任，改為未來課程取材方向的額外具名提案，不以依法不被代表作特殊優勢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請他改提沒有媒體與贊助條件的小規模方案。",
+                "action": "邀家長自願重整非宣傳參訪提案，未核准或保證採用。",
+                "tradeoff": "需再協調，可能傷人情。"
+              },
+              {
+                "id": 2,
+                "text": "這次不加校外行程，保留原課務。",
+                "action": "婉拒未成立的額外參訪，不封鎖合法社區學習。",
+                "tradeoff": "少現地體驗，家長失落。"
+              },
+              {
+                "id": 3,
+                "text": "邀工作室依程序作一次校內自願分享。",
+                "action": "提出須核准及合意的校內介紹邀請，不承諾入校。",
+                "tradeoff": "需程序，效果較間接。"
+              },
+              {
+                "id": 4,
+                "text": "我先做一份可合法使用的社區歷史資料。",
+                "action": "整理公開合法資料供本人課程使用，不重製受限照片。",
+                "tradeoff": "增加備課，少現場感。"
+              },
+              {
+                "id": 5,
+                "text": "問學生自願想認識哪種社區工作。",
+                "action": "提出不涉個資的題材偏好討論，不對活動成行保證。",
+                "tradeoff": "佔班務，可能分歧。"
+              },
+              {
+                "id": 6,
+                "text": "提供既有校方社區學習管道給家長自行參考。",
+                "action": "提供合法公開合作資訊，不代申請或取得名額。",
+                "tradeoff": "可能覺得被推開。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實怕欠這份人情，額外請他將我的名字從私人宣傳邀約裡拿掉。",
+              "action": "在必要撤回未授權班級承諾之外，拒絕本人作為私人活動宣傳推薦者，不禁止他合法自行辦活動。",
+              "tradeoff": "可能讓他沒面子。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1983476215
+            },
+            "selectedIds": [
+              2,
+              4,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 2,
+              "D": 4
+            },
+            "optionsDigest": "d94dd38835c702d79eaddcb344a55f2a27cefa590aaeff1c7a635ba7baa053da"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可不用，既有管道不保證接受原提案。",
+            "B": "家長可改說法或不高興，教師不以私人拒絕阻止學生依法學習。",
+            "C": "家長可能認為不領情，教師須承擔關係壓力。",
+            "D": "學生可能有興趣或無聊，家長可能仍堅持帶路；不等同已參訪。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "348e55fc6b8b920699ac18c77f3b9d4c1a4dbbe88d2c6b7959923b52566d6a26",
+    "draftSha256": "1ac8db46e5a61e173d03d23312cd14266b6c301bf328f9078952f001840fd723",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1036deede1a6f43a085e8c576ce890efd7df1b7e00aeff064c64e2ce27d60292",
+      "checkedAt": "2026-11-27T16:56:08.331Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用虛構情境加做一段防火辨識，不收自清簽名。",
+            "action": "另準備不搜物、不辨個人的自願情境討論。",
+            "tradeoff": "占班務，可能被嫌多。"
+          },
+          {
+            "id": 2,
+            "text": "邀他整理一份已核實的一般安全訊息。",
+            "action": "提出成人合法資料共編邀請，未取得成品。",
+            "tradeoff": "花雙方時間。"
+          },
+          {
+            "id": 3,
+            "text": "我不加表單，完成原必要工作就好。",
+            "action": "婉拒額外無必要文件與延伸安排，維持合法安全配合。",
+            "tradeoff": "省工作，同事可能不滿。"
+          },
+          {
+            "id": 4,
+            "text": "向主管提出一般宣導與個別安全處置分界的說明建議。",
+            "action": "額外提出制度資訊澄清建議，未修改規格。",
+            "tradeoff": "需整理，人際壓力大。"
+          },
+          {
+            "id": 5,
+            "text": "提供學生可自願查閱的公開防火資訊。",
+            "action": "提供可靠公開資訊入口，不要求回條或閱畢證明。",
+            "tradeoff": "可能沒人看。"
+          },
+          {
+            "id": 6,
+            "text": "邀他另談對『沒存查』最擔心的工作壓力。",
+            "action": "提出成人自願工作感受短談，不保證免責。",
+            "tradeoff": "占休息，可能無解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被催得想發火，拒絕再私下反覆談這張單，請他循正式工作管道提需求。",
+          "action": "設定本人對同一非緊急額外要求的聯絡界線，必要緊急與正式工作仍接續。",
+          "tradeoff": "可能被覺得不近人情。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1269079127
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "5e1d42630f7da625fe8ce002ec6622543b5ea36b8969c9ff4f4612da098e8257"
+      },
+      "consequenceDirections": {
+        "A": "職員可提出合法正式需求，教師須依法回應；不把換管道當自清變合法。",
+        "B": "他可向主管詢問，教師不得因此忽略真實風險。",
+        "C": "學生可不用，必要安全不能以貼連結取代。",
+        "D": "主管可拒絕，職員可能感到被指責；共同合法底線不等核准才遵守。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e54f6b589e282ac96d15017b580dd87b675608c5c11133e8caa7f9775aee96e8",
+    "draftSha256": "1036deede1a6f43a085e8c576ce890efd7df1b7e00aeff064c64e2ce27d60292",
     "seedAssignmentVersion": 1
   }
 }

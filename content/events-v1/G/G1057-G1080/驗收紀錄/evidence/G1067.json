@@ -16,14 +16,155 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e9628bcdef75a0938550e9179c8d1d75dac784ec3c3da8c43d451f9f3aadea40",
+      "checkedAt": "2026-11-27T16:56:08.340Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "小考照常，另提一段合法音樂休息，不綁出勤。",
+            "action": "提出在本人可調短段播放合法可用音樂、供自願安靜休息的方案，不取消必要評量。",
+            "tradeoff": "少其他班務，未必每人喜歡。"
+          },
+          {
+            "id": 2,
+            "text": "讓他自願提一個不用老師出錢的合法點子。",
+            "action": "邀幹部提出可拒絕的相處提案，未核准或派全班做。",
+            "tradeoff": "可能冷場，需再評估。"
+          },
+          {
+            "id": 3,
+            "text": "不加新獎勵，照原合法週五安排。",
+            "action": "婉拒額外激勵承諾，維持原教學與必要支持。",
+            "tradeoff": "少驚喜，幹部可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "邀同學匿名說早自習最想改善的一件事。",
+            "action": "徵詢自願一般學習感受，不蒐集誰常遲到。",
+            "tradeoff": "佔時間，可能無共識。"
+          },
+          {
+            "id": 5,
+            "text": "我提供已有自願閱讀或益智資源供他參考。",
+            "action": "提供合法既有資訊，不承諾免費物資或免考。",
+            "tradeoff": "可能不感興趣。"
+          },
+          {
+            "id": 6,
+            "text": "另邀他練一次怎麼向朋友撤回自己說太滿的話。",
+            "action": "提出成人與學生自願溝通演練，不代向外班傳話。",
+            "tradeoff": "可能尷尬，需時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想玩，不跟傳聞比，自己帶桌遊另邀願意的人玩一小段。",
+          "action": "提出於合法可用短段使用教師自有合適桌遊的自願互動邀請，未取得學生同意或增免考承諾。",
+          "tradeoff": "自己出器材與休息時間，可能沒人想玩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2388679038
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "1d77c1d3159ef6489e7f0c6dc91550ad3ea362a71caf85634ffa5d4197bece86"
+      },
+      "consequenceDirections": {
+        "A": "學生可不填，教師不以多數意見減少必要學習支持。",
+        "B": "他可拒絕，演練不等外班已接受，必要真實澄清仍共同維持。",
+        "C": "學生可不同意，教師不能因此報復或更改合法缺勤處理。",
+        "D": "學生可拒絕，幹部可能覺得不夠有面子，教師不能用參與桌遊換出勤或公平待遇。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒私人看電影對眼前班級互動取捨偏弱，改為自有桌遊自願互動；普通1由泛稱休閒明確為音樂安靜休息，避免涵蓋全部情緒行動。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留必要小考，另提一段不綁出勤的自願休閒活動。",
+                "action": "提出本人可調短段的合宜自願活動，不取代必要評量。",
+                "tradeoff": "少其他班務，需準備。"
+              },
+              {
+                "id": 2,
+                "text": "讓他自願提一個不用老師出錢的合法點子。",
+                "action": "邀幹部提出可拒絕的相處提案，未核准或派全班做。",
+                "tradeoff": "可能冷場，需再評估。"
+              },
+              {
+                "id": 3,
+                "text": "不加新獎勵，照原合法週五安排。",
+                "action": "婉拒額外激勵承諾，維持原教學與必要支持。",
+                "tradeoff": "少驚喜，幹部可能失落。"
+              },
+              {
+                "id": 4,
+                "text": "邀同學匿名說早自習最想改善的一件事。",
+                "action": "徵詢自願一般學習感受，不蒐集誰常遲到。",
+                "tradeoff": "佔時間，可能無共識。"
+              },
+              {
+                "id": 5,
+                "text": "我提供已有自願閱讀或益智資源供他參考。",
+                "action": "提供合法既有資訊，不承諾免費物資或免考。",
+                "tradeoff": "可能不感興趣。"
+              },
+              {
+                "id": 6,
+                "text": "另邀他練一次怎麼向朋友撤回自己說太滿的話。",
+                "action": "提出成人與學生自願溝通演練，不代向外班傳話。",
+                "tradeoff": "可能尷尬，需時間。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想看電影，但不拿全班的課換，自己下班去看那部片。",
+              "action": "將教師本人私人時間與預算用於合法觀影，不替學生取消評量或召集私團。",
+              "tradeoff": "花錢休息時間，班級少共同活動。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3587695773
+            },
+            "selectedIds": [
+              5,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": "emotional",
+              "C": 1,
+              "D": 2
+            },
+            "optionsDigest": "58e5acbc36bc3e4841aa679ef6742a2220390c0a7cf816e45fe47f6598eefe73"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可不用，教師不能宣稱所有人都因此更願準時。",
+            "B": "學生可能覺得老師也愛看或失落，私人觀影不等答應班上播映。",
+            "C": "學生可不參加，幹部可能嫌不夠；不以全班出勤換參加權。",
+            "D": "他可不提，教師不能以提案好壞評斷其幹部資格。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bfcf2afc074927f4ea79d7b706baba7cb1543acc442933e5c22168def76925ee",
+    "draftSha256": "e9628bcdef75a0938550e9179c8d1d75dac784ec3c3da8c43d451f9f3aadea40",
     "seedAssignmentVersion": 1
   }
 }

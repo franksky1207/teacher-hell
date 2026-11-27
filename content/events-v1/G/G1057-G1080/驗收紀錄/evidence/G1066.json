@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e69102f4e96c5f93d85c3b4d2c176fa0aaa55e0cabbfbc25b37ed0e2fcdb9261",
+      "checkedAt": "2026-11-27T16:56:08.339Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我今晚自願只回一題，先說清楚到哪裡停。",
+            "action": "提出有限一題額外解說，不承諾即時回完或下次值班。",
+            "tradeoff": "犧牲休息，可能引來更多。"
+          },
+          {
+            "id": 2,
+            "text": "請他們把問題整理成明天一份，不再逐張洗版。",
+            "action": "提出自願彙整疑問方式，不要求非正式晚間作業。",
+            "tradeoff": "要等，學生可能更焦慮。"
+          },
+          {
+            "id": 3,
+            "text": "提供已核實可用的既有解題資源資訊。",
+            "action": "提供合法現有參考入口，不宣稱已教會或代報名。",
+            "tradeoff": "可能不合題目。"
+          },
+          {
+            "id": 4,
+            "text": "今晚不接額外題目，明天工作時段再回必要問題。",
+            "action": "婉拒今晚自願加班，維持已約及必要聯繫。",
+            "tradeoff": "保住休息，學生可能失望。"
+          },
+          {
+            "id": 5,
+            "text": "邀他明天另談，怎麼揪讀書不替別人開支票。",
+            "action": "提出自願相處界線短談，未要求公開道歉。",
+            "tradeoff": "需時間，他可能反感。"
+          },
+          {
+            "id": 6,
+            "text": "向年級詢問是否已有自願課後提問安排。",
+            "action": "查詢合法既有支援資訊，未取得時段或名額。",
+            "tradeoff": "未必排得進。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我本來也想自己做點題，願意今晚挑一題陌生解法研究，結果只留給自己先核對。",
+          "action": "將本人私人興趣時間投入一題合法公開題目的解法研究，未答應學生看成品或即時教學。",
+          "tradeoff": "少休息，可能研究不出。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 809774148
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "416bdb41b66a91083a1ce330b535689a4ce05c619605870553bc8c64871538e9"
+      },
+      "consequenceDirections": {
+        "A": "發起者可能覺得失面子，教師不得因被代言懲罰學生。",
+        "B": "他可拒談或理解信任不等授權，必要更正已共同完成。",
+        "C": "教師可發現自己也不懂，學生可能不接受沒有即答；必要支持依原安排維持。",
+        "D": "他們可拒絕或整理出重複卡點，教師不保證翌日全解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ec5c6ca4b13ea90002f437a8894a25f1fd3e164a43834e7bd57d68fa10581b49",
+    "draftSha256": "e69102f4e96c5f93d85c3b4d2c176fa0aaa55e0cabbfbc25b37ed0e2fcdb9261",
     "seedAssignmentVersion": 1
   }
 }

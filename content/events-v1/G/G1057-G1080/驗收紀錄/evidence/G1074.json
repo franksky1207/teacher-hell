@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1f4c397c38f8826e1898372767f8348c7b8a41e99f797da0ef07ae08b3cf0e6d",
+      "checkedAt": "2026-11-27T16:56:08.352Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另向合適任課者詢問後續支援，不叫他現在準備。",
+            "action": "額外查詢適任教學支援，不取得承諾或代排未恢復者。",
+            "tradeoff": "需要聯絡，可能沒人。"
+          },
+          {
+            "id": 2,
+            "text": "若他想，我願額外替他問熟悉同事，改天是否方便聊聊。",
+            "action": "提出依本人意願與授權代轉一次非必要成人交流邀請的協助，未取得對方出席同意，不代家屬必要聯絡。",
+            "tradeoff": "自己多聯絡一次，可能被拒。"
+          },
+          {
+            "id": 3,
+            "text": "暫不談額外教學計畫，讓他依評估先休息。",
+            "action": "不追加非必要工作討論，維持必要醫療與課務接續。",
+            "tradeoff": "他的自責可能暫留。"
+          },
+          {
+            "id": 4,
+            "text": "待他願意且狀況允許，另談如何不把負責等同硬撐。",
+            "action": "提出未來自願成人工作感受對話，未要求當下回覆。",
+            "tradeoff": "要再約，他可能反感。"
+          },
+          {
+            "id": 5,
+            "text": "我願依他同意，把課本送到校內指定位置，今天別為這個回辦公室。",
+            "action": "提出合意且校規可行的一次額外課本代送協助，未擅取物、不讓未恢復者返課，不代醫療運送。",
+            "tradeoff": "多跑一趟，對方可能不想分開課本。"
+          },
+          {
+            "id": 6,
+            "text": "向主管提出額外補教不要長期依賴無償個人的建議。",
+            "action": "提出長期人力安排意見，不利用個案公開病情。",
+            "tradeoff": "可能被嫌挑時機。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心疼又惱，先把自己的非必要工作放下，留一段時間陪他等家人，不談最後兩題。",
+          "action": "在必要照護與交接已成立外，自願留下有限陪伴時間，不代醫護或阻止必要處理。",
+          "tradeoff": "自己晚走，對方可能不想有人陪。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3932141835
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "8f893ae54281a7533081ecd823c5099da2f5ab8078d875e3b49aef2f6931662e"
+      },
+      "consequenceDirections": {
+        "A": "他可拒談，健康支持不以接受教師價值觀為條件。",
+        "B": "同事可能理解或仍不安，教師不能因不安重排當晚補課。",
+        "C": "同事本人可不願提出邀請，另一成人也可沒空；教師不得用邀人代替必要醫護與家屬交接。",
+        "D": "他可拒絕，教師須接受不能靠陪伴解開自責；不把必要安全陪同算成此項額外優勢。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2接回本人必要班務、普通5必要課務回覆接近共同責任，改為明確自願成人交流邀請協助與物品代送，不把必要照護或告知作可選優勢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我另向合適任課者詢問後續支援，不叫他現在準備。",
+                "action": "額外查詢適任教學支援，不取得承諾或代排未恢復者。",
+                "tradeoff": "需要聯絡，可能沒人。"
+              },
+              {
+                "id": 2,
+                "text": "把我有權處理的班務接回，不要求他再回訊息。",
+                "action": "額外承接本人可處理班務聯絡，不接管他科評量。",
+                "tradeoff": "自己的下班延後。"
+              },
+              {
+                "id": 3,
+                "text": "暫不談額外教學計畫，讓他依評估先休息。",
+                "action": "不追加非必要工作討論，維持必要醫療與課務接續。",
+                "tradeoff": "他的自責可能暫留。"
+              },
+              {
+                "id": 4,
+                "text": "待他願意且狀況允許，另談如何不把負責等同硬撐。",
+                "action": "提出未來自願成人工作感受對話，未要求當下回覆。",
+                "tradeoff": "要再約，他可能反感。"
+              },
+              {
+                "id": 5,
+                "text": "我整理一份自己對學生可真實說的簡短課務回覆。",
+                "action": "另撰不揭教師健康細節的課務說明，依必要知情範圍使用。",
+                "tradeoff": "花時間，可能還被追問。"
+              },
+              {
+                "id": 6,
+                "text": "向主管提出額外補教不要長期依賴無償個人的建議。",
+                "action": "提出長期人力安排意見，不利用個案公開病情。",
+                "tradeoff": "可能被嫌挑時機。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點心疼又惱，先把自己的非必要工作放下，留一段時間陪他等家人，不談最後兩題。",
+              "action": "在必要照護與交接已成立外，自願留下有限陪伴時間，不代醫護或阻止必要處理。",
+              "tradeoff": "自己晚走，對方可能不想有人陪。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2905851132
+            },
+            "selectedIds": [
+              5,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 1,
+              "C": "emotional",
+              "D": 3
+            },
+            "optionsDigest": "c7aacf645f4c4d087857b02aba6b738265a8813934ae039aeb72b827bc2511be"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可擔心或提出需要，教師不宣稱同事已恢復或保證補課日。",
+            "B": "同事可能安心或覺得被取代，必要支持仍共同維持，不等某人答應才照顧學生。",
+            "C": "他可拒絕，教師須接受不能靠陪伴解開自責；不把必要安全陪同算成此項額外優勢。",
+            "D": "同事可能理解或仍不安，教師不能因不安重排當晚補課。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ac2a7df212729f842e295bfb023a5b4d5ff50f00a62c670edb9508aa88e29274",
+    "draftSha256": "1f4c397c38f8826e1898372767f8348c7b8a41e99f797da0ef07ae08b3cf0e6d",
     "seedAssignmentVersion": 1
   }
 }

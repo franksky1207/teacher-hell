@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cb4241a780dd526491c00d9dcadc9c6d82c0d2a23a9a03adee937a77d457fca0",
+      "checkedAt": "2026-11-27T16:56:08.329Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出全班適用的分組有序領回，不設專車順位。",
+            "action": "提出合法公平分組發還方案，依權責確認後才能實施。",
+            "tradeoff": "需重新熟悉，未必更快。"
+          },
+          {
+            "id": 2,
+            "text": "請家庭先與司機約定合法固定接點。",
+            "action": "建議家庭自願自行確認合宜接點，不蒐集即時定位。",
+            "tradeoff": "可能不方便，需家庭協調。"
+          },
+          {
+            "id": 3,
+            "text": "我額外整理校方公開接送資訊給他。",
+            "action": "提供合法公開接送資訊，不保證停車位或免罰。",
+            "tradeoff": "需整理，可能無新路。"
+          },
+          {
+            "id": 4,
+            "text": "不為個別專車開例外，維持原合法流程。",
+            "action": "婉拒財力導向特例，保持必要聯絡及合法發還。",
+            "tradeoff": "省調整，家長可能不滿。"
+          },
+          {
+            "id": 5,
+            "text": "向門禁端詢問是否已有合宜的接送等候安排。",
+            "action": "詢問既有合適等候資訊，未取得新增人力或位置。",
+            "tradeoff": "需聯絡，未必有。"
+          },
+          {
+            "id": 6,
+            "text": "邀學生自願說實際領回手機哪一步最卡。",
+            "action": "徵詢一般流程回饋，不記家庭財力或接送名單。",
+            "tradeoff": "花時間，意見可能分散。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每天守袋口收尾，願意自費做一個不露姓名的分格標示，先提合規試用。",
+          "action": "以本人額外資源提出非敏感分格標示試用方案，未核准不改流程、不取代必要保管責任。",
+          "tradeoff": "花私人錢時間，可能沒改善。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2586270292
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "bb60ed65090209eabda1c15152f48b3a915045606c6985558bd900925ffa304e"
+      },
+      "consequenceDirections": {
+        "A": "校方可不允許，學生可能仍排隊；標示不等安全或公平已自動成立。",
+        "B": "門禁可無新安排，教師不能承諾司機可違停。",
+        "C": "他可循合法管道反映，教師不因不滿扣留私物。",
+        "D": "家長可拒絕或發現不可行，必要緊急聯絡仍另維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "edffd9b922db6ba318e89b48147ef048826890917cff06a40f1638eeec91a753",
+    "draftSha256": "cb4241a780dd526491c00d9dcadc9c6d82c0d2a23a9a03adee937a77d457fca0",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "75437f555f27511277cad10d63883cbf5636ee8b30c39a3dee817ad200edb219",
+      "checkedAt": "2026-11-27T16:56:08.358Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他列出哪些額外幫忙可以先停。",
+            "action": "提出自願負荷取捨討論，不代取消必要承諾。",
+            "tradeoff": "需時間，他可能內疚。"
+          },
+          {
+            "id": 2,
+            "text": "向校內查詢已有的轉入學習資源。",
+            "action": "查詢合法既有資源，未安排人力或把轉學生交給他。",
+            "tradeoff": "可能無合適材料。"
+          },
+          {
+            "id": 3,
+            "text": "我製作一份自己可提供的合法課程索引。",
+            "action": "由教師額外整理本人授課範圍索引，不複製受限筆記。",
+            "tradeoff": "增加教師工時。"
+          },
+          {
+            "id": 4,
+            "text": "另邀兩人自願談，各自真正想要什麼幫忙。",
+            "action": "提出合意的同儕需求對話，不逼轉學生道謝。",
+            "tradeoff": "可能尷尬，需主持。"
+          },
+          {
+            "id": 5,
+            "text": "不再追加互助任務，保留兩人自行相處。",
+            "action": "不由導師加派額外筆記工作，維持成人必要支持。",
+            "tradeoff": "少整齊的互助成果。"
+          },
+          {
+            "id": 6,
+            "text": "提供學生自願學習時間規劃資訊。",
+            "action": "提供合法既有時間安排工具，不要求交私人日程。",
+            "tradeoff": "可能不適合。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把事情做漂亮，這次願意把自己一份不完美的備課拿給他看，聊聊做到哪裡就停。",
+          "action": "以本人可分享且無個資的備課草稿提出自願交流，不要求學生幫改。",
+          "tradeoff": "暴露未完成面，花休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2008592975
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "37bd44c7527be351f5e8a5c8bb8bd616d967d29004e4de96323c67c4596866d1"
+      },
+      "consequenceDirections": {
+        "A": "他可不用，教師不能把提供工具當已解決逾期。",
+        "B": "他可不想看，教師可能被指出粗糙；成人示例不保證學生立即放下完美期待。",
+        "C": "他可拒談，教師不以是否停幫決定合法補交權。",
+        "D": "轉學生可不用，助人者可能鬆口氣或失去被需要感；索引不當已補教。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b0da5a1f8f5ceba586b263bf5604a6fb71aa60785fdbfe7aadbe8f54aa9a25f",
+    "draftSha256": "75437f555f27511277cad10d63883cbf5636ee8b30c39a3dee817ad200edb219",
     "seedAssignmentVersion": 1
   }
 }

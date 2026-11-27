@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5e41eb784b0aaf849ba6c97663799d6442d50016d7edbcb4f60695e77b80f50e",
+      "checkedAt": "2026-11-27T16:56:08.324Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在合適範圍試行分時段的討論與安靜自習。",
+            "action": "提出有期限的分時安排，必要學習需求持續保障。",
+            "tradeoff": "切換麻煩，需觀察。"
+          },
+          {
+            "id": 2,
+            "text": "若有合適合法空間，申請自願討論者另用一處。",
+            "action": "提出成人照看可行前提下的空間申請，未獲准。",
+            "tradeoff": "可能無空間，增加調度。"
+          },
+          {
+            "id": 3,
+            "text": "先維持必要安靜時段，額外討論改到可用課間。",
+            "action": "在合法權限內暫不新增自習討論段，提供非強制課間交流選擇。",
+            "tradeoff": "想討論者不便。"
+          },
+          {
+            "id": 4,
+            "text": "邀雙方各提一個具體困擾，不要求班長代言。",
+            "action": "提出自願小範圍需求對話，不要求全體一致。",
+            "tradeoff": "花時間，可能仍吵。"
+          },
+          {
+            "id": 5,
+            "text": "我不加試行表，沿用既有合規方式並說明範圍。",
+            "action": "不自建額外試行工具，維持原合法學習安排與必要說明。",
+            "tradeoff": "省事，班長可能仍不服。"
+          },
+          {
+            "id": 6,
+            "text": "徵詢自願匿名回饋，看看哪些聲音最干擾。",
+            "action": "蒐集一般聲音情境意見，不點名或記個人醫療。",
+            "tradeoff": "要整理，意見可能極端。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再被兩派推來推去，直接用板書和自己的聲音示範一次可接受的音量。",
+          "action": "教師在可用短段以本人聲音作音量示例，不要求學生喊叫或取消未存在的活動。",
+          "tradeoff": "少空堂整理，也可能示範不清。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3929498623
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "5107379f99c22e13febd61230813f1e755d2c7201a1579afe4f521d9b36379d9"
+      },
+      "consequenceDirections": {
+        "A": "學生可質疑示例仍吵，教師須接受標準需再談；不能用一次示範宣稱零爭議。",
+        "B": "有人可能失望，教師不能禁止必要求助或合理支持。",
+        "C": "他可提出合法異議，教師不能把原規則當不必聽需要。",
+        "D": "校方可拒絕，學生可不參加，未准前維持合理原安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "279bd89e57ade74ef48205f0567a3401de40ae1801b0e210178a4ff2f0ef8ada",
+    "draftSha256": "5e41eb784b0aaf849ba6c97663799d6442d50016d7edbcb4f60695e77b80f50e",
     "seedAssignmentVersion": 1
   }
 }

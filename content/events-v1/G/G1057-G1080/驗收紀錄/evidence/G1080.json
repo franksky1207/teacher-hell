@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c9f861693d53897481075ce05c99d40fe0859987bc3265bcbf74dea7f66ead29",
+      "checkedAt": "2026-11-27T16:56:08.361Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀孩子自願談真正想學的內容。",
+            "action": "提出學生自願興趣交流，不作合法退出條件。",
+            "tradeoff": "花時間，可能與家長不同。"
+          },
+          {
+            "id": 2,
+            "text": "我協助把公開課程內容與正式申請資料分開列。",
+            "action": "額外整理合法公開資訊的用途對照，不為課程效益或錄取背書。",
+            "tradeoff": "需核對，可能仍看不懂。"
+          },
+          {
+            "id": 3,
+            "text": "提供現有校內生涯諮詢資訊，讓家庭自選。",
+            "action": "提供合法既有入口，未轉介或取得諮詢。",
+            "tradeoff": "可能無合適時段。"
+          },
+          {
+            "id": 4,
+            "text": "不加接私人課程評估，照原權責辦理必要工作。",
+            "action": "婉拒額外商業課程推薦，維持合法送辦與學習支持。",
+            "tradeoff": "保住班務，家長可能失望。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長先問業者實際負荷與退改條件。",
+            "action": "建議家庭自願核實公開交易條件，不代要求退款或保證可退。",
+            "tradeoff": "可能發現成本更高。"
+          },
+          {
+            "id": 6,
+            "text": "向年級提出不點名的付費證書資訊說明建議。",
+            "action": "提出一般生涯資訊辨識活動建議，未安排或指定學生參加。",
+            "tradeoff": "增加協調，可能不採。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句投資報酬弄得不服，願意承認我也不知道這門課值不值，自己另找一份正式評估資料再談。",
+          "action": "額外查閱可核實的正式課程或升學評估資訊並提出有限交流邀請，不假定存在評鑑或結論。",
+          "tradeoff": "花私人時間，可能查無資料。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 413010068
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "51d24274d653137282c44efa392f0b00d68a14ddd716d047c047a64cbdb6ff82"
+      },
+      "consequenceDirections": {
+        "A": "孩子可拒談或說不喜歡，教師不能把家長投資當其選擇。",
+        "B": "家長可能接受不確定或仍催結論，教師須明說查不到，不拿自己的認真當保證。",
+        "C": "家長可另找合適專業者，教師不因拒推薦阻擋退出。",
+        "D": "家庭可不用，教師不能把給資訊當已完成個別建議。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3d9e285f1928cc8eb5849e6281332a4b2548d2f051a0d3b35bc7692791e8ae8b",
+    "draftSha256": "c9f861693d53897481075ce05c99d40fe0859987bc3265bcbf74dea7f66ead29",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3d4f7791b976b8dd867f532f841f104bc4051c23dba39eaca0bf1e33000702da",
+      "checkedAt": "2026-11-27T16:56:08.350Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在合適時段自願依說明完成一次指定表面擦拭。",
+            "action": "額外承接一次本人可安全依法執行的日常擦拭，非專業消毒。",
+            "tradeoff": "犧牲備課，工作有限。"
+          },
+          {
+            "id": 2,
+            "text": "我不多接勞務，請權責端依既有安排成人清潔。",
+            "action": "婉拒額外親自擦拭，維持必要衛生與成人交接。",
+            "tradeoff": "保住時間，校護可能失望。"
+          },
+          {
+            "id": 3,
+            "text": "我只額外協助不含個資的完成紀錄整理。",
+            "action": "提出有限文書協作，不假寫清潔完成或代專業核定。",
+            "tradeoff": "仍要時間，未必需要。"
+          },
+          {
+            "id": 4,
+            "text": "向主管提出短期合適成人支援需求。",
+            "action": "提出衛生額外人力建議，未獲派人。",
+            "tradeoff": "需協調，可能不准。"
+          },
+          {
+            "id": 5,
+            "text": "邀校護另檢視非必要拍照是否每次都有用。",
+            "action": "提出工作紀錄方式檢視邀請，不免除現行必要紀錄。",
+            "tradeoff": "可能被嫌多談。"
+          },
+          {
+            "id": 6,
+            "text": "製作本人用的安全操作提醒，避免重複問她。",
+            "action": "依已確認說明整理自用提醒，不自行改濃度或用途。",
+            "tradeoff": "要核對，仍可能忘。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也快累了，不想兩人都硬撐，額外向主管反映我們今天真實負荷。",
+          "action": "以本人可核實工作事實提出臨時負荷意見，徵詢同意才涉及校護非公開資訊，不保證減班。",
+          "tradeoff": "有時間與人際成本。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 992455477
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "f334e331e7c650485235c138f88b59b60a4f8c773d9b19c41650e6b1dd5ba75e"
+      },
+      "consequenceDirections": {
+        "A": "主管可不調整，校護可能不願被提，教師須尊重；必要衛生與照護仍維持。",
+        "B": "校護可拒絕，未完成事項不得先寫已做。",
+        "C": "校護可能感謝，仍須依正式紀錄說明範圍，不宣稱病原已全除。",
+        "D": "她可不想談，權責者仍決定是否改方式。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "beea6efcfd0a7a563bb55126aede4a22933fac6e730f874d5a5c2093dc1cb2d2",
+    "draftSha256": "3d4f7791b976b8dd867f532f841f104bc4051c23dba39eaca0bf1e33000702da",
     "seedAssignmentVersion": 1
   }
 }

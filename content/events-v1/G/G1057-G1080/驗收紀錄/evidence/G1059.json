@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d945e336270d25be13df3ae9461774ce9c0ecdeddfdbb75c19fea2abdf443ff5",
+      "checkedAt": "2026-11-27T16:56:08.326Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後不再加物質獎勵，只回饋具體學習進步。",
+            "action": "決定未來不新增物質承諾，原已成立獎勵照辦。",
+            "tradeoff": "少激勵感，學生可能失望。"
+          },
+          {
+            "id": 2,
+            "text": "下次若要獎勵，先和學生談合宜方式再承諾。",
+            "action": "提出未來自願獎勵討論，不預告已核准新物品。",
+            "tradeoff": "需時間，可能期待更高。"
+          },
+          {
+            "id": 3,
+            "text": "改用我自己做的匿名學習回饋，未來不比全班平均。",
+            "action": "為後續課程製作不排名的個別回饋方式，不替代原獎勵。",
+            "tradeoff": "增加教師工時。"
+          },
+          {
+            "id": 4,
+            "text": "這次不加下一輪承諾，先照原計畫教。",
+            "action": "婉拒立即續訂獎勵，維持原合法教學。",
+            "tradeoff": "保住彈性，家長可能追問。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長分享孩子對這次進步最開心的是什麼。",
+            "action": "提出自願親子學習感受詢問，不要求交照片成果。",
+            "tradeoff": "需聯絡，可能只談吃。"
+          },
+          {
+            "id": 6,
+            "text": "向年級詢問已有的非物質鼓勵做法。",
+            "action": "查詢合法現有教學經驗，不保證取得可用方案。",
+            "tradeoff": "可能不適合本班。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被催得我也想知道這次哪裡難，邀學生挑一題已公開題目來考我，不拿點心作賭注。",
+          "action": "提出教師本人自願接受一題合法公開練習提問的邀請，不要求學生參與、不交換原獎勵。",
+          "tradeoff": "可能當場答不出來，也花課間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 729192354
+        },
+        "selectedIds": [
+          1,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "81f57648cd4874d1eb47b309e179ab2b7bdc579bb5ce1d5b42dd1016db0456bc"
+      },
+      "consequenceDirections": {
+        "A": "家長可能理解或認為熱度下降，教師不能撤回這次承諾。",
+        "B": "學生可能較有感或仍想點心，教師不保證動機改善。",
+        "C": "學生可不想考，教師也可能暴露自己的盲點；互動不是兌現條件，原承諾與合法替代所有分支照辦。",
+        "D": "同事可無建議，教師不能將問過當已有效鼓勵。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒停止未來私人點心預算與普通1不增物質承諾重疊，改為教師自願受一題挑戰，不以誠信或原獎勵換互動。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "以後不再加物質獎勵，只回饋具體學習進步。",
+                "action": "決定未來不新增物質承諾，原已成立獎勵照辦。",
+                "tradeoff": "少激勵感，學生可能失望。"
+              },
+              {
+                "id": 2,
+                "text": "下次若要獎勵，先和學生談合宜方式再承諾。",
+                "action": "提出未來自願獎勵討論，不預告已核准新物品。",
+                "tradeoff": "需時間，可能期待更高。"
+              },
+              {
+                "id": 3,
+                "text": "改用我自己做的匿名學習回饋，未來不比全班平均。",
+                "action": "為後續課程製作不排名的個別回饋方式，不替代原獎勵。",
+                "tradeoff": "增加教師工時。"
+              },
+              {
+                "id": 4,
+                "text": "這次不加下一輪承諾，先照原計畫教。",
+                "action": "婉拒立即續訂獎勵，維持原合法教學。",
+                "tradeoff": "保住彈性，家長可能追問。"
+              },
+              {
+                "id": 5,
+                "text": "邀家長分享孩子對這次進步最開心的是什麼。",
+                "action": "提出自願親子學習感受詢問，不要求交照片成果。",
+                "tradeoff": "需聯絡，可能只談吃。"
+              },
+              {
+                "id": 6,
+                "text": "向年級詢問已有的非物質鼓勵做法。",
+                "action": "查詢合法現有教學經驗，不保證取得可用方案。",
+                "tradeoff": "可能不適合本班。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被催得有點想賭氣，這次照約做完，但以後自己的錢留給私人晚餐。",
+              "action": "履行既有承諾外，決定未來私人預算不再投入額外班級點心，自行保留作生活支出。",
+              "tradeoff": "少一種拉近關係方式，可能被說小氣。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 586418390
+            },
+            "selectedIds": [
+              3,
+              6,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 6,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "a1263ba4ab38e50f3ef4e57af7d6e5932fe3a1269e720938031dca936d276ba5"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可能較有感或仍想點心，教師不保證動機改善。",
+            "B": "同事可無建議，教師不能將問過當已有效鼓勵。",
+            "C": "家長可能接受或失望，學生必要待遇不因私人預算縮減受損；守信不是這一支才有。",
+            "D": "學生可有不同想法，教師須說清能負擔範圍。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2529dba6b4ee2d3f0c8eb30dd5622bb8c40966bff5774b14a6732afc9657764d",
+    "draftSha256": "d945e336270d25be13df3ae9461774ce9c0ecdeddfdbb75c19fea2abdf443ff5",
     "seedAssignmentVersion": 1
   }
 }

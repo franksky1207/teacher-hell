@@ -15,14 +15,155 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cde53a9743947660b3bd450b65ef110c9e2f1f114a14216f1e09cb3297bcc99c",
+      "checkedAt": "2026-11-27T16:56:08.344Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下次分兩個可用時段領，別一次擠整班。",
+            "action": "提出合規且不妨礙必要課務的分時領取方案，未代他人排班，不免必要核對。",
+            "tradeoff": "要協調時段，可能仍擠。"
+          },
+          {
+            "id": 2,
+            "text": "未來先領空白號碼牌，再由成人對照發。",
+            "action": "設計本人可用的非敏感領物次序方案，不取代必要核對。",
+            "tradeoff": "多製作，可能仍拿錯。"
+          },
+          {
+            "id": 3,
+            "text": "邀他盤點自己願意保留的額外班務。",
+            "action": "提出自願負荷盤點，不逼其承諾更多工作。",
+            "tradeoff": "花時間，可能仍想全接。"
+          },
+          {
+            "id": 4,
+            "text": "詢問承辦是否有可合法使用的尺寸樣衣資訊。",
+            "action": "查詢後續選尺寸資源，未取得樣衣或補換本批。",
+            "tradeoff": "可能無資源。"
+          },
+          {
+            "id": 5,
+            "text": "不加新制度，下一次由我照現行核對方式發。",
+            "action": "不自建額外發放制度，教師親自依既有合法核對方式辦理。",
+            "tradeoff": "自己花時間，少幹部歷練。"
+          },
+          {
+            "id": 6,
+            "text": "邀同學自願提供哪個標示最容易看錯。",
+            "action": "徵詢一般尺寸標示回饋，不公開誰拿錯或家中財力。",
+            "tradeoff": "需整理，可能意見少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想省掉寫錯就不能換的麻煩，自己出錢做可拆姓名夾，給願意的人用。",
+          "action": "以本人預算製作合宜可拆姓名夾供確認尺寸後自願使用，不公開學生姓名、不改原衣物或代賠損害。",
+          "tradeoff": "花錢與製作時間，可能沒人用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2074625218
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "11e9f4b3d307c737e93e98a6911bf08b4a49fe35032633d876e5c55c296a61c9"
+      },
+      "consequenceDirections": {
+        "A": "他可拒談，教師仍須合理分工，不用盤點代替必要休息。",
+        "B": "同學可能覺得清楚或嫌麻煩，工具不自動保證正確。",
+        "C": "學生可拒用，仍可能拿錯或遺失，教師不能以夾子當保證可退；原必要損害處理共同維持。",
+        "D": "承辦可不提供，學生仍須依實際尺寸判斷，不能說資訊已解決本次損害。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1成人主導發放涵蓋普通5教師照現制發，改為明確分時方案；原情緒取消未有前提的第二套購買，改為直接承接不可逆寫名問題的可拆工具投入。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "下次改由成人主導發放，學生只自願做不涉個資的協助。",
+                "action": "提出後續成人發放分工，未擅派他人任務。",
+                "tradeoff": "教師增工作，可能較慢。"
+              },
+              {
+                "id": 2,
+                "text": "未來先領空白號碼牌，再由成人對照發。",
+                "action": "設計本人可用的非敏感領物次序方案，不取代必要核對。",
+                "tradeoff": "多製作，可能仍拿錯。"
+              },
+              {
+                "id": 3,
+                "text": "邀他盤點自己願意保留的額外班務。",
+                "action": "提出自願負荷盤點，不逼其承諾更多工作。",
+                "tradeoff": "花時間，可能仍想全接。"
+              },
+              {
+                "id": 4,
+                "text": "詢問承辦是否有可合法使用的尺寸樣衣資訊。",
+                "action": "查詢後續選尺寸資源，未取得樣衣或補換本批。",
+                "tradeoff": "可能無資源。"
+              },
+              {
+                "id": 5,
+                "text": "不加新制度，下一次由我照現行核對方式發。",
+                "action": "不自建額外發放制度，教師親自依既有合法核對方式辦理。",
+                "tradeoff": "自己花時間，少幹部歷練。"
+              },
+              {
+                "id": 6,
+                "text": "邀同學自願提供哪個標示最容易看錯。",
+                "action": "徵詢一般尺寸標示回饋，不公開誰拿錯或家中財力。",
+                "tradeoff": "需整理，可能意見少。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被那箱弄得沒耐心，先把自己原要買的第二套取消，別再加單。",
+              "action": "在本人未成立購買範圍內放棄額外自購第二套，不影響學生已訂權益。",
+              "tradeoff": "少一套替換衣，可能不方便。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2859808863
+            },
+            "selectedIds": [
+              5,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 3,
+              "C": 2,
+              "D": 5
+            },
+            "optionsDigest": "8a418db781726aff1490e4496fa43377cd703433dfbdbcc383df58e1f78f5ffa"
+          },
+          "previousConsequenceDirections": {
+            "A": "同學可能覺得教師抽離，承辦也可能說未有此訂購；若無原額外購買前提，此候選不能憑空取消。",
+            "B": "他可拒談，教師仍須合理分工，不用盤點代替必要休息。",
+            "C": "同學可能覺得清楚或嫌麻煩，工具不自動保證正確。",
+            "D": "學生可能覺得被接住或失落，教師須承擔新的工作量。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fa34a74e24cef156a133837d09bf5680dd913898b516d9cf5138781d20469c57",
+    "draftSha256": "cde53a9743947660b3bd450b65ef110c9e2f1f114a14216f1e09cb3297bcc99c",
     "seedAssignmentVersion": 1
   }
 }

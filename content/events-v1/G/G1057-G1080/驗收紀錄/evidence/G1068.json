@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d59d1c54f1d21b11b813d2f7de18db871f83f38d2e88892d8474731ef23ed59a",
+      "checkedAt": "2026-11-27T16:56:08.342Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我約一個自己確實可用的操作時段，資料齊才按。",
+            "action": "提出正式期限內本人可履約的操作時段，不假定學生意願已齊。",
+            "tradeoff": "須守約，可能仍有缺件。"
+          },
+          {
+            "id": 2,
+            "text": "邀他只看無個資的介面疑問，現在不做正式勾選。",
+            "action": "提出成人以測試示例釐清操作的請求，不交帳密。",
+            "tradeoff": "占時間，可能不是問題所在。"
+          },
+          {
+            "id": 3,
+            "text": "不接電話帶按，按既有流程自己處理。",
+            "action": "婉拒非必要即時操作指導，維持真實如期工作。",
+            "tradeoff": "保住當下，可能被嫌慢。"
+          },
+          {
+            "id": 4,
+            "text": "向主管提議後台區分待學生確認與待操作。",
+            "action": "提出一般狀態資訊改善建議，未改系統或期限。",
+            "tradeoff": "需提案，可能不採。"
+          },
+          {
+            "id": 5,
+            "text": "額外整理一份不含個資的卡點數量供承辦看。",
+            "action": "自願提供一般待處理類型與數量，不交學生選擇細節。",
+            "tradeoff": "增加統計工作。"
+          },
+          {
+            "id": 6,
+            "text": "另邀學生自願集中在可用時段問一般流程。",
+            "action": "提出不代決意願的自願程序答疑，不以到場換合法選擇。",
+            "tradeoff": "佔課間，可能沒人來。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他一直說五分鐘讓我不服，願意把這次實際確認耗時另記下來反映。",
+          "action": "額外記錄本人可核實的聯絡與操作耗時並提出流程意見，不為反駁故意拖延。",
+          "tradeoff": "多一份紀錄，可能被嫌計較。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3984141813
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "f9e617ca43fb91efd77759ae4e9d6ed5c90de1faffd657f1a33629b8f8003d43"
+      },
+      "consequenceDirections": {
+        "A": "職員可依規定追蹤，教師不能用拒指導拖過期限。",
+        "B": "學生可不用，教師仍須依必要方式確認，不將沉默視為同意。",
+        "C": "主管可不回應，職員可能發現隱形工作或更反感；正式時限照常。",
+        "D": "職員可能覺得有用或認為找藉口，現有真實紀錄仍維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1f16b3d45b0be072f687906493d2be732c9671471b75278ad2430bd57ea0bc7e",
+    "draftSha256": "d59d1c54f1d21b11b813d2f7de18db871f83f38d2e88892d8474731ef23ed59a",
     "seedAssignmentVersion": 1
   }
 }

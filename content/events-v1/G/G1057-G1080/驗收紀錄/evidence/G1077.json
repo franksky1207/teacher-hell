@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4781a6f6d4bea4e1acbbb5b809bc06f42a027c28c14fe4cab3e19d6e3d50a4fa",
+      "checkedAt": "2026-11-27T16:56:08.357Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出自願書面提問，口頭求助也照常。",
+            "action": "增加可自選的書面提問方式，不削減正常發問。",
+            "tradeoff": "要整理，回覆較慢。"
+          },
+          {
+            "id": 2,
+            "text": "邀他另談，擔心一個人時如何先問本人。",
+            "action": "提出自願相處短談，不逼其承認病情猜測動機。",
+            "tradeoff": "花課間，可能仍焦慮。"
+          },
+          {
+            "id": 3,
+            "text": "今天不加活動，照原教學互動走。",
+            "action": "不追加延伸安排，維持必要發問與支持。",
+            "tradeoff": "少安撫儀式。"
+          },
+          {
+            "id": 4,
+            "text": "在本人可調課段增加學生自主閱讀，自己少主講。",
+            "action": "合法調整非必要講述比例，維持必要解說與求助。",
+            "tradeoff": "少討論，需另備說明。"
+          },
+          {
+            "id": 5,
+            "text": "用虛構例子談一次資訊不是看到一角就全知道。",
+            "action": "安排不涉真實藥名或健康個資的短資訊辨識。",
+            "tradeoff": "占課時，可能被猜到本案。"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意把關心改成一般近況問候。",
+            "action": "提出不追問健康隱私的自願問候方式，不要求固定服務。",
+            "tradeoff": "可能覺得無用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實想被當普通人，不想被守夜，邀他課間只聊一件跟我身體無關的好笑事。",
+          "action": "提出自願一般近況交流，明示不談藥物病情、不要求逗笑。",
+          "tradeoff": "花休息，可能冷場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1726253921
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "2a8ae087dad0076d50f6f00325043d13c43345fde7e028de8cac62d308eabe78"
+      },
+      "consequenceDirections": {
+        "A": "學生可能較自在或需要更多引導，調整不證明教師重病。",
+        "B": "學生可能放鬆或仍小心，教師不能用表現熱絡作理解證明。",
+        "C": "他可拒絕或慢慢放鬆，教師須接受氣氛不一定立刻回來。",
+        "D": "學生可不參與額外部分，教師須避免羞辱發起者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b8f32c0656fc863258fcde299be26734edf7b4e57fa5fe99d91c079f759fbf34",
+    "draftSha256": "4781a6f6d4bea4e1acbbb5b809bc06f42a027c28c14fe4cab3e19d6e3d50a4fa",
     "seedAssignmentVersion": 1
   }
 }

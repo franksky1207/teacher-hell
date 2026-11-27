@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a58baa431a775273c35338f9970fd61eeebe29df44e50cfde6e403b6dcb08e28",
+      "checkedAt": "2026-11-27T16:56:08.355Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他練一次簡短成人通知，不用學生扮危險。",
+            "action": "提出自願口頭通知演練，不以完成才給安全支援。",
+            "tradeoff": "花時間，可能尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "向主管提出非緊急修繕可同步到教師的資訊建議。",
+            "action": "提出一般資訊銜接改善建議，不代核定流程。",
+            "tradeoff": "需文書，可能不採。"
+          },
+          {
+            "id": 3,
+            "text": "我另整理教室附近可用動線給自己上課時參考。",
+            "action": "製作本人非敏感動線備註，依權責現況更新，不核定復用。",
+            "tradeoff": "要更新，可能麻煩。"
+          },
+          {
+            "id": 4,
+            "text": "不加新工具，照現有正式告知方式維持。",
+            "action": "不自建額外通報表，維持必要真實聯絡。",
+            "tradeoff": "省維護，職員可能不安。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生自願說哪些一般標示真的看得懂。",
+            "action": "提出無危險現場的標示理解討論，不讓學生測試隔離效果。",
+            "tradeoff": "佔班務，意見未必專業。"
+          },
+          {
+            "id": 6,
+            "text": "另邀職員談他怕打擾誰，先不叫他改個性。",
+            "action": "提出成人自願工作感受短談，不要求揭露他人私事。",
+            "tradeoff": "花休息，可能無解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不愛被突然叫出去，願意把自己可用的非緊急聯絡時段講清楚，不再只說別打擾。",
+          "action": "額外提供本人可履約的非緊急交流時段，急迫安全仍立即聯繫。",
+          "tradeoff": "需守約，少一段空堂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3828082932
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "858b5ef031b702230f011e8224c46c793bc68399abd5ba042e51aabd7ba05d84"
+      },
+      "consequenceDirections": {
+        "A": "他可拒絕或覺得較敢說，教師不能用演練取代必要通知。",
+        "B": "學生可不答，權責者仍負安全判斷，不以票數選防護。",
+        "C": "職員可能安心或仍不敢講，教師須接受不是單靠時段就能解決。",
+        "D": "他可拒談，教師不能因理解怕衝突免必要告知。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ff211fc682100e4b8656b35ce7f4cc207d5bb0d4bc5cf0de8440e8bcb9c34121",
+    "draftSha256": "a58baa431a775273c35338f9970fd61eeebe29df44e50cfde6e403b6dcb08e28",
     "seedAssignmentVersion": 1
   }
 }

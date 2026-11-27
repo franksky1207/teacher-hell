@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d4337de19440910d0e6341c12168f6f2ed54bf7c1909846fc23e62c82b90bcac",
+      "checkedAt": "2026-11-27T16:56:08.359Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只合意留實際需要的數量，其餘由他帶回。",
+            "action": "提出有限接收與餘物返還方案，依物主同意交接。",
+            "tradeoff": "少資源，可能讓他多跑。"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願意由校方依法媒合其他需要者。",
+            "action": "提出須合意且合法的校內需求媒合，未找到接收者或移交。",
+            "tradeoff": "多聯絡，可能沒人收。"
+          },
+          {
+            "id": 3,
+            "text": "本次不接紙箱，改用班上已有材料。",
+            "action": "婉拒整批非必要贈與，保持安全合意歸還。",
+            "tradeoff": "作品選擇少，心意可能受傷。"
+          },
+          {
+            "id": 4,
+            "text": "我調整班級創作，只用少量可放得下的箱材。",
+            "action": "提出在實際安全空間內的低耗材創作方案，未代學生或物主同意。",
+            "tradeoff": "成品規模縮小。"
+          },
+          {
+            "id": 5,
+            "text": "以後先公開確定數量與尺寸，再徵詢自願提供。",
+            "action": "提出本人未來物資需求的具體限量方式，不要求任何家庭固定供應。",
+            "tradeoff": "多事前盤點，可能徵不到。"
+          },
+          {
+            "id": 6,
+            "text": "問他願不願意把多餘箱子交合規回收，別再多跑一趟。",
+            "action": "徵詢物主將多餘箱材交既有合規回收管道的方案，未同意或未接收前不處分。",
+            "tradeoff": "放棄可用紙箱，仍需協調。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想留一個大箱收東西，這回明講是自用，另外問他願不願意給。",
+          "action": "在校規允許的低價非利益交換範圍另提出一個紙箱的教師私人受贈請求，未獲同意、不挪用已屬班級物品，自行負責帶走。",
+          "tradeoff": "承認自己有私心，對方可拒絕，自己要搬。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2519122767
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "c060700f93fae2d684413b79e55e0a2c9c7e679adbe8c917dbd3ee2e5ac1555f"
+      },
+      "consequenceDirections": {
+        "A": "學生可能喜歡或可惜，家長可不續供；不用囤貨才能做課程。",
+        "B": "家長可能覺得清楚或熱情受限，教師須接受無物資就改安排。",
+        "C": "家長可拒絕，無接收者仍依物權處理，不能再堆逃生道。",
+        "D": "家長可能願意或覺得原來是老師想要，教師須接受拒絕；班級需求與安全不因私人受贈而擴大，無法合規就不成立。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6停止未有前提的額外徵物計畫，改為合意回收路徑；原情緒盤點限量清單近普通5的事前限量徵詢，改為分清私人與班級物權的少量自用請求。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "只合意留實際需要的數量，其餘由他帶回。",
+                "action": "提出有限接收與餘物返還方案，依物主同意交接。",
+                "tradeoff": "少資源，可能讓他多跑。"
+              },
+              {
+                "id": 2,
+                "text": "問他是否願意由校方依法媒合其他需要者。",
+                "action": "提出須合意且合法的校內需求媒合，未找到接收者或移交。",
+                "tradeoff": "多聯絡，可能沒人收。"
+              },
+              {
+                "id": 3,
+                "text": "本次不接紙箱，改用班上已有材料。",
+                "action": "婉拒整批非必要贈與，保持安全合意歸還。",
+                "tradeoff": "作品選擇少，心意可能受傷。"
+              },
+              {
+                "id": 4,
+                "text": "我調整班級創作，只用少量可放得下的箱材。",
+                "action": "提出在實際安全空間內的低耗材創作方案，未代學生或物主同意。",
+                "tradeoff": "成品規模縮小。"
+              },
+              {
+                "id": 5,
+                "text": "以後先公開確定數量與尺寸，再徵詢自願提供。",
+                "action": "提出本人未來物資需求的具體限量方式，不要求任何家庭固定供應。",
+                "tradeoff": "多事前盤點，可能徵不到。"
+              },
+              {
+                "id": 6,
+                "text": "不加新的徵物活動，這學期先用現有庫存。",
+                "action": "停止本人未成立的額外徵物計畫，依實際庫存安排，不取消不存在的指定活動。",
+                "tradeoff": "少彈性，需查庫存。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被自己的隨口一句嚇到，願意自己花空堂列一次物資清單，不再讓他猜我需要多少。",
+              "action": "額外盤點本人課程實際庫存與需求並製作限量清單，不與普通5的未來徵詢方式混同為相同工作。",
+              "tradeoff": "花自己的空堂，可能發現本來就不缺。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1388432170
+            },
+            "selectedIds": [
+              2,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 6,
+              "D": 3
+            },
+            "optionsDigest": "c3ba22e0d26504b0ccf8e313d77ba81a43d540b9bbedeb1e8954102b186743fb"
+          },
+          "previousConsequenceDirections": {
+            "A": "家長可拒絕，無接收者仍依物權處理，不能再堆逃生道。",
+            "B": "家長可能覺得被限制，教師須接受不缺就不收，不能為消化贈物硬加學生任務。",
+            "C": "家長可能鬆口氣或失落，教師不以省徵物省略必要教材支持。",
+            "D": "家長可能理解或失落，教師需改教案而非要求學生自購補足。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7457b50db0ca48994c9ab0eb0ded9a83a54a95fa113e3eceed0041d53c5da809",
+    "draftSha256": "d4337de19440910d0e6341c12168f6f2ed54bf7c1909846fc23e62c82b90bcac",
     "seedAssignmentVersion": 1
   }
 }

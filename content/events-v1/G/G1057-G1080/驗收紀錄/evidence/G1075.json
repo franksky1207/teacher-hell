@@ -16,14 +16,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "caa457257fa0678bbc3c5dca19c2327a06f2cb9627b18f6fce0c0109a4f79a45",
+      "checkedAt": "2026-11-27T16:56:08.354Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出只口頭分享合規職涯內容，不發手冊。",
+            "action": "提出無商業導流的自願口頭分享方案，仍須合法合意安排。",
+            "tradeoff": "少資料，可能冷場。"
+          },
+          {
+            "id": 2,
+            "text": "我用可合法公開的中性資料另做一張提問單。",
+            "action": "自願製作不含商業連結的原創提問單，不重製受限手冊。",
+            "tradeoff": "增加備課與印製。"
+          },
+          {
+            "id": 3,
+            "text": "這次先不加家長分享，回原班會議程。",
+            "action": "婉拒本次未完成合法安排的額外分享，不要求其留校。",
+            "tradeoff": "家長白請假，學生少體驗。"
+          },
+          {
+            "id": 4,
+            "text": "邀他改帶一段不含客戶資料的工作過程。",
+            "action": "提出使用合法去識別工作片段的請求，未取得素材。",
+            "tradeoff": "需再整理，可能無合適例。"
+          },
+          {
+            "id": 5,
+            "text": "提供正式分享審查資訊，讓他後續自己參考。",
+            "action": "提供正式合法資訊以利後續規畫，不代核准當次素材。",
+            "tradeoff": "要等待，當天未必用到。"
+          },
+          {
+            "id": 6,
+            "text": "請學生自願提出想問這個行業的問題。",
+            "action": "蒐集不涉私人聯絡的自願問題，不等於已安排講者。",
+            "tradeoff": "佔時間，期待可能落空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想他只記得被退件，願意在成人空堂另聽他的職場故事，不把學生當客戶。",
+          "action": "提出成人間有限自願交流邀請，不發商業手冊給學生或承諾採購。",
+          "tradeoff": "犧牲休息，可能被繼續推銷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1901177682
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "ee094f7f2fd12ca328e6b8597132d03ab45c08a4a5a0218166cba9ddab7d8f95"
+      },
+      "consequenceDirections": {
+        "A": "承辦可要求調整，家長可不再參與；問過不等核過。",
+        "B": "家長可能失望或不滿，教師須承受人情代價而非開商業例外。",
+        "C": "家長可拒絕或願說，教師不以私人交流規避校規。",
+        "D": "家長可能接受或覺得被否定，教師須保留合法內容核對。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "27721294c0c29f9007f9600c372ef7ad51f68482ea276cfbcfcc65791507792b",
+    "draftSha256": "caa457257fa0678bbc3c5dca19c2327a06f2cb9627b18f6fce0c0109a4f79a45",
     "seedAssignmentVersion": 1
   }
 }

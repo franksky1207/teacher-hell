@@ -16,14 +16,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "638d7b6005c782577102be2194382b7d6023d71c9bbbeb1f643a3a3fc12dd6b6",
+      "checkedAt": "2026-11-27T16:42:35.267Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在可調範圍讓每人選合適讀物，不按買雜誌的人分組。",
+            "action": "提供含既有免費資源的合適自選閱讀方案，依必要核准後實施。",
+            "tradeoff": "需準備多種材料。"
+          },
+          {
+            "id": 2,
+            "text": "原晨讀不換，另邀他課間自願薦書。",
+            "action": "提出課間口頭推薦邀請，不要求公開刊物內容。",
+            "tradeoff": "花課間，可能冷場。"
+          },
+          {
+            "id": 3,
+            "text": "向圖書館查詢可供全班合法借的同程度刊物。",
+            "action": "查詢合法替代館藏，不保證取得或含同一期。",
+            "tradeoff": "等待且可能無書。"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意先只用一本，保留其他私藏。",
+            "action": "提出有限實體出借方案，未取得同意或班級採用核准。",
+            "tradeoff": "流通慢，保管需協商。"
+          },
+          {
+            "id": 5,
+            "text": "讓他自行留課外看，本次不另採全組方案。",
+            "action": "婉拒額外集體調整，尊重私人合規閱讀與必要支持。",
+            "tradeoff": "少合作機會，他可能失落。"
+          },
+          {
+            "id": 6,
+            "text": "邀願意的同學只談閱讀主題偏好，不比誰讀得難。",
+            "action": "提出不涉及財力的自願題材討論，不重製刊文。",
+            "tradeoff": "佔班務，可能無共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真想讀其中一本，私下問他能不能借我，期限他訂。",
+          "action": "向物主提出教師私人借閱請求，未取得同意或書籍，不取代學生既有合法順位。",
+          "tradeoff": "新增私人保管責任，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3317733556
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "d49a5583bd270e44f90d5ecdf26349dcffb3d49a730c8bb349eab4f2955bcba9"
+      },
+      "consequenceDirections": {
+        "A": "他可能收回或另找同好，教師不能將未提供書籍判不合群。",
+        "B": "學生可能失望或找到新選擇，教師不以查詢宣稱資源差已補齊。",
+        "C": "他可拒絕，同學可不聽，不能把推薦當已免晨讀。",
+        "D": "他可拒借或感到有同好，教師須履行合意期限；不以借教師換晨讀特例。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b1d16d721187df8e80809fae4c7f5cec017f07778ad720655000a35161171a3d",
+    "draftSha256": "638d7b6005c782577102be2194382b7d6023d71c9bbbeb1f643a3a3fc12dd6b6",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "01c648bd420149ba6bf898bb85b8625d24621f17b8ef1625faa89070cb3d2fb0",
+      "checkedAt": "2026-11-27T16:42:35.251Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他一起列出自己這週可放下的非必要承諾。",
+            "action": "提出自願承諾盤點，未代其取消已成立義務。",
+            "tradeoff": "需時間，可能捨不得。"
+          },
+          {
+            "id": 2,
+            "text": "向總務提議公開自願報名，不由學生臨時揪。",
+            "action": "提出合法自願服務流程建議，未核准或指派人力。",
+            "tradeoff": "需協調，可能無人報。"
+          },
+          {
+            "id": 3,
+            "text": "我不加開檢討會，讓班級回到正常課務。",
+            "action": "不追加非必要集體反思，維持必要健康與教學支持。",
+            "tradeoff": "少一次整理經驗。"
+          },
+          {
+            "id": 4,
+            "text": "邀願意的同學匿名說，怎麼拒絕揪團比較不尷尬。",
+            "action": "徵詢自願相處建議，不追查誰拒搬。",
+            "tradeoff": "花班務時間。"
+          },
+          {
+            "id": 5,
+            "text": "我提供適齡校內服務的現有資訊給他。",
+            "action": "提供合法公開自願服務資訊，不替其報名。",
+            "tradeoff": "可能又想全接。"
+          },
+          {
+            "id": 6,
+            "text": "邀科任另談活動負荷與上課精神的銜接。",
+            "action": "提出成人教學協調邀請，不代全班保證不再疲累。",
+            "tradeoff": "多花空堂，可能被拒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他還想扛我有點煩，這回我也不逞強，額外服務邀約全部婉拒。",
+          "action": "導師拒絕本人下次非必要服務邀約，保留自己的休息時間，不替學生決定是否參加合法自願服務。",
+          "tradeoff": "少了陪伴與號召角色，可能被說不熱心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 941281932
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "316936e7784bb75e640bb3c1622c99699f7f29c872b11e18fe6e9d35d1c346b9"
+      },
+      "consequenceDirections": {
+        "A": "科任可提出不同安排，教師不能將學生睡意全當紀律問題。",
+        "B": "意見可能不同，發起者可能受傷；不以多數票否定拒絕權。",
+        "C": "他可不用，教師需維持合理負荷，不以服務資訊鼓勵過勞。",
+        "D": "學生可能不理解或開始尊重教師休息，教師須面對合作變少；這不取代所有分支原本就應停止的強迫搬運。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒重申不得代表全班近於共同界線，改為教師本人的額外服務退出與休息取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "和他一起列出自己這週可放下的非必要承諾。",
+                "action": "提出自願承諾盤點，未代其取消已成立義務。",
+                "tradeoff": "需時間，可能捨不得。"
+              },
+              {
+                "id": 2,
+                "text": "向總務提議公開自願報名，不由學生臨時揪。",
+                "action": "提出合法自願服務流程建議，未核准或指派人力。",
+                "tradeoff": "需協調，可能無人報。"
+              },
+              {
+                "id": 3,
+                "text": "我不加開檢討會，讓班級回到正常課務。",
+                "action": "不追加非必要集體反思，維持必要健康與教學支持。",
+                "tradeoff": "少一次整理經驗。"
+              },
+              {
+                "id": 4,
+                "text": "邀願意的同學匿名說，怎麼拒絕揪團比較不尷尬。",
+                "action": "徵詢自願相處建議，不追查誰拒搬。",
+                "tradeoff": "花班務時間。"
+              },
+              {
+                "id": 5,
+                "text": "我提供適齡校內服務的現有資訊給他。",
+                "action": "提供合法公開自願服務資訊，不替其報名。",
+                "tradeoff": "可能又想全接。"
+              },
+              {
+                "id": 6,
+                "text": "邀科任另談活動負荷與上課精神的銜接。",
+                "action": "提出成人教學協調邀請，不代全班保證不再疲累。",
+                "tradeoff": "多花空堂，可能被拒。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看到他還想扛就煩，這次親口說我不接受他替全班答應額外工作。",
+              "action": "在必要停止強迫之外，另明確拒絕本人參與其未經授權的額外團體服務邀約，不替他取消自願興趣。",
+              "tradeoff": "可能被覺得潑冷水。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 906458428
+            },
+            "selectedIds": [
+              5,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "0563163657cbbf5b35ae0c957efddbd61d4c8e7384f8650db74fc472af0bb6fb"
+          },
+          "previousConsequenceDirections": {
+            "A": "意見可能不同，發起者可能受傷；不以多數票否定拒絕權。",
+            "B": "學生可能失落或開始分清代表範圍，教師承擔關係代價；其餘學生自願權共同維持。",
+            "C": "他可拒絕或發現負荷，教師不能以盤點取代必要休息。",
+            "D": "他可不用，教師需維持合理負荷，不以服務資訊鼓勵過勞。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "36392a1b88b164720a7aaceea2ebdab9b77cdf8854dda8aa7ba5719159c99886",
+    "draftSha256": "01c648bd420149ba6bf898bb85b8625d24621f17b8ef1625faa89070cb3d2fb0",
     "seedAssignmentVersion": 1
   }
 }

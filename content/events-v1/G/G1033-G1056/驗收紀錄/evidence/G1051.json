@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a5d5ebf1a2486e90a3b66efa37355455caa3e30727d3bb8d1e71399385e52512",
+      "checkedAt": "2026-11-27T16:42:35.281Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改點店裡還有的普通餐，不再多跑。",
+            "action": "購買本人可接受的現有餐點，不要求原招牌優先。",
+            "tradeoff": "省路程，放棄期待。"
+          },
+          {
+            "id": 2,
+            "text": "這次不買，去別家找晚餐。",
+            "action": "放棄本店購買，另覓正常餐飲。",
+            "tradeoff": "多花時間與路程。"
+          },
+          {
+            "id": 3,
+            "text": "問老闆明天通常幾點賣完，另一天再試。",
+            "action": "詢問公開供餐時間，不取得保留或預訂承諾。",
+            "tradeoff": "還得再排，未必買到。"
+          },
+          {
+            "id": 4,
+            "text": "回家吃自己已有的食物，今天不再追名店。",
+            "action": "使用本人可安全食用的現有食物，不另消費。",
+            "tradeoff": "省錢，少犒賞感。"
+          },
+          {
+            "id": 5,
+            "text": "邀附近好友若方便，另找地方吃一頓。",
+            "action": "提出成人私人自願用餐邀請，未訂位或替對方同意。",
+            "tradeoff": "花錢，可能約不到。"
+          },
+          {
+            "id": 6,
+            "text": "先買份小點心，晚點再決定正餐。",
+            "action": "以本人預算購買合宜小點，延後私人正餐選擇。",
+            "tradeoff": "可能多花一筆。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不想就這樣算了，問老闆明天能不能按正常規矩付訂預約。",
+          "action": "提出下一供餐日以公開一般條件付訂預約招牌餐的請求，未取得同意、付款或保留餐點。",
+          "tradeoff": "可能被拒；若接受須承擔預付及再跑一趟的安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3448266501
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "1cb02064f2be7d308023b0c49df77e37ed06fd3739a59e9edf040d429ed4e997"
+      },
+      "consequenceDirections": {
+        "A": "教師可能心情好些或仍餓，須自行顧好飲食而不怪他人。",
+        "B": "店家可能無法估準，教師須接受不確定性。",
+        "C": "好友可拒絕，教師可能更寂寞；不要求別人補償自己的失望。",
+        "D": "店家可不開預訂，教師須接受無餐可保留；若可預訂也依一般顧客規則，不向被禮讓者索回餐點。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒購買陌生現有菜為普通1改買其他餐的子集合，改為另一天願承擔預付責任的預約請求，與普通3僅問供餐時間區別。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "改點店裡還有的普通餐，不再多跑。",
+                "action": "購買本人可接受的現有餐點，不要求原招牌優先。",
+                "tradeoff": "省路程，放棄期待。"
+              },
+              {
+                "id": 2,
+                "text": "這次不買，去別家找晚餐。",
+                "action": "放棄本店購買，另覓正常餐飲。",
+                "tradeoff": "多花時間與路程。"
+              },
+              {
+                "id": 3,
+                "text": "問老闆明天通常幾點賣完，另一天再試。",
+                "action": "詢問公開供餐時間，不取得保留或預訂承諾。",
+                "tradeoff": "還得再排，未必買到。"
+              },
+              {
+                "id": 4,
+                "text": "回家吃自己已有的食物，今天不再追名店。",
+                "action": "使用本人可安全食用的現有食物，不另消費。",
+                "tradeoff": "省錢，少犒賞感。"
+              },
+              {
+                "id": 5,
+                "text": "邀附近好友若方便，另找地方吃一頓。",
+                "action": "提出成人私人自願用餐邀請，未訂位或替對方同意。",
+                "tradeoff": "花錢，可能約不到。"
+              },
+              {
+                "id": 6,
+                "text": "先買份小點心，晚點再決定正餐。",
+                "action": "以本人預算購買合宜小點，延後私人正餐選擇。",
+                "tradeoff": "可能多花一筆。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我偏想把今天過好，點一樣沒吃過的現有菜，承認自己就是饞。",
+              "action": "自費選擇尚有供應且本人可吃的陌生菜色，非原普通餐選擇。",
+              "tradeoff": "冒口味不合的風險。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1275637936
+            },
+            "selectedIds": [
+              3,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 5,
+              "D": 3
+            },
+            "optionsDigest": "e5aa4bc2ceebd3e21f9126f6df01b6113070600d9c622d06f6c4e879bf2da66e"
+          },
+          "previousConsequenceDirections": {
+            "A": "可能喜歡或後悔，教師須承受花錢試新味道，不保證善意換美食。",
+            "B": "教師可能心情好些或仍餓，須自行顧好飲食而不怪他人。",
+            "C": "好友可拒絕，教師可能更寂寞；不要求別人補償自己的失望。",
+            "D": "店家可能無法估準，教師須接受不確定性。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "65d6845dc13b6f23745f4be0bca748a0ba5b74381554a1a725c5b8061e21b0f8",
+    "draftSha256": "a5d5ebf1a2486e90a3b66efa37355455caa3e30727d3bb8d1e71399385e52512",
     "seedAssignmentVersion": 1
   }
 }

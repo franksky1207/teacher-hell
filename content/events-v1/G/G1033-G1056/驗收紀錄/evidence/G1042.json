@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20184926a61dbdeae9314982aba1178107cc73d37b0942e1036b3575767f9cd5",
+      "checkedAt": "2026-11-27T16:42:35.261Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把本人課內重複練習改成訂正時間。",
+            "action": "於授課權限內以原練習時段完成重點訂正，不增課外時數。",
+            "tradeoff": "少新練習，需重排。"
+          },
+          {
+            "id": 2,
+            "text": "提供自願的短時段線上提問入口。",
+            "action": "在可負擔工作時段提出自願有限提問安排，不全天待命。",
+            "tradeoff": "教師增加回覆工作。"
+          },
+          {
+            "id": 3,
+            "text": "將本人可調訂正分成兩次，不要求當日全完。",
+            "action": "調整本人非必要當日完成期限，保留學習目標。",
+            "tradeoff": "回饋較慢，需追蹤。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生選一題先說卡點，不加長全班時間。",
+            "action": "提出課內自願錯題說明，不公開個人成績。",
+            "tradeoff": "占原課時，可能沉默。"
+          },
+          {
+            "id": 5,
+            "text": "我不加額外課後方案，先做好課內支持。",
+            "action": "婉拒追加課後補救活動，維持必要教學與正常放學。",
+            "tradeoff": "少可選時段。"
+          },
+          {
+            "id": 6,
+            "text": "向年級提議不同科訂正要求先協調一次。",
+            "action": "提出跨科訂正負荷協調邀請，未改他科要求。",
+            "tradeoff": "需開會，可能無共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想準時走，額外具名提出不要把補救成效寫成留校時數的建議。",
+          "action": "向主管提出成效紀錄方式建議，不免除必要教學或紀錄。",
+          "tradeoff": "表達不滿，需提案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 794464610
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "88587f51530c7d242f016a7ad50f5264788ee3b9ab07315a152ec62b1a542dd1"
+      },
+      "consequenceDirections": {
+        "A": "家庭可能安心或擔心進度，教師須回應而非讓其選擇有無權益。",
+        "B": "學生可能更從容或拖延，教師承擔後續工作。",
+        "C": "學生可不用，家庭也可能無方便設備；必要支持仍另維持。",
+        "D": "主管可不採用，同事可能覺得被影射；建議不等於校規已改。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a5ff686754b1383adc8f13139555d82b1aa167d39572d19bb2c1a6d0990c88a0",
+    "draftSha256": "20184926a61dbdeae9314982aba1178107cc73d37b0942e1036b3575767f9cd5",
     "seedAssignmentVersion": 1
   }
 }

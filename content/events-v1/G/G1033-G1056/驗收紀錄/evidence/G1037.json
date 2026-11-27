@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c61229d7074a81d662f66c7548dc3ee114d4ae62be354341ea7f42c6b52b2b79",
+      "checkedAt": "2026-11-27T16:42:35.249Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自己說想學哪一段，不替他定職涯。",
+            "action": "提出自願興趣短談，不影響合法退出程序。",
+            "tradeoff": "花時間，可能與家長不同。"
+          },
+          {
+            "id": 2,
+            "text": "提供既有適齡技職探索資訊。",
+            "action": "提供合法公開學習資訊，未報名或取得名額。",
+            "tradeoff": "可能不合時間。"
+          },
+          {
+            "id": 3,
+            "text": "我另和家長談如何保留孩子休息，不把空下時間全排滿。",
+            "action": "提出自願家庭時間討論，不附加退出條件。",
+            "tradeoff": "可能被嫌不懂辛苦。"
+          },
+          {
+            "id": 4,
+            "text": "只回應我真的看見的學習長處，不替職場效果背書。",
+            "action": "依本人知情提供具體學習觀察，不評未見的修繕成效。",
+            "tradeoff": "可能不夠讓人安心。"
+          },
+          {
+            "id": 5,
+            "text": "邀親戚若願意，以公開資訊說明行業日常。",
+            "action": "提出須本人與家庭同意的成人職涯介紹邀請，未聯絡成功或安排見習。",
+            "tradeoff": "需協調，對方可能忙。"
+          },
+          {
+            "id": 6,
+            "text": "不加接職涯規劃，保留原必要聯絡就好。",
+            "action": "婉拒額外私人規劃，維持必要學習與合法行政配合。",
+            "tradeoff": "保住班務，家長可能失落。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那份開心感染，願意另外聽孩子講他怎麼發現漏水，不請他替學校修。",
+          "action": "提出自願成果敘說邀請，不要求重演、拆裝或免費服務。",
+          "tradeoff": "花休息時間，可能聽不懂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1478854271
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "77a516507f6bfa499da4fa2b7749c4bc5d87687f97498b883ca916051b429276"
+      },
+      "consequenceDirections": {
+        "A": "親戚可拒絕，孩子可不參加，介紹不當安全資格證明。",
+        "B": "家長可拒絕或重新安排，學生必要支持與退出權不受談話成敗影響。",
+        "C": "孩子可拒絕或樂於敘說，教師不能憑故事確認專業能力或安排危險工作。",
+        "D": "家庭可不用，資訊不等於實作安全核准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92d280283a6d6a7eb78e151c8c5ca40a5c4698c5839658fd263d14ee3e3c49e4",
+    "draftSha256": "c61229d7074a81d662f66c7548dc3ee114d4ae62be354341ea7f42c6b52b2b79",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f4ff457cdf561f95dfe10de3efd02a8125338c01d9b504d566c95c2ce545e32d",
+      "checkedAt": "2026-11-27T16:42:35.266Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "拿去識別的回饋，跟他看一個實際改過的地方。",
+            "action": "以合法可分享材料說明一項互評後改動，不推定整體成效。",
+            "tradeoff": "占討論時間，例子可能不夠。"
+          },
+          {
+            "id": 2,
+            "text": "這次縮短互評，留一段本人授權內的基礎練習。",
+            "action": "調整本人課程為短互評與自主練習，不私下借他科。",
+            "tradeoff": "兩邊都較短，需重排。"
+          },
+          {
+            "id": 3,
+            "text": "暫停本人可調互評一次，讓學生自行檢視筆記。",
+            "action": "一次改為個人筆記檢視，不替同事答應代課。",
+            "tradeoff": "少同儕視角。"
+          },
+          {
+            "id": 4,
+            "text": "邀學生匿名說哪種互評真的幫得上忙。",
+            "action": "徵詢自願學習回饋，不問他人評語隱私。",
+            "tradeoff": "需整理，可能無一致答案。"
+          },
+          {
+            "id": 5,
+            "text": "邀他另看一堂互評，只當成人觀課。",
+            "action": "提出依校規可安排的觀課邀請，未排成或交學生個資。",
+            "tradeoff": "需時間，可能不願。"
+          },
+          {
+            "id": 6,
+            "text": "我維持原活動，不另追加比較試驗。",
+            "action": "保留原合法課程，婉拒額外教學試作，維持必要支持。",
+            "tradeoff": "少重排，專業心結可能留。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被他說得心虛，邀他用我的筆記挑一次，讓我親自試試被互評。",
+          "action": "自願提供本人無敏感資訊的筆記供成人同事評讀，不要求他收回批評。",
+          "tradeoff": "暴露缺點，花休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3418190379
+        },
+        "selectedIds": [
+          3,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "e7aabae10c039176301eb995235881410045ee6efb54089e3c0d3d6fad0ee0e3"
+      },
+      "consequenceDirections": {
+        "A": "學生可能更自在或不知道怎麼看，同事不能因此認定原活動無效。",
+        "B": "同事可能體諒或更焦慮，教師不能因朋友質疑降低合作。",
+        "C": "同事可拒絕或評得很直，教師可能發現自己也不會用回饋；成人體驗不證明學生效果。",
+        "D": "他可拒絕或看見新問題，教師須承受實際被評。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6addae4a51753e039083b489a19ad14ac24dc1abf05074255d2180b5ad793adf",
+    "draftSha256": "f4ff457cdf561f95dfe10de3efd02a8125338c01d9b504d566c95c2ce545e32d",
     "seedAssignmentVersion": 1
   }
 }

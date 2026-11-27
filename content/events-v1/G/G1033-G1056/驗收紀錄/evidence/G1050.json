@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8761a10568b4d1ffb75fa3cba959b2136792bb2023fc0e80612aea963a89b3fe",
+      "checkedAt": "2026-11-27T16:42:35.276Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把本人可調的一段下次課務改成重點訂正。",
+            "action": "重排本人權限內非必要段落，保留觀察課已發生事實。",
+            "tradeoff": "少其他內容，需改教案。"
+          },
+          {
+            "id": 2,
+            "text": "邀他正式提下一次合作，不再臨場抱器材進來。",
+            "action": "提出成人合作備課邀請，未排定新課。",
+            "tradeoff": "需多準備，他可能冷掉。"
+          },
+          {
+            "id": 3,
+            "text": "今天不再加延伸，讓學生回到原安排。",
+            "action": "結束非必要觀察延伸，維持安全收具與正常課務。",
+            "tradeoff": "好奇可能中斷。"
+          },
+          {
+            "id": 4,
+            "text": "請他提供可合法分享的標本介紹，讓有興趣者自己看。",
+            "action": "提出合法自願延伸資訊請求，未取得素材或變成新作業。",
+            "tradeoff": "要整理，可能沒時間。"
+          },
+          {
+            "id": 5,
+            "text": "讓學生自願寫一個真想追問的觀察問題。",
+            "action": "徵詢不計分的自願觀察提問，不要求都交。",
+            "tradeoff": "佔班務，問題可能難答。"
+          },
+          {
+            "id": 6,
+            "text": "我保留原訂正方式，不再替突發觀察加做版面。",
+            "action": "婉拒額外製作延伸學習單，使用既有合法訂正材料。",
+            "tradeoff": "省製作，少整合感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也真想看那個生物，邀他下課只教我一次，不再把全班留下。",
+          "action": "提出成人私人興趣的短觀察邀請，器材與標本依合法權限使用，未取得同意。",
+          "tradeoff": "花休息，可能看不到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1062223423
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "16c442b786c30ca14c3a1193be48a77ef2df2abf92c50dcf8ca4a9a03b7354a5"
+      },
+      "consequenceDirections": {
+        "A": "學生可不寫，科任不必無限回答；教師須接受不知道。",
+        "B": "科任可拒絕或欣然講解，教師須接受自己也好奇但不能私占學生課務。",
+        "C": "科任可能失望、學生可能抱怨，導師須承擔掃興。",
+        "D": "科任可能覺得興趣沒被承接，學生仍有必要支持；不否認已上過的內容。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ef837963685f028881012974eb90614c51d463dae3a64fb7725942e584e85fc",
+    "draftSha256": "8761a10568b4d1ffb75fa3cba959b2136792bb2023fc0e80612aea963a89b3fe",
     "seedAssignmentVersion": 1
   }
 }

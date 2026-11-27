@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "284c8ec5c1bb500235b3cfb654f3d690e3ae726d76d6eeea7065324c27828a05",
+      "checkedAt": "2026-11-27T16:42:35.244Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問校方能不能依法收作合格公用備品。",
+            "action": "提出校方接收經確認合格備品的詢問，未完成捐贈。",
+            "tradeoff": "需程序，可能不收。"
+          },
+          {
+            "id": 2,
+            "text": "支持他收回私物，別再由他一個人補。",
+            "action": "婉拒將其私人備品常態納班務資源，協助合意收回。",
+            "tradeoff": "少便利，學生需自行準備。"
+          },
+          {
+            "id": 3,
+            "text": "我做一張自己用的上課前提醒清單。",
+            "action": "製作本人班務用提醒，不收學生敏感資料或代安全檢查。",
+            "tradeoff": "增加維護，可能仍忘。"
+          },
+          {
+            "id": 4,
+            "text": "向行政提出合格備品預算建議。",
+            "action": "提出公用防護資源預算建議，未獲採購。",
+            "tradeoff": "要整理，可能被否決。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生提出自己能記得裝備的做法。",
+            "action": "提出自願一般準備習慣討論，不讓幹部查同學身體或財力。",
+            "tradeoff": "花班務時間。"
+          },
+          {
+            "id": 6,
+            "text": "另邀科任談以後需要協助可以怎麼直接說。",
+            "action": "提出成人合作短談，不要求其隱瞞安全問題。",
+            "tradeoff": "可能尷尬，花休息。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他偷偷買東西弄得心虛，願意自己跑一次採購詢價，但不叫他再掏錢。",
+          "action": "自願用可用時間詢問合格備品公開價格，未下單或承諾教師私人支付。",
+          "tradeoff": "多一趟工作，可能仍買不成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2650334985
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "32324ab5828099260f3ddeb8b479f6b45814c660ec44d156800e40a745d7415a"
+      },
+      "consequenceDirections": {
+        "A": "他可拒談或說出怕被怪，導師不保證一談就敢表達。",
+        "B": "學生可能較早記得或照樣漏帶；提醒不等於裝備已合格。",
+        "C": "科任可能安心或失落，必要合法替代教學仍共同維持。",
+        "D": "科任可能感到被分擔，行政仍可不採用；詢價不等取得或合格確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c40799db9f7e93f0abc0e8f761e5c09972857a41eab7bbae938389da99c25017",
+    "draftSha256": "284c8ec5c1bb500235b3cfb654f3d690e3ae726d76d6eeea7065324c27828a05",
     "seedAssignmentVersion": 1
   }
 }

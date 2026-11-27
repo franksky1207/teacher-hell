@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2fb1098fc821c1318f1294e5c4057fe203538a623ec5e16732af25dc5a4336d0",
+      "checkedAt": "2026-11-27T16:42:35.288Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我整理可協調時段交課務，請依法評估。",
+            "action": "額外整理本人可知的排程資訊，不核定換課。",
+            "tradeoff": "花時間，可能無空檔。"
+          },
+          {
+            "id": 2,
+            "text": "不加借早自習，保留原合法安排。",
+            "action": "婉拒額外借時段，維持必要正式課務協作。",
+            "tradeoff": "守住閱讀時間，關係可能僵。"
+          },
+          {
+            "id": 3,
+            "text": "邀他一起想不增加學生課外時數的課內補強。",
+            "action": "提出成人自願教學協作邀請，不代其授課或改評量。",
+            "tradeoff": "耗備課，未必有效。"
+          },
+          {
+            "id": 4,
+            "text": "我調整自己的非必要閱讀延伸，改成學生自主完成。",
+            "action": "減少本人可調教師主導延伸，保留合法自主閱讀及必要支持。",
+            "tradeoff": "少討論回饋，需整理說明。"
+          },
+          {
+            "id": 5,
+            "text": "提出以後遇公共清理先接給合適成人再準時上課。",
+            "action": "提出不延誤必要安全處理的成人分工協作建議，未取得人力承諾。",
+            "tradeoff": "需協調，可能仍沒人。"
+          },
+          {
+            "id": 6,
+            "text": "邀學生自願討論怎樣的回收安排較能做到。",
+            "action": "徵詢一般可行分工，不以額外服務換課務或免責。",
+            "tradeoff": "佔班務，可能起互怪。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也火大他理直氣壯，另約他私下談，我不想每次都替他的衝動排後面。",
+          "action": "提出成人合作界線對話，具體表達被迫善後感受，不免本人必要工作。",
+          "tradeoff": "可能正面吵，花休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2479907840
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "5ef05857530c787e90b5dfe7daa410fefcfcb40d5b58c8d76be1d302cc9344f1"
+      },
+      "consequenceDirections": {
+        "A": "同事可能不滿，教師不能以不借為由拒處理學生學習需要。",
+        "B": "學生可拒絕，教師須避免把必要清理變連坐處罰。",
+        "C": "同事可不認同，教師不能以準時為由丟下立即危險。",
+        "D": "同事可拒談或反指教師冷漠，教師須承擔人際代價，不向學生轉嫁。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a3a0d6253c217ebae5f314bd41b3adca4c2960ac6a627eac4ed025ab3eac1a4f",
+    "draftSha256": "2fb1098fc821c1318f1294e5c4057fe203538a623ec5e16732af25dc5a4336d0",
     "seedAssignmentVersion": 1
   }
 }

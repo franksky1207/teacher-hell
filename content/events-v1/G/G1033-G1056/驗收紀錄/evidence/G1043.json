@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1c1c525828d0485d9ae2c5b0b8abeecc09920aa8dcdb42bd68b5225ae628af8c",
+      "checkedAt": "2026-11-27T16:42:35.263Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出只在特定練習用途試用的申請。",
+            "action": "向權責者提出限定練習用途試用方案，未核准或放行考試。",
+            "tradeoff": "需管理，可能不准。"
+          },
+          {
+            "id": 2,
+            "text": "課內維持現行工具，提供他個人課外自學的合法資訊。",
+            "action": "提供校外私人自學功能查閱資訊，不替其驗證所有功能效果。",
+            "tradeoff": "不滿足課內願望。"
+          },
+          {
+            "id": 3,
+            "text": "邀他展示公開說明書中最想用的一個功能。",
+            "action": "提出成人與學生自願功能說明交流，不操作私人紀錄。",
+            "tradeoff": "花課間，可能仍不適合。"
+          },
+          {
+            "id": 4,
+            "text": "幫他整理一份一般班規修正提案格式。",
+            "action": "提供自願制度提案樣式，不代簽或保證受理結果。",
+            "tradeoff": "要寫提案，可能碰壁。"
+          },
+          {
+            "id": 5,
+            "text": "我調整本人一項練習，讓紙本與可用資源都查得到。",
+            "action": "另設符合現行規定的查找練習，不以特定昂貴設備為前提。",
+            "tradeoff": "增加備課，效率可能較慢。"
+          },
+          {
+            "id": 6,
+            "text": "不加客製工具安排，維持現有合法課程。",
+            "action": "婉拒額外客製，保留正式修正管道與必要支持。",
+            "tradeoff": "保住時間，學生可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被『全臺都可以』弄得不服，邀他一起把那句廣告的根據找出來。",
+          "action": "提出自願共同檢視公開宣稱依據的邀請，不追查私人帳號或假定廠商違法。",
+          "tradeoff": "費時間，可能沒結果。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3999144293
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "4a43c83c682632342da98d6825087bebf4eee5511ede65c3b46d18e78ddfe481"
+      },
+      "consequenceDirections": {
+        "A": "學生可另向權責反映，教師不以不滿扣分。",
+        "B": "學生可能期待或不耐，校方可拒；未准前不能自行開用。",
+        "C": "學生可不用，教師不保證購買值得或可退。",
+        "D": "學生可拒絕或願意查，教師須接受仍不明，不以查不到就斷言詐欺。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5290a9f62494f8ce8fabdc33cab74e21126a802b6ba302e5ed5d789298620587",
+    "draftSha256": "1c1c525828d0485d9ae2c5b0b8abeecc09920aa8dcdb42bd68b5225ae628af8c",
     "seedAssignmentVersion": 1
   }
 }

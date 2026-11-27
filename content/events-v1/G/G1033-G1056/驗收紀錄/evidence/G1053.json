@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d9d07d9074fc36b5a6fb3ed69c32e4a639882b85b1a7f4265dd1e9ca95cc033",
+      "checkedAt": "2026-11-27T16:42:35.285Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向主管提議修繕訊息可同步給巡查端。",
+            "action": "提出未來跨單位資訊銜接建議，未改制度。",
+            "tradeoff": "需協調，可能不採。"
+          },
+          {
+            "id": 2,
+            "text": "製作本人班務用的非敏感動線備註。",
+            "action": "額外整理本人可知的臨時動線資訊，不代安全核定。",
+            "tradeoff": "需更新，可能過期。"
+          },
+          {
+            "id": 3,
+            "text": "我不再加一份表，照既有正式通知維持。",
+            "action": "婉拒自建額外管理表，維持原必要資訊與支持。",
+            "tradeoff": "省工作，職員可能仍內疚。"
+          },
+          {
+            "id": 4,
+            "text": "邀職員另談怎樣的協作最不會讓他一人扛。",
+            "action": "提出成人自願工作需求短談，不派學生替代修繕。",
+            "tradeoff": "花空檔，可能無解。"
+          },
+          {
+            "id": 5,
+            "text": "提供合法公開的設施反映管道給學生。",
+            "action": "額外提供現有通報資訊，不要求學生自行檢修或查責任人。",
+            "tradeoff": "可能多訊息，需說明。"
+          },
+          {
+            "id": 6,
+            "text": "提議用非個案例子在班會談修繕不等於破壞。",
+            "action": "安排一般設施維護資訊討論，不點名指責巡查人。",
+            "tradeoff": "占班會，可能無趣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想他只記得害班上扣分，願意另寫一段具體感謝送主管。",
+          "action": "以本人可核實的協助事實提出額外具名感謝，不淡化未對接的問題。",
+          "tradeoff": "花時間，可能被說護航。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3171879816
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "4ac95ad738db0a5e9e2137b99f67dfd30d02707da32666f4c3a01b78ec5157a4"
+      },
+      "consequenceDirections": {
+        "A": "職員可能欣慰或尷尬，主管不一定回應；感謝不換修繕或更正優先。",
+        "B": "職員可拒談或指出人力不足，教師不保證能調派人。",
+        "C": "學生可不用，成人仍負必要巡查，不把學生當安全保證人。",
+        "D": "學生可能理解或仍只在意扣分，教師不拿討論代替更正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d5ccec6cd43e41a2e71080dbf37e7d46d8e405c5f8d4ba57dccdba44de25686e",
+    "draftSha256": "5d9d07d9074fc36b5a6fb3ed69c32e4a639882b85b1a7f4265dd1e9ca95cc033",
     "seedAssignmentVersion": 1
   }
 }

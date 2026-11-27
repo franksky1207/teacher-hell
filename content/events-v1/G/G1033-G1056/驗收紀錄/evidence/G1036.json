@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cbe31c1f663da084b7293c3e21c75b4097e2737b08ad4cdd61e388802edb37e9",
+      "checkedAt": "2026-11-27T16:42:35.247Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把可調的先後順序交他提一版，必要事項不刪。",
+            "action": "邀股長自願提出合法班務順序方案，未直接採納。",
+            "tradeoff": "需再討論，可能被退回。"
+          },
+          {
+            "id": 2,
+            "text": "以後我臨時調整前，另留一小段跟他對齊。",
+            "action": "提出非緊急班務變動先行交流安排，不延誤必要處置。",
+            "tradeoff": "多花課間，也可能等不到人。"
+          },
+          {
+            "id": 3,
+            "text": "這週先由我接回可調排程，不再讓他扛決定。",
+            "action": "承擔本週班務排程，保留其原必要幹部權利與合理任務。",
+            "tradeoff": "教師增工作，學生可能受挫。"
+          },
+          {
+            "id": 4,
+            "text": "問全班自願說午休前哪段最常卡住。",
+            "action": "徵詢匿名一般流程感受，不問個人健康。",
+            "tradeoff": "需整理，意見可能分散。"
+          },
+          {
+            "id": 5,
+            "text": "把既有必要流程做成看得到的時序圖。",
+            "action": "製作公共流程時序圖，清楚區分可調與不可省事項。",
+            "tradeoff": "占版面，需更新。"
+          },
+          {
+            "id": 6,
+            "text": "先不改流程工具，另約他談自己在意的職務界線。",
+            "action": "提出自願角色期待短談，不以談成才恢復權益。",
+            "tradeoff": "費時間，可能無共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我當時只想早點安靜，承認這點，今天把自己的空堂拿來陪他重排一次。",
+          "action": "自願額外與股長共同實作一版可調流程，對方可拒，不代全班核定。",
+          "tradeoff": "犧牲空堂，也可能被指出更亂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1798356014
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "5fdfd37628e7d476aee93f2096b7057647cdc5ab25136cfc7cf41633e28503d6"
+      },
+      "consequenceDirections": {
+        "A": "學生可能更易掌握或嫌多一張紙，不能以張貼當已執行。",
+        "B": "學生可能較有掌握或仍不滿，緊急時不能把等同意當安全門檻。",
+        "C": "同學可能提出新問題，股長可能覺得被支持或被評價。",
+        "D": "學生可能願合作或不領情，教師須承擔自己排不好的可能；必要流程原已維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bbe0daae7c8e6adb219d314a62b4c0d62520bc344c15b38ffeb9bd9f34d062b2",
+    "draftSha256": "cbe31c1f663da084b7293c3e21c75b4097e2737b08ad4cdd61e388802edb37e9",
     "seedAssignmentVersion": 1
   }
 }

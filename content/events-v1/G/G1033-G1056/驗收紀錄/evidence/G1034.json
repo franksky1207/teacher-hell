@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3668a5efc3cd244480ee6b8b75198622657293773e3390114f9f6c438a5fd3e",
+      "checkedAt": "2026-11-27T16:42:35.242Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他回答學生整理過的三個問題，不做整場說教。",
+            "action": "提出有限成人答疑安排，未取得出席同意。",
+            "tradeoff": "需整理問題，可能仍火大。"
+          },
+          {
+            "id": 2,
+            "text": "用可公開的資料，讓學生自己重寫價格那一頁。",
+            "action": "提供合法公開資訊供學生自願修訂分析，必要錯誤已共同更正。",
+            "tradeoff": "多修改，可能不願做。"
+          },
+          {
+            "id": 3,
+            "text": "我不請他入班，改把學生的品項建議另送窗口。",
+            "action": "婉拒額外入班，轉送合意且無個資的新品項建議。",
+            "tradeoff": "少直接交流，可能無回覆。"
+          },
+          {
+            "id": 4,
+            "text": "班會改做一份消費需求調查，不先討論帳目。",
+            "action": "提出自願匿名的品項需求蒐集，不收個人消費金額。",
+            "tradeoff": "佔班會，樣本可能少。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生與職員各選一項最想澄清的立場。",
+            "action": "提出雙向自願說明邀請，不要求撤回合法批評。",
+            "tradeoff": "需主持，可能更僵。"
+          },
+          {
+            "id": 6,
+            "text": "這次只完成必要更正，不加延伸活動。",
+            "action": "不追加討論安排，保留學生合法建議入口。",
+            "tradeoff": "保住班務，雙方可能不滿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想吐槽品項，拿自己的真實購物困擾具名提出建議。",
+          "action": "額外以教師本人消費經驗提交品項建議，不代全班連署。",
+          "tradeoff": "花時間，可能被說起鬨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1898592824
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ee3009c442e1ab508884ad284523410ffaba78b5b2980094a1c2165c30e7ca60"
+      },
+      "consequenceDirections": {
+        "A": "學生可提出合理疑問，職員可拒答非公開成本；不保證彼此認同。",
+        "B": "同學可能提供新需求或不填，合作社不因此必須供貨。",
+        "C": "學生可另寫觀點，職員不能要求只留下稱讚。",
+        "D": "職員可能理解需求或更反感；親身意見不能代替價格事實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "44e050ac340750c870de0c2a7672977f776eaea89baf0da2daba952c290a0ec9",
+    "draftSha256": "c3668a5efc3cd244480ee6b8b75198622657293773e3390114f9f6c438a5fd3e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cc9ca3eb420fc0af57d7cf4e2df8a489d4bbcb4811fde328b369246d0823162e",
+      "checkedAt": "2026-11-27T16:42:35.254Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另說明這張卷在課堂怎麼用，不只比較題目來源。",
+            "action": "以可公開例子說明本人練習回饋方式，不保證優於補習。",
+            "tradeoff": "花說明時間，可能仍被質疑。"
+          },
+          {
+            "id": 2,
+            "text": "下次加一題自己設計的變式，檢查是否真理解。",
+            "action": "製作符合目標的原創變式，非僅換數字重複。",
+            "tradeoff": "增加出題與核對工作。"
+          },
+          {
+            "id": 3,
+            "text": "在本人練習卷標上依法可標的公開來源。",
+            "action": "額外於後續練習卷提供合法來源說明，不散布受限題庫。",
+            "tradeoff": "需整理版面，未必有人讀。"
+          },
+          {
+            "id": 4,
+            "text": "邀孩子自己談這張練習對他哪裡有用。",
+            "action": "提出自願學習經驗短談，不要求替教師背書。",
+            "tradeoff": "占課間，可能聽到負評。"
+          },
+          {
+            "id": 5,
+            "text": "不追加比較，先完成原定教學。",
+            "action": "婉拒非必要學校與補習優劣辯論，維持必要說明與支持。",
+            "tradeoff": "保住時間，家長可能續不滿。"
+          },
+          {
+            "id": 6,
+            "text": "提供現有教材選用說明入口讓他自行讀。",
+            "action": "提供合法公開教材資訊，不代其接受選用理由。",
+            "tradeoff": "未必看得懂。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被質疑到我也不服，願意讓他看一份匿名錯答，我不講答案先聽他的判斷。",
+          "action": "邀家長自願看合法去識別例子討論理解困難，不揭孩子或他生原卷。",
+          "tradeoff": "可能更尷尬，費時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 927918985
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "3090587c186e3464eb8cfd7ae808c3746d710a0e1fb090d853164298bc8a1f97"
+      },
+      "consequenceDirections": {
+        "A": "家長可能較不誤會或嫌仍沒特色；標註不取代授權。",
+        "B": "家長可拒絕或提出好觀點，教師須承認不是只有教師會看；不把成人作答當命題品質證明。",
+        "C": "家長可另詢權責者，教師不得停止原誤傳更正。",
+        "D": "家長可不用或提出新問題，教師不把入口當已理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "23d080e81f58665a7046577f8113580bb7115539f780d693f857af0bf4da0f70",
+    "draftSha256": "cc9ca3eb420fc0af57d7cf4e2df8a489d4bbcb4811fde328b369246d0823162e",
     "seedAssignmentVersion": 1
   }
 }

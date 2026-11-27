@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b363e8d7286762ea257717802a2c986c69ed805e16a80d1427ee4468ee30b6a3",
+      "checkedAt": "2026-11-27T16:42:35.264Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "直接說這十五分鐘我想安靜，不聊產品。",
+            "action": "明確拒絕本次非必要推介，留在原位休息。",
+            "tradeoff": "可能傷鄰里情面。"
+          },
+          {
+            "id": 2,
+            "text": "我換到店外安全等候處，時間到再進來。",
+            "action": "自行移往合適公共等候處並按時取衣，不要求他人看守。",
+            "tradeoff": "要走動，也可能沒地方坐。"
+          },
+          {
+            "id": 3,
+            "text": "把話題轉回他最近的生活，不收產品介紹。",
+            "action": "邀鄰居一般聊天，持續婉拒行銷。",
+            "tradeoff": "失去放空，可能又被帶回。"
+          },
+          {
+            "id": 4,
+            "text": "請他只留公開品牌資料，我日後自行判斷。",
+            "action": "同意接收公開資訊，不承諾閱讀、入會或購買。",
+            "tradeoff": "可能招來後續追問。"
+          },
+          {
+            "id": 5,
+            "text": "我戴上自己的耳機，先說現在要休息。",
+            "action": "明示暫停交談後使用本人耳機，不阻礙環境安全察覺。",
+            "tradeoff": "顯得疏離，可能仍被打斷。"
+          },
+          {
+            "id": 6,
+            "text": "提議下次只聊洗衣和生活，推銷就不另約。",
+            "action": "提出未來私人交往界線，不要求鄰居承諾一定接受。",
+            "tradeoff": "可能少了鄰里互動。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被講到真的煩，願意多花時間向店家反映，這裡不該是推銷場。",
+          "action": "透過店家公開意見管道提出店內推銷影響等候體驗的意見，不捏造情節或公開鄰居身分。",
+          "tradeoff": "多花私人時間，鄰居若知道可能不高興。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1342984894
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "01594deb7af6d5e08c423c3a62b733dff2ef7e9e8472687a4bd9bd27b23dd71f"
+      },
+      "consequenceDirections": {
+        "A": "鄰居可能停下或不悅，教師不因情面改成購買。",
+        "B": "店家可能回應或不處理，鄰居可能認為小題大作；教師不能把反映當店規已改，拒買原則所有分支維持。",
+        "C": "鄰居可能離開或抱怨，教師承擔日後打招呼尷尬。",
+        "D": "對方可不再接近，教師需接受關係變淡而不指控其惡意。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒以玩笑拒銷與普通1直接拒絕相同行動，改為額外向店家反映使用體驗。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "直接說這十五分鐘我想安靜，不聊產品。",
+                "action": "明確拒絕本次非必要推介，留在原位休息。",
+                "tradeoff": "可能傷鄰里情面。"
+              },
+              {
+                "id": 2,
+                "text": "我換到店外安全等候處，時間到再進來。",
+                "action": "自行移往合適公共等候處並按時取衣，不要求他人看守。",
+                "tradeoff": "要走動，也可能沒地方坐。"
+              },
+              {
+                "id": 3,
+                "text": "把話題轉回他最近的生活，不收產品介紹。",
+                "action": "邀鄰居一般聊天，持續婉拒行銷。",
+                "tradeoff": "失去放空，可能又被帶回。"
+              },
+              {
+                "id": 4,
+                "text": "請他只留公開品牌資料，我日後自行判斷。",
+                "action": "同意接收公開資訊，不承諾閱讀、入會或購買。",
+                "tradeoff": "可能招來後續追問。"
+              },
+              {
+                "id": 5,
+                "text": "我戴上自己的耳機，先說現在要休息。",
+                "action": "明示暫停交談後使用本人耳機，不阻礙環境安全察覺。",
+                "tradeoff": "顯得疏離，可能仍被打斷。"
+              },
+              {
+                "id": 6,
+                "text": "提議下次只聊洗衣和生活，推銷就不另約。",
+                "action": "提出未來私人交往界線，不要求鄰居承諾一定接受。",
+                "tradeoff": "可能少了鄰里互動。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被講到有點煩，乾脆拿烘衣機自嘲：它停了我就走，不加購人生方案。",
+              "action": "以本人自願玩笑拒絕行銷並明確保留按時離開安排。",
+              "tradeoff": "可能冷場或被當嘲諷。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3613682005
+            },
+            "selectedIds": [
+              2,
+              5,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 5,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "df27ed5043ed34229311b922dd790cf1854ef85dc855c2b1ad7a7db4e4c07c76"
+          },
+          "previousConsequenceDirections": {
+            "A": "對方可能持續催促，教師需承受拒絕第二次；收資料不是認可效果。",
+            "B": "鄰居可能離開或抱怨，教師承擔日後打招呼尷尬。",
+            "C": "鄰居可能笑或更不滿，教師須承受玩笑失敗；拒買原則不只這一支有。",
+            "D": "鄰居可能尷尬或跟來，教師須再維持界線；不留財物讓人負責。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8f607f625d23a5eb3bc3489752b93cb07725a0e599779920297de1de317d78f7",
+    "draftSha256": "b363e8d7286762ea257717802a2c986c69ed805e16a80d1427ee4468ee30b6a3",
     "seedAssignmentVersion": 1
   }
 }

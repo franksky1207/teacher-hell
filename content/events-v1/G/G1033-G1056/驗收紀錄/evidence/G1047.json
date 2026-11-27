@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e3321497022513d3aa87d62e770e973b3486c529802e3307a4e0875e8ace13bf",
+      "checkedAt": "2026-11-27T16:42:35.269Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "額外整理自己教室可公開的設備位置圖。",
+            "action": "製作本人管理範圍的非敏感設備位置圖，不列帳密或安全設定。",
+            "tradeoff": "增加維護，可能過期。"
+          },
+          {
+            "id": 2,
+            "text": "邀他另說明一遍哪些變動必須先申請。",
+            "action": "提出成人程序說明邀請，不把邀請當已受訓。",
+            "tradeoff": "占雙方時間。"
+          },
+          {
+            "id": 3,
+            "text": "我不加新表，依現有正式盤點如實做。",
+            "action": "不自建額外工具，維持原合法盤點與必要回報。",
+            "tradeoff": "省工具工作，舊心結可能留。"
+          },
+          {
+            "id": 4,
+            "text": "向主管提出非必要私人設備入班的資訊說明。",
+            "action": "提出通用設備申請資訊改善建議，不增強制搜查。",
+            "tradeoff": "需協調，可能被嫌多事。"
+          },
+          {
+            "id": 5,
+            "text": "準備本人可用的離線教材，別每次斷網就停。",
+            "action": "製作合法離線教學備案，不取用未授權資料。",
+            "tradeoff": "增加備課，功能較少。"
+          },
+          {
+            "id": 6,
+            "text": "另邀他談說明問題時能否不把舊帳一起丟過來。",
+            "action": "提出成人合作語氣對話，不阻其正式問責。",
+            "tradeoff": "可能更僵，花休息。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再當那個只會說等網路的人，願意先學一個我權限內可做的基本檢查。",
+          "action": "提出由資訊端指導合法基礎檢查的請求，未取得權限、完成訓練或自行操作設定。",
+          "tradeoff": "要花時間，也可能學不會。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1794273595
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "6ddb64b8c09e28d9216340580d601fb5974450010fae7a160d51f30ca4c716ee"
+      },
+      "consequenceDirections": {
+        "A": "職員可指出舊帳相關，教師須接受批評並分辨事實。",
+        "B": "主管可拒絕，學生不因建議而被預設違規。",
+        "C": "學生可能照常學或嫌普通，備案不替代必要修網。",
+        "D": "職員可拒教或指出需專人處理，教師不能把好勝當授權。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "878f3beac08089e61858422cbb9a28fd7d0990320636daef4981c39bbe56637f",
+    "draftSha256": "e3321497022513d3aa87d62e770e973b3486c529802e3307a4e0875e8ace13bf",
     "seedAssignmentVersion": 1
   }
 }

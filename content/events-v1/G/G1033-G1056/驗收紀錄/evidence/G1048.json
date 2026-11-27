@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ebc233ccc1bf8d8a0d14a4ef09973ff1a05bd78ac3a2581bc6c2f8ecee74ad69",
+      "checkedAt": "2026-11-27T16:42:35.271Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他是否願意無條件依校規捐贈，選拔另照公開規則。",
+            "action": "提出無附帶選拔條件的合法受贈詢問，未完成接收。",
+            "tradeoff": "可能被收回，需行政程序。"
+          },
+          {
+            "id": 2,
+            "text": "婉拒這箱私人捐物，維持現有學習資源。",
+            "action": "拒絕本次非必要受贈，不剝奪家長與孩子權益。",
+            "tradeoff": "少一套資源，可能傷心意。"
+          },
+          {
+            "id": 3,
+            "text": "向校內詢問是否有共同可用的同類資源。",
+            "action": "查詢合法共用資源，不取得或替換選拔標準。",
+            "tradeoff": "需等待，未必有。"
+          },
+          {
+            "id": 4,
+            "text": "請他只提供公開書目，讓有興趣者自行查閱。",
+            "action": "邀家長分享合法公開書目，不發整本重製或要求購買。",
+            "tradeoff": "實用性較少。"
+          },
+          {
+            "id": 5,
+            "text": "邀學生自願談對競賽準備方式的期待。",
+            "action": "徵詢不涉及家庭財力的自願準備意見，不以票數變更既定資格。",
+            "tradeoff": "佔時間，可能起爭。"
+          },
+          {
+            "id": 6,
+            "text": "提出辦一段不作選拔的自願益智活動。",
+            "action": "建議另開與代表資格無關的自願活動，素材須合法合意，不保證成行。",
+            "tradeoff": "教師增加準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他那句公平讓我有點刺，願意具名向主管提出捐物與選拔應分開說明。",
+          "action": "額外提交通用捐物與資格界線說明建議，不揭家庭私密或預定違規。",
+          "tradeoff": "增加人際壓力，需文書。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3394692017
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "ae82a513dd36ee1259d416f20a334815b27de27a3000bb94c0411421ea9c04b2"
+      },
+      "consequenceDirections": {
+        "A": "主管可不採用，家長可能覺得被影射；公平本來各分支都守住。",
+        "B": "學生可能偏好不同，教師仍須維持公平且不得追認捐書特例。",
+        "C": "家長可不願提供，學生可不用；書目不當必考範圍。",
+        "D": "家長可拒贈，教師不能因此影響孩子正常參選。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ccc4fee5feb73cb2c89ec5c1b9ab9ddd0ec45b5acdb82fb6064f6c59d648e613",
+    "draftSha256": "ebc233ccc1bf8d8a0d14a4ef09973ff1a05bd78ac3a2581bc6c2f8ecee74ad69",
     "seedAssignmentVersion": 1
   }
 }

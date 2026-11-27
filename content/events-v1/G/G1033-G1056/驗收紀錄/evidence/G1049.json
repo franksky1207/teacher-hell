@@ -16,14 +16,82 @@
     "G03",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "914f76a7757f7f91273c4ea86126519fa270215496633097aceadcbf02280d96",
+      "checkedAt": "2026-11-27T16:42:35.273Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在可調班會安排十分鐘說明，留時間給反對意見。",
+            "action": "依合法班會規範提供有限自願討論時段，不代全班表態。",
+            "tradeoff": "壓縮原議程，可能爭論。"
+          },
+          {
+            "id": 2,
+            "text": "先把兩個議題分開，讓各人清楚自己支持哪項。",
+            "action": "協助提出分題討論方式，不變更原簽名同意內容或代重新連署。",
+            "tradeoff": "程序較慢，要重講。"
+          },
+          {
+            "id": 3,
+            "text": "邀他先做一張不含名單的議題摘要給大家讀。",
+            "action": "提出自願摘要製作邀請，不作合法提案受理門檻。",
+            "tradeoff": "多一份準備，可能被拒。"
+          },
+          {
+            "id": 4,
+            "text": "向學生會詢問現有議題說明資源。",
+            "action": "查詢合法自治資源，不代學生會承諾或掌握簽名名冊。",
+            "tradeoff": "需聯絡，未必適用。"
+          },
+          {
+            "id": 5,
+            "text": "不追加班級聯名，支持各人依合法管道表達。",
+            "action": "不以導師名義增設全班一致提案，保留原合法討論與送辦權。",
+            "tradeoff": "少共同聲量，發起者失望。"
+          },
+          {
+            "id": 6,
+            "text": "邀他練一次如何回應不同意，不找同學當假敵人。",
+            "action": "提出成人與學生自願的反對意見回應演練。",
+            "tradeoff": "花課間，可能更焦躁。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把一直不敢說的使用問題講出來，這次只以個人具名提意見。",
+          "action": "依合法管道另提出教師本人可核實的設施使用意見，不替學生或全班連署。",
+          "tradeoff": "得面對主管詢問，耗時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 366900931
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "edd70fb78bf308a017772e5ec7d81dc9101826b8432c15041b93ced114f0d1f9"
+      },
+      "consequenceDirections": {
+        "A": "學生會可有既有安排，教師不得把查詢當活動已核准。",
+        "B": "學生可能覺得有人理解或認為教師搶話，提案權責仍各自分明。",
+        "C": "他可拒絕或發現不會回答，教師不以演練表現決定權益。",
+        "D": "學生仍可依法倡議，教師不得用個人不聯名封鎖原班會必要議程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e5415819916c6bedb266f89ed407e33b2a5f0d7cd4cb84479285ee83e691f5e6",
+    "draftSha256": "914f76a7757f7f91273c4ea86126519fa270215496633097aceadcbf02280d96",
     "seedAssignmentVersion": 1
   }
 }

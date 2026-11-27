@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "40538175a861b2b4a6506a9d5da4b0df0157f8ce3333728d92a7186b8092d3e6",
+      "checkedAt": "2026-11-27T16:42:35.237Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我把自己加的重複練習減掉，別再跟作品搶時間。",
+            "action": "刪減本人額外重複練習，保留必要目標。",
+            "tradeoff": "少一次檢核，須改教案。"
+          },
+          {
+            "id": 2,
+            "text": "我寫一段給家長看，說明這次實作在學什麼。",
+            "action": "依已確認課程內容另撰班訊說明，不代評量承諾。",
+            "tradeoff": "花時間，家長可能不買單。"
+          },
+          {
+            "id": 3,
+            "text": "問他能不能提供一件可公開的評量例子。",
+            "action": "提出使用合法去識別作品例子的請求，未取得材料。",
+            "tradeoff": "可能看得懂，也可能找不到。"
+          },
+          {
+            "id": 4,
+            "text": "我在自己的課教一次考前排程，不代他科上課。",
+            "action": "用本人可調教學時間帶學生安排既有作業，不加新任務。",
+            "tradeoff": "少一段原教學。"
+          },
+          {
+            "id": 5,
+            "text": "這次不加家長說明會，照已有課程資訊回覆。",
+            "action": "不增非必要宣導活動，維持必要真實回覆。",
+            "tradeoff": "少協調，科任可能仍孤立。"
+          },
+          {
+            "id": 6,
+            "text": "提出下次考前各科先一起看負荷的建議。",
+            "action": "向年級提出非必要跨科負荷協調建議，未替各科改量。",
+            "tradeoff": "多一場協調，未必成功。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看看他們做的，願意把一段休息留來當自願觀眾。",
+          "action": "在科任及學生同意下提出課間觀賞作品的邀請，未接管評分或延長學生課務。",
+          "tradeoff": "少了休息，可能看不懂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 136163253
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "cf3a10a792d0c55b0b57af4fcf70c54b8810a520aec3de875662e320ab6d0c6c"
+      },
+      "consequenceDirections": {
+        "A": "學生可不展示，科任可不安排；真實好奇不等於要求全班加演。",
+        "B": "同事可不同意，科任可能願支持；不藉協調重啟私借課。",
+        "C": "學生可能較能安排作品，也可能仍拖延；科任不因此保證高分。",
+        "D": "家長可能自行洽詢或續抱怨，導師不能用忙拒絕實質問題。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第九輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6233aa616e9f0a65b6ff21b306a13924545e2dff282857f4d1614c08ae885105",
+    "draftSha256": "40538175a861b2b4a6506a9d5da4b0df0157f8ce3333728d92a7186b8092d3e6",
     "seedAssignmentVersion": 1
   }
 }

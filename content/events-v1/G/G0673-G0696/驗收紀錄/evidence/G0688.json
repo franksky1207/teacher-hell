@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1ac83748b42a44fd934e6c3ac42cb648723e3f7c46020a977c8b79f460a1ed96",
+      "checkedAt": "2026-11-27T12:23:46.047Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他自願只比較第三項加進來前後，不要求當場得正解。",
+            "action": "導師已提供有限自願條件比較與正常回饋，不以公開道歉作學習條件。",
+            "tradeoff": "要用較多課內時間"
+          },
+          {
+            "id": 2,
+            "text": "我完整解一次，原板書保留真實修改痕跡。",
+            "action": "導師已在本課以完整條件提供正確教學，原板書僅限當下必要說明後依規處理，不公開拍照。",
+            "tradeoff": "學生少了自己找到的機會"
+          },
+          {
+            "id": 3,
+            "text": "改成各自用三欄圖核對，不再個人板演。",
+            "action": "導師已提供自製有限條件對照練習，不追加整份作業或公開個人錯誤。",
+            "tradeoff": "教師要看不同判斷"
+          },
+          {
+            "id": 4,
+            "text": "用另一道相似但條件不同的題，先讓大家看差在哪。",
+            "action": "導師已以自有可用變式題提供本課有限比較，不改原題真實條件。",
+            "tradeoff": "需要挪課內時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最快上台答對獎勵。",
+            "action": "導師已撤回本人非必要板演速度獎勵，不改正式成績或必要回饋。",
+            "tradeoff": "少了翻盤掌聲"
+          },
+          {
+            "id": 6,
+            "text": "邀他另問一個最想確認的辨題點，不帶同桌來評。",
+            "action": "導師已發出限定本人單一學習問題的自願答疑邀請，未約成或要求他人評價。",
+            "tradeoff": "要另配正常答疑時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想當場秀自己秒解，這次自己的炫技加碼題先不出，忍住不追掌聲。",
+          "action": "導師已取消本人非必要炫技加碼題，不減原必要內容或將情緒當拒答理由。",
+          "tradeoff": "少了證明自己厲害的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 874167468
+        },
+        "selectedIds": [
+          3,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "ab0dcfd6159460b9f07cdc07cc29a7faec8c911c3916625ff4891ff48c7087b7"
+      },
+      "consequenceDirections": {
+        "A": "能保住提問權，不靠別人肯定才算努力。",
+        "B": "教師不再拿速度較勁，必要正確教學仍完成。",
+        "C": "每人可慢一點，不能把填完欄當全懂。",
+        "D": "不再用搶先鼓勵漏讀，正常學習回饋仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8dbae76457b755bb3c2dd3dde13c91899161a19e84b5ca0ab7202e376d143d05",
+    "draftSha256": "1ac83748b42a44fd934e6c3ac42cb648723e3f7c46020a977c8b79f460a1ed96",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b5089485eea030c7aeb3d2f0ae0188d8acaff45be31d462cfd153f55df428cb",
+      "checkedAt": "2026-11-27T12:23:46.033Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再用叫號器，請願意的人把剛才答錯的理由講完。",
+            "action": "導師已停止本次器材搶答，提供自願有限理由討論，不延長核可參觀時段。",
+            "tradeoff": "原展示內容會少一些"
+          },
+          {
+            "id": 2,
+            "text": "按原時間結束額外展示，必要內容留正常課內接續。",
+            "action": "導師已結束本人可取消的非必要參觀展示，明示正常教學接續，不宣稱學生已全懂。",
+            "tradeoff": "參觀者可能只記得混亂"
+          },
+          {
+            "id": 3,
+            "text": "改成各自寫一個答案，不當場公布姓名或名次。",
+            "action": "導師已提供有限不公開個人答案的課內短寫方式，不新增正式評分。",
+            "tradeoff": "參觀者看不到熱鬧反應"
+          },
+          {
+            "id": 4,
+            "text": "我用自己準備的錯例說明，不再抽學生。",
+            "action": "導師已以自有中性錯例承接本人教學，不索取學生表演或偽造參觀成果。",
+            "tradeoff": "少了真實學生聲音"
+          },
+          {
+            "id": 5,
+            "text": "詢問同事是否願意只說機器怎麼誤按，不再發給學生操作。",
+            "action": "導師已提出限成人器材操作經驗的自願短說明邀請，未取得其答應或重新啟動全呼。",
+            "tradeoff": "可能又把注意力拉到器材"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最佳示範班成果照，不為鏡頭重來。",
+            "action": "導師已撤回本人非必要成果擺拍提案，不刪必要訪視及教學紀錄。",
+            "tradeoff": "少了好看的宣傳畫面"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那聲全呼把我也逗笑了，我下班另邀他喝一杯自付的茶，聊這個糗，不找學生陪演。",
+          "action": "導師已發出各自付費的下班私人茶敘邀請，未約成或轉傳學生聲畫。",
+          "tradeoff": "花自己的錢和時間，也可能被拒"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2211304374
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "6dcdfdefc087a546078b7af1e70362843b47a429773ac65d363b33564691071b"
+      },
+      "consequenceDirections": {
+        "A": "成人可承擔自己的糗，不讓說明取代原教學。",
+        "B": "內容可完成，不把教師示範冒充學生表現。",
+        "C": "不為挽回形象拖學生，原學習回饋仍須完成。",
+        "D": "成人可消化尷尬，不拍學生上傳笑場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "43e19d2efd4f65e35a4494cd01345280a371f611dc4922415d3b99841c0a5ffc",
+    "draftSha256": "2b5089485eea030c7aeb3d2f0ae0188d8acaff45be31d462cfd153f55df428cb",
     "seedAssignmentVersion": 1
   }
 }

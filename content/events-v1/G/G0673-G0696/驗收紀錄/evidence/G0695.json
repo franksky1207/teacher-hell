@@ -15,14 +15,155 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "de8c13de94263c8a8578fa743941eb62112f311d688acee1e29c37bfdc97bf56",
+      "checkedAt": "2026-11-27T12:23:46.052Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不收書，讓物主自己決定何時處理。",
+            "action": "導師已婉拒本次私人書籍受贈提案，未取走或處分物主書籍。",
+            "tradeoff": "少了一批可流通讀物"
+          },
+          {
+            "id": 2,
+            "text": "只詢問他是否願意在自選篩完後再談，不定現在交付。",
+            "action": "導師已提出以物主自行篩選完成為前提的可拒絕再談邀請，未取得同意或書籍。",
+            "tradeoff": "事情要延後，也可能不再談"
+          },
+          {
+            "id": 3,
+            "text": "向圖書館查詢是否收合規舊書，只提供公開條件給他。",
+            "action": "導師已查詢館方公開收書條件，未代捐、轉交私人書籍或保證接收。",
+            "tradeoff": "可能不收，也多一段查詢"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意只短借自己選的一本，先說返還，不收贈。",
+            "action": "導師已提出限物主自選單冊的私人短借詢問，未取得同意、持有或翻拍內容。",
+            "tradeoff": "保管責任增加，也可被拒"
+          },
+          {
+            "id": 5,
+            "text": "取消我原想辦的私人藏書展示，不請他攤開整袋。",
+            "action": "導師已撤回本人非必要私人藏書展示邀請，不索取私字或新贈物。",
+            "tradeoff": "少了一次交流話題"
+          },
+          {
+            "id": 6,
+            "text": "另邀他下班只聊一本不牽私字的喜歡讀物，不問書要送誰。",
+            "action": "導師已發出可拒絕的成人私人閱讀聊天邀請，未約成或指定交書。",
+            "tradeoff": "要另配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還是想有本童書留著，自己去書店買另一本，不等他的袋子打開。",
+          "action": "導師已在私人可用時段向正常書店自費購買本人另一本私人童書，不取得同事原書、不報公帳或索贈。",
+          "tradeoff": "花自己的錢，也不是原先最想要的那本"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3538911286
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "c9b66561020decd0db430fa3311de3484333c4a6e33027a2776e0df244ca2da3"
+      },
+      "consequenceDirections": {
+        "A": "不收不等於否定割捨，不能要求對方立刻原諒。",
+        "B": "可以保有自己的過去，不用以故事配合教師活動。",
+        "C": "教師可承受想要而買不到同一本的失落，不能以已花錢要求同事補送或重開袋子。",
+        "D": "借用不等於割捨，不能留下私人字跡照片。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒的內部行動將查詢與在可購時訂購混在同一句，完成程度不明；改為明確自費購入另一本私書，與原書物權及館方收書查詢分開。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次不收書，讓物主自己決定何時處理。",
+                "action": "導師已婉拒本次私人書籍受贈提案，未取走或處分物主書籍。",
+                "tradeoff": "少了一批可流通讀物"
+              },
+              {
+                "id": 2,
+                "text": "只詢問他是否願意在自選篩完後再談，不定現在交付。",
+                "action": "導師已提出以物主自行篩選完成為前提的可拒絕再談邀請，未取得同意或書籍。",
+                "tradeoff": "事情要延後，也可能不再談"
+              },
+              {
+                "id": 3,
+                "text": "向圖書館查詢是否收合規舊書，只提供公開條件給他。",
+                "action": "導師已查詢館方公開收書條件，未代捐、轉交私人書籍或保證接收。",
+                "tradeoff": "可能不收，也多一段查詢"
+              },
+              {
+                "id": 4,
+                "text": "問他願不願意只短借自己選的一本，先說返還，不收贈。",
+                "action": "導師已提出限物主自選單冊的私人短借詢問，未取得同意、持有或翻拍內容。",
+                "tradeoff": "保管責任增加，也可被拒"
+              },
+              {
+                "id": 5,
+                "text": "取消我原想辦的私人藏書展示，不請他攤開整袋。",
+                "action": "導師已撤回本人非必要私人藏書展示邀請，不索取私字或新贈物。",
+                "tradeoff": "少了一次交流話題"
+              },
+              {
+                "id": 6,
+                "text": "另邀他下班只聊一本不牽私字的喜歡讀物，不問書要送誰。",
+                "action": "導師已發出可拒絕的成人私人閱讀聊天邀請，未約成或指定交書。",
+                "tradeoff": "要另配時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實也想留那本，自己去找正常販售的另一本自費買，不再等他的袋子鬆開。",
+              "action": "導師已向正常書店查詢並在可購時自費訂購本人私人讀物，未取得同事原書或保證存貨。",
+              "tradeoff": "花自己的錢，也可能找不到"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3647573237
+            },
+            "selectedIds": [
+              2,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 2,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "3cad73710b6da05f8cf8f07c4705d6dbf5d99bd7b774aa2202679374311ba549"
+          },
+          "previousConsequenceDirections": {
+            "A": "可以保有自己的過去，不用以故事配合教師活動。",
+            "B": "物主保有控制，不把暫緩當已取得贈書權。",
+            "C": "物主自行選，不讓詢問變已接受捐贈。",
+            "D": "教師承受想要但拿不到，不把購買轉成索贈壓力。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "06aacdc10f57775809bd834fa915d7073d6188f4e48fca6383b85021da687b5a",
+    "draftSha256": "de8c13de94263c8a8578fa743941eb62112f311d688acee1e29c37bfdc97bf56",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b197b4a1f0cb6560bc1e0dc37f4b14e94fa8b3467c5d6fea7abe45f3686c1094",
+      "checkedAt": "2026-11-27T12:23:46.045Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依校規收下私人小卡，不作班級展示。",
+            "action": "導師已依校規接受自願低價私人紀念卡，未取得展示或複製圖像授權，選文另循程序。",
+            "tradeoff": "別人看不到這份心意"
+          },
+          {
+            "id": 2,
+            "text": "婉謝心意，不收實物，也不要求重畫現任老師。",
+            "action": "導師已婉拒本次實物贈卡並說明不需替換或補禮，不影響學生權益。",
+            "tradeoff": "可能讓學生失望"
+          },
+          {
+            "id": 3,
+            "text": "詢問作者是否願意只在本次班內短看圖，不留作固定展示。",
+            "action": "導師已提出限單次班內觀看的用途詢問，尚未取得權利者同意或展示。",
+            "tradeoff": "要再確認範圍，可能被拒"
+          },
+          {
+            "id": 4,
+            "text": "邀學生自願說最喜歡畫裡哪個細節，不談誰比較好。",
+            "action": "導師已發出限定圖像細節的自願短談邀請，未要求評比兩任教師或公開家庭資訊。",
+            "tradeoff": "他可能只想送完就走"
+          },
+          {
+            "id": 5,
+            "text": "我用自己的空白卡寫回一句具體謝意，不重印他的圖。",
+            "action": "導師已以自有空白小卡書寫有限回謝並提供本人可拒收的方式，不複製原插畫或承諾班刊採用。",
+            "tradeoff": "自己花一點材料與時間"
+          },
+          {
+            "id": 6,
+            "text": "取消我原加的謝卡人氣牆，不把贈物排成誰最受歡迎。",
+            "action": "導師已撤回本人非必要謝卡人氣展示提案，不收集新增贈物或更動正式選文。",
+            "tradeoff": "少了集體展示"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我居然有點吃味，回家找自己的舊照片做張只給自己用的書籤，不叫他重畫我。",
+          "action": "導師已以本人有權自用的私人照片製作自用書籤，不含學生或前導師影像、不索贈。",
+          "tradeoff": "花自己的材料，還得看著自己的老照片"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 888563784
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "86d4ae5e24f3f59661a3e5f425c11480242258e785501eac8a264572087d720a"
+      },
+      "consequenceDirections": {
+        "A": "回應心意不等於給特殊選文利益，也不要求學生回覆。",
+        "B": "教師承認小小比較心，不向學生索取替代品。",
+        "C": "可接受並存的喜歡，不把收下當文章必採用。",
+        "D": "小卡不成教師競賽，未送卡者權益相同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b74144500d85f41499b277266430c7b772fc59f921bdd911b39d7db100b1593",
+    "draftSha256": "b197b4a1f0cb6560bc1e0dc37f4b14e94fa8b3467c5d6fea7abe45f3686c1094",
     "seedAssignmentVersion": 1
   }
 }

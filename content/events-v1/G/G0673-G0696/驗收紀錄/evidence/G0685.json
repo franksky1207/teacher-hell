@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c4c0d9157b8f88dbd0377b089463cbbf410d6a238d054325a326b9d16852434c",
+      "checkedAt": "2026-11-27T12:23:46.045Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "退這一局，只當不給答案的觀眾。",
+            "action": "導師已撤回本人本局私人娛樂參與，明示不以教師身分干預答案與主持。",
+            "tradeoff": "少了自己猜中的樂趣"
+          },
+          {
+            "id": 2,
+            "text": "保留自願參加，但我先交答案紙，不當場搶話。",
+            "action": "導師已在原公平規則內提出本人書面作答方式，未自行加分或要求他人放水。",
+            "tradeoff": "少了即時表演"
+          },
+          {
+            "id": 3,
+            "text": "這局不猜，我改自願幫收提示卡，不接裁決權。",
+            "action": "導師已婉拒本局作答並提出限收卡的自願協助，未取得額外裁決或閱卷權。",
+            "tradeoff": "少了主角位置"
+          },
+          {
+            "id": 4,
+            "text": "我不猜，問主持要不要用我自己編的一題，答案先交給他。",
+            "action": "導師已提出本人自編謎語及答案的可拒絕供題邀請，未取得採用同意、不參與該題作答或要求主持加分。",
+            "tradeoff": "題目可能沒人想用，也少了自己猜的樂趣"
+          },
+          {
+            "id": 5,
+            "text": "先不開新局，問原主持是否願意換成不計分的共同解題。",
+            "action": "導師已提出可拒絕的無分數共同解題建議，未擅改既有已提交結果。",
+            "tradeoff": "名次刺激減少"
+          },
+          {
+            "id": 6,
+            "text": "由我退出主持安排，讓學生願意接才接，不用替我撐場。",
+            "action": "導師已撤回本人對學生的非必要主持委派，重新提出自願邀請，不預設有人接手。",
+            "tradeoff": "可能沒有本次活動"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想贏，這局先不追，自己下班買本謎語書偷偷練，不叫他們再加一輪給我翻盤。",
+          "action": "導師已自費購買本人私人謎語讀物並自行練習，不改本局結果或新增班級比賽。",
+          "tradeoff": "自己花錢，練了也未必猜得中"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 692643461
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "aff76b2602f2f9f266fe49f1aa914757219c58b90ecf07f545ef762ac68b8b38"
+      },
+      "consequenceDirections": {
+        "A": "參與可撤回，必要班務仍由教師承擔。",
+        "B": "主持不用判教師輸，不能因退賽向學生討安慰。",
+        "C": "教師可作供題者而非搶分者，主持可拒用，不能以教師供題改變公平規則。",
+        "D": "教師承受競爭心，不以私人練習要求學生認輸。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4取消教師特別賽與普通1退出本局主要行動過近，改為教師自編供題詢問，與單純觀眾或收卡協助不同。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "退這一局，只當不給答案的觀眾。",
+                "action": "導師已撤回本人本局私人娛樂參與，明示不以教師身分干預答案與主持。",
+                "tradeoff": "少了自己猜中的樂趣"
+              },
+              {
+                "id": 2,
+                "text": "保留自願參加，但我先交答案紙，不當場搶話。",
+                "action": "導師已在原公平規則內提出本人書面作答方式，未自行加分或要求他人放水。",
+                "tradeoff": "少了即時表演"
+              },
+              {
+                "id": 3,
+                "text": "這局不猜，我改自願幫收提示卡，不接裁決權。",
+                "action": "導師已婉拒本局作答並提出限收卡的自願協助，未取得額外裁決或閱卷權。",
+                "tradeoff": "少了主角位置"
+              },
+              {
+                "id": 4,
+                "text": "取消我加的教師對全班特別賽，保留原學生自願遊戲。",
+                "action": "導師已撤回自身非必要教師特別賽提案，不強迫學生繼續主持或參與。",
+                "tradeoff": "少了一個噱頭"
+              },
+              {
+                "id": 5,
+                "text": "先不開新局，問原主持是否願意換成不計分的共同解題。",
+                "action": "導師已提出可拒絕的無分數共同解題建議，未擅改既有已提交結果。",
+                "tradeoff": "名次刺激減少"
+              },
+              {
+                "id": 6,
+                "text": "由我退出主持安排，讓學生願意接才接，不用替我撐場。",
+                "action": "導師已撤回本人對學生的非必要主持委派，重新提出自願邀請，不預設有人接手。",
+                "tradeoff": "可能沒有本次活動"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我就是想贏，這局先不追，自己下班買本謎語書偷偷練，不叫他們再加一輪給我翻盤。",
+              "action": "導師已自費購買本人私人謎語讀物並自行練習，不改本局結果或新增班級比賽。",
+              "tradeoff": "自己花錢，練了也未必猜得中"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4135091364
+            },
+            "selectedIds": [
+              1,
+              5,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 4,
+              "C": "emotional",
+              "D": 5
+            },
+            "optionsDigest": "6b04773c439548f56781b119da0b3c3edf044becfb403610454a98c0d8ff710c"
+          },
+          "previousConsequenceDirections": {
+            "A": "主持不用判教師輸，不能因退賽向學生討安慰。",
+            "B": "遊戲不必靠打敗或禮讓老師成立，原公平照常。",
+            "C": "教師承受競爭心，不以私人練習要求學生認輸。",
+            "D": "可選不同玩法，不能把詢問當大家已同意。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ca656cbc1c2a649ed4ef00f236ed8ad9506bfc4c3ca3f0d0cfddce8838a8d893",
+    "draftSha256": "c4c0d9157b8f88dbd0377b089463cbbf410d6a238d054325a326b9d16852434c",
     "seedAssignmentVersion": 1
   }
 }

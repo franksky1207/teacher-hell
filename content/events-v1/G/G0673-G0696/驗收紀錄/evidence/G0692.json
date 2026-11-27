@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "66083918877917d75416f8bc57f616a40ee52c7dd5c1f15988b17c9c0ba626a9",
+      "checkedAt": "2026-11-27T12:23:46.050Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持必要調序，將我可決定的額外講評縮短。",
+            "action": "導師已取消本人非必要延伸講評，保留必要回饋、調序及正常用餐安排。",
+            "tradeoff": "少了延伸評論"
+          },
+          {
+            "id": 2,
+            "text": "提供各自正常課內補問，不要求他替所有人轉達。",
+            "action": "導師已提供有限教師直接答疑方式，不以學生代理作必要回覆渠道。",
+            "tradeoff": "教師要多接幾個問題"
+          },
+          {
+            "id": 3,
+            "text": "這次改依原已有書面準備給有限回饋，不追加一場口頭輪報。",
+            "action": "導師已在本課權限內提供既有材料有限回饋，不要求學生為調序新增份量。",
+            "tradeoff": "少了口語觀察"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的最受歡迎報告票選。",
+            "action": "導師已撤回本人非必要報告人氣投票，不影響正式評量與必要回饋。",
+            "tradeoff": "少了贏得全班認同的機會"
+          },
+          {
+            "id": 5,
+            "text": "邀他另談自己最受影響的部分，不帶隊也不評別人的病情。",
+            "action": "導師已發出限定本人時間與學習需求的自願短談邀請，未約成或要求道歉。",
+            "tradeoff": "要另找正常工作時間"
+          },
+          {
+            "id": 6,
+            "text": "我提供不含原因與姓名的簡明報告順序卡，之後依必要實況更新。",
+            "action": "導師已提供限必要順序資訊的本課流程卡，不公開病情、身份或將暫定安排當永不更動。",
+            "tradeoff": "不能滿足所有人好奇"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想趁他沒話立刻贏回來，自己的那段勝利總結就不講，留那口氣自己吞。",
+          "action": "導師已取消本人非必要自我辯勝長講，不省略共同必要原因說明及學習支持。",
+          "tradeoff": "少了壓過學生的痛快"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1812092242
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "e71149ea2df25e89c9d1c8a28da9ebafe1170e6ae7434201167c79a38fcf5204"
+      },
+      "consequenceDirections": {
+        "A": "報告不必靠鬥聲量成立，正常回饋仍完成。",
+        "B": "真實準備可用，不能宣稱口語目標已完成。",
+        "C": "可知道下一步，不把公開卡當揭露醫療資訊的理由。",
+        "D": "教師仍需回答合理問題，不以沉默堵嘴。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "da5a7e86d7ff158e81d7d5f222ae090a6736a727564fd4bf8eb5ccae5704c5da",
+    "draftSha256": "66083918877917d75416f8bc57f616a40ee52c7dd5c1f15988b17c9c0ba626a9",
     "seedAssignmentVersion": 1
   }
 }

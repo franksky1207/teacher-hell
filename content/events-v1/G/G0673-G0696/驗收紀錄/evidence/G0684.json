@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e32b207860de364f4cd6b7a7f4af40ce7cfb6f92a33eb41a39f24a97db5c001a",
+      "checkedAt": "2026-11-27T12:23:46.044Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在已確認的位置只試一鏡自然光，不追加補拍量。",
+            "action": "導師已在既有核准與影像同意範圍安排有限自然光單鏡試拍，不移除必要照看或延長留校。",
+            "tradeoff": "原夜景效果失去"
+          },
+          {
+            "id": 2,
+            "text": "今天不再拍，以原合法完成部分給回饋。",
+            "action": "導師已停止本人可取消的新拍攝要求，依既有合法片段提供有限正常回饋。",
+            "tradeoff": "成片可能不完整"
+          },
+          {
+            "id": 3,
+            "text": "改交分鏡與光線選擇說明，不要求影像補齊。",
+            "action": "導師已提供本課有限等值分鏡說明替代，不新增正式媒材採購。",
+            "tradeoff": "少了實拍技術判讀"
+          },
+          {
+            "id": 4,
+            "text": "我用自有小物示範自然光，學生先不操作。",
+            "action": "導師已以自有安全小物在核定位置提供有限教學示範，不含學生個資或危險燈線。",
+            "tradeoff": "少一次動手機會"
+          },
+          {
+            "id": 5,
+            "text": "讓各人只畫一個自己願意的替代畫面，不綁原導演。",
+            "action": "導師已提供有限個別替代畫面圖記選擇，不強迫演出或改他人原作。",
+            "tradeoff": "合作成片較難"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最佳夜景人氣投票。",
+            "action": "導師已撤回本人非必要夜景人氣排名，不影響必要學習與安全處理。",
+            "tradeoff": "少了被認同的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也偏愛那個暗暗的效果，下班只拿自己的杯子在安全桌邊拍，不叫學生救我的畫面。",
+          "action": "導師已以自有設備與杯具在安全私人桌面拍攝，不使用延長線跨路或取學生影像。",
+          "tradeoff": "花自己的私人時間，也可能不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3519674687
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "7919503bd9677185c2028f05917cc6e558555dbe03d9bb3efb1b380cfecb2905"
+      },
+      "consequenceDirections": {
+        "A": "教師可有偏好，不把私人嘗試變重開班級危險拍攝。",
+        "B": "能觀察差異，不能把教師示範當學生已會。",
+        "C": "可呈現改法，不冒充影片已完成。",
+        "D": "辨出風險不等於抹掉成果，後續目標按實況接續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "17731af6fd191bbdf87d167faf0f591c26cd83ed7bcffc78dc3d4711b9f6e72e",
+    "draftSha256": "e32b207860de364f4cd6b7a7f4af40ce7cfb6f92a33eb41a39f24a97db5c001a",
     "seedAssignmentVersion": 1
   }
 }

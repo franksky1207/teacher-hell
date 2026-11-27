@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9c6a61246a441c2c30e6c8848806df27b46c90116ec35da402cba277a50813b5",
+      "checkedAt": "2026-11-27T12:23:46.034Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "換另一個完全不同的例句，原概念照常教。",
+            "action": "導師已以自有不同例句承接本課，必要澄清另已完成，不公開個案細節。",
+            "tradeoff": "原準備的例子用不上"
+          },
+          {
+            "id": 2,
+            "text": "暫停口頭分析，先給各人一段安靜短讀。",
+            "action": "導師已在自身課內安排有限個別短讀與正常回饋，不公開點評當事人。",
+            "tradeoff": "少了即時討論"
+          },
+          {
+            "id": 3,
+            "text": "只分析句中可見的語詞，不問像不像班上誰。",
+            "action": "導師已將本課討論限定文本修辭，不徵集對同學的對號描述。",
+            "tradeoff": "少了生活聯想"
+          },
+          {
+            "id": 4,
+            "text": "邀她在正常工作空檔談她當時怎麼聽到那句，不要求替誰道歉。",
+            "action": "導師已發出限定本人聽讀與需求的自願短談邀請，未約成或要求公開檢討。",
+            "tradeoff": "要承受直接質疑"
+          },
+          {
+            "id": 5,
+            "text": "取消我原加的「像班上誰」即興遊戲。",
+            "action": "導師已撤回本人非必要真人聯想遊戲提案，不影響必要文本教學。",
+            "tradeoff": "少了好笑的聯想"
+          },
+          {
+            "id": 6,
+            "text": "提供自願文字提問，對例句有疑慮可直接寫給我。",
+            "action": "導師已提供有限直接書面提問方式，不收同儕對號資料或增加整份作業。",
+            "tradeoff": "回應沒有口頭快"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在也想證明自己沒錯，自己的長篇辯解講稿收起來，不再追加一場訓話。",
+          "action": "導師已取消本人非必要自辯長講，不省略共同必要更正、回饋與照顧。",
+          "tradeoff": "沒有把自己講清楚的痛快"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2359114397
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "0f2074ccce0f97c04be0f63bb70ab53ea6cc50228d9823da93f7e61fe127e720"
+      },
+      "consequenceDirections": {
+        "A": "可核對本人理解，不讓她代表受影響同學。",
+        "B": "教師放下當場贏回全班的衝動，必要澄清與支持仍完成。",
+        "C": "課能繼續，不把換例當原先確有影射的承認。",
+        "D": "能降下目光壓力，不能把安靜當懲罰或免除後續支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dda671f4bca407dc2ce74f26590f9c3af507a2479a772a3c98d01b513949a666",
+    "draftSha256": "9c6a61246a441c2c30e6c8848806df27b46c90116ec35da402cba277a50813b5",
     "seedAssignmentVersion": 1
   }
 }

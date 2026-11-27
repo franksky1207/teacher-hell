@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "427814577b9e93eca5187f19bd4ffffebdf811b631f7a9bb4259627534e4416e",
+      "checkedAt": "2026-11-27T12:23:46.043Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他想不想一起坐，只到原本該出門的時間。",
+            "action": "導師已發出限私人早餐空檔的可拒絕同桌邀請，未取得同意或延誤到校。",
+            "tradeoff": "可能被拒，也少了各自讀書時間"
+          },
+          {
+            "id": 2,
+            "text": "吃完原點的早餐就走，不續坐或續點，也不打斷他讀書。",
+            "action": "導師已在私人早餐時段完成原餐後依本人安排離店，未續點或要求同事同桌，不遲誤正式到校。",
+            "tradeoff": "少了窗邊的十分鐘，也沒把尷尬談開"
+          },
+          {
+            "id": 3,
+            "text": "自己外帶離開，換一處安靜位置讀自己的書。",
+            "action": "導師已將本人已購早餐依店規外帶，於可行私人時段移至安全合法位置，不耽誤正式職務。",
+            "tradeoff": "少了這扇窗，也可能要多走一段"
+          },
+          {
+            "id": 4,
+            "text": "另約一次下班聊小說，今天的早餐不湊在一起。",
+            "action": "導師已發出可拒絕的日後私人讀書聊天邀請，未約成或要求對方留校。",
+            "tradeoff": "時間未必喬得成"
+          },
+          {
+            "id": 5,
+            "text": "問他原借的書是否想續看，不用現在還也不問讀到哪。",
+            "action": "導師已提出本人私有書籍有限續借詢問，尚未取得新同意或修改既有返還約定。",
+            "tradeoff": "書晚點才拿回，需另說歸還範圍"
+          },
+          {
+            "id": 6,
+            "text": "只先打一個招呼，我照自己的時間看自己的小說。",
+            "action": "導師已向同事作有限私人問候後停止非必要長談，不要求回禮或陪坐。",
+            "tradeoff": "沒把話談開"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是捨不得那面窗，自己再買一份小點心坐到原本該走，不為躲尷尬換店。",
+          "action": "導師已在店家允許且不延誤職務的私人空檔自費加點個人小點，未要求同事同桌或停留。",
+          "tradeoff": "自己多花錢，也得忍住隔桌裝陌生"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 402779492
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "1bd9f955597b036ccc51204b25f02631e67eef0d33c3f69e97ce7f53d0b43996"
+      },
+      "consequenceDirections": {
+        "A": "共同興趣有另一個入口，不把邀約當補償義務。",
+        "B": "同事可保留自己的閱讀，教師不以離店要求他追出來；必要更正已完成。",
+        "C": "能有新相處，不能把招手當對方已原諒。",
+        "D": "教師選自己的習慣，不讓同事等或誤工。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2維持各自早餐範圍過廣，可能涵蓋情緒加點續坐；改成原餐吃完即離店不續點，保留與問候後原位閱讀的普通6差異。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "問他想不想一起坐，只到原本該出門的時間。",
+                "action": "導師已發出限私人早餐空檔的可拒絕同桌邀請，未取得同意或延誤到校。",
+                "tradeoff": "可能被拒，也少了各自讀書時間"
+              },
+              {
+                "id": 2,
+                "text": "各自吃各自的，我不打斷他的十分鐘。",
+                "action": "導師已婉拒本人非必要當場長聊，維持各自私人早餐安排，不要求對方回應。",
+                "tradeoff": "會繼續有點尷尬"
+              },
+              {
+                "id": 3,
+                "text": "自己外帶離開，換一處安靜位置讀自己的書。",
+                "action": "導師已將本人已購早餐依店規外帶，於可行私人時段移至安全合法位置，不耽誤正式職務。",
+                "tradeoff": "少了這扇窗，也可能要多走一段"
+              },
+              {
+                "id": 4,
+                "text": "另約一次下班聊小說，今天的早餐不湊在一起。",
+                "action": "導師已發出可拒絕的日後私人讀書聊天邀請，未約成或要求對方留校。",
+                "tradeoff": "時間未必喬得成"
+              },
+              {
+                "id": 5,
+                "text": "問他原借的書是否想續看，不用現在還也不問讀到哪。",
+                "action": "導師已提出本人私有書籍有限續借詢問，尚未取得新同意或修改既有返還約定。",
+                "tradeoff": "書晚點才拿回，需另說歸還範圍"
+              },
+              {
+                "id": 6,
+                "text": "只先打一個招呼，我照自己的時間看自己的小說。",
+                "action": "導師已向同事作有限私人問候後停止非必要長談，不要求回禮或陪坐。",
+                "tradeoff": "沒把話談開"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我就是捨不得那面窗，自己再買一份小點心坐到原本該走，不為躲尷尬換店。",
+              "action": "導師已在店家允許且不延誤職務的私人空檔自費加點個人小點，未要求同事同桌或停留。",
+              "tradeoff": "自己多花錢，也得忍住隔桌裝陌生"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1581391469
+            },
+            "selectedIds": [
+              2,
+              4,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 4,
+              "D": 6
+            },
+            "optionsDigest": "d2e47aacdf3327cb685aa90276fe929528ac07843747ca4fcdb67ad4d6626acb"
+          },
+          "previousConsequenceDirections": {
+            "A": "教師選自己的習慣，不讓同事等或誤工。",
+            "B": "尊重獨處不等於裝作沒說錯，必要更正已完成。",
+            "C": "共同興趣有另一個入口，不把邀約當補償義務。",
+            "D": "可以承認彼此在場，不逼對方演出熟絡。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "69a9d4c4585c596aead9ae472fb795f2b180ef66b5063a352ec7dee34a2ec8ba",
+    "draftSha256": "427814577b9e93eca5187f19bd4ffffebdf811b631f7a9bb4259627534e4416e",
     "seedAssignmentVersion": 1
   }
 }

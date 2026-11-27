@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "49f93724eb1778ea36d3aafb53624c05d5ee04b88260bff719f1344c33bd52a1",
+      "checkedAt": "2026-11-27T12:23:46.042Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只給本人一個具體音樂回饋，不再作兩人比較。",
+            "action": "導師已在原承諾範圍提供有限個別創作回饋，不評兩人高下或公開他人音檔。",
+            "tradeoff": "沒有勝負結果"
+          },
+          {
+            "id": 2,
+            "text": "後續不加公開試聽，原私人作品各自保留。",
+            "action": "導師已取消本人非必要班級試聽提案，不取消既有必要回覆或扣留原檔。",
+            "tradeoff": "少了被全班笑到的機會"
+          },
+          {
+            "id": 3,
+            "text": "邀他只談改了哪一處，不再整段重播。",
+            "action": "導師已發出限單處改作方法的自願交流邀請，原必要聆聽承諾另已依共同前提處理。",
+            "tradeoff": "少了完整氣氛"
+          },
+          {
+            "id": 4,
+            "text": "我另用自有短例說明跑調效果，不拿兩人作品當比較題。",
+            "action": "導師已以自有內容製作一般音樂效果短例供有限課內說明，不複製學生聲音。",
+            "tradeoff": "教師多準備"
+          },
+          {
+            "id": 5,
+            "text": "取消我原加的最好笑作品票選。",
+            "action": "導師已撤回本人非必要作品笑聲人氣投票，不減個別必要回饋。",
+            "tradeoff": "沒有翻盤排名"
+          },
+          {
+            "id": 6,
+            "text": "另問他願不願意選一位自願成人音樂老師給方法建議。",
+            "action": "導師已提出經本人同意才進行的有限方法回饋邀請，未傳檔或替老師答應。",
+            "tradeoff": "可能得等，也可拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在真的笑不出來，自己的非必要串場笑話就不講，寧可留點尷尬。",
+          "action": "導師已取消本人非必要串場笑話，不以情緒拒絕既有承諾或必要創作回饋。",
+          "tradeoff": "少了裝熟的方便"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 48472607
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "25ff1415c3d8c7307b5bcd7952d5b853980a3355a7ba3aa45035652abd08d96c"
+      },
+      "consequenceDirections": {
+        "A": "可學技法，不暗示哪位比較有天分。",
+        "B": "可聚焦方法，不把少播當已聽完未聽部分。",
+        "C": "教師不再用笑補洞，必要回應仍須具體。",
+        "D": "可看創作選擇，笑得多大不等於作品價值。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "852df919c92bfe136f4cd1d970388a41ba9f17d5646a3deaaa59a995d3c15195",
+    "draftSha256": "49f93724eb1778ea36d3aafb53624c05d5ee04b88260bff719f1344c33bd52a1",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "51e292362a9e016203018a90e30fab120f7ed2e5c6bd9dc80243143d01c9151b",
+      "checkedAt": "2026-11-27T12:23:46.050Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "自願留下這一遍，唱完按原關門時間走。",
+            "action": "導師已表達本人限一遍的自願私人參與並確認使用期限，不承諾無限續留或代表其他團員。",
+            "tradeoff": "自己的獨處時間減少"
+          },
+          {
+            "id": 2,
+            "text": "今晚不再唱，照原安排回家讀自己的書。",
+            "action": "導師已婉拒本次新增私人合唱，離開場地按本人原安排返家閱讀，不另練唱或取消他人練習。",
+            "tradeoff": "少了一個聲部，也會錯過這次合唱"
+          },
+          {
+            "id": 3,
+            "text": "不入聲部，只問是否願意讓我聽尾句後給一個私人感想。",
+            "action": "導師已提出限一段聆聽及單一感想的自願邀請，未取得團員同意或保證音樂判斷。",
+            "tradeoff": "仍用掉一小段時間"
+          },
+          {
+            "id": 4,
+            "text": "另約下次有空的短段練習，今天不續唱。",
+            "action": "導師已發出可拒絕的未來私人短練邀請，未約成、訂場或替他人出席。",
+            "tradeoff": "新時間可能約不成"
+          },
+          {
+            "id": 5,
+            "text": "詢問是否願意改成適合現有聲部的短版，我不補唱。",
+            "action": "導師已提出需當事人同意的私人短版建議，未改定編排或強令他人退出。",
+            "tradeoff": "原編排可能失去"
+          },
+          {
+            "id": 6,
+            "text": "只協助我原願負責的小件收物，不加入新練唱。",
+            "action": "導師已提出限本人可安全處理私物的自願收納協助，未接他人保管義務或延時使用場地。",
+            "tradeoff": "少了唱完的滿足"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實還想唱那個難尾音，今天不跟團耗，自己下班後在不擾人的私人空間短哼一次。",
+          "action": "導師已婉拒本次續唱，於可負荷且不擾人的私人空間短哼本人有權自用旋律，不公開、錄他人或延場。",
+          "tradeoff": "錯過合唱，自己也可能唱破"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2498741440
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "266c06a5027a1ecf05b8ad389610cacd4307e65c928248f3071da30f5d737992"
+      },
+      "consequenceDirections": {
+        "A": "能參與另一種位置，不能假裝有補足缺聲部。",
+        "B": "提議可被拒，不能由教師一人改團務。",
+        "C": "可有未來合作，不把邀約當已補完今晚。",
+        "D": "教師承認想唱與想獨處並存，不錄他人或拖團員等。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2依私人安排離開範圍過廣而涵蓋情緒獨自短哼，改明確返家閱讀、不另練唱，區分保留原獨處與改成私人獨唱。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "自願留下這一遍，唱完按原關門時間走。",
+                "action": "導師已表達本人限一遍的自願私人參與並確認使用期限，不承諾無限續留或代表其他團員。",
+                "tradeoff": "自己的獨處時間減少"
+              },
+              {
+                "id": 2,
+                "text": "今晚不再唱，照自己的原安排離開。",
+                "action": "導師已婉拒本次新增私人合唱邀請並依本人安排離場，不代取消他人練習。",
+                "tradeoff": "少了一個聲部，也可能讓同事失落"
+              },
+              {
+                "id": 3,
+                "text": "不入聲部，只問是否願意讓我聽尾句後給一個私人感想。",
+                "action": "導師已提出限一段聆聽及單一感想的自願邀請，未取得團員同意或保證音樂判斷。",
+                "tradeoff": "仍用掉一小段時間"
+              },
+              {
+                "id": 4,
+                "text": "另約下次有空的短段練習，今天不續唱。",
+                "action": "導師已發出可拒絕的未來私人短練邀請，未約成、訂場或替他人出席。",
+                "tradeoff": "新時間可能約不成"
+              },
+              {
+                "id": 5,
+                "text": "詢問是否願意改成適合現有聲部的短版，我不補唱。",
+                "action": "導師已提出需當事人同意的私人短版建議，未改定編排或強令他人退出。",
+                "tradeoff": "原編排可能失去"
+              },
+              {
+                "id": 6,
+                "text": "只協助我原願負責的小件收物，不加入新練唱。",
+                "action": "導師已提出限本人可安全處理私物的自願收納協助，未接他人保管義務或延時使用場地。",
+                "tradeoff": "少了唱完的滿足"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實還想唱那個難尾音，今天不跟團耗，自己下班後在不擾人的私人空間短哼一次。",
+              "action": "導師已婉拒本次續唱，於可負荷且不擾人的私人空間短哼本人有權自用旋律，不公開、錄他人或延場。",
+              "tradeoff": "錯過合唱，自己也可能唱破"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1841513689
+            },
+            "selectedIds": [
+              6,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 6,
+              "D": 1
+            },
+            "optionsDigest": "5388153cbda7e565edb2bfcce0ce91011a04d867afe79aea461ce376e623f6a7"
+          },
+          "previousConsequenceDirections": {
+            "A": "可有未來合作，不把邀約當已補完今晚。",
+            "B": "教師承認想唱與想獨處並存，不錄他人或拖團員等。",
+            "C": "協助可以有限，不能讓收物變教師必須看管全部器材。",
+            "D": "能支持收尾，不因留下就同意再加第二遍。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "83d2f96c915d75dac7636d5e299c86c2d5aac955857b4b7733d0c2197788af98",
+    "draftSha256": "51e292362a9e016203018a90e30fab120f7ed2e5c6bd9dc80243143d01c9151b",
     "seedAssignmentVersion": 1
   }
 }

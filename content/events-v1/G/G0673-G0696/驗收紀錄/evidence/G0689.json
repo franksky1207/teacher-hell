@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ca3bb4a0bafdffcbb9fbfacdfeb022f1bd6401b1379260a27edb7475ee3fc301",
+      "checkedAt": "2026-11-27T12:23:46.047Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "以後不再借學生手機，用學校現有可用計時器。",
+            "action": "導師已停止本人非必要學生手機借用安排，選用已可支用的校用計時器，不宣稱新資源到位。",
+            "tradeoff": "要配合校用資源"
+          },
+          {
+            "id": 2,
+            "text": "取消我加的逐組計時比快，改只看原學習內容。",
+            "action": "導師已撤回本人非必要小組速度競賽，不取消正常練習與必要回饋。",
+            "tradeoff": "少了競速刺激"
+          },
+          {
+            "id": 3,
+            "text": "若他日後還願借，先提出限單組與明確返還的範圍，不現在索取。",
+            "action": "導師已提出未來可拒絕的有限借用條件詢問，未取得新同意或重新持有手機。",
+            "tradeoff": "他可能再也不借"
+          },
+          {
+            "id": 4,
+            "text": "改用現有牆鐘作大致進度，不記秒數。",
+            "action": "導師已將本人非正式進度參照改為既有牆鐘，不要求學生提供私人物件。",
+            "tradeoff": "看不到細微速度差"
+          },
+          {
+            "id": 5,
+            "text": "另向承辦查是否有可預約的校用碼表，不讓當下歸還等資源。",
+            "action": "導師已查詢既有校用碼表借用條件及存量，未取得器材或扣留學生物品。",
+            "tradeoff": "查到也未必借得到"
+          },
+          {
+            "id": 6,
+            "text": "取消我原要錄的全班倒數片，原必要紀錄照常。",
+            "action": "導師已撤回本人非必要倒數拍攝提案，不刪必要計時及借物紀錄。",
+            "tradeoff": "少了一段整齊影片"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也老懶得帶東西，私人興趣需要的碼表這次自費買一個，不再到處借人手機。",
+          "action": "導師已自費購買本人私人興趣用碼表，不報帳、要求學生買或以此免除原借物責任。",
+          "tradeoff": "自己花錢，東西還得自己收"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1567697412
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "877cd0c13b93b377841dd14b3b52834d3aa10023c1c82284f3f30a838b670315"
+      },
+      "consequenceDirections": {
+        "A": "不需借物完成排名，原必要教學照常。",
+        "B": "可規劃後續，不把詢問當已核准領用。",
+        "C": "教師處理私人的方便心，不把新私物變學校必需品。",
+        "D": "新詢問不是舊承諾延長，拒絕不影響權益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cafe845b4255923b678446d599208ff51e8249a99d0fa8728575a541aea436ef",
+    "draftSha256": "ca3bb4a0bafdffcbb9fbfacdfeb022f1bd6401b1379260a27edb7475ee3fc301",
     "seedAssignmentVersion": 1
   }
 }

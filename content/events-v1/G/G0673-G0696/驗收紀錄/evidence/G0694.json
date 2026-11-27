@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "208b5db65115139c141744c1bc43590d93247c6255ab603074675e00d48c426c",
+      "checkedAt": "2026-11-27T12:23:46.051Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不作班級事件分享，讓必要處理留在合規範圍。",
+            "action": "導師已取消本人非必要事件公開分享提案，不隱匿必要安全事實或省略法定程序。",
+            "tradeoff": "少了一次現成教材"
+          },
+          {
+            "id": 2,
+            "text": "用不含人物的自有圖講倒走的視線限制。",
+            "action": "導師已以自有中性圖示提供一般安全教育，不取用本次人物影像。",
+            "tradeoff": "少了真實影片衝擊"
+          },
+          {
+            "id": 3,
+            "text": "邀他另談被朋友這樣說時需要什麼，不請他現在對質。",
+            "action": "導師已發出限定本人需求的自願支持邀請，未約成或要求公開對質。",
+            "tradeoff": "需另找正常工作空檔"
+          },
+          {
+            "id": 4,
+            "text": "取消我原加的本班合拍宣傳照，後續不另找人補拍。",
+            "action": "導師已撤回自身非必要合拍宣傳攝影提案，不刪必要安全紀錄或代外班決定。",
+            "tradeoff": "少了完整班級畫面"
+          },
+          {
+            "id": 5,
+            "text": "提供私下直接找成人的既有方式，不指定他繼續留意朋友。",
+            "action": "導師已說明既有私下求助及急件渠道，收回本人非必要學生監看請求。",
+            "tradeoff": "成人需自行接資訊"
+          },
+          {
+            "id": 6,
+            "text": "詢問輔導窗口可用的一般自願支持資訊，再交本人選。",
+            "action": "導師已查詢既有自願支持資源，不代學生同意、轉傳無關資訊或略過必要處置。",
+            "tradeoff": "未必想用，也要配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想再看自己拍失敗的那幾張，私人動態今天不湊一篇，放著空白。",
+          "action": "導師已取消本人非必要私人攝影動態更新，不刪事件證據、公開學生資訊或延誤職務。",
+          "tradeoff": "少了發文的存在感"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1487668080
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "a1c8abc803ab9be01a957c46b1f0f15b76b1b8b5a08fa470df4ef214d568b093"
+      },
+      "consequenceDirections": {
+        "A": "查詢不是完成支持，必要安全程序不等待。",
+        "B": "教師不拿學生安全事件填私人版面，必要紀錄仍照常。",
+        "C": "本班不需替危險計畫救場，原必要支持仍在。",
+        "D": "能教風險，不轉傳學生片段或虛構親眼見到。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "71f91568426c4077f6b06c3310b227b3a6e5e527b34692f6309ec9a2c64f7e15",
+    "draftSha256": "208b5db65115139c141744c1bc43590d93247c6255ab603074675e00d48c426c",
     "seedAssignmentVersion": 1
   }
 }

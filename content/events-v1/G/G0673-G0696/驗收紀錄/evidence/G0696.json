@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5f7d320258a1ec03ffa26abb95caa7dd6efcbae76a8fad149ed685e27a5ff46f",
+      "checkedAt": "2026-11-27T12:23:46.053Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向課務提出改時需求，未確認前不重新向學生保證。",
+            "action": "導師已向有權課務提出有限改期需求，未改定時段、取得參與者同意或免除必要照看。",
+            "tradeoff": "可能無法改，需另承接必要工作"
+          },
+          {
+            "id": 2,
+            "text": "我在自身授課與校規允許範圍內申請接回尾段，不強留他。",
+            "action": "導師已提出本人接回有限演練尾段的合規協調申請，未擅代課或宣稱核准，必要交接照共同前提辦理。",
+            "tradeoff": "自己的時間減少，也需核准"
+          },
+          {
+            "id": 3,
+            "text": "把我自加的非必要尾段展示取消，原合法演練內容照常。",
+            "action": "導師已取消本人非必要追加成果展示，不削減正式已成立教學或照看。",
+            "tradeoff": "少了一次完整亮相"
+          },
+          {
+            "id": 4,
+            "text": "改提供我自製的有限步驟卡，讓原授課者依權限選用。",
+            "action": "導師已製作自有可用步驟參考供自願採用，不以卡片取代合法教師及必要交接。",
+            "tradeoff": "少了同儕現場協助"
+          },
+          {
+            "id": 5,
+            "text": "邀他另談日後我該怎麼問才不再代答，不占他趕車時段。",
+            "action": "導師已發出限定成人協作詢問方式的自願短談邀請，未約成或索取交通證明。",
+            "tradeoff": "需再配工作時間"
+          },
+          {
+            "id": 6,
+            "text": "向主管提出非必要兼務量的檢視，不把他最後半小時當固定備援。",
+            "action": "導師已向有權主管提出非必要協作負荷檢視需求，未擅改正式課務。",
+            "tradeoff": "未必減量"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想準時吃晚飯，自己的非必要私人續攤先拒掉，不再嘴硬說我都沒差。",
+          "action": "導師已婉拒本人非必要成人私人續攤邀請，正式演練與必要交接仍依法完成。",
+          "tradeoff": "少一場朋友聚會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4093833100
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "5fde99f98dfb7c054f9fbed6c95a56cd36b5376d58f23f2dde3a1914b86c989d"
+      },
+      "consequenceDirections": {
+        "A": "教師為自己的私事作選擇，不把既有學生權益一起撤掉。",
+        "B": "條件可被看見，不能先宣布免職務。",
+        "C": "有材料不等於已有合法授課人力，必要課務另依法接好。",
+        "D": "有正式協調，送件不是新約已成立。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e9571b818e0c0fa7ee3574b63cb2489a280cdeb140aa27b005dbd8176588c1d5",
+    "draftSha256": "5f7d320258a1ec03ffa26abb95caa7dd6efcbae76a8fad149ed685e27a5ff46f",
     "seedAssignmentVersion": 1
   }
 }

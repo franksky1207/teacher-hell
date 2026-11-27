@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "65ec44faee7ae48b49b0100e40d4d40b868cd384651442adc5608ce0d2805351",
+      "checkedAt": "2026-11-27T18:53:46.104Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我主動約一次職務範圍內的回覆，說明原則，不報隱私細節。",
+            "action": "提出待有可確認進度後與科任個別說明合法處理原則的安排。",
+            "tradeoff": "教師增加回覆時間，對方可能仍嫌輕。"
+          },
+          {
+            "id": 2,
+            "text": "邀他與學務一起釐清目擊經過，我不在兩人之間談罰幾分。",
+            "action": "提出由權責單位主持、限必要事實的共同釐清需求，不預設必須加罰。",
+            "tradeoff": "增加協調，對方可能覺得被多問一遍。"
+          },
+          {
+            "id": 3,
+            "text": "我不另承諾私人追報，依正式程序提供其有權知悉的資訊。",
+            "action": "婉拒額外私下逐步通報，由正式權責窗口辦必要回覆。",
+            "tradeoff": "教師節省非必要聯絡但同事可能覺得不受重視。"
+          },
+          {
+            "id": 4,
+            "text": "邀他另談危險取物的教育方式，不把教學等同處罰。",
+            "action": "提出在必要處理外，共備一次一般安全情境說明的自願邀約，不揭露涉事者。",
+            "tradeoff": "增加雙方備課，同事可能只想知道處分。"
+          },
+          {
+            "id": 5,
+            "text": "我先跟他談：他希望看到的究竟是安全改進，還是更重處分。",
+            "action": "提出個別具體期待討論，不先接受對方二擇定義，讓其說明擔憂。",
+            "tradeoff": "教師承受直接價值衝突與時間，同事可能不願回談。"
+          },
+          {
+            "id": 6,
+            "text": "向權責單位提出檢視隔牆取物的環境管理，我協助反映實際位置。",
+            "action": "額外整理現場公開可確認風險，提請環境及管理改善評估，不指揮封閉逃生出口。",
+            "tradeoff": "教師增加勘查聯絡，未必有改造資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服氣被盯著罰，願意具名向主管說明我的處理理由，請他一起聽。",
+          "action": "提出由有權主管檢視本人合法處理判斷的自願說明需求，邀通報同事依職務範圍參與，不讓其評決學生處分。",
+          "tradeoff": "教師承擔工作檢視與關係摩擦，未必排得成。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 940218634
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "8ed4e5c11d0a8603bad681643f0cc5a82430731356e90d9a22b35f5d1e9d214d"
+      },
+      "consequenceDirections": {
+        "A": "其主動通報與教師抗拒加重壓力如何互動可發展，不能把個案當爭面子工具。",
+        "B": "條理通報是否能轉為正式協作與不從眾立場可發展。",
+        "C": "其未來主動傳達意願與當下怒氣可發展，不壓抑依法通報。",
+        "D": "怒氣與主動通報能否容納比例原則可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5057c703e04e0e71f92a59e4c93184d4331ca2e165b0b9b21801b5b182e4f3b7",
+    "draftSha256": "65ec44faee7ae48b49b0100e40d4d40b868cd384651442adc5608ce0d2805351",
     "seedAssignmentVersion": 1
   }
 }

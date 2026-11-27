@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5e408be99afdaf132111d14a96ffae533591e7fbce2fd332876d5b16335dbb5e",
+      "checkedAt": "2026-11-27T18:53:46.119Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他暫停額外巡查幾天，先依程序確認還想不想續任。",
+            "action": "提出不以辭職威脅換處分的職務緩衝協商，必要班務由成人接續。",
+            "tradeoff": "教師要調度工作，學生可能覺得被勸退。"
+          },
+          {
+            "id": 2,
+            "text": "這週我在可調打掃時段多到場陪他，不讓他一人喊人。",
+            "action": "自願增加教師現場陪同，必要查證處理照常，不以站場當作處分。",
+            "tradeoff": "犧牲教師工作時間，學生可能怕被視為告狀。"
+          },
+          {
+            "id": 3,
+            "text": "另開班會談幹部記錄與教師處理責任，不公布誰受什麼處分。",
+            "action": "安排額外全班原則說明，教師承擔督導責任並保護個案資訊。",
+            "tradeoff": "占用班務時間，可能引來更多質疑。"
+          },
+          {
+            "id": 4,
+            "text": "我另約他私下回談這三次被擱置的感受。",
+            "action": "提出正常可調時段的自願個別會談，必要當日程序不等待會談。",
+            "tradeoff": "教師承受直接批評與時間代價，學生可拒絕。"
+          },
+          {
+            "id": 5,
+            "text": "邀學務一起協調幹部負荷，我陪他說明。",
+            "action": "提出有權成人共同聽取班務困境的自願邀約，不要求學生公開指證才保護。",
+            "tradeoff": "增加協調且學生可能怕事情變大。"
+          },
+          {
+            "id": 6,
+            "text": "重議紀錄分工，邀其他自願幹部分擔，不再只有他一人追。",
+            "action": "提出公平且限量的幹部協作方案，教師保留必要處理責任，不假定有人願接。",
+            "tradeoff": "教師增加輪值管理，學生可能不想共享角色。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了自己老說會處理，這週由我主動向他約一次進度回報，不等他追。",
+          "action": "在合法可告知範圍提出一次額外主動回報約定，內容限處理節點不公開懲處個資，不保證期限內有結論。",
+          "tradeoff": "教師增加主動聯絡與未達期待的壓力，學生仍可能覺得太慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2406389341
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "f7fc55c4be5155577e061fa9ab6a7ba91b38eb246b2503118b6dd750270cbddc"
+      },
+      "consequenceDirections": {
+        "A": "班務參與是否願接受外部支持可發展。",
+        "B": "怒氣與班務參與是否願保留可發展。",
+        "C": "問責能否轉成對班級角色的理解可發展。",
+        "D": "問責要求與進度督促能否透過可履行承諾修復可發展，非以回報取代必要處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e594d82270c5514477bcd8dca4f2cfc1100d7ecee1ad9b3006e6b4ff4bc67167",
+    "draftSha256": "5e408be99afdaf132111d14a96ffae533591e7fbce2fd332876d5b16335dbb5e",
     "seedAssignmentVersion": 1
   }
 }

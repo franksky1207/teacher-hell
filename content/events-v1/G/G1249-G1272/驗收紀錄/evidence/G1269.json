@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "83d167527944f9dddcc46d87e13d467b4f832621dba156892c4d19b89861a89b",
+      "checkedAt": "2026-11-27T18:53:46.141Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先查現場能否依法送件，核准趕得上才用這次時段。",
+            "action": "向正式系統窗口詢問現場合法申請方式並提出完整申請，未核准前不入場，學生合規照看。",
+            "tradeoff": "教師花當次課段等待，可能仍來不及。"
+          },
+          {
+            "id": 2,
+            "text": "帶學生回原教室，申請下次可用時段。",
+            "action": "放棄當次借用，依規提出另次場地申請，當日改做原教室可行的非錄影準備。",
+            "tradeoff": "重排課務並增加教師準備時間。"
+          },
+          {
+            "id": 3,
+            "text": "這次取消非必要錄影，直接用現場口頭呈現完成學習。",
+            "action": "在授課權責內改用等值口頭呈現，不申請本次場地，不剝奪必要學習。",
+            "tradeoff": "少了錄影回看素材，教師需調整回饋。"
+          },
+          {
+            "id": 4,
+            "text": "請共同授課者自願協助帶班，我去辦公室依法完成當次申請。",
+            "action": "向合格共同授課者提出短段照管需求，確實同意且合規後才分工送件；無人即不離開學生。",
+            "tradeoff": "教師多跑一趟且人力不保證可得，核准仍可能趕不上。"
+          },
+          {
+            "id": 5,
+            "text": "我申請改用本來就有設備的合法場地，不只盯著這一間。",
+            "action": "提出其他合適空間的查詢與正式申請，核准前維持安全原課務。",
+            "tradeoff": "教師增加場地協調，可能沒有替代空間。"
+          },
+          {
+            "id": 6,
+            "text": "先結束這次臨時借用，另約他把日後流程對清楚。",
+            "action": "撤回當次未完成借用意向，提出正常工作時段流程協商邀約，當日課務採合法替代。",
+            "tradeoff": "教師花會談與課務調整時間，對方可能沒空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再讓他替我的漏單緊張，願拿自己可合規的設備，回原教室只錄已同意的作品。",
+          "action": "提出以教師自有可用錄影設備在原教室進行合法作品拍攝的替代方案，先確認校規、作品與肖像授權及場地適用，未成立不拍。",
+          "tradeoff": "教師承擔私人設備使用與素材管理，畫面效果受限且未必可行；不以私人設備繞過隱私規範。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3479974014
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "47085f8d4809d61e735a50665da004b43da42e1b0f414abe0833e25d874753e0"
+      },
+      "consequenceDirections": {
+        "A": "職員協調意願與工作繁重下的等待可發展。",
+        "B": "職員原則與協調合作如何面對不保證即准可發展。",
+        "C": "職員是否放心教師自擔替代成本與不再逼開門，原則與合作可發展。",
+        "D": "協調合作能否承受原則下的不同資源選擇可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8faa3ebca65c3da8e92dd34782e5436c1b978b8ace6535d7c6c7e86a33cb7e7b",
+    "draftSha256": "83d167527944f9dddcc46d87e13d467b4f832621dba156892c4d19b89861a89b",
     "seedAssignmentVersion": 1
   }
 }

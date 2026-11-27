@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3d813404738ce19901083a720b8f420f9072419b6cc01104dcac481f5c067ada",
+      "checkedAt": "2026-11-27T18:53:46.139Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外向總務問清楚這台的排程，再據實回覆。",
+            "action": "提出具體排程詢問，不催人插隊或保證更換。",
+            "tradeoff": "教師多花聯絡，可能沒有確定日期。"
+          },
+          {
+            "id": 2,
+            "text": "邀他依正式管道反映，我不另替他追加催件。",
+            "action": "提供合法設備意見窗口，婉拒本人額外追催，必要通報照常。",
+            "tradeoff": "家長須自行反映，可能覺得導師不積極。"
+          },
+          {
+            "id": 3,
+            "text": "我提出由設備人員現場評估顯示效果。",
+            "action": "申請額外合格檢視亮度與投影條件，不自行認定必須換燈泡。",
+            "tradeoff": "教師增加時間協調，未必有新增結論。"
+          },
+          {
+            "id": 4,
+            "text": "我整理一次可公開設備維護原則，讓家長知道差別怎麼來。",
+            "action": "提出額外整理校方可公開維護資訊的書面說明，不揭他班個資。",
+            "tradeoff": "教師花整理時間，家長可能嫌說明不能變亮。"
+          },
+          {
+            "id": 5,
+            "text": "請他自願把具體看不清的情況交來，我向權責人員一併反映。",
+            "action": "徵詢家長提供具體時間內容問題，不要求偷拍課堂或取得別班影像。",
+            "tradeoff": "教師增加彙整，家長未必能提供實際事證。"
+          },
+          {
+            "id": 6,
+            "text": "我協調可行的教學顯示方式，先不另爭設備優先。",
+            "action": "向任課者提出適齡字級、資料交付或合宜顯示調整的合作邀約，不以此掩蓋應修設備。",
+            "tradeoff": "增加教師協作備課，未必解決所有觀看差異。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那個笑弄得有點累，邀總務一起當面談，別讓我一直替學校財產打包票。",
+          "action": "提出有權設備人員與家長的共同說明需求，導師參與但不代承諾預算。",
+          "tradeoff": "教師多花協調並可能讓家長覺得小題大作，不保證能當日成會。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1367681645
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "de202eac9e9fa42eb0f4236b022f591a951e05c43b0944a54598d3fc9b13ed25"
+      },
+      "consequenceDirections": {
+        "A": "家長問責是否能接受未定排程與資源條件可發展。",
+        "B": "開朗問責能否容納直接對權責說明與導師角色界線可發展。",
+        "C": "社交聽聞與可核實問題如何影響追問可發展。",
+        "D": "家長對比較印象能否接受實際評估可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "389541688007f3e5bc71d9f125b73e0b2f193dd393fdf13d030fa4b1fc13704b",
+    "draftSha256": "3d813404738ce19901083a720b8f420f9072419b6cc01104dcac481f5c067ada",
     "seedAssignmentVersion": 1
   }
 }

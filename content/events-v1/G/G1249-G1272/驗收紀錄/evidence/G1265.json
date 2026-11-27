@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3890a5af743a1b78f89cdbb439f90265e3e5869e6336189156541d987290aa9e",
+      "checkedAt": "2026-11-27T18:53:46.134Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出由教師重整分組條件，不讓人氣決定誰能參與。",
+            "action": "向授課者提出公平分組調整需求，先聽受影響學生意願，不強迫分派。",
+            "tradeoff": "教師增加協調，原組可能不滿。"
+          },
+          {
+            "id": 2,
+            "text": "保留可安全合作的原組，另開放自願調組。",
+            "action": "提出不強迫拆散所有人的合法調組方案，由教師協調未安置者可接受選項。",
+            "tradeoff": "可能找不到自願組合，教師須多次協商。"
+          },
+          {
+            "id": 3,
+            "text": "在必要處理外，另約全班討論自由分組的條件。",
+            "action": "安排不指名個案的班務討論，由教師主持，學生自願發言。",
+            "tradeoff": "占用課內可調時間，可能引起更多衝突。"
+          },
+          {
+            "id": 4,
+            "text": "邀他和我私下逐項核對剛才看到的事，不讓正義只剩口號。",
+            "action": "提出自願目擊經過核對及反應會談，不以提供證詞作保護條件。",
+            "tradeoff": "教師增加時間，他可能覺得教師在質疑自己。"
+          },
+          {
+            "id": 5,
+            "text": "請有權協作教師一起看下一次分組，我不再只自己判斷。",
+            "action": "提出額外成人共同觀察需求，遵守課務與隱私，不預設已安排。",
+            "tradeoff": "增加聯絡及被同事檢視壓力。"
+          },
+          {
+            "id": 6,
+            "text": "讓被影響學生自選是否個別完成可替代任務，我向授課者協調。",
+            "action": "提出不降低權益的自願個別交付選項，須授課者同意，不把受排擠者趕出合作。",
+            "tradeoff": "教師增加課務管理，學生可能想保留團隊機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再躲著他的質問，邀他下次在班會直接向我提一般處理原則的問題。",
+          "action": "提出自願公開問答邀約，教師願承受對自己作法的質疑，先確認不揭受害者與個案隱私。",
+          "tradeoff": "增加教師準備與公開情緒壓力，學生可拒絕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2119660589
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "788a3e0920096bb7f2a8977f2d5bf884477cdbf734d01b5c7e7ea50af6af7e0b"
+      },
+      "consequenceDirections": {
+        "A": "被認可需求與問責如何在不借他人受傷出名下呈現可發展，必要處理不等班會。",
+        "B": "敢言者的同理能否接受本人選擇不同於其預期可發展。",
+        "C": "敢言者能否接受兼顧被排除者意願的實施可發展。",
+        "D": "認可需求與公共問責是否能轉為規則討論可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "031248d83baa5b799f77247e1c5c9c7c5e8e1b284180538591f74444a1f21cc2",
+    "draftSha256": "3890a5af743a1b78f89cdbb439f90265e3e5869e6336189156541d987290aa9e",
     "seedAssignmentVersion": 1
   }
 }

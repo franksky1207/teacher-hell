@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c3e6ded6476d5dfc0ac07e438c55cadc1295d2338a40c7a235a32a430efcca88",
+      "checkedAt": "2026-11-27T18:53:46.116Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "現在邀他私下談一次，聽他把挫折說完。",
+            "action": "提出正常可調時段的個別會談，不以會談換撤紀錄。",
+            "tradeoff": "教師花時間，對方可能覺得又被訓。"
+          },
+          {
+            "id": 2,
+            "text": "先不加談話，約幾個工作日後再問他願不願聊。",
+            "action": "提出延後非必要關係會談的邀約，期間維持正常職務溝通。",
+            "tradeoff": "教師承受短期冷淡並需後續聯絡。"
+          },
+          {
+            "id": 3,
+            "text": "我寫一封私下回覆，肯定作品眼光，也把我不能替他省的界線講清楚。",
+            "action": "提供個別書面關係回應，不替違規卸責或聲稱家長同意。",
+            "tradeoff": "教師花措辭時間，缺少即時回應。"
+          },
+          {
+            "id": 4,
+            "text": "徵詢他願不願請合適同事主持，我們一起談以後怎麼合作。",
+            "action": "提出雙方同意的成人協作會談需求，僅分享必要內容。",
+            "tradeoff": "多一段協調，對方可能不願第三人知情。"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，我和他另提一次只展示合法作品的方案，不急著再拍臉。",
+            "action": "提出共同籌備另份去識別作品介紹的自願邀約，仍需權利及授權審查，不承諾發布。",
+            "tradeoff": "教師增加整理協調，可能再遭行政拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "這次不接額外修補工作，照正常課務合作就好。",
+            "action": "決定不另安排私下安撫或新宣傳合作，維持所有必要職務回應。",
+            "tradeoff": "保留教師時間，同事可能感到冷淡。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有火氣，向主管提議本班先不參與額外真人宣傳，由我承擔說明。",
+          "action": "具名提出本班暫不新增非必要真人宣傳的協商需求，仍依法尊重學生自主及既有合法權益，不單方面取消他人已獲同意安排。",
+          "tradeoff": "教師承擔被認為掃興的關係壓力與行政說明，不保證主管同意。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1353147290
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "0a39c096d8de603e6f77d99c75fbd48d3e7d44e3841a92a946c5caa6f69cd1f3"
+      },
+      "consequenceDirections": {
+        "A": "其執行力受挫後能否接受緩衝可發展，必要工作不拖延。",
+        "B": "認可導師與求肯定的挫折能否並存可發展。",
+        "C": "同事如何面對導師收縮額外宣傳合作與求肯定需求可發展，非只有此項守肖像規範。",
+        "D": "執行力能否在合法範圍恢復合作而非衝曝光可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "62ce70e172042599acdc128c360ed7f8d0dd9e15ff83181b3b5e1250871a9745",
+    "draftSha256": "c3e6ded6476d5dfc0ac07e438c55cadc1295d2338a40c7a235a32a430efcca88",
     "seedAssignmentVersion": 1
   }
 }

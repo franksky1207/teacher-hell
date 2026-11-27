@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3d9b35cecef294914e001f81fec3c16a1b9bbae3048df518ee4763f789bede24",
+      "checkedAt": "2026-11-27T18:53:46.101Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另做一次不含個資的逐筆說明，讓家長看懂暫況。",
+            "action": "承諾依已核實資料整理額外逐筆導讀，區分暫況與定稿。",
+            "tradeoff": "教師增加整理時間，數字仍可能依法更正。"
+          },
+          {
+            "id": 2,
+            "text": "約一次有權人員在場的查閱，不把所有原件貼群組。",
+            "action": "提出依規限必要知情者查閱遮蔽個資憑證的安排，待權責確認。",
+            "tradeoff": "教師增加場地與時間協調，不保證立即排上。"
+          },
+          {
+            "id": 3,
+            "text": "邀他蒐集附議者的具體問題，我統一答一回。",
+            "action": "徵詢家長自願彙整具體疑問，教師承諾集中回覆，不要求代替校方核帳。",
+            "tradeoff": "雙方增加整理工作，家長可拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "我陪學生總務一起向群組說明，但不讓學生單獨扛。",
+            "action": "邀學生自願參與在教師主持下的合規帳況說明，必要責任仍由成人承擔。",
+            "tradeoff": "教師需準備陪同，學生可能不願公開發言。"
+          },
+          {
+            "id": 5,
+            "text": "向有權會計人員申請額外核對，核對結論可公開到哪也一併問。",
+            "action": "提出就本案暫況作額外專業核對的需求，不預設核對完成或無誤。",
+            "tradeoff": "教師增加交接等待，承辦可能無此服務權限。"
+          },
+          {
+            "id": 6,
+            "text": "另約線上說明，願參加的家長一起問，不逐戶重講。",
+            "action": "提出使用合規管道的自願共同說明邀約，限制個資內容並保留不能參加者必要資訊。",
+            "tradeoff": "教師花主持時間，家長未必能同時上線。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被期限追得煩，請主管一起談合理更新頻率，避免一個日期又變下一個保證。",
+          "action": "具名提出與權責主管及家長協商額外進度回覆頻率的需求，不減損法定公開或必要更正。",
+          "tradeoff": "教師承擔升高層級的關係壓力及協調，主管未必同意新頻率。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3668568534
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "fa77fedec7e75cd0afbf6c3b505b38f416e003d58e9461ab678ce3c921f9095a"
+      },
+      "consequenceDirections": {
+        "A": "透明要求與資料界線如何協商可發展。",
+        "B": "家長對原則、號召及督促界線的反應可發展，非只有此項如實告知。",
+        "C": "群體要求能否透過共同對話聚焦可發展。",
+        "D": "專業核對能否降低家長催問與號召可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e67988a21fc2ee3290a3326d433124987585d8988af3881a4ac6c520f3faff68",
+    "draftSha256": "3d9b35cecef294914e001f81fec3c16a1b9bbae3048df518ee4763f789bede24",
     "seedAssignmentVersion": 1
   }
 }

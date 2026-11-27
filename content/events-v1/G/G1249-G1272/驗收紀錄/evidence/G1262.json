@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3cb1144c8b623109798130d9bfe7f2b76bd8953c2dd4196ef36f0d1f00c9351f",
+      "checkedAt": "2026-11-27T18:53:46.125Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只約一次有限檢視，討論何時停止重複，不每天驗收。",
+            "action": "提出單次限時學習檢視及結束重複的協商，不保證消除焦慮。",
+            "tradeoff": "教師花時間，學生可能覺得不夠安全。"
+          },
+          {
+            "id": 2,
+            "text": "邀他試一小段新內容，先不追求做完，由我陪著開始。",
+            "action": "提出正常可調時段的自願短段新學習邀約，學科內容須合乎導師能力或由任課者確認。",
+            "tradeoff": "教師犧牲時間，學生可能不敢前進。"
+          },
+          {
+            "id": 3,
+            "text": "與任課老師商議一個可判斷掌握度的小範圍檢核。",
+            "action": "經本人知情同意提出具體學習需求，不要求額外考試或提高分數。",
+            "tradeoff": "增加聯絡及任課者負擔，未必能立刻安排。"
+          },
+          {
+            "id": 4,
+            "text": "邀他把一週空檔留一部分給想做的非學科事，先由他選。",
+            "action": "提出自願時間安排會談，不強迫加入社團或把休息當獎懲。",
+            "tradeoff": "教師花會談時間，學生可能覺得浪費可讀書時間。"
+          },
+          {
+            "id": 5,
+            "text": "在必要支持外，問他願不願由我陪同找輔導老師談一次。",
+            "action": "提出自願輔導資源及首次陪同邀約，必要危急支持不以同意為前提。",
+            "tradeoff": "教師增加陪同，學生可能怕被貼標籤。"
+          },
+          {
+            "id": 6,
+            "text": "我不接每日驗收，請他先把仍想問的疑點集中到正常答疑。",
+            "action": "拒絕額外每日反覆確認，提供已有正常答疑及必要支持，徵詢其可接受提問方式。",
+            "tradeoff": "學生可能失望，教師仍須回應真正學習需要。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心軟想陪他，卻不想再算同一題，邀他一同做一次什麼都不驗收的短休息。",
+          "action": "提出教師以可調課間陪同自願安靜休息的邀約，不測驗、不要求表現放鬆，必要專業支援照常。",
+          "tradeoff": "教師犧牲休息自主，學生可能因未讀書更不安，不能保證因此改善。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1276546860
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "907e0980bf7102a3968fe5c657ad86ea1482536fa0206597237c25488b1e9993"
+      },
+      "consequenceDirections": {
+        "A": "焦慮與責任感能否接受暫時不產出、如何使用餘裕可發展。",
+        "B": "規範接受能否承受教師不再延長確認可發展。",
+        "C": "責任感與焦慮如何接受有限確認可發展。",
+        "D": "規範認同與時間餘裕能否容納自主休息可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "76db2a98906c284c650f4ad9d42eb56ff443058a0f32ebc0424c94f2c0e12bac",
+    "draftSha256": "3cb1144c8b623109798130d9bfe7f2b76bd8953c2dd4196ef36f0d1f00c9351f",
     "seedAssignmentVersion": 1
   }
 }

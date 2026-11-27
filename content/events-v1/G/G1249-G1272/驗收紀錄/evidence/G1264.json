@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "165855bdd14092989e81efc28c78ec8aa28c860131e400ef4beee18267907e0a",
+      "checkedAt": "2026-11-27T18:53:46.131Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "留一段課間讓他說，我不去改學生的提問方式。",
+            "action": "陪同事作自願私人短談，維持正常學生提問權，不承諾替他壓疑問。",
+            "tradeoff": "教師失去工作時間，同事可能覺得只被聽沒被幫。"
+          },
+          {
+            "id": 2,
+            "text": "我不另陪聊，坦白說今天也忙，正常課務照樣合作。",
+            "action": "婉拒額外討拍時間，保持必要職務回應及學生支持。",
+            "tradeoff": "可能讓好友失落，保留教師時間。"
+          },
+          {
+            "id": 3,
+            "text": "邀他找一天一起看哪幾處能少講但不誤導，不由我替他改專業答案。",
+            "action": "提出合規共備需求，由科任判定學科適切性，導師只協助整理學生常見提問。",
+            "tradeoff": "增加雙方共備時間，對方可拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "如果他願意，我協助向課務窗口反映代課負荷。",
+            "action": "徵詢同意後提出客觀代課負荷協調需求，不保證減課。",
+            "tradeoff": "教師增加聯絡，同事可能怕被看成扛不住。"
+          },
+          {
+            "id": 5,
+            "text": "問他要不要在正常休息時段一起吃點東西，這段先不談學生。",
+            "action": "提出自願共餐或短休息邀約，不以消費取代必要更正。",
+            "tradeoff": "教師讓出私人休息自主，若消費各依自願負擔。"
+          },
+          {
+            "id": 6,
+            "text": "邀他和學生自願聊一次怎麼提問比較能互相接話，不限制即時糾錯。",
+            "action": "提出師生雙向溝通邀約，學生不必道歉、教師不得交換沉默。",
+            "tradeoff": "教師花主持時間，任一方可拒絕。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忍不住也想吐苦水，問他願不願今天輪流講，別只有我當那個聽的。",
+          "action": "提出雙方自願、各留一段時間的同事互相傾聽安排，不公開學生個資、不把錯誤責任推給孩子。",
+          "tradeoff": "教師暴露自己的疲憊與需求，同事可能覺得未被優先照顧。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1858976051
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "9261ea316ef1239462d375454b42968a7893f61c6c18159696ee1f62b6aa1b04"
+      },
+      "consequenceDirections": {
+        "A": "親近關係能否成為雙向支持與疲勞、經驗自尊可發展，未同意不稱已互談。",
+        "B": "親近與疲勞能否容納同一提問規範可發展。",
+        "C": "疲勞與對導師親近的求助期待可發展。",
+        "D": "對提問規範的認同與實際疲勞如何相容可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "012e64968f270958c10b53d2aab4da430985b4daf776cf7359576845f956c0a6",
+    "draftSha256": "165855bdd14092989e81efc28c78ec8aa28c860131e400ef4beee18267907e0a",
     "seedAssignmentVersion": 1
   }
 }

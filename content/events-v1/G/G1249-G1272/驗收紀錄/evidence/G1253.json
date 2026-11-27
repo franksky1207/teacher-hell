@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e91fd6ea04b503c7cb0a214d6650bb27ab43e5bda954767b1ec51b42f65c41e3",
+      "checkedAt": "2026-11-27T18:53:46.107Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他由我陪著，重新談每個人願意做的部分。",
+            "action": "提出自願教師主持分工會談，必要不當行為處理不以參與為條件。",
+            "tradeoff": "教師花時間，學生可能怕被猜是自己說。"
+          },
+          {
+            "id": 2,
+            "text": "我提出改交可辨認個人貢獻的版本，不再讓他包整組成品。",
+            "action": "向授課者申請等值個人貢獻交付方案，不憑單方陳述扣分。",
+            "tradeoff": "教師增加課務協調，原組合作可能受挫。"
+          },
+          {
+            "id": 3,
+            "text": "請他先停止額外補做，我陪他整理已做的部分和仍缺的工作。",
+            "action": "在必要停止壓迫外，提供一次額外工作盤點協助，不要求替他人補缺。",
+            "tradeoff": "教師犧牲課間，學生需面對成品不完整。"
+          },
+          {
+            "id": 4,
+            "text": "詢問能否讓這組縮小呈現規模，保留每人必要學習。",
+            "action": "提出依公平課務規範縮減非必要成果規模的需求，待有權者同意。",
+            "tradeoff": "可能需重排展示，不能保證批准。"
+          },
+          {
+            "id": 5,
+            "text": "請其他組自願分享通用經驗，不把誰拉來替這組代工。",
+            "action": "提出不揭個案的同儕分工經驗交流邀約，導師主持且不強迫他組出力。",
+            "tradeoff": "增加班務時間，學生可能仍怕被認出。"
+          },
+          {
+            "id": 6,
+            "text": "另約他談幹部工作的界線，這次課務仍照實處理。",
+            "action": "提出非強制的幹部負荷會談，讓其選擇願保留的額外關懷工作。",
+            "tradeoff": "教師增加時間，學生可能覺得好意被撤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再獎勵『自己吞下去』，當面告訴他我不會因他攬三份就更肯定他。",
+          "action": "私下明確撤回以超額承擔作為好幹部期待，邀其自願以自己同意的範圍公開介紹其已完成貢獻，不把替人代工作為表揚。",
+          "tradeoff": "教師承擔他感到不被肯定的關係風險及額外說明時間，不公開其求助經過。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1241689395
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e97d33ea7751c45786f0fcc313830aead93c068a995360b788de3f077ea217bb"
+      },
+      "consequenceDirections": {
+        "A": "幹部能否理解照顧不等於代做與班務參與可發展。",
+        "B": "想照顧所有人的學生是否接受不做漂亮完整成品可發展。",
+        "C": "認可依賴與班務角色如何回應不包辦可發展。",
+        "D": "他能否不靠包辦換認可、是否願意讓實際貢獻被看見可發展，邀約未接受不稱已公開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "57f73cb3a996b0fe02f6c0fa4b464efb5cb7e7746285c450708e08f37e8b9eb4",
+    "draftSha256": "e91fd6ea04b503c7cb0a214d6650bb27ab43e5bda954767b1ec51b42f65c41e3",
     "seedAssignmentVersion": 1
   }
 }

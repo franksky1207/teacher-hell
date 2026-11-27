@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5124a634b0ebe7c366e28302f47cc002e84810113c1596936b1b4552f37c310c",
+      "checkedAt": "2026-11-27T18:53:46.143Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他把連署改成真實可審議的需求提案，不保證蓋屋。",
+            "action": "提出共同整理動物照護需求及合法方案的邀約，送有權單位依規審議。",
+            "tradeoff": "教師增加整理送件，學生可能嫌理想縮水。"
+          },
+          {
+            "id": 2,
+            "text": "提供正式提案窗口，由他們自願決定是否自己送。",
+            "action": "婉拒教師額外代辦，說明合法申請資訊與不能保證撥款。",
+            "tradeoff": "學生須自行準備，可能覺得不被支持。"
+          },
+          {
+            "id": 3,
+            "text": "邀有權人員說明校園動物管理，讓連署者自願參加。",
+            "action": "提出一般管理說明的需求，不揭連署名單給無權者。",
+            "tradeoff": "教師增加聯絡場地安排，未必成行。"
+          },
+          {
+            "id": 4,
+            "text": "問合法動保窗口有哪些校外自願協助方式，再轉給他。",
+            "action": "查詢不涉危險接觸的公開志工或照護資訊，不承諾可參與或需出錢。",
+            "tradeoff": "教師多花查詢，學生可能覺得離校內小貓太遠。"
+          },
+          {
+            "id": 5,
+            "text": "讓他自願向連署同學說明提案不保證撥款，我幫忙核對文字。",
+            "action": "提出共同修正連署期待的邀約，不強迫公開自責。",
+            "tradeoff": "教師花潤稿時間，學生要面對號召後落空。"
+          },
+          {
+            "id": 6,
+            "text": "這次不另辦活動，邀他個別談對小貓最擔心的事。",
+            "action": "提出限時自願個別需求會談，不以關懷取代必要專業通報。",
+            "tradeoff": "教師犧牲課間，沒有立即實體貓屋成果。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點心軟，願意陪他們做一次合法現況觀察，先不花錢蓋想像中的屋。",
+          "action": "提出經校方允許、成人陪同且不接觸動物不追貓的短段觀察安排，僅記公開環境需求，不預設已有結果。",
+          "tradeoff": "教師增加陪同與安全規劃，可能不獲准或看不到貓。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3554474212
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "918819f9e8aa759b0ae7848d7af9432ea2daa4dd29bee3c5003f99ba58dcd039"
+      },
+      "consequenceDirections": {
+        "A": "網路說法能否被實際權責說明取代可發展。",
+        "B": "號召與誤信能否轉為不保證結果的提案可發展。",
+        "C": "誤信與群體影響能否接受重新說明可發展。",
+        "D": "號召熱情與實際照護需求的落差可發展，不以愛心取消校地規範。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc8e435f49cc6d80456c7380864bff38ccd2cc884afd8a9b9d4b1c79928b0681",
+    "draftSha256": "5124a634b0ebe7c366e28302f47cc002e84810113c1596936b1b4552f37c310c",
     "seedAssignmentVersion": 1
   }
 }

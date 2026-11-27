@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "195bb4819ffb93533faac54c2c18d9a899268b83a9dddc3e6aaa00cc60463033",
+      "checkedAt": "2026-11-27T18:53:46.110Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明早我主動約隔壁導師談一次，爭取具體可回覆的進度。",
+            "action": "在必要查證外提出面對面跨班協調邀約，不保證立即得到結論。",
+            "tradeoff": "教師增加晨間時間，對方可因課務無法出席。"
+          },
+          {
+            "id": 2,
+            "text": "請學務主持共同說明，我協助提出需求。",
+            "action": "向有權單位提出家長與相關成人的共同會談需求，限合法知情範圍。",
+            "tradeoff": "協調耗時且可能擴大事件壓力。"
+          },
+          {
+            "id": 3,
+            "text": "我另約正常時段回覆一次，不承諾中午前有道歉。",
+            "action": "提出可確實做到的額外親師回電時段，區分進度回覆與責任結論。",
+            "tradeoff": "教師增加聯絡，家長可能認為沒滿足期限。"
+          },
+          {
+            "id": 4,
+            "text": "邀孩子自願先說希望怎麼修補，別讓成人替他決定全部。",
+            "action": "提出在保護隱私下的親師生需求討論邀約，必要查證照常。",
+            "tradeoff": "教師多花會談，家長可能覺得孩子太好說話。"
+          },
+          {
+            "id": 5,
+            "text": "如果責任查明且各方願意，我願陪一次修復會談。",
+            "action": "提出條件成立後自願修復會談的陪同承諾，不強迫道歉或以會談取代依法處理。",
+            "tradeoff": "教師預留可調時間，可能因不同意無法成行。"
+          },
+          {
+            "id": 6,
+            "text": "額外會談我不先接，由正式窗口辦，我維持必要班務支持。",
+            "action": "婉拒本人額外主持或代談賠償，請權責窗口依規續辦必要程序。",
+            "tradeoff": "保留教師時間但家長可能覺得被轉走。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也替孩子生氣，願意多做一次跨班走廊安全提案，但不拿處罰出氣。",
+          "action": "在必要查證之外具名提出跨班午間動線與追跑風險改善需求，教師承擔整理現況及協調。",
+          "tradeoff": "多花時間並可能引來同事不悅，不能保證環境立即改變。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 312274294
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "7b9fcc3b2e4b5aa930886b4cd16661ca9a458d880e9a6e55ed6c0f68d391d753"
+      },
+      "consequenceDirections": {
+        "A": "家長能否把安全改善視為具體交代的一部分、信任與怒氣可發展，賠償仍依責任另處理。",
+        "B": "家長對未定交代是否仍信任與怒氣可發展。",
+        "C": "其因信任而克制的怒氣如何回應有限協助可發展。",
+        "D": "家長的條理訴求能否容納正式多方程序可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c4bb89ac12a89ff8d39079fce84117d08c01d0b17fd133fa84127df66854070b",
+    "draftSha256": "195bb4819ffb93533faac54c2c18d9a899268b83a9dddc3e6aaa00cc60463033",
     "seedAssignmentVersion": 1
   }
 }

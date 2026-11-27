@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "67a9ad075353e8074dcaa968b1bd6256f0920d5ee0b6035874dc5b75c423afe6",
+      "checkedAt": "2026-11-27T18:53:46.122Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我當關主，玩限時短版，鐘前收好。",
+            "action": "在合法可調段主持自願限時賓果，保留不參加者安靜空間。",
+            "tradeoff": "教師少了寫聯絡事項時間，要承擔控場。"
+          },
+          {
+            "id": 2,
+            "text": "讓願意的學生主持，我只看場，不負責念題。",
+            "action": "提出學生自願主持並由教師維持必要秩序的方案，先確認題目合宜。",
+            "tradeoff": "教師仍花注意力，學生主持可能卡住。"
+          },
+          {
+            "id": 3,
+            "text": "改成紙上逐輪提示，少一點全班一起喊。",
+            "action": "提出教師以書面提示的安靜自願賓果形式，不保證無聲就不需管理。",
+            "tradeoff": "增加教師書寫準備，少了即興熱鬧。"
+          },
+          {
+            "id": 4,
+            "text": "今天不玩，另約可用班會段慶祝。",
+            "action": "婉拒當下活動，提出日後合法可調班會短活動的邀約，不預設已排定。",
+            "tradeoff": "學生需等待，教師增加後續安排。"
+          },
+          {
+            "id": 5,
+            "text": "這次不當全班活動，允許自願小組在不擾人的範圍玩。",
+            "action": "在合法時段提出分組自願活動，必要用餐休息及他人安靜需求照常維持。",
+            "tradeoff": "教師多管幾個小組，不能保證都願意。"
+          },
+          {
+            "id": 6,
+            "text": "十分鐘改為自由選擇的安靜慶祝，不統一玩賓果。",
+            "action": "提出可選畫格、交流或休息的合法安靜短段，由教師維持秩序，不指定共同遊戲。",
+            "tradeoff": "集體儀式感減少，學生可能覺得沒被接住。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想贏一次，願意當玩家，請自願學生當關主。",
+          "action": "提出教師加入自願賓果、學生主持的安排，教師仍負監督與準時收尾，不賭博不洩題。",
+          "tradeoff": "教師放下原工作且兼顧參與控場，學生可能不想主持。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3327896454
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "fde4ab6e33aca638f28f02253e9ade2c872a1471656bf583de38445cb35d9db9"
+      },
+      "consequenceDirections": {
+        "A": "亢奮與主動報備是否因延期變化可發展。",
+        "B": "師生同樂與號召者是否願交出活動角色可發展，未接受不稱已開局。",
+        "C": "學生喜悅能否接受形式折衷可發展。",
+        "D": "開朗號召能否配合收尾與教師界線可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1cee4c34fc37ff40d1bf6331449b42e64949d193b1575cd835aa89e46cbcf840",
+    "draftSha256": "67a9ad075353e8074dcaa968b1bd6256f0920d5ee0b6035874dc5b75c423afe6",
     "seedAssignmentVersion": 1
   }
 }

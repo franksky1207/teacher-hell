@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ca0f506edaf5fa6d98bf8f457bf8a1dbe5f2eed78b3c75670fb08f56814c2321",
+      "checkedAt": "2026-11-27T18:53:46.136Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先凍結特效版本，把剩餘時間留給補一條可證明的主張。",
+            "action": "提出有限範圍內容修訂要求，保留既有視覺但不再追加非必要特效。",
+            "tradeoff": "學生需放下炫技，教師增加內容回饋。"
+          },
+          {
+            "id": 2,
+            "text": "允許保留簡報，另交等值可查核的研究補充。",
+            "action": "在公平規準內提出補充資料形式，不以補件免除內容評量。",
+            "tradeoff": "增加學生整理與教師閱讀時間。"
+          },
+          {
+            "id": 3,
+            "text": "改以現場口頭論證呈現，我安排一次自願短彩排。",
+            "action": "提出可確認理解的口頭呈現方案，先給有限彩排回饋，不保證因此拿高分。",
+            "tradeoff": "教師犧牲課間，學生需練真實說理。"
+          },
+          {
+            "id": 4,
+            "text": "請全組各自說想保哪一段，再共同決定怎麼縮。",
+            "action": "主持自願範圍協商，讓組員不同付出可被聽見，不由組長全決。",
+            "tradeoff": "占用師生時間，可能產生爭執。"
+          },
+          {
+            "id": 5,
+            "text": "依原期限呈現，這次先按實際內容評，不加開個別指導。",
+            "action": "維持既定公平報告及必要回饋，拒絕額外個別彩排服務，不阻止正常修訂。",
+            "tradeoff": "學生可能因內容不足失分，教師承擔被說先前誤導。"
+          },
+          {
+            "id": 6,
+            "text": "我把『吸睛』的課堂說明補完整，給全班一樣的修訂機會。",
+            "action": "安排短段全班教學澄清視覺與論證關係，公平提供可行修訂資訊，不改評量保證。",
+            "tradeoff": "占用可調課內時間，可能讓本組覺得被暗指。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那個旋轉模型迷住了，想保住它，邀他們把模型變成真的解釋工具。",
+          "action": "提出將既有模型對應一個可核實論點的自願額外指導邀約，教師先確認自己能力與證據，不能替學生代做研究。",
+          "tradeoff": "教師增加備課與討論，未必適合此題且可能須放棄模型。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 148225847
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "ab9b4c389cbf1858ed29d54df8dabe01f3076a233d232d480078b6b73417515e"
+      },
+      "consequenceDirections": {
+        "A": "對導師專業的認可是否容納不同吸睛方式可發展。",
+        "B": "數位強項能否服務內容與好勝組長是否願調整可發展，不預設模型已有教學效益。",
+        "C": "號召力與好勝是否容納隊友意見可發展。",
+        "D": "教師指導被重新理解與學生重整目標可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "24bb0b5f33e7c9b47ba3732c41dd8e04e42969ab8c4b9fae0e3f148f32289dfb",
+    "draftSha256": "ca0f506edaf5fa6d98bf8f457bf8a1dbe5f2eed78b3c75670fb08f56814c2321",
     "seedAssignmentVersion": 1
   }
 }

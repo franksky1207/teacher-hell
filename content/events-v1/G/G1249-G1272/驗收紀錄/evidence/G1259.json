@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "57882e1ce8d1e50664253a34e4d7c0e13868289e666ad0b06d18a449f518ec22",
+      "checkedAt": "2026-11-27T18:53:46.120Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先採可安全調整的葉片角度，跟各排確認看得清楚。",
+            "action": "在合宜照明下進行分區角度調整，邀學生回饋可讀性，不宣稱治療視力。",
+            "tradeoff": "教師增加現場確認，光線隨時段仍會變。"
+          },
+          {
+            "id": 2,
+            "text": "申請總務現場評估，讓設備與照明一起看。",
+            "action": "提出專業場地照明評估需求，等待期間必要調整照常。",
+            "tradeoff": "增加聯絡等待，未必立即有結論。"
+          },
+          {
+            "id": 3,
+            "text": "向校方提出局部遮光改善，先查可用材料與規範。",
+            "action": "申請評估合宜遮光設施，教師不自行貼膜改窗。",
+            "tradeoff": "教師花提案時間，可能沒有預算。"
+          },
+          {
+            "id": 4,
+            "text": "請孩子自願提出座位需求，我額外協調能否調到合適位置。",
+            "action": "徵詢本人意願並依公平條件提出合法換位，不強迫其他人讓位。",
+            "tradeoff": "教師增加協調，可能沒有可換位置。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長在可申請的時段看一次現場，不只靠文章和描述。",
+            "action": "提出按訪客及課務規範的自願現場觀察申請，獲准才入校不干擾上課。",
+            "tradeoff": "教師需陪同時間，家長可能怕當面爭論而拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "我另約固定時段集中回覆，不每則文章就再動一次窗。",
+            "action": "在必要環境調整之外提出集中額外回覆的聯絡協商，緊急健康需求仍即時處理。",
+            "tradeoff": "家長須等待，教師仍花定期聯絡時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被催得不服氣，願意連續幾天記下各排的不適回饋，再一起談。",
+          "action": "提出教師在可調時段蒐集最少必要、去識別的各排視覺感受及當時調窗狀況，形成額外比較說明，不作醫療或照度檢測結論。",
+          "tradeoff": "教師增加觀察整理，家長可能覺得不是立即全關；不預設已有資料。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2159874894
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "2101efa99eead62d751ea9a3cd007265cd82a78333ce9f2025f5a9d098ad50a6"
+      },
+      "consequenceDirections": {
+        "A": "家長是否能容納不同學生感受與自身防護要求可發展。",
+        "B": "衝突迴避與實際採光需求如何協商可發展。",
+        "C": "家長對較長期環境方案與當下催促的反應可發展。",
+        "D": "家長對非全關安排的接受與催問可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "176e32ac5b356f6c0d7a6d7ebc8ba97a37510ff2368386e520c3ff3ad56ebe47",
+    "draftSha256": "57882e1ce8d1e50664253a34e4d7c0e13868289e666ad0b06d18a449f518ec22",
     "seedAssignmentVersion": 1
   }
 }

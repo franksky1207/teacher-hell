@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "303a6b7c2a3af5bb310b0478e5d1fedc3ec0a63fc11946fbe4a1cc61c9c60ced",
-      "checkedAt": "2026-11-27T12:15:19.389Z",
+      "sourceVersion": "1171430ec7e70b00fc174f7f3e505b82d9e2ea18d9659534b0c6d92141bf1e70",
+      "checkedAt": "2026-11-27T12:40:52.003Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -49,9 +49,9 @@
           },
           {
             "id": 5,
-            "text": "取消我加的速解高手票選。",
-            "action": "導師已撤回本人非必要解題速度人氣排名，不刪真實學習紀錄。",
-            "tradeoff": "少了被捧的機會"
+            "text": "讓願意的人用現有小紙片排出數量，不再只追手指數到哪。",
+            "action": "導師已在本課提供有限安全紙片操作選擇及個別替代，不追加全份練習或速度評分。",
+            "tradeoff": "操作較慢，也可能排錯"
           },
           {
             "id": 6,
@@ -68,29 +68,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 2884225829
+          "seed": 2528925773
         },
         "selectedIds": [
-          6,
-          3,
+          1,
+          5,
           2
         ],
         "finalChoiceMap": {
-          "A": 2,
-          "B": "emotional",
-          "C": 6,
-          "D": 3
+          "A": 5,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
         },
-        "optionsDigest": "dae2a90d00df0e23ce0e539e960e34ad0137f5fd6548f79a4b45b75e4ad9c9e7"
+        "optionsDigest": "00a65d6b58ec65fbe346bca40b378abe1723aa5136ebb37afbe3539390d1b3a9"
       },
       "consequenceDirections": {
-        "A": "疑問可接續正常回饋，不能收下問題後不回應。",
-        "B": "教師承受自己的不服輸，不拉學生再證明方法。",
-        "C": "可當提問者，不以單獨短談換公開承認失敗。",
-        "D": "可以看到不同理解，沉默者仍須合理支持。"
+        "A": "學生可具體檢查計數依據，教師仍須正常回饋，不以排出來就宣稱所有題會。",
+        "B": "疑問可接續正常回饋，不能收下問題後不回應。",
+        "C": "可見方法邊界，不把猜中例外當全懂。",
+        "D": "教師承受自己的不服輸，不拉學生再證明方法。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通5「取消我加的速解高手票選。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我用另一個不適用的例子，讓大家找出差別。",
+                "action": "導師已以自有可用反例提供本課有限比較及正常回饋，不公開評價學生能力。",
+                "tradeoff": "要花原課時間"
+              },
+              {
+                "id": 2,
+                "text": "先讓他保留那個問題，不要求再演一次。",
+                "action": "導師已停止本人非必要重演要求，記下有限題意問題並明示正常課內回覆接續。",
+                "tradeoff": "暫時沒有完整答案"
+              },
+              {
+                "id": 3,
+                "text": "讓各人用圖或一句理由說明，不比速度。",
+                "action": "導師已提供有限等值理由表達方式，不以快慢評分或追加全份重做。",
+                "tradeoff": "教師判讀較慢"
+              },
+              {
+                "id": 4,
+                "text": "我自己從第一步慢做，明說哪裡還要核對。",
+                "action": "導師已以自有例子提供逐步正常教學，區分已確認與待核對處，不以示範代全班理解。",
+                "tradeoff": "節奏沒那麼精彩"
+              },
+              {
+                "id": 5,
+                "text": "取消我加的速解高手票選。",
+                "action": "導師已撤回本人非必要解題速度人氣排名，不刪真實學習紀錄。",
+                "tradeoff": "少了被捧的機會"
+              },
+              {
+                "id": 6,
+                "text": "另邀他自願談最想弄懂哪一格，不請他帶全桌。",
+                "action": "導師已發出限定本人學習需求的自願短談邀請，未約成或指派同儕教學。",
+                "tradeoff": "需另配正常工作時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想贏那種秒答遊戲，下班自己玩，答錯不重開刷漂亮紀錄。",
+              "action": "導師已在私人時間用自有可用遊戲完成本人單次作答自存，不公開學生資料或新增班級要求。",
+              "tradeoff": "花私人時間，也得看見錯誤"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2884225829
+            },
+            "selectedIds": [
+              6,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 6,
+              "D": 3
+            },
+            "optionsDigest": "dae2a90d00df0e23ce0e539e960e34ad0137f5fd6548f79a4b45b75e4ad9c9e7"
+          },
+          "previousConsequenceDirections": {
+            "A": "疑問可接續正常回饋，不能收下問題後不回應。",
+            "B": "教師承受自己的不服輸，不拉學生再證明方法。",
+            "C": "可當提問者，不以單獨短談換公開承認失敗。",
+            "D": "可以看到不同理解，沉默者仍須合理支持。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "303a6b7c2a3af5bb310b0478e5d1fedc3ec0a63fc11946fbe4a1cc61c9c60ced",
+    "draftSha256": "1171430ec7e70b00fc174f7f3e505b82d9e2ea18d9659534b0c6d92141bf1e70",
     "seedAssignmentVersion": 1
   }
 }

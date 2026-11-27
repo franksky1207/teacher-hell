@@ -20,8 +20,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "11bc63b4ec5d5f0c1d4f33dfa780bf78bba3f2b99c029c2bbe1af6fa794eb08c",
-      "checkedAt": "2026-11-27T12:23:46.039Z",
+      "sourceVersion": "1a2b989694050a44e8a89122591d792080715d04f69ede93f68175525ac7ed6f",
+      "checkedAt": "2026-11-27T12:40:52.287Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -56,9 +56,9 @@
           },
           {
             "id": 6,
-            "text": "撤掉我原想加的完成進度人氣榜。",
-            "action": "導師已取消本人非必要小組完成度人氣排名，不刪正式必要成果資料。",
-            "tradeoff": "少了被表揚的可能"
+            "text": "問學校能不能依規暫存他的私人模型，不讓興趣一直和班務擠在一起。",
+            "action": "導師已提出經本人意願確認才成立的合規私人模型暫存詢問，未取得場地、物品或新用途授權。",
+            "tradeoff": "可能沒有位置，也需說清取回方式"
           }
         ],
         "emotionalCandidate": {
@@ -69,29 +69,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 1365231125
+          "seed": 2343326721
         },
         "selectedIds": [
           5,
-          1,
+          2,
           3
         ],
         "finalChoiceMap": {
-          "A": 1,
-          "B": 5,
+          "A": "emotional",
+          "B": 2,
           "C": 3,
-          "D": "emotional"
+          "D": 5
         },
-        "optionsDigest": "228079fe230852fe05f30d723637b19748a958b04ea80ed2db9144b53a64e300"
+        "optionsDigest": "0de6d4a4e363834aa8dcca1382b8df6f62b905a0e1e0fca46ac36551274c9463"
       },
       "consequenceDirections": {
-        "A": "每組能說真實狀況，教師仍要接住未完學習。",
-        "B": "可看自己的需求，不把談話變家庭調查。",
+        "A": "教師滿足私人興趣，不借走學生模型或叫他代組。",
+        "B": "他不用再當和事佬，不能收問後不回覆。",
         "C": "可回應真的做過的事，不把局部當全組完成。",
-        "D": "教師滿足私人興趣，不借走學生模型或叫他代組。"
+        "D": "可看自己的需求，不把談話變家庭調查。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通6「撤掉我原想加的完成進度人氣榜。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "取消我加的全組同步完成宣告，不再追一句好消息。",
+                "action": "導師已撤除本人非必要同步完成展示，不改真實進度或必要回饋。",
+                "tradeoff": "少了整齊進度"
+              },
+              {
+                "id": 2,
+                "text": "改為各組直接向我說一個卡點，不由他代報。",
+                "action": "導師已提供原課內各組直接提問方式，收回本人非必要學生代報安排。",
+                "tradeoff": "教師需多聽幾次"
+              },
+              {
+                "id": 3,
+                "text": "這次只給底板的實際部分回饋，不要求完整模型。",
+                "action": "導師已在本課限縮本人非正式回饋至實際底板部分，未要求以午休補全。",
+                "tradeoff": "看不到全貌"
+              },
+              {
+                "id": 4,
+                "text": "用我自己的簡單例件說明接點，不叫任何學生再趕一個。",
+                "action": "導師已以自有安全例件提供正常課內說明，不取學生私人模型或占其休息。",
+                "tradeoff": "教師多準備"
+              },
+              {
+                "id": 5,
+                "text": "邀他另在工作時段談為什麼每次都急著代大家說。",
+                "action": "導師已發出限定本人壓力與班內行為的自願支持邀請，未約成或蒐集家人對話。",
+                "tradeoff": "要另配時間，也可拒絕"
+              },
+              {
+                "id": 6,
+                "text": "撤掉我原想加的完成進度人氣榜。",
+                "action": "導師已取消本人非必要小組完成度人氣排名，不刪正式必要成果資料。",
+                "tradeoff": "少了被表揚的可能"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "看他那盒模型我也心動，自己下班買一小包零件玩，不再拿班級進度找成就感。",
+              "action": "導師已自費購買本人私人安全模型材料並自行試組，不報帳或新增學生任務。",
+              "tradeoff": "自己花錢與空檔，也可能拼不好"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1365231125
+            },
+            "selectedIds": [
+              5,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 5,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "228079fe230852fe05f30d723637b19748a958b04ea80ed2db9144b53a64e300"
+          },
+          "previousConsequenceDirections": {
+            "A": "每組能說真實狀況，教師仍要接住未完學習。",
+            "B": "可看自己的需求，不把談話變家庭調查。",
+            "C": "可回應真的做過的事，不把局部當全組完成。",
+            "D": "教師滿足私人興趣，不借走學生模型或叫他代組。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -112,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "11bc63b4ec5d5f0c1d4f33dfa780bf78bba3f2b99c029c2bbe1af6fa794eb08c",
+    "draftSha256": "1a2b989694050a44e8a89122591d792080715d04f69ede93f68175525ac7ed6f",
     "seedAssignmentVersion": 1
   }
 }

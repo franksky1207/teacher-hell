@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "e15a6c300dccb8f396b34a391a155b83ad675f04badbe049528a9f9dbb64f214",
-      "checkedAt": "2026-11-27T12:15:19.383Z",
+      "sourceVersion": "253f0c0415fa21e8a8098a7594ab068251df54389f7313ec3e6ec15b3facf954",
+      "checkedAt": "2026-11-27T12:40:51.844Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -55,9 +55,9 @@
           },
           {
             "id": 6,
-            "text": "取消我原想辦的班級片頭人氣比賽。",
-            "action": "導師已撤回本人非必要片頭排名提案，不取代必要音檔權益處理。",
-            "tradeoff": "少了競賽刺激"
+            "text": "問視聽處有沒有可用的無聲標題範本，不再請學生替班會補片頭。",
+            "action": "導師已查詢校內既有無聲標題素材及授權條件，未取得新資源或要求學生代製。",
+            "tradeoff": "可能沒有合用範本"
           }
         ],
         "emotionalCandidate": {
@@ -68,29 +68,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 4076826114
+          "seed": 2205042352
         },
         "selectedIds": [
-          5,
-          4,
-          2
+          6,
+          1,
+          3
         ],
         "finalChoiceMap": {
-          "A": 4,
-          "B": 2,
-          "C": 5,
-          "D": "emotional"
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
         },
-        "optionsDigest": "e5aae76d4b111ce6c6bcbf309ef952f5b2f45eb9b18ced96777095d02a590d0b"
+        "optionsDigest": "6e8a2102228da5c90b7861ea36cd3d4487b9adeabaf9187c5efdf4c3fef29f35"
       },
       "consequenceDirections": {
-        "A": "聲音權利較明確，仍不得擴張素材授權範圍。",
-        "B": "成品不需被用才有價值，必要班務照常。",
-        "C": "可看見實作能力，不讓老師好奇變新用途。",
-        "D": "教師用自己的趣味創作，不取原片節奏的具體編排或他人聲音。"
+        "A": "能有開場，不讓文字頁冒充學生共同成果。",
+        "B": "教師用自己的趣味創作，不取原片節奏的具體編排或他人聲音。",
+        "C": "若有可用來源仍須依權利使用，不把查詢當已取得或必要班務已完成。",
+        "D": "有機會保留成果，不延伸成永久片頭。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通6「取消我原想辦的班級片頭人氣比賽。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "詢問作者是否願意只保留自己的聲音，限一次使用。",
+                "action": "導師已提出限作者本人聲音與單次用途的自願改作詢問，未取得新授權或播放。",
+                "tradeoff": "要重新整理，也可拒絕"
+              },
+              {
+                "id": 2,
+                "text": "這次不加片頭，班會直接進原內容。",
+                "action": "導師已取消本人非必要本次片頭使用，不刪作者合法原成果或必要紀錄。",
+                "tradeoff": "少了開場氣氛"
+              },
+              {
+                "id": 3,
+                "text": "我另用自己的文字做無聲標題頁，不用學生聲音。",
+                "action": "導師已以自有內容製作本次無聲標題頁，不複製學生聲畫或索取資料。",
+                "tradeoff": "教師多製作一頁"
+              },
+              {
+                "id": 4,
+                "text": "改用學校既有可用配樂短段，不放人聲。",
+                "action": "導師已選用既有授權配樂供本次班務使用，不另取學生人聲或改作未授權素材。",
+                "tradeoff": "少了班級特色"
+              },
+              {
+                "id": 5,
+                "text": "請作者自願只向我說明一個剪接選擇，不再試播原檔。",
+                "action": "導師已發出限方法的一次個別自願回饋邀請，未播放、複製或要求展示他人音軌。",
+                "tradeoff": "少了全片回饋"
+              },
+              {
+                "id": 6,
+                "text": "取消我原想辦的班級片頭人氣比賽。",
+                "action": "導師已撤回本人非必要片頭排名提案，不取代必要音檔權益處理。",
+                "tradeoff": "少了競賽刺激"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那個節奏我也想試，下班自己敲桌錄一小段給自己玩，不再找學生補聲。",
+              "action": "導師已於私人安全空間以自有節奏錄製本人短聲響自存，不取學生音軌或影響校內安靜。",
+              "tradeoff": "花自己的空檔，可能很吵很爛"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4076826114
+            },
+            "selectedIds": [
+              5,
+              4,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 2,
+              "C": 5,
+              "D": "emotional"
+            },
+            "optionsDigest": "e5aae76d4b111ce6c6bcbf309ef952f5b2f45eb9b18ced96777095d02a590d0b"
+          },
+          "previousConsequenceDirections": {
+            "A": "聲音權利較明確，仍不得擴張素材授權範圍。",
+            "B": "成品不需被用才有價值，必要班務照常。",
+            "C": "可看見實作能力，不讓老師好奇變新用途。",
+            "D": "教師用自己的趣味創作，不取原片節奏的具體編排或他人聲音。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e15a6c300dccb8f396b34a391a155b83ad675f04badbe049528a9f9dbb64f214",
+    "draftSha256": "253f0c0415fa21e8a8098a7594ab068251df54389f7313ec3e6ec15b3facf954",
     "seedAssignmentVersion": 1
   }
 }

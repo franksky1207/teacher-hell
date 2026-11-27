@@ -20,8 +20,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "7b226c3937c02d1b416eb89ea84a86b2b1de02cdbd45c3f7de31aeb3becc05e5",
-      "checkedAt": "2026-11-27T12:23:46.046Z",
+      "sourceVersion": "ad0c3e01b49c95c0e55db4b5c7d0bae8a830da10965372518502c8aab1ca4f61",
+      "checkedAt": "2026-11-27T12:40:52.506Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -56,9 +56,9 @@
           },
           {
             "id": 6,
-            "text": "取消我加的全勝紀錄榜。",
-            "action": "導師已撤回本人非必要遊戲全勝排名，不刪必要學習資料。",
-            "tradeoff": "少了名次與表揚"
+            "text": "提供一張原題的小提示卡，想用再用，不要求他多接題。",
+            "action": "導師已提供本次非成績遊戲中各人同樣可選的有限提示卡，不增加學生題數或修改已提交結果。",
+            "tradeoff": "提示可能降低猜中的刺激"
           }
         ],
         "emotionalCandidate": {
@@ -69,29 +69,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 1169964431
+          "seed": 214040557
         },
         "selectedIds": [
           4,
-          1,
+          6,
           3
         ],
         "finalChoiceMap": {
           "A": 3,
-          "B": 1,
-          "C": "emotional",
-          "D": 4
+          "B": "emotional",
+          "C": 4,
+          "D": 6
         },
-        "optionsDigest": "ff66f5183b99a4b410936049990373b5c1d059bcb6fc807c73db745ab4a87e75"
+        "optionsDigest": "83ef0c3334b03f09cff76658bc1ac8be1640042ca710e54ef5ad0cbf1de7e80f"
       },
       "consequenceDirections": {
         "A": "可以不玩，原正常學習仍有回饋。",
-        "B": "原界線能保留，不以停下評價膽量。",
-        "C": "教師有競爭心，不要求學生陪打或承認教師比較強。",
-        "D": "降低被看著答的壓力，仍需尊重不參與者。"
+        "B": "教師有競爭心，不要求學生陪打或承認教師比較強。",
+        "C": "降低被看著答的壓力，仍需尊重不參與者。",
+        "D": "能在原有限份量求助，不能把用提示當能力差或成績優惠。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通6「取消我加的全勝紀錄榜。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "依原約只接一題，後面不替他加輪次。",
+                "action": "導師已維持本人與學生原定的有限自願單題安排，不因起鬨追加或以家庭比分排名。",
+                "tradeoff": "可能玩不過癮"
+              },
+              {
+                "id": 2,
+                "text": "問他是否願意改成不計分的提示者，不需要先答對。",
+                "action": "導師已提出可拒絕的有限無分數提示角色邀請，未排定或要求備整場。",
+                "tradeoff": "少了得分的滿足"
+              },
+              {
+                "id": 3,
+                "text": "提供退出本局、回原個別練習的選擇。",
+                "action": "導師已提供不受評罰的本局退出及正常個別練習方式，未替學生決定退出。",
+                "tradeoff": "少了團體熱鬧"
+              },
+              {
+                "id": 4,
+                "text": "這一輪改成大家各寫答案，不搶答不喊必勝。",
+                "action": "導師已在本人平日遊戲權限內提供有限自願書面作答，不改正式成績或公開姓名。",
+                "tradeoff": "少了現場氣氛"
+              },
+              {
+                "id": 5,
+                "text": "我用自有題先示範怎麼猜錯再修正，不讓他演失敗。",
+                "action": "導師已以自有例題示範並清楚訂正一般推測錯誤，不要求學生公開自證輸得起。",
+                "tradeoff": "少一題學生時間"
+              },
+              {
+                "id": 6,
+                "text": "取消我加的全勝紀錄榜。",
+                "action": "導師已撤回本人非必要遊戲全勝排名，不刪必要學習資料。",
+                "tradeoff": "少了名次與表揚"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也被那聲必勝激到，自己下班去玩單字遊戲，輸了不買道具補分。",
+              "action": "導師已於私人時間以自有可用遊戲完成本人娛樂局，不付費改分、不更動班級結果或取學生資料。",
+              "tradeoff": "花私人時間，也可能輸得很難看"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1169964431
+            },
+            "selectedIds": [
+              4,
+              1,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 1,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "ff66f5183b99a4b410936049990373b5c1d059bcb6fc807c73db745ab4a87e75"
+          },
+          "previousConsequenceDirections": {
+            "A": "可以不玩，原正常學習仍有回饋。",
+            "B": "原界線能保留，不以停下評價膽量。",
+            "C": "教師有競爭心，不要求學生陪打或承認教師比較強。",
+            "D": "降低被看著答的壓力，仍需尊重不參與者。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -112,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b226c3937c02d1b416eb89ea84a86b2b1de02cdbd45c3f7de31aeb3becc05e5",
+    "draftSha256": "ad0c3e01b49c95c0e55db4b5c7d0bae8a830da10965372518502c8aab1ca4f61",
     "seedAssignmentVersion": 1
   }
 }

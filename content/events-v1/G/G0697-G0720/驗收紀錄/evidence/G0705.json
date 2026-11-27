@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "320f237541732bbe4761170de3b089af87011aca905af2f07abdb8bc13e6afaa",
-      "checkedAt": "2026-11-27T12:32:47.288Z",
+      "sourceVersion": "1bbfb99b59ce3a3ff8b2f8f5a101827256ee3a7b1136dfa9c2a73f9f518dec11",
+      "checkedAt": "2026-11-27T12:40:52.869Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -49,9 +49,9 @@
           },
           {
             "id": 5,
-            "text": "取消我加的親友支持人氣票選。",
-            "action": "導師已撤回本人非必要觀眾支持數排名，不改原開放範圍。",
-            "tradeoff": "少了被支持的數字"
+            "text": "問他願不願意只把台詞交我看，不演，原稿按約還。",
+            "action": "導師已提出限本人意願的個別文字回饋邀請，未取得原稿、演出或公開授權。",
+            "tradeoff": "看不到現場表情與聲音"
           },
           {
             "id": 6,
@@ -68,29 +68,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 4056800175
+          "seed": 2331896937
         },
         "selectedIds": [
-          6,
-          1,
-          2
+          3,
+          2,
+          5
         ],
         "finalChoiceMap": {
-          "A": 1,
-          "B": 2,
-          "C": "emotional",
-          "D": 6
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
         },
-        "optionsDigest": "5f5eabfc016b81f63a17287211b5add5f822ffe40fec9e5436b2d295dfd98608"
+        "optionsDigest": "c186f95801b9cc0b5ba619c4fcbc206edb6bddee656dfadb964d9f9297f1542d"
       },
       "consequenceDirections": {
-        "A": "家庭不成特別被拒的一群，必要陪練心意仍可個別回應。",
-        "B": "選擇不等於票有通行權，未獲准照原安排。",
-        "C": "教師承受自己的不安，不以取消表演省掉必要教學。",
-        "D": "能練台詞，不將教師演完當學生已會。"
+        "A": "可以回應文字準備，不將交稿等同同意讓父母或同學觀看。",
+        "B": "教師承受自己的不安，不以取消表演省掉必要教學。",
+        "C": "可接住焦慮，不以撤展示懲罰他選觀眾。",
+        "D": "選擇不等於票有通行權，未獲准照原安排。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通5「取消我加的親友支持人氣票選。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "這次不加任何額外觀眾，按原校內工作範圍過場。",
+                "action": "導師已維持本次核准內部過場範圍，婉拒本人可決定的非必要加觀眾，不擅改訪客規定。",
+                "tradeoff": "少了同學捧場"
+              },
+              {
+                "id": 2,
+                "text": "詢問承辦能否在原規則內給學生自願選一位同學短看，不先放人。",
+                "action": "導師已提出限既有校規的單人觀摩可行性詢問，未取得核准或讓人入場。",
+                "tradeoff": "需等核准，也可能不行"
+              },
+              {
+                "id": 3,
+                "text": "提供不公開的個別試讀，這次不作完整過場展示。",
+                "action": "導師已在本人可調整範圍提供有限個別試讀替代，必要原課及權益另正常完成。",
+                "tradeoff": "少了走完整段的經驗"
+              },
+              {
+                "id": 4,
+                "text": "邀他日後自願談票想代表什麼，不現在要他向父母解釋。",
+                "action": "導師已發出限定本人觀眾選擇的自願短談邀請，未約成或要求當眾道歉。",
+                "tradeoff": "需另配正常短談時間"
+              },
+              {
+                "id": 5,
+                "text": "取消我加的親友支持人氣票選。",
+                "action": "導師已撤回本人非必要觀眾支持數排名，不改原開放範圍。",
+                "tradeoff": "少了被支持的數字"
+              },
+              {
+                "id": 6,
+                "text": "我用自有文本帶一小段技術練習，不讓他替全組演完整齣。",
+                "action": "導師已在本課以自有可用短文本提供有限技術示範，不取學生私事或要求家長扮觀眾。",
+                "tradeoff": "少了學生作品的現場感"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕沒人笑，自己的非必要暖場表演今天先撤，不拿他那疊票救場。",
+              "action": "導師已取消本人非必要私人暖場演出，不取用學生票券或改正式課務。",
+              "tradeoff": "少了出風頭的機會"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4056800175
+            },
+            "selectedIds": [
+              6,
+              1,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 2,
+              "C": "emotional",
+              "D": 6
+            },
+            "optionsDigest": "5f5eabfc016b81f63a17287211b5add5f822ffe40fec9e5436b2d295dfd98608"
+          },
+          "previousConsequenceDirections": {
+            "A": "家庭不成特別被拒的一群，必要陪練心意仍可個別回應。",
+            "B": "選擇不等於票有通行權，未獲准照原安排。",
+            "C": "教師承受自己的不安，不以取消表演省掉必要教學。",
+            "D": "能練台詞，不將教師演完當學生已會。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "320f237541732bbe4761170de3b089af87011aca905af2f07abdb8bc13e6afaa",
+    "draftSha256": "1bbfb99b59ce3a3ff8b2f8f5a101827256ee3a7b1136dfa9c2a73f9f518dec11",
     "seedAssignmentVersion": 1
   }
 }

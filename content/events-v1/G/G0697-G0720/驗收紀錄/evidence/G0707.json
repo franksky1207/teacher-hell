@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "ad0fe26a1e49a5c81f97df5663ab5853f1e6646c817487f9bef081359ea15334",
-      "checkedAt": "2026-11-27T12:32:47.291Z",
+      "sourceVersion": "bbfa4b86c78bb7d552f2298bb7090bcbb749a6f63e640e1305abf8fcbd0a358e",
+      "checkedAt": "2026-11-27T12:40:52.957Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -49,9 +49,9 @@
           },
           {
             "id": 5,
-            "text": "取消我加的最感人幕後工作票選。",
-            "action": "導師已撤回本人非必要幕後奉獻排名，不取個人傷勢作展示。",
-            "tradeoff": "少了一種被肯定的機會"
+            "text": "問受傷者是否想只看這段排練，不必為了保有位置再接新角色。",
+            "action": "導師已提出限健康允許與本人自願的有限旁觀選擇，未替其接受角色或免除成人照看。",
+            "tradeoff": "少了一份表演人力"
           },
           {
             "id": 6,
@@ -68,29 +68,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 2597253191
+          "seed": 3923006474
         },
         "selectedIds": [
           3,
-          4,
-          1
+          2,
+          5
         ],
         "finalChoiceMap": {
-          "A": 3,
-          "B": 1,
-          "C": 4,
+          "A": 5,
+          "B": 3,
+          "C": 2,
           "D": "emotional"
         },
-        "optionsDigest": "ab990ff832fe54de22b6b95adfa77d0955cbc96a5748bfde71e8444fe0ae1a56"
+        "optionsDigest": "aebb45034674ab981caf871e73041df55b8a3169091e42fd13f707fb394e252e"
       },
       "consequenceDirections": {
-        "A": "能保住排練內容，不把轉段當停止必要支持。",
-        "B": "可保有角色，不把能笑當健康已無礙。",
-        "C": "角色可以不同，不能靠替代塞更多工作。",
+        "A": "可以被照顧而不演，不能將旁觀當懲罰或降低必要健康支持。",
+        "B": "能保住排練內容，不把轉段當停止必要支持。",
+        "C": "必要成人工作仍有承接，不把退出等同沒貢獻。",
         "D": "教師放下主角感，必要資訊及照顧仍完整。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
+      "reviewer": "Codex／本輪實際逐篇語意核讀後，定向複核本篇改動候選、固定映射、客觀行動完成程度、後果方向及受影響旁白；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "第六輪輕量跨批觀察發現反覆以撤除額外人氣票選或排名充當普通候選，部分欠缺原情境支撐，形成共通選項模板。定向將普通5「取消我加的最感人幕後工作票選。」改為本事件具體的不同處置；其他候選及固定種子不變，由原工具真實重抽洗牌一次，不挑選組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "問本人願不願意只做原同意的短聲音工作，不再談傷勢。",
+                "action": "導師已提出限可負荷與本人自願的短語音工作確認，未代醫療判斷或要求自曝傷情。",
+                "tradeoff": "少了段子的熱鬧"
+              },
+              {
+                "id": 2,
+                "text": "這次不再分學生搬運或主持小任務，回原正常內容。",
+                "action": "導師已取消本人非必要學生搬運及主持加碼，保留必要教學與成人搬運照看。",
+                "tradeoff": "少了參與感"
+              },
+              {
+                "id": 3,
+                "text": "我用自有中性台詞接回，不請任何人演受傷故事。",
+                "action": "導師已以自有中性文本接回本人可安排段落，不引用個人醫療情節。",
+                "tradeoff": "教師需多帶一段"
+              },
+              {
+                "id": 4,
+                "text": "提供個別圖記替代，不願用聲音的人也可參與。",
+                "action": "導師已提供原目標內有限等值圖記方式，不強迫受傷者或他人上台。",
+                "tradeoff": "演出整體感減少"
+              },
+              {
+                "id": 5,
+                "text": "取消我加的最感人幕後工作票選。",
+                "action": "導師已撤回本人非必要幕後奉獻排名，不取個人傷勢作展示。",
+                "tradeoff": "少了一種被肯定的機會"
+              },
+              {
+                "id": 6,
+                "text": "邀發起者另談下次先問本人哪些偏好，不要代別人猜尷尬。",
+                "action": "導師已發出限定本人協作方式的自願短談邀請，未約成或安排醫療故事分享。",
+                "tradeoff": "要另排工作空檔"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也捨不得自己的串場，乾脆刪一段非必要長講，留點空白，不再用話把大家填滿。",
+              "action": "導師已取消本人非必要長篇串場，不省略必要醫療、安全告知或正常回饋。",
+              "tradeoff": "少了說完的滿足"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2597253191
+            },
+            "selectedIds": [
+              3,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 1,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "ab990ff832fe54de22b6b95adfa77d0955cbc96a5748bfde71e8444fe0ae1a56"
+          },
+          "previousConsequenceDirections": {
+            "A": "能保住排練內容，不把轉段當停止必要支持。",
+            "B": "可保有角色，不把能笑當健康已無礙。",
+            "C": "角色可以不同，不能靠替代塞更多工作。",
+            "D": "教師放下主角感，必要資訊及照顧仍完整。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ad0fe26a1e49a5c81f97df5663ab5853f1e6646c817487f9bef081359ea15334",
+    "draftSha256": "bbfa4b86c78bb7d552f2298bb7090bcbb749a6f63e640e1305abf8fcbd0a358e",
     "seedAssignmentVersion": 1
   }
 }

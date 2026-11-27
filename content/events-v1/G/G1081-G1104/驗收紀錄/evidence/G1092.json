@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eb614313db343bcbcc9a652d4c68dd22a658155816f5bfcd5bcaeec7218d9236",
+      "checkedAt": "2026-11-27T17:18:02.259Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先拿虛構短文一起試評，尺度談攏才談分工。",
+            "action": "以自製虛構文本對照既定評量尺度，不立即交付學生原稿。",
+            "tradeoff": "花時間，可能仍不合。"
+          },
+          {
+            "id": 2,
+            "text": "請他只提供不計分的文字回饋，由我評分。",
+            "action": "提出須合法授權與原評量一致的回饋分工，未代對方接受。",
+            "tradeoff": "本人仍要評分，需統整意見。"
+          },
+          {
+            "id": 3,
+            "text": "婉拒這次代改，我自己完成既定評量。",
+            "action": "拒絕額外代改邀請，自行承擔原有批改。",
+            "tradeoff": "繼續忙，也可能傷情面。"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意整理一般寫作講義，別看原稿。",
+            "action": "提出不接觸學生作品的合法原創教學資源協作邀請。",
+            "tradeoff": "需挑選整合，可能不合班級。"
+          },
+          {
+            "id": 5,
+            "text": "提出只對合法去識別樣本做成人教學交流。",
+            "action": "在必要同意與權限範圍內提出樣本討論，未取得作品使用同意。",
+            "tradeoff": "協調耗時，不能立即減半工作。"
+          },
+          {
+            "id": 6,
+            "text": "與教務談本人非急迫班務可否調整期限。",
+            "action": "提出非必要工作排程協調，不要求延誤作文必要回饋或改分。",
+            "tradeoff": "可能被拒，需說明安排。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服『甜』這個字，想自己也寫一段給他挑，但先說好別拿這次學生當我們的擂台。",
+          "action": "以本人自願原創短文邀成人互評，不改學生評分或要求他稱讚。",
+          "tradeoff": "暴露自己的文筆，耗空堂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2174557920
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "433ddd54eedf58b164dc29d56278319365efc7913527820f49ee62148f0baa65"
+      },
+      "consequenceDirections": {
+        "A": "可能被批得更狠也可能聊開，成人競爭不得影響本班評量。",
+        "B": "他可拒絕，講義不證明其標準較優。",
+        "C": "同事可失望，不能因此減少學生應有回饋。",
+        "D": "若無授權用虛構例，不自行傳全班稿件。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8f9bfc3c9c331d3afd36f57042829f4b6f218134280d09480b8936e32a58a48f",
+    "draftSha256": "eb614313db343bcbcc9a652d4c68dd22a658155816f5bfcd5bcaeec7218d9236",
     "seedAssignmentVersion": 1
   }
 }

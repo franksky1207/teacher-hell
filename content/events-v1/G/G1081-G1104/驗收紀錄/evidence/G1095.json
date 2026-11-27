@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "02684ae0608c73120dc51aef1ddfdd60050531d8bc8c2553a2c0ff62db88ea40",
+      "checkedAt": "2026-11-27T17:18:02.263Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他用虛構對話練習不替自己找藉口的說法。",
+            "action": "提供有限成人溝通演練，不代學生原諒或替其發言。",
+            "tradeoff": "花空堂，仍可能講不好。"
+          },
+          {
+            "id": 2,
+            "text": "邀他一起看考前桌面整理的既有規範。",
+            "action": "額外檢視現有可公開監考規則，提出未來說明改進，不追溯改考生責任。",
+            "tradeoff": "占時間，可能發現規則不清。"
+          },
+          {
+            "id": 3,
+            "text": "提供現有教師支持諮詢資訊。",
+            "action": "給成人既有支持資源入口，不代預約或揭學生個資。",
+            "tradeoff": "他可能不想用。"
+          },
+          {
+            "id": 4,
+            "text": "不另當中間人，讓他自行完成應有回應。",
+            "action": "婉拒額外代言與私人調解，維持必要事件交接。",
+            "tradeoff": "可能傷同事情面。"
+          },
+          {
+            "id": 5,
+            "text": "若校方與相關人員同意，邀合資格同事下次觀課，幫我們看監考說明是否清楚。",
+            "action": "提出經權責與必要同意的成人教學觀察協作邀請，不錄影、不揭本案學生，不認定已排定。",
+            "tradeoff": "要另排時間，也怕被挑出更多問題。"
+          },
+          {
+            "id": 6,
+            "text": "詢問學生是否願在之後另談考場感受，不談原諒。",
+            "action": "提出學生可拒的額外感受交流，不作必要更正條件。",
+            "tradeoff": "多一段時間，學生可能煩。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕被說『導師教的』，卻想在同科會議明講零作弊不是先定罪，讓我自己的口號也被問一遍。",
+          "action": "額外於合宜成人會議反省本人規範表述，不揭學生身分、不替同事卸責。",
+          "tradeoff": "丟面子，也可能引同事不滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3114234775
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "2d5b1aaa5ad70b10e1eb30dd8e48ced75aa2e4d57349f8fe74c9037d7f5ec12e"
+      },
+      "consequenceDirections": {
+        "A": "可拒絕，不能把資訊提供當情緒問題已處理。",
+        "B": "孩子可拒，不把沉默解讀為接受道歉。",
+        "C": "可提改善但不以規則模糊免除毀物責任。",
+        "D": "可能促成規範討論或被批評，不能以自我反省免必要責任。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通5成人監考研討與情緒會議反省過近，改為實際觀察協作邀請，仍不假定取得資格或同意。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "陪他用虛構對話練習不替自己找藉口的說法。",
+                "action": "提供有限成人溝通演練，不代學生原諒或替其發言。",
+                "tradeoff": "花空堂，仍可能講不好。"
+              },
+              {
+                "id": 2,
+                "text": "邀他一起看考前桌面整理的既有規範。",
+                "action": "額外檢視現有可公開監考規則，提出未來說明改進，不追溯改考生責任。",
+                "tradeoff": "占時間，可能發現規則不清。"
+              },
+              {
+                "id": 3,
+                "text": "提供現有教師支持諮詢資訊。",
+                "action": "給成人既有支持資源入口，不代預約或揭學生個資。",
+                "tradeoff": "他可能不想用。"
+              },
+              {
+                "id": 4,
+                "text": "不另當中間人，讓他自行完成應有回應。",
+                "action": "婉拒額外代言與私人調解，維持必要事件交接。",
+                "tradeoff": "可能傷同事情面。"
+              },
+              {
+                "id": 5,
+                "text": "向教學端提議一次不具名的監考情境討論。",
+                "action": "提出使用虛構素材的成人研討建議，未取得安排。",
+                "tradeoff": "準備耗時，可能被視為影射。"
+              },
+              {
+                "id": 6,
+                "text": "詢問學生是否願在之後另談考場感受，不談原諒。",
+                "action": "提出學生可拒的額外感受交流，不作必要更正條件。",
+                "tradeoff": "多一段時間，學生可能煩。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也怕被說『導師教的』，卻想在同科會議明講零作弊不是先定罪，讓我自己的口號也被問一遍。",
+              "action": "額外於合宜成人會議反省本人規範表述，不揭學生身分、不替同事卸責。",
+              "tradeoff": "丟面子，也可能引同事不滿。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1846819672
+            },
+            "selectedIds": [
+              5,
+              4,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 5,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "061e21e5909a1185b57ef6ab71d461b1f2af2801ffe20f10a995999a550d9d4c"
+          },
+          "previousConsequenceDirections": {
+            "A": "可拒絕，不能把資訊提供當情緒問題已處理。",
+            "B": "需去識別且不以討論處分學生或替失誤洗白。",
+            "C": "可能促成規範討論或被批評，不能以自我反省免必要責任。",
+            "D": "他仍須依法負責，學生不因教師拒代言失去支持。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "332b34d6dab6ba8d8f7d89d198514ac95c2b2ec85efffe585191d86b891c5f21",
+    "draftSha256": "02684ae0608c73120dc51aef1ddfdd60050531d8bc8c2553a2c0ff62db88ea40",
     "seedAssignmentVersion": 1
   }
 }

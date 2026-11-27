@@ -16,14 +16,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8f601d4ea934f4ca164671afd824061b63b86e72a64ac667de98ae933cc1486e",
+      "checkedAt": "2026-11-27T17:18:02.261Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "額外整理未答問題，邀營養端一次說明。",
+            "action": "提出經必要授權的問題彙整與共同說明邀請，未取得出席或保證。",
+            "tradeoff": "花協調時間，可能仍答不齊。"
+          },
+          {
+            "id": 2,
+            "text": "提供已公開的廠商供餐資訊，讓家長自行閱讀。",
+            "action": "額外提供已知公開非醫療判斷資料，不代確認安全。",
+            "tradeoff": "資訊可能不足。"
+          },
+          {
+            "id": 3,
+            "text": "邀家長自行選擇非緊急進度更新頻率。",
+            "action": "提出有界限的額外進度交流約定，不延誤必要即時告知。",
+            "tradeoff": "自己多聯絡，頻率可能談不攏。"
+          },
+          {
+            "id": 4,
+            "text": "請營養端評估是否能提供家庭看得懂的流程圖。",
+            "action": "提出額外一般說明素材製作建議，不自行編造產線。",
+            "tradeoff": "要等對方，也可能被拒。"
+          },
+          {
+            "id": 5,
+            "text": "不加私人廠商調查，請專業端處理正式答覆。",
+            "action": "婉拒教師額外非專業產線調查，必要轉達及支持仍照常。",
+            "tradeoff": "家長可能覺得不夠積極。"
+          },
+          {
+            "id": 6,
+            "text": "另邀孩子自願談用餐時希望怎麼相處。",
+            "action": "提出不追問醫療細節的一般用餐感受交流。",
+            "tradeoff": "占課間，孩子可拒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽到全家分鍋我有點心酸，想另提一次不用吃東西的班級猜圖遊戲，別每次相聚都圍著點心。",
+          "action": "提出全新自願、合法可用時間的原創猜圖交流方案，不假定已有餐會、不揭個別健康資訊，未取得參與同意。",
+          "tradeoff": "自己要備圖和挪時間，可能沒人想玩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1399594854
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "2a564f80f4f92a9afc6a39b2a4c2ab23a97a14fff096f12d9c93a4dc28fdad35"
+      },
+      "consequenceDirections": {
+        "A": "學生可拒絕，活動不替代必要飲食安全，也不保證孩子感到被接納。",
+        "B": "可能得知不想被圍觀，感受交流不代營養安全。",
+        "C": "營養端可說明限制，不以開會取代安全供餐。",
+        "D": "家長可追問，公開資料不等適合個別嚴重過敏者。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原文虛構教師午餐聚會及已存在餐敘犧牲，改為明確新提案與真實準備代價。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "額外整理未答問題，邀營養端一次說明。",
+                "action": "提出經必要授權的問題彙整與共同說明邀請，未取得出席或保證。",
+                "tradeoff": "花協調時間，可能仍答不齊。"
+              },
+              {
+                "id": 2,
+                "text": "提供已公開的廠商供餐資訊，讓家長自行閱讀。",
+                "action": "額外提供已知公開非醫療判斷資料，不代確認安全。",
+                "tradeoff": "資訊可能不足。"
+              },
+              {
+                "id": 3,
+                "text": "邀家長自行選擇非緊急進度更新頻率。",
+                "action": "提出有界限的額外進度交流約定，不延誤必要即時告知。",
+                "tradeoff": "自己多聯絡，頻率可能談不攏。"
+              },
+              {
+                "id": 4,
+                "text": "請營養端評估是否能提供家庭看得懂的流程圖。",
+                "action": "提出額外一般說明素材製作建議，不自行編造產線。",
+                "tradeoff": "要等對方，也可能被拒。"
+              },
+              {
+                "id": 5,
+                "text": "不加私人廠商調查，請專業端處理正式答覆。",
+                "action": "婉拒教師額外非專業產線調查，必要轉達及支持仍照常。",
+                "tradeoff": "家長可能覺得不夠積極。"
+              },
+              {
+                "id": 6,
+                "text": "另邀孩子自願談用餐時希望怎麼相處。",
+                "action": "提出不追問醫療細節的一般用餐感受交流。",
+                "tradeoff": "占課間，孩子可拒。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我聽到全家分鍋有點心酸，願意把自己的午餐聚會改成不圍著食物的活動提案，讓孩子不用每次先解釋不能吃。",
+              "action": "提出本人可調之未來非必要班級交流採非食物形式的方案，不假定孩子接受或改掉必要餐食支持。",
+              "tradeoff": "放掉教師期待的餐敘，需另準備。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3676825485
+            },
+            "selectedIds": [
+              2,
+              1,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "830a5ec262fa97aafaa7cd0d7901a575862f88186f57306437d8f5d8d7d39b76"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可仍不想參加，提案不得代替安全供餐或將孩子公開為原因。",
+            "B": "可能得知不想被圍觀，感受交流不代營養安全。",
+            "C": "家長可追問，公開資料不等適合個別嚴重過敏者。",
+            "D": "營養端可說明限制，不以開會取代安全供餐。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "04b8c605892d04bc52156385d7f239fe34481628b7d63eb211952c9248f1b54e",
+    "draftSha256": "8f601d4ea934f4ca164671afd824061b63b86e72a64ac667de98ae933cc1486e",
     "seedAssignmentVersion": 1
   }
 }

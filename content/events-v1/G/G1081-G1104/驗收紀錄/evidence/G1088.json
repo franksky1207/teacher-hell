@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a55db282fe68b481df9d7d8c79ecc0b1c3c0aca845e1e5b023702f502c75da7f",
+      "checkedAt": "2026-11-27T17:18:02.253Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀孩子自選一個不顯眼的額外關心方式。",
+            "action": "提出學生可拒絕的非必要關懷形式選擇，不把回應當獲支持條件。",
+            "tradeoff": "要另談，未必立即有答案。"
+          },
+          {
+            "id": 2,
+            "text": "提議只約一次出差期間的自願近況交流，不承諾每天問。",
+            "action": "提出有界限的一次額外交流邀請，未排定或代孩子接受。",
+            "tradeoff": "可能被認為不夠積極。"
+          },
+          {
+            "id": 3,
+            "text": "問家長是否願意留一段只給孩子的打氣話，由孩子自選要不要收。",
+            "action": "提出合意私人訊息傳遞方式，不公開或強迫孩子閱讀。",
+            "tradeoff": "多一次聯絡，可能使孩子不自在。"
+          },
+          {
+            "id": 4,
+            "text": "把額外每日問候留給家人決定，我不加固定查問。",
+            "action": "婉拒非必要每日主動查問，維持教師應有觀察支持及既定聯繫。",
+            "tradeoff": "家長可能覺得冷淡。"
+          },
+          {
+            "id": 5,
+            "text": "另邀班級用不具名情境談『不同意也能一起相處』。",
+            "action": "安排不影射個案的一般相處討論，不要求受冷落者現身作例。",
+            "tradeoff": "占班務，可能被猜到。"
+          },
+          {
+            "id": 6,
+            "text": "提供現有家庭遠距聯繫的公共建議，讓家長自行挑。",
+            "action": "額外提供已知一般遠距親子溝通資料，不代家庭排約或監控。",
+            "tradeoff": "資訊可能不適用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想說每天都會問，好讓他安心登機；但不想拿孩子換承諾，決定今晚先關掉自己的非緊急班群提示，明天照約接續。",
+          "action": "在已完成必要聯繫外設定本人私人非緊急訊息免打擾，清楚告知工作回覆與緊急窗口，不承諾額外每日問候。",
+          "tradeoff": "家長可能更不安，自己須忍住一直看手機。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1249199418
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "2f12f161b41910562990138401ba895ecb20d3f75cfcc767d121be51eb2dfa09"
+      },
+      "consequenceDirections": {
+        "A": "家長可無空錄，孩子可不收，不當成情緒支持已有效。",
+        "B": "非緊急訊息可待工作時段，危險或既約責任不被靜音排除。",
+        "C": "家長可不用，不能據此保證孩子不孤單。",
+        "D": "須避免再次標記孩子，討論不替代必要事件處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2818cec839e532997f1ac1bfd294b1412303c33f1297ccf079c976d62b4a6dcb",
+    "draftSha256": "a55db282fe68b481df9d7d8c79ecc0b1c3c0aca845e1e5b023702f502c75da7f",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "36da0ec530bc9d73b4c380f00823d601ffcbd4a440926b8dd5cf633a0a903d3c",
+      "checkedAt": "2026-11-27T17:18:02.269Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出只針對熱門書的自願輪候方案。",
+            "action": "提出不剝奪原借閱權的公平輪候建議，未把名單視為已存在。",
+            "tradeoff": "需管理，熱門書仍要等。"
+          },
+          {
+            "id": 2,
+            "text": "提議今天依到場順序借，不添新的登記表。",
+            "action": "提出撤除成績門檻後採現場先到先借的方案，未假定原本已有此規則或額外表單。",
+            "tradeoff": "仍可能有人搶不到，需當場協調。"
+          },
+          {
+            "id": 3,
+            "text": "邀願意的人推薦不熱門但喜歡的書。",
+            "action": "徵詢自願一般閱讀推薦，不要求透露借閱紀錄。",
+            "tradeoff": "占班務，未必分散熱門需求。"
+          },
+          {
+            "id": 4,
+            "text": "我另找一份合法公開的短文，給想讀的人多一個選擇。",
+            "action": "查找並提供具班級使用授權的公開閱讀材料，不拿來取代原借閱權。",
+            "tradeoff": "花備課，內容未必合口味。"
+          },
+          {
+            "id": 5,
+            "text": "詢問學校圖書館能否提供熱門同類書資訊。",
+            "action": "查詢既有書目資訊，不代借書或取得複本。",
+            "tradeoff": "要聯絡，可能無館藏。"
+          },
+          {
+            "id": 6,
+            "text": "邀股長與願意的同學做一本不記成績的閱讀小誌。",
+            "action": "提出全新自願原創小誌方案，未成立、未拿作品換借閱資格。",
+            "tradeoff": "編輯耗時，可能沒人投稿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那幾張空卡讓我很難堪，我願意拿自己的閒書來當天交流，但明講不要求任何人背給我聽。",
+          "action": "提出本人合法私藏書自願交流邀請，未代學生同意或建立教師借班書資格。",
+          "tradeoff": "花休息並承擔私人書借損風險。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2655010115
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "6867fc770bbf09957ac7e8c2ee6eab694620853d868c258121d91b153efdec21"
+      },
+      "consequenceDirections": {
+        "A": "須依權責公平形成安排，不能借未建立的順序排除其他合法借閱需求。",
+        "B": "學生可拒，推薦不等取得更多書。",
+        "C": "學生可不想讀，必要更正不以接受教師好意為條件。",
+        "D": "可以不成刊，不向未參與者減權。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2假定既有先到先借制度，改為從同一開場提出現場排序，不拒絕不存在的表單。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "提出只針對熱門書的自願輪候方案。",
+                "action": "提出不剝奪原借閱權的公平輪候建議，未把名單視為已存在。",
+                "tradeoff": "需管理，熱門書仍要等。"
+              },
+              {
+                "id": 2,
+                "text": "先沿用原本先到先借，不加新工具。",
+                "action": "在撤除成績門檻後保留現有合法借閱順序，不憑空取消原制度。",
+                "tradeoff": "可能繼續有人搶不到。"
+              },
+              {
+                "id": 3,
+                "text": "邀願意的人推薦不熱門但喜歡的書。",
+                "action": "徵詢自願一般閱讀推薦，不要求透露借閱紀錄。",
+                "tradeoff": "占班務，未必分散熱門需求。"
+              },
+              {
+                "id": 4,
+                "text": "我另找一份合法公開的短文，給想讀的人多一個選擇。",
+                "action": "查找並提供具班級使用授權的公開閱讀材料，不拿來取代原借閱權。",
+                "tradeoff": "花備課，內容未必合口味。"
+              },
+              {
+                "id": 5,
+                "text": "詢問學校圖書館能否提供熱門同類書資訊。",
+                "action": "查詢既有書目資訊，不代借書或取得複本。",
+                "tradeoff": "要聯絡，可能無館藏。"
+              },
+              {
+                "id": 6,
+                "text": "邀股長與願意的同學做一本不記成績的閱讀小誌。",
+                "action": "提出全新自願原創小誌方案，未成立、未拿作品換借閱資格。",
+                "tradeoff": "編輯耗時，可能沒人投稿。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那幾張空卡讓我很難堪，我願意拿自己的閒書來當天交流，但明講不要求任何人背給我聽。",
+              "action": "提出本人合法私藏書自願交流邀請，未代學生同意或建立教師借班書資格。",
+              "tradeoff": "花休息並承擔私人書借損風險。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2430981470
+            },
+            "selectedIds": [
+              1,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "d09192bfaaec7ce3797944d64db9d1fee68c791f3920dd27d610041e6be538e1"
+          },
+          "previousConsequenceDirections": {
+            "A": "可以不成刊，不向未參與者減權。",
+            "B": "有書目也須依館規實際借閱。",
+            "C": "學生可有不同意見，規則需依權責合意形成。",
+            "D": "學生可不想讀，必要更正不以接受教師好意為條件。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3a7010a99731861327102b14efb663a05f6b0048809363cffe54e38f8286149d",
+    "draftSha256": "36da0ec530bc9d73b4c380f00823d601ffcbd4a440926b8dd5cf633a0a903d3c",
     "seedAssignmentVersion": 1
   }
 }

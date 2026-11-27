@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d40a8b89b1cf3253e37a5a7093e43d2ea719e93ede9030f47e2c3d48b9ab7549",
+      "checkedAt": "2026-11-27T17:18:02.265Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他改畫無香、無燈的紙上布置草案。",
+            "action": "提出原創平面視覺方案邀請，未核准施工。",
+            "tradeoff": "要重畫，少了原效果。"
+          },
+          {
+            "id": 2,
+            "text": "問總務哪些布置材料與位置可以使用。",
+            "action": "詢問既有合規布置條件，不代核准燈串。",
+            "tradeoff": "要等回覆。"
+          },
+          {
+            "id": 3,
+            "text": "提議剩下私人物品先帶回，班上維持基本公告。",
+            "action": "提出合意收回未獲准私有裝飾的非必要用途安排，不以物品收回代替照護。",
+            "tradeoff": "心血落空，牆面較單調。"
+          },
+          {
+            "id": 4,
+            "text": "邀同學匿名提一個視覺上想保留的元素。",
+            "action": "徵詢自願一般美感意見，不蒐健康資料或票決過敏需求。",
+            "tradeoff": "需整理，意見可能散。"
+          },
+          {
+            "id": 5,
+            "text": "提議把設計留成可自願看的數位圖，不放教室實物。",
+            "action": "提出經作者與必要權限同意的原創數位展示方案，未發布。",
+            "tradeoff": "少實體氛圍，需整理。"
+          },
+          {
+            "id": 6,
+            "text": "讓他自選是否繼續做幹部布置，另談可負擔範圍。",
+            "action": "提出自願職務調整討論，不因失誤直接撤職或要求賠全部費用。",
+            "tradeoff": "要重新協調班務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想教室好看，願意把自己桌上的雜物先收進櫃子，空出一塊給他提案，別只叫他拆。",
+          "action": "教師先整理本人可處置物品，提供合規空間的提案可能，不承諾採用或恢復香燈。",
+          "tradeoff": "自己失去隨手拿物的方便。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2416305159
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "b82141df1a32cd3d42df21882db93f90dc46028a928b0b262e6c6377c8e735ff"
+      },
+      "consequenceDirections": {
+        "A": "他可不願改，無香不代表所有材料都安全。",
+        "B": "可限制材料，未准不得裝回。",
+        "C": "他可覺得空間太小，提案仍需安全與權限確認。",
+        "D": "他可想繼續，調整不抵銷必要事件處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6f4400ce5ba1173b9645f5e4830c772ad68cd73c0f27981a28cb1ba698cebf04",
+    "draftSha256": "d40a8b89b1cf3253e37a5a7093e43d2ea719e93ede9030f47e2c3d48b9ab7549",
     "seedAssignmentVersion": 1
   }
 }

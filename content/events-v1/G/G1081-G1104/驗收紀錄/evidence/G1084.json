@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7f5ad060c0bb5770820557bfe6c7b284628b045070dfffa70486c1c6d41e68f3",
+      "checkedAt": "2026-11-27T17:18:02.240Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這週晨讀先不改，另約時間一起看題目。",
+            "action": "保留尚未變更的晨讀，提出成人共同檢視題目邀約，未排定測驗。",
+            "tradeoff": "要另約，同事可能失望。"
+          },
+          {
+            "id": 2,
+            "text": "提議把題目放進他本來的英文課，由他安排。",
+            "action": "向有權科任提出本科課內調整建議，不代其決定課程。",
+            "tradeoff": "壓縮該科其他進度。"
+          },
+          {
+            "id": 3,
+            "text": "我願整理學生自選閱讀的實際作品，讓他看這段時間在做什麼。",
+            "action": "額外整理已獲必要同意、去識別的既有閱讀成果作成人教學交流。",
+            "tradeoff": "增加整理時間，成果未必有說服力。"
+          },
+          {
+            "id": 4,
+            "text": "提出一次不記分的自願試用，時間另外協調。",
+            "action": "提出額外自願診斷題試用方案，未核准或召集，不占必要休息與既定權益。",
+            "tradeoff": "要協調時段，參與可能少。"
+          },
+          {
+            "id": 5,
+            "text": "請他挑出最想知道的兩個學習困難，我帶回班上聽意見。",
+            "action": "接受收集一般自願學習需求的協作，不替學生同意考卷。",
+            "tradeoff": "花班務時間，答案可能不一致。"
+          },
+          {
+            "id": 6,
+            "text": "提議兩人向課程承辦一起談晨讀目的。",
+            "action": "提出共同教學協調邀請，未取得承辦到場或改課核准。",
+            "tradeoff": "多一次會議，可能更僵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服把閱讀叫鬆散，想選一段自己喜歡的文章，跟他各讀各說，別只拿平均分說話。",
+          "action": "邀同事進行自願成人文本交流，由本人選合法可用短文，不強迫他接受閱讀成效結論。",
+          "tradeoff": "暴露自己的品味，也花空堂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2646108169
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e0086babb984dfb3e82bd88f5fdb2b0d1ead1f0200e4530ae4c9f9a82bd7cc92"
+      },
+      "consequenceDirections": {
+        "A": "可能找到教學用途或談不攏，不能偷偷把題目改成晨讀必考。",
+        "B": "學生可不回應，需求資訊不等測驗獲准。",
+        "C": "他可不接受，學生仍保有既定晨讀。",
+        "D": "他可能願聊或覺得岔題，教師須承受理念未獲認同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c82d71d0b7fd6e3a6c5023628ea247909f33445c4cf9efc3d5f268507a4c3f3e",
+    "draftSha256": "7f5ad060c0bb5770820557bfe6c7b284628b045070dfffa70486c1c6d41e68f3",
     "seedAssignmentVersion": 1
   }
 }

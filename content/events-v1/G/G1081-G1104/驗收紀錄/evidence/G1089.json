@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "19a202f5ade7c0ff345443d7e6073ea5bceebd053a688cb491317fe1fa224462",
+      "checkedAt": "2026-11-27T17:18:02.254Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提議依說明書試一次低風速，再談是否適合。",
+            "action": "提出經物主合意及校規允許的低風速使用觀察，不預稱改善空氣或噪音。",
+            "tradeoff": "需花時間，可能仍吵。"
+          },
+          {
+            "id": 2,
+            "text": "問他是否願意終止借用，由合適成人安排歸還。",
+            "action": "提出合意終止本次借用及後續歸還協調，不擅丟或強迫物主續借。",
+            "tradeoff": "少設備，安排搬運。"
+          },
+          {
+            "id": 3,
+            "text": "向校方詢問可否改放其他合宜公共空間。",
+            "action": "徵詢須物主與權責同意的改置方案，未搬移或取得許可。",
+            "tradeoff": "多方聯繫，可能無適合處。"
+          },
+          {
+            "id": 4,
+            "text": "另蒐集同學自願提出的噪音感受，不收健康資料。",
+            "action": "提出一般設備使用感受徵詢，不代多數強迫少數承受不適。",
+            "tradeoff": "占課間，意見可能分歧。"
+          },
+          {
+            "id": 5,
+            "text": "請總務提供現有教室設備評估資訊。",
+            "action": "查詢既有合法設備評估資料，不要求職員保證淨化結果。",
+            "tradeoff": "可能沒有，需等待。"
+          },
+          {
+            "id": 6,
+            "text": "我願做一張可翻面的使用牌，提醒自己依約開關。",
+            "action": "教師自製不含健康資料的使用提示工具，設定仍待合意，不讓學生負責判斷風險。",
+            "tradeoff": "花準備時間，可能仍忘。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被質問得有點刺，還是想把機器搬到自己授課看得見的地方，這回讓我承擔那點聲音。",
+          "action": "提出本人授課時將設備置於合規可視位置的合意試用建議，不代他科同意，不自行占通道。",
+          "tradeoff": "自己承受聲音且要協調。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3404087952
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "bf36ce679b067d3da017401d5fbf74be957dac1d1a8e292b7050aabb2e19d210"
+      },
+      "consequenceDirections": {
+        "A": "提示不保證教師遵守，未達成使用合意前不當已定規則。",
+        "B": "感受不代表醫療檢測，也不抵銷必要支持。",
+        "C": "物主可另有時間，必要健康支持不以借用續存為條件。",
+        "D": "家長可不願試，噪音若不適合仍須調整，不能以忍耐取代判斷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e5c61b4f8d98fa341ec70575c3603c49d31d6a1c857dca40c2eefccb319d891b",
+    "draftSha256": "19a202f5ade7c0ff345443d7e6073ea5bceebd053a688cb491317fe1fa224462",
     "seedAssignmentVersion": 1
   }
 }

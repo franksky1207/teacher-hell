@@ -16,14 +16,155 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "394a83a3786cb2df80f3e2c2806005d9ba5e23653c70e1d321e1039b52a427a5",
+      "checkedAt": "2026-11-27T17:18:02.267Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出改成兩份各自完成的短報告，評量看同一組能力，不再多加共同交流。",
+            "action": "提出符合既定公平評量與可行期限的個別短報告替代方案，未代兩人同意，不含普通3的額外共同口頭交流。",
+            "tradeoff": "失去完整合組作品，教師須調整素材。"
+          },
+          {
+            "id": 2,
+            "text": "提出限期微型合作提案，工作只由兩人自己選。",
+            "action": "提供須雙方合意且不影響公平期限的小規模合作方案，未成立新分工。",
+            "tradeoff": "要追蹤，仍有落空風險。"
+          },
+          {
+            "id": 3,
+            "text": "提議各自交內容，另保留一次自願共同口頭交流。",
+            "action": "提出公平個別繳交加額外自願交流的方案，未代學生接受。",
+            "tradeoff": "少整合作品，需另排短段。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一份共同進度看板範本，供他們自選。",
+            "action": "提供不含家庭隱私的原創工具，不代填進度或強迫公開。",
+            "tradeoff": "花準備，可能不用。"
+          },
+          {
+            "id": 5,
+            "text": "不加私人調解，依原有分組調整程序處理。",
+            "action": "拒絕教師非必要追加調解，依法且公平處理原課程分組。",
+            "tradeoff": "家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長另談怎樣支持孩子又不替孩子多接工作。",
+            "action": "提出成人自願一般親職交流，不評斷別人家庭。",
+            "tradeoff": "占空堂，家長可能不認同。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他一直退讓我反而有點急，想先陪門外那個孩子走一小段，聽他說完再回來，不替大人接下一個條件。",
+          "action": "提出學生自願、在合法照看範圍內的有限步行交流，不先承諾續組或額外勞務。",
+          "tradeoff": "自己多花課間，家長可能覺得被晾。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1545498422
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "9010752e37ec39319bc8d1272fa98fd5489a66e3276ea937aa5f79c6e854bfe4"
+      },
+      "consequenceDirections": {
+        "A": "家長可拒談，不能以接受建議換分組優惠。",
+        "B": "工具可無法改善合作，不等於同意續組。",
+        "C": "學生可不想走或不說，不能把短談當已同意分工。",
+        "D": "不能把拒調解當拒聽學生意願或免必要教學。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通1以必要個別意願確認為主，改為有別微型合作與個別加共同口頭交流的純個別作品方案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "先分別邀兩人說願不願意繼續，不讓家長在場代答。",
+                "action": "提出學生自願意願交流，必要評量不取決於家長要求。",
+                "tradeoff": "多兩次談話，可能無法續組。"
+              },
+              {
+                "id": 2,
+                "text": "提出限期微型合作提案，工作只由兩人自己選。",
+                "action": "提供須雙方合意且不影響公平期限的小規模合作方案，未成立新分工。",
+                "tradeoff": "要追蹤，仍有落空風險。"
+              },
+              {
+                "id": 3,
+                "text": "提議各自交內容，另保留一次自願共同口頭交流。",
+                "action": "提出公平個別繳交加額外自願交流的方案，未代學生接受。",
+                "tradeoff": "少整合作品，需另排短段。"
+              },
+              {
+                "id": 4,
+                "text": "我願做一份共同進度看板範本，供他們自選。",
+                "action": "提供不含家庭隱私的原創工具，不代填進度或強迫公開。",
+                "tradeoff": "花準備，可能不用。"
+              },
+              {
+                "id": 5,
+                "text": "不加私人調解，依原有分組調整程序處理。",
+                "action": "拒絕教師非必要追加調解，依法且公平處理原課程分組。",
+                "tradeoff": "家長可能失望。"
+              },
+              {
+                "id": 6,
+                "text": "邀家長另談怎樣支持孩子又不替孩子多接工作。",
+                "action": "提出成人自願一般親職交流，不評斷別人家庭。",
+                "tradeoff": "占空堂，家長可能不認同。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "看他一直退讓我反而有點急，想先陪門外那個孩子走一小段，聽他說完再回來，不替大人接下一個條件。",
+              "action": "提出學生自願、在合法照看範圍內的有限步行交流，不先承諾續組或額外勞務。",
+              "tradeoff": "自己多花課間，家長可能覺得被晾。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1409792678
+            },
+            "selectedIds": [
+              6,
+              5,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 6,
+              "D": 5
+            },
+            "optionsDigest": "f5921c1aecc776372aff5dbcbe5ce42e037d0e7a03304e81763de0974814b798"
+          },
+          "previousConsequenceDirections": {
+            "A": "可有人拒交流，分數不因拒絕降低。",
+            "B": "學生可不想走或不說，不能把短談當已同意分工。",
+            "C": "家長可拒談，不能以接受建議換分組優惠。",
+            "D": "不能把拒調解當拒聽學生意願或免必要教學。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8b70da5ac8c8cc46112ed3e6e08ae3395493b6086e405124f7f35f86a9c17e71",
+    "draftSha256": "394a83a3786cb2df80f3e2c2806005d9ba5e23653c70e1d321e1039b52a427a5",
     "seedAssignmentVersion": 1
   }
 }

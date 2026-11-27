@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ab50bf9c69907a8cbeee3244bcbf832883c1a7b70b41fdc42f3c106423c64b55",
+      "checkedAt": "2026-11-27T17:18:02.256Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "提出這一戶使用校方既有安全聯絡管道的替代申請。",
+            "action": "送出符合權責的個別聯絡替代請求，未核准前不宣稱紙本取消。",
+            "tradeoff": "要追蹤，可能只准部分替代。"
+          },
+          {
+            "id": 2,
+            "text": "邀他自選每週一個方便的非緊急聯絡時段。",
+            "action": "提出成人自願的固定一般聯絡時段，未代對方承諾，不限縮緊急通知。",
+            "tradeoff": "本人需排時間，家長可能輪班又改。"
+          },
+          {
+            "id": 3,
+            "text": "給他現有紙本通知的簡明事項索引，少翻幾頁。",
+            "action": "額外整理不含他人個資的本人班務資訊索引，不替簽名。",
+            "tradeoff": "增加整理，仍有紙本負擔。"
+          },
+          {
+            "id": 4,
+            "text": "請他用假資料展示表單，供行政評估設計。",
+            "action": "提出匿名虛構資料工具展示邀請，未採購或開放真實填寫。",
+            "tradeoff": "花時間，未必採用。"
+          },
+          {
+            "id": 5,
+            "text": "提議由家長自主指定合規聯絡成人，先了解授權條件。",
+            "action": "查詢合法聯絡授權方式，不假定家中已有可幫忙者或變更監護權。",
+            "tradeoff": "可能無人可代，需另談。"
+          },
+          {
+            "id": 6,
+            "text": "我不協辦私人表單，只提供既有校內資訊協助入口。",
+            "action": "拒絕額外共同建立私人系統，提供已知正式管道資訊。",
+            "tradeoff": "家長可能覺得推事。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也討厭重抄，願意拿自己的工作通知做一份去個資示例，讓資訊組看每天到底重複幾次。",
+          "action": "額外整理本人既有通知流程的去識別實例供改善參考，不虛構表單使用工時。",
+          "tradeoff": "花空堂，可能被說多事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3658583228
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "ac26b57afac6c57d813d48126e9b631104902ee2f1a0ff890a57f85e79d0ea9c"
+      },
+      "consequenceDirections": {
+        "A": "可促成討論或無改變，不以案例迫家長公開輪班生活。",
+        "B": "行政可拒看，展示不等於安全審核通過。",
+        "C": "家長可不用，索引不當必要通知已送達證明。",
+        "D": "若無人不要求找人頂替，家長仍有知情權。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "50d62c85d9e0c1145c180776fd3964c20f207bfb0202c9a409d7f97bd527049c",
+    "draftSha256": "ab50bf9c69907a8cbeee3244bcbf832883c1a7b70b41fdc42f3c106423c64b55",
     "seedAssignmentVersion": 1
   }
 }

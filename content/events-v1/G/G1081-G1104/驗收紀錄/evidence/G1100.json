@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "aa98d130c50f91b9634831272b3bf0f92e4f56a4a51372ea1eb6a2443ac64bf3",
+      "checkedAt": "2026-11-27T17:18:02.272Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他先說這張卷最想確認哪兩項能力。",
+            "action": "提出成人教學目標交流，不代命題教師核定卷面。",
+            "tradeoff": "花空堂，可能仍分歧。"
+          },
+          {
+            "id": 2,
+            "text": "提供班上自願回報的一般困難，讓他自行調題。",
+            "action": "額外整理去識別的一般學習需求，未代學生保證表現。",
+            "tradeoff": "需徵詢整理，可能不足。"
+          },
+          {
+            "id": 3,
+            "text": "提議把基礎題和延伸題分開說明用途。",
+            "action": "向科任提出評量呈現建議，不改既定公平標準。",
+            "tradeoff": "可能增加說明工作。"
+          },
+          {
+            "id": 4,
+            "text": "詢問同科是否有可合法使用的對照題資源。",
+            "action": "查詢既有合法題目資訊，未取得授權或代科任選題。",
+            "tradeoff": "可能沒合用題。"
+          },
+          {
+            "id": 5,
+            "text": "我不介入命題，但願意協調合規課內支持時間。",
+            "action": "提出有權範圍內的教學支援協調，不代准額外留校。",
+            "tradeoff": "占班務，可能無時段。"
+          },
+          {
+            "id": 6,
+            "text": "建議他自願將命題疑問交同科共同討論。",
+            "action": "提出專業同儕研討建議，未取得他人審題或主管核准。",
+            "tradeoff": "可能傷自尊，需再約。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕家長拿兩張分數問我，想自己寫一段給家長看的評量用途草稿，請他狠狠挑錯。",
+          "action": "額外起草一般評量用途說明供科任檢視，未發布或替其承諾考分。",
+          "tradeoff": "增加準備，可能被嫌外行。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 948608354
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "41fa92570511fc5e1c28c7f3110b0a80cc48cad9f40085388734dfd4b8d9474c"
+      },
+      "consequenceDirections": {
+        "A": "科任可不採用，不拿個別成績當公開例子。",
+        "B": "科任可拒改，發布仍須正確與權責確認，不拿草稿洗白失真評量。",
+        "C": "他可拒，不能用延伸題私設未告知扣分。",
+        "D": "可釐清或談不攏，目標討論不證明卷子有效。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "517035660216cc1c534a55b6ca4aa726de45dbe07c074dba53140f5e881073de",
+    "draftSha256": "aa98d130c50f91b9634831272b3bf0f92e4f56a4a51372ea1eb6a2443ac64bf3",
     "seedAssignmentVersion": 1
   }
 }

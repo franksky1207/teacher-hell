@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f9fa78f20ea561cc2e62f104b6e81e48527c761480ce9bb4e042d249c84b6b3b",
+      "checkedAt": "2026-11-27T17:18:02.275Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用虛構紀錄和他試簡化欄位，留下必要脈絡。",
+            "action": "提出假資料表單設計試用，不使用真實學生資訊或免去必要紀錄。",
+            "tradeoff": "花工作時間，今天未必採用。"
+          },
+          {
+            "id": 2,
+            "text": "詢問主管是否可調整非急迫彙整期限。",
+            "action": "提出非必要重複彙整排程請求，不延誤風險交接。",
+            "tradeoff": "可能被拒，要說明。"
+          },
+          {
+            "id": 3,
+            "text": "我願將自己已有的合法文字按正式欄位另做索引。",
+            "action": "額外整理本人已具權限紀錄的定位索引，不複製到私人表單。",
+            "tradeoff": "少備課時間。"
+          },
+          {
+            "id": 4,
+            "text": "請資訊端評估現有系統能否減少重複輸入。",
+            "action": "提出系統功能查詢，不移出資料或自行串接。",
+            "tradeoff": "需等待，可能無功能。"
+          },
+          {
+            "id": 5,
+            "text": "不共同做新表，維持正式送件方式。",
+            "action": "拒絕非必要私人表單協作，依法完成本人紀錄與交接。",
+            "tradeoff": "他可能覺得不體諒。"
+          },
+          {
+            "id": 6,
+            "text": "提供既有員工照顧支持資訊，由他自選。",
+            "action": "給成人公開照顧支持入口，不代請假或假定長輩能換人接。",
+            "tradeoff": "資訊未必實用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看便當沒開我也餓了，想把自己的可調休息挪過來，問他要不要先一起吃十分鐘，再各自完成該交的。",
+          "action": "提出成人自願短暫用餐邀請，限不影響必要交接與其接送時間，不代他同意。",
+          "tradeoff": "本人要改休息，可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3412202734
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "f9a58a38c6af6b41d6340c226b3acf96ec3163d2a02bcf8b1339fd5c5b8642f2"
+      },
+      "consequenceDirections": {
+        "A": "他可趕著走，不拿共餐作支持條件，也不保證壓力因此消失。",
+        "B": "不把拒協作等於要求疲勞職員獨自超時，必要人力由主管安排。",
+        "C": "未准不自改期限，不能假稱主管已接替。",
+        "D": "可減少查找或仍不合格式，不等職員全部工作完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6d6232f7b118c05b3e51af51d7d6e02f3aa4a3e87de8d4ad9f3ba8c8c1bf36b7",
+    "draftSha256": "f9fa78f20ea561cc2e62f104b6e81e48527c761480ce9bb4e042d249c84b6b3b",
     "seedAssignmentVersion": 1
   }
 }

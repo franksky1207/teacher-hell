@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f404e1db0d18173cdb1610e22d7658ff57eec7cd7394125b2ed7ca88bf8da637",
+      "checkedAt": "2026-11-27T17:18:02.236Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他先把八項表的用途和依據寫清楚，再談加填。",
+            "action": "暫緩額外表格承諾，要求說明非必要新表之依據與用途。",
+            "tradeoff": "多一輪等待，他可能覺得被刁難。"
+          },
+          {
+            "id": 2,
+            "text": "邀他在原本可公開觀察的班級活動看一次整體互動。",
+            "action": "提出經權責允許的一般班級活動觀察邀請，不鎖定跟監轉學生。",
+            "tradeoff": "需協調，學生可能不自在。"
+          },
+          {
+            "id": 3,
+            "text": "只在原有紀錄裡加一欄具體適應進展，不另評情緒分數。",
+            "action": "提出既有合法紀錄加入可觀察進展欄的建議，未代主管批准格式。",
+            "tradeoff": "增加少量記錄，仍需格式同意。"
+          },
+          {
+            "id": 4,
+            "text": "請他用虛構例子，和我試填一張看看。",
+            "action": "以虛構個案共同試用新表，評估填寫負擔與歧義，不輸入學生資料。",
+            "tradeoff": "占一段工作時間。"
+          },
+          {
+            "id": 5,
+            "text": "建議先把這八頁交專業輔導教師看適用性。",
+            "action": "向組員提出請合資格者審視工具的建議，未替其轉介真實個案。",
+            "tradeoff": "他需另約，可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "我不接額外的隔日表，照既有具體觀察和聯繫做。",
+            "action": "拒絕尚未核定的額外定期評分，維持既有必要支持及紀錄。",
+            "tradeoff": "可能被認為不配合。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被這八頁弄緊張了，想把自己的那份焦慮講給他聽，不急著替表找答案。",
+          "action": "提出一次有限成人工作感受交流，表達新表對本人造成的壓力，不揭個案隱私。",
+          "tradeoff": "花休息，也可能被當抱怨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1078800233
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ba254953d233075a369df90ad45d93e3d374367042bff3a4e6e3ec7cd08ec42a"
+      },
+      "consequenceDirections": {
+        "A": "可能找到重複欄，也可能覺得有用，試填不等核准使用。",
+        "B": "他可能向主管再議，教師須說明實際觀察而非忽略學生。",
+        "C": "他可拒絕，看到一次互動不能宣稱風險已排除。",
+        "D": "組員可能理解或更防衛，交流不代表撤銷其法定工作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c395e2a6ae025b6ac243ff45b689a5a91764f304bda6a97c582cf73d80e4373c",
+    "draftSha256": "f404e1db0d18173cdb1610e22d7658ff57eec7cd7394125b2ed7ca88bf8da637",
     "seedAssignmentVersion": 1
   }
 }

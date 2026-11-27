@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8300fa905b156827118e670824930ea72d0d596839957c86f8aa8f1fd78ea925",
+      "checkedAt": "2026-11-27T17:18:02.271Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另邀孩子自願談這週最想保住哪段時間。",
+            "action": "提出學生一般時間感受交流，不將回答作請假條件。",
+            "tradeoff": "花課間，可能與家長不同。"
+          },
+          {
+            "id": 2,
+            "text": "協助家庭做不含他人資料的一週時間比較表。",
+            "action": "額外提供原創時間比較工具，不代定琴房或准假。",
+            "tradeoff": "占備課，家庭可能不用。"
+          },
+          {
+            "id": 3,
+            "text": "提供既有術科準備的校內諮詢入口。",
+            "action": "提供合法既有資源資訊，不代轉介、報名或保證名額。",
+            "tradeoff": "可能無合適時段。"
+          },
+          {
+            "id": 4,
+            "text": "婉拒私人的琴房排程評估，讓家長自己決定是否申請。",
+            "action": "拒絕非必要私人課程規畫，必要送辦照常。",
+            "tradeoff": "家長可能覺得不夠支持。"
+          },
+          {
+            "id": 5,
+            "text": "邀家長比較一個放學後替代時段，再自行取捨。",
+            "action": "提出查詢另一次私人時段的建議，未取得琴房或教師人力。",
+            "tradeoff": "可能要改原安排。"
+          },
+          {
+            "id": 6,
+            "text": "問科任是否願意另提供本週重點資訊供家庭參考。",
+            "action": "提出額外資訊協作邀請，不代其同意、加課或免作業。",
+            "tradeoff": "多一次聯絡，對方可無空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他把信任說得太滿，我反而怕答應過頭，想坦白我不懂這次檢定，另找正式簡章一起看，不替孩子喊衝刺。",
+          "action": "額外查閱可核實檢定公開資訊並提出有限交流，不承諾錄取、准假或效益。",
+          "tradeoff": "花私人時間，可能看不出排程結論。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2251554332
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "d666cc55cd4d319b66e0b979a8dd05c173249cd36065ec85d12f92a2a38ee99a"
+      },
+      "consequenceDirections": {
+        "A": "若無時段不代表正課自動可借，仍依核定。",
+        "B": "家庭可不用，提供資訊不等已有專業建議。",
+        "C": "表可顯出負擔也可能資訊不足，不宣稱最佳排程。",
+        "D": "家長可失望，教師須承認資訊限制，不能以查閱當專業認證。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1f1ab15565576ae2dab74b58cf716127ef3ca767b2244d0b85b9a1f602e6e1b8",
+    "draftSha256": "8300fa905b156827118e670824930ea72d0d596839957c86f8aa8f1fd78ea925",
     "seedAssignmentVersion": 1
   }
 }

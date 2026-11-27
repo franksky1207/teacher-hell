@@ -16,14 +16,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4d287837f6518b3886e1660f6903df20eb0f5ed7065538aa4d3155929bf5c9d9",
+      "checkedAt": "2026-11-27T17:18:02.260Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "另查公部門是否有號誌調整的公開資料，給正式評估多一份來源。",
+            "action": "額外查詢號誌調整的合法公開資料，不替交通專業判定安全、不保證資料存在。",
+            "tradeoff": "花工作時間，可能查不到。"
+          },
+          {
+            "id": 2,
+            "text": "詢問正式志工訓練與排班資訊給他。",
+            "action": "查詢並提供合法志工入口，不代表已錄用或能上路。",
+            "tradeoff": "要聯絡，可能無梯次。"
+          },
+          {
+            "id": 3,
+            "text": "邀學生自願畫出平常放學的困難點，不收住址。",
+            "action": "徵詢一般動線使用經驗，不要求實地冒險測試。",
+            "tradeoff": "花班務，未必一致。"
+          },
+          {
+            "id": 4,
+            "text": "提出校方與家長代表一次現場步行會勘邀請。",
+            "action": "申請安全合法的成人路線會勘，不自行帶學生過危險路段。",
+            "tradeoff": "需排時間，對方未必能來。"
+          },
+          {
+            "id": 5,
+            "text": "我不另外帶路，改請他直接參加現有安全協調管道。",
+            "action": "婉拒教師額外非必要帶路協作，提供已知正式討論入口。",
+            "tradeoff": "家長可能覺得被推開。"
+          },
+          {
+            "id": 6,
+            "text": "自願做一份不含個資的放學提醒圖草稿。",
+            "action": "額外製作經權責確認後才可發布的動線提醒草圖。",
+            "tradeoff": "要修改，可能白做。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說『等幾個章』讓我很火，想請他陪我把拐杖孩子會遇到的樓梯一階階算進提案，別只說繞一點。",
+          "action": "邀家長於安全成人討論中加入一般無障礙路線負擔，不揭學生身分或實地要求傷生示範。",
+          "tradeoff": "語氣可能刺人，自己要準備路線資訊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3194927209
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "26b50a4b8d84d0797275e33710c49f7cc06917d00e9c4b8417cab402e5432cdf"
+      },
+      "consequenceDirections": {
+        "A": "資料可無法解釋現況，必要風險通報已共同完成，不能拿舊資料壓掉現場疑慮。",
+        "B": "仍維持本班必要照看與既有分流，不等於不理風險。",
+        "C": "他可認為被找碴，也可能調整要求；討論不等新路線可行。",
+        "D": "可發現樓梯等需求，不能以多數票犧牲必要通行權。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原路線比較含無障礙負擔，與情緒邀家長納入樓梯負擔重疊；改額外公開資料查詢。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "協助把他的觀察整理成路線比較提案。",
+                "action": "額外整理已知交通與無障礙條件交權責端參考，不代交通專業決定。",
+                "tradeoff": "需蒐整，可能未採用。"
+              },
+              {
+                "id": 2,
+                "text": "詢問正式志工訓練與排班資訊給他。",
+                "action": "查詢並提供合法志工入口，不代表已錄用或能上路。",
+                "tradeoff": "要聯絡，可能無梯次。"
+              },
+              {
+                "id": 3,
+                "text": "邀學生自願畫出平常放學的困難點，不收住址。",
+                "action": "徵詢一般動線使用經驗，不要求實地冒險測試。",
+                "tradeoff": "花班務，未必一致。"
+              },
+              {
+                "id": 4,
+                "text": "提出校方與家長代表一次現場步行會勘邀請。",
+                "action": "申請安全合法的成人路線會勘，不自行帶學生過危險路段。",
+                "tradeoff": "需排時間，對方未必能來。"
+              },
+              {
+                "id": 5,
+                "text": "我不另外帶路，改請他直接參加現有安全協調管道。",
+                "action": "婉拒教師額外非必要帶路協作，提供已知正式討論入口。",
+                "tradeoff": "家長可能覺得被推開。"
+              },
+              {
+                "id": 6,
+                "text": "自願做一份不含個資的放學提醒圖草稿。",
+                "action": "額外製作經權責確認後才可發布的動線提醒草圖。",
+                "tradeoff": "要修改，可能白做。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他說『等幾個章』讓我很火，想請他陪我把拐杖孩子會遇到的樓梯一階階算進提案，別只說繞一點。",
+              "action": "邀家長於安全成人討論中加入一般無障礙路線負擔，不揭學生身分或實地要求傷生示範。",
+              "tradeoff": "語氣可能刺人，自己要準備路線資訊。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2688218558
+            },
+            "selectedIds": [
+              5,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": "emotional",
+              "D": 4
+            },
+            "optionsDigest": "d453255382d18a14c2420048c7fe0383c90405aeef297f182f762de8e754421a"
+          },
+          "previousConsequenceDirections": {
+            "A": "未確認不發給學生當路線命令，圖不代交通設施改善。",
+            "B": "仍維持本班必要照看與既有分流，不等於不理風險。",
+            "C": "他可認為被找碴，也可能調整要求；討論不等新路線可行。",
+            "D": "權責端可拒或改期，不宣稱會勘已完成。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8789010baa494b5c82ab7d0e3520bf5a9521534877a4eba503ae66da64fade94",
+    "draftSha256": "4d287837f6518b3886e1660f6903df20eb0f5ed7065538aa4d3155929bf5c9d9",
     "seedAssignmentVersion": 1
   }
 }

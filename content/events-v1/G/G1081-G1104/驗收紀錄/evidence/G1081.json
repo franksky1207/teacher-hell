@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9b36aa8a25db23cb31920d6bcf0fa98eda0ef2b3e54649d9abdae47b9fa6ff26",
+      "checkedAt": "2026-11-27T17:18:02.233Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "到櫃檯低聲問我的預計等候時間。",
+            "action": "私下詢問本人看診順序與等候估計，不追問他人病情。",
+            "tradeoff": "須開口，估計可能不準。"
+          },
+          {
+            "id": 2,
+            "text": "拿出書，這次繼續等。",
+            "action": "自願留候診區閱讀並等原診療安排，不放棄必要醫療權利。",
+            "tradeoff": "花私人時間，心裡仍不平。"
+          },
+          {
+            "id": 3,
+            "text": "詢問今晚能不能改約，今天先回去。",
+            "action": "提出本人非急迫洗牙改約請求，未取得新時段。",
+            "tradeoff": "要再跑一趟，未必約得到。"
+          },
+          {
+            "id": 4,
+            "text": "請櫃檯主管說明預約和現場候診怎麼排。",
+            "action": "提出一般排序規則說明請求，不要求公開個別病況。",
+            "tradeoff": "等主管，可能尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "先問是否方便在外面走十分鐘再回來。",
+            "action": "徵詢短暫離開候診的可行安排，未自行消失或要求保留叫號。",
+            "tradeoff": "可能錯過順序，需獲確認。"
+          },
+          {
+            "id": 6,
+            "text": "這次看完，再用診所意見表反映等候經驗。",
+            "action": "決定於本人看診後以實際可知事實提供候診體驗意見，不指控未查明插隊。",
+            "tradeoff": "額外寫意見，未必回覆。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想下次又坐著生悶氣，這次看完就另查別家診所，不在這裡排下一次洗牙。",
+          "action": "決定本次就診後不在此安排下次例行洗牙，另查其他合法診所資訊，未取消必要當次醫療或取得他處預約。",
+          "tradeoff": "放掉熟悉的醫師，得重新找診所。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2078285890
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "5f15d0f59a20a4c44f93458f972ea597949232e8964027a5f429fd8df98b1180"
+      },
+      "consequenceDirections": {
+        "A": "助理可說明或仍無法估準，教師須再決定是否等候。",
+        "B": "可能找不到合意時段，生氣換來重新適應，不將未知他人病況當惡意證據。",
+        "C": "診所可提供時段或無空；若有身體不適另依醫療建議處理。",
+        "D": "可能輪到也可能久候，不將沉默當承認他人可插隊。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒僅加生氣要求說法，近普通1；改為未來就診關係與重新尋找成本。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "到櫃檯低聲問我的預計等候時間。",
+                "action": "私下詢問本人看診順序與等候估計，不追問他人病情。",
+                "tradeoff": "須開口，估計可能不準。"
+              },
+              {
+                "id": 2,
+                "text": "拿出書，這次繼續等。",
+                "action": "自願留候診區閱讀並等原診療安排，不放棄必要醫療權利。",
+                "tradeoff": "花私人時間，心裡仍不平。"
+              },
+              {
+                "id": 3,
+                "text": "詢問今晚能不能改約，今天先回去。",
+                "action": "提出本人非急迫洗牙改約請求，未取得新時段。",
+                "tradeoff": "要再跑一趟，未必約得到。"
+              },
+              {
+                "id": 4,
+                "text": "請櫃檯主管說明預約和現場候診怎麼排。",
+                "action": "提出一般排序規則說明請求，不要求公開個別病況。",
+                "tradeoff": "等主管，可能尷尬。"
+              },
+              {
+                "id": 5,
+                "text": "先問是否方便在外面走十分鐘再回來。",
+                "action": "徵詢短暫離開候診的可行安排，未自行消失或要求保留叫號。",
+                "tradeoff": "可能錯過順序，需獲確認。"
+              },
+              {
+                "id": 6,
+                "text": "這次看完，再用診所意見表反映等候經驗。",
+                "action": "決定於本人看診後以實際可知事實提供候診體驗意見，不指控未查明插隊。",
+                "tradeoff": "額外寫意見，未必回覆。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我怕吵架卻越坐越火，直接告訴助理我剛才很不舒服，請她現在給我一個說法。",
+              "action": "當面表達被略過的生氣，要求回應本人等待安排，不辱罵或攔阻診療。",
+              "tradeoff": "暴露情緒，可能讓往後看診尷尬。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 314117827
+            },
+            "selectedIds": [
+              5,
+              4,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 2,
+              "C": "emotional",
+              "D": 5
+            },
+            "optionsDigest": "12419141decc3f83b192358190f8f1cf834d765e8fa72385612a785a0750ce7e"
+          },
+          "previousConsequenceDirections": {
+            "A": "可得到解釋或仍不滿，不替醫護判定誰該先治療。",
+            "B": "可能輪到也可能久候，不將沉默當承認他人可插隊。",
+            "C": "助理可能願解釋或防衛，教師須面對說出口仍未被安撫。",
+            "D": "若診所不便就不離開，外出不代表先後順位已改。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bb39631232360049351852cb55c4d90de33bbc9a063ff0348154e107a319c5be",
+    "draftSha256": "9b36aa8a25db23cb31920d6bcf0fa98eda0ef2b3e54649d9abdae47b9fa6ff26",
     "seedAssignmentVersion": 1
   }
 }

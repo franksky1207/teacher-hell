@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "421fa36ed7b40314f76d7cbc018d956f0238b2b3a1514a93e6195153fa858e32",
+      "checkedAt": "2026-11-27T17:18:02.249Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "幫他向場地承辦詢問合規換書時段與空間。",
+            "action": "提出場地條件詢問，未取得許可或代外班同意。",
+            "tradeoff": "需協調，未必有空間。"
+          },
+          {
+            "id": 2,
+            "text": "提議改成各自帶一本到課間合意交換，不設攤。",
+            "action": "提出本班範圍低規模自願實體互換，不占走道或午休。",
+            "tradeoff": "交換量少，需尊重原有課務。"
+          },
+          {
+            "id": 3,
+            "text": "邀他先用虛構書單試一次交換規則。",
+            "action": "以假資料進行紙上交換流程演練，不實際收書或代表核准。",
+            "tradeoff": "多做準備，可能覺得拖。"
+          },
+          {
+            "id": 4,
+            "text": "願意協助寫一份『還在詢問』的跨班邀請說明。",
+            "action": "額外協助草擬真實未核准狀態的說明，由相關人自行確認發布。",
+            "tradeoff": "占時間，可能讓熱度降低。"
+          },
+          {
+            "id": 5,
+            "text": "讓他選擇是否只做自願書況目錄，暫不交換。",
+            "action": "提出去識別且經物主同意的書況目錄方案，不公開私人聯絡方式。",
+            "tradeoff": "需整理，不能立即換到書。"
+          },
+          {
+            "id": 6,
+            "text": "我不額外協辦跨班場，讓他循既有學生提案管道。",
+            "action": "婉拒本人非必要協辦，提供已知提案入口，不阻擋合法申請。",
+            "tradeoff": "少了成人協調便利。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他連搬桌子都排好了，我有點想湊熱鬧；願意拿出自己一本舊書，等活動真獲准再參加。",
+          "action": "提出本人私有合法書籍的附條件自願參與意願，未移交書籍或當成活動已准。",
+          "tradeoff": "要放掉自己的書，可能等不到活動。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4273487806
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "72dfbcb45f3789f0ebfb5233307f485dab9ef273e679ce151e268bf860f691d1"
+      },
+      "consequenceDirections": {
+        "A": "物主可不換，不能強迫湊對。",
+        "B": "學生可不想換教師的書，教師不得因此影響評價或場地審核。",
+        "C": "外班可退出，說明不使活動自動成立。",
+        "D": "可看出規則漏洞，也可能仍無場地。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d5058c4d8a57b03f61b01a7cab422cd16616725eb9cd7defea4872c47b01db11",
+    "draftSha256": "421fa36ed7b40314f76d7cbc018d956f0238b2b3a1514a93e6195153fa858e32",
     "seedAssignmentVersion": 1
   }
 }

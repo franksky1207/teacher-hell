@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9279ed649acec80a5c15b8515d24d4cb2b0382be4cd5fc8a7460cc3269a78388",
+      "checkedAt": "2026-11-27T17:18:02.247Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問他要不要暫停額外追排名，只留點名職務。",
+            "action": "提出減去非必要排名追蹤的職務調整，尊重本人且依班務規則辦理。",
+            "tradeoff": "少了排名提醒，需重新分清工作。"
+          },
+          {
+            "id": 2,
+            "text": "班會另談一次怎麼看排名，不點名遲到的人。",
+            "action": "安排一般自願班級評比感受討論，不公開個別紀錄。",
+            "tradeoff": "占班會，可能沒人想談。"
+          },
+          {
+            "id": 3,
+            "text": "向學務詢問是否有不公開班級名次的評比改進管道。",
+            "action": "查詢既有評比建議入口，未提出結果變更或獲准。",
+            "tradeoff": "花聯絡時間，未必有回應。"
+          },
+          {
+            "id": 4,
+            "text": "邀願意的同學分享早晨容易卡在哪一段。",
+            "action": "徵詢自願一般時間安排經驗，不調查個別家庭或要求證明。",
+            "tradeoff": "可能變成抱怨，需整理。"
+          },
+          {
+            "id": 5,
+            "text": "我自費買一個班級可用的普通時鐘，時間一起看。",
+            "action": "在校規允許下以本人預算添置普通時鐘，不蒐集行蹤或替代正式校時。",
+            "tradeoff": "花錢，未必減少遲到。"
+          },
+          {
+            "id": 6,
+            "text": "和他約一段不談名次的職務檢視，看看還願不願意做。",
+            "action": "提出幹部自願職務感受會談，未擅自撤換。",
+            "tradeoff": "占課間，他可能覺得被懷疑。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也煩那種全班像成績單的感覺，願意在教師會議提一次，別再把名次念成誰有沒有盡責。",
+          "action": "額外提出公開評比呈現方式的教師意見，不揭學生身分、不保證取消排名。",
+          "tradeoff": "準備發言，可能被認為護短。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3674612411
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "9272d729919f62f982c095e0acde95002c774debded19f52b0a04bbdf3153b6b"
+      },
+      "consequenceDirections": {
+        "A": "他可仍想追蹤，調整不影響真實出缺勤。",
+        "B": "學生可不同意，不能以討論迫遲到者道歉。",
+        "C": "可能找出可行建議或無共識，不將分享換出缺勤優惠。",
+        "D": "主管可能不採用，教師不能承諾班級扣分消失。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5674136060582169a43146e0ca0500fcae5ca05046f9d3a970c7f26800e584a0",
+    "draftSha256": "9279ed649acec80a5c15b8515d24d4cb2b0382be4cd5fc8a7460cc3269a78388",
     "seedAssignmentVersion": 1
   }
 }

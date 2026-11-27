@@ -15,14 +15,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "02a660b20cdedc9caef0c5b1e117f12b22719a5851a298ea31bb6a6781cf2068",
+      "checkedAt": "2026-11-27T17:18:02.238Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問店家未拆封零件能不能退，自己去處理。",
+            "action": "詢問私人購買未使用零件的正常退貨條件，不將私購報成校方支出。",
+            "tradeoff": "可能不能退，須再跑。"
+          },
+          {
+            "id": 2,
+            "text": "將未用零件收回家，不再拿來校內修。",
+            "action": "收回本人未使用且不屬校產的零件，停止校內私修用途。",
+            "tradeoff": "自己承擔無用支出。"
+          },
+          {
+            "id": 3,
+            "text": "請總務說明，將來急件怎麼提出優先評估。",
+            "action": "在本案必要報修外詢問急件排序申請方式，不要求插隊或保證縮時。",
+            "tradeoff": "須溝通，也可能仍得等。"
+          },
+          {
+            "id": 4,
+            "text": "自願整理一次報修介面的操作截圖給同事參考。",
+            "action": "以不含個資的測試畫面製作系統操作說明，未把私修包裝示範。",
+            "tradeoff": "占備課，可能沒人看。"
+          },
+          {
+            "id": 5,
+            "text": "另請教務協調這幾天能否借用合宜教室。",
+            "action": "提出臨時場地調度請求，未獲准，不解除原安全隔離。",
+            "tradeoff": "可能無教室，需調整教具。"
+          },
+          {
+            "id": 6,
+            "text": "問總務是否接受未用零件的合規捐贈，不合規就自己留。",
+            "action": "提出低價零件自願捐贈詢問，未移交、未換優先排修。",
+            "tradeoff": "可能被拒，還得保管。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "學生都看見了，我很丟臉，還是想拿這包買錯的零件，另講一次為什麼會用系統不等於會修窗。",
+          "action": "提出本人以未使用零件包裝作自願安全辨識短談的邀請，不拆裝、不讓學生動工具，不代替必要更正。",
+          "tradeoff": "再占班務，得公開自己的莽撞。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2790696823
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "c16d99c54dc1c69521345d17d43220fe31d1f51d448d70ec15040d3ea3fa4f63"
+      },
+      "consequenceDirections": {
+        "A": "同事可不用，資料不代替專業維修。",
+        "B": "可學到管道或獲現有說明，不能代專業判定急迫。",
+        "C": "學生可不願額外聽或直接反問，教師須承受丟臉，不宣稱課談能防所有事故。",
+        "D": "店家可拒退，損失不轉嫁學生或校方。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原私人便條與核心互動較弱，改為教師額外承擔失誤示例的班級互動，非必要報修教學。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "問店家未拆封零件能不能退，自己去處理。",
+                "action": "詢問私人購買未使用零件的正常退貨條件，不將私購報成校方支出。",
+                "tradeoff": "可能不能退，須再跑。"
+              },
+              {
+                "id": 2,
+                "text": "將未用零件收回家，不再拿來校內修。",
+                "action": "收回本人未使用且不屬校產的零件，停止校內私修用途。",
+                "tradeoff": "自己承擔無用支出。"
+              },
+              {
+                "id": 3,
+                "text": "請總務說明，將來急件怎麼提出優先評估。",
+                "action": "在本案必要報修外詢問急件排序申請方式，不要求插隊或保證縮時。",
+                "tradeoff": "須溝通，也可能仍得等。"
+              },
+              {
+                "id": 4,
+                "text": "自願整理一次報修介面的操作截圖給同事參考。",
+                "action": "以不含個資的測試畫面製作系統操作說明，未把私修包裝示範。",
+                "tradeoff": "占備課，可能沒人看。"
+              },
+              {
+                "id": 5,
+                "text": "另請教務協調這幾天能否借用合宜教室。",
+                "action": "提出臨時場地調度請求，未獲准，不解除原安全隔離。",
+                "tradeoff": "可能無教室，需調整教具。"
+              },
+              {
+                "id": 6,
+                "text": "問總務是否接受未用零件的合規捐贈，不合規就自己留。",
+                "action": "提出低價零件自願捐贈詢問，未移交、未換優先排修。",
+                "tradeoff": "可能被拒，還得保管。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "被學生看著我很掛不住，還是想把這次莽撞寫成自己的備忘，貼在報修畫面旁提醒我別再伸手。",
+              "action": "自製僅供本人觀看的行動提醒，記錄本次真實失誤，不曝光學生或要求他人認同。",
+              "tradeoff": "得一直看見自己的丟臉。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3995043767
+            },
+            "selectedIds": [
+              6,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "3abcc959ca7b484c1b75fbff2facf30a3823a98422ba65a154d40f33e36a9291"
+          },
+          "previousConsequenceDirections": {
+            "A": "可能克制下次衝動也可能覺得刺眼，不取代必要檢討與接管。",
+            "B": "規格可能不合，不能要求施工人員用私人料件。",
+            "C": "若不准需維持原安全安排，不假設換室已成。",
+            "D": "主任可能仍追究流程，收回物品不免原責任。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f3870315cf6e95fbe364f8facc341ed415d1cf7daf4f488114aaf0b6356e79ad",
+    "draftSha256": "02a660b20cdedc9caef0c5b1e117f12b22719a5851a298ea31bb6a6781cf2068",
     "seedAssignmentVersion": 1
   }
 }

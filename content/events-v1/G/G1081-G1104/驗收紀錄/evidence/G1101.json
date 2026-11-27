@@ -17,14 +17,155 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "39a2b78ca00f8561e866e2719d1ebe780bd937d89b5a13ac50739da8933f184b",
+      "checkedAt": "2026-11-27T17:18:02.273Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "徵詢不含音檔的一般使用困難，彙成問題清單。",
+            "action": "額外蒐集自願去識別操作經驗，不將主觀感受當技術故障證明。",
+            "tradeoff": "整理耗時，可能意見散。"
+          },
+          {
+            "id": 2,
+            "text": "我來把公開操作文件畫成登入到送出的步驟圖，不先測聲音。",
+            "action": "額外依正式公開文件製作本人原創操作流程圖，不輸入學生資料、不實測錄音或判定辨識品質。",
+            "tradeoff": "花備課，可能只是重畫大家已懂的步驟。"
+          },
+          {
+            "id": 3,
+            "text": "詢問是否能安排廠商或資訊端的自願操作說明。",
+            "action": "提出正式支援說明邀請，未取得人力或修正承諾。",
+            "tradeoff": "要協調，可能仍是制式回答。"
+          },
+          {
+            "id": 4,
+            "text": "提供平台既有公開操作文件，讓家庭自選查閱。",
+            "action": "額外提供已知正式文件，不代表判定家長操作錯誤。",
+            "tradeoff": "可能沒有幫助。"
+          },
+          {
+            "id": 5,
+            "text": "向課程端詢問額外自願真人練習的可行性。",
+            "action": "提出補充口說互動方案詢問，不代核准減免平台或取得外師。",
+            "tradeoff": "可能無時段，需協調。"
+          },
+          {
+            "id": 6,
+            "text": "不加私人軟體測試，讓專業端接原問題。",
+            "action": "婉拒教師非必要技術測試，維持必要追蹤與學生支持。",
+            "tradeoff": "家長可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他說摔麥克風我也想笑，乾脆邀他聽我用自己的聲音試一次，允許我也被判零分，不拿孩子出糗。",
+          "action": "提出使用本人合法測試帳號與聲音的成人自願示例交流，未完成測試、未保證得分或揭他人錄音。",
+          "tradeoff": "暴露自己發音，花私人時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2256924788
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "fb0a7f237b8c85d1a4471058f93756bdd89f78df12eb64fe6d5760ffae8863da"
+      },
+      "consequenceDirections": {
+        "A": "可找到共通步驟或無結論，必要補救仍由權責端辦。",
+        "B": "家長可拒絕，零分或高分都不能單獨證明系統好壞。",
+        "C": "家長可覺得無用，流程圖不證明是使用者錯誤，也不代替必要問題回報。",
+        "D": "不能以此停止正式問題回覆。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通2本人錄音測試與情緒邀家長聽本人測試過近，改為不同的文件圖解產物。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "徵詢不含音檔的一般使用困難，彙成問題清單。",
+                "action": "額外蒐集自願去識別操作經驗，不將主觀感受當技術故障證明。",
+                "tradeoff": "整理耗時，可能意見散。"
+              },
+              {
+                "id": 2,
+                "text": "用假資料和自己的聲音試走操作流程。",
+                "action": "在允許的測試環境用本人自願錄音重現流程，不測學生口音或宣稱系統精確率。",
+                "tradeoff": "花空堂，可能重現不了。"
+              },
+              {
+                "id": 3,
+                "text": "詢問是否能安排廠商或資訊端的自願操作說明。",
+                "action": "提出正式支援說明邀請，未取得人力或修正承諾。",
+                "tradeoff": "要協調，可能仍是制式回答。"
+              },
+              {
+                "id": 4,
+                "text": "提供平台既有公開操作文件，讓家庭自選查閱。",
+                "action": "額外提供已知正式文件，不代表判定家長操作錯誤。",
+                "tradeoff": "可能沒有幫助。"
+              },
+              {
+                "id": 5,
+                "text": "向課程端詢問額外自願真人練習的可行性。",
+                "action": "提出補充口說互動方案詢問，不代核准減免平台或取得外師。",
+                "tradeoff": "可能無時段，需協調。"
+              },
+              {
+                "id": 6,
+                "text": "不加私人軟體測試，讓專業端接原問題。",
+                "action": "婉拒教師非必要技術測試，維持必要追蹤與學生支持。",
+                "tradeoff": "家長可能失望。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "他說摔麥克風我也想笑，乾脆邀他聽我用自己的聲音試一次，允許我也被判零分，不拿孩子出糗。",
+              "action": "提出使用本人合法測試帳號與聲音的成人自願示例交流，未完成測試、未保證得分或揭他人錄音。",
+              "tradeoff": "暴露自己發音，花私人時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3110168806
+            },
+            "selectedIds": [
+              6,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "7df4422d4ad74cb15728dc090ae4c8aab12fc2f51160820b8eac661ee1405bec"
+          },
+          "previousConsequenceDirections": {
+            "A": "不能以此停止正式問題回覆。",
+            "B": "若無資源不可假稱真人練習已接好。",
+            "C": "家長可拒絕，零分或高分都不能單獨證明系統好壞。",
+            "D": "可找到共通步驟或無結論，必要補救仍由權責端辦。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -45,7 +186,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6fe8373a5faf1e3615d4b62839c8ed1e5a411e6755233e7117b6765f81de9039",
+    "draftSha256": "39a2b78ca00f8561e866e2719d1ebe780bd937d89b5a13ac50739da8933f184b",
     "seedAssignmentVersion": 1
   }
 }

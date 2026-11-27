@@ -16,14 +16,155 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "34da1ce75c621b030057ab6d41a708f760090b7b2c728146b46506264ca19417",
+      "checkedAt": "2026-11-27T17:18:02.277Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他拿一件真做過的小事，重新說給我聽。",
+            "action": "提出自願真實經驗口述交流，不替學生編寫。",
+            "tradeoff": "花時間，可能不如模板漂亮。"
+          },
+          {
+            "id": 2,
+            "text": "提議用虛構人物測模板，只研究它會補出什麼。",
+            "action": "提出去個資虛構測試，僅供工具辨識，不當正式歷程素材。",
+            "tradeoff": "需準備，可能覺得不實用。"
+          },
+          {
+            "id": 3,
+            "text": "提供校內既有歷程指導資源。",
+            "action": "提供正式指導資訊，不代預約、保證評分或送件。",
+            "tradeoff": "可能要等時段。"
+          },
+          {
+            "id": 4,
+            "text": "我願做一張空白時間線，讓他用真做過的材料填，不幫他編內容。",
+            "action": "教師額外製作原創真實經驗整理工具供自願選用，不替學生填事實、不將工具當送件合格保證。",
+            "tradeoff": "增加備課，學生可能嫌不如自動生成快。"
+          },
+          {
+            "id": 5,
+            "text": "邀他把分享會改為尚待審核的工具風險提案。",
+            "action": "提出須合法素材與權責同意的自願分享方案，未核准開會或代全班報名。",
+            "tradeoff": "需準備，可能不能辦。"
+          },
+          {
+            "id": 6,
+            "text": "這次不額外協辦分享，讓他先完成自己的真實版本。",
+            "action": "拒絕非必要協辦，保留合法學習支持與工具探索空間。",
+            "tradeoff": "少同儕舞台。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那段『衝突』太順了我反而不服，願意拿自己一段很普通的備課失敗寫給他看，連不好看的地方也留下。",
+          "action": "自願寫本人真實且不含他人隱私的經驗示例供其選讀，不要求模仿或接受。",
+          "tradeoff": "花私人時間，暴露自己笨拙。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4096028205
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "75a54b21610c3707fabe69b5738ebf185fe5a5e1e754436892681733db33c576"
+      },
+      "consequenceDirections": {
+        "A": "學生可不用，資訊不是已完成個別指導。",
+        "B": "他可覺得無聊，教師示例不保證學生理解或送件合格。",
+        "C": "提案可被拒，不讓未成立分享先變必修。",
+        "D": "測試可顯示幻造或無結論，不保證辨識所有生成痕跡。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通4接近所有分支應有的真實重寫責任，改為教師實際另做時間線工具。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "邀他拿一件真做過的小事，重新說給我聽。",
+                "action": "提出自願真實經驗口述交流，不替學生編寫。",
+                "tradeoff": "花時間，可能不如模板漂亮。"
+              },
+              {
+                "id": 2,
+                "text": "提議用虛構人物測模板，只研究它會補出什麼。",
+                "action": "提出去個資虛構測試，僅供工具辨識，不當正式歷程素材。",
+                "tradeoff": "需準備，可能覺得不實用。"
+              },
+              {
+                "id": 3,
+                "text": "提供校內既有歷程指導資源。",
+                "action": "提供正式指導資訊，不代預約、保證評分或送件。",
+                "tradeoff": "可能要等時段。"
+              },
+              {
+                "id": 4,
+                "text": "請他自選保留自己的排版工具，內容另以真實素材重寫。",
+                "action": "提出合法工具與內容分工建議，未代其重寫或認定合格。",
+                "tradeoff": "重做費時，學生可能不甘心。"
+              },
+              {
+                "id": 5,
+                "text": "邀他把分享會改為尚待審核的工具風險提案。",
+                "action": "提出須合法素材與權責同意的自願分享方案，未核准開會或代全班報名。",
+                "tradeoff": "需準備，可能不能辦。"
+              },
+              {
+                "id": 6,
+                "text": "這次不額外協辦分享，讓他先完成自己的真實版本。",
+                "action": "拒絕非必要協辦，保留合法學習支持與工具探索空間。",
+                "tradeoff": "少同儕舞台。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "那段『衝突』太順了我反而不服，願意拿自己一段很普通的備課失敗寫給他看，連不好看的地方也留下。",
+              "action": "自願寫本人真實且不含他人隱私的經驗示例供其選讀，不要求模仿或接受。",
+              "tradeoff": "花私人時間，暴露自己笨拙。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3780682087
+            },
+            "selectedIds": [
+              2,
+              6,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": "emotional",
+              "C": 1,
+              "D": 6
+            },
+            "optionsDigest": "1ea5f503e89cb26dbee4791865c7924842f5f2f51b8222d7f56c167b5e723121"
+          },
+          "previousConsequenceDirections": {
+            "A": "測試可顯示幻造或無結論，不保證辨識所有生成痕跡。",
+            "B": "他可覺得無聊，教師示例不保證學生理解或送件合格。",
+            "C": "他可說不出或不願說，不用口述當必定合格證據。",
+            "D": "學生可失望，不能用拒協辦當懲罰或沒收設備。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "45988a21e8834135567b35ddf1eb5b130cebd0e56b9608b59e724e6010f167eb",
+    "draftSha256": "34da1ce75c621b030057ab6d41a708f760090b7b2c728146b46506264ca19417",
     "seedAssignmentVersion": 1
   }
 }

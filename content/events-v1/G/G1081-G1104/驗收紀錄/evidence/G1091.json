@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "97c60f1b16892fad8b84d6cfede104ff3c1aba258c5a1caf0402bbb6703dc6cc",
+      "checkedAt": "2026-11-27T17:18:02.257Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這幾節改用紙本和板書，我來重整教材。",
+            "action": "自願重編本人有權處理的非插電教學材料，不把必要授課丟給技工。",
+            "tradeoff": "增加備課，呈現受限。"
+          },
+          {
+            "id": 2,
+            "text": "向教務詢問合規換教室的可能。",
+            "action": "提出場地調度請求，未取得新室或恢復用電。",
+            "tradeoff": "可能沒空間，要搬教材。"
+          },
+          {
+            "id": 3,
+            "text": "請總務安排另一位合格人員評估，讓他先休息。",
+            "action": "提出合法人力調度建議，不代主管排班或自行解除封蓋。",
+            "tradeoff": "可能沒人，需等待。"
+          },
+          {
+            "id": 4,
+            "text": "邀科任把非急迫的數位展示移到別天。",
+            "action": "提出不影響必要學習權益的教學次序協調，未代科任同意。",
+            "tradeoff": "進度需重排，未必方便。"
+          },
+          {
+            "id": 5,
+            "text": "我願做一張教學設備清單，供下次巡檢參照。",
+            "action": "額外整理合法設備用途與許可資訊，不替檢修簽證或貼安全認證。",
+            "tradeoff": "耗整理時間，未必降低誤認。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校方既有離線教具的借用條件。",
+            "action": "查詢非插電教具資源，未取得物品，不假設有替代設備。",
+            "tradeoff": "可能沒適用教具。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他手抖還要背工具，我看得煩躁又心疼，想替他把今天這幾間的工具搬回指定工具間，別再催他快修。",
+          "action": "在本人可行工作時間及合意下提供安全可搬小工具的非必要運送協助，不碰帶電或專業器材、不代檢修。",
+          "tradeoff": "占空堂，可能被婉拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2056267620
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "9a4ba4211379fdc828a87c94e6925a1e12ee0d5102fe7922da1e8fd60335dac8"
+      },
+      "consequenceDirections": {
+        "A": "可完成部分目標或須再調整，不擅改他科內容。",
+        "B": "他可能不想別人碰工具，須接受拒絕；搬工具不代表必要安全檢查完成。",
+        "C": "對方可拒絕，仍須維持基本課務。",
+        "D": "若無資源需另安排，不偷偷接私人電源。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0e508983f34c10b7ae3fd54de23b470f912d72f458f72d4d7d60a34cdd7ec0a9",
+    "draftSha256": "97c60f1b16892fad8b84d6cfede104ff3c1aba258c5a1caf0402bbb6703dc6cc",
     "seedAssignmentVersion": 1
   }
 }

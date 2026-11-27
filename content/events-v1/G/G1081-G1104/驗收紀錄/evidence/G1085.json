@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2fd35fdb957725037ab853df4f01cff12d8c8d86826dccf9d094a7e4fd82c7d6",
+      "checkedAt": "2026-11-27T17:18:02.244Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "未貼的材料先請他帶回，班上暫用原公告板。",
+            "action": "提出收回未使用私有材料的方案，保留原公告方式，不處分已貼部分。",
+            "tradeoff": "心血落空，公告便利沒增加。"
+          },
+          {
+            "id": 2,
+            "text": "問總務有沒有可合規移動的板架方案。",
+            "action": "詢問既有移動板架可用條件，未取得板架或施工核准。",
+            "tradeoff": "可能沒資源，需另規劃。"
+          },
+          {
+            "id": 3,
+            "text": "邀他用紙先畫配置，剩下材料等方案確定才動。",
+            "action": "提出原創紙上布置草案邀請，不施作牆面。",
+            "tradeoff": "又要設計，未必採用。"
+          },
+          {
+            "id": 4,
+            "text": "請他自己決定，未開封品是否詢問店家退換。",
+            "action": "提供正常退換選擇資訊，由物主自行決定是否詢問，不保證可退。",
+            "tradeoff": "可能有運費或期限。"
+          },
+          {
+            "id": 5,
+            "text": "提議把未貼白板當桌面書寫材料，先詢問規格是否適合。",
+            "action": "提出經物主合意及安全確認的桌面用途評估，未宣稱產品可直接安全使用。",
+            "tradeoff": "用途縮小，要另確認。"
+          },
+          {
+            "id": 6,
+            "text": "由我另做可放在原公告板上的紙卡，這次不加新硬體。",
+            "action": "教師自願製作合法原創公告紙卡，不新增牆面黏著。",
+            "tradeoff": "占備課，效果較普通。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我剛剛點頭太快，想問他願不願意新做一張設計介紹，我幫忙排版，寫明還沒完成，不把它當失敗品丟掉。",
+          "action": "提出全新自願原創設計介紹單合作，由本人額外排版，未成立出版或公開展示，不假定既有班刊。",
+          "tradeoff": "增加編輯時間，學生可能不想留下。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4062586494
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "94ac5702a189509b7a5aa599616d9fce962046589c9b5f80f05559c219e492a7"
+      },
+      "consequenceDirections": {
+        "A": "若無板架不拿桌椅臨時堆搭。",
+        "B": "學生可拒製作或只私下保存；未經同意不公開，介紹單不等設計已安全實作。",
+        "C": "店家可拒絕，教師不命令學生吸收全部損害。",
+        "D": "可畫出新方法或拒絕，草圖不等同許可。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原動作預設不存在的既有班刊，改為明確新提案，不憑空取得出版空間。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "未貼的材料先請他帶回，班上暫用原公告板。",
+                "action": "提出收回未使用私有材料的方案，保留原公告方式，不處分已貼部分。",
+                "tradeoff": "心血落空，公告便利沒增加。"
+              },
+              {
+                "id": 2,
+                "text": "問總務有沒有可合規移動的板架方案。",
+                "action": "詢問既有移動板架可用條件，未取得板架或施工核准。",
+                "tradeoff": "可能沒資源，需另規劃。"
+              },
+              {
+                "id": 3,
+                "text": "邀他用紙先畫配置，剩下材料等方案確定才動。",
+                "action": "提出原創紙上布置草案邀請，不施作牆面。",
+                "tradeoff": "又要設計，未必採用。"
+              },
+              {
+                "id": 4,
+                "text": "請他自己決定，未開封品是否詢問店家退換。",
+                "action": "提供正常退換選擇資訊，由物主自行決定是否詢問，不保證可退。",
+                "tradeoff": "可能有運費或期限。"
+              },
+              {
+                "id": 5,
+                "text": "提議把未貼白板當桌面書寫材料，先詢問規格是否適合。",
+                "action": "提出經物主合意及安全確認的桌面用途評估，未宣稱產品可直接安全使用。",
+                "tradeoff": "用途縮小，要另確認。"
+              },
+              {
+                "id": 6,
+                "text": "由我另做可放在原公告板上的紙卡，這次不加新硬體。",
+                "action": "教師自願製作合法原創公告紙卡，不新增牆面黏著。",
+                "tradeoff": "占備課，效果較普通。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我剛剛點頭太快，現在很想保住他那一點得意；問他願不願意把設計留作班刊的一頁，註明還沒做成。",
+              "action": "邀學生自願以原創設計及真實未實施說明參與既有班刊，不揭價格或把安全失誤當成品。",
+              "tradeoff": "增加編輯時間，可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2927919295
+            },
+            "selectedIds": [
+              1,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 6,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "aed90b4a031605cb050a6b1af74754bd4c2dc73d63d7ac731325a825572bef19"
+          },
+          "previousConsequenceDirections": {
+            "A": "若無板架不拿桌椅臨時堆搭。",
+            "B": "學生可能覺得退回老樣子，紙卡不代表原受損牆已修復。",
+            "C": "他可希望暫寄，須另談合意保管，不以收回免原責任。",
+            "D": "他可不想公開，教師須接受心血不能靠刊登補回；必要責任仍共同處理。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "80abc20c4f6a3d82dfb392a714ffbdc1bc8d3b5a73b6d129803743818534e3d4",
+    "draftSha256": "2fd35fdb957725037ab853df4f01cff12d8c8d86826dccf9d094a7e4fd82c7d6",
     "seedAssignmentVersion": 1
   }
 }

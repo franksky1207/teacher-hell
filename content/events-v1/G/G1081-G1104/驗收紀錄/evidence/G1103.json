@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2be5495461be345e686a9fc99b259313e4937f3ae79f1d149c90cd2c4aa56f95",
+      "checkedAt": "2026-11-27T17:18:02.276Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀他自願介紹比價方法，不談缺漏憑證。",
+            "action": "提供一次一般採買經驗交流邀請，不公開家庭交易細節或掩蓋帳務。",
+            "tradeoff": "占班務，可能被誤認鼓勵跳規則。"
+          },
+          {
+            "id": 2,
+            "text": "和稽核股長做一份未來採買用的空白檢核卡。",
+            "action": "提出原創一般購物檢核工具協作，不讓學生代簽核或倒填證據。",
+            "tradeoff": "需準備，未必用得上。"
+          },
+          {
+            "id": 3,
+            "text": "提議下次縮小一次採購量，先試小批量。",
+            "action": "提出未來合規採購規模建議，未變更既有授權或損害本次交易權益。",
+            "tradeoff": "可能少折扣，跑次數多。"
+          },
+          {
+            "id": 4,
+            "text": "我願額外整理公開的合法憑證例子給全班參考。",
+            "action": "自願製作一般財務教育素材，不用真實單據或商家資料作公開負例。",
+            "tradeoff": "占備課。"
+          },
+          {
+            "id": 5,
+            "text": "不再安排學生額外採買，未來由成人依規定規畫。",
+            "action": "提出本人未來非必要學生跑腿邀請的停止決定，不撤既有權益或把責任丟家長。",
+            "tradeoff": "教師增加工作，少實作機會。"
+          },
+          {
+            "id": 6,
+            "text": "詢問校方既有合規採購管道，留作下次比較。",
+            "action": "查詢正式採購資訊，不當成本次已可補開合法單據。",
+            "tradeoff": "可能價高或限制多。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "他等那句稱讚我看得出來，想真心謝他搬貨，再自己搬剩下的到儲藏處，今天不要他再替我跑。",
+          "action": "在安全可行且本人權限範圍內接回剩餘非必要搬運，明確肯定已知投入，不替帳務下合格結論。",
+          "tradeoff": "自己花力氣，可能被認為小題大作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 620825758
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "22b3f48ba7afd4b51f9be1b00c9c01252013688577cba85ab6612805b1cf5f77"
+      },
+      "consequenceDirections": {
+        "A": "資訊不等承諾採購，原商家合法補正另接續。",
+        "B": "學生可不感興趣，素材不替代本案必要補正。",
+        "C": "可降低忘帶資訊但不能保證核銷通過。",
+        "D": "學生可不想交手，須合意安全搬運；稱讚不免必要核銷程序。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3d4bad8a9063efb6487b7be6854d2f47a5785d5f8be37c645b33bcfba9a61abe",
+    "draftSha256": "2be5495461be345e686a9fc99b259313e4937f3ae79f1d149c90cd2c4aa56f95",
     "seedAssignmentVersion": 1
   }
 }

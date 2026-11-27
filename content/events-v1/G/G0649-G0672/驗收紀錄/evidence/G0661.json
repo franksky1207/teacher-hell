@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bec76101afb3e387aa922f22a7d2b09e6abfae66c6e5a2f1d2cd34bc10d38dae",
+      "checkedAt": "2026-11-27T12:15:19.382Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一起看原店家的退換條件，不先答應能退。",
+            "action": "導師已協助查閱家長自願提供的店家公開退換資訊，未代退、取得退款或承諾店家同意。",
+            "tradeoff": "要花時間，也可能不能退"
+          },
+          {
+            "id": 2,
+            "text": "婉拒這次額外工具，請家長自行保留私人用途。",
+            "action": "導師已婉拒本人被提議接收的非必要工具，不處置家長財物或承諾私人用途有效。",
+            "tradeoff": "已買成本仍在"
+          },
+          {
+            "id": 3,
+            "text": "若家長仍想短借，只詢問學校是否可依法收一件。",
+            "action": "導師已向適當承辦提出限定單件的借物可行性詢問，未取得物品、同意或核准。",
+            "tradeoff": "需要審核，也可能不收"
+          },
+          {
+            "id": 4,
+            "text": "我做一份只列校內已有工具的說明，不再讓家長猜要買多少。",
+            "action": "導師已提供經核對的既有校用工具及使用方式資訊，不要求家庭購買。",
+            "tradeoff": "需整理現有資料"
+          },
+          {
+            "id": 5,
+            "text": "取消我自己加的豪華工具成果照。",
+            "action": "導師已撤回本人非必要工具陣列拍照提案，不減正常學習支持。",
+            "tradeoff": "少了看起來齊全的畫面"
+          },
+          {
+            "id": 6,
+            "text": "另邀家長在工作時間談如何判斷哪些不用買。",
+            "action": "導師已提出限定校方需求辨識的自願短談邀請，未約成或替家庭作財務決定。",
+            "tradeoff": "要再配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己抽屜那套重複買的文具也不添了，這次私人購物車先清空。",
+          "action": "導師已取消本人尚未成交的非必要私人文具購物車，不涉及公款、校用需求或學生權益。",
+          "tradeoff": "錯過折扣，也得忍住想備齊的心"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1825012814
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "feb917d98226c715d63fe03d5385beab558524912f8f9f15a1b3e1d9dcbf2469"
+      },
+      "consequenceDirections": {
+        "A": "不用也不影響孩子參與，家庭不用替學校填料。",
+        "B": "教師承擔自己的消費取捨，不拿家長物品來補抽屜。",
+        "C": "可練習等待確認，不把短談當消費指導已見效。",
+        "D": "不用靠物品量證明投入，必要教學仍照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "adb642cb9bbd2112bb4cc5f6513094719eaf327404aca36ac74f57b1998b71bb",
+    "draftSha256": "bec76101afb3e387aa922f22a7d2b09e6abfae66c6e5a2f1d2cd34bc10d38dae",
     "seedAssignmentVersion": 1
   }
 }

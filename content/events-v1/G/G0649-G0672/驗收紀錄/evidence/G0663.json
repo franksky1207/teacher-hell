@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "acb45567cdd71696e0bf1fcec20dc6199d64f336e7ecdbe4ddf63b1241c6b26a",
+      "checkedAt": "2026-11-27T12:15:19.383Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把既有候車與到場確認方式整理給家長，不另加私人約定。",
+            "action": "導師已提供經核對的既有候車及成人到場確認資訊，不另創放行例外。",
+            "tradeoff": "仍需依每次實況聯絡"
+          },
+          {
+            "id": 2,
+            "text": "取消我自己提出的非必要放學後留校拍照。",
+            "action": "導師已撤回本人非必要課後拍照邀請，依法告知相關者，不取消正常照看。",
+            "tradeoff": "少一次留影"
+          },
+          {
+            "id": 3,
+            "text": "問家長是否需向正式窗口查詢可登記的其他合法接送人。",
+            "action": "導師已向家長提出正式接送名單條件的資訊詢問，未代增名單、取得授權或交人。",
+            "tradeoff": "需文件與確認，也可能沒有"
+          },
+          {
+            "id": 4,
+            "text": "日後課內完成我可調整的額外練習，不再自加課後尾段。",
+            "action": "導師已調整本人可決定的非必要練習安排，不延長留校或更動他科。",
+            "tradeoff": "要挪課內彈性"
+          },
+          {
+            "id": 5,
+            "text": "邀家長另在正常工作時段談校方聯絡需求，不在車流中長談。",
+            "action": "導師已發出限定校方聯絡方式的自願短談邀請，未約成或催駕駛即時回覆。",
+            "tradeoff": "要再找時間"
+          },
+          {
+            "id": 6,
+            "text": "向承辦反映改道對多次接送的實際影響，不替家庭保證新動線。",
+            "action": "導師已向適當承辦提出必要且限量的改道影響資訊，未核准場地或擅改接送程序。",
+            "tradeoff": "校方未必能改"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也老算自己剛好趕得上，私人晚餐訂位乾脆改成晚一點，別再一路催自己。",
+          "action": "導師已向店家提出本人私人晚餐改時詢問，尚未取得改約同意，不影響必要職務及接送照看。",
+          "tradeoff": "可能要多等，店家也未必能改"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 978151660
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "670aea4a3be046276cd36aefa5ff736f1cf769e97aa152723b7c41ea7186565b"
+      },
+      "consequenceDirections": {
+        "A": "可說清楚需要，不要求家長邊開車邊答覆。",
+        "B": "教師調整自己的私事，不把交通焦慮轉給學生。",
+        "C": "不再為教師活動增加接送變動，必要交接仍維持。",
+        "D": "查詢不等於已授權任何人領走孩子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e47c5921070bd459dfa33db647bf64281bcd6dc6765e2ae3d64c735835adf71b",
+    "draftSha256": "acb45567cdd71696e0bf1fcec20dc6199d64f336e7ecdbe4ddf63b1241c6b26a",
     "seedAssignmentVersion": 1
   }
 }

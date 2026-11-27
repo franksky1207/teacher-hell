@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a86f095ed1558defe775fe66a94133fe61cf811a2977cf2aa9f8570322969436",
+      "checkedAt": "2026-11-27T12:15:19.385Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不做表演，只保留原班內共同作畫。",
+            "action": "導師已取消本人非必要班旗表演提案，保留安全有限作畫與正常回饋。",
+            "tradeoff": "少了登場的氣派"
+          },
+          {
+            "id": 2,
+            "text": "縮成原位的一次短介紹，不揮動旗桿。",
+            "action": "導師已將本人非必要展示限縮為無旗桿揮動的短介紹，發言與作品使用依本人同意。",
+            "tradeoff": "少了動作效果"
+          },
+          {
+            "id": 3,
+            "text": "這次各畫一張自己的小紙，之後願意再談是否合成。",
+            "action": "導師已提供校內可支用紙材作有限個別創作，不取得後續合成或公開授權。",
+            "tradeoff": "沒有立即完整班旗"
+          },
+          {
+            "id": 4,
+            "text": "使用我原有的無人物圖樣示範配色，不請學生趕成品。",
+            "action": "導師已用自有圖樣提供本課有限配色示範，不要求學生補做展示。",
+            "tradeoff": "少了共同作品"
+          },
+          {
+            "id": 5,
+            "text": "另問承辦能否保留原已同意的未完部分，待正常課內接續。",
+            "action": "導師已提出限既有同意範圍的作品暫存詢問，未取得場地或延長保管。",
+            "tradeoff": "要等回覆，也可能沒位置"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最佳材料提供者票選。",
+            "action": "導師已撤回本人非必要帶料排名，不減學生正常參與及必要紀錄。",
+            "tradeoff": "少一次表揚"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "那個顏色太合我胃口，我自費買一張小色紙折個自己的旗，不拿班旗回去占著。",
+          "action": "導師已以自費私有色紙製作不同圖樣的私人小紙旗，不用校務或學生原作資源。",
+          "tradeoff": "自己花錢，成品也很小"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3389597039
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "b05fa83fb5c6bd6d4e34b006c6a1e5553f7775662bcabaefb58f5d41f6abcf2f"
+      },
+      "consequenceDirections": {
+        "A": "能說作品，不逼大家同步表演或超時。",
+        "B": "保存不等於展示核准，未同意作品不扣留。",
+        "C": "教師保留偏好，不複製學生具體原圖或取班用材料。",
+        "D": "不以帶料量排地位，班務真實投入仍可個別回饋。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b5945d812693b74dacd60323684401ab1b57c1bb6f90b5fc0b438dc9dc581c2d",
+    "draftSha256": "a86f095ed1558defe775fe66a94133fe61cf811a2977cf2aa9f8570322969436",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d96e7af0098524304383b51fbf2122cc0474837334ed27e54c918dfb08c28b52",
+      "checkedAt": "2026-11-27T12:15:19.390Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依館方既有安排門口候等，孩子自願獨立查。",
+            "action": "導師已協調確認既有合法候等與離校交接方式，未替孩子查完或承諾無限延時。",
+            "tradeoff": "家長看不到過程"
+          },
+          {
+            "id": 2,
+            "text": "問孩子要不要在館方同意下只共同確認一項資料，再各自退開。",
+            "action": "導師已提出限單項與館方同意的可拒絕協助詢問，尚未開始查詢或取得答應。",
+            "tradeoff": "可能不願，也需館員時間"
+          },
+          {
+            "id": 3,
+            "text": "提供日後正常課內的查詢方式，今天不另加閱讀任務。",
+            "action": "導師已提供本人可安排的後續有限課內查詢資訊，未替孩子或家長決定今天去留。",
+            "tradeoff": "共同來館的心意沒變成果"
+          },
+          {
+            "id": 4,
+            "text": "讓館員既有的查詢說明代替我的額外帶查。",
+            "action": "導師已提供館方既有可公開查詢指引，不替館員承諾服務時段或代孩子提問。",
+            "tradeoff": "教師少了當場協助"
+          },
+          {
+            "id": 5,
+            "text": "取消我原加的親子查書成果合照。",
+            "action": "導師已撤回本人非必要親子查詢拍照邀請，不取影像或取消原自主閱讀。",
+            "tradeoff": "少一張共同紀念"
+          },
+          {
+            "id": 6,
+            "text": "另邀家長工作時間談陪到哪裡剛好，不叫孩子再演一次。",
+            "action": "導師已發出限定成人陪伴界線的自願交流邀請，未約成或要求孩子參與。",
+            "tradeoff": "要另配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想找本只為自己讀的書，交接完下班去書店，自費買，不再硬當嚮導。",
+          "action": "導師已在正式職務與離校交接完成後，於私人時間自行到正常營業書店自費購買本人讀物，不要求家長孩子等候。",
+          "tradeoff": "花自己的錢，也少了陪人找到答案的滿足"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3565489265
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "dd5335ab8d9ea94b751599b91f95a35fd08ad72effaefb391cfbdce432b2be26"
+      },
+      "consequenceDirections": {
+        "A": "短協助不等於整套陪查，不能預設孩子接受。",
+        "B": "可依館方資源自行選，不將給說明當資料已找到。",
+        "C": "教師可享受自己的閱讀選擇，不把私人購書當孩子已找到資料或要求家庭同行。",
+        "D": "不需為照片接受同行，必要閱讀支持仍可有。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒將校內圖書館借閱資格寫成需續費並加條件辯解，缺乏本篇事實且不符一般校園情境，改為職務交接後下班私人購書，明確不同於陪查。 依原工具真實重抽洗牌一次，保存完整舊證據，不挑組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "依館方既有安排門口候等，孩子自願獨立查。",
+                "action": "導師已協調確認既有合法候等與離校交接方式，未替孩子查完或承諾無限延時。",
+                "tradeoff": "家長看不到過程"
+              },
+              {
+                "id": 2,
+                "text": "問孩子要不要在館方同意下只共同確認一項資料，再各自退開。",
+                "action": "導師已提出限單項與館方同意的可拒絕協助詢問，尚未開始查詢或取得答應。",
+                "tradeoff": "可能不願，也需館員時間"
+              },
+              {
+                "id": 3,
+                "text": "提供日後正常課內的查詢方式，今天不另加閱讀任務。",
+                "action": "導師已提供本人可安排的後續有限課內查詢資訊，未替孩子或家長決定今天去留。",
+                "tradeoff": "共同來館的心意沒變成果"
+              },
+              {
+                "id": 4,
+                "text": "讓館員既有的查詢說明代替我的額外帶查。",
+                "action": "導師已提供館方既有可公開查詢指引，不替館員承諾服務時段或代孩子提問。",
+                "tradeoff": "教師少了當場協助"
+              },
+              {
+                "id": 5,
+                "text": "取消我原加的親子查書成果合照。",
+                "action": "導師已撤回本人非必要親子查詢拍照邀請，不取影像或取消原自主閱讀。",
+                "tradeoff": "少一張共同紀念"
+              },
+              {
+                "id": 6,
+                "text": "另邀家長工作時間談陪到哪裡剛好，不叫孩子再演一次。",
+                "action": "導師已發出限定成人陪伴界線的自願交流邀請，未約成或要求孩子參與。",
+                "tradeoff": "要另配時間"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也想逛自己的那排書，職務交接完成就自費借閱卡該續的續，自己挑，不再硬當嚮導。",
+              "action": "導師已在正式職務與交接完成後依館方規定自費續辦本人私人借閱資格並自行選書，不假定所有館舍均收費或要求他人等候。",
+              "tradeoff": "自己的費用與私人空檔，可能沒挑到"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 676180713
+            },
+            "selectedIds": [
+              6,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 6,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "59431fc2e7b32e325d2b224f132e2fda1b86c1f60cbc7902cec466586a4d774a"
+          },
+          "previousConsequenceDirections": {
+            "A": "短協助不等於整套陪查，不能預設孩子接受。",
+            "B": "能留成人的失落，不把支持變成孩子的安慰任務。",
+            "C": "支持可以留在門外，不能讓等候超出開放及照看規定。",
+            "D": "教師有自己的閱讀，不把家長孩子留著等他。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "66785f990c14af20e53c76d9d74454fb3bf59ebbc08b3142b99f8889b63f07c5",
+    "draftSha256": "d96e7af0098524304383b51fbf2122cc0474837334ed27e54c918dfb08c28b52",
     "seedAssignmentVersion": 1
   }
 }

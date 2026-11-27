@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "afaace57fc57e1972ca710ee548a9ac2e5e4b3b8a50f45f9ba0a84e524591b0e",
+      "checkedAt": "2026-11-27T12:15:19.372Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只接受他自願提出的那一組，其他我接。",
+            "action": "導師已確認提出限單組的協作範圍，未預設對方即能履行或把其餘學生交給他。",
+            "tradeoff": "教師自己負擔增加"
+          },
+          {
+            "id": 2,
+            "text": "今天不請他另帶，我自己完成原正常回饋。",
+            "action": "導師已婉拒本次額外協教並接回本人原回饋工作，不取消他人正式課務。",
+            "tradeoff": "少了額外人力"
+          },
+          {
+            "id": 3,
+            "text": "詢問日後正常課內能否另排短段協教，不現在等他恢復。",
+            "action": "導師已提出可拒絕的未來有限協教邀請，未排定或要求額外留校。",
+            "tradeoff": "需再協調，也可能沒有空"
+          },
+          {
+            "id": 4,
+            "text": "取消我原加的全組輪流展示，只留必要練習。",
+            "action": "導師已取消自身非必要輪流成果展示，保留正常課內練習及回饋。",
+            "tradeoff": "少了公開成果"
+          },
+          {
+            "id": 5,
+            "text": "用我自製的步驟卡讓各組先看，疑問直接問我。",
+            "action": "導師已提供自有可用步驟卡並明示本人回饋方式，不讓同事成為隱形支援。",
+            "tradeoff": "卡片不能解決每個問題"
+          },
+          {
+            "id": 6,
+            "text": "請主管檢視他目前非必要兼務能否減量。",
+            "action": "導師已向有權主管提出非必要兼務負荷檢視需求，未擅調正式工作。",
+            "tradeoff": "未必獲准"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也想安靜躺一會，合法休息那段不再答應私人線上聚會。",
+          "action": "導師已婉拒本人非必要私人線上聊天邀請，於必要交接完成的合法休息時段休息。",
+          "tradeoff": "會錯過聊天"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3970920864
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "64b942f2b173e134bcdbb42af6ba85c9391febd74e8ddd30c5d1884b3af1c952"
+      },
+      "consequenceDirections": {
+        "A": "教師放掉私人邀約，不把原工作留給疲憊同事。",
+        "B": "同事可休息，學生必要支持仍有承接。",
+        "C": "可以減少額外流程，不降低原學習支持。",
+        "D": "同事可在約定範圍協作，不能用學生未懂延長到無限。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b896ed854f56c193f4f18f809920b7940713b3d9a11af9d71be51b4ae4be6187",
+    "draftSha256": "afaace57fc57e1972ca710ee548a9ac2e5e4b3b8a50f45f9ba0a84e524591b0e",
     "seedAssignmentVersion": 1
   }
 }

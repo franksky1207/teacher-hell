@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "26ffdfa71813bd013c295f6413b180ddee842287dcb461dc963f506b7f8ff94a",
+      "checkedAt": "2026-11-27T12:15:19.386Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只一起看這一題的條件，其餘由原授課者審。",
+            "action": "導師已提出限單題條件的成人共同審閱邀請，尚未完成或核准整份教材。",
+            "tradeoff": "協助範圍小"
+          },
+          {
+            "id": 2,
+            "text": "這次不接額外審稿，完整原稿交回本人。",
+            "action": "導師已婉拒本次額外整份代審並返還原稿，必要已知錯誤另依共同程序處理。",
+            "tradeoff": "同事仍得自己安排時間"
+          },
+          {
+            "id": 3,
+            "text": "我寫一張一般審題檢核給自己也給他參考，不碰其餘稿。",
+            "action": "導師已以自有內容製作一般條件檢核參考，不複製未授權試題或宣稱已審全稿。",
+            "tradeoff": "不一定能抓到所有錯"
+          },
+          {
+            "id": 4,
+            "text": "請他自願口頭說出題目想驗什麼，我只問一個疑點。",
+            "action": "導師已發出限定目標與單一疑點的成人自願交流邀請，未取得完整審題結論。",
+            "tradeoff": "少了逐字校對"
+          },
+          {
+            "id": 5,
+            "text": "向主管提出非必要重複審稿工作量的檢視需求。",
+            "action": "導師已向有權主管提出非必要重複審稿負荷資訊，未擅排代理或免除授課責任。",
+            "tradeoff": "未必減得下來"
+          },
+          {
+            "id": 6,
+            "text": "取消我自己原加的精美成冊提案，先讓必要內容完成。",
+            "action": "導師已撤回本人非必要教材美編成冊提案，不取消必要審核與更正。",
+            "tradeoff": "少了漂亮版面"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想被當成一眼就懂的人，偏偏這題我沒把握，私人空檔留一頁自己慢慢解，不裝秒答。",
+          "action": "導師已在本人可用備課空檔以有權參考的單題自行試解，未代簽整份審核或要求學生驗答案。",
+          "tradeoff": "花自己的時間，也可能解不完"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 606583467
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "3b26ccff6acf3dc43b8f466a86c49629dc0b05be0af0349d5dceceb0b75cdf09"
+      },
+      "consequenceDirections": {
+        "A": "不再用美化壓縮判讀時間，正式正確性仍須負責。",
+        "B": "可有方法，但不替授課者保證無誤。",
+        "C": "教師承認私人想證明能力的衝動，不把自己的試解當授課核准。",
+        "D": "拒絕非必要支援不取消已知錯誤的必要更正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bff56a82db4b8f758f509632b2ae24eac091c3148d2624f0b554fb87c952d73c",
+    "draftSha256": "26ffdfa71813bd013c295f6413b180ddee842287dcb461dc963f506b7f8ff94a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5acbadb6a99ec70ecb0598db6e55ff6ca90ffb9b274d6025c89a4199e3a2d105",
+      "checkedAt": "2026-11-27T12:15:19.373Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "試一段不追問的獨立閱讀，之後由孩子選要問什麼。",
+            "action": "導師已在本課提供有限獨立閱讀段及正常後續提問方式，不新增家庭監看。",
+            "tradeoff": "教師暫時看不到進度"
+          },
+          {
+            "id": 2,
+            "text": "先共同讀一小段，再停下所有額外提示。",
+            "action": "導師已在自身課內安排有限共讀及明確停問點，保留必要個別回饋。",
+            "tradeoff": "共同讀的部分較少"
+          },
+          {
+            "id": 3,
+            "text": "讓孩子自選圖記或一句話回述，不逐句問。",
+            "action": "導師已提供等值有限回述方式，不要求家長代答或再做整份。",
+            "tradeoff": "資訊較少"
+          },
+          {
+            "id": 4,
+            "text": "邀家長只跟我演練提示後怎麼退開，孩子不用示範。",
+            "action": "導師已提出限定成人陪讀方法的自願交流邀請，尚未約成。",
+            "tradeoff": "需成人交流時間"
+          },
+          {
+            "id": 5,
+            "text": "做一張只寫開始、暫停、想問的空白小卡，讓孩子願用再用。",
+            "action": "導師已提供自製簡明閱讀需求卡供自願參考，不設定交卡義務。",
+            "tradeoff": "未必喜歡卡片"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的親子逐句核章，原正常回饋由教師做。",
+            "action": "導師已撤除本人非必要家庭逐句確認欄，保留正常教學回饋。",
+            "tradeoff": "少了一份整齊家庭紀錄"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看小說也不想每頁被問，今晚自己那份私人閱讀心得先不更新，讀完再說。",
+          "action": "導師已停止本人非必要私人讀書動態更新，不改正式教學或學生要求。",
+          "tradeoff": "少一次社群回應"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 721831391
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "ccbbfe4eb354b8889b144f883928a797d70607fcaac67d5f16fa435be83080bd"
+      },
+      "consequenceDirections": {
+        "A": "教師保留閱讀樂趣，不拿私人停寫取消學生必要回饋。",
+        "B": "家長可看方法，不把演練當家庭必做作業。",
+        "C": "沒有親人空檔的人仍可學，不把取消當免教。",
+        "D": "有自己的表達方式，不以選擇代替理解確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0499dc6f58fe09fe15a6aff3d51a1876a2c34abf4eaa33efb336d8559fe53320",
+    "draftSha256": "5acbadb6a99ec70ecb0598db6e55ff6ca90ffb9b274d6025c89a4199e3a2d105",
     "seedAssignmentVersion": 1
   }
 }

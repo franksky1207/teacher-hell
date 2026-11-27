@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f32b2809b4a0d9027c9546c1387af2bcd649818703179021882c1a81690d1f0f",
+      "checkedAt": "2026-11-27T12:15:19.369Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只用紙圖比較兩種高度，不借桌鏡。",
+            "action": "導師已選用自製視角紙圖承接本課，不取用家庭鏡具或改校園設施。",
+            "tradeoff": "少了鏡中反射的直觀感"
+          },
+          {
+            "id": 2,
+            "text": "詢問作者願不願意用紙偶作一次室內桌面示範。",
+            "action": "導師已提出限安全室內模型的自願協作邀請，尚未取得借物同意或開始示範。",
+            "tradeoff": "他可能拒絕，也要留課內時間"
+          },
+          {
+            "id": 3,
+            "text": "改看學校已有的視線示範影像。",
+            "action": "導師已選用既有授權視線比較素材，不安排實地拍攝或自行裝鏡。",
+            "tradeoff": "素材未必與教室一樣"
+          },
+          {
+            "id": 4,
+            "text": "讓各人畫從座位看不見的紙上範圍，不移動桌椅。",
+            "action": "導師已提供有限座位視角圖記練習，不以學生圖代安全判定或調整家具。",
+            "tradeoff": "圖可能不準"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最佳改造點子票選。",
+            "action": "導師已撤回本人非必要校園鏡面改造票選，不取消成人必要查核。",
+            "tradeoff": "少了創意競賽"
+          },
+          {
+            "id": 6,
+            "text": "邀設備承辦日後用成人方法交流解釋模型限制。",
+            "action": "導師已發出限定成人模型限制交流邀請，未約成或提出未授權工程。",
+            "tradeoff": "需等對方有空"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "鏡子照到我那個歪領口，私人休息時自己整理一下，不叫學生幫我拍。",
+          "action": "導師已於合法私人空檔使用自有鏡面整理本人衣領，不占學生借物或影響職務。",
+          "tradeoff": "花自己的空檔，也沒人保證好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3367503693
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "5b6f9b5293f9171a702965388b60c862fc3c1a9165ff548ed31706f258f47169"
+      },
+      "consequenceDirections": {
+        "A": "能知道不能直接放大的地方，邀請不等於核准改裝。",
+        "B": "教師有小小在意，不把家庭鏡子留作私人用品。",
+        "C": "能保留首試修正，不由學生保證實際道路安全。",
+        "D": "可談盲點，不把圖當現地查核。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "222599a3ba8370c343a90170c901b8e9ebea93a197c185b6ea13256c6d67634b",
+    "draftSha256": "f32b2809b4a0d9027c9546c1387af2bcd649818703179021882c1a81690d1f0f",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1fd045389e7d73874d502ef3661715c14785083b22e0308cda36bcced2a277cf",
+      "checkedAt": "2026-11-27T12:15:19.376Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先給各自短寫的時間，接著是否發言仍可選。",
+            "action": "導師已在本課安排有限個別短記及自願發言方式，不收作額外評分。",
+            "tradeoff": "討論暫時安靜"
+          },
+          {
+            "id": 2,
+            "text": "這輪改成兩人自願交換看法，不作全班逐一點名。",
+            "action": "導師已提供有限自願雙人討論與個別替代，不強配衝突當事人。",
+            "tradeoff": "教師不易聽見每段"
+          },
+          {
+            "id": 3,
+            "text": "我用另一個中性例子接回內容，不再繞著誰插話討論。",
+            "action": "導師已以自有中性例子承接正常教學，不將轉換內容當取代公平修正。",
+            "tradeoff": "少了學生當場回應"
+          },
+          {
+            "id": 4,
+            "text": "取消我加的最佳發言者投票。",
+            "action": "導師已撤回本人非必要發言人氣票選，不刪原必要學習紀錄。",
+            "tradeoff": "少了表揚刺激"
+          },
+          {
+            "id": 5,
+            "text": "提供課後正常時段的一對一提問邀請。",
+            "action": "導師已發出可拒絕的有限正常工作答疑邀請，未約成或要求學生延長留校。",
+            "tradeoff": "需要另喬時間"
+          },
+          {
+            "id": 6,
+            "text": "把我原加的第二輪辯論取消，只完成本次必要內容。",
+            "action": "導師已取消自身非必要追加辯論輪次，不削減必要教學與公平發言。",
+            "tradeoff": "少了再辯的機會"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也知道自己剛想搶回最後一句，自己的總結長講今天不念了。",
+          "action": "導師已取消本人非必要長篇個人結語，保留共同必要說明、回饋與更正。",
+          "tradeoff": "少了把道理說完的滿足"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3461455463
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "0b7a1785e4b3b1f85d0c9c6d2e2cb4b48ce631cc227303c7264e46d1c442dc3a"
+      },
+      "consequenceDirections": {
+        "A": "不再以聲量決定受歡迎，仍要接住真正問題。",
+        "B": "課能接續，必要更正不因轉話題省略。",
+        "C": "教師放下面子，不讓安靜替代必要回應。",
+        "D": "未開口者有準備，不以寫完強迫上台。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "62b64b833bac5026b5f94ea38175ebf73cd211d6ad095c8a7e36eaab07654b42",
+    "draftSha256": "1fd045389e7d73874d502ef3661715c14785083b22e0308cda36bcced2a277cf",
     "seedAssignmentVersion": 1
   }
 }

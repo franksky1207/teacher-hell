@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "58c32377611c3aaaa9058b81c453ea8526fe0d56fdbf17ccdbf8ee1994f601ab",
+      "checkedAt": "2026-11-27T12:15:19.381Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消這次額外學生示範，正常課內練習照常。",
+            "action": "導師已撤除本人非必要學生示範提案，不影響正常教學或已成立學生權益。",
+            "tradeoff": "少了漂亮成果"
+          },
+          {
+            "id": 2,
+            "text": "我用自有中性例子補原教學段，不找學生頂上。",
+            "action": "導師已以自有中性教材接回本人授課段，未複製學生原作或擅改同事課程。",
+            "tradeoff": "自己多準備一份"
+          },
+          {
+            "id": 3,
+            "text": "詢問仍願意的人能否只分享一小段，不按原組綁定。",
+            "action": "導師已發出可拒絕的有限分享邀請，未替原組或其他學生答應。",
+            "tradeoff": "可能沒人願意"
+          },
+          {
+            "id": 4,
+            "text": "另邀同事回看我自己那條規範，不請他替我向學生說服。",
+            "action": "導師已發出限定成人規範回顧的自願邀請，未約成或移交必要更正責任。",
+            "tradeoff": "要承受批評，也需工作時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的最佳合作組投票。",
+            "action": "導師已撤回本人非必要合作人氣排行，不刪必要學習紀錄。",
+            "tradeoff": "少一次表揚"
+          },
+          {
+            "id": 6,
+            "text": "向教學承辦詢問合規的小段觀課資源，先看自己的操作。",
+            "action": "導師已提出限成人教學行為的未來觀課資源詢問，未排定或宣稱獲准。",
+            "tradeoff": "需核准也可能借不到人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我現在不想裝成很會接受批評，私人午餐自己坐，不再硬邀同事陪我聊這件事。",
+          "action": "導師已於合法休息時段選擇獨自用本人午餐，不對同事施加陪伴義務或妨礙正式工作。",
+          "tradeoff": "可能仍尷尬，也少了和好的表面"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3161148451
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "599b185001a2b50e5bf64caeadefe99f8faef753484b500734be2c1d02be114b"
+      },
+      "consequenceDirections": {
+        "A": "可看見制度漏洞，不把談過當公平已落實。",
+        "B": "學生不以留下配合換名次，正常分工回饋仍完成。",
+        "C": "教師承受情緒，不以獨處拒絕必要合作及回應。",
+        "D": "同意範圍縮小，拒絕不受評罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60b7ef0bda117f3fbac6c7fd621111d3177e91affcd003738dcaa12d373d3172",
+    "draftSha256": "58c32377611c3aaaa9058b81c453ea8526fe0d56fdbf17ccdbf8ee1994f601ab",
     "seedAssignmentVersion": 1
   }
 }

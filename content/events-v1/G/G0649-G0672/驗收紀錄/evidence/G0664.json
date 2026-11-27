@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "71d63d8aa08112ad09e5139e6f0de93687419033612819999d81dd1358f4d56f",
+      "checkedAt": "2026-11-27T12:15:19.384Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "按各自實際完成部分給有限回饋，不追問無關家事。",
+            "action": "導師已在自身授課權限內接收真實分工作品作有限回饋，不以家事證明為條件。",
+            "tradeoff": "分工判讀比較費時"
+          },
+          {
+            "id": 2,
+            "text": "改提供本人一段等值個別補練，不再綁小組補做。",
+            "action": "導師已提供本課有限個別等值補練選擇，不追加全組份量或要求揭露家庭。",
+            "tradeoff": "少了合作回饋"
+          },
+          {
+            "id": 3,
+            "text": "邀願意的組員只談下一次學校裡怎麼分工。",
+            "action": "導師已發出限定未來課內分工的自願協調邀請，未取得全員同意或要求道歉。",
+            "tradeoff": "不一定談得攏"
+          },
+          {
+            "id": 4,
+            "text": "讓本人自選文字或口頭補充一個實作步驟。",
+            "action": "導師已提供有限等值步驟說明方式，不改真實已完成部分或評罰沉默。",
+            "tradeoff": "只能看有限範圍"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的全班組員互評，原必要判讀由教師做。",
+            "action": "導師已撤回本人非必要公開組員互評，接回成人必要學習判讀。",
+            "tradeoff": "少了同儕意見"
+          },
+          {
+            "id": 6,
+            "text": "詢問他願不願意另了解校內可自選的支持時段。",
+            "action": "導師已提供既有自願支持資訊並詢問本人意願，未代報名或省略必要通報。",
+            "tradeoff": "可能拒絕或暫不想談"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想追問到底發生什麼，忍住，回去只整理自己的備課紙，不把他的空白填成故事。",
+          "action": "導師已自行整理本人不含學生家庭資訊的私人備課雜紙，不蒐集無關家事或刪除必要紀錄。",
+          "tradeoff": "好奇沒有被滿足，也多一段自己的整理時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2878531945
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "b4e7c7682d86e90731c425f32e85881d7308d90f06478978311c178c82f42f7f"
+      },
+      "consequenceDirections": {
+        "A": "教師接受不知道無關細節，不把學生保密要求變成必要處置不做。",
+        "B": "不讓家事變成同儕評語，必要合作回饋仍保留。",
+        "C": "責任能分清，必要安全資訊仍按規處理。",
+        "D": "可留合作空間，不逼大家評論他的家庭。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c2b698c74e3f2af1f410bce65389066ba03bec006b2548062bd7314ca0a96630",
+    "draftSha256": "71d63d8aa08112ad09e5139e6f0de93687419033612819999d81dd1358f4d56f",
     "seedAssignmentVersion": 1
   }
 }

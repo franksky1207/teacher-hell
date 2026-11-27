@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6d17c99c9539792c8f19b4a4acc1c78b25f46ba27506d4838cf88ed079c7a8b5",
+      "checkedAt": "2026-11-27T12:15:19.375Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消我加的全班對質討論，原休息照常。",
+            "action": "導師已撤回本人非必要全班公開對質提案，不取消必要查證與支持。",
+            "tradeoff": "少了當場說清的感覺"
+          },
+          {
+            "id": 2,
+            "text": "給他一次自願個別短談，只談他親自看到的與擔心的。",
+            "action": "導師已發出限定本人所見及需求的自願短談邀請，不指派蒐證或對質。",
+            "tradeoff": "要用工作時間"
+          },
+          {
+            "id": 3,
+            "text": "另用中性例句講「我聽到」和「有人跟我說」的差別。",
+            "action": "導師已以自有中性例句提供一般資訊來源辨識，不公開事件細節。",
+            "tradeoff": "占一點正常班務時間"
+          },
+          {
+            "id": 4,
+            "text": "這次不加同桌互評，回到各自原閱讀。",
+            "action": "導師已取消本人非必要同桌互評環節，維持原正常個別閱讀。",
+            "tradeoff": "少了互動活動"
+          },
+          {
+            "id": 5,
+            "text": "提供直接私下找教師的方式，不由他先收同學消息。",
+            "action": "導師已說明既有私下求助渠道，收回本人非必要學生消息彙整安排。",
+            "tradeoff": "教師需自己接資訊"
+          },
+          {
+            "id": 6,
+            "text": "詢問他是否願意了解校內自願支持資源，不替朋友報名。",
+            "action": "導師已向本人提出既有自願支持資訊，未代另一學生同意或報名。",
+            "tradeoff": "可能不需要"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽完也很想抓一個人罵，私人那段怒氣文先不發，留著自己看。",
+          "action": "導師已停止發布本人未發的私人情緒稿，不刪證據或延誤必要查證更正。",
+          "tradeoff": "沒有立刻得到認同"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3130987628
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "8cd587163e7d984605345ff3ca340d68411d5921ba3cd9fc21488f9dcdee7efa"
+      },
+      "consequenceDirections": {
+        "A": "不以停止互評處罰全班，必要休息與支持不變。",
+        "B": "可學準確表達，不點名重播傳言。",
+        "C": "他可以當同伴，不變固定中間人。",
+        "D": "教師不拿學生傳話公開找戰犯，必要處理照常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a90999df7303cb968e06c447e8e8c6f5bf535f483466908f05babbca46178ee8",
+    "draftSha256": "6d17c99c9539792c8f19b4a4acc1c78b25f46ba27506d4838cf88ed079c7a8b5",
     "seedAssignmentVersion": 1
   }
 }

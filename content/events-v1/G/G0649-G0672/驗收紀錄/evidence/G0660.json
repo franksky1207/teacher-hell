@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2bf961294aefa4c701ce4e539d8f78403e5724acd753cda2a870c0c6c9514602",
+      "checkedAt": "2026-11-27T12:15:19.382Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問對方是否願意收一句私人致意，不直接遞。",
+            "action": "導師已向受謝者提出限定私人致意的意願詢問，未轉交紙條或取得接受同意。",
+            "tradeoff": "可能被拒"
+          },
+          {
+            "id": 2,
+            "text": "這次不另安排致謝，各自回原課間活動。",
+            "action": "導師已取消本人非必要集體致謝安排，不禁止當事人在界線內自主相處。",
+            "tradeoff": "少了把話說完的滿足"
+          },
+          {
+            "id": 3,
+            "text": "提供全班不收件的私人短記，想寫就寫給自己。",
+            "action": "導師已提供自願私人短記方式，不收件、轉交或要求回覆。",
+            "tradeoff": "寫了也不會被對方看到"
+          },
+          {
+            "id": 4,
+            "text": "我用不指人的例子談被感謝者也能說不要。",
+            "action": "導師已以自有中性例句進行一般相處說明，不引用可辨認事件細節。",
+            "tradeoff": "占少量正常班務時間"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的每週幫忙王票選。",
+            "action": "導師已撤回本人非必要助人排名提案，不刪必要班務完成紀錄。",
+            "tradeoff": "少一種表揚"
+          },
+          {
+            "id": 6,
+            "text": "邀發起者另談他最想謝的是哪個具體幫忙，不問朋友私事。",
+            "action": "導師已發出限定本人感謝內容的自願短談邀請，未約成或承諾代傳。",
+            "tradeoff": "要用正常工作空檔"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也愛熱鬧，今晚私人朋友局自己喊停那個綽號遊戲，改玩我另外準備的猜物小題。",
+          "action": "導師已向私人成人朋友提出改玩自有中性猜物遊戲的邀請，未替所有人同意或轉述學生事件。",
+          "tradeoff": "少了起鬨快感，可能被嫌無聊"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4165669633
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "fa39bf65dbf37204f22f3391499764e3bb25f1213558dff4a7d2275980ad5a64"
+      },
+      "consequenceDirections": {
+        "A": "可認識界線，不把眼前學生當反面教材。",
+        "B": "能表達本人心意，不因此授權教師轉述給對方。",
+        "C": "教師為私人娛樂選不同玩法，不公開學生的尷尬。",
+        "D": "善意可保留，不能把願道謝當必須接受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1a323fae0d4e24f3ca85df76045a30ae457131c7df7e01d9878b82814521b1ae",
+    "draftSha256": "2bf961294aefa4c701ce4e539d8f78403e5724acd753cda2a870c0c6c9514602",
     "seedAssignmentVersion": 1
   }
 }

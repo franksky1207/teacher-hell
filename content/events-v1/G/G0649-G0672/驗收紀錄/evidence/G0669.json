@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "adc436f96e83de570b0f2ee9c8fe4851f65699aafea490fca7620132081a5c93",
+      "checkedAt": "2026-11-27T12:15:19.387Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "後續班會由我直接開場，不再排學生輪值。",
+            "action": "導師已收回本人非必要學生開場輪值安排，接回教師正常開場責任。",
+            "tradeoff": "少了學生主持機會"
+          },
+          {
+            "id": 2,
+            "text": "只詢問是否願意另試一次，這次明列範圍與可拒絕。",
+            "action": "導師已發出限單次的自願開場邀請，未排定人員或宣稱集體同意。",
+            "tradeoff": "可能沒人答應"
+          },
+          {
+            "id": 3,
+            "text": "取消額外開場橋段，直接進必要班務內容。",
+            "action": "導師已撤除本人非必要暖場活動，保留必要班務及正常發言權。",
+            "tradeoff": "少了暖場"
+          },
+          {
+            "id": 4,
+            "text": "提供不記名的自願玩法意見，不問支持哪個人。",
+            "action": "導師已提供限非必要玩法的自願匿名意見方式，不以投票取得個人參與同意。",
+            "tradeoff": "可能沒有共識"
+          },
+          {
+            "id": 5,
+            "text": "改用我自製的無聲問題頁，各自想，不輪流喊口號。",
+            "action": "導師已以自有中性問題頁安排有限自願思考，不收作額外評分或學生主持。",
+            "tradeoff": "互動較安靜"
+          },
+          {
+            "id": 6,
+            "text": "邀他另談我那次轉述哪裡讓他最不滿，不請他替我修公告。",
+            "action": "導師已發出限定本人意願的自願成人對學生回饋短談邀請，未約成或取得和解。",
+            "tradeoff": "要承受直接批評"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想回一長串證明自己沒那麼差，先把私人手機放包裡，休息時去買自己的飯。",
+          "action": "導師已在必要職務接續妥當的合法休息時段停止非急私人辯解並自費用餐，不漏接必要急件。",
+          "tradeoff": "沒辦法立刻得到安慰，自己花餐費"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2942368429
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "d841299518e9e06cd6358a2e3e9cfdde1e53fd1e24e31311056d7d7b5070795c"
+      },
+      "consequenceDirections": {
+        "A": "有內容可起頭，不強迫交私人答案。",
+        "B": "能聽本人界線，不要求原諒或代承擔更正。",
+        "C": "必要回覆與更正仍完成，學生不用接教師情緒。",
+        "D": "新邀請不能綁舊的好，也不能把未回當支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f1f5689c6df4c8efda657c3158ccd4a326ce8b9fb53c76b439833af323f0b8d6",
+    "draftSha256": "adc436f96e83de570b0f2ee9c8fe4851f65699aafea490fca7620132081a5c93",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "583feae04a4372e30c568a301070488698cca76e3cd6826550819137730cc67f",
+      "checkedAt": "2026-11-27T12:15:19.385Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留這個可獨立的小段，必要內容另按原課完成。",
+            "action": "導師已在本人可調整教學範圍採用有限獨立段落，明示必要內容仍正常完成。",
+            "tradeoff": "少了整套連貫感"
+          },
+          {
+            "id": 2,
+            "text": "這次不用這套，回原本已可用的方法。",
+            "action": "導師已婉拒本次本人可選的新方法採用，維持既有可用教學及正常回饋。",
+            "tradeoff": "少了新法經驗"
+          },
+          {
+            "id": 3,
+            "text": "我另做一張必要步驟對照，不要求他重試整套。",
+            "action": "導師已以自有內容製作方法必要步驟對照供成人參考，不增加學生重做量。",
+            "tradeoff": "教師多備資料"
+          },
+          {
+            "id": 4,
+            "text": "邀他只示範首試改了哪裡，限成人交流。",
+            "action": "導師已提出有限成人方法交流邀請，未約成或要求另外備課。",
+            "tradeoff": "要用工作空檔"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的完整流程展示比賽。",
+            "action": "導師已撤回本人非必要整套流程競賽提案，不刪真實教學紀錄。",
+            "tradeoff": "少了整套成果"
+          },
+          {
+            "id": 6,
+            "text": "向教學資源窗口查是否已有可拆用的材料，不請同事另做。",
+            "action": "導師已查詢校內既有可拆用素材及使用條件，未取得授權或要求同事填缺。",
+            "tradeoff": "未必找得到"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把自己那份私人的手作套件全拆完，今天只玩最想玩的那格，剩下收起來。",
+          "action": "導師已於私人時間以自有安全套件完成本人自選短段並收存餘件，不影響正式工作或學生材料。",
+          "tradeoff": "少了通關的爽快，套件仍未完成"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2222444898
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "fe365c9cbf9f29fc89a790ada16425a7b9cd6a0a7b508ef3117a1225142d019a"
+      },
+      "consequenceDirections": {
+        "A": "可分清可變與不可省，圖表不是成效證明。",
+        "B": "同事可保留意見，不把不用當專業否定。",
+        "C": "能學到實際修正，不把他變永久培訓人力。",
+        "D": "教師接受私人興趣不全做，不拿它套到必要教學。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "246133ac04e35c78664a39e77356d4a733cf6e06894eb9aea907f494b701fe55",
+    "draftSha256": "583feae04a4372e30c568a301070488698cca76e3cd6826550819137730cc67f",
     "seedAssignmentVersion": 1
   }
 }

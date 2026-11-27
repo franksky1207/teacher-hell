@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1bc34c277e19ec11459b10e19660ed90b6ca8a594a7d17d463be5fd361948383",
+      "checkedAt": "2026-11-27T12:15:19.379Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原課內做一次分開也能接合的小段合作。",
+            "action": "導師已安排自身課內有限分段合作並保留個別替代，不要求課後延留或家庭資訊。",
+            "tradeoff": "要重新設計銜接"
+          },
+          {
+            "id": 2,
+            "text": "這次提供等值個別完成，不把同組當必選。",
+            "action": "導師已在本課提供有限個別等值方式，不以家庭負擔評價參與態度。",
+            "tradeoff": "少了共同練習"
+          },
+          {
+            "id": 3,
+            "text": "邀願意的同學各說可配合的學校時間，不問為什麼不能。",
+            "action": "導師已提出限校內可用時段的自願協調詢問，未替任何人承諾或收家庭證明。",
+            "tradeoff": "時間可能仍湊不攏"
+          },
+          {
+            "id": 4,
+            "text": "我提供共同步驟卡，讓先完成的人能留下清楚接點。",
+            "action": "導師已製作自有有限合作步驟卡供課內使用，不要求學生代寫全組進度。",
+            "tradeoff": "教師多做一份"
+          },
+          {
+            "id": 5,
+            "text": "取消我加的課後全員同步拍照。",
+            "action": "導師已撤回本人非必要課後全員拍照提案，不影響必要學習及離校支持。",
+            "tradeoff": "少了完整合照"
+          },
+          {
+            "id": 6,
+            "text": "邀他另在正常工作空檔談被詢問時的壓力。",
+            "action": "導師已發出限定本人壓力的自願支持短談邀請，未約成或查看家庭通訊。",
+            "tradeoff": "需另配時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很怕人家覺得我沒幫忙，今晚私人聚會不再先答應包辦所有雜事。",
+          "action": "導師已婉拒本人非必要私人聚會額外雜務邀請，不撤既有必要承諾或轉述學生個資。",
+          "tradeoff": "可能少了被稱讚的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 870720551
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "b286a48e304166b45b51f78825597b53776467e99a2862b0c575a634cac5386f"
+      },
+      "consequenceDirections": {
+        "A": "不留校者不用背缺席的形象，正式紀錄仍真實。",
+        "B": "教師承受拒絕的尷尬，不拿學生家庭處境替自己辯解。",
+        "C": "可見實際限制，不用家庭故事爭誰更辛苦。",
+        "D": "可處理本人的感受，不替親戚判對錯或要求家庭到場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "00071144385a4248c57455759bde9aaaf40664f019ce304928dabbb1d0a39820",
+    "draftSha256": "1bc34c277e19ec11459b10e19660ed90b6ca8a594a7d17d463be5fd361948383",
     "seedAssignmentVersion": 1
   }
 }

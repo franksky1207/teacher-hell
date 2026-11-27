@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf0caddc20233fbd24bfded150d9d3803bf1aa7ff0c52fa1b82fbe968a024274",
+      "checkedAt": "2026-11-27T12:15:19.388Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只用原已同意的多角度照片投影，不再動箱。",
+            "action": "導師已選用既有授權模型照片作有限課內視角比較，不取新影像或要求攀高。",
+            "tradeoff": "少了實物感"
+          },
+          {
+            "id": 2,
+            "text": "在安全低檯由我轉箱，學生留在原觀察位置。",
+            "action": "導師已在成人確認及物主同意範圍內安全轉動低檯模型箱，不交學生搬高或開箱。",
+            "tradeoff": "教師得自己操作"
+          },
+          {
+            "id": 3,
+            "text": "刪掉必須看底部的題，保留原可平視的猜題。",
+            "action": "導師已刪除本人非必要底面觀察題，保留安全平視的自願題目。",
+            "tradeoff": "少了反例的趣味"
+          },
+          {
+            "id": 4,
+            "text": "不用借模型，我畫一組不同角度的虛構動物。",
+            "action": "導師已以自有虛構造型製作視角圖，不取用家庭原物或未授權照片。",
+            "tradeoff": "可能沒有模型逼真"
+          },
+          {
+            "id": 5,
+            "text": "讓各人自願畫自己看到的一角，不公布猜中排名。",
+            "action": "導師已提供有限個別觀察圖記方式，不要求換危險位置或收作正式評比。",
+            "tradeoff": "圖可能不完整"
+          },
+          {
+            "id": 6,
+            "text": "取消我加的最快猜中獎勵。",
+            "action": "導師已撤回本人非必要視角搶答速度獎勵，不取消正常學習與共同安全處理。",
+            "tradeoff": "少了搶答刺激"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "尾巴把我也難住了，我自費買個自己的小模型下班慢慢看，不借他的箱回家。",
+          "action": "導師已自費購買私人小模型於安全空間自用，不借家庭模型、報帳或作班級新任務。",
+          "tradeoff": "花自己的錢，可能買得不好看"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1091816712
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "0f9dfb1d815fb49d5778efeda98ce6f0fcefbe4815b338841d9d48b51637a869"
+      },
+      "consequenceDirections": {
+        "A": "教師自己解好奇，不索取學生資源或拿新物逼全班再試。",
+        "B": "可換視角，未授權照片不能臨時補用。",
+        "C": "不同視角可並列，教師需說明不能憑一角斷定全部。",
+        "D": "不再為求快去拉箱，必要安全教育仍在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c97074cbde38a79cabcf30865e13974fe7c217a31032f369fa5fa3d17e7a4aa0",
+    "draftSha256": "bf0caddc20233fbd24bfded150d9d3803bf1aa7ff0c52fa1b82fbe968a024274",
     "seedAssignmentVersion": 1
   }
 }

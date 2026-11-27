@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "62482eab03a3a4ffa56543a76964a5062f3dd1e113596dc0a72e0563b24e165e",
+      "checkedAt": "2026-11-27T12:15:19.378Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不借臂帶，我不再加做校門口私人合照。",
+            "action": "導師已婉拒本次臂帶借用並取消本人非必要校門合照邀請，不免除既有照看責任。",
+            "tradeoff": "少了跟家長親近的機會"
+          },
+          {
+            "id": 2,
+            "text": "向承辦詢問是否有明示職務的既有識別物，不自行改臂帶字樣。",
+            "action": "導師已詢問校內既有職務識別資源及使用條件，未領取、改製或接班。",
+            "tradeoff": "要等，也可能沒有"
+          },
+          {
+            "id": 3,
+            "text": "把我自己的收件工作移回已核准的室內位置。",
+            "action": "導師已將本人可移的收件資料搬回既有核准室內定點並告知相關者，不改離校動線。",
+            "tradeoff": "自己要搬資料"
+          },
+          {
+            "id": 4,
+            "text": "取消我臨時提出的額外作品搬送，讓正式離校先完成。",
+            "action": "導師已撤回本人非必要離校時段作品移送提案，正式程序仍共同接續。",
+            "tradeoff": "展示延後"
+          },
+          {
+            "id": 5,
+            "text": "請主管檢視是否要增派正式人力，不把借帶子當補人。",
+            "action": "導師已向有權主管提出正式人力需求資訊，未排班或宣稱增援到位。",
+            "tradeoff": "未必核准"
+          },
+          {
+            "id": 6,
+            "text": "另邀職員在工作空檔回看哪些詢問最常找錯人。",
+            "action": "導師已提出限定職務辨識困難的自願成人回顧邀請，尚未約成。",
+            "tradeoff": "多用一段工作時間"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我還滿喜歡那條亮色，自己買個反光小吊飾放私人包上，不再借值勤用品裝樣子。",
+          "action": "導師已自費購買本人私人包用反光飾物，未借用職務標誌或宣稱值勤資格。",
+          "tradeoff": "自己的錢，也不會多出職權"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 41177915
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "dcaa79c6a0baa34b91fc87aa50944c4e43b5333fbd69d68148f3e78f6c218344"
+      },
+      "consequenceDirections": {
+        "A": "教師滿足喜好，不在校內把吊飾當帶人標誌。",
+        "B": "查到不等於取得值勤權，原正式交接仍按規。",
+        "C": "需要能被說清楚，不能先指定學生或同事頂班。",
+        "D": "辨識混淆較少，必要工作仍照職務處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "90954487cada45d28c861d93c1d7fb2afc954907624635a5c254dadbe7ac27ef",
+    "draftSha256": "62482eab03a3a4ffa56543a76964a5062f3dd1e113596dc0a72e0563b24e165e",
     "seedAssignmentVersion": 1
   }
 }

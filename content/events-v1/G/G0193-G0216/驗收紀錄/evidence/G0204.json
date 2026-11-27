@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dca8b9f01cf7d20778f7e7c1be13beeebe9e5839d6d808a446daec5148794347",
+      "checkedAt": "2026-11-27T04:25:53.912Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向全班說明原指示與學生誤解的部分，明確表示目前沒有抄襲判定",
+            "action": "導師已向全班說明原指示與學生誤解的部分，明確表示目前沒有抄襲判定",
+            "tradeoff": "要公開承認指令不清，可能引出更多質問"
+          },
+          {
+            "id": 2,
+            "text": "請有權任課教師獨立核對作業，不再經由學生分類推定",
+            "action": "導師已請有權任課教師獨立核對作業，不再經由學生分類推定",
+            "tradeoff": "要等待正式確認，不能為求快先給結論"
+          },
+          {
+            "id": 3,
+            "text": "逐一確認哪些人實際收到退件與說法，只收必要資訊",
+            "action": "導師已逐一確認哪些人實際收到退件與說法，只收必要資訊",
+            "tradeoff": "整理很費時，也須避免再念一遍被誤認的名單"
+          },
+          {
+            "id": 4,
+            "text": "讓收件學生自己說明聽到什麼、做了什麼，不把你的責任全推給他",
+            "action": "導師已讓收件學生自己說明聽到什麼、做了什麼，不把你的責任全推給他",
+            "tradeoff": "他可能怕失去肯定而隱瞞，你得用可核對事實追問"
+          },
+          {
+            "id": 5,
+            "text": "重新交代往後收件只做物品點收，疑點一律直接交成人",
+            "action": "導師已重新交代往後收件只做物品點收，疑點一律直接交成人",
+            "tradeoff": "短期效率可能降低，教師要多接一些詢問"
+          },
+          {
+            "id": 6,
+            "text": "依規則處理已知散播的具體不實說法，先查明而非要全班道歉",
+            "action": "導師已依規則處理已知散播的具體不實說法，先查明而非要全班道歉",
+            "tradeoff": "需要持續追蹤，可能有人否認自己轉述"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再被一個手勢當成整套命令，今天把作業點收接回自己手上，暫不再請任何學生代收這一輪",
+          "action": "導師已親自接手本輪一般作業點收並說明僅為重新釐清流程，未取消學生其他權益或把核對當處分",
+          "tradeoff": "占用你的時間，也可能讓熱心幫忙的人失落"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3752834848
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "f80561e4823123a18c8e6293f855bc6fa01d072ff1227715eb627b3131e24334"
+      },
+      "consequenceDirections": {
+        "A": "能辨認傳話在哪裡變成判定，也可能發現不只一個人說錯。",
+        "B": "澄清可到達真正受影響的人，但不代表傳聞已完全停止。",
+        "C": "你得親自面對所有缺件與詢問，學生不會再靠猜測補完指令，但這不是對幫手的集體處罰。",
+        "D": "學生不再兼任裁判，真正需要處理的疑點仍有適當窗口。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "276ddb756d8b2f5ad0a9fe56c006c6950fa69362ff4c3cbbb05224492696f6e5",
+    "draftSha256": "dca8b9f01cf7d20778f7e7c1be13beeebe9e5839d6d808a446daec5148794347",
     "seedAssignmentVersion": 1
   }
 }

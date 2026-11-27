@@ -14,14 +14,82 @@
   "plannedTags": [
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "34073de4eb0aeccda83ba3958728f24a2666b7e3bd62394b5ab7506f50530755",
+      "checkedAt": "2026-11-27T04:25:53.907Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他確認想保留哪些使用、拒絕哪些用途，交權責成人協助形成清楚說明",
+            "action": "導師已和他確認想保留哪些使用、拒絕哪些用途，交權責成人協助形成清楚說明",
+            "tradeoff": "要談到具體範圍，也不能由教師代作法律保證"
+          },
+          {
+            "id": 2,
+            "text": "在合適成人陪同與當事人同意下，安排一次只談使用範圍的對話",
+            "action": "導師已在合適成人陪同與當事人同意下，安排一次只談使用範圍的對話",
+            "tradeoff": "對方可能拒談，友情壓力也可能讓作者難開口"
+          },
+          {
+            "id": 3,
+            "text": "提供可回覆的處理進度與下一次聯繫時間，不讓他每天追問",
+            "action": "導師已提供可回覆的處理進度與下一次聯繫時間，不讓他每天追問",
+            "tradeoff": "你得守住回覆時間，仍不能先承諾結果"
+          },
+          {
+            "id": 4,
+            "text": "協助他把原稿與實際流通資訊妥善留存，僅供有權處理者核對",
+            "action": "導師已協助他把原稿與實際流通資訊妥善留存，僅供有權處理者核對",
+            "tradeoff": "蒐集範圍要適當，不能逼同學交出所有私人訊息"
+          },
+          {
+            "id": 5,
+            "text": "若他真正願意，請適當成人協助討論有限、非商業的使用同意",
+            "action": "導師已若他真正願意，請適當成人協助討論有限、非商業的使用同意",
+            "tradeoff": "需要本人自由決定，不能拿不處分當交換"
+          },
+          {
+            "id": 6,
+            "text": "向班上說明轉用創作須先取得同意，不公開交易細節或要求選邊",
+            "action": "導師已向班上說明轉用創作須先取得同意，不公開交易細節或要求選邊",
+            "tradeoff": "會引發好奇，也須避免暗示誰一定有罪"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被他追問得也緊張，請權責窗口直接約一段讓作者本人能問進度的時間，不再由你層層轉述",
+          "action": "導師已向權責窗口提出與作者本人直接回覆進度的約談安排，依必要知情處理，不代授權或承諾撤銷程序",
+          "tradeoff": "需要窗口同意與學生可用時段，你也少了掌握每一句話的方便"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1144555707
+        },
+        "selectedIds": [
+          1,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "368a00eed4d2d2a984eb824e33f5d8e3552b719d9fcca3fd1953da96d8c19b79"
+      },
+      "consequenceDirections": {
+        "A": "學生知道案件沒有被擱置，也可能對正式處理速度感到失望。",
+        "B": "權利與經過較可確認，但留下資料本身不會解決朋友的不滿。",
+        "C": "作者能直接問到承辦人，卻可能發現答案仍有限；你不能因此退出必要的校內照顧。",
+        "D": "原作者的意思不再被簡化成不准朋友玩，後續仍可能談不攏。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aeba56e22a5882cefb5817f8797756157bb068b1bd3b3448bfd74498d07b77f5",
+    "draftSha256": "34073de4eb0aeccda83ba3958728f24a2666b7e3bd62394b5ab7506f50530755",
     "seedAssignmentVersion": 1
   }
 }

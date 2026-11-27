@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ddfc05d2b2a18c4992a600a607546e8f8147337e74126c0fbc26184535a8e8f0",
+      "checkedAt": "2026-11-27T04:25:53.913Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天結束校內滑行，明確說明板具依校規保管與領回方式",
+            "action": "導師已今天結束校內滑行，明確說明板具依校規保管與領回方式",
+            "tradeoff": "原先同樂的期待落空，學生也可能嫌管太多"
+          },
+          {
+            "id": 2,
+            "text": "協助有興趣的學生查詢合規場地與合適成人指導資訊，不代替家庭報名",
+            "action": "導師已協助有興趣的學生查詢合規場地與合適成人指導資訊，不代替家庭報名",
+            "tradeoff": "要自行判斷費用與時間，未必每人都能參加"
+          },
+          {
+            "id": 3,
+            "text": "請他只分享自己如何判斷停不住，不現場示範或要求家人出面",
+            "action": "導師已請他只分享自己如何判斷停不住，不現場示範或要求家人出面",
+            "tradeoff": "少了動作的直觀感，仍須由適任成人核實"
+          },
+          {
+            "id": 4,
+            "text": "讓大家改選不需滑行設備的合規共同活動，由願意的人參加",
+            "action": "導師已讓大家改選不需滑行設備的合規共同活動，由願意的人參加",
+            "tradeoff": "不一定像滑板好玩，也可能有人選擇休息"
+          },
+          {
+            "id": 5,
+            "text": "和他私下談剛才攔人後的尷尬，問是否需要你向同伴補充說明",
+            "action": "導師已和他私下談剛才攔人後的尷尬，問是否需要你向同伴補充說明",
+            "tradeoff": "他未必想再被點名，也不能替別人決定要不要和好"
+          },
+          {
+            "id": 6,
+            "text": "請學校負責單位提供校內可做、不可做的明確活動範圍",
+            "action": "導師已請學校負責單位提供校內可做、不可做的明確活動範圍",
+            "tradeoff": "等待回覆期間仍不能自行恢復"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想試那種平衡感，決定自己另向合格場館詢問成人初學課，不要學生今天教你滑",
+          "action": "導師已就本人私人學習向合適場館詢問合法成人入門課，不帶學生外出、不要求學生或家庭代付與陪練",
+          "tradeoff": "是你自己的費用與時間，未必能很快排到"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1040435958
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "49e96f3c96e4795aa00aa365befd941deedabbe88100a40db54c4c6761fc779f"
+      },
+      "consequenceDirections": {
+        "A": "學生能看見教師真有興趣卻願意從正規方式學，也可能失望今天無法一起玩。",
+        "B": "興趣有較安全的去處，也可能暴露同學在資源上的差異。",
+        "C": "學生不必每次靠猜測決定能否滑，但可能得到比想像更窄的允許範圍。",
+        "D": "大家能安全回到原安排，但接下來仍要處理怎麼一起玩又不逼人買裝備。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f9ac73c7607d6dc73295904b58a5f0cbf77f37aabb9bd4ef55dcdeb6b2877cbe",
+    "draftSha256": "ddfc05d2b2a18c4992a600a607546e8f8147337e74126c0fbc26184535a8e8f0",
     "seedAssignmentVersion": 1
   }
 }

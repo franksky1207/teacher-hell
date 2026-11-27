@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4d61f908c129b4cf852357e9820e3c1b41f192f21116ac6b5cbf5cb0e7d93198",
+      "checkedAt": "2026-11-27T04:25:53.911Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依校規協助安排短暫合格支援，讓他在完成交接後休息",
+            "action": "導師已依校規協助安排短暫合格支援，讓他在完成交接後休息",
+            "tradeoff": "你得協調人力，不能只把教師請走就留學生自讀"
+          },
+          {
+            "id": 2,
+            "text": "讓他先說明默讀規則仍適用，必要支援由成人另作安排",
+            "action": "導師已讓他先說明默讀規則仍適用，必要支援由成人另作安排",
+            "tradeoff": "他仍須開口，也可能太在意把話說漂亮"
+          },
+          {
+            "id": 3,
+            "text": "向課務反映已累積的值班負荷，請其檢視後續安排",
+            "action": "導師已向課務反映已累積的值班負荷，請其檢視後續安排",
+            "tradeoff": "會留下過量與疲勞資訊，調整未必立刻核准"
+          },
+          {
+            "id": 4,
+            "text": "和他核對默讀時真正需要成人做的事，刪掉自己加上的非必要巡查紀錄",
+            "action": "導師已和他核對默讀時真正需要成人做的事，刪掉自己加上的非必要巡查紀錄",
+            "tradeoff": "少了細密紀錄，不能因此降低必要照護"
+          },
+          {
+            "id": 5,
+            "text": "依學生的實際發言個別說明可以提出疑問、不能藉此干擾同學閱讀",
+            "action": "導師已依學生的實際發言個別說明可以提出疑問、不能藉此干擾同學閱讀",
+            "tradeoff": "需要時間，不可把指出教師疲倦本身當作違規"
+          },
+          {
+            "id": 6,
+            "text": "和同事另約合適時間談他對代看與能力評價的擔心，不在學生面前追問",
+            "action": "導師已和同事另約合適時間談他對代看與能力評價的擔心，不在學生面前追問",
+            "tradeoff": "無法立即消除不安，也得守住後續談話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想有一次不用裝得精神百倍，向主管提出把自己下一段非必要巡班改成正式輪替空檔，請一併檢視兩人的休息",
+          "action": "導師已就本人可調整的非必要工作提出正式輪替與休息申請，未私自離開勤務或以同事疲勞換取特權",
+          "tradeoff": "可能被認為也在替自己爭福利，調整須核准"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2954126184
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "7a6b72c8fa852bee019a11aa8de049639f9b15b4508e27a64cdcf89eb7826814"
+      },
+      "consequenceDirections": {
+        "A": "同事不用一直私下硬撐，但眼前短休仍須另有正式接續。",
+        "B": "學生有表達的界線，教師也得接受自己確實曾閉眼的事實。",
+        "C": "疲倦不再只有這位同事被點出，卻可能把你自己的工作安排也拉進檢視。",
+        "D": "他能說出真正怕被怎麼看，眼前安排則仍按健康與責任決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4ae7279a2276a49263138038196d49421cc57e9e86ddf5213a588f1d258ede21",
+    "draftSha256": "4d61f908c129b4cf852357e9820e3c1b41f192f21116ac6b5cbf5cb0e7d93198",
     "seedAssignmentVersion": 1
   }
 }

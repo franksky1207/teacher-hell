@@ -16,14 +16,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d8862819e4a749c5160acee394ed705d5251e8250a5d6163fd062bf811922f39",
+      "checkedAt": "2026-11-27T04:25:53.906Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "本節只口述說明已確認的內容，明說操作目標尚未完成",
+            "action": "導師已本節只口述說明已確認的內容，明說操作目標尚未完成",
+            "tradeoff": "效率較高，但學生再一次沒有親手操作"
+          },
+          {
+            "id": 2,
+            "text": "使用另有安全認定的冷卻示範件或模型說明結構，不拆動故障器材",
+            "action": "導師已使用另有安全認定的冷卻示範件或模型說明結構，不拆動故障器材",
+            "tradeoff": "替代物未必齊全，也無法呈現實際運轉"
+          },
+          {
+            "id": 3,
+            "text": "向課務與設備承辦提出另排合規操作時段的需求",
+            "action": "導師已向課務與設備承辦提出另排合規操作時段的需求",
+            "tradeoff": "要等可用器材與時段，不能先保證下節就補"
+          },
+          {
+            "id": 4,
+            "text": "今天保留實作單未完成的部分，不用一份抄寫作業替代操作成績",
+            "action": "導師已今天保留實作單未完成的部分，不用一份抄寫作業替代操作成績",
+            "tradeoff": "成果暫時不完整，也須向任課權責者確認記錄方式"
+          },
+          {
+            "id": 5,
+            "text": "請學生以安全的圖卡排操作順序，當作下次真機前的準備",
+            "action": "導師已請學生以安全的圖卡排操作順序，當作下次真機前的準備",
+            "tradeoff": "會增加教師備材，仍缺觸感與即時回饋"
+          },
+          {
+            "id": 6,
+            "text": "和同事完成必要交接後讓他依原安排離開，由合格現場教師接續本節",
+            "action": "導師已和同事完成必要交接後讓他依原安排離開，由合格現場教師接續本節",
+            "tradeoff": "你要接下剩餘課程，不能要求他因故障無限延留"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也受夠每次拿一段漂亮解說當作有做，請學生匿名留下今天還沒摸到、最想弄懂的一步，直接附給設備與課務窗口",
+          "action": "導師已收集不含個資的未完成操作需求，隨實際停機情形提交有權窗口，未讓學生再接近故障設備",
+          "tradeoff": "會讓教學缺口正式留下來，也多一次整理與回覆"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1960226239
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "b74f9cfd0d7d1072b793c4967ab4bd9813dd421b3db08d541a9e6cdce89c80c1"
+      },
+      "consequenceDirections": {
+        "A": "後續安排能對應具體需求，卻可能被主管追問為何已連續兩次沒有操作。",
+        "B": "部分步驟可先熟悉，但錯誤操作的實際判斷仍須在正式操作時確認。",
+        "C": "教法不必只為趕他的時間決定，但學生的操作期待仍需另排。",
+        "D": "學生不必假裝已做過，但教師得真的在後續處理未完成項目。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c85a56e74c57205ebd4c9327072a888ce53eadab01d00f62106f5dedd58474d2",
+    "draftSha256": "d8862819e4a749c5160acee394ed705d5251e8250a5d6163fd062bf811922f39",
     "seedAssignmentVersion": 1
   }
 }

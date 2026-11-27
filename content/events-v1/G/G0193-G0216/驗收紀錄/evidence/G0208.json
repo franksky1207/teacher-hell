@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e7f42b45bce2d6bb077dede563ec8e24a0040a74067b7c2e6e29eaeadf6d6985",
+      "checkedAt": "2026-11-27T04:25:53.914Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請家長把食物帶回，讓祝賀留在家裡由她親自交給孩子",
+            "action": "導師已請家長把食物帶回，讓祝賀留在家裡由她親自交給孩子",
+            "tradeoff": "不能當場辦成班級分享，她也得面對孩子可能不自在的回應"
+          },
+          {
+            "id": 2,
+            "text": "先私下問孩子是否願意收下或分享，不把家長心意變成必須答應",
+            "action": "導師已先私下問孩子是否願意收下或分享，不把家長心意變成必須答應",
+            "tradeoff": "家長可能失望，食物也要注意保存時限"
+          },
+          {
+            "id": 3,
+            "text": "若規則與衛生條件都允許，以不指名的自願分享處理，不宣布成績與家庭原因",
+            "action": "導師已若規則與衛生條件都允許，以不指名的自願分享處理，不宣布成績與家庭原因",
+            "tradeoff": "份量有限且要容許不吃的人，不會有完整表揚場面"
+          },
+          {
+            "id": 4,
+            "text": "陪家長練一句她真正想對孩子說的話，不加上全班比較",
+            "action": "導師已陪家長練一句她真正想對孩子說的話，不加上全班比較",
+            "tradeoff": "她可能覺得難為情，你也不能替孩子保證感動"
+          },
+          {
+            "id": 5,
+            "text": "把校內可用的私下親子交接方式說清楚，讓兩人自行決定",
+            "action": "導師已把校內可用的私下親子交接方式說清楚，讓兩人自行決定",
+            "tradeoff": "可能需要另約合規時間，也不能把冷掉的食物一直留校"
+          },
+          {
+            "id": 6,
+            "text": "若家長只是想謝謝教師，請她把對你的感謝和給孩子的祝賀分開，不收走這袋食物",
+            "action": "導師已若家長只是想謝謝教師，請她把對你的感謝和給孩子的祝賀分開，不收走這袋食物",
+            "tradeoff": "談話可能有點生硬，也要避免讓她覺得心意被嫌棄"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聞著味道也餓了，坦白說自己差點只顧著想吃，先去自費買自己的晚餐，不拿這袋替全班做人情",
+          "action": "導師已拒絕擅分家庭餐食並自行付費安排本人餐點，必要親子聯繫由合規窗口持續，不挪用學生食物",
+          "tradeoff": "要花自己的錢與時間，家長可能愣一下"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 103930273
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "9c8f8458137d274197f150b893b6d1266e1d0dd913059c13d760e75d7836c265"
+      },
+      "consequenceDirections": {
+        "A": "這袋仍由家庭與孩子依法決定，你不用靠代宣布換一口吃的，現場也可能因你的坦白鬆一口氣。",
+        "B": "家庭能保留低調的慶祝，教師不用代當發布好消息的人。",
+        "C": "食物可被分享，孩子卻不必成為被圍看的主角。",
+        "D": "孩子有機會選自己舒服的方式，卻也可能直接拒絕公開慶祝。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "95e8c474c183b95e1f49a2469571630197fc7c5de0ee41bbbef3b1cd7919fe1f",
+    "draftSha256": "e7f42b45bce2d6bb077dede563ec8e24a0040a74067b7c2e6e29eaeadf6d6985",
     "seedAssignmentVersion": 1
   }
 }

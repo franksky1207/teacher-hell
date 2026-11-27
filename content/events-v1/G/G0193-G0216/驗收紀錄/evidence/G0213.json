@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6768a29176dba4daecc5a7d6193346a101be7b3081c46a3e6c556c47799711be",
+      "checkedAt": "2026-11-27T04:25:53.919Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "支持他向同學撤回尚未交付的免費承諾，承認失約但不公開家計",
+            "action": "導師已支持他向同學撤回尚未交付的免費承諾，承認失約但不公開家計",
+            "tradeoff": "同學可能失望甚至生氣，不能保證一句道歉就結束"
+          },
+          {
+            "id": 2,
+            "text": "讓他自己決定是否只做一張大家可自願共用的圖，不收費也不替別人客製",
+            "action": "導師已讓他自己決定是否只做一張大家可自願共用的圖，不收費也不替別人客製",
+            "tradeoff": "仍會占用一點時間，同學也可能不接受"
+          },
+          {
+            "id": 3,
+            "text": "請他逐項確認哪些已交付、哪些只口頭答應，交有權成人處理可能的收款",
+            "action": "導師已請他逐項確認哪些已交付、哪些只口頭答應，交有權成人處理可能的收款",
+            "tradeoff": "核對需要時間，也可能發現承諾比記得更多"
+          },
+          {
+            "id": 4,
+            "text": "在不透露原因下，向同學說明不得以群組施壓或要求揭露私事換取退出",
+            "action": "導師已在不透露原因下，向同學說明不得以群組施壓或要求揭露私事換取退出",
+            "tradeoff": "可能被說教師偏心，需要依具體行為說明"
+          },
+          {
+            "id": 5,
+            "text": "讓他準備一段自己願意說的期限與拒絕內容，之後由本人回覆",
+            "action": "導師已讓他準備一段自己願意說的期限與拒絕內容，之後由本人回覆",
+            "tradeoff": "他要面對朋友，不會有人替他擋掉所有批評"
+          },
+          {
+            "id": 6,
+            "text": "把校內可用的家庭經濟支持資訊私下提供本人，是否申請由適當程序處理",
+            "action": "導師已把校內可用的家庭經濟支持資訊私下提供本人，是否申請由適當程序處理",
+            "tradeoff": "他可能不想使用，也不能保證立刻補上家用"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再讓這件事占滿全班，提議本次頭像改用每人自己畫的簡單版本，願意的人課內一起畫，不再等他交整組",
+          "action": "導師已提出可在本人有權調整課內完成的自願自繪替代活動，不撮合付費、不強迫原作者授課或公開家計",
+          "tradeoff": "成品不會像原來精緻，你也得讓不想畫的人保留不參與權利"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2872268497
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "e491976eead02d0c6efa29574e5862284a374eea8f9b8931ae9faf941f27b280"
+      },
+      "consequenceDirections": {
+        "A": "同學有不靠他趕工的替代圖，卻仍可能在意原承諾落空；教師不能把替代活動當成強制和解。",
+        "B": "學生多一條合法求助路徑，原免費承諾與校外委託仍須分別處理。",
+        "C": "不會把所有請求混成一筆人情帳，尚未完成者仍可清楚撤回。",
+        "D": "他有可控制的小版本，但不能再被加上每人改一點的要求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "51c2a96528aa73dca25db0cadd201773c58e4a68f7b571d7823fac22a651b6db",
+    "draftSha256": "6768a29176dba4daecc5a7d6193346a101be7b3081c46a3e6c556c47799711be",
     "seedAssignmentVersion": 1
   }
 }

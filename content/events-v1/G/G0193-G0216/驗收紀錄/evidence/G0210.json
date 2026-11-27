@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "94f348e827bdfc9e0b4f1ab42353dd782d11b90f23a6b865fee5dfd6ce9b6ff9",
+      "checkedAt": "2026-11-27T04:25:53.916Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由你搬回可安全使用的椅子，再和實際使用者談今天如何輪用",
+            "action": "導師已由你搬回可安全使用的椅子，再和實際使用者談今天如何輪用",
+            "tradeoff": "你得收回剛才的決定，仍可能排不到每人理想的空檔"
+          },
+          {
+            "id": 2,
+            "text": "先請空間管理者確認椅子可放的位置與共同使用方式",
+            "action": "導師已先請空間管理者確認椅子可放的位置與共同使用方式",
+            "tradeoff": "要等窗口處理，今天可能暫用其他合法位置"
+          },
+          {
+            "id": 3,
+            "text": "清楚說出是你個人收椅，不讓同事替你包裝成全體同意",
+            "action": "導師已清楚說出是你個人收椅，不讓同事替你包裝成全體同意",
+            "tradeoff": "會承擔現場不滿，也可能得向主管說明"
+          },
+          {
+            "id": 4,
+            "text": "請同事向自己拉來的人更正尚未確認的「大家」，再只找實際使用者討論",
+            "action": "導師已請同事向自己拉來的人更正尚未確認的「大家」，再只找實際使用者討論",
+            "tradeoff": "他可能覺得難為情，談話也會多一段"
+          },
+          {
+            "id": 5,
+            "text": "邀實際使用者各提一個可行的短時使用方案，再交權責者確認",
+            "action": "導師已邀實際使用者各提一個可行的短時使用方案，再交權責者確認",
+            "tradeoff": "可能意見衝突，也不能由聲音最大的人決定"
+          },
+          {
+            "id": 6,
+            "text": "把自己對噪音或物品占用的具體困擾寫給管理者，不再自行移走公物",
+            "action": "導師已把自己對噪音或物品占用的具體困擾寫給管理者，不再自行移走公物",
+            "tradeoff": "需要接受正式回覆，也可能發現自己的期待不合理"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天真的不想再坐在這裡，向管理者確認另一處可用的個人休息位置，自己先搬開這段私人休息安排",
+          "action": "導師已向管理者確認並改用合法可用的個人休息位置，不排除其他人使用原公共區域，既有收椅決定仍須負責處理",
+          "tradeoff": "少了熟悉的同事聊天，不能因此占用他人或學生空間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3134464622
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "c231209c09ae80906907b0b03964ff01552dbd035fca375fbe345abcd847cb8e"
+      },
+      "consequenceDirections": {
+        "A": "休息位置恢復，但原本惹你生氣的使用問題仍要具體協調。",
+        "B": "風聲有機會停在必要範圍，卻不能靠更正八卦掩蓋你先收椅的問題。",
+        "C": "你能暫時離開讓自己發火的地方，但共同休息角的處理仍須由成人正常協調。",
+        "D": "問題不再靠收椅表達，現場使用仍須按既有規範維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c4ee223ba9c1956d930be4022c33ddb071642706411555acb7890dd6feae799",
+    "draftSha256": "94f348e827bdfc9e0b4f1ab42353dd782d11b90f23a6b865fee5dfd6ce9b6ff9",
     "seedAssignmentVersion": 1
   }
 }

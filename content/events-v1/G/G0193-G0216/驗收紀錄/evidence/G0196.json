@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7be304855096262e4f2828a6c15044dbae3ec115de75f356c7d0e08139733a70",
+      "checkedAt": "2026-11-27T04:25:53.902Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只提出承接今天一堂自己有資格且獲准的支援，明寫不自動延續",
+            "action": "導師已只提出承接今天一堂自己有資格且獲准的支援，明寫不自動延續",
+            "tradeoff": "你今天的工作會受擠壓，後面缺口仍存在"
+          },
+          {
+            "id": 2,
+            "text": "把後續補課交回課務重新排定，不再私下向新人邀約",
+            "action": "導師已把後續補課交回課務重新排定，不再私下向新人邀約",
+            "tradeoff": "調整需要時間，可能被追問為何原表不能照用"
+          },
+          {
+            "id": 3,
+            "text": "請承辦與新人逐格確認原表哪些已正式同意，撤去尚未成立的安排",
+            "action": "導師已請承辦與新人逐格確認原表哪些已正式同意，撤去尚未成立的安排",
+            "tradeoff": "會揭露排班流程的疏漏，也可能留下更多空格"
+          },
+          {
+            "id": 4,
+            "text": "向主管提出透明輪替或自願登記的方案，請其依規定決定",
+            "action": "導師已向主管提出透明輪替或自願登記的方案，請其依規定決定",
+            "tradeoff": "不能保證每人負荷相同，也可能增加承辦工作"
+          },
+          {
+            "id": 5,
+            "text": "整理今天學生真正需要補上的範圍，交課務判斷是否須整堂補課",
+            "action": "導師已整理今天學生真正需要補上的範圍，交課務判斷是否須整堂補課",
+            "tradeoff": "要確認內容與學習需求，不能只為省人力刪課"
+          },
+          {
+            "id": 6,
+            "text": "協助新人取得正式工作與任用規則資訊，不由你替他推測續聘",
+            "action": "導師已協助新人取得正式工作與任用規則資訊，不由你替他推測續聘",
+            "tradeoff": "說明未必能消除擔心，也不能承諾結果"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想把剛才答應得太快的自己拉住，當場撤回尚未核定的個人承諾，請承辦把你也放回正式徵詢名單",
+          "action": "導師已撤回尚未核定的額外支援意向並要求正式徵詢，既有正式職務與必要學生照看未中斷",
+          "tradeoff": "可能顯得反覆，今天的支援要由課務重新確認"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1944396313
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "03691ab33892687f44e44ad36444682ca3fd09ca1ce38670797d092e753fd0f3"
+      },
+      "consequenceDirections": {
+        "A": "新人可按規則判斷是否自願接任，不必把每次拒絕都當成冒險。",
+        "B": "新人不用看著你用硬撐示範好員工，承辦也得承認口頭答應與正式排定不是同一件事。",
+        "C": "後續不再只靠新人點頭速度，但制度仍須兼顧任課資格與學生需求。",
+        "D": "學生有正式接續，新人也看得見一次答應不等於無限期排班。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c74731c50991d421904f28422ff64c69c31591edd891a5c45cf4b78824f9751d",
+    "draftSha256": "7be304855096262e4f2828a6c15044dbae3ec115de75f356c7d0e08139733a70",
     "seedAssignmentVersion": 1
   }
 }

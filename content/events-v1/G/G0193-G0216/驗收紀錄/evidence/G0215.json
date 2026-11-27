@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b55e84c6c018ce424a03eb798a71cde31689ad8d5c381937f5ae251b0fec7cd2",
+      "checkedAt": "2026-11-27T04:25:53.921Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "結束今天的集中展示，請各自保管物品，回到原有休息安排",
+            "action": "導師已結束今天的集中展示，請各自保管物品，回到原有休息安排",
+            "tradeoff": "同學失去期待的短空檔，也可能埋怨太多人圍過來"
+          },
+          {
+            "id": 2,
+            "text": "若規則與空間允許，改成一張桌子少數人輪看，由成人確認動線",
+            "action": "導師已若規則與空間允許，改成一張桌子少數人輪看，由成人確認動線",
+            "tradeoff": "每人看得很短，也要有人願意等下一次"
+          },
+          {
+            "id": 3,
+            "text": "明確維持休息區不交易，想看的人只在獲准條件下看，不議價收款",
+            "action": "導師已明確維持休息區不交易，想看的人只在獲准條件下看，不議價收款",
+            "tradeoff": "可能讓想交換的人失望，也須依校規持續確認"
+          },
+          {
+            "id": 4,
+            "text": "請物主改用自願提供的照片分享，避免同時圍住實物，不露出無關人臉",
+            "action": "導師已請物主改用自願提供的照片分享，避免同時圍住實物，不露出無關人臉",
+            "tradeoff": "少了現場觸摸感，也要有合法使用影像的同意"
+          },
+          {
+            "id": 5,
+            "text": "請這名學生把哪裡卡住說給你聽，其他人先回原位，由成人調整桌椅",
+            "action": "導師已請這名學生把哪裡卡住說給你聽，其他人先回原位，由成人調整桌椅",
+            "tradeoff": "會再占一點休息時間，不請他代替成人保證安全"
+          },
+          {
+            "id": 6,
+            "text": "把展示改約到已確認可用的班務時間，再先問物主是否願意",
+            "action": "導師已把展示改約到已確認可用的班務時間，再先問物主是否願意",
+            "tradeoff": "今天看不成，之後也得挪出適當時段"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你今天很想守住最後那點安靜，取消自己原先也要拿收藏來聊的加碼，這次連你的也不秀了",
+          "action": "導師已取消本人非必要收藏分享，不沒收合法私人物品或一律禁止日後合規分享，必要動線管理照常",
+          "tradeoff": "少了你期待的話題，學生可能覺得老師也在掃興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1472203252
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ee9aa01f936638cfa8751b1445eaa7ff201afbf60702703ad8f0f636faa1243a"
+      },
+      "consequenceDirections": {
+        "A": "同學可各自看，不會為一個物件堵住退路，卻未必覺得過癮。",
+        "B": "大家有較完整的安排，但物主可能不想再把私人收藏帶來。",
+        "C": "不再靠教師加入把展示擴大，大家能回到休息，但未必有人因此願意把收藏話題放下。",
+        "D": "安全不再靠學生大聲趕人維持，但原物主仍可能希望日後再分享。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "97dea060bbdeb3733ac803d11c36bcc6951d1e8e9219cb82cb4ad9643dff610a",
+    "draftSha256": "b55e84c6c018ce424a03eb798a71cde31689ad8d5c381937f5ae251b0fec7cd2",
     "seedAssignmentVersion": 1
   }
 }

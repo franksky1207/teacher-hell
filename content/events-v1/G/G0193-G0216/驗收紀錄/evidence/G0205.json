@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "de3607ab2f46931c560470c8e63c39d8434ffc2daefcaf165e1e1c8dc5df1adb",
+      "checkedAt": "2026-11-27T04:25:53.913Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他先完成一小段個別練習，組內必要工作由大家各自起步",
+            "action": "導師已請他先完成一小段個別練習，組內必要工作由大家各自起步",
+            "tradeoff": "團隊短暫少一個熟悉帶領者，他也可能擔心被丟下"
+          },
+          {
+            "id": 2,
+            "text": "讓組員依課程規則自行重分角色，不把帶領固定留給他",
+            "action": "導師已讓組員依課程規則自行重分角色，不把帶領固定留給他",
+            "tradeoff": "有人要接新責任，也可能沒有明顯領頭者"
+          },
+          {
+            "id": 3,
+            "text": "和他約定題目檢視與回組的明確時間，不以完美答案交換整段下課",
+            "action": "導師已和他約定題目檢視與回組的明確時間，不以完美答案交換整段下課",
+            "tradeoff": "時間到了仍可能沒弄懂，須另安排適當協助"
+          },
+          {
+            "id": 4,
+            "text": "請他自己向組員說明今天能負責的課內部分，不替遊戲約定背書",
+            "action": "導師已請他自己向組員說明今天能負責的課內部分，不替遊戲約定背書",
+            "tradeoff": "要承認疲倦限制，也可能聽到同伴不滿"
+          },
+          {
+            "id": 5,
+            "text": "提供不擴散私生活的作息與健康協助，先問他是否需要",
+            "action": "導師已提供不擴散私生活的作息與健康協助，先問他是否需要",
+            "tradeoff": "他可能不願談熬夜，不能把求助當回組條件"
+          },
+          {
+            "id": 6,
+            "text": "把課堂任務改為每人先交一份自己的初稿，再做共同討論",
+            "action": "導師已把課堂任務改為每人先交一份自己的初稿，再做共同討論",
+            "tradeoff": "會減少直接合作時間，教師也多看幾份內容"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想又替整隊追進度，停止替這組安排每一步，只公布本節必要成果與可求助時間，讓他們自己分工",
+          "action": "導師已將可由學生協作的過程交回小組，明列必要成果與教師協助時段，不放棄必要教學與照護",
+          "tradeoff": "成果可能不整齊，你得接受有人走得比預想慢"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 909559791
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "b70fedfcebc15283b78065e2e77d8ceaa73c36d586dd5e048382ffc86ee43726"
+      },
+      "consequenceDirections": {
+        "A": "同學能按實際能力分工，私人語音邀約則由各人自由決定。",
+        "B": "他不用一直倒數猜教師何時放人，但課業缺口不能就此不管。",
+        "C": "其他人不用一起等他清醒，之後重返分工仍要核對已完成部分。",
+        "D": "隊長不再只有你這個另一層隊長可依賴，但若出現排擠或學習困難仍須介入。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cadec74f105fee077b0a77594ff622617bbd32a4fabc51d4720f8e465b3095b2",
+    "draftSha256": "de3607ab2f46931c560470c8e63c39d8434ffc2daefcaf165e1e1c8dc5df1adb",
     "seedAssignmentVersion": 1
   }
 }

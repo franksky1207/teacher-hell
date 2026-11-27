@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ff863557e3c8c5899a79aa901eeeb24d825c025efab63a546c0b398f71efe805",
+      "checkedAt": "2026-11-27T04:25:53.917Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "收下他對順序的建議，但明說不由學生指定誰必須重講",
+            "action": "導師已收下他對順序的建議，但明說不由學生指定誰必須重講",
+            "tradeoff": "他可能覺得熱心被擋下，你要自己處理發言安排"
+          },
+          {
+            "id": 2,
+            "text": "私下確認受影響者是否想再試一次，不把重來當必須證明自己",
+            "action": "導師已私下確認受影響者是否想再試一次，不把重來當必須證明自己",
+            "tradeoff": "需要等待對方意願，也可能暫時不講"
+          },
+          {
+            "id": 3,
+            "text": "讓全班先匿名寫一個回應，再由教師依內容引導",
+            "action": "導師已讓全班先匿名寫一個回應，再由教師依內容引導",
+            "tradeoff": "即興互動減少，也得整理紙條"
+          },
+          {
+            "id": 4,
+            "text": "回到原先舉手順序，允許跳過與稍後補充",
+            "action": "導師已回到原先舉手順序，允許跳過與稍後補充",
+            "tradeoff": "進度可能變慢，也不能把原次序當成強迫開口"
+          },
+          {
+            "id": 5,
+            "text": "安排自願的兩人短談，讓學生先在小範圍試說",
+            "action": "導師已安排自願的兩人短談，讓學生先在小範圍試說",
+            "tradeoff": "需要重新分組與音量管理，可能仍有人不願配對"
+          },
+          {
+            "id": 6,
+            "text": "請他只說自己想分享的內容，不替其他同學提出必須完成的任務",
+            "action": "導師已請他只說自己想分享的內容，不替其他同學提出必須完成的任務",
+            "tradeoff": "他得把注意力從安排別人移回自己"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你看他排得起勁，自己也懶得再主持每一輪，提議剩下這段改為自願書面往返，你只回應內容、不排誰上台",
+          "action": "導師已將可調整的本段口語輪流改成自願書面回應與教師必要回覆，不交出點名或管教權，不降低必要課程要求",
+          "tradeoff": "少了現場熱鬧，也可能有人嫌寫字更麻煩"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 61075978
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "cf31d6efd92070187494e6a0bce12cfd5d3d0296c944bf882d7c77a0de7c8dcf"
+      },
+      "consequenceDirections": {
+        "A": "學生沒有點名別人的舞台，你則得真的讀完必要回應，而不是把冷場藏進紙裡。",
+        "B": "受影響的人不必立即面對全班，教師卻得注意小組裡是否繼續嘲弄。",
+        "C": "他仍有發言機會，但可能不再像剛才得到全班回應那麼過癮。",
+        "D": "學生知道規則沒有因支持教師而改成由誰臨時掌控，但等待者可能不耐煩。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6491a328ed6114ffcd8e74041e5ad823cf3fb74fdf68cb8d63cbdf18cd800f90",
+    "draftSha256": "ff863557e3c8c5899a79aa901eeeb24d825c025efab63a546c0b398f71efe805",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "577412700b4a6666ff8fcc6676e26472b1acc2c2ad0b59baaac2b2a33ef9405d",
+      "checkedAt": "2026-11-27T04:25:53.922Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先在校內讓親子用圖演練第一段與回頭點，不急著改離校方式",
+            "action": "導師已先在校內讓親子用圖演練第一段與回頭點，不急著改離校方式",
+            "tradeoff": "會晚一些完成原安排，也不能取代真實路況確認"
+          },
+          {
+            "id": 2,
+            "text": "維持今天已核准的離校安排，親子另在資料確認後決定第一次轉乘",
+            "action": "導師已維持今天已核准的離校安排，親子另在資料確認後決定第一次轉乘",
+            "tradeoff": "自主嘗試要延後，孩子可能覺得承諾又落空"
+          },
+          {
+            "id": 3,
+            "text": "協助親子明確約定一個雙方都找得到的會合點與聯絡時間，交家庭依程序決定",
+            "action": "導師已協助親子明確約定一個雙方都找得到的會合點與聯絡時間，交家庭依程序決定",
+            "tradeoff": "家長必須接受一段看不見的距離，也不能讓孩子全天回報"
+          },
+          {
+            "id": 4,
+            "text": "請孩子自己說出遇到走錯、沒搭上或手機不能用時會找誰，再由家長確認",
+            "action": "導師已請孩子自己說出遇到走錯、沒搭上或手機不能用時會找誰，再由家長確認",
+            "tradeoff": "可能發現準備還不夠，孩子也可能覺得被考試"
+          },
+          {
+            "id": 5,
+            "text": "查詢交通單位的正式站點資料給親子，不替任何人憑記憶指路",
+            "action": "導師已查詢交通單位的正式站點資料給親子，不替任何人憑記憶指路",
+            "tradeoff": "需要核對最新資訊，仍須家庭自行評估實際路況"
+          },
+          {
+            "id": 6,
+            "text": "讓家長和孩子私下談是否保留第一段，教師只說明校方必要離校要求",
+            "action": "導師已讓家長和孩子私下談是否保留第一段，教師只說明校方必要離校要求",
+            "tradeoff": "你不會掌握每一句協商，也不能替孩子逼家長答應"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被反覆攤開的地圖弄得緊張，請兩人各用自己的話講一遍會合安排，再把你提供的資料交還，不繼續當第三個指路的人",
+          "action": "導師已請親子互相重述會合方案並結束額外路線建議，保留校方必要核對與安全聯繫，不代核准外出",
+          "tradeoff": "家長可能覺得你退得太快，你也得接受家庭選擇和你不同"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3756552399
+        },
+        "selectedIds": [
+          4,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "b5e295316256c26459b95225d796160f1cd0a30174bff3028105cfd4918867c2"
+      },
+      "consequenceDirections": {
+        "A": "親子能看見彼此是否說的是同一條路，後續決策仍由家庭與合法離校程序承接。",
+        "B": "家庭有具體判斷依據，但不能只因孩子答得流利就保證整段都安全。",
+        "C": "陌生轉乘口不再靠猜，但教師不會變成校外全程帶隊者。",
+        "D": "家庭能自己決定支持的範圍，原承諾可能被調整而非照單全收。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0f6eee332aaf62c9ea2f5908b109b1fb12f946a729f99a387ed7a0848ce4499d",
+    "draftSha256": "577412700b4a6666ff8fcc6676e26472b1acc2c2ad0b59baaac2b2a33ef9405d",
     "seedAssignmentVersion": 1
   }
 }

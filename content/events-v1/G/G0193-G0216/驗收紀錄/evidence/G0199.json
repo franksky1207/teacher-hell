@@ -14,14 +14,82 @@
   "plannedTags": [
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "167ad90340cca142465f6b36ef88dc0e12f8dff5ee6bbca766c4b91a2fa66ce6",
+      "checkedAt": "2026-11-27T04:25:53.905Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向兩隊說明受傷後原先承諾不能照舊，結束本節對抗練習",
+            "action": "導師已向兩隊說明受傷後原先承諾不能照舊，結束本節對抗練習",
+            "tradeoff": "學生失去辛苦爭取的片段，也可能覺得被掃興"
+          },
+          {
+            "id": 2,
+            "text": "和任課老師把收尾改成不接觸的戰術回顧，不要求傷者參與",
+            "action": "導師已和任課老師把收尾改成不接觸的戰術回顧，不要求傷者參與",
+            "tradeoff": "少了實際對打，教師得另帶討論"
+          },
+          {
+            "id": 3,
+            "text": "在安全與任課教師確認下，安排未受傷者做個別基本動作",
+            "action": "導師已在安全與任課教師確認下，安排未受傷者做個別基本動作",
+            "tradeoff": "要重新分配場地，無法延續原來兩隊的競爭"
+          },
+          {
+            "id": 4,
+            "text": "請職員只交接必要經過後回原職務，由現場有權成人承擔後續聯繫",
+            "action": "導師已請職員只交接必要經過後回原職務，由現場有權成人承擔後續聯繫",
+            "tradeoff": "你得確實接起工作，不能讓他一走就沒人負責"
+          },
+          {
+            "id": 5,
+            "text": "請兩隊各自整理一個本節已完成的配合，不以勝負作最後結論",
+            "action": "導師已請兩隊各自整理一個本節已完成的配合，不以勝負作最後結論",
+            "tradeoff": "需要教師重新引導，學生可能嫌沒有比完"
+          },
+          {
+            "id": 6,
+            "text": "向職員清楚交代自己當時知道哪些事，必要紀錄如實更正",
+            "action": "導師已向職員清楚交代自己當時知道哪些事，必要紀錄如實更正",
+            "tradeoff": "可能暴露你反應不夠快，也須花時間核對"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也很不甘心整段都卡在比分，徵得任課老師同意後讓兩隊用紙上排陣各提一個最後進攻，不判誰贏",
+          "action": "導師已與任課教師協議讓未受傷且自願者做紙上末次進攻設計，不恢復對抗、不邀傷者參與或私判傷情",
+          "tradeoff": "少了真打的刺激，還得防止嘴上挑釁延續"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1739736625
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "f288c93730997dc5106a2c9cbd81ddb02aa39f2b8d4453df32a5efb46d28010f"
+      },
+      "consequenceDirections": {
+        "A": "學生可把想做的那一球說出來，但教師要接受這不是原本承諾的結局，也不能拿紙上攻防催傷者回來。",
+        "B": "職員不必同時顧照護與其他勤務，家長或醫療資訊仍由適當窗口處理。",
+        "C": "當天練習能留下具體內容，但不能冒稱剩下三分鐘已被另一種活動補足。",
+        "D": "值勤者不必猜教師是否看見撞擊，後續檢視能區分原承諾與事故後處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "232a0bdb7a022638e426ab102604356da9bd27c19c2bb5a416e29cfdcd78b337",
+    "draftSha256": "167ad90340cca142465f6b36ef88dc0e12f8dff5ee6bbca766c4b91a2fa66ce6",
     "seedAssignmentVersion": 1
   }
 }

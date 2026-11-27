@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "86652e2ca07d1ff33dea93b31dfa023a69bbd8212f2eaf9b9db2a3aae8fba0da",
+      "checkedAt": "2026-11-27T04:25:53.899Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請發起者逐一說明自己答應過什麼，把確定事項與店家口頭說法分開",
+            "action": "導師已請發起者逐一說明自己答應過什麼，把確定事項與店家口頭說法分開",
+            "tradeoff": "需要每人配合核對，也可能聽出承諾並不相同"
+          },
+          {
+            "id": 2,
+            "text": "協助學生與家長查詢店家正式交易、退換規則，不代為判定或保證退款",
+            "action": "導師已協助學生與家長查詢店家正式交易、退換規則，不代為判定或保證退款",
+            "tradeoff": "要等相關成人處理，今天無法馬上分出結果"
+          },
+          {
+            "id": 3,
+            "text": "在本人各自同意下，登記誰願意自行交換，不替任何人安排差價",
+            "action": "導師已在本人各自同意下，登記誰願意自行交換，不替任何人安排差價",
+            "tradeoff": "可能找不到願意換的人，且須符合校規"
+          },
+          {
+            "id": 4,
+            "text": "把後續討論改約在不影響課程的核可時間，由必要成人協助",
+            "action": "導師已把後續討論改約在不影響課程的核可時間，由必要成人協助",
+            "tradeoff": "各方要等待，也不能私下繼續施壓"
+          },
+          {
+            "id": 5,
+            "text": "協助各方先確認各自物品與已付款紀錄，避免盒子混在一起",
+            "action": "導師已協助各方先確認各自物品與已付款紀錄，避免盒子混在一起",
+            "tradeoff": "整理很瑣碎，不能只憑口頭記憶決定誰付過"
+          },
+          {
+            "id": 6,
+            "text": "私下問發起者目前最擔心哪一筆要求，必要時協助向適當成人求助",
+            "action": "導師已私下問發起者目前最擔心哪一筆要求，必要時協助向適當成人求助",
+            "tradeoff": "他可能不願承認有額外壓力，也無法替其他人同意和解"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到第三次「老師你選誰對」已經不耐煩，明說不當公仔裁判，請各方把自己的要求分開寫下再交窗口",
+          "action": "導師已拒絕代判商品好壞與交易責任，請各方自述具體請求交適當窗口，必要安全與合法爭議協助仍照辦",
+          "tradeoff": "學生可能嫌你冷淡，也得多做一次書面說明"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1560337485
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "211180d62ec2cf5b3fbb806c11edebff9555bb97f3913ca4b7aa4451af4a2017"
+      },
+      "consequenceDirections": {
+        "A": "各人的請求能留存核對，但不能再逼你用喜歡哪個角色決定誰該收錢。",
+        "B": "爭議不再只靠誰喊得大聲，但說清楚仍不等於退款責任已定。",
+        "C": "上課不再被追討打斷，金錢爭議卻仍須真的接續處理。",
+        "D": "收藏失望有機會減少，但不願交換的人仍可保留原爭議。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fa033037f2defebfc4b5739b5d987847f3e7ddecc43e4c4ce52fc92502c1030f",
+    "draftSha256": "86652e2ca07d1ff33dea93b31dfa023a69bbd8212f2eaf9b9db2a3aae8fba0da",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "66786b14f1aff9a700b811d560da59a015830dd9d81493c077c384740ff7fdcb",
+      "checkedAt": "2026-11-27T04:25:53.918Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說明當時選例的具體依據，承認沒選不等於沒有價值",
+            "action": "導師已說明當時選例的具體依據，承認沒選不等於沒有價值",
+            "tradeoff": "他可能不接受你的標準，也會追問為何事前沒說清楚"
+          },
+          {
+            "id": 2,
+            "text": "若分享安排允許，並列兩份在不同情況的用法，先徵求作者同意",
+            "action": "導師已若分享安排允許，並列兩份在不同情況的用法，先徵求作者同意",
+            "tradeoff": "需要重做版面，原本單一例子也會被壓縮"
+          },
+          {
+            "id": 3,
+            "text": "請他先說完對你個人的不滿，今天不急著談補推薦",
+            "action": "導師已請他先說完對你個人的不滿，今天不急著談補推薦",
+            "tradeoff": "要承受不好聽的話，也不能保證談完就能和好"
+          },
+          {
+            "id": 4,
+            "text": "把他的示例交給真正需要該用途且願意交流的同仁，不承諾曝光",
+            "action": "導師已把他的示例交給真正需要該用途且願意交流的同仁，不承諾曝光",
+            "tradeoff": "需要作者同意，可能只得到很小範圍的回饋"
+          },
+          {
+            "id": 5,
+            "text": "請他指出最希望別人看懂的一個設計，另約合規的短交流時間",
+            "action": "導師已請他指出最希望別人看懂的一個設計，另約合規的短交流時間",
+            "tradeoff": "會占雙方工作空檔，也不能等同首頁推薦"
+          },
+          {
+            "id": 6,
+            "text": "向分享承辦提出下次事前公開選例方式與篇幅限制的建議",
+            "action": "導師已向分享承辦提出下次事前公開選例方式與篇幅限制的建議",
+            "tradeoff": "制度未必會改，也不能倒過來補發這次名次"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被那句早知道刺得也想較真，請他和你各自用一個學生案例試這份示例，看它到底幫得到哪裡，資料須匿名且合法",
+          "action": "導師已邀作者自願共同檢視示例於匿名合規學生情境的實際用途，不臨時改互評名次或擅取學生資料",
+          "tradeoff": "要花時間試教與核對，也可能證明你原本選得不夠好"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2676058960
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "c4a7c13425caa5664309c60bbb98951636650a93b4c7eeb2f2042082f116c25a"
+      },
+      "consequenceDirections": {
+        "A": "作品有實際教學位置，但不能只為安撫他而硬湊相同用途。",
+        "B": "以後的期待可能更清楚，這次被略過的失落仍須自己與同事處理。",
+        "C": "工作評選與私人情緒能稍微分開，作品是否展示仍未定。",
+        "D": "作品從爭位置轉成實際效果的比較，但你不能只挑有利於自己原判斷的情境。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "251f1b909b01db35ad78fb6efffad118ea29c6974765b97f9564a9a93b066116",
+    "draftSha256": "66786b14f1aff9a700b811d560da59a015830dd9d81493c077c384740ff7fdcb",
     "seedAssignmentVersion": 1
   }
 }

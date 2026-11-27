@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "05d4798445a7858496cfd18853bcb7fc974c9700f9e22be3b64a641f96c702ea",
+      "checkedAt": "2026-11-27T04:25:53.914Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他只完成自己能解釋的那一步，不替你回應刁難",
+            "action": "導師已請他只完成自己能解釋的那一步，不替你回應刁難",
+            "tradeoff": "他少了替老師出頭的角色，也可能還在意剛才的笑聲"
+          },
+          {
+            "id": 2,
+            "text": "把模仿的笑點接回自己身上，接著由你完成必要說明",
+            "action": "導師已把模仿的笑點接回自己身上，接著由你完成必要說明",
+            "tradeoff": "你得接受一點自嘲，不能用笑話掩蓋原問題"
+          },
+          {
+            "id": 3,
+            "text": "先讓全班各寫出最後一步，再比較不同說法",
+            "action": "導師已先讓全班各寫出最後一步，再比較不同說法",
+            "tradeoff": "要多用課堂時間，原先的即興氣氛會降下來"
+          },
+          {
+            "id": 4,
+            "text": "私下問他是否還想上台，若不想就由你接續",
+            "action": "導師已私下問他是否還想上台，若不想就由你接續",
+            "tradeoff": "需給他不尷尬的退場方式，也不能把拒絕當不挺老師"
+          },
+          {
+            "id": 5,
+            "text": "和全班說清可以質疑解法、不能拿人當笑柄，再請願意者提出具體疑問",
+            "action": "導師已和全班說清可以質疑解法、不能拿人當笑柄，再請願意者提出具體疑問",
+            "tradeoff": "有些學生會嫌你突然認真，討論也可能冷下來"
+          },
+          {
+            "id": 6,
+            "text": "把他願意分享的解法留下，依相同規則邀其他人補充，不做師徒表演",
+            "action": "導師已把他願意分享的解法留下，依相同規則邀其他人補充，不做師徒表演",
+            "tradeoff": "會占用其他進度，他也未必是唯一說得好的"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你看他學得太像，自己也有點好奇，請他在自願且不嘲弄的前提下指出你哪句口頭禪最讓人聽不懂",
+          "action": "導師已自願邀請學生就本人教學口頭用語提出具體回饋，限制於內容不評人格，不要求學生模仿他人或維護教師權威",
+          "tradeoff": "可能真的被學生笑，也會占用你的面子"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2062143668
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "399aea512e62e9aad7133411f9861bd7de0ec0b03adfb9780bd95a284eec7840"
+      },
+      "consequenceDirections": {
+        "A": "原來的刁難若有實質問題仍能被處理，學生不必替你擋掉所有批評。",
+        "B": "全班可從教師說法的具體問題談回理解，你卻可能發現原本覺得清楚的提示只有自己懂。",
+        "C": "親近教師不再成為獨占講解機會，內容則可能因同儕補充更完整。",
+        "D": "注意力可能回到題目，但學生也可能把剛才未完的笑話留到下課。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7afc5438456815ff71726e6c3b8edc593437cf5113e12535f9da788d915710fd",
+    "draftSha256": "05d4798445a7858496cfd18853bcb7fc974c9700f9e22be3b64a641f96c702ea",
     "seedAssignmentVersion": 1
   }
 }

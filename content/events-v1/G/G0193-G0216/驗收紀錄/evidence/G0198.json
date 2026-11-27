@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9c5018d065414675b988504c6503d0d3c2cd546cbecbf8125f8d04aa4101b9ec",
+      "checkedAt": "2026-11-27T04:25:53.904Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不再公開重述道歉內容，和當事人確認後續合適的表達方式",
+            "action": "導師已不再公開重述道歉內容，和當事人確認後續合適的表達方式",
+            "tradeoff": "你得改掉原安排，也不能把停止公開當成事情已解決"
+          },
+          {
+            "id": 2,
+            "text": "向目擊學生說明當時的判斷，再聽他指出哪裡不妥",
+            "action": "導師已向目擊學生說明當時的判斷，再聽他指出哪裡不妥",
+            "tradeoff": "可能被直接批評，也不能拿解釋當成要求理解"
+          },
+          {
+            "id": 3,
+            "text": "在必要範圍向班上承認場面選擇不妥，不重複當事人細節",
+            "action": "導師已在必要範圍向班上承認場面選擇不妥，不重複當事人細節",
+            "tradeoff": "教師得在學生面前認錯，也可能引來其他舊事"
+          },
+          {
+            "id": 4,
+            "text": "分別詢問原事件各當事人需要的補救，避免由旁觀朋友代答",
+            "action": "導師已分別詢問原事件各當事人需要的補救，避免由旁觀朋友代答",
+            "tradeoff": "要多談幾次，也可能得不到一致期待"
+          },
+          {
+            "id": 5,
+            "text": "依具體所見查明笑鬧與後續散播，按規則處理",
+            "action": "導師已依具體所見查明笑鬧與後續散播，按規則處理",
+            "tradeoff": "需要核實，不能把整班當共同犯錯"
+          },
+          {
+            "id": 6,
+            "text": "請目擊學生選擇是否留下必要所見，不要求他繼續代朋友來追問",
+            "action": "導師已請目擊學生選擇是否留下必要所見，不要求他繼續代朋友來追問",
+            "tradeoff": "少了一個方便傳話的人，成人得直接聯繫當事人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點怕再被說得一句話都站不住，請一位適任同仁在必要知情範圍內陪同後續親師談話，不再自己一個人硬接",
+          "action": "導師已提出由適任成人協同後續談話的安排，依必要知情與同意處理，不讓旁觀學生代當見證或裁判",
+          "tradeoff": "多一位成人知情，也須徵詢必要同意與安排時間"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 331676966
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "6b4f82fad71a48949cfdd63cdd2e3e82725552d800b4a99079eeb0f5bd67ab96"
+      },
+      "consequenceDirections": {
+        "A": "你的處理能有人提醒與核對，當事人卻可能擔心場面變大，需要先說清楚陪同者做什麼。",
+        "B": "道歉者不用再被圍觀，受影響者仍須有自己的回應與補救管道。",
+        "C": "他能知道你不是沒聽見，卻可能仍不同意公開處理的理由。",
+        "D": "學生可以不再夾在中間，朋友的處理進度仍須有合適回覆方式。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "375f7c07a7c2c62fb93482e3507c7c7702b356f64687a852cad13b368fb6f316",
+    "draftSha256": "9c5018d065414675b988504c6503d0d3c2cd546cbecbf8125f8d04aa4101b9ec",
     "seedAssignmentVersion": 1
   }
 }

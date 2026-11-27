@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "30eede5d14c391796a5319d9d051c899067a6157638a20c6cf46d209be85f17a",
+      "checkedAt": "2026-11-27T04:25:53.920Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他向實際收到照片的人清楚更正未取得轉傳同意，依核可方式請求停止散播",
+            "action": "導師已請他向實際收到照片的人清楚更正未取得轉傳同意，依核可方式請求停止散播",
+            "tradeoff": "會暴露自己判斷錯誤，也未必每人立刻配合"
+          },
+          {
+            "id": 2,
+            "text": "在本人願意時，協助他準備只承擔自己行為的道歉，不要求朋友回訊或原諒",
+            "action": "導師已在本人願意時，協助他準備只承擔自己行為的道歉，不要求朋友回訊或原諒",
+            "tradeoff": "他可能得等很久，也不能用家中壓力替行為開脫"
+          },
+          {
+            "id": 3,
+            "text": "由適當成人直接向影像當事人確認需求，不透過轉傳者代答",
+            "action": "導師已由適當成人直接向影像當事人確認需求，不透過轉傳者代答",
+            "tradeoff": "增加必要知情者，也得注意聯繫方式"
+          },
+          {
+            "id": 4,
+            "text": "把已知流向提供權責窗口，只記必要帳號與事實，不自行搜查私人裝置",
+            "action": "導師已把已知流向提供權責窗口，只記必要帳號與事實，不自行搜查私人裝置",
+            "tradeoff": "需要按程序核實，不能保證立刻收回所有副本"
+          },
+          {
+            "id": 5,
+            "text": "和他練習下次分享前怎麼問清楚對象與範圍，不把這次當抽象隱私口號",
+            "action": "導師已和他練習下次分享前怎麼問清楚對象與範圍，不把這次當抽象隱私口號",
+            "tradeoff": "要面對自己原本想當然耳的地方，朋友也可能仍不信任"
+          },
+          {
+            "id": 6,
+            "text": "提供他可自願使用的個別談話支持，另外處理家庭壓力與對回訊的焦慮",
+            "action": "導師已提供他可自願使用的個別談話支持，另外處理家庭壓力與對回訊的焦慮",
+            "tradeoff": "他可能拒絕，也不能把求助作為免除處理的條件"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你怕自己一開口又替他補理由，請適任同仁共同陪他談這次轉傳，自己只說已核實的部分",
+          "action": "導師已提出由必要知情且適任同仁協同談話，依法依規限制資料範圍，不讓共同談話取代影像權利處理",
+          "tradeoff": "多一位成人知情，也要另外協調時段"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2249045294
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "898eb8eb30747e4d8647492531839307e03546994c10b7b396f97cb19a29b4ba"
+      },
+      "consequenceDirections": {
+        "A": "往後有具體詢問方式，這次造成的傷害卻不會因此被抵銷。",
+        "B": "學生能聽到不靠師生熟悉度調整的回應，你則得接受同仁可能提醒你先前偏袒的地方。",
+        "C": "接收者知道不能再把他的轉傳當授權，但外流範圍仍可能需要成人追查。",
+        "D": "處理能針對真正外傳處，而不是要求全班交出手機自證。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52defe963591f5f873c8dc5875534fa4a21fd23923064ab5bc8a4f322d5d8074",
+    "draftSha256": "30eede5d14c391796a5319d9d051c899067a6157638a20c6cf46d209be85f17a",
     "seedAssignmentVersion": 1
   }
 }

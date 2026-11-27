@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "350ced8d1537d84355ac9672da02727ec7d58aea861d1626d3485823bb2af73f",
+      "checkedAt": "2026-11-27T04:09:32.295Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由你收回整體分工，讓他只處理自己的物品",
+            "action": "導師已由你收回整體分工，讓他只處理自己的物品",
+            "tradeoff": "你得分神統籌，搬運速度可能變慢"
+          },
+          {
+            "id": 2,
+            "text": "請他自己選願意協助的一件小事，其餘工作另分給自願且適任的人",
+            "action": "導師已請他自己選願意協助的一件小事，其餘工作另分給自願且適任的人",
+            "tradeoff": "分工要重排，他也可能完全不願幫忙"
+          },
+          {
+            "id": 3,
+            "text": "向負責借用教室的單位請求成人協助安排搬運",
+            "action": "導師已向負責借用教室的單位請求成人協助安排搬運",
+            "tradeoff": "支援未必立刻到，等待時仍要維持上課與動線"
+          },
+          {
+            "id": 4,
+            "text": "依安全動線把全班分成幾小組，按順序搬各自的輕物",
+            "action": "導師已依安全動線把全班分成幾小組，按順序搬各自的輕物",
+            "tradeoff": "需要多跑幾趟，先完成的人也得依安排等待"
+          },
+          {
+            "id": 5,
+            "text": "先移動本節必用的物品，其餘封箱留在獲准的位置另約搬運",
+            "action": "導師已先移動本節必用的物品，其餘封箱留在獲准的位置另約搬運",
+            "tradeoff": "新教室暫時缺少部分用品，也要記清保管與交接"
+          },
+          {
+            "id": 6,
+            "text": "先向全班說明你把會打包誤當成願意帶隊，讓他說清楚不想接哪些事",
+            "action": "導師已先向全班說明你把會打包誤當成願意帶隊，讓他說清楚不想接哪些事",
+            "tradeoff": "要花掉搬運時間，也可能聽見其他分工的不滿"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被一連串「放哪裡」問得頭痛，請到場成人接手隊伍安排，自己先搬那幾箱最想整理好的輕教材",
+          "action": "導師已在合格成人接手現場後，親自搬運安全輕教材，未讓學生代管班級或搬重物",
+          "tradeoff": "得先確實交接，暫時也聽不到學生即時提出的意見"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3305395301
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "508a68b6f31b90913286e32cbdf7cb8cddee9df8d6652fb51a7a11707a4ddc26"
+      },
+      "consequenceDirections": {
+        "A": "有經驗的成人可能解開混亂，但不能把學校人力當成隨叫隨到。",
+        "B": "學生不用自己逐一拒絕同學，班上也可能要求重新談其他習慣性分工。",
+        "C": "學生不用再承擔全班詢問，但你安排不熟練的地方可能使隊伍反覆等待。",
+        "D": "學生不再被推上帶隊位置，你能完成一小塊看得見的工作，其他區域卻只能接受別人的安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16224c84626d9d30a1a6da91011b2a84332a569044287fb3a47ec44672975a65",
+    "draftSha256": "350ced8d1537d84355ac9672da02727ec7d58aea861d1626d3485823bb2af73f",
     "seedAssignmentVersion": 1
   }
 }

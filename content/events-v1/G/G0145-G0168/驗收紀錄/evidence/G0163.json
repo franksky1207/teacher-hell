@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a8b0983daab55c03c31c338f97288a27d71013162f388a71e93edc8fcffcc92b",
+      "checkedAt": "2026-11-27T04:09:32.299Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下問孩子此刻想照原安排離校，還是短暫留下，不要求他照顧家長情緒",
+            "action": "導師已私下問孩子此刻想照原安排離校，還是短暫留下，不要求他照顧家長情緒",
+            "tradeoff": "要另外安排兩人的位置，家長未必想讓孩子離開"
+          },
+          {
+            "id": 2,
+            "text": "徵得家長同意，協助聯繫她指定且適當的成年親友來陪伴或接送",
+            "action": "導師已徵得家長同意，協助聯繫她指定且適當的成年親友來陪伴或接送",
+            "tradeoff": "親友未必立刻有空，等待期間仍須有適當安排"
+          },
+          {
+            "id": 3,
+            "text": "在雙方都願意下，安排一段有限時間的安靜陪坐，再各自依確認的方式離校",
+            "action": "導師已在雙方都願意下，安排一段有限時間的安靜陪坐，再各自依確認的方式離校",
+            "tradeoff": "你的下班時間會延後，也不能把短暫陪伴當成長期支援"
+          },
+          {
+            "id": 4,
+            "text": "依家長意願維持班級原有節奏，只向必要知情者交代最低限度的照顧事項",
+            "action": "導師已依家長意願維持班級原有節奏，只向必要知情者交代最低限度的照顧事項",
+            "tradeoff": "同事能知道的資訊有限，可能仍須再確認實際需求"
+          },
+          {
+            "id": 5,
+            "text": "把今天非必要的親師談話改約，讓家長先處理電話裡的家事",
+            "action": "導師已把今天非必要的親師談話改約，讓家長先處理電話裡的家事",
+            "tradeoff": "原本要談的課業問題延後，之後仍須重新聯絡"
+          },
+          {
+            "id": 6,
+            "text": "和家長確認往後發生急事時可聯絡哪位成人，不讓孩子成為唯一傳話的人",
+            "action": "導師已和家長確認往後發生急事時可聯絡哪位成人，不讓孩子成為唯一傳話的人",
+            "tradeoff": "得花時間取得聯絡同意，也可能發現成人支援很少"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你很想下班，不願把三個人一起留在門口等，先讓孩子依安全且已確認的原安排離校，自己陪家長走到可交接給適當成人的等候處",
+          "action": "導師已確認孩子安全離校安排，親自陪家長到適當成人支援點並完成交接，不把陪伴責任交給孩子",
+          "tradeoff": "你仍要花時間完成交接，不能把人帶過去就走"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3088177489
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "4598042242389a955fc35d93b13062979f21065d11991acb8338729a9cf9d383"
+      },
+      "consequenceDirections": {
+        "A": "孩子不用一直站在一旁撐場，你則要真的等到合適成人接上，未必比原本更早回家。",
+        "B": "支持責任不再只落在孩子身上，但家長也可能不願向更多親友說明。",
+        "C": "家長不用同時應付學校議題，但孩子的既有學習問題不會因此自動解決。",
+        "D": "家長有時間緩和，孩子若後來不想繼續，安排仍須跟著調整。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e543c40a9c8b39cec7ec6504c64bf4ea8cf495e894320f73fd46a4176b413fcd",
+    "draftSha256": "a8b0983daab55c03c31c338f97288a27d71013162f388a71e93edc8fcffcc92b",
     "seedAssignmentVersion": 1
   }
 }

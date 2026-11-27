@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ffd5c35f942651fe5eaaf3918e09d2c862e09bc34bf51ec6c9a885cbe35d03d3",
+      "checkedAt": "2026-11-27T04:09:32.287Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪他想不占用別人座位的車上距離做法。",
+            "action": "導師已陪他想不占用別人座位的車上距離做法。",
+            "tradeoff": "可實作；不能控制他人坐哪。"
+          },
+          {
+            "id": 2,
+            "text": "問雙方願不願意透過合意管道談最低限度互不打擾。",
+            "action": "導師已問雙方願不願意透過合意管道談最低限度互不打擾。",
+            "tradeoff": "可減誤會；有人可能拒談。"
+          },
+          {
+            "id": 3,
+            "text": "私下聽他每天向家人報平安的壓力，不急著談復合。",
+            "action": "導師已私下聽他每天向家人報平安的壓力，不急著談復合。",
+            "tradeoff": "回應家庭需要；談話較重。"
+          },
+          {
+            "id": 4,
+            "text": "提供可自願使用的校內個別支持。",
+            "action": "導師已提供可自願使用的校內個別支持。",
+            "tradeoff": "不只靠你；多一人知情。"
+          },
+          {
+            "id": 5,
+            "text": "讓他先選通勤時能自己做的事，減少一直看對方。",
+            "action": "導師已讓他先選通勤時能自己做的事，減少一直看對方。",
+            "tradeoff": "較自主；未解決相處爭議。"
+          },
+          {
+            "id": 6,
+            "text": "說好若出現具體侵擾，要怎麼向有權窗口求助。",
+            "action": "導師已說好若出現具體侵擾，要怎麼向有權窗口求助。",
+            "tradeoff": "有安全路徑；不是預設對方有錯。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天不想把放學變成戀愛檢討，陪他聊自己選的別件事到車來。",
+          "action": "導師已邀學生自選與前任無關的話題，在合法等候處短聊至車到，不替他更改返程或要求情緒報告。",
+          "tradeoff": "有普通相處；家庭壓力未展開。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1929951468
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "18b14468f6a0bbcd1cf994a8293e9eac7224ebf0c923b59460c4e9771135fd74"
+      },
+      "consequenceDirections": {
+        "A": "若有共識可共乘而少接觸，不談也不能剝奪搭車權；需時間協調。",
+        "B": "學生可暫不講分手，也可拒聊，教師花掉等車時間；不因此忽略新出現的安全訊號。",
+        "C": "注意力可能回到音樂或閱讀，仍可能被觸動；方法由本人選。",
+        "D": "他可說多少算多少，可能仍不想讓家人知道；教師不能代分家庭責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "34f2aaad05f8282b425cdb9d9e6fd5901f400d392199562dcefd3ae1142522f0",
+    "draftSha256": "ffd5c35f942651fe5eaaf3918e09d2c862e09bc34bf51ec6c9a885cbe35d03d3",
     "seedAssignmentVersion": 1
   }
 }

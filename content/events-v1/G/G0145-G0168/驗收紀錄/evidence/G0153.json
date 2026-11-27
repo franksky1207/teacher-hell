@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1d6036394474b9473ef094cec1887881d9e99dab77b73017b117d3cf3fbc570b",
+      "checkedAt": "2026-11-27T04:09:32.291Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先和孩子單獨談他在報告時遇到的困難，再回覆家長可分享的部分",
+            "action": "導師已先和孩子單獨談他在報告時遇到的困難，再回覆家長可分享的部分",
+            "tradeoff": "家長今天得不到立即縮短發言的承諾"
+          },
+          {
+            "id": 2,
+            "text": "下次對全班採用相同的發言時間，並讓每人事先練習取捨內容",
+            "action": "導師已下次對全班採用相同的發言時間，並讓每人事先練習取捨內容",
+            "tradeoff": "每個人都得刪掉部分想說的話，課程也要留出練習時間"
+          },
+          {
+            "id": 3,
+            "text": "請家長說明她聽見過哪些同學反應，把已發生的事和擔心分開確認",
+            "action": "導師已請家長說明她聽見過哪些同學反應，把已發生的事和擔心分開確認",
+            "tradeoff": "談話會拉長，也可能發現目前沒有可查證的排斥事件"
+          },
+          {
+            "id": 4,
+            "text": "把本次口頭練習的實際目標與觀察到的表現說給家長聽",
+            "action": "導師已把本次口頭練習的實際目標與觀察到的表現說給家長聽",
+            "tradeoff": "你須整理具體例子，家長仍可能不認同活動價值"
+          },
+          {
+            "id": 5,
+            "text": "在孩子同意下，提供先寫重點、搭配圖片或先錄一小段的練習方式",
+            "action": "導師已在孩子同意下，提供先寫重點、搭配圖片或先錄一小段的練習方式",
+            "tradeoff": "準備方式變多，仍不能完全避開課程必要的口頭表達"
+          },
+          {
+            "id": 6,
+            "text": "先試一次只講一個段落，保留後續完整報告，再比較孩子的實際感受",
+            "action": "導師已先試一次只講一個段落，保留後續完整報告，再比較孩子的實際感受",
+            "tradeoff": "需要兩次觀察，不能立刻下結論"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你聽到「真的有用嗎」有點不服氣，請家長當場聽你用一分鐘示範同一題，再直接指出哪裡聽不懂",
+          "action": "導師已邀請家長聽取一分鐘教學示範並提出具體疑問，未要求家長認同或代替孩子作答",
+          "tradeoff": "你得把自己的教法攤出來，也可能被指出確實不清楚"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3531814492
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "a95bb2f1737f04c9db615302463e78303c9b7fa0102960d2add9b025c249e7f9"
+      },
+      "consequenceDirections": {
+        "A": "短段落可能讓孩子較順利，也可能打斷原有思路，是否延用需看實際反應。",
+        "B": "孩子可能在意的其實是忘詞而非說太久，後續練習可避免只按家長猜測調整。",
+        "C": "孩子不會被單獨叫停，卻可能因刪不下內容而需要額外協助。",
+        "D": "家長能從具體示範理解課程，也可能發現教師自己的說明同樣冗長，讓後續討論更難閃躲。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "49834a8a8b6d70b5ccbc646bcba15115eae7103c50445cd8edb58b32139a30f7",
+    "draftSha256": "1d6036394474b9473ef094cec1887881d9e99dab77b73017b117d3cf3fbc570b",
     "seedAssignmentVersion": 1
   }
 }

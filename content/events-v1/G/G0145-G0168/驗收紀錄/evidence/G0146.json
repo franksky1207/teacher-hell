@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0137ae9d22961813f0ba03f4617be4f259796ae0b702dd7b588b59defe416700",
+      "checkedAt": "2026-11-27T04:09:32.281Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向學生說明你先前誤解哪裡，讓他回應。",
+            "action": "導師已向學生說明你先前誤解哪裡，讓他回應。",
+            "tradeoff": "回應私人不滿；未定往後辦法。"
+          },
+          {
+            "id": 2,
+            "text": "和他核對規定內能自行使用的聯絡方式。",
+            "action": "導師已和他核對規定內能自行使用的聯絡方式。",
+            "tradeoff": "保留自主；選項可能有限。"
+          },
+          {
+            "id": 3,
+            "text": "與家長確認緊急交接訊息應直接找哪個校內窗口。",
+            "action": "導師已與家長確認緊急交接訊息應直接找哪個校內窗口。",
+            "tradeoff": "減少學生奔走；多一方協調。"
+          },
+          {
+            "id": 4,
+            "text": "請原窗口只回傳必要確認，不讓訊息散到每位老師。",
+            "action": "導師已請原窗口只回傳必要確認，不讓訊息散到每位老師。",
+            "tradeoff": "縮小知情；回覆較集中。"
+          },
+          {
+            "id": 5,
+            "text": "另訂符合規定的短時確認安排，由本人選是否申請。",
+            "action": "導師已另訂符合規定的短時確認安排，由本人選是否申請。",
+            "tradeoff": "可預期；須正式同意。"
+          },
+          {
+            "id": 6,
+            "text": "私下問他下次想自己說還是請成人代傳。",
+            "action": "導師已私下問他下次想自己說還是請成人代傳。",
+            "tradeoff": "做法合用；不是所有情況都能自選。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想再看他跑一圈，今天把必要聯絡時間和窗口直接寫給他。",
+          "action": "導師已提供核對過的窗口及可聯絡時段書面資訊，不寫家事細節，未增加學生代辦責任或改變校規。",
+          "tradeoff": "圖快有用；教師要核實資訊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4287389636
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "457c072012005a27aa1dfc0e3bc240df29af20a6343fa76401ce3ddec0b90062"
+      },
+      "consequenceDirections": {
+        "A": "家庭可有穩定路徑，學生不必當全天中介；需家長同意可用時段。",
+        "B": "他手上有具體找人路徑，可能仍對公開斥責不滿；紙卡不等於特許用機。",
+        "C": "他下次能找正確管道，可能仍嫌不方便；不能承諾任意用機。",
+        "D": "學生少重講家事，其他教師可能資訊不足；急事仍可轉有權支援。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "69585f0a0fa1095df0e2aa874ae0893ef772204cce1c7083d99e95a422b272c2",
+    "draftSha256": "0137ae9d22961813f0ba03f4617be4f259796ae0b702dd7b588b59defe416700",
     "seedAssignmentVersion": 1
   }
 }

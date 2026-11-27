@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a964d0205db537919bb847c39f3c338bf2b8ecd77b5abf28002e7ae8931f00d0",
+      "checkedAt": "2026-11-27T04:09:32.303Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和他約好提問後先等一段清楚的時間，再由原提問者決定是否補充",
+            "action": "導師已和他約好提問後先等一段清楚的時間，再由原提問者決定是否補充",
+            "tradeoff": "現場可能安靜得令你不自在，也得忍住習慣性的接話"
+          },
+          {
+            "id": 2,
+            "text": "設定雙方都看得懂的交接訊號，收到訊號才接下話題",
+            "action": "導師已設定雙方都看得懂的交接訊號，收到訊號才接下話題",
+            "tradeoff": "要先練習配合，也可能漏看訊號"
+          },
+          {
+            "id": 3,
+            "text": "讓同事完整主帶下一個小段落，你只負責事先約定的必要協助",
+            "action": "導師已讓同事完整主帶下一個小段落，你只負責事先約定的必要協助",
+            "tradeoff": "你得放下熟悉的主導位置，同事也要承擔整段節奏"
+          },
+          {
+            "id": 4,
+            "text": "下次先給學生一小段書寫時間，再請願意的人分享",
+            "action": "導師已下次先給學生一小段書寫時間，再請願意的人分享",
+            "tradeoff": "活動時間會增加，部分即興互動也會減少"
+          },
+          {
+            "id": 5,
+            "text": "把哪些問題由誰追問寫進簡單的共同提綱，不替對方的問題加答案",
+            "action": "導師已把哪些問題由誰追問寫進簡單的共同提綱，不替對方的問題加答案",
+            "tradeoff": "準備時需要多談一輪，臨場彈性也有界線"
+          },
+          {
+            "id": 6,
+            "text": "徵得必要同意，只記錄不含身分的發言順序，課後一起看誰在哪裡插話",
+            "action": "導師已徵得必要同意，只記錄不含身分的發言順序，課後一起看誰在哪裡插話",
+            "tradeoff": "需要記錄與回看時間，也可能發現彼此都曾打斷人"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不太甘心承認自己講太多，索性撤下自己準備的結尾長篇心得，和同事改約讓學生各自留一句話收尾",
+          "action": "導師已與共同帶領者協議撤下自己的結尾心得，改以學生自願的一句話回應作結，未取消必要說明與照顧",
+          "tradeoff": "成品不會像原稿那麼漂亮，也可能有人只寫幾個字"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3947174319
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "9e33644096574aaf12b8ee2a488952e8e627398d063d7b98de126fdf7709ec6e"
+      },
+      "consequenceDirections": {
+        "A": "討論能回到可辨認的片段，但紀錄不會呈現學生所有內心感受。",
+        "B": "學生能跟著單一帶領者往下走，遇到冷場時你不能立刻搶回話題。",
+        "C": "學生多了思考空檔，同事卻仍要處理等待後沒人回應的情形。",
+        "D": "最後留下的是學生零碎的回應，你得接受沒有自己那段完整說理，活動也能結束。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0bd65f3b11e4e7877a569b9bae244cb79f4c10322feae607773e1f9e6052b631",
+    "draftSha256": "a964d0205db537919bb847c39f3c338bf2b8ecd77b5abf28002e7ae8931f00d0",
     "seedAssignmentVersion": 1
   }
 }

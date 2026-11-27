@@ -16,14 +16,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "380e31b66b390ddd3ce09c261428e045cf92ccb8c87228c2ac546956d41b9ee5",
+      "checkedAt": "2026-11-27T04:09:32.300Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他說清楚最沒效果的是哪一段提醒，再決定是否調整",
+            "action": "導師已請他說清楚最沒效果的是哪一段提醒，再決定是否調整",
+            "tradeoff": "得聽具體批評，也不會立刻得到更好的講法"
+          },
+          {
+            "id": 2,
+            "text": "今天先照原定必要提醒進行，另記下學生實際反應再回頭討論",
+            "action": "導師已今天先照原定必要提醒進行，另記下學生實際反應再回頭討論",
+            "tradeoff": "可能再次講得冗長，不能只憑自己感覺判定有效"
+          },
+          {
+            "id": 3,
+            "text": "把今天的提醒縮成一件學生立刻能做的事，試一次較短的版本",
+            "action": "導師已把今天的提醒縮成一件學生立刻能做的事，試一次較短的版本",
+            "tradeoff": "部分原想交代的內容得改日處理"
+          },
+          {
+            "id": 4,
+            "text": "請學生不記名寫下最近一次提醒後記得什麼，不問他們喜不喜歡老師",
+            "action": "導師已請學生不記名寫下最近一次提醒後記得什麼，不問他們喜不喜歡老師",
+            "tradeoff": "需要占用短時間，回答可能讓你難堪"
+          },
+          {
+            "id": 5,
+            "text": "約同事在雙方合適的課堂安排中互相觀察一次，事先談好只看提醒如何進行",
+            "action": "導師已約同事在雙方合適的課堂安排中互相觀察一次，事先談好只看提醒如何進行",
+            "tradeoff": "兩人都得騰時間，也要避免觀課變成評比"
+          },
+          {
+            "id": 6,
+            "text": "先問他是在替你擔心，還是真的想談方法，確認後另約完整討論",
+            "action": "導師已先問他是在替你擔心，還是真的想談方法，確認後另約完整討論",
+            "tradeoff": "當下不會改動講稿，也可能讓他覺得你太認真"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被說得有點不服氣，請他挑一段自己願意示範的提醒，讓你到場看看；他不願意也不勉強",
+          "action": "導師已邀請同事在合適且獲准的時段自願示範一段提醒，未強派工作或以拒絕否定其專業",
+          "tradeoff": "可能顯得你在反將一軍，他也可能直接拒絕"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1793036721
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "5d87f82623f8de33af02a4ab4ef923cda3ed288f362d0d2f95a6e2a5c21126e4"
+      },
+      "consequenceDirections": {
+        "A": "原有安排沒有臨時大改，之後卻需要拿出觀察而非印象回應質疑。",
+        "B": "若他答應，兩人得把話落成實際示範；若拒絕，這場玩笑可能尷尬地停在原地。",
+        "C": "玩笑不再被默認成專業定論，但若他確有建議，仍需要你願意聽下去。",
+        "D": "你能分清他是在開玩笑還是觀察到問題，但談話可能揭露你不想面對的習慣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8f0f70e74a7d89ba82776adaea145a7420fc646994d76fb3c128c675215b54d4",
+    "draftSha256": "380e31b66b390ddd3ce09c261428e045cf92ccb8c87228c2ac546956d41b9ee5",
     "seedAssignmentVersion": 1
   }
 }

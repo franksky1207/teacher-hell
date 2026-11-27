@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "63768f5ab06dfec48ba2184213082a3f629127e7d67c6221c01cbea8560b4175",
+      "checkedAt": "2026-11-27T04:09:32.289Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向教務處提出下一節撤去額外駐班人力，由原任教師依正常方式帶班",
+            "action": "導師已向教務處提出下一節撤去額外駐班人力，由原任教師依正常方式帶班",
+            "tradeoff": "少了即時協助，若音量再起須重新聯繫"
+          },
+          {
+            "id": 2,
+            "text": "和同仁約好留在可聯繫的位置，只有教師發出約定訊號才入班",
+            "action": "導師已和同仁約好留在可聯繫的位置，只有教師發出約定訊號才入班",
+            "tradeoff": "教師必須分神判斷何時求助，支援不會立刻站在身旁"
+          },
+          {
+            "id": 3,
+            "text": "把下一段改成有時間限制的兩人討論，先說清楚可以說話的音量",
+            "action": "導師已把下一段改成有時間限制的兩人討論，先說清楚可以說話的音量",
+            "tradeoff": "需要挪動原本教學進度，也未必馬上有人開口"
+          },
+          {
+            "id": 4,
+            "text": "收一張不記名的小紙條，問學生有人在後門時為什麼不敢回答",
+            "action": "導師已收一張不記名的小紙條，問學生有人在後門時為什麼不敢回答",
+            "tradeoff": "會占用課堂時間，收到的意見也可能互相矛盾"
+          },
+          {
+            "id": 5,
+            "text": "請同仁在下一節只記錄何時音量影響鄰班，不對學生逐一注視或提醒",
+            "action": "導師已請同仁在下一節只記錄何時音量影響鄰班，不對學生逐一注視或提醒",
+            "tradeoff": "同仁暫時無法直接制止小聲干擾，紀錄也不是完整原因"
+          },
+          {
+            "id": 6,
+            "text": "和教務處商量只在進班與換活動時段支援，其他時間依原課堂安排",
+            "action": "導師已和教務處商量只在進班與換活動時段支援，其他時間依原課堂安排",
+            "tradeoff": "人力須重新協調，活動中途若失控仍得另求助"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也被這片死寂弄得煩躁，今天剩下的練習先讓學生各自完成，不再逼他們輪流開口",
+          "action": "導師已將本節餘下練習改為個別書寫，保留正常求助方式，未以沉默作為懲罰",
+          "tradeoff": "能把練習做完，卻少了一次聽見學生想法的機會"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1309577995
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "de403cb7330ef0f2f6ca809884a387c1b1e33e23e53b3bebed0fc7782cf8c1ad"
+      },
+      "consequenceDirections": {
+        "A": "學生可能恢復回應，也可能又超出鄰班能承受的音量，任課教師得及時調整。",
+        "B": "同仁不再一直構成壓力，發生喧鬧時進班的時機則成為合作重點。",
+        "C": "全班暫時不用對著後門發言，交來的作答可能揭露誤解，但無法替代原定討論。",
+        "D": "學生有較小的發言範圍，同仁能看見討論音量與失控吵鬧的差別。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "72595d28bacc9f034c933827ec13c684d8df330517ce0d11ab8b1011b04007b1",
+    "draftSha256": "63768f5ab06dfec48ba2184213082a3f629127e7d67c6221c01cbea8560b4175",
     "seedAssignmentVersion": 1
   }
 }

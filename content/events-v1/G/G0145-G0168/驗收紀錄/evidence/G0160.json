@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ca7328884d48f3dca595ff4513bc8fad98c1b25f5cedbb782b38d02db1e7fbb2",
+      "checkedAt": "2026-11-27T04:09:32.297Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先吃已做好的餐點，明確約好下次各自開口點餐",
+            "action": "導師已先吃已做好的餐點，明確約好下次各自開口點餐",
+            "tradeoff": "今天仍沒吃到想試的新菜，下次也得真的出聲"
+          },
+          {
+            "id": 2,
+            "text": "另買一份想吃的新菜，已點好的那份照原約定付費並妥善帶走",
+            "action": "導師已另買一份想吃的新菜，已點好的那份照原約定付費並妥善帶走",
+            "tradeoff": "今天多花錢，也得安排剩下食物的保存"
+          },
+          {
+            "id": 3,
+            "text": "詢問同事是否真願意接下多點的餐點與費用，確認後再自行點餐",
+            "action": "導師已詢問同事是否真願意接下多點的餐點與費用，確認後再自行點餐",
+            "tradeoff": "同事可能不願意，你不能替他決定多吃一份"
+          },
+          {
+            "id": 4,
+            "text": "徵得同事同意，把兩份舊餐點分著吃，再合點一樣新菜各付約好的費用",
+            "action": "導師已徵得同事同意，把兩份舊餐點分著吃，再合點一樣新菜各付約好的費用",
+            "tradeoff": "每人能吃到的新菜有限，也得協調份量與付費"
+          },
+          {
+            "id": 5,
+            "text": "請店家確認哪些配菜尚未製作，可以在不造成損失下調整",
+            "action": "導師已請店家確認哪些配菜尚未製作，可以在不造成損失下調整",
+            "tradeoff": "能改的可能很少，也須接受店家拒絕"
+          },
+          {
+            "id": 6,
+            "text": "以後改成到店後各自點餐、各付各的，今天已點的費用先按雙方同意處理",
+            "action": "導師已以後改成到店後各自點餐、各付各的，今天已點的費用先按雙方同意處理",
+            "tradeoff": "少了彼此代點的方便，聚餐也可能變得沒那麼熟稔"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你突然很想把星期三拿回來，付清今天自己該負擔的餐費，告訴他往後不再固定赴約，有空再另約",
+          "action": "導師已處理自己應付的餐費並取消未來固定私人飯約，未要求同事承擔未同意的支出",
+          "tradeoff": "失去一頓不用想的熟悉午晚餐，同事也可能覺得被疏遠"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3075640777
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "065f4ab56a47d8f39f6db55a0124645439c6b7ea80c879b6812448841b1c763c"
+      },
+      "consequenceDirections": {
+        "A": "日後你能自由安排這段私人時間，但兩人原本靠固定飯局維持的閒聊可能跟著減少。",
+        "B": "兩人不用各吃完整舊套餐，但你仍不能完全按自己的口味點一桌。",
+        "C": "你能試新口味，卻可能發現為了不打斷氣氛付出了不必要的花費。",
+        "D": "今天或許能有一點變化，但不會把兩人的溝通失誤轉嫁給廚房。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b4aba534bea6fdfa53357ed234dfdf6e74a1abc5ca46ce0686df3e1d24e6d87f",
+    "draftSha256": "ca7328884d48f3dca595ff4513bc8fad98c1b25f5cedbb782b38d02db1e7fbb2",
     "seedAssignmentVersion": 1
   }
 }

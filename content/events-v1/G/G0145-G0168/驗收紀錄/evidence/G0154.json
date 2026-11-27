@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "18e0129fe7d73f9981df686fc9eecf062b81951cb5b9082de25aa3a209a6dff6",
+      "checkedAt": "2026-11-27T04:09:32.292Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在送出的會議紀錄中更正零成本的說法，明列有同仁自行墊付的耗材",
+            "action": "導師已在送出的會議紀錄中更正零成本的說法，明列有同仁自行墊付的耗材",
+            "tradeoff": "更正會讓與會者注意到你的疏漏，報帳也不會因此自動獲准"
+          },
+          {
+            "id": 2,
+            "text": "先停止取用他的私人耗材，清點學校現有物品可支應哪些工作",
+            "action": "導師已先停止取用他的私人耗材，清點學校現有物品可支應哪些工作",
+            "tradeoff": "部分教材可能得延後完成，清點也要花時間"
+          },
+          {
+            "id": 3,
+            "text": "協助他依規定提出墊款申請，附上用途與憑證交承辦單位審核",
+            "action": "導師已協助他依規定提出墊款申請，附上用途與憑證交承辦單位審核",
+            "tradeoff": "程序需要時間，費用未必全部符合核銷條件"
+          },
+          {
+            "id": 4,
+            "text": "向採購承辦提出後續耗材需求，不再把他的個人物品算進庫存",
+            "action": "導師已向採購承辦提出後續耗材需求，不再把他的個人物品算進庫存",
+            "tradeoff": "採購有時程，短期內不能保證補齊"
+          },
+          {
+            "id": 5,
+            "text": "和任課同仁確認哪些紙本非本週不可，延後其餘整理",
+            "action": "導師已和任課同仁確認哪些紙本非本週不可，延後其餘整理",
+            "tradeoff": "會打亂原本排程，也得說明不是同仁不肯幫忙"
+          },
+          {
+            "id": 6,
+            "text": "和他約定私人用品每次借用前都先問，不以這次借出推定往後同意",
+            "action": "導師已和他約定私人用品每次借用前都先問，不以這次借出推定往後同意",
+            "tradeoff": "臨時借用會多一道確認，對方也可能直接拒絕"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你想到剛才還把成果講得很漂亮，決定撤下自己原訂要對外分享的這個案例，等費用說明清楚再談",
+          "action": "導師已通知邀請窗口暫撤自己要分享的案例，待成本資料釐清後另議，不影響必要教學與法定經費處理",
+          "tradeoff": "少了一次展示成果的機會，也須向邀請單位解釋調整"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2851894877
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "02c41a677a9ca5fb72258759b61d3d85ab1cc817ba574dfdad6ee9f43f5e6688"
+      },
+      "consequenceDirections": {
+        "A": "同仁取得正式處理管道，若遭退件，未核准的支出仍須另行協調。",
+        "B": "必要教材優先完成，延後的工作可能引來催促，但不再靠私人墊付硬撐。",
+        "C": "往後的供應責任回到學校，眼前仍可能得減量製作。",
+        "D": "這個案例不會繼續被當成零成本範本，其他人可能開始追問原先宣傳是怎麼形成的。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5f2d0cce9209cada91b1aecff9de2609dc8b63eeb377168a2db722f32fd95474",
+    "draftSha256": "18e0129fe7d73f9981df686fc9eecf062b81951cb5b9082de25aa3a209a6dff6",
     "seedAssignmentVersion": 1
   }
 }

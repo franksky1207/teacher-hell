@@ -16,14 +16,82 @@
     "G08",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f64a81bc68a4638c6e18ea241bc429111a5b2c03fba28f73490123ca29d25d52",
+      "checkedAt": "2026-11-27T04:09:32.279Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "陪同事向課務說明可承接的明確上限。",
+            "action": "導師已陪同事向課務說明可承接的明確上限。",
+            "tradeoff": "把限度正式化；不一定獲准。"
+          },
+          {
+            "id": 2,
+            "text": "申請由你接一段自己有資格的當日支援。",
+            "action": "導師已申請由你接一段自己有資格的當日支援。",
+            "tradeoff": "先補缺；你自己的工作受擠。"
+          },
+          {
+            "id": 3,
+            "text": "請課務重配後續代課，不先靠任何家庭送餐延續。",
+            "action": "導師已請課務重配後續代課，不先靠任何家庭送餐延續。",
+            "tradeoff": "處理總量；安排較慢。"
+          },
+          {
+            "id": 4,
+            "text": "協調撤掉與必要授課無關的額外報告。",
+            "action": "導師已協調撤掉與必要授課無關的額外報告。",
+            "tradeoff": "減輕一部分；代課本身還在。"
+          },
+          {
+            "id": 5,
+            "text": "先核對學生這次到底缺哪一段銜接，避免整節重補。",
+            "action": "導師已先核對學生這次到底缺哪一段銜接，避免整節重補。",
+            "tradeoff": "較精準；要判讀內容。"
+          },
+          {
+            "id": 6,
+            "text": "請同事依正式程序提出休代或調整需求，你提供親見工作資訊。",
+            "action": "導師已請同事依正式程序提出休代或調整需求，你提供親見工作資訊。",
+            "tradeoff": "本人主導；手續需時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天先不陪行政談延續，邀他趁飯熱吃完再說。",
+          "action": "導師已在無值勤衝突的空檔邀同事吃家人送來的餐，向行政另約聯繫，不代承諾續代或延誤必要課務。",
+          "tradeoff": "想替晚餐搶十分鐘；自己也晚走。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2016504892
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "c29347456920546ef90fa2dd479a11b636d78b1b8abaa3edb77b6eeb9bca82aa"
+      },
+      "consequenceDirections": {
+        "A": "同事少一份整理，行政可能不同意；學生學習不能因此停擺。",
+        "B": "負荷可分給正式可用人力，同事可能仍需等；不保證立刻有人。",
+        "C": "同事可選吃飯或先離開，行政須等合意聯繫時間；排課問題沒有被一頓飯解決。",
+        "D": "有可核實的負荷說明，他不必交代家務；是否調整仍由權責方決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1d35cc78b04273a131604262ccd8923a81897c74be2ec75a5f44aef2aee2987c",
+    "draftSha256": "f64a81bc68a4638c6e18ea241bc429111a5b2c03fba28f73490123ca29d25d52",
     "seedAssignmentVersion": 1
   }
 }

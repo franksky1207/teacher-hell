@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "480d385ab80444d28c8361238bca8f2ec5e74f971a3d9c71a1b7d320ba2a68cc",
+      "checkedAt": "2026-11-27T04:09:32.284Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只支持先試一個真正適合短講的主題。",
+            "action": "導師已只支持先試一個真正適合短講的主題。",
+            "tradeoff": "保留機會；其餘得退回。"
+          },
+          {
+            "id": 2,
+            "text": "協助向行政提出減少其他工作的交換方案。",
+            "action": "導師已協助向行政提出減少其他工作的交換方案。",
+            "tradeoff": "總量可控；需談分工。"
+          },
+          {
+            "id": 3,
+            "text": "請他列自己願做的版本及上限，再由本人提出。",
+            "action": "導師已請他列自己願做的版本及上限，再由本人提出。",
+            "tradeoff": "保留熱情；限度要說清。"
+          },
+          {
+            "id": 4,
+            "text": "把不適合縮短的主題留完整課，不硬改短講。",
+            "action": "導師已把不適合縮短的主題留完整課，不硬改短講。",
+            "tradeoff": "顧教學；排程較長。"
+          },
+          {
+            "id": 5,
+            "text": "先試小範圍並收具體理解回饋，再決定是否擴大。",
+            "action": "導師已先試小範圍並收具體理解回饋，再決定是否擴大。",
+            "tradeoff": "有依據；成效需時間看。"
+          },
+          {
+            "id": 6,
+            "text": "請行政改為自願教師共同備一場，不全交給原老師。",
+            "action": "導師已請行政改為自願教師共同備一場，不全交給原老師。",
+            "tradeoff": "可分擔；協作增加成本。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想讓這招被看見，申請把自己一場非必要分享讓出來給他試。",
+          "action": "導師已提出將本人非必要校內分享時段改供同事自願試講的申請，未自行換課、加派對方工作或動用學生休息。",
+          "tradeoff": "付出自己的舞台；未必核准。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1519358771
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "587dd3dc702026bfd3e2e563b704317bbb60bedc0e360a7fa1d930e28f71739a"
+      },
+      "consequenceDirections": {
+        "A": "學生可能喜歡但未懂，同事可改；不能只用熱鬧證明成功。",
+        "B": "有人願加入才有團隊，原教師仍可能需引導；不能硬派私下人力。",
+        "C": "同事可接受或婉拒，行政能評估互換；教師自己的成果展示延後。",
+        "D": "同事可做較完整一場，行政可能嫌少；須交代選題依據。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2216762799e63d81d75168eae5e405388ab7d062c6ed9f02e803971f1be829d0",
+    "draftSha256": "480d385ab80444d28c8361238bca8f2ec5e74f971a3d9c71a1b7d320ba2a68cc",
     "seedAssignmentVersion": 1
   }
 }

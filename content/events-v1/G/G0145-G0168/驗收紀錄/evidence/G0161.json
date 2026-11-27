@@ -15,14 +15,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "507895e7c870d7fb6c216bfc30e54dbaf335795cf7423fa817aee829ba40823a",
+      "checkedAt": "2026-11-27T04:09:32.298Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原留言處清楚更正先前的稱讚，說明不能從影片判斷動作安全",
+            "action": "導師已在原留言處清楚更正先前的稱讚，說明不能從影片判斷動作安全",
+            "tradeoff": "你得公開承認看錯，也可能引來更多追問"
+          },
+          {
+            "id": 2,
+            "text": "在學生自願下，陪他把經過說給負責的體育教師聽，不要求他替動作辯護",
+            "action": "導師已在學生自願下，陪他把經過說給負責的體育教師聽，不要求他替動作辯護",
+            "tradeoff": "要再次回想差點受傷的時刻，學生可能不願細談"
+          },
+          {
+            "id": 3,
+            "text": "以不含當事人身分的示意畫面，帶班上看看鏡頭如何藏起危險",
+            "action": "導師已以不含當事人身分的示意畫面，帶班上看看鏡頭如何藏起危險",
+            "tradeoff": "會占用課程，還須避免讓大家猜出當事人"
+          },
+          {
+            "id": 4,
+            "text": "讓他選擇是否在私下談你那句稱讚造成的影響，暫不要求對全班說明",
+            "action": "導師已讓他選擇是否在私下談你那句稱讚造成的影響，暫不要求對全班說明",
+            "tradeoff": "你得接受他可能只想先離開談話，不會立刻和解"
+          },
+          {
+            "id": 5,
+            "text": "若後續安全與場地條件都獲確認，另約自願者拍不需冒險的版本",
+            "action": "導師已若後續安全與場地條件都獲確認，另約自願者拍不需冒險的版本",
+            "tradeoff": "需要重新規劃且未必有人願意參加，原片問題仍須處理"
+          },
+          {
+            "id": 6,
+            "text": "向已知看過影片的班級說明未經確認的動作不能跟做，不轉傳原片或透露學生身分",
+            "action": "導師已向已知看過影片的班級說明未經確認的動作不能跟做，不轉傳原片或透露學生身分",
+            "tradeoff": "訊息可能引起好奇，你得控制說明範圍"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你被那句「你也說可以」刺得很不是滋味，取消自己這堂課原先安排的非必要拍片活動，今天先不用鏡頭交作業",
+          "action": "導師已取消自己有權調整的本節非必要拍片作業，改用原課程可行的非攝影方式完成，未限制學生合法私人拍攝",
+          "tradeoff": "全班少了一次喜歡的活動，也可能認為被連帶掃興"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4132609136
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "e1f1cc39a91bdcc74ec4947a852f41695fd59ed66ab80ce07f694335e81356ad"
+      },
+      "consequenceDirections": {
+        "A": "模仿的風險有機會降低，但有人可能追問原片，仍須守住隱私。",
+        "B": "學生不再拿那句話當作教師背書，其他看過留言的人也有機會知道風險。",
+        "C": "學生不用繼續為畫面冒險或表現，卻有人會質疑為何是教師看走眼、活動卻一起取消。",
+        "D": "他能指出被誤導或被責怪的部分，你也可能聽見不容易接受的批評。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "95a546b45c7d045a946c72e8db95980fe34481e204c0d3ef9ac3c719a7dfdd73",
+    "draftSha256": "507895e7c870d7fb6c216bfc30e54dbaf335795cf7423fa817aee829ba40823a",
     "seedAssignmentVersion": 1
   }
 }

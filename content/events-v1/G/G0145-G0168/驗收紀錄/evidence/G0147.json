@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f80717f7f8befdf0ced6dc53e9be844101a5528e0435b033a153b1574fa3408d",
+      "checkedAt": "2026-11-27T04:09:32.283Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請同事用同一題走另一條可行解法。",
+            "action": "導師已請同事用同一題走另一條可行解法。",
+            "tradeoff": "看得見多解；多用課時。"
+          },
+          {
+            "id": 2,
+            "text": "先讓學生完成自己的解法，再分享願意公開的部分。",
+            "action": "導師已先讓學生完成自己的解法，再分享願意公開的部分。",
+            "tradeoff": "保留主導；作品會不整齊。"
+          },
+          {
+            "id": 3,
+            "text": "保留圖像法，標出在哪些條件才適用。",
+            "action": "導師已保留圖像法，標出在哪些條件才適用。",
+            "tradeoff": "方法有界線；說明較長。"
+          },
+          {
+            "id": 4,
+            "text": "由同事自願再帶一小組，其餘依原進度練。",
+            "action": "導師已由同事自願再帶一小組，其餘依原進度練。",
+            "tradeoff": "能細看；同事額外投入。"
+          },
+          {
+            "id": 5,
+            "text": "請學生只解釋一個轉折，不比誰畫得最像。",
+            "action": "導師已請學生只解釋一個轉折，不比誰畫得最像。",
+            "tradeoff": "聚焦理解；教師需逐一聽。"
+          },
+          {
+            "id": 6,
+            "text": "把兩種已確認可用的作法並排，不標哪張是老師的。",
+            "action": "導師已把兩種已確認可用的作法並排，不標哪張是老師的。",
+            "tradeoff": "降低權威暗示；整理費工。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不服大家覺得照畫就會，拿你自己一張故意標錯轉彎的圖請他們找。",
+          "action": "導師已以本人製作且明標錯例的圖作短練習，要求找出轉折錯誤並由授課者核正，不更動學生原解法評分。",
+          "tradeoff": "用錯例挑戰；也可能把人弄亂。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1275202018
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "274291cab3960cdcfc6e0f619757668faef1272f7f5bdcdde8bc8921e2ad3410"
+      },
+      "consequenceDirections": {
+        "A": "可辨會想或只描，同學可能緊張；不能以口快判能力。",
+        "B": "原想法可能留下，學生也可能選圖像法；教師要看不同版本。",
+        "C": "學生能看例外，任課可保設計；未必立即會判斷。",
+        "D": "學生可指出錯處，教師得清楚標示是錯例並在當節核正；不能讓錯版流作答案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "133c032e1f7288f3b4c68213dd213ea2185dad4fc946f80056e1ed3d2a228133",
+    "draftSha256": "f80717f7f8befdf0ced6dc53e9be844101a5528e0435b033a153b1574fa3408d",
     "seedAssignmentVersion": 1
   }
 }

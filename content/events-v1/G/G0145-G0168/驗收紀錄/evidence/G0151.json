@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5ea3bcdc8c9b2c7fd4ccd5002ee4f5d5f517eb31af0ca904ca639707956be933",
+      "checkedAt": "2026-11-27T04:09:32.288Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請孩子私下選出能接受的款式，再把符合補助條件的選擇交給家長",
+            "action": "導師已請孩子私下選出能接受的款式，再把符合補助條件的選擇交給家長",
+            "tradeoff": "需要另約短時間確認，不能保證每款都有補助"
+          },
+          {
+            "id": 2,
+            "text": "和家長先列出修鞋與平價換鞋的實際費用，由家長決定目前負擔得起哪一種",
+            "action": "導師已和家長先列出修鞋與平價換鞋的實際費用，由家長決定目前負擔得起哪一種",
+            "tradeoff": "可能只能先處理眼前破損，無法買到最想要的鞋"
+          },
+          {
+            "id": 3,
+            "text": "向承辦人確認案件進度，約定一次明確的回覆時間",
+            "action": "導師已向承辦人確認案件進度，約定一次明確的回覆時間",
+            "tradeoff": "你得追蹤回覆，但不能代替承辦人核准"
+          },
+          {
+            "id": 4,
+            "text": "徵得孩子同意後，和承辦人約好私下交付方式",
+            "action": "導師已徵得孩子同意後，和承辦人約好私下交付方式",
+            "tradeoff": "要多安排領取時間，不能直接送到班上省事"
+          },
+          {
+            "id": 5,
+            "text": "把可自行購買後申請的規則查清楚，讓家長判斷是否先墊款",
+            "action": "導師已把可自行購買後申請的規則查清楚，讓家長判斷是否先墊款",
+            "tradeoff": "家長必須先承擔支出，核銷仍有條件"
+          },
+          {
+            "id": 6,
+            "text": "詢問學校是否有尺寸合適且衛生安全的備用鞋，取得孩子同意再借用",
+            "action": "導師已詢問學校是否有尺寸合適且衛生安全的備用鞋，取得孩子同意再借用",
+            "tradeoff": "只是短期借用，尺寸與外觀未必理想"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你有點受不了一再被催，明說不替孩子挑鞋；改把已查明的規則一次寫清楚，之後非急件集中在約定時間回覆",
+          "action": "導師已拒絕代選鞋款，交付查明的書面說明並約定非急件回覆時間，急迫安全問題仍即時處理",
+          "tradeoff": "家長可能覺得你變得難找，你也得守住自己的回覆承諾"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3557673632
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "6ab6f0002efbb1a85efc2708c7d0d8dd47f85cb66a5cfe35652ec3e9b91b8350"
+      },
+      "consequenceDirections": {
+        "A": "家長拿到可反覆核對的說明，臨時追問減少，卻可能轉向承辦單位抱怨聯繫不便。",
+        "B": "孩子能指出尺寸與外觀需求，家長仍須依核定範圍購買，急用的時間壓力沒有消失。",
+        "C": "鞋子不會在全班面前出現，孩子比較願意領取，承辦流程則多了一次協調。",
+        "D": "孩子能先安全上學，家長仍須完成正式換鞋安排，借還期限也要說清楚。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c3e80efd4435bcc466ce052074469c33e9855d45103ca06b2d018013120d8cbe",
+    "draftSha256": "5ea3bcdc8c9b2c7fd4ccd5002ee4f5d5f517eb31af0ca904ca639707956be933",
     "seedAssignmentVersion": 1
   }
 }

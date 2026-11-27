@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "09c90f2a167969a6787d4bd1aeb7c60bfb0fd96d84f7cc8c5d8137a057fd2247",
+      "checkedAt": "2026-11-27T04:09:32.304Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問她目前能留幾分鐘，只談最必要且可以清楚說完的事項",
+            "action": "導師已先問她目前能留幾分鐘，只談最必要且可以清楚說完的事項",
+            "tradeoff": "其餘問題得另找時間，不能硬塞成完整會談"
+          },
+          {
+            "id": 2,
+            "text": "提供幾個你確實能出席的時段，讓家長決定是否改約",
+            "action": "導師已提供幾個你確實能出席的時段，讓家長決定是否改約",
+            "tradeoff": "你得調整自己的安排，家長也未必有合適空檔"
+          },
+          {
+            "id": 3,
+            "text": "徵得家長同意，把適合書面說明的內容透過核可管道送出",
+            "action": "導師已徵得家長同意，把適合書面說明的內容透過核可管道送出",
+            "tradeoff": "書面可能被誤讀，也不能代替需要雙向確認的議題"
+          },
+          {
+            "id": 4,
+            "text": "詢問家長是否願意由具資格且必要知情的同仁先說明可交接部分",
+            "action": "導師已詢問家長是否願意由具資格且必要知情的同仁先說明可交接部分",
+            "tradeoff": "對方未必能即時接手，家長也有權不接受換人"
+          },
+          {
+            "id": 5,
+            "text": "把議題分成今天必須告知與可以後續討論的兩部分，和她確認各自的回覆方式",
+            "action": "導師已把議題分成今天必須告知與可以後續討論的兩部分，和她確認各自的回覆方式",
+            "tradeoff": "需要重新整理，今天不能得到所有共識"
+          },
+          {
+            "id": 6,
+            "text": "簡短說明延誤的時段與未通知的疏漏，請她指出哪種通知方式才接得到",
+            "action": "導師已簡短說明延誤的時段與未通知的疏漏，請她指出哪種通知方式才接得到",
+            "tradeoff": "必須聽見她對等待的不滿，也不能透露其他當事人資訊"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你懊惱到不想再說空泛的不好意思，主動把這次未通知的經過寫進正式工作紀錄，向主管提出檢視自己的約談安排",
+          "action": "導師已如實記錄自己的延誤與通知疏漏，向主管提出檢視約談安排，不記載無關第三人的私事",
+          "tradeoff": "自己的疏漏會留下紀錄，也可能被要求說明與改善"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3368649218
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "cb664a5e3b2c54d6d387af8c0040efa0ea2fffbb5a16a8627ffe37ee8f75093f"
+      },
+      "consequenceDirections": {
+        "A": "家長可在下班後閱讀，卻可能又生出必須當面釐清的疑問。",
+        "B": "以後的延誤有較可行的通知路徑，但這次損失的時間仍無法補回。",
+        "C": "家長不必只憑口頭承諾等下一次，學校則可能調整預約與通知責任，但眼前班次仍得先顧。",
+        "D": "急需資訊不會跟著全案延後，長期議題則有較清楚的後續責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8af57dffa3f1a642637a4412ade31bdc356136ac80eec4c17881c5200d410652",
+    "draftSha256": "09c90f2a167969a6787d4bd1aeb7c60bfb0fd96d84f7cc8c5d8137a057fd2247",
     "seedAssignmentVersion": 1
   }
 }

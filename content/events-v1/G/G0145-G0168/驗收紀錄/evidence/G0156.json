@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "73eb05e6eabcf82547018f58db728c7dc4805f7e9873213a27c2b7853d147955",
+      "checkedAt": "2026-11-27T04:09:32.294Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他用剩下的時間慢慢示範一次，讓同學只跟著完成同一個步驟",
+            "action": "導師已請他用剩下的時間慢慢示範一次，讓同學只跟著完成同一個步驟",
+            "tradeoff": "進度會變慢，未必每個人都能當場完成"
+          },
+          {
+            "id": 2,
+            "text": "請會打結的成人示範學校接受的做法，學生照自己的節奏練習",
+            "action": "導師已請會打結的成人示範學校接受的做法，學生照自己的節奏練習",
+            "tradeoff": "家庭教法暫時退到一旁，示範者也須先確認規範"
+          },
+          {
+            "id": 3,
+            "text": "提供清楚的分步圖，讓想自己試的人先照圖練",
+            "action": "導師已提供清楚的分步圖，讓想自己試的人先照圖練",
+            "tradeoff": "準備圖示會占用時間，遇到圖看不懂仍得求助"
+          },
+          {
+            "id": 4,
+            "text": "先各別看看誰卡在哪一步，只協助需要幫忙的人",
+            "action": "導師已先各別看看誰卡在哪一步，只協助需要幫忙的人",
+            "tradeoff": "教師要逐個巡看，已會的人得自行等待或練習"
+          },
+          {
+            "id": 5,
+            "text": "和現場老師確認練習何時結束、正式檢查何時開始，再讓學生照清楚的時間完成",
+            "action": "導師已和現場老師確認練習何時結束、正式檢查何時開始，再讓學生照清楚的時間完成",
+            "tradeoff": "正式檢查不會被取消，學生仍須面對完成期限"
+          },
+          {
+            "id": 6,
+            "text": "清點足夠且安全的練習用品，安排願意共用的人輪流練，不借出家庭未同意的物件",
+            "action": "導師已清點足夠且安全的練習用品，安排願意共用的人輪流練，不借出家庭未同意的物件",
+            "tradeoff": "每人實際操作次數可能減少，也須留意物品歸還"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你看著自己也不怎麼俐落的領結，乾脆撤掉原先自訂的打結速度排名，不想再硬撐這項比賽",
+          "action": "導師已取消自己可決定的非必要速度排名，保留原有練習與正式服儀規範",
+          "tradeoff": "少了競賽熱鬧，也有人會失望；正式服儀要求仍照規定辦理"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2639620350
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "9f330092aaef19e5eceb789cbbd52b0575ba78df8de0cc2f41970bcbfcfd2093"
+      },
+      "consequenceDirections": {
+        "A": "學生知道現在可以犯錯多久，老師也能避免把練習中的失敗當成態度問題。",
+        "B": "不會的人不必一起被催促，但沒辦法用一次示範快速帶完所有人。",
+        "C": "用品不足的同學能參與，但輪候與保管會占掉一部分練習時間。",
+        "D": "學生能把時間用在練會而非搶快，原本期待拿第一的人可能抱怨臨時取消。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e0a9c82bb0d5a22f212c7ad59f1bb4867d0a0d5af1ac1f4b429a2d6ca4451174",
+    "draftSha256": "73eb05e6eabcf82547018f58db728c7dc4805f7e9873213a27c2b7853d147955",
     "seedAssignmentVersion": 1
   }
 }

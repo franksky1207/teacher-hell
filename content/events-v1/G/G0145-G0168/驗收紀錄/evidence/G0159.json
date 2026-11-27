@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d083783d9b44eb298dd00201c66c0223393063b50d88ee62d972228d0e8758b0",
+      "checkedAt": "2026-11-27T04:09:32.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先接下學生當下確實急用的問題，其餘再請任課老師安排時間",
+            "action": "導師已先接下學生當下確實急用的問題，其餘再請任課老師安排時間",
+            "tradeoff": "你要占用自己的空檔，也不能保證代答專業內容"
+          },
+          {
+            "id": 2,
+            "text": "請同事休息兩分鐘，再由他向學生公告可提問的時間",
+            "action": "導師已請同事休息兩分鐘，再由他向學生公告可提問的時間",
+            "tradeoff": "學生得等待，也可能錯過原本能問的空檔"
+          },
+          {
+            "id": 3,
+            "text": "請學生把問題寫在講義上，交由任課老師依可行方式回覆",
+            "action": "導師已請學生把問題寫在講義上，交由任課老師依可行方式回覆",
+            "tradeoff": "書寫不一定說得清楚，也失去即時追問機會"
+          },
+          {
+            "id": 4,
+            "text": "與同事指定一個不阻塞通道的等候位置，照原有規則一次一人提問",
+            "action": "導師已與同事指定一個不阻塞通道的等候位置，照原有規則一次一人提問",
+            "tradeoff": "空間與時間都有限，仍有人得改約"
+          },
+          {
+            "id": 5,
+            "text": "請同事親自向剛才離開的學生說明那句話的意思，再重申合理的提問界線",
+            "action": "導師已請同事親自向剛才離開的學生說明那句話的意思，再重申合理的提問界線",
+            "tradeoff": "他得面對學生的誤解，也不會因此立刻得到休息"
+          },
+          {
+            "id": 6,
+            "text": "取消你自己原訂找他聊的非急事，讓他的短暫空檔不再被成人占滿",
+            "action": "導師已取消你自己原訂找他聊的非急事，讓他的短暫空檔不再被成人占滿",
+            "tradeoff": "你的事情要另找時間，不能一次辦完"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想每次都被臨時當成接手的人，明說今天不代收非急迫的學科問題，請他自行安排回覆",
+          "action": "導師已拒絕額外承接非急迫學科問題並告知任課教師，保留必要安全、照顧與急迫事件協助",
+          "tradeoff": "同事可能不高興，學生的非急件也可能等久一些"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 783919720
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "8f96277add619a9d047b2ede45fa3c9c620e18d3c0479b67ca062f887fef7a37"
+      },
+      "consequenceDirections": {
+        "A": "同事獲得實際休息，卻也可能發現光少掉這次談話仍解決不了長期塞滿的下課時間。",
+        "B": "教師能短暫喘氣，但說好的時間若再落空，學生會更難相信下一次安排。",
+        "C": "必要協助仍照辦，但任課教師必須面對自己的問答安排，兩人的合作習慣可能起摩擦。",
+        "D": "同事能分批處理，學生卻可能把真正卡住的地方寫漏。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "14274158083101eb1ec93f17b9e48da5ef30825f0681a707bff067e31317706d",
+    "draftSha256": "d083783d9b44eb298dd00201c66c0223393063b50d88ee62d972228d0e8758b0",
     "seedAssignmentVersion": 1
   }
 }

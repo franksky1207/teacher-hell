@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f3a46e306f326c366f3736aadb36596fd0f1c8f409db5a5784bbb0d53157f2d7",
+      "checkedAt": "2026-11-27T04:09:32.296Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和體育老師商量改在安全場地做低強度暖身，讓大家重新開始",
+            "action": "導師已和體育老師商量改在安全場地做低強度暖身，讓大家重新開始",
+            "tradeoff": "原本的跑動量會減少，課程目標得跟著調整"
+          },
+          {
+            "id": 2,
+            "text": "建議在任課教師確認下，依個別狀況提供不同強度的同目標練習",
+            "action": "導師已建議在任課教師確認下，依個別狀況提供不同強度的同目標練習",
+            "tradeoff": "教師需要照看更多組別，不能只帶一條隊伍"
+          },
+          {
+            "id": 3,
+            "text": "請任課老師另排帶領方式，讓他今天不再領全班暖身",
+            "action": "導師已請任課老師另排帶領方式，讓他今天不再領全班暖身",
+            "tradeoff": "少了一個熟練助手，他也可能覺得自己被撤換"
+          },
+          {
+            "id": 4,
+            "text": "向學校確認是否有合用且安全的備用鞋，讓需要的人自願借用",
+            "action": "導師已向學校確認是否有合用且安全的備用鞋，讓需要的人自願借用",
+            "tradeoff": "數量與尺寸有限，借鞋也會占用上課時間"
+          },
+          {
+            "id": 5,
+            "text": "和體育老師討論改做不需跑跳的動作觀察與練習",
+            "action": "導師已和體育老師討論改做不需跑跳的動作觀察與練習",
+            "tradeoff": "當天運動量會降低，任課教師得重排內容"
+          },
+          {
+            "id": 6,
+            "text": "請他把剛才發現的地面問題告訴老師，再由成人確認與處理",
+            "action": "導師已請他把剛才發現的地面問題告訴老師，再由成人確認與處理",
+            "tradeoff": "會再次談到他差點滑倒的經過，他可能不太自在"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也累了，不想把今天的額外加練硬做完，向任課老師提出取消原先自願加上的最後一組",
+          "action": "導師已向任課教師提出取消非必要額外練習的請求，未自行終止課程或降低必要安全措施",
+          "tradeoff": "是否調整仍由任課教師決定，既定目標也可能少練一次"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3667871763
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "61578a44928b18bcdd37bf215e58fb05a16c862d9f1eda0bc248b91a18ecfec3"
+      },
+      "consequenceDirections": {
+        "A": "若獲同意，學生有較充足的緩和時間；若不同意，你仍須協助安全完成正式課程。",
+        "B": "鞋況與體力不同的人不用硬追同一速度，學生也可能在選組時感到被比較。",
+        "C": "學生仍有課程可做，也能注意動作差異，但原定跑步進度需要另找時間銜接。",
+        "D": "學生能在穩定地面活動，但原先想提高強度的人可能覺得不夠過癮。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fc9eec52ba3b8859962f1fbac5b0444299a24fb14118dafc4b79e95c8718688b",
+    "draftSha256": "f3a46e306f326c366f3736aadb36596fd0f1c8f409db5a5784bbb0d53157f2d7",
     "seedAssignmentVersion": 1
   }
 }

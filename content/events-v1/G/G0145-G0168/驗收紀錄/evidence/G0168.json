@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "83f9dca86ad46cb03d1ce8e9c3f6e47fe22bfcc59ba32b5a64141104c44d2ddf",
+      "checkedAt": "2026-11-27T04:09:32.305Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "刪掉自己的老歌，把最後一首留給他，自己好好聽完",
+            "action": "導師已刪掉自己的老歌，把最後一首留給他，自己好好聽完",
+            "tradeoff": "今天沒有你最想唱的結尾，也可能聽見一首還不熟的新歌"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意合唱他的新歌，由他決定你可以跟哪些段落",
+            "action": "導師已問他願不願意合唱他的新歌，由他決定你可以跟哪些段落",
+            "tradeoff": "你可能唱不熟，他也可能不想共享最後一次機會"
+          },
+          {
+            "id": 3,
+            "text": "先問雙方與店家是否都能接受合法加時，費用談妥才續用",
+            "action": "導師已先問雙方與店家是否都能接受合法加時，費用談妥才續用",
+            "tradeoff": "要多花私人時間與費用，店家也可能沒有空檔"
+          },
+          {
+            "id": 4,
+            "text": "問他想不想用最後這段時間試錄自己的新歌，只存在他自己的手機，不替他錄或傳出去",
+            "action": "導師已問他想不想用最後這段時間試錄自己的新歌，只存在他自己的手機，不替他錄或傳出去",
+            "tradeoff": "錄音可能不理想，也會用掉現場完整表演的機會"
+          },
+          {
+            "id": 5,
+            "text": "若他同意，把剩餘時間分成兩段，各唱最想唱的部分",
+            "action": "導師已若他同意，把剩餘時間分成兩段，各唱最想唱的部分",
+            "tradeoff": "兩首都不完整，也不能逼他接受各半就算公平"
+          },
+          {
+            "id": 6,
+            "text": "提議今天不再搶最後一首，剩下時間把排歌的不滿說完，是否停止由兩人共同決定",
+            "action": "導師已提議今天不再搶最後一首，剩下時間把排歌的不滿說完，是否停止由兩人共同決定",
+            "tradeoff": "可能浪費已付費的唱歌時間，也得面對不舒服的談話"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你就是很想唱那首，直接開口請他這次讓給你，也明說他可以拒絕，不再偷偷重排",
+          "action": "導師已明確提出希望取得最後一首的私人請求，保留對方拒絕及原排歌權，未擅自播放或加費",
+          "tradeoff": "顯得很自私，對方拒絕時你得真的停手"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2918678527
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "73f58c19bf4479d1a7687191426c00aaab5c947b8a445e19e694920263ab6d10"
+      },
+      "consequenceDirections": {
+        "A": "若他答應，兩人能一起試歌；若拒絕，就不能把合唱當成理所當然的折衷。",
+        "B": "他可自己回放練習，但若原本只想唱給朋友聽，這個提議可能更令他失望。",
+        "C": "若他願意，兩人能談出以後怎麼排；若不願意，仍要處理最後一首的原有順序。",
+        "D": "同事終於能明白答應或不答應，而不是被笑著帶過；即使答應，也可能更介意你總想拿最後一首。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7279369fd18d9d367951c6101d1eb8259dc8b2db3339a0368abb039b5f65612c",
+    "draftSha256": "83f9dca86ad46cb03d1ce8e9c3f6e47fe22bfcc59ba32b5a64141104c44d2ddf",
     "seedAssignmentVersion": 1
   }
 }

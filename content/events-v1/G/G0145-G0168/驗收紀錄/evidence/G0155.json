@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64ff2414b879a32b4e527e374f1e5b89605eb28871af6bdc45fd19d02c72a2b6",
+      "checkedAt": "2026-11-27T04:09:32.293Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依孩子的需求與可用座位討論位置，不把家長指定的第一排當成唯一安排",
+            "action": "導師已依孩子的需求與可用座位討論位置，不把家長指定的第一排當成唯一安排",
+            "tradeoff": "可能無法滿足家長想隨時被看見的期待"
+          },
+          {
+            "id": 2,
+            "text": "取得孩子同意後，找不受注目的時間試坐墊，看是否穩固合用",
+            "action": "導師已取得孩子同意後，找不受注目的時間試坐墊，看是否穩固合用",
+            "tradeoff": "需要另找時間，試坐後也可能不能使用"
+          },
+          {
+            "id": 3,
+            "text": "請家長提供健康需求資料，由學校依程序討論必要的座位協助",
+            "action": "導師已請家長提供健康需求資料，由學校依程序討論必要的座位協助",
+            "tradeoff": "準備資料與聯繫需要時間，不能立即保證特定座位"
+          },
+          {
+            "id": 4,
+            "text": "向負責單位詢問能否調整既有桌椅高度或提供合適椅子",
+            "action": "導師已向負責單位詢問能否調整既有桌椅高度或提供合適椅子",
+            "tradeoff": "設備未必可調，也不由導師直接核准購置"
+          },
+          {
+            "id": 5,
+            "text": "若孩子不願使用，請家長先把坐墊帶回，私下再談怎麼回應阿嬤",
+            "action": "導師已若孩子不願使用，請家長先把坐墊帶回，私下再談怎麼回應阿嬤",
+            "tradeoff": "家長可能失望，孩子也得面對家人的心意"
+          },
+          {
+            "id": 6,
+            "text": "向全班重新說明有實際需求可私下申請換位，不公開任何人的健康原因",
+            "action": "導師已向全班重新說明有實際需求可私下申請換位，不公開任何人的健康原因",
+            "tradeoff": "其他同學也可能提出需求，協調工作會增加"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你不想再隔空猜哪張椅子「一定最好」，請家長跟你一起實際搬看幾張可調用的椅子，再回來談",
+          "action": "導師已陪家長檢視校方准許調用的空椅與尺寸，不擅換學生座位，也未把試椅當醫療判斷",
+          "tradeoff": "你得多花一段時間，家長也可能發現沒有完美選擇"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4202539550
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "3de445a761d674a7264dd944914fdfca56d69bf7beee622759387848e648cce4"
+      },
+      "consequenceDirections": {
+        "A": "孩子能實際判斷支撐與尷尬程度，不合用時仍要向家人說明。",
+        "B": "孩子可選擇較舒服且不醒目的位置，仍須兼顧視線、動線及其他學生的合理需求。",
+        "C": "若能調整家具，孩子不必一直靠自備坐墊；若做不到，仍得另找合適安排。",
+        "D": "具體座高與穩定度成為討論對象，家長可能放下第一排要求，也可能更清楚提出設備不足。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "79b867e498dca00e64d5f82e85c6b1314f9b7a7d36dfae5e0dbb816f99e0dcdc",
+    "draftSha256": "64ff2414b879a32b4e527e374f1e5b89605eb28871af6bdc45fd19d02c72a2b6",
     "seedAssignmentVersion": 1
   }
 }

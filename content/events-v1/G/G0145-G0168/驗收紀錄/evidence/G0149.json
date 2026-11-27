@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "909d416bcf0b56febef66b5be672684a073457321e0ec4de415f798b326b212e",
+      "checkedAt": "2026-11-27T04:09:32.286Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "低聲告訴他，你會怎麼叫醒，不公開取笑。",
+            "action": "導師已低聲告訴他，你會怎麼叫醒，不公開取笑。",
+            "tradeoff": "較安心；教師要履約。"
+          },
+          {
+            "id": 2,
+            "text": "讓他先坐著休息，不用做出睡著的樣子。",
+            "action": "導師已讓他先坐著休息，不用做出睡著的樣子。",
+            "tradeoff": "保有選擇；未必補到眠。"
+          },
+          {
+            "id": 3,
+            "text": "現在不再追問，午休後再談以前那些笑話。",
+            "action": "導師已現在不再追問，午休後再談以前那些笑話。",
+            "tradeoff": "先留休息；不滿暫未解。"
+          },
+          {
+            "id": 4,
+            "text": "向全班說清醒來時點和不嘲笑睡相的共同做法。",
+            "action": "導師已向全班說清醒來時點和不嘲笑睡相的共同做法。",
+            "tradeoff": "可預期；會短暫打斷安靜。"
+          },
+          {
+            "id": 5,
+            "text": "讓本人選一個不打擾人的醒來提醒，先問值勤是否可用。",
+            "action": "導師已讓本人選一個不打擾人的醒來提醒，先問值勤是否可用。",
+            "tradeoff": "多一點控制；需確認規範。"
+          },
+          {
+            "id": 6,
+            "text": "私下提供健康中心詢問作息的機會，由他自選。",
+            "action": "導師已私下提供健康中心詢問作息的機會，由他自選。",
+            "tradeoff": "有額外支持；可能不願去。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你自己也很想休息，確認值勤照看妥當後回辦公室歇十分鐘。",
+          "action": "導師已在本人非當值的合法休息時段、確認既有值勤教師持續照看後離開教室短休，不擅自離開本人應看班職務。",
+          "tradeoff": "不再繞著他看；他可能覺得被丟下。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2256321079
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "cdd0b80e3626521bc69b2a507437c2bcc0f9510fb6c6e9bd7c2ea2326cc13f1e"
+      },
+      "consequenceDirections": {
+        "A": "班級照看由原值勤持續，教師得到短休；學生的信任仍需日後用行動補。",
+        "B": "他可能敢睡，也可能仍警覺；叫醒方式需尊重本人。",
+        "C": "他可談疲倦，不被推定有病；不以轉介取代當下休息。",
+        "D": "他可自行使用提示，也可能不想；不能把醒來責任全推給疲倦學生。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "33715ed06edfd138143357283a776d7181252bd1c90d87d6665a37840a356cf5",
+    "draftSha256": "909d416bcf0b56febef66b5be672684a073457321e0ec4de415f798b326b212e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "deefbe276b8a8d238fe9e5647cc9cd81a8e290902e221b3228b940594379f064",
+      "checkedAt": "2026-11-27T04:09:32.301Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把換位改成可撤回的短期試坐，約好私下確認感受",
+            "action": "導師已把換位改成可撤回的短期試坐，約好私下確認感受",
+            "tradeoff": "需要保留調整空間，也可能讓周圍同學察覺"
+          },
+          {
+            "id": 2,
+            "text": "配合原有可行的全班座位輪調一起安排，不另公開他的原因",
+            "action": "導師已配合原有可行的全班座位輪調一起安排，不另公開他的原因",
+            "tradeoff": "無法立即保證原先那個位置，其他同學的需求也須兼顧"
+          },
+          {
+            "id": 3,
+            "text": "先和他談被人看見求助時最擔心發生什麼，暫緩決定位置",
+            "action": "導師已先和他談被人看見求助時最擔心發生什麼，暫緩決定位置",
+            "tradeoff": "談話可能觸及尷尬經驗，也延後環境調整"
+          },
+          {
+            "id": 4,
+            "text": "請他明確圈出可以告知的人與不想公開的內容，在必要知情範圍內安排協助",
+            "action": "導師已請他明確圈出可以告知的人與不想公開的內容，在必要知情範圍內安排協助",
+            "tradeoff": "不能承諾任何情況都完全保密，也得解釋必要例外"
+          },
+          {
+            "id": 5,
+            "text": "先調整全班可改善的噪音與動線，觀察原座位是否仍妨礙學習",
+            "action": "導師已先調整全班可改善的噪音與動線，觀察原座位是否仍妨礙學習",
+            "tradeoff": "全班都要配合，效果也未必足以取代個別調整"
+          },
+          {
+            "id": 6,
+            "text": "保留原座位，另約一個不必一路追著你的提問方式與時間",
+            "action": "導師已保留原座位，另約一個不必一路追著你的提問方式與時間",
+            "tradeoff": "他得練習等候，急需協助時仍應即時提出"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想有一段不被追著走的下課，明說接下來幾分鐘要回辦公室處理自己的事，非急件請等約好的時間",
+          "action": "導師已說明自己的合法工作空檔及非急件聯繫時間，保持必要安全與急迫協助可取得，未以求助作為責罰理由",
+          "tradeoff": "他可能以為你不想理他，你也得依約回應"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3939693654
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "d8db53ed5e53bacb14838178479ed50bc4be140a3216a4650b1d0b22d805ca99"
+      },
+      "consequenceDirections": {
+        "A": "他不會成為唯一換位的人，但安靜座位可能要等整體安排後才有機會。",
+        "B": "他能用實際上課經驗判斷，不必一次承諾永遠坐在那裡。",
+        "C": "他能留在原位試試，但若干擾仍大，之後仍需重新討論座位。",
+        "D": "教師不用整個下課待在他身旁，學生則要試著在短暫沒有即時安撫的空檔裡等待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c3b0db94aef314a5b2946cd0f98670fee2f41afdab61458912dcaff3df8d247f",
+    "draftSha256": "deefbe276b8a8d238fe9e5647cc9cd81a8e290902e221b3228b940594379f064",
     "seedAssignmentVersion": 1
   }
 }

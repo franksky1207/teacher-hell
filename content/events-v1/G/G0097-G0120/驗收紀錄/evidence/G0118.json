@@ -17,14 +17,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e5205a7d14fa55de8ab1ca0912670602fb8249a9b3c631694d7eae7cc660c81e",
+      "checkedAt": "2026-11-27T03:04:45.485Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "向原聽見者說明教師停用稱呼，不公開學生家事。",
+            "action": "導師已向原聽見者說明教師停用稱呼，不公開學生家事。",
+            "tradeoff": "責任明確但再引關注。"
+          },
+          {
+            "id": 2,
+            "text": "私下讓本人決定願被如何稱呼。",
+            "action": "導師已私下讓本人決定願被如何稱呼。",
+            "tradeoff": "自主保留但需時間。"
+          },
+          {
+            "id": 3,
+            "text": "依實際反覆嘲弄情況交權責程序處理。",
+            "action": "導師已依實際反覆嘲弄情況交權責程序處理。",
+            "tradeoff": "責任清楚但需查核。"
+          },
+          {
+            "id": 4,
+            "text": "向值勤者說明原使用經過，接受追問。",
+            "action": "導師已向值勤者說明原使用經過，接受追問。",
+            "tradeoff": "回應問責但面子受損。"
+          },
+          {
+            "id": 5,
+            "text": "與值勤方完成後續照看交班，不再靠一人兼撐。",
+            "action": "導師已與值勤方完成後續照看交班，不再靠一人兼撐。",
+            "tradeoff": "分擔疲勞但需人力。"
+          },
+          {
+            "id": 6,
+            "text": "在班內用不指涉本人的案例談稱呼同意。",
+            "action": "導師已在班內用不指涉本人的案例談稱呼同意。",
+            "tradeoff": "可教通則但占班務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己想說的親切玩笑收住，主動替疲累同事接一段合法可接的值勤。",
+          "action": "導師已把自己想說的親切玩笑收住，主動替疲累同事接一段合法可接的值勤。",
+          "tradeoff": "實際承擔但自己加班。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3847420082
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "0c4ed696b6867087f0f942e3b0df1b2860ac10d26a0c089e333daf8f7c55f6d0"
+      },
+      "consequenceDirections": {
+        "A": "同事可判斷後續；不等於獲原諒。",
+        "B": "同事可休息；不以代班抵銷學生受影響。",
+        "C": "學生可獲保護；不能只當玩笑。",
+        "D": "同學可知界線；不要求學生背書。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -45,7 +113,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "698ce0d78f96c2c1e33d975591bf79c3dd872773e61647e3a19ac86dd209cbac",
+    "draftSha256": "e5205a7d14fa55de8ab1ca0912670602fb8249a9b3c631694d7eae7cc660c81e",
     "seedAssignmentVersion": 1
   }
 }

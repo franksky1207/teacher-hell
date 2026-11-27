@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3d4f7a057cd13160121aaf2af44a35105886da39e1c9fd9e7fd864da6ed20614",
+      "checkedAt": "2026-11-27T03:04:45.475Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下感謝後請他回班休息。",
+            "action": "導師已私下感謝後請他回班休息。",
+            "tradeoff": "卸下照顧責任但他可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "邀本人自願協助一分鐘列可用班會題材。",
+            "action": "導師已邀本人自願協助一分鐘列可用班會題材。",
+            "tradeoff": "保留參與但不能轉嫁備課。"
+          },
+          {
+            "id": 3,
+            "text": "改用已核准可用的無教材班會活動。",
+            "action": "導師已改用已核准可用的無教材班會活動。",
+            "tradeoff": "可接課但原計畫延後。"
+          },
+          {
+            "id": 4,
+            "text": "向同學更正站旁不等於犯錯，停止猜測。",
+            "action": "導師已向同學更正站旁不等於犯錯，停止猜測。",
+            "tradeoff": "修復名聲但再引注意。"
+          },
+          {
+            "id": 5,
+            "text": "請合法同事協助取用替代教材，學生不跑腿。",
+            "action": "導師已請合法同事協助取用替代教材，學生不跑腿。",
+            "tradeoff": "不轉嫁但需成人支援。"
+          },
+          {
+            "id": 6,
+            "text": "詢問本人需要休息還是想說話，分清彼此需要。",
+            "action": "導師已詢問本人需要休息還是想說話，分清彼此需要。",
+            "tradeoff": "支持個別但花時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "告訴他你現在不需要被哄，卻很高興有人願意安靜陪一下，到鐘響就一起回班。",
+          "action": "導師已告訴他你現在不需要被哄，卻很高興有人願意安靜陪一下，到鐘響就一起回班。",
+          "tradeoff": "接住親近但時間有限。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1886458711
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "78b14dc9b9f298588a2303f9a1ee6a4580f9cda44e9a829710cb07d422e549a7"
+      },
+      "consequenceDirections": {
+        "A": "學生不必無限安慰；教師仍自行處理課程。",
+        "B": "他可表達疲倦；不以懂事獎勵。",
+        "C": "班會可進行；同事未必有空。",
+        "D": "學生可回座；教師自處教材。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a41d6900c1e8e1bdbc9d2c3b9bc95a95ae205b749358bde53bc96a2124c80e30",
+    "draftSha256": "3d4f7a057cd13160121aaf2af44a35105886da39e1c9fd9e7fd864da6ed20614",
     "seedAssignmentVersion": 1
   }
 }

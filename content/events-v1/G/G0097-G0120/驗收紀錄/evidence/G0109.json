@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "938bd97ebac0e72e5b1a6b3773d522c0413ebfecd30932e0d24f36eeac3ace92",
+      "checkedAt": "2026-11-27T03:04:45.477Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "開放所有人同等的短補說機會。",
+            "action": "導師已開放所有人同等的短補說機會。",
+            "tradeoff": "公平可見但課時增加。"
+          },
+          {
+            "id": 2,
+            "text": "經同意把反例變全班共同訂正素材。",
+            "action": "導師已經同意把反例變全班共同訂正素材。",
+            "tradeoff": "可學剪裁但作者曝光。"
+          },
+          {
+            "id": 3,
+            "text": "照原時程收束，另給本人練精簡的回饋。",
+            "action": "導師已照原時程收束，另給本人練精簡的回饋。",
+            "tradeoff": "守時但公開內容未補。"
+          },
+          {
+            "id": 4,
+            "text": "收一頁論證補件供你私下判讀。",
+            "action": "導師已收一頁論證補件供你私下判讀。",
+            "tradeoff": "證據可見但教師多看。"
+          },
+          {
+            "id": 5,
+            "text": "請本人選一句最需要改的結論，回給原聽眾。",
+            "action": "導師已請本人選一句最需要改的結論，回給原聽眾。",
+            "tradeoff": "修正資訊但範圍小。"
+          },
+          {
+            "id": 6,
+            "text": "提供全班自選文字或口頭反思入口。",
+            "action": "導師已提供全班自選文字或口頭反思入口。",
+            "tradeoff": "表達多元但整理複雜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認你很想給認真的人特例，仍把自己的回饋時間挪給全班各一小段。",
+          "action": "導師已承認你很想給認真的人特例，仍把自己的回饋時間挪給全班各一小段。",
+          "tradeoff": "不偏心但教師少休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 365067630
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "a058db8b078c5af1f10502410f442866cffb0ffb1e2a8657f98cb1f93feb3350"
+      },
+      "consequenceDirections": {
+        "A": "本人可拒絕；不只補自己的分。",
+        "B": "學生可公平補問；必須守同等範圍。",
+        "C": "學生可學重組；需後續時間。",
+        "D": "學生可補反例；需一致限時。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3c3f37f44deb544ef84f44e58417cf88f239ce954d64b9a22ed5454abdfddfa0",
+    "draftSha256": "938bd97ebac0e72e5b1a6b3773d522c0413ebfecd30932e0d24f36eeac3ace92",
     "seedAssignmentVersion": 1
   }
 }

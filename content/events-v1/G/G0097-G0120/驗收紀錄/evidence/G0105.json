@@ -15,14 +15,155 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d8623bf0f95680501f12c2314282cc4498a7d850b73383b55e99bbdb604f928",
+      "checkedAt": "2026-11-27T03:04:45.473Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在期限允許且告知等候者後，跳完短短一段就停。",
+            "action": "導師已在期限允許且告知等候者後，跳完短短一段就停。",
+            "tradeoff": "保留休息但需守時。"
+          },
+          {
+            "id": 2,
+            "text": "另約收班後雙方自願的學舞時間。",
+            "action": "導師已另約收班後雙方自願的學舞時間。",
+            "tradeoff": "工作不誤但私人安排要挪。"
+          },
+          {
+            "id": 3,
+            "text": "先完成必要交接，再看午休剩餘時間。",
+            "action": "導師已先完成必要交接，再看午休剩餘時間。",
+            "tradeoff": "不讓人等但休息縮短。"
+          },
+          {
+            "id": 4,
+            "text": "只練無音樂的兩個動作，設定清楚終點。",
+            "action": "導師已只練無音樂的兩個動作，設定清楚終點。",
+            "tradeoff": "較短但仍需期限允許。"
+          },
+          {
+            "id": 5,
+            "text": "承認彼此需要休息，請權責方協調合宜交接時點。",
+            "action": "導師已承認彼此需要休息，請權責方協調合宜交接時點。",
+            "tradeoff": "改善持續性但需協商。"
+          },
+          {
+            "id": 6,
+            "text": "由同事自行選今天退出或保留練習，不替他答交件。",
+            "action": "導師已由同事自行選今天退出或保留練習，不替他答交件。",
+            "tradeoff": "自主清楚但無共同活動。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把音樂關掉，邀同事在不延誤已確認交接的前提下，安靜坐兩分鐘不再練舞。",
+          "action": "導師已把音樂關掉，邀同事在不延誤已確認交接的前提下，安靜坐兩分鐘不再練舞。",
+          "tradeoff": "只想什麼都不做地休息，卻放棄剛起的興致。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3022596782
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "66faf5702101091fff0fe722b4b581a4731400a1ef78ac7c1d2fa1539ae63aae"
+      },
+      "consequenceDirections": {
+        "A": "導師已先完成必要交接，再看午休剩餘時間。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為不讓人等但休息縮短。",
+        "B": "同事可保時段；不能保證核准。",
+        "C": "同事可拒絕；當下熱度中斷。",
+        "D": "同事可選擇坐下或直接交接；休息形式由本人同意，愉快活動未完成但工作不讓別人乾等。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "在期限允許且告知等候者後，跳完短短一段就停。",
+                "action": "導師已在期限允許且告知等候者後，跳完短短一段就停。",
+                "tradeoff": "保留休息但需守時。"
+              },
+              {
+                "id": 2,
+                "text": "另約收班後雙方自願的學舞時間。",
+                "action": "導師已另約收班後雙方自願的學舞時間。",
+                "tradeoff": "工作不誤但私人安排要挪。"
+              },
+              {
+                "id": 3,
+                "text": "先完成必要交接，再看午休剩餘時間。",
+                "action": "導師已先完成必要交接，再看午休剩餘時間。",
+                "tradeoff": "不讓人等但休息縮短。"
+              },
+              {
+                "id": 4,
+                "text": "只練無音樂的兩個動作，設定清楚終點。",
+                "action": "導師已只練無音樂的兩個動作，設定清楚終點。",
+                "tradeoff": "較短但仍需期限允許。"
+              },
+              {
+                "id": 5,
+                "text": "承認彼此需要休息，請權責方協調合宜交接時點。",
+                "action": "導師已承認彼此需要休息，請權責方協調合宜交接時點。",
+                "tradeoff": "改善持續性但需協商。"
+              },
+              {
+                "id": 6,
+                "text": "由同事自行選今天退出或保留練習，不替他答交件。",
+                "action": "導師已由同事自行選今天退出或保留練習，不替他答交件。",
+                "tradeoff": "自主清楚但無共同活動。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "把最笨的一步留著不練，約好下次再互笑，今天不硬把愉快一次用完。",
+              "action": "導師已把最笨的一步留著不練，約好下次再互笑，今天不硬把愉快一次用完。",
+              "tradeoff": "容許意猶未盡但要等待。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 629929017
+            },
+            "selectedIds": [
+              1,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "64b50b34d49d54e5a1d7971fcb2cd6c9067fd7b22a8f62f77982903de6ede1c6"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事可帶期待離開；不以空約拖延交接。",
+            "B": "同事可滿足片刻；不能無聲延交。",
+            "C": "同事可保時段；不能保證核准。",
+            "D": "同事可拒絕；當下熱度中斷。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0cb2085e9950d053c6bdc8e619661ff97d2fb88de962569fffe41fa24b536785",
+    "draftSha256": "5d8623bf0f95680501f12c2314282cc4498a7d850b73383b55e99bbdb604f928",
     "seedAssignmentVersion": 1
   }
 }

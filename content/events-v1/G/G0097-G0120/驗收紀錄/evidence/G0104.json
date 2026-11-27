@@ -16,14 +16,82 @@
     "G08",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "917e40b7bcbfb1712f2e0c536a47e7b227a4527f3568ab0573dda1ab5236bc17",
+      "checkedAt": "2026-11-27T03:04:45.472Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "區分真正急件，非急事集中收件。",
+            "action": "導師已區分真正急件，非急事集中收件。",
+            "tradeoff": "保住備課但回應較晚。"
+          },
+          {
+            "id": 2,
+            "text": "協商共同可工作的固定時段。",
+            "action": "導師已協商共同可工作的固定時段。",
+            "tradeoff": "可預期但彈性減少。"
+          },
+          {
+            "id": 3,
+            "text": "拒絕自己有權拒絕的非必要補位。",
+            "action": "導師已拒絕自己有權拒絕的非必要補位。",
+            "tradeoff": "減耗損但可能引不滿。"
+          },
+          {
+            "id": 4,
+            "text": "將臨時需求先交有權窗口判斷。",
+            "action": "導師已將臨時需求先交有權窗口判斷。",
+            "tradeoff": "責任清楚但流程多一層。"
+          },
+          {
+            "id": 5,
+            "text": "保留短交流但先詢問可用分鐘。",
+            "action": "導師已保留短交流但先詢問可用分鐘。",
+            "tradeoff": "關係可續但得接受拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "與課務方討論哪些工作應重新分派。",
+            "action": "導師已與課務方討論哪些工作應重新分派。",
+            "tradeoff": "處理總量但需等決定。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把桌上的「老師有空」擦掉，寫下「現在備課」，今天先守住這一節。",
+          "action": "導師已把桌上的「老師有空」擦掉，寫下「現在備課」，今天先守住這一節。",
+          "tradeoff": "情緒直接但可能顯冷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2986205848
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "187426052cb85dd7e870dd8f27becce1d324e4c7d39a28d58e1c94ac3ca77fed"
+      },
+      "consequenceDirections": {
+        "A": "同事可改約；緊急需求仍循入口。",
+        "B": "同事可轉正確入口；不能延誤必要處置。",
+        "C": "雙方能備課；仍須權責支持。",
+        "D": "工作不再自動落下；正式任務不能逕拒。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2c21a3beef0c2ad363c5a941863164f629f71b3d233e16f1a3d7d63eec350eff",
+    "draftSha256": "917e40b7bcbfb1712f2e0c536a47e7b227a4527f3568ab0573dda1ab5236bc17",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1739972b3ac0e76523af5bb0975409420e3c33045ba5281f3a5a2b289a814d96",
+      "checkedAt": "2026-11-27T03:04:45.487Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依功能讓本人自願展示，不先談材料來源。",
+            "action": "導師已依功能讓本人自願展示，不先談材料來源。",
+            "tradeoff": "聚焦成果但仍要公開。"
+          },
+          {
+            "id": 2,
+            "text": "讓本人選是否公開材料與命名理由。",
+            "action": "導師已讓本人選是否公開材料與命名理由。",
+            "tradeoff": "主導清楚但表達可能不全。"
+          },
+          {
+            "id": 3,
+            "text": "給所有人用可及材料修同一步驟的機會。",
+            "action": "導師已給所有人用可及材料修同一步驟的機會。",
+            "tradeoff": "尺度較共同但增加時間。"
+          },
+          {
+            "id": 4,
+            "text": "先私下聽功能解說再決定展示形式。",
+            "action": "導師已先私下聽功能解說再決定展示形式。",
+            "tradeoff": "低壓但占個別時間。"
+          },
+          {
+            "id": 5,
+            "text": "以共同功能判準回饋每件作品。",
+            "action": "導師已以共同功能判準回饋每件作品。",
+            "tradeoff": "評量一致但需細看。"
+          },
+          {
+            "id": 6,
+            "text": "提供校內合法材料選項供自願修正。",
+            "action": "導師已提供校內合法材料選項供自願修正。",
+            "tradeoff": "多一資源但可能像否定原件。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "請他別急著擦名字，先認真讓你當一次最挑剔的使用者。",
+          "action": "導師已請他別急著擦名字，先認真讓你當一次最挑剔的使用者。",
+          "tradeoff": "想證明自己真看但可能增加壓力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4031731904
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "3b675fb90d137240dda29c1c4fff33ea33f4ccc3504010d3a21c8fcdcb05152f"
+      },
+      "consequenceDirections": {
+        "A": "材料不等於成果；高價作品也不被貶低。",
+        "B": "可發現實際優缺點；本人可拒絕測試。",
+        "C": "學生可拒絕；教師需真看功能。",
+        "D": "不同材料可比較；不能強制再購。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e19f6e20babb71f30003559765f0d2dd3beaac04472d7bdcf7ba59e4bcfb75be",
+    "draftSha256": "1739972b3ac0e76523af5bb0975409420e3c33045ba5281f3a5a2b289a814d96",
     "seedAssignmentVersion": 1
   }
 }

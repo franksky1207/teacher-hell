@@ -15,14 +15,155 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4e8c430e46fc386c941e364b90d9cf5b263d2dfd700ccb8d91a8bbe7c162c176",
+      "checkedAt": "2026-11-27T03:04:45.468Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "說清只走幾手，到點就停。",
+            "action": "導師已說清只走幾手，到點就停。",
+            "tradeoff": "可試玩但未完局。"
+          },
+          {
+            "id": 2,
+            "text": "另約無旁觀者的合意棋局。",
+            "action": "導師已另約無旁觀者的合意棋局。",
+            "tradeoff": "較安靜但需排時。"
+          },
+          {
+            "id": 3,
+            "text": "接受這局並先約定旁人不代走。",
+            "action": "導師已接受這局並先約定旁人不代走。",
+            "tradeoff": "有挑戰但休息被占。"
+          },
+          {
+            "id": 4,
+            "text": "只看同事示範一個局面，不正式開局。",
+            "action": "導師已只看同事示範一個局面，不正式開局。",
+            "tradeoff": "能學但少互動對戰。"
+          },
+          {
+            "id": 5,
+            "text": "直接婉拒，保留今日獨處。",
+            "action": "導師已直接婉拒，保留今日獨處。",
+            "tradeoff": "休息完整但同事可能掃興。"
+          },
+          {
+            "id": 6,
+            "text": "請同事先問可參與者，你自行旁觀。",
+            "action": "導師已請同事先問可參與者，你自行旁觀。",
+            "tradeoff": "保留交友但自己少練。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "請同事先收棋，承認自己怕輸又怕被看，改邀他到校內合規空間散步。",
+          "action": "導師已請同事先收棋，承認自己怕輸又怕被看，改邀他到校內合規空間散步。",
+          "tradeoff": "保留交友卻放棄對弈，對方可能掃興。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3718300173
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "280ef22673fa86de912d6bb84a77713de84e70870a53eed7de9412ca90b12016"
+      },
+      "consequenceDirections": {
+        "A": "同事可接受或失望；時間可控。",
+        "B": "你可自己判斷；同事需管住指點。",
+        "C": "其他人可自願；不替誰報名。",
+        "D": "同事可接受散步或自行下棋；兩人能聊生活，但原本的棋友期待落空。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "說清只走幾手，到點就停。",
+                "action": "導師已說清只走幾手，到點就停。",
+                "tradeoff": "可試玩但未完局。"
+              },
+              {
+                "id": 2,
+                "text": "另約無旁觀者的合意棋局。",
+                "action": "導師已另約無旁觀者的合意棋局。",
+                "tradeoff": "較安靜但需排時。"
+              },
+              {
+                "id": 3,
+                "text": "接受這局並先約定旁人不代走。",
+                "action": "導師已接受這局並先約定旁人不代走。",
+                "tradeoff": "有挑戰但休息被占。"
+              },
+              {
+                "id": 4,
+                "text": "只看同事示範一個局面，不正式開局。",
+                "action": "導師已只看同事示範一個局面，不正式開局。",
+                "tradeoff": "能學但少互動對戰。"
+              },
+              {
+                "id": 5,
+                "text": "直接婉拒，保留今日獨處。",
+                "action": "導師已直接婉拒，保留今日獨處。",
+                "tradeoff": "休息完整但同事可能掃興。"
+              },
+              {
+                "id": 6,
+                "text": "請同事先問可參與者，你自行旁觀。",
+                "action": "導師已請同事先問可參與者，你自行旁觀。",
+                "tradeoff": "保留交友但自己少練。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "承認自己很怕輸還被圍觀，請他把旁觀提示全停掉才願意下一局。",
+              "action": "導師已承認自己很怕輸還被圍觀，請他把旁觀提示全停掉才願意下一局。",
+              "tradeoff": "私心明說但條件可能被拒。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3940101352
+            },
+            "selectedIds": [
+              6,
+              3,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 6,
+              "C": "emotional",
+              "D": 3
+            },
+            "optionsDigest": "6c42c78ed30ae63f0d4aee0b6fce374320b34243fae59da7637223e1e17f8eac"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事可接受或失望；時間可控。",
+            "B": "其他人可自願；不替誰報名。",
+            "C": "同事可協商；你須承擔自己走錯。",
+            "D": "你可自己判斷；同事需管住指點。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f83dad1a3244eaa06a392d2279700233462deea8f9716a0ce2e98495bb2a1b1e",
+    "draftSha256": "4e8c430e46fc386c941e364b90d9cf5b263d2dfd700ccb8d91a8bbe7c162c176",
     "seedAssignmentVersion": 1
   }
 }

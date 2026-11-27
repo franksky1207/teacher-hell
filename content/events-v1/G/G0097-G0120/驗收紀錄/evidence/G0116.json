@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2d6eb097d384e8780dfafc65fc5997bbd8c3f339cdc8883085fb9bdd4b259421",
+      "checkedAt": "2026-11-27T03:04:45.482Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "婉拒私店代收，協助校內合規換衣或暫借。",
+            "action": "導師已婉拒私店代收，協助校內合規換衣或暫借。",
+            "tradeoff": "界線清楚但資源有限。"
+          },
+          {
+            "id": 2,
+            "text": "向校方提一次性支援申請，獲准後由成人交接。",
+            "action": "導師已向校方提一次性支援申請，獲准後由成人交接。",
+            "tradeoff": "可用手藝但程序較多。"
+          },
+          {
+            "id": 3,
+            "text": "只將店家一般服務資訊交權責窗口，不推薦個別學生。",
+            "action": "導師已只將店家一般服務資訊交權責窗口，不推薦個別學生。",
+            "tradeoff": "保留資訊但無即時安排。"
+          },
+          {
+            "id": 4,
+            "text": "請家長撤回指定孩子代收的要求。",
+            "action": "導師已請家長撤回指定孩子代收的要求。",
+            "tradeoff": "角色清楚但可能難堪。"
+          },
+          {
+            "id": 5,
+            "text": "與有需要者私下確認願用的校內協助。",
+            "action": "導師已與有需要者私下確認願用的校內協助。",
+            "tradeoff": "合用但需個別時間。"
+          },
+          {
+            "id": 6,
+            "text": "協助校內盤點現有備衣，缺口循正式管道補。",
+            "action": "導師已協助校內盤點現有備衣，缺口循正式管道補。",
+            "tradeoff": "較持續但要管理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接說你很感謝但今天不想再替熱心增加一個小跑腿，自己接回聯繫。",
+          "action": "導師已直接說你很感謝但今天不想再替熱心增加一個小跑腿，自己接回聯繫。",
+          "tradeoff": "保護孩子但教師多工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3776655671
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "0bfd73ce15876dcaac67e02b0b3e5fe4c903358493502de87a77da6f6d6391ea"
+      },
+      "consequenceDirections": {
+        "A": "家長可能失落；孩子不用代辦。",
+        "B": "下次可少臨時找店；不保證立即齊全。",
+        "C": "家長可能理解或不快；不答應未核准外送。",
+        "D": "孩子可安心；濕衣支持仍另處理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "53eb7e17c308f5d6a7017d8f699b41de5a81da8a6d557e0f99dd422537e70943",
+    "draftSha256": "2d6eb097d384e8780dfafc65fc5997bbd8c3f339cdc8883085fb9bdd4b259421",
     "seedAssignmentVersion": 1
   }
 }

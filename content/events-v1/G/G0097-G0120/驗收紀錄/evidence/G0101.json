@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d6a51bc82698d58b163ee652e0d5c5317284b49b8565261b9297e0e784b1199",
+      "checkedAt": "2026-11-27T03:04:45.469Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "分開處理干擾行為與抗議內容。",
+            "action": "導師已分開處理干擾行為與抗議內容。",
+            "tradeoff": "責任準確但需時間。"
+          },
+          {
+            "id": 2,
+            "text": "先讓全班安靜寫下對規則的疑問。",
+            "action": "導師已先讓全班安靜寫下對規則的疑問。",
+            "tradeoff": "多聲音可見但進度延後。"
+          },
+          {
+            "id": 3,
+            "text": "與本人另約情緒穩定後的短談。",
+            "action": "導師已與本人另約情緒穩定後的短談。",
+            "tradeoff": "降低對撞但修復較晚。"
+          },
+          {
+            "id": 4,
+            "text": "重述今後只處理親見具體行為。",
+            "action": "導師已重述今後只處理親見具體行為。",
+            "tradeoff": "規範明確但需持續實踐。"
+          },
+          {
+            "id": 5,
+            "text": "請本人自願提出回課堂的可行方式。",
+            "action": "導師已請本人自願提出回課堂的可行方式。",
+            "tradeoff": "保留主導但不能替全班決定。"
+          },
+          {
+            "id": 6,
+            "text": "由教師先示範不針對人的反對句式。",
+            "action": "導師已由教師先示範不針對人的反對句式。",
+            "tradeoff": "提供工具但占課時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "明說自己現在很沒面子，先坐下喝水一分鐘再繼續。",
+          "action": "導師已明說自己現在很沒面子，先坐下喝水一分鐘再繼續。",
+          "tradeoff": "不逞冷靜但課程短停。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1409519002
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "fb1fc0f0872ee7fd5184c30a90b0d2d61a9d94e5b2bb6b302e8a0b2fcb5ea2f2"
+      },
+      "consequenceDirections": {
+        "A": "學生可被聽見；仍須談語氣。",
+        "B": "不只敢頂嘴者能說；教師需回應。",
+        "C": "學生可看到成人調節；不把不快算在他頭上。",
+        "D": "學生可支持安排；其他人仍有聲音。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4ad9b8d25fc5eb46980448b2f54c52e1d20ea1e49cbb9b66ab0bd58ae7007299",
+    "draftSha256": "5d6a51bc82698d58b163ee652e0d5c5317284b49b8565261b9297e0e784b1199",
     "seedAssignmentVersion": 1
   }
 }

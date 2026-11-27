@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d0b1fca5c7182441b64e9c8903138d61bc87bbee2dcb0333ea700c3fdcb11f22",
+      "checkedAt": "2026-11-27T03:04:45.483Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依實際工作量重分職責，由本人確認可做範圍。",
+            "action": "導師已依實際工作量重分職責，由本人確認可做範圍。",
+            "tradeoff": "合用但需再協商。"
+          },
+          {
+            "id": 2,
+            "text": "將帶頭拆成開場與收束兩段，讓全組選可接部分。",
+            "action": "導師已將帶頭拆成開場與收束兩段，讓全組選可接部分。",
+            "tradeoff": "參與多元但流程較複雜。"
+          },
+          {
+            "id": 3,
+            "text": "維持原順序但明確允許本人按負荷退出。",
+            "action": "導師已維持原順序但明確允許本人按負荷退出。",
+            "tradeoff": "可預期但可能臨時缺位。"
+          },
+          {
+            "id": 4,
+            "text": "私下核對可用時段，只傳工作限制給小組。",
+            "action": "導師已私下核對可用時段，只傳工作限制給小組。",
+            "tradeoff": "保護隱私但資訊較少。"
+          },
+          {
+            "id": 5,
+            "text": "先讓本人用不同形式提供同等學習證據。",
+            "action": "導師已先讓本人用不同形式提供同等學習證據。",
+            "tradeoff": "不綁前排但要調評量。"
+          },
+          {
+            "id": 6,
+            "text": "請全組重述輪流的目的，不投票判他態度。",
+            "action": "導師已請全組重述輪流的目的，不投票判他態度。",
+            "tradeoff": "釐清支持但占課時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "說你也不想每次都站最前，今天替他擋下態度評語，自己處理重排。",
+          "action": "導師已說你也不想每次都站最前，今天替他擋下態度評語，自己處理重排。",
+          "tradeoff": "承擔協調但教師加勞。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2459765614
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "c58bb02296d264f629d9935698ba3556226bb02d8b454c48e27fce149fe899f8"
+      },
+      "consequenceDirections": {
+        "A": "本人可選；不能把餘工硬塞別人。",
+        "B": "學生可被接住；仍需公平看各人工作。",
+        "C": "同學可看見貢獻；不保證全同意。",
+        "D": "可重排；同學不能追問原因。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "857e93a291004aaa77c640413d549e9e3d8a62c42ec764218825316876793c33",
+    "draftSha256": "d0b1fca5c7182441b64e9c8903138d61bc87bbee2dcb0333ea700c3fdcb11f22",
     "seedAssignmentVersion": 1
   }
 }

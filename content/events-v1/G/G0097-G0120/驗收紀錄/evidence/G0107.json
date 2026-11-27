@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a46daa7a664873799889fae5a7afd959c578dbd64e4bfc2c5c23a148316505af",
+      "checkedAt": "2026-11-27T03:04:45.476Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在安全前提下讓全組自願試一輪分段。",
+            "action": "導師已在安全前提下讓全組自願試一輪分段。",
+            "tradeoff": "能驗效果但需觀察。"
+          },
+          {
+            "id": 2,
+            "text": "各人說清已做與能接的工作，不比誰站最久。",
+            "action": "導師已各人說清已做與能接的工作，不比誰站最久。",
+            "tradeoff": "貢獻可見但需短談。"
+          },
+          {
+            "id": 3,
+            "text": "維持原基本任務，撤回臨時額外要求。",
+            "action": "導師已維持原基本任務，撤回臨時額外要求。",
+            "tradeoff": "減負但新點子未全面試。"
+          },
+          {
+            "id": 4,
+            "text": "由你確認夾具適用與保管後再決定共用。",
+            "action": "導師已由你確認夾具適用與保管後再決定共用。",
+            "tradeoff": "資源安全但多管理。"
+          },
+          {
+            "id": 5,
+            "text": "把坐姿工作列為可選角色，其他角色也輪換。",
+            "action": "導師已把坐姿工作列為可選角色，其他角色也輪換。",
+            "tradeoff": "較公平但要重排。"
+          },
+          {
+            "id": 6,
+            "text": "先用現有安全工具試小範圍，不收家用物。",
+            "action": "導師已先用現有安全工具試小範圍，不收家用物。",
+            "tradeoff": "成本低但效果受限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "乾脆蹲低看他真的清到哪，不再靠站姿判斷誰認真。",
+          "action": "導師已乾脆蹲低看他真的清到哪，不再靠站姿判斷誰認真。",
+          "tradeoff": "教師多查驗但少貼標籤。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2794061250
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "95f78037a96cfc4123c005ab52e79accbef3cf758fc4c94c7aece712223c06f3"
+      },
+      "consequenceDirections": {
+        "A": "分工可能較好；有人可不加入試行。",
+        "B": "每人有選擇；不能固定某人多做。",
+        "C": "同學可重分；避免羞辱身體差異。",
+        "D": "學生可能感到公平；仍需核對他人負荷。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6a49349a8112fff20ae320324b6576287ce1f7cfff5a9fd75763d37188bfe2c7",
+    "draftSha256": "a46daa7a664873799889fae5a7afd959c578dbd64e4bfc2c5c23a148316505af",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9d19e7d7968431ec4ddbf60bdc9b326f230406d1fd4a5fdd56a541d146bbee1d",
+      "checkedAt": "2026-11-27T03:04:45.486Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只調整已確認卡住的位置，不重走全隊。",
+            "action": "導師已只調整已確認卡住的位置，不重走全隊。",
+            "tradeoff": "改善聚焦但效果有限。"
+          },
+          {
+            "id": 2,
+            "text": "把自願試行放到不占用餐的合法班務時段。",
+            "action": "導師已把自願試行放到不占用餐的合法班務時段。",
+            "tradeoff": "保留點子但要另約。"
+          },
+          {
+            "id": 3,
+            "text": "讓本人畫出現行瓶頸交你判讀。",
+            "action": "導師已讓本人畫出現行瓶頸交你判讀。",
+            "tradeoff": "可看想法但增加紙上工作。"
+          },
+          {
+            "id": 4,
+            "text": "依原流程完成午餐，今天停止所有新試法。",
+            "action": "導師已依原流程完成午餐，今天停止所有新試法。",
+            "tradeoff": "秩序穩定但熱情受挫。"
+          },
+          {
+            "id": 5,
+            "text": "請相關服務成人依權責評估動線。",
+            "action": "導師已請相關服務成人依權責評估動線。",
+            "tradeoff": "專業較穩但需等待。"
+          },
+          {
+            "id": 6,
+            "text": "讓全班只在餐後自願回饋最卡的一處。",
+            "action": "導師已讓全班只在餐後自願回饋最卡的一處。",
+            "tradeoff": "資訊真實但回應可能少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把自己的餐盤先端回原位，陪被叫回的人按正常流程吃完，不急著表揚創意。",
+          "action": "導師已把自己的餐盤先端回原位，陪被叫回的人按正常流程吃完，不急著表揚創意。",
+          "tradeoff": "先顧用餐但發起者可能失落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2030842470
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "15b96fa069245ee9209a38b7a21c19a0728f6ac23205e5588321d08698a05f21"
+      },
+      "consequenceDirections": {
+        "A": "同學可吃飯；學生仍有參與。",
+        "B": "同學看到界線；點子可另找時機談。",
+        "C": "學生可能修案；不再叫同學配合。",
+        "D": "不以整齊表演作成果；教師需整理。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0cd7549b8c9a9b0cde0d90cb9da334f94da4e9f420f7ef040d08a988696e6db8",
+    "draftSha256": "9d19e7d7968431ec4ddbf60bdc9b326f230406d1fd4a5fdd56a541d146bbee1d",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2b7cadffbb7a34e0fb11e6c9b87af1d3feb93ad7e75bf630ff62889bf966f9c6",
+      "checkedAt": "2026-11-27T03:04:45.467Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先私下詢問本人想接受的協助。",
+            "action": "導師已先私下詢問本人想接受的協助。",
+            "tradeoff": "支持合用但資訊有限。"
+          },
+          {
+            "id": 2,
+            "text": "介紹既有合法餐食支持管道。",
+            "action": "導師已介紹既有合法餐食支持管道。",
+            "tradeoff": "較穩定但可能不願使用。"
+          },
+          {
+            "id": 3,
+            "text": "經核准辦全班自願共食，不以需求者為主角。",
+            "action": "導師已經核准辦全班自願共食，不以需求者為主角。",
+            "tradeoff": "自然但準備較多。"
+          },
+          {
+            "id": 4,
+            "text": "試設合規無須登記個人需求的分享方式。",
+            "action": "導師已試設合規無須登記個人需求的分享方式。",
+            "tradeoff": "降低曝光但管理費工。"
+          },
+          {
+            "id": 5,
+            "text": "請發起者只提供物資資訊，不負責找受助者。",
+            "action": "導師已請發起者只提供物資資訊，不負責找受助者。",
+            "tradeoff": "減少壓力但少直接回饋。"
+          },
+          {
+            "id": 6,
+            "text": "先不設新角落，與班級談不追問他人餐食的通則。",
+            "action": "導師已先不設新角落，與班級談不追問他人餐食的通則。",
+            "tradeoff": "保護界線但物資未用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "告訴他你也怕熱心被晾著，今天先把物資收好，不等人表態。",
+          "action": "導師已告訴他你也怕熱心被晾著，今天先把物資收好，不等人表態。",
+          "tradeoff": "容許落空但沒有活動成果。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 430331458
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "a00f8312845dd6cea0fdfa048f58fdb713ae196d20dd26235bd0a97d95a0780c"
+      },
+      "consequenceDirections": {
+        "A": "學生可能鬆口氣；不妨礙即時餐食支持。",
+        "B": "可自由取用；不保證有人拿。",
+        "C": "學生有選擇；不能貼標籤。",
+        "D": "本人可拒公開；即時吃足仍須確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e62929e3574b9d9e2f868834d757553e35703f6aa72a340a2bbebf3725e7632",
+    "draftSha256": "2b7cadffbb7a34e0fb11e6c9b87af1d3feb93ad7e75bf630ff62889bf966f9c6",
     "seedAssignmentVersion": 1
   }
 }

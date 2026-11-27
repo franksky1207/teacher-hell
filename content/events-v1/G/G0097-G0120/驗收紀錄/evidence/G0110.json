@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "87030f33e0608776bee4e0e9c3b6af3904b5699096fcd7b93146b7946b39a4c9",
+      "checkedAt": "2026-11-27T03:04:45.478Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下給提出者必要的確認進度，不含隱私。",
+            "action": "導師已私下給提出者必要的確認進度，不含隱私。",
+            "tradeoff": "減少焦慮但資訊有限。"
+          },
+          {
+            "id": 2,
+            "text": "明確告知由誰處理、何時有可說資訊再回覆。",
+            "action": "導師已明確告知由誰處理、何時有可說資訊再回覆。",
+            "tradeoff": "可預期但仍需等。"
+          },
+          {
+            "id": 3,
+            "text": "停止班內對求助的冷嘲，不說個案原因。",
+            "action": "導師已停止班內對求助的冷嘲，不說個案原因。",
+            "tradeoff": "保護求助但可能引關注。"
+          },
+          {
+            "id": 4,
+            "text": "請學生回到原任務，保留可再次報告新事實的入口。",
+            "action": "導師已請學生回到原任務，保留可再次報告新事實的入口。",
+            "tradeoff": "不陷猜測但可能仍掛心。"
+          },
+          {
+            "id": 5,
+            "text": "邀本人短談剛才為何不敢開口。",
+            "action": "導師已邀本人短談剛才為何不敢開口。",
+            "tradeoff": "能處理從眾但需時間。"
+          },
+          {
+            "id": 6,
+            "text": "依權責將可公開安全結論一次向相關者說明。",
+            "action": "導師已依權責將可公開安全結論一次向相關者說明。",
+            "tradeoff": "減少傳聞但需待確認。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接說你也擔心，但不願用別人的隱私換大家放心，陪他先坐穩。",
+          "action": "導師已直接說你也擔心，但不願用別人的隱私換大家放心，陪他先坐穩。",
+          "tradeoff": "承認不確定但無完整答案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2790337594
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "144500d40a8e363bdb4255e5ab937b9f02ba160d3d47a524a9b64de93989c55d"
+      },
+      "consequenceDirections": {
+        "A": "學生可能願等；安全確認仍不中斷。",
+        "B": "關心可持續；不派他當偵查者。",
+        "C": "學生可安心些；不能保證即得結論。",
+        "D": "學生可能更敢求助；不責怪延後。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b04e0cde1e11fe7d3e5a302c2417ea3b3c89a5e6ed732fb3ff1be9dd84743d20",
+    "draftSha256": "87030f33e0608776bee4e0e9c3b6af3904b5699096fcd7b93146b7946b39a4c9",
     "seedAssignmentVersion": 1
   }
 }

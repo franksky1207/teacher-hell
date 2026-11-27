@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2fdc3885c1b783e6f2ba910d01f7d2ee8cd87c6f30a63f748d72a7ce25e82a08",
+      "checkedAt": "2026-11-27T03:04:45.470Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留原座用途，另提供不占公共空間的表意方式。",
+            "action": "導師已保留原座用途，另提供不占公共空間的表意方式。",
+            "tradeoff": "界線明確但安慰有限。"
+          },
+          {
+            "id": 2,
+            "text": "在不妨使用且有權決定範圍內允許短暫留置，訂明終點。",
+            "action": "導師已在不妨使用且有權決定範圍內允許短暫留置，訂明終點。",
+            "tradeoff": "有緩衝但需守時限。"
+          },
+          {
+            "id": 3,
+            "text": "協助本人草擬不要求回應的和好訊息。",
+            "action": "導師已協助本人草擬不要求回應的和好訊息。",
+            "tradeoff": "表意直接但需勇氣。"
+          },
+          {
+            "id": 4,
+            "text": "私下聽他怕失去什麼，不替朋友解讀。",
+            "action": "導師已私下聽他怕失去什麼，不替朋友解讀。",
+            "tradeoff": "接住安全感但課間耗時。"
+          },
+          {
+            "id": 5,
+            "text": "另約雙方願意的修復時機，今天不催請假者。",
+            "action": "導師已另約雙方願意的修復時機，今天不催請假者。",
+            "tradeoff": "有出口但須等待。"
+          },
+          {
+            "id": 6,
+            "text": "向受影響同學說明可用空間規則，不公開友誼細節。",
+            "action": "導師已向受影響同學說明可用空間規則，不公開友誼細節。",
+            "tradeoff": "保障他人但當事人可能不快。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "坦白你也怕人不回頭，陪他在安全且不妨通行的走廊慢走一圈，暫不談寄訊息。",
+          "action": "導師已坦白你也怕人不回頭，陪他在安全且不妨通行的走廊慢走一圈，暫不談寄訊息。",
+          "tradeoff": "先安定情緒，但占用教師課間，和好並未推進。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2852213744
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "23a7dc6d001b89012ca4688f04e20ec1dbe19188ea7e85ee4d448de0c493198f"
+      },
+      "consequenceDirections": {
+        "A": "導師已另約雙方願意的修復時機，今天不催請假者。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為有出口但須等待。",
+        "B": "學生可能在短暫走動中放下怒氣，也可能仍想守位；座位照常依規定使用，不保證朋友回應。",
+        "C": "導師已向受影響同學說明可用空間規則，不公開友誼細節。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為保障他人但當事人可能不快。",
+        "D": "學生可留私訊；朋友未必回應。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "保留原座用途，另提供不占公共空間的表意方式。",
+                "action": "導師已保留原座用途，另提供不占公共空間的表意方式。",
+                "tradeoff": "界線明確但安慰有限。"
+              },
+              {
+                "id": 2,
+                "text": "在不妨使用且有權決定範圍內允許短暫留置，訂明終點。",
+                "action": "導師已在不妨使用且有權決定範圍內允許短暫留置，訂明終點。",
+                "tradeoff": "有緩衝但需守時限。"
+              },
+              {
+                "id": 3,
+                "text": "協助本人草擬不要求回應的和好訊息。",
+                "action": "導師已協助本人草擬不要求回應的和好訊息。",
+                "tradeoff": "表意直接但需勇氣。"
+              },
+              {
+                "id": 4,
+                "text": "私下聽他怕失去什麼，不替朋友解讀。",
+                "action": "導師已私下聽他怕失去什麼，不替朋友解讀。",
+                "tradeoff": "接住安全感但課間耗時。"
+              },
+              {
+                "id": 5,
+                "text": "另約雙方願意的修復時機，今天不催請假者。",
+                "action": "導師已另約雙方願意的修復時機，今天不催請假者。",
+                "tradeoff": "有出口但須等待。"
+              },
+              {
+                "id": 6,
+                "text": "向受影響同學說明可用空間規則，不公開友誼細節。",
+                "action": "導師已向受影響同學說明可用空間規則，不公開友誼細節。",
+                "tradeoff": "保障他人但當事人可能不快。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "告訴他你也會怕人不回來，但不幫忙守位，陪他把想說的話寫下。",
+              "action": "導師已告訴他你也會怕人不回來，但不幫忙守位，陪他把想說的話寫下。",
+              "tradeoff": "拒絕保證但花陪伴時間。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3077508709
+            },
+            "selectedIds": [
+              1,
+              3,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 1,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "d41736f5c08e729a0175154361115da29f28c653e1e0381a02997ff0f1d76f29"
+          },
+          "previousConsequenceDirections": {
+            "A": "朋友可不接受；不保證修復。",
+            "B": "學生可留私訊；朋友未必回應。",
+            "C": "學生可能願改表達；不能逼寄出。",
+            "D": "學生可慢慢放手；他人使用不能被剝奪。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "726ac65fa815f712ff5deadf4fbaf6917645460288e37c556ffa4ec6e1153d55",
+    "draftSha256": "2fdc3885c1b783e6f2ba910d01f7d2ee8cd87c6f30a63f748d72a7ce25e82a08",
     "seedAssignmentVersion": 1
   }
 }

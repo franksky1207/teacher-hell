@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5211e2783dfa8e0b5e099ee2e773c8108a106d3d9849453f51ef3205a7a55bda",
+      "checkedAt": "2026-11-27T03:04:45.480Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "示範保留節奏但換成報告語境。",
+            "action": "導師已示範保留節奏但換成報告語境。",
+            "tradeoff": "有支架但需課時。"
+          },
+          {
+            "id": 2,
+            "text": "讓本人自選再試一個短開頭。",
+            "action": "導師已讓本人自選再試一個短開頭。",
+            "tradeoff": "主導保留但可能緊張。"
+          },
+          {
+            "id": 3,
+            "text": "改兩人私下練習，暫不對全班。",
+            "action": "導師已改兩人私下練習，暫不對全班。",
+            "tradeoff": "壓力較低但少公開經驗。"
+          },
+          {
+            "id": 4,
+            "text": "請全班只回饋訊息是否聽清，不猜背景。",
+            "action": "導師已請全班只回饋訊息是否聽清，不猜背景。",
+            "tradeoff": "焦點明確但仍需控場。"
+          },
+          {
+            "id": 5,
+            "text": "允許先交文字結構再決定口頭方式。",
+            "action": "導師已允許先交文字結構再決定口頭方式。",
+            "tradeoff": "有準備但增加一步。"
+          },
+          {
+            "id": 6,
+            "text": "提供同等可用的短補練入口，不以家事換特例。",
+            "action": "導師已提供同等可用的短補練入口，不以家事換特例。",
+            "tradeoff": "兼顧公平但需排程。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "稱讚自己也想學那種有勁的開場，先用你自己的內容試一遍讓大家聽。",
+          "action": "導師已稱讚自己也想學那種有勁的開場，先用你自己的內容試一遍讓大家聽。",
+          "tradeoff": "成人承擔尷尬但易搶場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1045220232
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "5d7084fb96b6e02a6186b3d7074801970901fd5d6b9aa81716441361179b56d3"
+      },
+      "consequenceDirections": {
+        "A": "學生可重組；時間可能更緊。",
+        "B": "學生可練；家庭不必公開。",
+        "C": "學生可比較情境；不可模仿其家人取笑。",
+        "D": "本人可保聲音；需合意搭檔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4170bbca2af42d5d811c958b485cbdaaf9f99fa7f3cbb0c34da548184c200972",
+    "draftSha256": "5211e2783dfa8e0b5e099ee2e773c8108a106d3d9849453f51ef3205a7a55bda",
     "seedAssignmentVersion": 1
   }
 }

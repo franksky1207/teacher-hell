@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d3dbe64f548666d767a72898534fc4d83c744d020d7ee0431501a80070e886c5",
+      "checkedAt": "2026-11-27T03:04:45.481Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下次發言先明確交回本人，不補未授權內容。",
+            "action": "導師已下次發言先明確交回本人，不補未授權內容。",
+            "tradeoff": "保有聲音但可能冷場。"
+          },
+          {
+            "id": 2,
+            "text": "經同事同意更正會議中被你簡化的重點。",
+            "action": "導師已經同事同意更正會議中被你簡化的重點。",
+            "tradeoff": "修復紀錄但需再提起。"
+          },
+          {
+            "id": 3,
+            "text": "把眼前照看協助與發言權分開確認。",
+            "action": "導師已把眼前照看協助與發言權分開確認。",
+            "tradeoff": "互助清楚但需兩次交接。"
+          },
+          {
+            "id": 4,
+            "text": "邀同事自行整理想交給權責方的需求。",
+            "action": "導師已邀同事自行整理想交給權責方的需求。",
+            "tradeoff": "本人主導但增加工作。"
+          },
+          {
+            "id": 5,
+            "text": "約定會前只核對需要哪種支持。",
+            "action": "導師已約定會前只核對需要哪種支持。",
+            "tradeoff": "減少誤會但多準備。"
+          },
+          {
+            "id": 6,
+            "text": "在合意範圍共同演練一段不需你補話的說明。",
+            "action": "導師已在合意範圍共同演練一段不需你補話的說明。",
+            "tradeoff": "可增信心但占時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "請同事按原定安排先返家，自己接回已授權的照看，不再靠受幫忙證明關係沒壞。",
+          "action": "導師已請同事按原定安排先返家，自己接回已授權的照看，不再靠受幫忙證明關係沒壞。",
+          "tradeoff": "停止索取好人認同，但自己承擔後續時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4191590415
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "b7377abb74040acce8929c9a284ade9182dc9b71f2a8499cecf1312f9af0a871"
+      },
+      "consequenceDirections": {
+        "A": "導師已邀同事自行整理想交給權責方的需求。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為本人主導但增加工作。",
+        "B": "同事可選不幫；不能預設永遠救場。",
+        "C": "同事可接受結束當次支援，也可能想再談；教師自行處理等待學生，發言修復仍要另作。",
+        "D": "導師已經同事同意更正會議中被你簡化的重點。；可形成不同實際安排，相關人物可接受或提出疑慮；代價為修復紀錄但需再提起。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "語意審查發現情緒候選客觀行動過於含糊或與普通候選重疊，僅定向修改此候選並依SOP真實重新抽選一次；舊結果保留。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "下次發言先明確交回本人，不補未授權內容。",
+                "action": "導師已下次發言先明確交回本人，不補未授權內容。",
+                "tradeoff": "保有聲音但可能冷場。"
+              },
+              {
+                "id": 2,
+                "text": "經同事同意更正會議中被你簡化的重點。",
+                "action": "導師已經同事同意更正會議中被你簡化的重點。",
+                "tradeoff": "修復紀錄但需再提起。"
+              },
+              {
+                "id": 3,
+                "text": "把眼前照看協助與發言權分開確認。",
+                "action": "導師已把眼前照看協助與發言權分開確認。",
+                "tradeoff": "互助清楚但需兩次交接。"
+              },
+              {
+                "id": 4,
+                "text": "邀同事自行整理想交給權責方的需求。",
+                "action": "導師已邀同事自行整理想交給權責方的需求。",
+                "tradeoff": "本人主導但增加工作。"
+              },
+              {
+                "id": 5,
+                "text": "約定會前只核對需要哪種支持。",
+                "action": "導師已約定會前只核對需要哪種支持。",
+                "tradeoff": "減少誤會但多準備。"
+              },
+              {
+                "id": 6,
+                "text": "在合意範圍共同演練一段不需你補話的說明。",
+                "action": "導師已在合意範圍共同演練一段不需你補話的說明。",
+                "tradeoff": "可增信心但占時間。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "坦白你替人圓場也想被當好同事，今天先把那個好人位置讓開。",
+              "action": "導師已坦白你替人圓場也想被當好同事，今天先把那個好人位置讓開。",
+              "tradeoff": "承認私心但關係尷尬。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2613837976
+            },
+            "selectedIds": [
+              3,
+              5,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": "emotional",
+              "C": 5,
+              "D": 3
+            },
+            "optionsDigest": "7ec15bcdab64a20902ff128de17980f087ad331bdbc7ced6d591babeff6bb5f6"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事可保原意；不是訓練其配合你。",
+            "B": "同事可能更敢說；後續需真停止代言。",
+            "C": "同事可選不幫；不能預設永遠救場。",
+            "D": "同事可幫或拒；不再拿幫忙當認同。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e39bc5771df9ce7c7c675c3fb5d8905d9025d45ec2797c490341ca62892da016",
+    "draftSha256": "d3dbe64f548666d767a72898534fc4d83c744d020d7ee0431501a80070e886c5",
     "seedAssignmentVersion": 1
   }
 }

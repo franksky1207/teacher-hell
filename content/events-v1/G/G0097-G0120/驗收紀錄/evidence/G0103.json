@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "93b9d33ea9205c1cf1341d359aef2de8ed51247bffb72d8347bc02bf58db6424",
+      "checkedAt": "2026-11-27T03:04:45.471Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "經值勤方確認採本班另一側安全集結點。",
+            "action": "導師已經值勤方確認採本班另一側安全集結點。",
+            "tradeoff": "可減交會但家長需適應。"
+          },
+          {
+            "id": 2,
+            "text": "請校門調度權責者統整兩側動線。",
+            "action": "導師已請校門調度權責者統整兩側動線。",
+            "tradeoff": "全局較一致但需等指示。"
+          },
+          {
+            "id": 3,
+            "text": "請家長退到既定合法等候區。",
+            "action": "導師已請家長退到既定合法等候區。",
+            "tradeoff": "當場清楚但可能抱怨。"
+          },
+          {
+            "id": 4,
+            "text": "分批依既有安全放行程序離校。",
+            "action": "導師已分批依既有安全放行程序離校。",
+            "tradeoff": "人流較小但等待延長。"
+          },
+          {
+            "id": 5,
+            "text": "向家長只說明集合更動，不給插隊承諾。",
+            "action": "導師已向家長只說明集合更動，不給插隊承諾。",
+            "tradeoff": "避免誤用但溝通費時。"
+          },
+          {
+            "id": 6,
+            "text": "記下兩次交會時點交權責窗口評估。",
+            "action": "導師已記下兩次交會時點交權責窗口評估。",
+            "tradeoff": "提供依據但不是即時解法。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "把想回嗆喇叭的火氣壓下，走到合法等候處親自說明一次。",
+          "action": "導師已把想回嗆喇叭的火氣壓下，走到合法等候處親自說明一次。",
+          "tradeoff": "承受抱怨但降低隔空衝突。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3068769157
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "4f6fdddbd646ef2351dff4dc2f8878906e403b6c4c8fdaea91095fe8c7a008b3"
+      },
+      "consequenceDirections": {
+        "A": "學生可安全走；成人需清點。",
+        "B": "隊伍可能較順；須明確通知。",
+        "C": "家長可能聽進；不靠讓步換安靜。",
+        "D": "家長可配合；不滿可能持續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9dc73e42d1f138464f198164fe7e82627b9761dc8daee3f4382efe7d242ea111",
+    "draftSha256": "93b9d33ea9205c1cf1341d359aef2de8ed51247bffb72d8347bc02bf58db6424",
     "seedAssignmentVersion": 1
   }
 }

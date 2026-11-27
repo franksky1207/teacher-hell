@@ -15,14 +15,82 @@
     "G07",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6c1c8362d011b52bf2b19de0f140601e1509da4e5d311c39eb4b793cffa4b0d9",
+      "checkedAt": "2026-11-27T03:04:45.479Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "回去重訂當次交接終點，暫緩自己離開。",
+            "action": "導師已回去重訂當次交接終點，暫緩自己離開。",
+            "tradeoff": "責任清楚但自己晚走。"
+          },
+          {
+            "id": 2,
+            "text": "請合法可用接班者依程序銜接。",
+            "action": "導師已請合法可用接班者依程序銜接。",
+            "tradeoff": "分工可續但需聯絡。"
+          },
+          {
+            "id": 3,
+            "text": "請同事說實際可留分鐘，據此重排。",
+            "action": "導師已請同事說實際可留分鐘，據此重排。",
+            "tradeoff": "承諾真實但範圍有限。"
+          },
+          {
+            "id": 4,
+            "text": "向原交辦窗口反映缺口，請其安排授權支援。",
+            "action": "導師已向原交辦窗口反映缺口，請其安排授權支援。",
+            "tradeoff": "責任回位但等待較久。"
+          },
+          {
+            "id": 5,
+            "text": "與同事訂明往後先看行程再答應。",
+            "action": "導師已與同事訂明往後先看行程再答應。",
+            "tradeoff": "避免重演但當次仍要處理。"
+          },
+          {
+            "id": 6,
+            "text": "先核對陪班還需哪些必要工作，縮去非必要延留。",
+            "action": "導師已先核對陪班還需哪些必要工作，縮去非必要延留。",
+            "tradeoff": "可能減時但需權責同意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "說明你今天也很想準時走，只在合法接班者確實接妥後立刻離開，不再客氣多留。",
+          "action": "導師已說明你今天也很想準時走，只在合法接班者確實接妥後立刻離開，不再客氣多留。",
+          "tradeoff": "守私人時間但可能內疚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1767245382
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "5c531e9267a1c45418a3138348a96c5a61da0ddf834a204fa4f8f7be096325b6"
+      },
+      "consequenceDirections": {
+        "A": "兩人可各走；未接妥前有人看。",
+        "B": "同事知道界線；交接成本需共同承擔。",
+        "C": "同事可改口；自己可能需回接。",
+        "D": "陪班可續；不能先走留空班。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8fd3277ad470d7cd42636129ccd38843dac9998d613bafc05e263405cf54a8f7",
+    "draftSha256": "6c1c8362d011b52bf2b19de0f140601e1509da4e5d311c39eb4b793cffa4b0d9",
     "seedAssignmentVersion": 1
   }
 }

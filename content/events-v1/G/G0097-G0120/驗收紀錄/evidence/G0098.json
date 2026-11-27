@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6bae312440008ac5deecf6bd0ab549bc80133796d4ab2de49c0e372b837eb409",
+      "checkedAt": "2026-11-27T03:04:45.466Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "由你依授權帶完安全路段。",
+            "action": "導師已由你依授權帶完安全路段。",
+            "tradeoff": "當場可接但自己延工。"
+          },
+          {
+            "id": 2,
+            "text": "請有權窗口取消非必要參觀路線。",
+            "action": "導師已請有權窗口取消非必要參觀路線。",
+            "tradeoff": "減少風險但內容縮短。"
+          },
+          {
+            "id": 3,
+            "text": "改由成人在合法停留點說明。",
+            "action": "導師已改由成人在合法停留點說明。",
+            "tradeoff": "安全清楚但需人力。"
+          },
+          {
+            "id": 4,
+            "text": "提供已核准的路線圖供帶隊成人使用。",
+            "action": "導師已提供已核准的路線圖供帶隊成人使用。",
+            "tradeoff": "不占學生但互動少。"
+          },
+          {
+            "id": 5,
+            "text": "延後第二組移動，等安全路段淨空。",
+            "action": "導師已延後第二組移動，等安全路段淨空。",
+            "tradeoff": "動線穩定但行程延遲。"
+          },
+          {
+            "id": 6,
+            "text": "向接待負責人回報錯誤安排並修正後續動線。",
+            "action": "導師已向接待負責人回報錯誤安排並修正後續動線。",
+            "tradeoff": "可防再發但承擔責任。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "直接向來賓說剛才是你安排不當，不再讓同事替你圓。",
+          "action": "導師已直接向來賓說剛才是你安排不當，不再讓同事替你圓。",
+          "tradeoff": "丟面子但責任不落學生。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 593304759
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "8910131fc0667ec08edfc9564bd7424e9aae3b4457977809c900415720285fa2"
+      },
+      "consequenceDirections": {
+        "A": "來賓可能失望；需如實說明。",
+        "B": "同事可接續；不占樓梯。",
+        "C": "來賓可能理解或質疑；後續仍由成人接待。",
+        "D": "同事可重新排；來賓需等候。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ebe6a5c5ddba229cf2df03813dbc6845b6d386ecd2a89a3e70d22e07eb4d4a21",
+    "draftSha256": "6bae312440008ac5deecf6bd0ab549bc80133796d4ab2de49c0e372b837eb409",
     "seedAssignmentVersion": 1
   }
 }

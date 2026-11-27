@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d7949cfa3e15c44bf62a73b50dfed5e5f4761b605b4bce63cd2c63632691e95c",
+      "checkedAt": "2026-11-27T18:40:52.234Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只補最能看出理解的兩題，其他我用原作答判讀。",
+            "action": "在公平補學規範內指定兩項核心補答並說明要求，不要求整張重抄。",
+            "tradeoff": "教師須精選題目，學生仍增加工作。"
+          },
+          {
+            "id": 2,
+            "text": "邀他用口頭說明取代本次可替代部分的重寫。",
+            "action": "提出等值口頭補充邀約，按相同學習目標記錄，不任意改正式評分標準。",
+            "tradeoff": "教師需個別聽答時間，學生可能不願面對面。"
+          },
+          {
+            "id": 3,
+            "text": "分段補交，先讓他排出可行時間給我看。",
+            "action": "在公平且合法期限內商議分段補足，請學生自願提出實際可行進度。",
+            "tradeoff": "教師需追蹤多次，學生不能立即結束任務。"
+          },
+          {
+            "id": 4,
+            "text": "我不另開個別形式，依既有補學時段安排。",
+            "action": "維持本次既定公平補學方式，不增加教師特別個別服務。",
+            "tradeoff": "學生需調整其他非必要安排，導師可能被認為不體諒。"
+          },
+          {
+            "id": 5,
+            "text": "他願意的話，我和培訓教師一起談這週能減掉哪些非必要工作。",
+            "action": "提出經本人同意的跨教師負荷協調需求，不代其退賽或承諾減作業。",
+            "tradeoff": "增加多方聯絡，培訓者不保證同意。"
+          },
+          {
+            "id": 6,
+            "text": "先請他選要保哪幾項額外活動，我陪他談自己的優先順序。",
+            "action": "提出自願負荷整理會談，以學生自主選擇非必要活動為主，基礎學習仍補足。",
+            "tradeoff": "教師花會談時間，學生可能不願放任何項目。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被那句『有交就好』刺到，我請他這次當著我做一題，別再互相猜。",
+          "action": "提出於正常可調時段個別當場完成一題並說明思路的補學方案，教師即時看其真實理解，不用來懲罰頂嘴。",
+          "tradeoff": "教師犧牲時間且學生可能感到被盯，須允許合理調整避免羞辱。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3097967579
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "02f40554b22bf3c88594321c713bc55e3ae47533c5cb2ef730d0e9663592ca20"
+      },
+      "consequenceDirections": {
+        "A": "其好勝與對導師不滿能否接受有限補足可發展。",
+        "B": "其好勝能否接受放棄部分額外任務與舊怨可發展。",
+        "C": "對導師的不滿與被要求呈現實際理解的反應可發展，不以對話取代必要補足。",
+        "D": "負荷與接受班規但消極敷衍的矛盾可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "09a51b21d632ee15cbfbac12fc1df726cfe9c1ebb381a7bf847ce7839058b4ca",
+    "draftSha256": "d7949cfa3e15c44bf62a73b50dfed5e5f4761b605b4bce63cd2c63632691e95c",
     "seedAssignmentVersion": 1
   }
 }

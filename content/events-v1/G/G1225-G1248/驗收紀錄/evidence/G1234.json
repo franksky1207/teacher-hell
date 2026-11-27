@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d92511cc7cbee6eb836aeee5a69783139e3a2902e763fb7dbbd6085ae5f112bf",
+      "checkedAt": "2026-11-27T18:40:52.232Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不釋出早自習，請他回本科課內評估。",
+            "action": "明確婉拒使用本班早自習，請科任在其授課權責內另評估。",
+            "tradeoff": "可能傷同事面子，保留原班務時間。"
+          },
+          {
+            "id": 2,
+            "text": "提出只用一天，另一天保留原安排。",
+            "action": "在可合法協調前提下提出縮為每週一次的方案，待雙方同意並公平告知。",
+            "tradeoff": "部分班務仍受壓縮，科任可能嫌不足。"
+          },
+          {
+            "id": 3,
+            "text": "先試一次非計分，做完再共同判斷是否要排。",
+            "action": "提出單次自願且不占必要學習權益的試作，經權責確認才進行。",
+            "tradeoff": "增加教師觀察整理，不保證同事願意。"
+          },
+          {
+            "id": 4,
+            "text": "把快篩改成全班可自願取用，早自習不統一考。",
+            "action": "向科任提出自選練習取代統一考程，保留既定晨讀與聯絡。",
+            "tradeoff": "科任不能得到完整回收結果，需另談回饋負擔。"
+          },
+          {
+            "id": 5,
+            "text": "邀主管一起核對各科需求，別只在兩人之間搶格子。",
+            "action": "提出正式課務協調會談需求，不擅自把時段交出。",
+            "tradeoff": "教師承擔外部檢視及協調時間，同事可能覺得被上報。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，請他和我共同向全班說明重新協調的安排。",
+            "action": "邀科任一起承擔原公告未定的說明，先討論可接受方案再共同告知。",
+            "tradeoff": "要花共同準備時間，科任可能不想在學生前修正。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再把班務塞到午休，提出快篩放本科課內，我願接回一段可合法互換的班務協調。",
+          "action": "向科任及權責單位提出不占早自習、改由本科課內與導師可調教學活動協商銜接的需求，不擅代授專業課。",
+          "tradeoff": "教師增加課務重排與備課壓力，互換可能不被允許。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1342130506
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "b29d8d51bea79867ea413571c78dc223e53fa4af067c4a14a23ff0b7f798969f"
+      },
+      "consequenceDirections": {
+        "A": "同事是否願放棄既成公告、改用共同協調可發展，未核准不稱已換課。",
+        "B": "其競爭目標與協商安排的衝突可發展。",
+        "C": "未把試作結果預定為有效，專業說服與疲勞可發展。",
+        "D": "其好勝能否容納學生自主與教師班務可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f27b9532d2edb0a92bfa2d1efcd974c3534aca8c58be102656a26314151b4c99",
+    "draftSha256": "d92511cc7cbee6eb836aeee5a69783139e3a2902e763fb7dbbd6085ae5f112bf",
     "seedAssignmentVersion": 1
   }
 }

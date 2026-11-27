@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8f8335f0365c03e8e30d5e2a164663c0cc2b9a5ceba327dd64e1c5af27d68ef0",
+      "checkedAt": "2026-11-27T18:40:52.224Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "後續監考我申請接一次，等學生實際恢復再約。",
+            "action": "向教務及科任申請合法單次監考授權，時段待恢復及各方確認。",
+            "tradeoff": "教師犧牲可調休息，未必獲授權。"
+          },
+          {
+            "id": 2,
+            "text": "監考我不接，額外保管也不接，請他依科規自行安排。",
+            "action": "婉拒非必要代監考保管，由科任依規辦後續排程，導師仍完成必要健康與班務協調。",
+            "tradeoff": "守住時間但同事可能失望。"
+          },
+          {
+            "id": 3,
+            "text": "我只協調可用時段，不經手試卷。",
+            "action": "提出導師額外彙整合法可用空檔供科任選擇，不保證學生恢復日期。",
+            "tradeoff": "教師增加聯絡，科任仍須監考保管。"
+          },
+          {
+            "id": 4,
+            "text": "我申請只代為安全保管與轉交，監考仍由他來。",
+            "action": "提出限試卷保管轉交的授權申請，依校方安全規範獲准後才收卷。",
+            "tradeoff": "增加教師保管責任但不替同事省掉監考時段。"
+          },
+          {
+            "id": 5,
+            "text": "問教務有沒有正式補考支援，請科任一起提出需求。",
+            "action": "邀科任共同向教務申請既有可用支援，導師協助聯絡，不替主管排人。",
+            "tradeoff": "增加協調且可能無支援人力。"
+          },
+          {
+            "id": 6,
+            "text": "我願意陪他去談結算時限，但不接監考。",
+            "action": "提出陪同科任向有權主管說明健康與補考未定、申請合法結算處理的邀約。",
+            "tradeoff": "教師多花陪同時間，同事可能怕承認來不及。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也餓到沒力了，請他先一起吃飯，今天先別加任何補考工作給我。",
+          "action": "婉拒當日非必要加派，邀其於正常午餐時間共餐後再自行決定是否談後續分擔，當下不作未來監考承諾。",
+          "tradeoff": "同事可能覺得急務被擱置，教師讓出獨處午餐但保留當日休息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1858873515
+        },
+        "selectedIds": [
+          5,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "242ac1d2eb6653b5791de8b7e8306537f29179b176d44d45c9e38605e3ae8e0e"
+      },
+      "consequenceDirections": {
+        "A": "同事是否願調整原請託範圍可發展，不預設獲准。",
+        "B": "有限分擔能否被接受與競爭壓力可發展。",
+        "C": "其使命感能否接受正式分工及過勞可發展。",
+        "D": "疲勞與被認可請託能否容納休息界線可發展，不以吃飯取代學生必要照護。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ef04e63f33064505435924cb03c9b7930ead6d8a13ea097a222cdc688527d715",
+    "draftSha256": "8f8335f0365c03e8e30d5e2a164663c0cc2b9a5ceba327dd64e1c5af27d68ef0",
     "seedAssignmentVersion": 1
   }
 }

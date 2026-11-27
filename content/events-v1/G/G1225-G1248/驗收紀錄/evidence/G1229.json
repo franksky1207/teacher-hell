@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4c498d5e20368f87aab121653012a041fac3afe575799e37c4c5a4b21dbea8db",
+      "checkedAt": "2026-11-27T18:40:52.222Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依授權交給他處理可用照片，我只做最後合版。",
+            "action": "徵詢依既有授權由家長微調可合法交付照片、教師終審合版的分工。",
+            "tradeoff": "需安全交檔及等回件，家長可拒絕。"
+          },
+          {
+            "id": 2,
+            "text": "這次我自己調整版型，不再請他加班修。",
+            "action": "決定由教師完成版型調整，婉拒家長本次額外修圖。",
+            "tradeoff": "教師增加修圖時間，家長可能覺得被疏遠。"
+          },
+          {
+            "id": 3,
+            "text": "原圖合法範圍另供家庭留存，簡報改用不裁臉的單張版型。",
+            "action": "提出家庭可合法留存影像與班級簡報不同用途的處理方案，教師另改成單張頁面。",
+            "tradeoff": "簡報變長、教師增加排版，不能任意交付他人影像。"
+          },
+          {
+            "id": 4,
+            "text": "邀他下次在送出前一起檢視全班照片，不只看自己孩子。",
+            "action": "提出日後自願共同檢視可公開照片的分工邀約，仍由教師負必要終審。",
+            "tradeoff": "教師增加協作時間，志工可能不願多承擔。"
+          },
+          {
+            "id": 5,
+            "text": "我另約時間談攝影志工的工作範圍，這次先不增加新任務。",
+            "action": "邀家長重議拍攝、選片與修圖各自責任，不把修圖當其出力必有回報。",
+            "tradeoff": "占用雙方聯絡時間，可能談出其不再協助。"
+          },
+          {
+            "id": 6,
+            "text": "徵得學生影像同意後，請願意的同學協助挑合宜版型。",
+            "action": "提出學生自願參與生活照展示排版的課內可調安排，教師負責隱私與正確裁切。",
+            "tradeoff": "需指導審核，家長可能覺得專業協助被學生取代。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點委屈，先把『是不是故意』這句拉回來談，不急著接他修圖的人情。",
+          "action": "暫不增加家長修圖委託，直接表達被推定惡意的感受，邀其就這次指責作雙向溝通；本次由教師完成必要修正。",
+          "tradeoff": "教師承擔關係衝突及修圖時間，不逼家長道歉才更正。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3614436008
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "f7bed2973edb39191ef36374852af745fdab07b50d5b93e0e21fdff20339847f"
+      },
+      "consequenceDirections": {
+        "A": "家長的出力能否轉成全班視角與協商彈性可發展。",
+        "B": "志工是否願續投入及誤會後的協商可發展，不預設已回傳。",
+        "C": "問責期待與實際人力投入的邊界可發展，必要修圖不等會談。",
+        "D": "家長是否願面對衝動指責及未來出力意願可發展，與單純接回修圖不同在正面處理問責關係。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0964470166f513745123da7c66e798dbaf6c8ac80647e4826844c4729b96ea46",
+    "draftSha256": "4c498d5e20368f87aab121653012a041fac3afe575799e37c4c5a4b21dbea8db",
     "seedAssignmentVersion": 1
   }
 }

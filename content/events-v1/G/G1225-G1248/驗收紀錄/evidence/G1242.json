@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d47258d5855dd8491dd988a75fa8ef676f46ce9bb9fa128d22a1e0d89e3ea6e1",
+      "checkedAt": "2026-11-27T18:40:52.246Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "採帶回訂正，隔天用一題短口答確認理解。",
+            "action": "在公平規範下提出帶回補正並另約合法課內短口答的安排，徵詢學生可行性。",
+            "tradeoff": "教師增加逐人確認時間，家庭承諾不保證落實。"
+          },
+          {
+            "id": 2,
+            "text": "改用現有課內補學時段，不再依賴放學。",
+            "action": "提出將本次訂正納入可調課內補學的方案，協調必要課程安排。",
+            "tradeoff": "壓縮可調教學內容，教師需重排。"
+          },
+          {
+            "id": 3,
+            "text": "由學生選擇合法自願的在校或帶回方式，同一目標核對。",
+            "action": "提出公平可選補正形式，按同樣理解目標確認，不能強迫留校。",
+            "tradeoff": "教師增加雙軌管理，家長未必願讓孩子自行選。"
+          },
+          {
+            "id": 4,
+            "text": "我額外提供一次正常聯絡時段的遠端答疑，讓帶回不是只靠家長。",
+            "action": "提出自願遠端答疑邀約，使用校方合規管道，不要求學生公開家況或占必要休息。",
+            "tradeoff": "教師犧牲可調時間，家庭可能無法配合。"
+          },
+          {
+            "id": 5,
+            "text": "先請學生挑卡住的一題，我改成少量核心訂正。",
+            "action": "在公平學習目標內刪減非必要重複題，保留足以確認理解的核心補正。",
+            "tradeoff": "教師要逐份判斷，不能保證所有題都可省。"
+          },
+          {
+            "id": 6,
+            "text": "邀家長和孩子一起談一個真的排得下的時間。",
+            "action": "提出正常聯絡時段的自願親師生會談，商議合法補學安排，不要求家長替教師教學。",
+            "tradeoff": "教師增加協調，家長可能覺得又花時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再被問成『留人還是放人』，親自重整這套訂正方式，向全班說明新版方案。",
+          "action": "在權責內提出整體檢視本班訂正流程的工作，蒐集實際需求後公布合法公平方案，未定前維持必要個別安排。",
+          "tradeoff": "教師承擔設計說明與全班不同意見，家長不能保證得到原提案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2195917764
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "51fa9777a8360478fb628b38c4efe7b57009e90dcd2e95673e2b2414ab4c0a30"
+      },
+      "consequenceDirections": {
+        "A": "對作息的主見與子女實際需要可發展，未預設會談成功。",
+        "B": "家長主見與實際學習負荷能否相容可發展。",
+        "C": "程序變更要求是否轉為較廣的課務調整與家長督促可發展，不能以檢討拖延合法離校。",
+        "D": "家長是否接受非帶回的解法與督促可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "79348a8d83562c99ea1d56b53a1a39a7d4ace67c29ab7042f6846fcb392e45dd",
+    "draftSha256": "d47258d5855dd8491dd988a75fa8ef676f46ce9bb9fa128d22a1e0d89e3ea6e1",
     "seedAssignmentVersion": 1
   }
 }

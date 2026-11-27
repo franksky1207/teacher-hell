@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6b5d09353285fe734c6d8fbb8f543caa3746ef31e717a0b9374a4b0de8000a4a",
+      "checkedAt": "2026-11-27T18:40:52.252Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今晚先煮一部分原定食材，確認能安全騰位再留奶油捲。",
+            "action": "依實際容量與保存條件提前烹調部分生鮮，成品妥善保存後才把安全冷藏空間給奶油捲。",
+            "tradeoff": "增加當晚家務與疲勞，未騰出足夠空間則不能硬留。"
+          },
+          {
+            "id": 2,
+            "text": "傳訊請附近的人自願來拿，標示期限也一起說清楚。",
+            "action": "提出於安全期限內自取的贈食邀約，取得實際同意才交付；不成即安全處置。",
+            "tradeoff": "花錢卻吃不到，還要聯絡交接。"
+          },
+          {
+            "id": 3,
+            "text": "我自己送到願收的人那裡，但先確認對方能冷藏。",
+            "action": "提出近距離合法安全冷鏈送食邀約，確認同意及保存後才出門。",
+            "tradeoff": "過勞後再花交通時間，可能無人可接。"
+          },
+          {
+            "id": 4,
+            "text": "問附近親友能否借一小格冷藏，明天自己去拿。",
+            "action": "提出短時寄放請求，取得同意且可安全運送才寄放，明確按標示期限取用。",
+            "tradeoff": "欠一次人情及多趟移動，不保證有空位。"
+          },
+          {
+            "id": 5,
+            "text": "打電話問仍營業的原店能否暫寄到明天，不行就不硬等。",
+            "action": "向原店提出安全條件內短時冷藏寄放的詢問，只有獲同意且能及時送回才採用，不主張商家必須接受。",
+            "tradeoff": "多花通話交通，店家可能已打烊或拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "認賠，不為四個特價品再改今晚計畫。",
+            "action": "決定不再額外烹調求助，對無法合規保存的鮮奶油捲安全捨棄，原味麵包依各自標示保存。",
+            "tradeoff": "承受實際浪費與花費，保留當晚休息。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想吃這個，問鄰居要不要接手我原本備好的安全食材，替奶油捲騰位。",
+          "action": "向願意且可依食安條件接收者提出贈與部分原備餐食材的邀約，安全交付確實騰位後才冷藏奶油捲；不成則依共同食安處理。",
+          "tradeoff": "打亂後續備餐並可能增加下次採買支出，還需冷鏈交接。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 795199862
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "d754c8d5e332f819f4e9b1c07b30daa2c8358f7d615653a727f3c80ba154e09d"
+      },
+      "consequenceDirections": {
+        "A": "為一時喜好犧牲精算備餐計畫與撿便宜的反差可發展，不預設已有人收食材。",
+        "B": "撿便宜的開朗如何面對求助尷尬可發展，寄放不延長產品期限。",
+        "C": "生計精算與過勞後取回自主時間的矛盾可發展。",
+        "D": "自主挑食卻把戰利品送走的失落與工作負荷可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d33d4ccbeed359db6718db52bc91779f74bcf79418e83e24795a95bfde7f9b22",
+    "draftSha256": "6b5d09353285fe734c6d8fbb8f543caa3746ef31e717a0b9374a4b0de8000a4a",
     "seedAssignmentVersion": 1
   }
 }

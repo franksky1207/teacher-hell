@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ec795c0211fd38deb1d852389c5d3f33fd8efb54f2d76d0f6e0b19a6b60f0cb5",
+      "checkedAt": "2026-11-27T18:40:52.251Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "週二晨讀維持，我願意協調第一節的銜接方式。",
+            "action": "婉拒改晨讀，向科任提出共同調整下課到上課的收心銜接邀約。",
+            "tradeoff": "教師增加協調，同事可能認為未回應主張。"
+          },
+          {
+            "id": 2,
+            "text": "提出短期試行計算，再用具體學習表現與學生負擔共同檢視。",
+            "action": "在合法權責及告知下提出有限期間計算試行方案，預先約定檢視但不保證有效。",
+            "tradeoff": "壓縮晨讀、增加觀察工作，學生可能不願。"
+          },
+          {
+            "id": 3,
+            "text": "保留大段晨讀，只在結束前加一小段數學準備。",
+            "action": "提出混合時段協商，不增加總時數，待雙方同意再公布。",
+            "tradeoff": "閱讀被切斷，科任可能覺得不足。"
+          },
+          {
+            "id": 4,
+            "text": "先不改時段，請他把最卡的入門題放回第一節開頭，我協助看學生反應。",
+            "action": "提出由科任課內安排暖身、導師自願協助觀察的合作邀約，不代科任設題。",
+            "tradeoff": "教師增加入班時間，同事可能不願授課被觀察。"
+          },
+          {
+            "id": 5,
+            "text": "提議把自由閱讀改為可自選的數理閱讀，不直接換算題。",
+            "action": "提出週二可選數理文本的晨讀方案，保留讀者自主與其他合宜書籍，不以書種評分。",
+            "tradeoff": "教師需準備可用材料，科任可能認為仍沒練計算。"
+          },
+          {
+            "id": 6,
+            "text": "先把學生對第一節難處的意見帶進教學協調，再決定要不要試。",
+            "action": "安排自願且不揭個資的學習感受蒐集，向科任提出共同討論而不先改制度。",
+            "tradeoff": "教師增加整理時間，學生意見不能直接證實因果。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服氣光靠一句經驗就定案，申請去看一次他說的那十五分鐘。",
+          "action": "向科任提出在課務許可下親自觀摩週二第一節開頭的邀約，徵得同意再入班，不當稽核或替他下專業結論。",
+          "tradeoff": "教師付出可調時間且可能被認為挑戰資深教師，觀摩不保證找出原因。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3233407429
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "a9c6548e7797621e61ade3bbbb6626fda8e03b350fed9047b93273840759b9e5"
+      },
+      "consequenceDirections": {
+        "A": "不同學習價值如何回應程序要求與責任感可發展。",
+        "B": "責任感與既有不滿能否容納不改制度的合作可發展。",
+        "C": "對導師既有不滿與教學責任如何回應被具體看見可發展，未入班不寫已證實。",
+        "D": "同事對經驗以外資訊的接受與不滿可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7c3a04d18ef86be996404141525c3b78ebae03938e2c7589536afb4feea7d67b",
+    "draftSha256": "ec795c0211fd38deb1d852389c5d3f33fd8efb54f2d76d0f6e0b19a6b60f0cb5",
     "seedAssignmentVersion": 1
   }
 }

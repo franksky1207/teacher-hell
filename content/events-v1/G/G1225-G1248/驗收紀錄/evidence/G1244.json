@@ -16,14 +16,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "613fffcd85f85a2fac63276d66da7124fb711d3f9c94530fd9cf27b4c74650aa",
+      "checkedAt": "2026-11-27T18:40:52.249Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我向器材管理者詢問可借鞋，借到前維持替代活動。",
+            "action": "提出查詢乾淨合腳備鞋的需求，不承諾庫存或學生必能上場。",
+            "tradeoff": "教師增加查借還管理，可能無尺寸。"
+          },
+          {
+            "id": 2,
+            "text": "我不另接借鞋，和體育老師完善這週的靜態參與內容。",
+            "action": "提出在安全替代基礎上增加非必要個別學習回饋的合作安排。",
+            "tradeoff": "教師增加設計協調，學生仍不能參與跑跳。"
+          },
+          {
+            "id": 3,
+            "text": "問家長是否願意改用合法代購或配送，由他們自己決定。",
+            "action": "提供自願改變購鞋交付方式的資訊，先確認家庭可行性，不代下單或付費。",
+            "tradeoff": "家長可能沒有時間資源，教師花聯絡時間。"
+          },
+          {
+            "id": 4,
+            "text": "邀體育老師把部分教學改成全班都可安全參與的靜態項目。",
+            "action": "提出不降低課綱與安全要求的課程順序調整建議，由體育教師決定。",
+            "tradeoff": "同事增加備課，其他學生可能期待原活動。"
+          },
+          {
+            "id": 5,
+            "text": "我陪學生去確認可用支援資源，不讓他一個人開口。",
+            "action": "提出本人自願陪同學生向有權支援窗口查詢合適鞋具的邀約，保護家況。",
+            "tradeoff": "教師花陪同時間且未必取得物品。"
+          },
+          {
+            "id": 6,
+            "text": "請體育老師與我一起向家庭說明可選方式，別只傳一句買鞋。",
+            "action": "提出正常聯絡時段的共同通話邀約，在必要通知之外詳談暫行學習與自願支援。",
+            "tradeoff": "增加雙方聯絡時間，家長可能無法參與。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心軟，願意私人出資，但先問家庭願不願接受合適鞋具的合法贈與。",
+          "action": "依校規向家庭提出一次性私人購鞋協助邀約，尊重拒絕、先確認尺寸及適用，不以收禮換學習權益。",
+          "tradeoff": "若成立教師支出私人費用並負擔選購，可能造成家長尷尬；未答應不記已買。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 664364740
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "a2610192b1925932cdc257fbe829d7a47d343c751ded0d46f93bb523a591fa8e"
+      },
+      "consequenceDirections": {
+        "A": "專業防護與共同參與如何協調可發展，未預設採用。",
+        "B": "體育教師的合作與安全標準能否接納支援可發展。",
+        "C": "體育教師如何看待額外支援與共同安全原則可發展，不以私人贈與取代必要救助。",
+        "D": "原則與學生失落如何共同承接可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7aff893fb30a4f1767b0aa4f703d309763ef56d23138ca9ff3b8fd1ea0dd1fdd",
+    "draftSha256": "613fffcd85f85a2fac63276d66da7124fb711d3f9c94530fd9cf27b4c74650aa",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b5d75a2e9974ced71e2d6c68a8c5d40bfbbc6603094bcde4d1ecf3b3cd28c62f",
+      "checkedAt": "2026-11-27T18:40:52.220Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他約一次出納說明，把目前可確認的範圍當面問清楚。",
+            "action": "提出陪同家長與出納會談的需求，徵詢雙方可用時間。",
+            "tradeoff": "教師多花陪同時間，不保證立即排上。"
+          },
+          {
+            "id": 2,
+            "text": "我整理一次現行費用的書面對照，讓他不用從貼文猜。",
+            "action": "承諾另製一份依現行公告的具體費目對照給家長，不增加未公告保證。",
+            "tradeoff": "教師花整理時間，對方仍可能怕臨時加費。"
+          },
+          {
+            "id": 3,
+            "text": "邀他另約時間談目前真實開銷，謠言那筆先別算進去。",
+            "action": "提出自願親師財務需求會談，限必要支出及可申請協助，不要求家長交完整家計。",
+            "tradeoff": "教師增加個別聯絡時間，家長可能不願揭露。"
+          },
+          {
+            "id": 4,
+            "text": "請他直接留下想問出納的問題，我協助轉交一次。",
+            "action": "徵得同意後將不含多餘家庭個資的具體問題轉給出納，請其依權責答覆。",
+            "tradeoff": "教師需整理轉交，答覆時間由承辦安排，不能保證當日回。"
+          },
+          {
+            "id": 5,
+            "text": "往後有正式收費公告，我多做一次主動提醒。",
+            "action": "徵詢家長是否願由導師於收到正式公告後額外主動提醒其查看，仍不保證未來不變。",
+            "tradeoff": "增加教師後續聯絡負擔，家長可能依賴額外提醒。"
+          },
+          {
+            "id": 6,
+            "text": "我今天不再跑額外查詢，改約固定時段一起看他剩下的疑問。",
+            "action": "在已完成必要查證及澄清後，停止當日反覆額外查詢，邀約正常聯絡時段集中討論。",
+            "tradeoff": "家長須等候可能更焦急，教師需留會談時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被催得有點喘，請出納同意後直接與家長通話，我不再夾在中間轉述。",
+          "action": "提出由權責承辦與家長直接通話的需求，徵得雙方同意後再安排，不擅自交出私人聯絡方式。",
+          "tradeoff": "教師承擔協調及家長可能感到被推走的關係風險，不保證承辦能立即聯絡。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4225540064
+        },
+        "selectedIds": [
+          4,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "ef680e7b0782d0469137a39ce5ff3892b19cbb23d39b9d19705de0ccb1ccca8b"
+      },
+      "consequenceDirections": {
+        "A": "家長對等待與教師有限代辦的接受可發展，非只是提供窗口。",
+        "B": "實際生計壓力能否與匿名消息分離可發展，必要減免資訊各分支都有。",
+        "C": "對無法保證未來的焦慮與催問是否緩和可發展。",
+        "D": "家長面對直接權責答覆是否仍追求教師保證可發展，與書面轉交的互動不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "63c594009834395cbe0dd98470a0b62b9e467a000a1d7aa1bb87a0277110ba9c",
+    "draftSha256": "b5d75a2e9974ced71e2d6c68a8c5d40bfbbc6603094bcde4d1ecf3b3cd28c62f",
     "seedAssignmentVersion": 1
   }
 }

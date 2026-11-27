@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "552b5447dd06ec005b0d1b8a6b593c94e43f4786b6b5d0e72b225415d5a64a14",
+      "checkedAt": "2026-11-27T18:40:52.243Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪三個人去正式窗口，讓他們把經過分別說清楚。",
+            "action": "提出教師額外陪同三生到承辦處的安排，先依窗口時間確認。",
+            "tradeoff": "教師多花陪同時間，學生要面對說明。"
+          },
+          {
+            "id": 2,
+            "text": "我不陪跑，讓本人依正式指示辦，技術同學可自願陪同。",
+            "action": "不增加教師代辦，提供必要正式指示並讓帳號本人自行按規補正，徵詢熱心者是否自願陪同。",
+            "tradeoff": "學生需自行安排，教師可能被覺得不夠相挺。"
+          },
+          {
+            "id": 3,
+            "text": "我協調一次承辦遠端說明，讓三人都聽見界線。",
+            "action": "向資訊承辦提出共同遠端說明需求，待同意安排，不擅自遠控帳號。",
+            "tradeoff": "教師增加聯絡，承辦不保證有空。"
+          },
+          {
+            "id": 4,
+            "text": "請他只提供轉檔步驟，讓同學自己重做，我在旁看一次。",
+            "action": "提出教師陪同的自願操作練習，限本人帳號自己操作，依承辦允許流程辦。",
+            "tradeoff": "教師花監看時間，學生可能覺得效率變慢。"
+          },
+          {
+            "id": 5,
+            "text": "這回先請他退出補正操作，讓兩名本人直接跟窗口對接。",
+            "action": "在正常必要協調之外明確不再讓熟手參與本次技術補救，教師協助兩本人釐清需求。",
+            "tradeoff": "教師承擔額外對接，熱心者可能受挫。"
+          },
+          {
+            "id": 6,
+            "text": "邀他自願把『能幫到哪裡』整理給全班，我審過再用。",
+            "action": "提出以此次權限界線為內容的自願分享邀約，教師核實且不公開帳號人資訊，不當強制處罰。",
+            "tradeoff": "教師增加審稿與課內時間，學生可拒絕。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點被他的手速說服，願意和他一起示範『停在最後一步』。",
+          "action": "提出教師自有示範檔及合法示範帳號的非必要演練安排，邀其自願合作，明確示範必由本人確認，不用真實學生帳號。",
+          "tradeoff": "教師需準備及核對演練環境，學生可能覺得被拿來當反例；不得要求其公開認錯換補正。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3313907691
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "5a6198bd33f5f874e2611b61f0b7920f596797521a5b58a2dee84946af144025"
+      },
+      "consequenceDirections": {
+        "A": "同理與協商彈性如何承受不被教師救場可發展。",
+        "B": "熟手能否用不越權的方式取得認可可發展，不預設材料完成。",
+        "C": "數位能力與認可需求能否轉成理解正規權限可發展。",
+        "D": "認可需求能否轉為有界線的協作與同理可發展，未備妥不稱已示範。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0f60a9ff6ff8d76aa690ed345b98ca496e7c2fb01cf89281b229a3b95f38eb0b",
+    "draftSha256": "552b5447dd06ec005b0d1b8a6b593c94e43f4786b6b5d0e72b225415d5a64a14",
     "seedAssignmentVersion": 1
   }
 }

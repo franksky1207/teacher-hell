@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "89cad0f04c2a36cb2cb3b6190a0a180cdba63879dcb0ad47e13be58e1d28800a",
+      "checkedAt": "2026-11-27T18:40:52.229Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我把早掃提案送權責單位，先確認全班通勤條件再定。",
+            "action": "提出正式改時段需求並蒐集最少必要通勤資訊，核准前不擅改。",
+            "tradeoff": "教師增加調查送審，可能未獲准。"
+          },
+          {
+            "id": 2,
+            "text": "申請早晚分段，各人選可行時段，再公平分工。",
+            "action": "提出早晚分段掃除的協商方案，須符合校規、總工作量公平與學生實際可行性。",
+            "tradeoff": "教師增加輪值協調，可能難找到足夠人。"
+          },
+          {
+            "id": 3,
+            "text": "先申請讓通勤受影響者換到可較早完成的掃區。",
+            "action": "向掃區單位提出公平換區需求，不由同學私下固定替掃。",
+            "tradeoff": "教師須協調其他班及掃區，未必有合適位置。"
+          },
+          {
+            "id": 4,
+            "text": "保留合法時段，先和全班重新規劃流程，看能不能減掉重複工作。",
+            "action": "提出掃除流程檢視與合理分工，不以趕速度降低安全或強迫學生犧牲休息。",
+            "tradeoff": "教師增加觀察設計，不能保證趕上特定班車。"
+          },
+          {
+            "id": 5,
+            "text": "邀交通與學務窗口一起談，不只讓本班自己調來調去。",
+            "action": "提出學生自願參與的通勤與掃除協調會談需求，教師陪同，不承諾改校車班次。",
+            "tradeoff": "多方聯絡耗時，學生可能怕公開家況；僅分享必要資訊。"
+          },
+          {
+            "id": 6,
+            "text": "先談自願輪替的不同工作，不讓同一批住近的人永遠收尾。",
+            "action": "向全班提出在合法時段內公平輪替工作內容的方案，需兼顧必要通勤個別調整，不把同意視為永久代掃。",
+            "tradeoff": "教師須持續維護輪值，學生可能不願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到四十分鐘也急了，願意這週多留幾次，陪他們把實際卡在哪裡走一遍。",
+          "action": "在合法且不延誤學生必要離校安排下，自願於本週可調放學時段觀察掃除到交接流程，承諾依實際所得再提出改進。",
+          "tradeoff": "教師犧牲私人收尾時間，不能先保證找到解法或已有測試結果。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 749632219
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "b41ff85d78b17531cbbe933f0524ba6df670f61c1fa6478ed815c23d26a67f3b"
+      },
+      "consequenceDirections": {
+        "A": "家計壓力與實際分工能否相容可發展。",
+        "B": "串聯者能否容納不同生活條件與制度要求可發展。",
+        "C": "學生是否覺得困境被看見及其主動傳達意願可發展，不以觀察取代必要支持。",
+        "D": "制度彈性與家庭生計需求的取捨可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fc3eb803af4c1242dd7317bdd97b1ae8e12de5a33d0652bf038a78b49855dc87",
+    "draftSha256": "89cad0f04c2a36cb2cb3b6190a0a180cdba63879dcb0ad47e13be58e1d28800a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1670e3052e9ae93fe44b70bae188cf33e66896170af79dd12ee0c4513052f1dc",
+      "checkedAt": "2026-11-27T18:40:52.208Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留手作，我把理由一次說明，今天不再逐次回報。",
+            "action": "告知家長維持本組自願手作，說明學習目的並設定正常聯絡時段再回覆後續。",
+            "tradeoff": "保留學生樂趣，承擔家長覺得不被尊重的風險。"
+          },
+          {
+            "id": 2,
+            "text": "提議在課內留一段製作時間，別把材料一直帶回家。",
+            "action": "與學生商議將可行製作集中於教師可調課內時段，徵詢各人意願。",
+            "tradeoff": "占用原課內內容，未必全組同意。"
+          },
+          {
+            "id": 3,
+            "text": "請小組自己列出想保留的部分，再決定要不要縮小道具。",
+            "action": "邀小組自願重新討論規模，由教師說明可簡化但不強迫放棄手作。",
+            "tradeoff": "討論耗時且可能仍選原規模，家長未必滿意。"
+          },
+          {
+            "id": 4,
+            "text": "問家長願不願意來聽孩子解釋，先不由我替他們砍工作。",
+            "action": "提出親師生自願會談邀約，需學生及家長同意，不要求學生替自己辯護才可繼續。",
+            "tradeoff": "增加協調時間，家長可拒絕。"
+          },
+          {
+            "id": 5,
+            "text": "我提供可選的簡化做法，讓每個人選擇投入到哪裡。",
+            "action": "在公平課務內提出道具分層製作方案，允許學生各自選擇非必要細節投入程度。",
+            "tradeoff": "教師增加設計協調，小組可能難整合。"
+          },
+          {
+            "id": 6,
+            "text": "這次展示改成可不用道具，想做的也不因此加分。",
+            "action": "公布本次展示道具自選且不列評分，向全班同步，保留原有核心學習要求。",
+            "tradeoff": "教師需調整並說明規準，家長仍不能代全組決定是否製作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也喜歡這些歪房子，答應在課間陪他們做一小段。",
+          "action": "向小組提出教師以可調課間參與一次自願手作的邀約，並向家長坦白說明自己也看重過程。",
+          "tradeoff": "教師犧牲休息且可能被指偏袒低效率，學生未必願老師加入。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3915537158
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "56fcf9cf43fa03472ed6d98ebead22c4fd23825ce35605db8805a08b6458e5a3"
+      },
+      "consequenceDirections": {
+        "A": "疲勞家長是否接受不同效率觀與有限回報可發展。",
+        "B": "家長對教師投入與學生選擇的督促是否加劇可發展，不假定全組接受。",
+        "C": "撤除工具成果誘因後學生是否仍享受製作及家長反應可發展。",
+        "D": "家長是否能聽見手作樂趣而非只有效率可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d52c9df9e3b18bd50e12832a486d59e01252d38ed8a3a289a66d42f644a9086",
+    "draftSha256": "1670e3052e9ae93fe44b70bae188cf33e66896170af79dd12ee0c4513052f1dc",
     "seedAssignmentVersion": 1
   }
 }

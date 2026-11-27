@@ -16,14 +16,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90db6f0ab9ebf4d7fabd6b8fea7bd436471e4ae0a9a11e16a871a7f7754f91fe",
+      "checkedAt": "2026-11-27T18:40:52.237Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "整批提出退換需求，這次先不當示範班。",
+            "action": "向總務申請整批退換及暫停本班示範，合法值勤另依必要安排。",
+            "tradeoff": "教師要整理退件，同事面臨採購變更。"
+          },
+          {
+            "id": 2,
+            "text": "只留下合身的，請權責人員調整學生任務。",
+            "action": "提出僅合身者參與合法示範，其他自願公平調至適齡安全任務的申請。",
+            "tradeoff": "增加輪值協調，可能有人感到被區分。"
+          },
+          {
+            "id": 3,
+            "text": "我負責整理全班尺寸需求，請他據此申請分碼。",
+            "action": "徵詢學生必要尺寸資料後彙整給設備單位，不記無關身體評價。",
+            "tradeoff": "教師增加調查時間，未必能採購。"
+          },
+          {
+            "id": 4,
+            "text": "申請借既有合身備品，這批先分開保管待處理。",
+            "action": "提出查詢及借調合適舊備品的需求，由有權者確認可用。",
+            "tradeoff": "教師增加借還管理，庫存可能不足。"
+          },
+          {
+            "id": 5,
+            "text": "邀總務到場看一次實際滑落，不讓照片替學生試危險。",
+            "action": "提出在安全靜態條件由成人檢視尺寸問題的會勘需求，不要求學生反覆穿著走動。",
+            "tradeoff": "教師須安排時間，同事可能感到被驗收。"
+          },
+          {
+            "id": 6,
+            "text": "請主管協調延後示範，別把採購時程壓在本班輪值上。",
+            "action": "具名提出示範時程展延與值勤安排分開處理的需求。",
+            "tradeoff": "增加主管協調且未必獲展延，不能停止必要安全接續。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想替均碼背書，願意提出全校備品應有不同尺寸的採購建議。",
+          "action": "在必要真實試用回饋之外，主動整理全校安全備品應提供多尺寸及適配評估的具名改善建議，送有權單位審議，不代其決定採購。",
+          "tradeoff": "教師多花整理與行政協調時間，可能得罪既定採購端且未必採納。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 907936296
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "2e57a6203a3e9f2a1b2d350345fd73bae431de8993c256a6e8f0a4ab118437c7"
+      },
+      "consequenceDirections": {
+        "A": "尺寸差異與同事示範期待如何兼顧可發展。",
+        "B": "信任能否容納拒用整批與資源提供後續可發展。",
+        "C": "職員是否願調整資源與信任可發展，未稱取得新尺寸。",
+        "D": "職員對超出本班退換的制度建議是否支持、其信任與資源提供方式可發展，未預設採購標準已改。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒具名寫不合用回饋易與各分支必要如實回報混同；改為額外全校多尺寸採購改善提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "整批提出退換需求，這次先不當示範班。",
+                "action": "向總務申請整批退換及暫停本班示範，合法值勤另依必要安排。",
+                "tradeoff": "教師要整理退件，同事面臨採購變更。"
+              },
+              {
+                "id": 2,
+                "text": "只留下合身的，請權責人員調整學生任務。",
+                "action": "提出僅合身者參與合法示範，其他自願公平調至適齡安全任務的申請。",
+                "tradeoff": "增加輪值協調，可能有人感到被區分。"
+              },
+              {
+                "id": 3,
+                "text": "我負責整理全班尺寸需求，請他據此申請分碼。",
+                "action": "徵詢學生必要尺寸資料後彙整給設備單位，不記無關身體評價。",
+                "tradeoff": "教師增加調查時間，未必能採購。"
+              },
+              {
+                "id": 4,
+                "text": "申請借既有合身備品，這批先分開保管待處理。",
+                "action": "提出查詢及借調合適舊備品的需求，由有權者確認可用。",
+                "tradeoff": "教師增加借還管理，庫存可能不足。"
+              },
+              {
+                "id": 5,
+                "text": "邀總務到場看一次實際滑落，不讓照片替學生試危險。",
+                "action": "提出在安全靜態條件由成人檢視尺寸問題的會勘需求，不要求學生反覆穿著走動。",
+                "tradeoff": "教師須安排時間，同事可能感到被驗收。"
+              },
+              {
+                "id": 6,
+                "text": "請主管協調延後示範，別把採購時程壓在本班輪值上。",
+                "action": "具名提出示範時程展延與值勤安排分開處理的需求。",
+                "tradeoff": "增加主管協調且未必獲展延，不能停止必要安全接續。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想替均碼背書，願意具名寫下這次不合用的回饋。",
+              "action": "由教師承擔具名試用回饋的整理工作，列真實不合身問題與可確認範圍，不誇大全批皆危險。",
+              "tradeoff": "耗時並可能得罪採購端，未保證改標準。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3903651204
+            },
+            "selectedIds": [
+              3,
+              6,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "30b67c547d7327d0a56de10be323e4fd335a8d9b23e7bee4211b14a094c8653c"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事對導師是否可靠的看法與資源配置壓力可發展。",
+            "B": "資源提供方式能否改變與安全期待可發展。",
+            "C": "職員是否願調整資源與信任可發展，未稱取得新尺寸。",
+            "D": "職員的信任與安全觀念如何回應正式負面回饋可發展，非只有此項如實回報。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c2bc5b263e8adfaa16759e9d893edd3d740cd474ccd091c302ad7189c3a03731",
+    "draftSha256": "90db6f0ab9ebf4d7fabd6b8fea7bd436471e4ae0a9a11e16a871a7f7754f91fe",
     "seedAssignmentVersion": 1
   }
 }

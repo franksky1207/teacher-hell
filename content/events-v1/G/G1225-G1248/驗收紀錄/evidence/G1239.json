@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4fd92c65e41841b3fbce7c7c6c9825c6fd46690704e69196bb0f3346bced1c0e",
+      "checkedAt": "2026-11-27T18:40:52.241Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我接下評估工作，請總務判斷全批能不能用。",
+            "action": "徵詢家長同意後提出全批受贈及安全適用評估需求，核准前不安裝。",
+            "tradeoff": "教師增加送審與保管，不保證能用。"
+          },
+          {
+            "id": 2,
+            "text": "只申請收可用的掛勾，電線盒請他領回。",
+            "action": "提出部分受贈方案，掛勾也須確認承重及場地，不擅自貼設。",
+            "tradeoff": "教師仍需確認，家長須處理部分退物。"
+          },
+          {
+            "id": 3,
+            "text": "這次全批婉拒，請他選方便的合法領回時段。",
+            "action": "不承擔新增安裝工作，與家長協商全批領回。",
+            "tradeoff": "家長多一次搬運，可能覺得信任落空。"
+          },
+          {
+            "id": 4,
+            "text": "問他可否改捐校內共用庫，由總務決定用途。",
+            "action": "徵詢改受贈對象同意，再向總務提出接收需求，不逕將物品轉出。",
+            "tradeoff": "教師多一段協調，總務可能不收。"
+          },
+          {
+            "id": 5,
+            "text": "先不收作電線用途，詢問盒子能否經核可改放一般文具。",
+            "action": "提出改作一般非電器收納的評估方案，仍須家長同意及校方確認適用。",
+            "tradeoff": "教師要找實際需要，可能也無處放。"
+          },
+          {
+            "id": 6,
+            "text": "等他出差回來，再一起和總務談，不急著替他全盤決定。",
+            "action": "徵詢暫緩受贈並預約日後共同討論的方案，物品按合法暫存或領回處理。",
+            "tradeoff": "教師多花共同會談時間，家長可能不想再參與。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也累了，直說我沒力氣接安裝，願意幫他安排一次合法退物交接就好。",
+          "action": "婉拒本次受贈，提出由教師額外協調家長授權代領者或合法物流退回的選擇，不先替其付運費。",
+          "tradeoff": "教師仍負協調時間，家長需同意方式與可能運費，可能覺得被退得很徹底。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2334971903
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "b7bc8dd4007ecdbc18d39e357c80ee9b94360f1661b02ec540028aa197084ae7"
+      },
+      "consequenceDirections": {
+        "A": "疲勞雙方能否接受教師自我保護及資源提供落空可發展，非只有說不要收。",
+        "B": "家長的信任與資源提供能否接受行政等待可發展。",
+        "C": "疲勞與被退心意如何影響資源意願可發展。",
+        "D": "不從眾的實用心意能否接受拆分可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e8656e244d9fbfcaadc84973a44d6eb5f7db955cdebbf5c43734a07915d8dffc",
+    "draftSha256": "4fd92c65e41841b3fbce7c7c6c9825c6fd46690704e69196bb0f3346bced1c0e",
     "seedAssignmentVersion": 1
   }
 }

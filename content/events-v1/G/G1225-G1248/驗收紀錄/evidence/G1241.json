@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ba101084da7c7f7ca0dda77383c19d1fa8daa9504d4fbb19d6b96f522cd897a8",
+      "checkedAt": "2026-11-27T18:40:52.244Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "新舊分區，我和他一起重排，不讓誰取代誰。",
+            "action": "在合法容量內提出並執行兩類書共存分區，教師協調與協助整理。",
+            "tradeoff": "占用整理時間，兩邊可擺數量都減少。"
+          },
+          {
+            "id": 2,
+            "text": "科普先回館，教室維持原書，想推書另提案。",
+            "action": "依法辦理新借館藏返還，閱讀角暫維持原配置，開放其另提自願建議。",
+            "tradeoff": "教師增加還書協調，學生可能覺得心血白費。"
+          },
+          {
+            "id": 3,
+            "text": "每次只換少量，由全班自願推薦，不做唯一人氣排名。",
+            "action": "提出限量輪替的新書展陳方案，原藏書仍可取閱，待合法借閱與班級協調。",
+            "tradeoff": "教師持續管理輪替，股長未必喜歡慢慢來。"
+          },
+          {
+            "id": 4,
+            "text": "邀他挑一本真的想推的，辦一次自願介紹，不硬塞整排。",
+            "action": "提出非必要短推薦活動邀約，學生自願聽取，教師協助安排可調時段。",
+            "tradeoff": "教師花安排時間，介紹可能無人響應。"
+          },
+          {
+            "id": 5,
+            "text": "圖書選擇改由幾個自願讀者共同協商，他負責整理但不獨決。",
+            "action": "提出共同書目協商的班務分工，徵詢願意參與者並明定導師最終權責。",
+            "tradeoff": "增加會談與意見衝突，股長失去獨立決定感。"
+          },
+          {
+            "id": 6,
+            "text": "我接回這次選書，把股長工作限在他願意承擔的管理項目。",
+            "action": "由導師承擔本次新增書目選擇，與股長協商可保留的整理借還工作，不當懲罰撤職。",
+            "tradeoff": "教師增加選書工作，學生可能覺得被架空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想知道他為什麼看得下去，向他借一本自己讀，不替全班答應。",
+          "action": "依合法借閱規範向學生提出交流其推薦書的邀約，教師自願在私人可用時間閱讀後回談，班級仍維持原權益。",
+          "tradeoff": "教師付出私人閱讀時間，學生可能不滿只是老師讀。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3088422198
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "dc111319e2d2a2fcc3b555fcad4c5b59637a7241260c2c2be16bb8bdd88a58c2"
+      },
+      "consequenceDirections": {
+        "A": "少數品味被個別認真對待能否讓其停止以執行力壓過讀者可發展，未借到不稱已讀。",
+        "B": "少數品味能否透過說服而非封存取得空間可發展。",
+        "C": "不從眾者對自身管理權限的反應可發展。",
+        "D": "執行力與他人閱讀選擇如何共處可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7a2f33eca542dcb491d4759c4cd4f6ae384d00191c789e4799f107572bcf8317",
+    "draftSha256": "ba101084da7c7f7ca0dda77383c19d1fa8daa9504d4fbb19d6b96f522cd897a8",
     "seedAssignmentVersion": 1
   }
 }

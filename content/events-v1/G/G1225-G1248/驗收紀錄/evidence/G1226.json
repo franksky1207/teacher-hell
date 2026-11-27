@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "417cf25d60e42b317525e9bc1621627d46f6ada52266ff7d4486c2721fd6616a",
+      "checkedAt": "2026-11-27T18:40:52.215Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先和他約一次現場確認，把兩邊認定的改善標準講清楚。",
+            "action": "提出共同確認傘架現況及可執行巡查方式的邀約，不更改必要安全標準。",
+            "tradeoff": "教師花會談時間，對方可能不願協商。"
+          },
+          {
+            "id": 2,
+            "text": "請主管協調巡檢與回報方式，我把這幾次時序照實附上。",
+            "action": "具名向主管提出工作協調需求，附實際訊息時序，不斷言對方報復。",
+            "tradeoff": "教師承擔升高職場摩擦及整理時間。"
+          },
+          {
+            "id": 3,
+            "text": "申請重新評估傘架位置，這次請總務一起看。",
+            "action": "提出由有權單位勘查傘架與動線的需求，不擅移至不安全位置。",
+            "tradeoff": "多一段場地協調，未必有更好位置。"
+          },
+          {
+            "id": 4,
+            "text": "暫時由我增加課間巡看，不把額外壓力丟給值日生。",
+            "action": "在可調課間自願加密本人巡看，必要清潔照常分工，不讓學生守候。",
+            "tradeoff": "教師犧牲休息，難長期維持。"
+          },
+          {
+            "id": 5,
+            "text": "詢問可否增設合法瀝水用品，我負責提需求。",
+            "action": "向總務提出評估合適接水或防滑用品的需求，須符合通道安全並核准後使用。",
+            "tradeoff": "教師花申請時間，資源不保證取得。"
+          },
+          {
+            "id": 6,
+            "text": "另約他談上週傘架那句話，安全紀錄仍各走各的。",
+            "action": "邀職員在正常工作可調時段私下談上週的溝通摩擦，不以撤報作會談條件。",
+            "tradeoff": "要承受當面聽不滿與對方拒談。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每張照片都像在接戰書，請他改走正式回報，我不再額外陪著逐張爭辯。",
+          "action": "提出非緊急照片依正式窗口彙整回應的協商要求，停止私人即時辯論，緊急安全聯絡仍即時處理。",
+          "tradeoff": "教師可能被認為不合作，仍須花正式回覆時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2022552614
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "0e954cfccb01efe6ed7d49b45c1349f8998acebdf204ca6f070e3e98e3ac8694"
+      },
+      "consequenceDirections": {
+        "A": "職員既有不滿與任務負荷在第三方介入下可發展。",
+        "B": "職員對關係界線與任務壓力的反應可發展，不能阻擋合法呈報。",
+        "C": "私人不滿能否與職務安全判斷分開可發展。",
+        "D": "安全原則與求認可壓力能否轉為可行合作可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "820539e9814a45c43215371c78d0d3c8832b69688a7d38a3fc06bf321b2dd104",
+    "draftSha256": "417cf25d60e42b317525e9bc1621627d46f6ada52266ff7d4486c2721fd6616a",
     "seedAssignmentVersion": 1
   }
 }

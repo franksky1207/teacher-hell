@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "94dabea58e949b3f20089b4a4c5de3c03174206b45d02b71e1655b77dd2c01fe",
+      "checkedAt": "2026-11-27T18:40:52.230Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "邀兩人各自說完，我來主持一次不互相指責的短談。",
+            "action": "提出自願共同會談，由教師協助區分感受與實際清潔需要。",
+            "tradeoff": "占用課間，任一方可拒絕。"
+          },
+          {
+            "id": 2,
+            "text": "這回先改分工，清潔由別位自願組員負責。",
+            "action": "徵詢全組重新分配合宜清潔與記錄工作，不能強迫他人多做。",
+            "tradeoff": "教師增加協調，學生可能覺得被拿走負責的工作。"
+          },
+          {
+            "id": 3,
+            "text": "提出各用一份器材的方案，先確認課務和數量。",
+            "action": "查詢實作是否可合法分用器材，足夠且合宜才採用，不多耗材硬分。",
+            "tradeoff": "教師增加管理且可能設備不足。"
+          },
+          {
+            "id": 4,
+            "text": "我先分別談，今天不要求他們立刻坐下和好。",
+            "action": "另排可調課間各別聽雙方的受傷與後續合作期待。",
+            "tradeoff": "教師多花兩段時間，合作尷尬不會立即消失。"
+          },
+          {
+            "id": 5,
+            "text": "請實作老師額外講解一次清潔流程，全組一起學。",
+            "action": "提出合格教師進行額外操作說明的需求，面向整組而非懲罰特定人。",
+            "tradeoff": "增加教學時間，對方未必能立即安排。"
+          },
+          {
+            "id": 6,
+            "text": "若兩人都願意，我協調暫時分組，下一回再談合作。",
+            "action": "依課務與公平原則提出自願暫分組申請，等待授課者確認。",
+            "tradeoff": "可能牽動別組且失去磨合機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我忍不住替那雙洗紅的手心疼，接下這次額外收尾，請他先停止加洗。",
+          "action": "在完成必要清潔後，自願承擔本次非必要整理收尾，明確不再要求或鼓勵反覆加洗，讓學生自選其他合作工作。",
+          "tradeoff": "教師犧牲休息，學生可能覺得被當不會做事；不以教師勞力替代應有安全流程。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3330741509
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "14c9dfb1e6d8a1b6c0298b7fd1d013732cb6dfe532fd57c4ae08bfd3d122a009"
+      },
+      "consequenceDirections": {
+        "A": "學生是否能在不對質下表達與未來投入意願可發展。",
+        "B": "默默出力者是否願放手與其防護原則的拉扯可發展。",
+        "C": "學生原則能否轉成合宜做法，不以說明取代必要安全。",
+        "D": "迴避衝突與人力投入在換組選擇下可發展，不預設獲准。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52f58fce334b3df81e6ace6fb93e65cc459dba5c9a72fb4fad149a82e12082b1",
+    "draftSha256": "94dabea58e949b3f20089b4a4c5de3c03174206b45d02b71e1655b77dd2c01fe",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3501dccae2d9e7911a97a89a6fd8d4bbb9435d1032d3998d2235f7a7e743d184",
+      "checkedAt": "2026-11-27T18:40:52.248Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "現在請他進來，我先讓學生收好桌面，安靜改作短閱讀。",
+            "action": "在安全施作範圍確認後配合即時施工，教師調整可調自習內容並維持隔離。",
+            "tradeoff": "打斷原節奏並增加教師帶班負擔。"
+          },
+          {
+            "id": 2,
+            "text": "請他下課再來，我承諾那段由我協調清場。",
+            "action": "提出下課安全清場配合方案，待職員可用時間確認。",
+            "tradeoff": "教師犧牲課間，職員可能不能等。"
+          },
+          {
+            "id": 3,
+            "text": "我申請把自習移到合法空間，讓他在原教室處理。",
+            "action": "提出安全替代場地需求，核准且有人照管後才移動學生。",
+            "tradeoff": "教師增加搬班協調，未必有空間。"
+          },
+          {
+            "id": 4,
+            "text": "請他另約今天放學，我留下來配合。",
+            "action": "提出本人放學可調時段陪同施作的邀約，職員及權責單位同意才排。",
+            "tradeoff": "教師延後私人安排，職員未必有空。"
+          },
+          {
+            "id": 5,
+            "text": "向主管請求協調施作時段，不由我們門口兩個人硬擠。",
+            "action": "提出由權責主管統整安全施作與課務的需求，風險持續依法隔離。",
+            "tradeoff": "增加聯絡及等待，同事可能覺得小事被放大。"
+          },
+          {
+            "id": 6,
+            "text": "若我具資格可處理，申請把黏貼留給我下課做，拍照仍等完成。",
+            "action": "向權責單位確認教師可否施作及操作要求，獲准且能力合適才承擔，不先收作已完成。",
+            "tradeoff": "教師增加技術與材料保管責任，可能無法授權。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓他抱著工具白站，願意現在先出去和他排出今天可行的每一段。",
+          "action": "在班級有合規照管且不影響必要安全下，挪用本人可調時間與職員當場核對雙方既定行程，協商具體時段，不擅自取消其工作。",
+          "tradeoff": "教師中斷原工作且可能仍無交集，承受其持續催促。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 173350039
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "153d133656257dc31ff86314f201f5bb15e5c1393665dd484f6ace409ce9dece"
+      },
+      "consequenceDirections": {
+        "A": "維持學習與加速施工的代價可發展，不預設借到教室。",
+        "B": "原則派是否願調整當日排程與督促可發展。",
+        "C": "職員對配合與資源落實的期待可發展，不預設學生全能專心。",
+        "D": "投入現場協調能否替代立即施工的堅持可發展，非假定已排成功。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8b6f3a3fc3654b7c317b8f2c188f6d7277253477401b9cd6edc03cf9796d9988",
+    "draftSha256": "3501dccae2d9e7911a97a89a6fd8d4bbb9435d1032d3998d2235f7a7e743d184",
     "seedAssignmentVersion": 1
   }
 }

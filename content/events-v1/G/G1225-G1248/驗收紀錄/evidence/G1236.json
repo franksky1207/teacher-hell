@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c63b4cc2053cae4f4f7ef566a6e025f05dc89ac8d4dde0631bdda5fe74d05557",
+      "checkedAt": "2026-11-27T18:40:52.235Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我協調一次短寬限，先問組員哪些部分正在等。",
+            "action": "在合法課務範圍提出二十分鐘寬限協商，徵詢組員實際依賴，不保證核准。",
+            "tradeoff": "教師花即時協調時間，組員可能仍受延誤。"
+          },
+          {
+            "id": 2,
+            "text": "先交已完成的版本，剩下列明未完成，不替他補成品。",
+            "action": "協助按真實完成度提出分段交付方案，保留各組員原成果，不冒充全稿完成。",
+            "tradeoff": "教師增加版本說明，學生得面對缺漏被看見。"
+          },
+          {
+            "id": 3,
+            "text": "邀他現在向組員求援，我陪著說，但家況只說他同意的。",
+            "action": "提出教師陪同的自願組內求援，由學生決定可揭露範圍，徵詢他人願否接分工。",
+            "tradeoff": "需要聯絡時間，組員可拒絕額外勞動。"
+          },
+          {
+            "id": 4,
+            "text": "我協助檔案合併與格式，他自己的內容仍由他完成。",
+            "action": "提出教師僅協助授權可用的技術整理，不代寫核心學習內容，先確認符合課務規範。",
+            "tradeoff": "教師增加工作，仍不保證趕上期限。"
+          },
+          {
+            "id": 5,
+            "text": "向授課者申請調整交付方式，我不先承諾二十分鐘。",
+            "action": "提出由權責教師評估替代展示或延後部分交付的需求，取得同意才改。",
+            "tradeoff": "教師多花協調時間且學生須等待。"
+          },
+          {
+            "id": 6,
+            "text": "這回不幫趕稿，先和他重新分配下一段工作，別再一個人攬。",
+            "action": "在必要當次課務處理之外，提出由其與組員自願重議後續分工的邀約，教師主持一次。",
+            "tradeoff": "教師增加後續會談時間，本次缺漏仍須按事實處理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心軟，但不想替他演戲，願意陪他一起把『來不及』當面說出來。",
+          "action": "邀學生由教師陪同當面向組員說明未完成、直接協商可接受的影響與分工，不先替其談定寬限或要求別人救援。",
+          "tradeoff": "教師承擔會談與他人不滿，學生可拒絕，家況不強迫公開。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2910428938
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "590cf1b968ebc8eeac6b0faa71798da527cc2c014443e9f7c9cb6b306066ef2a"
+      },
+      "consequenceDirections": {
+        "A": "有限救急是否被理解為可靠支持與責任分擔可發展。",
+        "B": "社交熱心者能否反過來接受幫忙及信任可發展。",
+        "C": "對可靠導師的信任能否承受一起面對失約而非掩護，責任感可發展。",
+        "D": "社交主動與責任感能否接受不包辦可發展。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十一輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1d8a38e0d7ba744af5359c880e808a5f6e7ea428c3941fb96167179b9ecee405",
+    "draftSha256": "c63b4cc2053cae4f4f7ef566a6e025f05dc89ac8d4dde0631bdda5fe74d05557",
     "seedAssignmentVersion": 1
   }
 }

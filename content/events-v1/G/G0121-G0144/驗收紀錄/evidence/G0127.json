@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c08a42fb21b09a291a0413b565c35bb560ee11ade7ecff69fb291c48fb3a1d6c",
+      "checkedAt": "2026-11-27T03:57:12.276Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "問兩人願不願意改到學校准許的地點會合。",
+            "action": "導師已問兩人願不願意改到學校准許的地點會合。",
+            "tradeoff": "不擋通行，但同伴要重找位置。"
+          },
+          {
+            "id": 2,
+            "text": "在離校條件允許下，讓兩人自願同行一段。",
+            "action": "導師已在離校條件允許下，讓兩人自願同行一段。",
+            "tradeoff": "能陪到人，但路線不一定相同。"
+          },
+          {
+            "id": 3,
+            "text": "請他直接向同伴說今天還能等幾分鐘。",
+            "action": "導師已請他直接向同伴說今天還能等幾分鐘。",
+            "tradeoff": "承諾有限，可能得不到大家認同。"
+          },
+          {
+            "id": 4,
+            "text": "協助兩人各自傳訊息，今天不再靠全群一起等。",
+            "action": "導師已協助兩人各自傳訊息，今天不再靠全群一起等。",
+            "tradeoff": "各自可走，但少了集體同行。"
+          },
+          {
+            "id": 5,
+            "text": "私下問他想不想對被留下的人解釋剛才那句快走。",
+            "action": "導師已私下問他想不想對被留下的人解釋剛才那句快走。",
+            "tradeoff": "回應誤會，但要面對自己的起鬨。"
+          },
+          {
+            "id": 6,
+            "text": "把下次約等的地點與最晚時間留給他們自己談，今天先照原安排走。",
+            "action": "導師已把下次約等的地點與最晚時間留給他們自己談，今天先照原安排走。",
+            "tradeoff": "不替同儕排生活，但今天問題未必談完。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想再替一群人猜誰等誰，請他自己叫住朋友，老師只陪到校內等候點。",
+          "action": "導師已明訂自己只陪行到校內准許等候點，不替學生向朋友傳遞邀約；學生自行選是否叫住同伴。",
+          "tradeoff": "把說出口的責任還他，你不用一直傳話。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2860370333
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ede0e70e09db20088127a403b45c4aa51e8b86036d3773ad78e9c30848c111dc"
+      },
+      "consequenceDirections": {
+        "A": "學生可有新的相約方式；原返程照常，不為協商額外留校。",
+        "B": "每人知道誰先走、誰還在，可能覺得被冷落；訊息需本人同意傳送。",
+        "C": "落單者有人同行，留下的人也可能想先走；不能以友情強留。",
+        "D": "他可能終於出聲，也可能放棄叫人；導師陪到定點即結束，不接下無限等候。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "28d41a21cddb004dbfc8ca9a884f4bf35d95f62d04ab671d7f28f8e2f12565c3",
+    "draftSha256": "c08a42fb21b09a291a0413b565c35bb560ee11ade7ecff69fb291c48fb3a1d6c",
     "seedAssignmentVersion": 1
   }
 }

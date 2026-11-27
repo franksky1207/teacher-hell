@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a26cebb41e7821875ea52c70ac07b7583267121a2176afa4fbb9f8984340f64d",
+      "checkedAt": "2026-11-27T03:57:12.291Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先告訴他已查到哪裡，只講確定的部分。",
+            "action": "導師已先告訴他已查到哪裡，只講確定的部分。",
+            "tradeoff": "能減少未知；答案仍不完整。"
+          },
+          {
+            "id": 2,
+            "text": "給一個你能履行的回覆時間，請他先回原課間安排。",
+            "action": "導師已給一個你能履行的回覆時間，請他先回原課間安排。",
+            "tradeoff": "可預期；老師須守時。"
+          },
+          {
+            "id": 3,
+            "text": "退回不在原責任內的補做，不用多做換不被罵。",
+            "action": "導師已退回不在原責任內的補做，不用多做換不被罵。",
+            "tradeoff": "縮回範圍；他可能怕不夠。"
+          },
+          {
+            "id": 4,
+            "text": "查明後只向必要經手者說明，不全班公開追究。",
+            "action": "導師已查明後只向必要經手者說明，不全班公開追究。",
+            "tradeoff": "保護範圍；旁人未必知道結果。"
+          },
+          {
+            "id": 5,
+            "text": "私下問他最怕會發生什麼，不要求再交一次已補資料。",
+            "action": "導師已私下問他最怕會發生什麼，不要求再交一次已補資料。",
+            "tradeoff": "回應焦慮；占用短談時間。"
+          },
+          {
+            "id": 6,
+            "text": "只找這項資料的實際經手者核對，不向全班問誰弄丟。",
+            "action": "導師已只找這項資料的實際經手者核對，不向全班問誰弄丟。",
+            "tradeoff": "查證聚焦；可能較慢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想看他繼續繞桌，接回剩下由老師能做的整理，讓他先走。",
+          "action": "導師已收回本人有權完成的剩餘整理工作，明說學生不需再額外補做，原查核照常且按約回覆。",
+          "tradeoff": "教師多做；原缺漏線索可能少。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3087683342
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "cd7ae64533c71708a28942900b0f52bdd0fdd90aa549cca99c1ec46012e7b79b"
+      },
+      "consequenceDirections": {
+        "A": "他不用一直來等，若到時未查完仍需主動說；不能以約時拖延必要核實。",
+        "B": "資料整理能往前，他不再反覆補交；教師仍要查明原漏項，不以代做蓋掉問題。",
+        "C": "工作不再無限加碼，原漏項仍須處理；安心不一定立即恢復。",
+        "D": "他知道不是毫無進度，可能仍追問；不能把推測講成結論。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d41e3c639070b23c10c79819928ec1fe3883effee892220f2ef7c94640093a1b",
+    "draftSha256": "a26cebb41e7821875ea52c70ac07b7583267121a2176afa4fbb9f8984340f64d",
     "seedAssignmentVersion": 1
   }
 }

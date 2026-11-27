@@ -15,14 +15,82 @@
     "G01",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e460a2d7e42534612096ac0d3dc3d892f01d63e5f1163d628a9e5a6f594561ae",
+      "checkedAt": "2026-11-27T03:57:12.285Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "用不指人的說法向全班交代漏液和清理。",
+            "action": "導師已用不指人的說法向全班交代漏液和清理。",
+            "tradeoff": "資訊必要；他仍怕被猜。"
+          },
+          {
+            "id": 2,
+            "text": "私下問他願不願意只描述差點滑的地方。",
+            "action": "導師已私下問他願不願意只描述差點滑的地方。",
+            "tradeoff": "保有主導；他可以拒絕。"
+          },
+          {
+            "id": 3,
+            "text": "由任課老師示範安全通報，不用學生重演。",
+            "action": "導師已由任課老師示範安全通報，不用學生重演。",
+            "tradeoff": "有教學作用；多占課時。"
+          },
+          {
+            "id": 4,
+            "text": "安排本人先休息，實作部分由任課另訂完成方式。",
+            "action": "導師已安排本人先休息，實作部分由任課另訂完成方式。",
+            "tradeoff": "保護狀態；可能錯過當節。"
+          },
+          {
+            "id": 5,
+            "text": "和他說好下次怎麼私下叫老師，別等空檔才開口。",
+            "action": "導師已和他說好下次怎麼私下叫老師，別等空檔才開口。",
+            "tradeoff": "降低求助難度；須本人願意。"
+          },
+          {
+            "id": 6,
+            "text": "請任課確認清理後復用條件，你協助班上改做不需該區的內容。",
+            "action": "導師已請任課確認清理後復用條件，你協助班上改做不需該區的內容。",
+            "tradeoff": "不中斷整班；教師多調度。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "今天不想把一隻襪子開成全班檢討，直接終止追問誰脫的。",
+          "action": "導師已制止對襪子及當事人的猜問，明說只談漏液處置，不要求學生公開陳述；必要安全資訊仍照實提供。",
+          "tradeoff": "護住當事人；愛問者可能不滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2398252089
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "9375261a50f98e3fb606dfea9a3190b23fd5e024a78024b13af64dc8c9b8ab74"
+      },
+      "consequenceDirections": {
+        "A": "學生不用公開解釋鞋襪，安全資訊仍由任課說明；教師承受被問偏心的可能。",
+        "B": "同學知道停課原因而不用找誰弄濕，學生可能安心些；不能保證沒人聯想。",
+        "C": "學生可不勉強回桌，任課需補學習安排；不把休息算偷懶。",
+        "D": "安全由有權人判斷，同學可繼續學；當事人的尷尬仍待個別照顧。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7e18a59a335c3e11d00286f4f58b4731ca2e2b4335e4f6b8b7c186343222ec19",
+    "draftSha256": "e460a2d7e42534612096ac0d3dc3d892f01d63e5f1163d628a9e5a6f594561ae",
     "seedAssignmentVersion": 1
   }
 }

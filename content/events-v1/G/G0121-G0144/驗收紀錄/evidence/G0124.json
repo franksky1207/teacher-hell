@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20445bbb8cf25197dbce83e5e0d4c118aff5216ee05e89221f333d5b94885c67",
+      "checkedAt": "2026-11-27T03:57:12.273Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下問被排開的本人，想不想接那段工作。",
+            "action": "導師已私下問被排開的本人，想不想接那段工作。",
+            "tradeoff": "尊重本人，但需再等答覆。"
+          },
+          {
+            "id": 2,
+            "text": "向交件的學生說明你剛才打斷的理由，聽他回應。",
+            "action": "導師已向交件的學生說明你剛才打斷的理由，聽他回應。",
+            "tradeoff": "回應私人不滿，作品分工暫未定。"
+          },
+          {
+            "id": 3,
+            "text": "找小組分別問清排開人的具體行為。",
+            "action": "導師已找小組分別問清排開人的具體行為。",
+            "tradeoff": "釐清責任，但占用多段時間。"
+          },
+          {
+            "id": 4,
+            "text": "讓兩份作品先分開留存，不急著合成一份。",
+            "action": "導師已讓兩份作品先分開留存，不急著合成一份。",
+            "tradeoff": "保住各自內容，但共同作業仍需處理。"
+          },
+          {
+            "id": 5,
+            "text": "約雙方都願意的小組短談，不要求當場和好。",
+            "action": "導師已約雙方都願意的小組短談，不要求當場和好。",
+            "tradeoff": "有直接協商機會，但可能有人拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "依原作業要求另給個人完成方式，不綁在原小組。",
+            "action": "導師已依原作業要求另給個人完成方式，不綁在原小組。",
+            "tradeoff": "保留學習機會，但分組成果會變。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看兩份稿都卡在這裡，先把自己的那句話寫給學生更正。",
+          "action": "導師已書面說明剛才不該一概阻止同伴支持，收回那句限制；未代被排開者決定是否接受工作。",
+          "tradeoff": "想趕快補回失言，但得留下可被核對的承認。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1290974552
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "50e9199c4471dfcc08f3d7209a7e8016148ecc3a3cb0193843258502b47369f4"
+      },
+      "consequenceDirections": {
+        "A": "他能說被噤聲的感受，可能仍不同意；導師需另外問本人意願。",
+        "B": "學生收到明確更正，仍可不接受；作品與排斥問題不因道歉自動解決。",
+        "C": "學生可選獨作，小組需重新安排；教師多一份回饋負擔。",
+        "D": "本人能說想做哪段，幫忙者不必代言；等待會影響排練。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ad7cc99c3d3cb0d38d53d750e42bc935b95a243063bf96174a6543d39425d9bb",
+    "draftSha256": "20445bbb8cf25197dbce83e5e0d4c118aff5216ee05e89221f333d5b94885c67",
     "seedAssignmentVersion": 1
   }
 }

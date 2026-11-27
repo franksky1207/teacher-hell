@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7f2f248780eda8b77c21a1c11aeff53dfc3cdf6bb173aac59a2e3235661f667a",
+      "checkedAt": "2026-11-27T03:57:12.269Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消掃地賭注，請實際玩的人各清自己弄亂的部分。",
+            "action": "導師已取消掃地賭注，請實際玩的人各清自己弄亂的部分。",
+            "tradeoff": "不把輸贏當班務依據；需重新分清垃圾來源。"
+          },
+          {
+            "id": 2,
+            "text": "請原值日生照原班表做，玩遊戲的人另約時間談取笑。",
+            "action": "導師已請原值日生照原班表做，玩遊戲的人另約時間談取笑。",
+            "tradeoff": "維持原分工，值日生仍有負擔。"
+          },
+          {
+            "id": 3,
+            "text": "讓參與者商量一個不分輸贏、大家都同意的補做方式。",
+            "action": "導師已讓參與者商量一個不分輸贏、大家都同意的補做方式。",
+            "tradeoff": "可自己協調，但午休得再花時間。"
+          },
+          {
+            "id": 4,
+            "text": "由你陪留下的學生一起做安全區清理，不叫其他人繼續玩。",
+            "action": "導師已由你陪留下的學生一起做安全區清理，不叫其他人繼續玩。",
+            "tradeoff": "回應他的付出，卻占用導師午休。"
+          },
+          {
+            "id": 5,
+            "text": "把遊戲移到下次班會討論，只先記下不同人的說法。",
+            "action": "導師已把遊戲移到下次班會討論，只先記下不同人的說法。",
+            "tradeoff": "先弄清爭議，今日沒有立刻的遊戲新規。"
+          },
+          {
+            "id": 6,
+            "text": "請學生自己選今天還要不要幫，拒絕不扣班務表現。",
+            "action": "導師已請學生自己選今天還要不要幫，拒絕不扣班務表現。",
+            "tradeoff": "把自願說清，但值日人力可能變少。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想再聽「輸不起」，直接把這回的輸贏紀錄撤掉。",
+          "action": "導師已宣布這回輸贏紀錄不作任何班務或同儕處置依據，撤下記分，制止輸不起的指責；未替人免除實際弄亂責任。",
+          "tradeoff": "停止以輸贏貼標籤，也會讓贏家覺得白玩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 995390698
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "97bb8b52fd2d481ca448beb5742b68423ef8f425dfab2bc47f766b2bdc4c7fcc"
+      },
+      "consequenceDirections": {
+        "A": "賭注依附的紀錄不再有效，學生可能鬆口氣或爭辯；清理責任仍按實際行為處理。",
+        "B": "各人有明確清理範圍，贏家可能抗議不算數；教師須現場釐清誰弄亂什麼。",
+        "C": "值日不再按輸贏換人，留下的學生可自願幫；原值日工作未減少。",
+        "D": "他可離開或留下，值日生須按原分工完成；教師不能拿幫忙當認罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a5358eed9b894844681a58512f26151565883cf1d918ea24aaf779c2aa25ded9",
+    "draftSha256": "7f2f248780eda8b77c21a1c11aeff53dfc3cdf6bb173aac59a2e3235661f667a",
     "seedAssignmentVersion": 1
   }
 }

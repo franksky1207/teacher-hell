@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1e1a9faa762c748f32ecb3a5b4b6124e5a4445fe71a8129114b868f499cecfc5",
+      "checkedAt": "2026-11-27T03:57:12.285Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請職員向現場說明剛才看錯了，不要求學生道歉。",
+            "action": "導師已請職員向現場說明剛才看錯了，不要求學生道歉。",
+            "tradeoff": "由原發話者更正；他可能難堪。"
+          },
+          {
+            "id": 2,
+            "text": "由你向圍觀者說清這次是撿東西，讓職員先回值勤。",
+            "action": "導師已由你向圍觀者說清這次是撿東西，讓職員先回值勤。",
+            "tradeoff": "快速散人；更正由你承擔。"
+          },
+          {
+            "id": 3,
+            "text": "私下請學生補述當時位置，再轉給職員參考。",
+            "action": "導師已私下請學生補述當時位置，再轉給職員參考。",
+            "tradeoff": "資料更準；多一次問話。"
+          },
+          {
+            "id": 4,
+            "text": "與職員走一次該段動線，說好哪些狀況需立刻叫停。",
+            "action": "導師已與職員走一次該段動線，說好哪些狀況需立刻叫停。",
+            "tradeoff": "可用在下次；花值勤協調時間。"
+          },
+          {
+            "id": 5,
+            "text": "請負責主管評估兼看範圍，減少靠一眼猜。",
+            "action": "導師已請負責主管評估兼看範圍，減少靠一眼猜。",
+            "tradeoff": "處理負荷；當天未必改。"
+          },
+          {
+            "id": 6,
+            "text": "向班上說明遇到哨音先停下、之後能說明，不把停下當認罪。",
+            "action": "導師已向班上說明遇到哨音先停下、之後能說明，不把停下當認罪。",
+            "tradeoff": "規則可預期；需班內時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被哨聲嚇得不耐，先請職員別再補喊，由你把大家帶回課間。",
+          "action": "導師已請職員停止對已核實無追跑的學生追加喝止，將學生帶回正常課間，不限制必要安全警示。",
+          "tradeoff": "省掉現場爭辯；職員可能覺得被駁面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3504143082
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "f12fc7f03839a9c8f0fc500c35d3816613d90774875f28b77822c06aab3421ce"
+      },
+      "consequenceDirections": {
+        "A": "警示依據較清楚，職員可能不同意閾值；不取消真正危險的即時制止。",
+        "B": "學生聽到明確撤回，職員可能願意修正或沉默；導師需等其回應。",
+        "C": "人群散去、課間恢復，職員的說法另談；教師須承擔當次解釋。",
+        "D": "學生較敢釐清，職員也能保警示功能；不能取代本次更正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3cd624a13971dc11997f9919e7a311281f7541f1ae8e3cccc68d003e1d90ca95",
+    "draftSha256": "1e1a9faa762c748f32ecb3a5b4b6124e5a4445fe71a8129114b868f499cecfc5",
     "seedAssignmentVersion": 1
   }
 }

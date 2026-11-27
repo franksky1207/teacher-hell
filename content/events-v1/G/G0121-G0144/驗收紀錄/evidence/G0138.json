@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8a9cf140e1c6125bc5593d3ece1f2affbca7bbac015dc59c28d873b5dd8e7a47",
+      "checkedAt": "2026-11-27T03:57:12.286Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先說清不喜歡和現在該完成的課業分開談。",
+            "action": "導師已先說清不喜歡和現在該完成的課業分開談。",
+            "tradeoff": "要求仍在；家長未必安心。"
+          },
+          {
+            "id": 2,
+            "text": "請家長和孩子只挑一個今晚能改善的學習步驟。",
+            "action": "導師已請家長和孩子只挑一個今晚能改善的學習步驟。",
+            "tradeoff": "目標小；其餘焦慮留著。"
+          },
+          {
+            "id": 3,
+            "text": "經本人同意請任課聽一個實際卡點。",
+            "action": "導師已經本人同意請任課聽一個實際卡點。",
+            "tradeoff": "專業對口；需等教師時間。"
+          },
+          {
+            "id": 4,
+            "text": "私下問孩子希望家人怎樣陪，不代家長評感受。",
+            "action": "導師已私下問孩子希望家人怎樣陪，不代家長評感受。",
+            "tradeoff": "保留本人聲音；多一段談話。"
+          },
+          {
+            "id": 5,
+            "text": "提供可自選的少量練習，看看討厭的是哪種題型。",
+            "action": "導師已提供可自選的少量練習，看看討厭的是哪種題型。",
+            "tradeoff": "有新資訊；會增加工作。"
+          },
+          {
+            "id": 6,
+            "text": "請家長先停止以討厭等於放棄的指責，另約合意親子短談。",
+            "action": "導師已請家長先停止以討厭等於放棄的指責，另約合意親子短談。",
+            "tradeoff": "保護表達；對方可能防衛。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想在電話裡爭喜不喜歡，請家長寫最急的一題，改由你書面回覆。",
+          "action": "導師已說明本次通話結束點，請家長自選一題書面提出並約定回覆時間，未停止必要學生支持。",
+          "tradeoff": "避開情緒對撞；回覆可能較晚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2080908625
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "0ceaf9362dcb025877d40310f3d45160b78b4299da8ad2e8edb10bbf26912133"
+      },
+      "consequenceDirections": {
+        "A": "家庭可收到合意的需求，未必全能配合；導師不分派家務。",
+        "B": "問題有可答範圍，家長可能覺得被冷處理；教師須明訂回覆時間。",
+        "C": "問題可獲具體回饋，家長可能不再只聽討厭；孩子控制揭露內容。",
+        "D": "陪複習者有具體可做事，孩子可能願試；不能擴成整晚檢討。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cac964bd5d9e137454c7789da094cf40c0691a45dc74a4e82f9e69e01d9cd8b0",
+    "draftSha256": "8a9cf140e1c6125bc5593d3ece1f2affbca7bbac015dc59c28d873b5dd8e7a47",
     "seedAssignmentVersion": 1
   }
 }

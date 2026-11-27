@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d0def30c5ce85f894e9757786111bd14929fd79a9f5d1d6a362c0f9bab00f2b",
+      "checkedAt": "2026-11-27T03:57:12.284Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只合併能共同討論的部分，另留必要獨談。",
+            "action": "導師已只合併能共同討論的部分，另留必要獨談。",
+            "tradeoff": "省重複；要重通知順序。"
+          },
+          {
+            "id": 2,
+            "text": "兩場都留，各刪掉同樣的介紹時間。",
+            "action": "導師已兩場都留，各刪掉同樣的介紹時間。",
+            "tradeoff": "動得較少；仍要兩次出席。"
+          },
+          {
+            "id": 3,
+            "text": "徵得主責同意，取消其中重複的一場公開交流。",
+            "action": "導師已徵得主責同意，取消其中重複的一場公開交流。",
+            "tradeoff": "省一場；部分內容得另供。"
+          },
+          {
+            "id": 4,
+            "text": "依知情範圍分段出席，非相關人不用全程等。",
+            "action": "導師已依知情範圍分段出席，非相關人不用全程等。",
+            "tradeoff": "減少空等；進出管理費工。"
+          },
+          {
+            "id": 5,
+            "text": "把非敏感重複材料先寄，現場只問問題。",
+            "action": "導師已把非敏感重複材料先寄，現場只問問題。",
+            "tradeoff": "可壓短；事前閱讀增負擔。"
+          },
+          {
+            "id": 6,
+            "text": "請同事重新確認每場非得當面談的事項，再定長度。",
+            "action": "導師已請同事重新確認每場非得當面談的事項，再定長度。",
+            "tradeoff": "目的較清楚；決定較晚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "累得不想再坐兩場，先申請退出自己不必參加的公開段落。",
+          "action": "導師已向主責提出免參加本人非必要公開段落的申請，未缺席必要獨談或自行取消會議。",
+          "tradeoff": "保住本人時間；同事可能覺得沒一起扛。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3691149213
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "c2fd3bb9d146ab9fc711c6468a6a88a439806b05926e02a987cd205bfaa2d574"
+      },
+      "consequenceDirections": {
+        "A": "參與者少一次往返，可能擔心漏訊；教師需補書面資訊。",
+        "B": "可刪不必要報告，主責可能仍堅持；今天需臨時通知。",
+        "C": "大家知道只談新增重點，同事可能嫌省不多；必要獨談保住。",
+        "D": "主責可同意或拒絕，必要出席仍得履行；不是替其他教師一併請假。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fda00026b5f28363c05711899e4b223b5da9ff3184e4c9dd2ae436de8db442e4",
+    "draftSha256": "7d0def30c5ce85f894e9757786111bd14929fd79a9f5d1d6a362c0f9bab00f2b",
     "seedAssignmentVersion": 1
   }
 }

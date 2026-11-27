@@ -15,14 +15,155 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64aca7bcb6382cc7c3925e1490bf99d8fe17034548bb7ba46bbb421b22f1eefb",
+      "checkedAt": "2026-11-27T03:57:12.272Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請圍來的同學先散，讓他去喝水休息。",
+            "action": "導師已請圍來的同學先散，讓他去喝水休息。",
+            "tradeoff": "保住課間，但故事被打斷。"
+          },
+          {
+            "id": 2,
+            "text": "問他願不願意另約一段有空的時間分享。",
+            "action": "導師已問他願不願意另約一段有空的時間分享。",
+            "tradeoff": "留下機會，但要另排時段。"
+          },
+          {
+            "id": 3,
+            "text": "徵得他同意，把題目留到下一堂相關課再談。",
+            "action": "導師已徵得他同意，把題目留到下一堂相關課再談。",
+            "tradeoff": "能連回課程，但需調整教學。"
+          },
+          {
+            "id": 4,
+            "text": "請想問的人先把問題寫下，別圍著他當場回答。",
+            "action": "導師已請想問的人先把問題寫下，別圍著他當場回答。",
+            "tradeoff": "能保留好奇，但整理問題增加工作。"
+          },
+          {
+            "id": 5,
+            "text": "給他選擇只講最後一句就停，不想講也可直接走。",
+            "action": "導師已給他選擇只講最後一句就停，不想講也可直接走。",
+            "tradeoff": "讓他自己收尾，但仍占一點喝水時間。"
+          },
+          {
+            "id": 6,
+            "text": "把後續改成他願意才交的口述或筆記，不要求全班分享。",
+            "action": "導師已把後續改成他願意才交的口述或筆記，不要求全班分享。",
+            "tradeoff": "減少觀眾壓力，但少了現場交流。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "自己也聊上癮，換你講個短故事，讓他先去喝水，其他人想走也能走。",
+          "action": "導師已接過當下說故事的位置，講自己的短故事，明說原學生可去喝水、其他同學可自由離開，不要求任何人留聽。",
+          "tradeoff": "滿足自己想聊的興致，也讓學生離開；代價是教師自己的課間休息縮短。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 792609186
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "ecce125235e7685ed4a4b42edbb14c8ea4b7b106596d2ac53aa64dbd91afb8b3"
+      },
+      "consequenceDirections": {
+        "A": "學生可之後自選回哪些，當下不再被攔；有人可能沒耐心寫。",
+        "B": "人群散開，他能離開；聽眾可能失望，下次分享未必仍有興致。",
+        "C": "教師的短故事轉走注意，學生能去喝水，聽眾可選留或走；導師花掉自己的休息，不再占學生的回答時間。",
+        "D": "故事有合意的續說安排，同學可以選參加；導師需履行時間承諾。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意審查發現原情緒與普通候選的客觀處置太近；改為不同客觀行動、代價與後果，再依原工具真實抽選一次，未追求特定組合。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "請圍來的同學先散，讓他去喝水休息。",
+                "action": "導師已請圍來的同學先散，讓他去喝水休息。",
+                "tradeoff": "保住課間，但故事被打斷。"
+              },
+              {
+                "id": 2,
+                "text": "問他願不願意另約一段有空的時間分享。",
+                "action": "導師已問他願不願意另約一段有空的時間分享。",
+                "tradeoff": "留下機會，但要另排時段。"
+              },
+              {
+                "id": 3,
+                "text": "徵得他同意，把題目留到下一堂相關課再談。",
+                "action": "導師已徵得他同意，把題目留到下一堂相關課再談。",
+                "tradeoff": "能連回課程，但需調整教學。"
+              },
+              {
+                "id": 4,
+                "text": "請想問的人先把問題寫下，別圍著他當場回答。",
+                "action": "導師已請想問的人先把問題寫下，別圍著他當場回答。",
+                "tradeoff": "能保留好奇，但整理問題增加工作。"
+              },
+              {
+                "id": 5,
+                "text": "給他選擇只講最後一句就停，不想講也可直接走。",
+                "action": "導師已給他選擇只講最後一句就停，不想講也可直接走。",
+                "tradeoff": "讓他自己收尾，但仍占一點喝水時間。"
+              },
+              {
+                "id": 6,
+                "text": "把後續改成他願意才交的口述或筆記，不要求全班分享。",
+                "action": "導師已把後續改成他願意才交的口述或筆記，不要求全班分享。",
+                "tradeoff": "減少觀眾壓力，但少了現場交流。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "自己也聽得入迷，請大家別再問，留下你的一題到下次。",
+              "action": "導師已終止當下追問，明說自己的問題也留待學生下次自願分享，不要求他現在答。",
+              "tradeoff": "承認好奇，不再把老師的問題加給現在的他。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1910928419
+            },
+            "selectedIds": [
+              2,
+              5,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "036decca96417e5abd96c26fc085ea155d3631d0d4d059f53cc8ebe5914f59be"
+          },
+          "previousConsequenceDirections": {
+            "A": "學生可以先喝水，導師須等本人願意再問；想聽完的心情暫時落空。",
+            "B": "學生可之後自選回哪些，當下不再被攔；有人可能沒耐心寫。",
+            "C": "他能決定當下的結束點，聽眾需接受未講完；教師須真在選定處停。",
+            "D": "故事有合意的續說安排，同學可以選參加；導師需履行時間承諾。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "50ecd8a77b4183eef505e778d945ad3403d10edee7f82d76b37ea794775d32c9",
+    "draftSha256": "64aca7bcb6382cc7c3925e1490bf99d8fe17034548bb7ba46bbb421b22f1eefb",
     "seedAssignmentVersion": 1
   }
 }

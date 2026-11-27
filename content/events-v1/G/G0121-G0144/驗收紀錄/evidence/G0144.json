@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "13657cccb0a212f459df24a7bd93ce64a75753efdb8390eac1f7589b16e5e3f9",
+      "checkedAt": "2026-11-27T03:57:12.292Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "謝謝幫忙，說清楚你只是習慣坐那個位置。",
+            "action": "導師已謝謝幫忙，說清楚你只是習慣坐那個位置。",
+            "tradeoff": "釐清傳聞；可能讓他尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "只謝謝收傘，明說今天不談私人生活。",
+            "action": "導師已只謝謝收傘，明說今天不談私人生活。",
+            "tradeoff": "守隱私；猜測可能未全消。"
+          },
+          {
+            "id": 3,
+            "text": "問他為什麼會覺得一個人吃飯就是難過。",
+            "action": "導師已問他為什麼會覺得一個人吃飯就是難過。",
+            "tradeoff": "聽見其經驗；談話可能深入。"
+          },
+          {
+            "id": 4,
+            "text": "請他先別把未問清的早餐故事轉給同學。",
+            "action": "導師已請他先別把未問清的早餐故事轉給同學。",
+            "tradeoff": "止住擴散；可能覺得被責怪。"
+          },
+          {
+            "id": 5,
+            "text": "之後順路時向店員說明別替你猜心情，不談學生身分。",
+            "action": "導師已之後順路時向店員說明別替你猜心情，不談學生身分。",
+            "tradeoff": "回到來源；多一次溝通。"
+          },
+          {
+            "id": 6,
+            "text": "轉聊彼此早餐喜好，只說你願分享的日常。",
+            "action": "導師已轉聊彼此早餐喜好，只說你願分享的日常。",
+            "tradeoff": "保留互動；沒回答所有疑問。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想連早餐都被看，決定明天換家店，請他不用幫你留位置。",
+          "action": "導師已決定更換本人次日早餐購買地點，告知學生不需代留位，不要求學生改路或店員配合。",
+          "tradeoff": "得到一點自在；失去熟悉口味路線。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3190897132
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "06d99c166740c72d3efc90dd7fbbd54ce260b52233523ffe4373c5447f168e0b"
+      },
+      "consequenceDirections": {
+        "A": "學生可能覺得自己多事，教師得說是自己的選擇；換店也不能控制所有傳聞。",
+        "B": "學生能修正對獨處的猜測，善意仍被接住；教師需避免嘲笑其誤信。",
+        "C": "學生知道可關心但不能追問，可能失落；不默認店員說法是真的。",
+        "D": "他可發現自己的聯想，也可不答；教師不能把問題變審問。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8a94d58fc8f31f0067e5cb47923d2f168e478eec48bf79aacfab4872510cc81a",
+    "draftSha256": "13657cccb0a212f459df24a7bd93ce64a75753efdb8390eac1f7589b16e5e3f9",
     "seedAssignmentVersion": 1
   }
 }

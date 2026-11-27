@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e593dc9b45ccc3f424db4f4444fed790989aa8a1ed47cb55dd1d860cd926b480",
+      "checkedAt": "2026-11-27T03:57:12.283Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把順序補回去，先問他現在還願不願意說。",
+            "action": "導師已把順序補回去，先問他現在還願不願意說。",
+            "tradeoff": "修正輪次，但下一位需等。"
+          },
+          {
+            "id": 2,
+            "text": "請他選課後私下說，不強拉回當眾發言。",
+            "action": "導師已請他選課後私下說，不強拉回當眾發言。",
+            "tradeoff": "降低曝光，但全班聽不到原想法。"
+          },
+          {
+            "id": 3,
+            "text": "向全班重新列清尚未輪到的人，照名單接下去。",
+            "action": "導師已向全班重新列清尚未輪到的人，照名單接下去。",
+            "tradeoff": "秩序可見，但比較費時。"
+          },
+          {
+            "id": 4,
+            "text": "讓所有尚未說到的人交短句，選共通想法再談。",
+            "action": "導師已讓所有尚未說到的人交短句，選共通想法再談。",
+            "tradeoff": "更多人有入口，但口頭交流縮短。"
+          },
+          {
+            "id": 5,
+            "text": "留一段課內自由補充，由他決定是否加入。",
+            "action": "導師已留一段課內自由補充，由他決定是否加入。",
+            "tradeoff": "保留機會，但原先順序感較弱。"
+          },
+          {
+            "id": 6,
+            "text": "請他指出剛才被跳過的時點，只先核對不逼他重講內容。",
+            "action": "導師已請他指出剛才被跳過的時點，只先核對不逼他重講內容。",
+            "tradeoff": "回應具體申訴，但討論題目暫停。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被當眾抓包很不爽，先把接話權交給原排下一位，自己安靜記完順序。",
+          "action": "導師已停止即興接話，讓原排下一位先完成，自己記錄完整待發言順序並標回被漏者的可選補說位置，不取消其權利。",
+          "tradeoff": "不和學生頂回去，但受傷者需再等清楚說明。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2792264259
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "02688349b5025fedd1bb46a7d7144c4fb1d01fa924885e9254c34fc1f98b6cf6"
+      },
+      "consequenceDirections": {
+        "A": "他可能願說清，教師可找漏接原因；不保證立即恢復發言熱情。",
+        "B": "遺漏可能被補齊，他也能看自己的位置；對教師的失望不必立刻消失。",
+        "C": "他的主張可被保留，可能嫌沒真正聽到自己；教師增加整理。",
+        "D": "課堂不再由教師隨口插隊，學生可能覺得仍被跳過；導師必須依記下順序給其可拒絕的補說位置。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3dd3752631e35f892e10b5e941e3b4d823ff653941773d9e49ad6aeaee570696",
+    "draftSha256": "e593dc9b45ccc3f424db4f4444fed790989aa8a1ed47cb55dd1d860cd926b480",
     "seedAssignmentVersion": 1
   }
 }

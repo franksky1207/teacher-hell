@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4828897d539f836bc1ded2878c8af2eb8e0fa09a1556ca0bd0257aaf76dcb7c1",
+      "checkedAt": "2026-11-27T03:57:12.279Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照活動規定申請一次可回頭的暫停。",
+            "action": "導師已照活動規定申請一次可回頭的暫停。",
+            "tradeoff": "有緩衝，但不等於已退出。"
+          },
+          {
+            "id": 2,
+            "text": "協助他照正式規定退出，不由你替他向家人宣布。",
+            "action": "導師已協助他照正式規定退出，不由你替他向家人宣布。",
+            "tradeoff": "決定明確，但要面對家庭反應。"
+          },
+          {
+            "id": 3,
+            "text": "先陪他列出仍珍惜哪些家人的投入，和哪些檢討想停。",
+            "action": "導師已先陪他列出仍珍惜哪些家人的投入，和哪些檢討想停。",
+            "tradeoff": "能表達感謝與界線，但要費心整理。"
+          },
+          {
+            "id": 4,
+            "text": "問他願不願意先和任課談練習本身，不談家中細節。",
+            "action": "導師已問他願不願意先和任課談練習本身，不談家中細節。",
+            "tradeoff": "可分清運動需要，但需多一次聯繫。"
+          },
+          {
+            "id": 5,
+            "text": "提供校內自願談話的老師，讓他選是否另找人。",
+            "action": "導師已提供校內自願談話的老師，讓他選是否另找人。",
+            "tradeoff": "支持較多，但多一位知情者。"
+          },
+          {
+            "id": 6,
+            "text": "讓他先留一段自己的不公開練球感想，今天不急著送任何申請。",
+            "action": "導師已讓他先留一段自己的不公開練球感想，今天不急著送任何申請。",
+            "tradeoff": "避免倉促，但負荷暫仍在。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也聽煩了那種逐球檢討，先陪他把這週的飯桌回話練成一句就停。",
+          "action": "導師已陪學生練習一段由本人選用的簡短回應，明確停止逐球向導師報告，不聯繫家人或代做退出決定。",
+          "tradeoff": "同理裡有自己的不耐，但不替家長下判斷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 541568143
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "6749a3280f0d4396791a55d5d72a0e34430e392ddfd8d2518405665d238d6ebd"
+      },
+      "consequenceDirections": {
+        "A": "他有自己的說法，家人不一定接受；不是用清單換退出資格。",
+        "B": "他可能分清想停什麼；必要休息照活動規範安排，不以寫感想拖延其退出。",
+        "C": "任課可調校內部分，學生仍控制揭露；飯桌上的壓力不會因此自動解決。",
+        "D": "學生有簡短說法可選用，家人可能仍追問；不因此預設必須退出運動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8e6f22f27fb523b0a5ae7cf37f4f989dd8e120a67cae6903bdd60f3a6eff70c0",
+    "draftSha256": "4828897d539f836bc1ded2878c8af2eb8e0fa09a1556ca0bd0257aaf76dcb7c1",
     "seedAssignmentVersion": 1
   }
 }

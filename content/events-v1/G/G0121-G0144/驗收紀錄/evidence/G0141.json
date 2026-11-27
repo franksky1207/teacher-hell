@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "496a36bb75444914fd6f96b1b3539beb3b8a2a3b56a830dc76d3b9dade75fb55",
+      "checkedAt": "2026-11-27T03:57:12.289Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "把可說的現場依據私下說明，不交代他人的私事。",
+            "action": "導師已把可說的現場依據私下說明，不交代他人的私事。",
+            "tradeoff": "回應疑問；範圍有限。"
+          },
+          {
+            "id": 2,
+            "text": "另找原被請離的人，聽他怎麼理解這次處置。",
+            "action": "導師已另找原被請離的人，聽他怎麼理解這次處置。",
+            "tradeoff": "補本人聲音；多花時間。"
+          },
+          {
+            "id": 3,
+            "text": "向全班說明往後按具體行為提醒，不以一人代表一群。",
+            "action": "導師已向全班說明往後按具體行為提醒，不以一人代表一群。",
+            "tradeoff": "通則清楚；占班務時間。"
+          },
+          {
+            "id": 4,
+            "text": "試用全班看得到的音量提醒，不先叫個人離開圈子。",
+            "action": "導師已試用全班看得到的音量提醒，不先叫個人離開圈子。",
+            "tradeoff": "較少誤認；需維護提醒。"
+          },
+          {
+            "id": 5,
+            "text": "和值勤老師重看提醒方式，只針對相同情況調整。",
+            "action": "導師已和值勤老師重看提醒方式，只針對相同情況調整。",
+            "tradeoff": "成人做法一致；協調費時。"
+          },
+          {
+            "id": 6,
+            "text": "讓聊天者自行選低聲續聊或停止加入，不以退出當處罰。",
+            "action": "導師已讓聊天者自行選低聲續聊或停止加入，不以退出當處罰。",
+            "tradeoff": "保留選擇；仍需照看。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "午休只想安靜一下，改把你能公開的處理理由寫給他。",
+          "action": "導師已以書面說明本人可公開的處理理由，暫結當次口頭追問並提供後續可聯繫時間，未拒絕合法問責。",
+          "tradeoff": "不再當場爭辯；文字可能顯冷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3860557322
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "ec99d786a7fec15593b02e65147a79c2f215ab3f857a12f1dda014d29a5ee7f4"
+      },
+      "consequenceDirections": {
+        "A": "可發現被單獨針對的感受，旁觀者不能代答；不逼其接受說明。",
+        "B": "學生不必猜老師各自習慣，職員可能不同意；需按權責協商。",
+        "C": "他有可回看的理由，也可能還想追問；教師須留再問的時機，不揭他人私事。",
+        "D": "學生較能預期規則，當事人也可能再被聯想；不公開點名。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "52939c32aa0eeec42aebc5ac50e94b4add3b99be4bfa45dda7c2204514ad53f7",
+    "draftSha256": "496a36bb75444914fd6f96b1b3539beb3b8a2a3b56a830dc76d3b9dade75fb55",
     "seedAssignmentVersion": 1
   }
 }

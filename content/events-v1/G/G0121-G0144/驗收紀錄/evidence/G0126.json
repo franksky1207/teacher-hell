@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "19ebbe4fe02aa9b2390c6017eb3faf58302b89b7dc5a156df228282a5bd5241d",
+      "checkedAt": "2026-11-27T03:57:12.275Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "取消今天餘下回合，讓大家各自休息。",
+            "action": "導師已取消今天餘下回合，讓大家各自休息。",
+            "tradeoff": "立刻降溫，但期待續玩的同學失望。"
+          },
+          {
+            "id": 2,
+            "text": "問仍願意的人是否要到可用教室，重新自願報名。",
+            "action": "導師已問仍願意的人是否要到可用教室，重新自願報名。",
+            "tradeoff": "換開通道，但需場地及照看。"
+          },
+          {
+            "id": 3,
+            "text": "讓表演者私下選日後還想不想參加，不當眾表態。",
+            "action": "導師已讓表演者私下選日後還想不想參加，不當眾表態。",
+            "tradeoff": "保護拒絕，但他人暫不知道安排。"
+          },
+          {
+            "id": 4,
+            "text": "請觀眾先談自己剛才做了什麼，不要求表演者留下聽。",
+            "action": "導師已請觀眾先談自己剛才做了什麼，不要求表演者留下聽。",
+            "tradeoff": "處理起鬨，但休息時間被用掉。"
+          },
+          {
+            "id": 5,
+            "text": "與職員說好下次只接受本人再次同意，不用掌聲當答覆。",
+            "action": "導師已與職員說好下次只接受本人再次同意，不用掌聲當答覆。",
+            "tradeoff": "程序明確，但少了即興熱鬧。"
+          },
+          {
+            "id": 6,
+            "text": "把自願表演改為先寫想演內容，另約適合的班務時段。",
+            "action": "導師已把自願表演改為先寫想演內容，另約適合的班務時段。",
+            "tradeoff": "能準備，但不再是當下娛樂。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "承認自己也想看熱鬧，這次由你向大家說清楚是你催過頭。",
+          "action": "導師已向現場說明自己不該用掌聲要求續演並承擔催迫責任，沒有要求學生回報表演。",
+          "tradeoff": "承擔成人的失誤，但會丟面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1808822346
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "c26227daed61b3df11b218ad726ff0a827a4eeebea816be692476ea467c3e1a6"
+      },
+      "consequenceDirections": {
+        "A": "本人可想清楚再回；下一次活動不能先算上他。",
+        "B": "願意者可另玩，退出者不被催；導師增加管理時間。",
+        "C": "同學能分辨催迫行為，可能有人辯稱只是鼓勵；教師需聽具體事實。",
+        "D": "學生不必代老師收場，職員可能仍質疑帶領；後續參與規則仍要執行。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "263153fd7b5921d5de37ce490d144ed48d629296592e783806ca5e6a937e57da",
+    "draftSha256": "19ebbe4fe02aa9b2390c6017eb3faf58302b89b7dc5a156df228282a5bd5241d",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "568a6ab304bbe5faf6d4a6c6174334aa556724abdda9f72f6107d8d332a2fcb3",
+      "checkedAt": "2026-11-27T03:57:12.286Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只留仍自願、且有合法時間的人，訂明搜尋終點。",
+            "action": "導師已只留仍自願、且有合法時間的人，訂明搜尋終點。",
+            "tradeoff": "不強留；人手會少。"
+          },
+          {
+            "id": 2,
+            "text": "幫失主向科任詢問能否重印或重新交作業。",
+            "action": "導師已幫失主向科任詢問能否重印或重新交作業。",
+            "tradeoff": "另有補救；可能需重做。"
+          },
+          {
+            "id": 3,
+            "text": "請失主列最後用過的地方，其他人只搜同意的公用範圍。",
+            "action": "導師已請失主列最後用過的地方，其他人只搜同意的公用範圍。",
+            "tradeoff": "搜索更準；要重新分工。"
+          },
+          {
+            "id": 4,
+            "text": "讓跟著留下的人各自回覆能找多久，不由帶頭者代答。",
+            "action": "導師已讓跟著留下的人各自回覆能找多久，不由帶頭者代答。",
+            "tradeoff": "把意願拆開；現場會尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "請帶頭者和家裡聯繫，向同伴明說自己先回去。",
+            "action": "導師已請帶頭者和家裡聯繫，向同伴明說自己先回去。",
+            "tradeoff": "守家庭安排；得面對不好意思。"
+          },
+          {
+            "id": 6,
+            "text": "把尚未找的公用位置留成清單，交給仍能接手者自選。",
+            "action": "導師已把尚未找的公用位置留成清單，交給仍能接手者自選。",
+            "tradeoff": "不靠一人到底；交接費時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想自己的放學也被拖走，停止陪找，協助把物件資訊交失物招領窗口。",
+          "action": "導師已結束本人當次陪找，協助失主將可公開的失物資訊交既有招領窗口，不接下無限搜尋或要求學生超時留下。",
+          "tradeoff": "教師守時間；學生可能嫌你抽身。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3574274026
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "a03a9defe9b53aa25956a15188374997a5fa22a95e325087bc2a1806b6f8680e"
+      },
+      "consequenceDirections": {
+        "A": "家人知道正確時間，同學能自己決定續找；不能要求他用家事交換諒解。",
+        "B": "學習不全卡在失物，失主可能不甘心；核准仍由本科決定。",
+        "C": "不再到處翻找，可能仍漏位置；失主須主動提供線索。",
+        "D": "後續有人知道失物特徵，仍可能找不到；緊急離校及家庭聯繫已另確認。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0002e5c24e269957fe664336328bd4cc465bf3ea941c4f8e0ff821c58ce13dcf",
+    "draftSha256": "568a6ab304bbe5faf6d4a6c6174334aa556724abdda9f72f6107d8d332a2fcb3",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cd2efb0c4eddb5cc426afd120f43824d18ceeb48c464758e782c9bb00eb32836",
+      "checkedAt": "2026-11-27T03:57:12.287Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "只保留當次必要的分開，約明確時間再檢視。",
+            "action": "導師已只保留當次必要的分開，約明確時間再檢視。",
+            "tradeoff": "不把臨時安全當永久排位；需持續確認。"
+          },
+          {
+            "id": 2,
+            "text": "改用不固定成對的排隊方式，事先說明通則。",
+            "action": "導師已改用不固定成對的排隊方式，事先說明通則。",
+            "tradeoff": "少配對尷尬；全班需重適應。"
+          },
+          {
+            "id": 3,
+            "text": "請學生各自私下說能接受的行走距離，不由同伴代答。",
+            "action": "導師已請學生各自私下說能接受的行走距離，不由同伴代答。",
+            "tradeoff": "保留意願；詢問較慢。"
+          },
+          {
+            "id": 4,
+            "text": "協調有職責成人在容易接近處照看，不用遠離朋友作懲罰。",
+            "action": "導師已協調有職責成人在容易接近處照看，不用遠離朋友作懲罰。",
+            "tradeoff": "安全有人管；增加人力。"
+          },
+          {
+            "id": 5,
+            "text": "有持續侵擾跡象時，把已查事實交正式校內處理。",
+            "action": "導師已有持續侵擾跡象時，把已查事實交正式校內處理。",
+            "tradeoff": "責任清楚；程序較長。"
+          },
+          {
+            "id": 6,
+            "text": "向職員說明可回報的進度時點，不交私人交往細節。",
+            "action": "導師已向職員說明可回報的進度時點，不交私人交往細節。",
+            "tradeoff": "減少反覆催問；資訊有限。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想當感情裁判，退回代挑位的提議，只收具體推擠或侵擾事實。",
+          "action": "導師已明確拒絕依感情判斷指定遠離朋友的位置，請職員只回報具體行為；當次安全隔開照常維持。",
+          "tradeoff": "界線直接；可能讓職員覺得熱心被擋。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1126149439
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "01536da12e5d184e705af3308eaf52efe6646045dc24b60b68767208e16d88db"
+      },
+      "consequenceDirections": {
+        "A": "學生能留正常同儕支持，職員需分工；不能承諾隨時一對一陪。",
+        "B": "安全資訊仍能通報，私人猜測不決定排位；教師需自行承擔後續安排。",
+        "C": "可找到可行間隔，兩人可能需求不同；最終安全仍由成人決定。",
+        "D": "行為可被持續處理，兩人可能各有說法；不能靠一張隊表取代調查。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7b97b36dd9958005bc1782ddccb3bd51e32d2b38b7c01523f5109dadc41f6437",
+    "draftSha256": "cd2efb0c4eddb5cc426afd120f43824d18ceeb48c464758e782c9bb00eb32836",
     "seedAssignmentVersion": 1
   }
 }

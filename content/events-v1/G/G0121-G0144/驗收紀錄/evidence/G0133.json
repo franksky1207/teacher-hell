@@ -16,14 +16,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1e99dce663a6310b3010cd5e4510de7e09a78aa2f80cfc2c1499e33ea4997908",
+      "checkedAt": "2026-11-27T03:57:12.284Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "和任課老師商量換到確認安全的乾地，再做原練習。",
+            "action": "導師已和任課老師商量換到確認安全的乾地，再做原練習。",
+            "tradeoff": "能保留參與；找場地費時。"
+          },
+          {
+            "id": 2,
+            "text": "請任課提供較短、安全的一段讓他選。",
+            "action": "導師已請任課提供較短、安全的一段讓他選。",
+            "tradeoff": "尊重體力；隊伍分工要改。"
+          },
+          {
+            "id": 3,
+            "text": "詢問雙方要不要改成同伴配速，不由同學代跑。",
+            "action": "導師已詢問雙方要不要改成同伴配速，不由同學代跑。",
+            "tradeoff": "保有自主；同伴速度受限。"
+          },
+          {
+            "id": 4,
+            "text": "依任課判斷先讓他選觀察任務，不必今天上跑道。",
+            "action": "導師已依任課判斷先讓他選觀察任務，不必今天上跑道。",
+            "tradeoff": "可暫緩負荷；可能覺得錯過。"
+          },
+          {
+            "id": 5,
+            "text": "請任課改用走路交接的合作練習，不比快。",
+            "action": "導師已請任課改用走路交接的合作練習，不比快。",
+            "tradeoff": "全組可參加；原速度練習延後。"
+          },
+          {
+            "id": 6,
+            "text": "請他先說自己今天能負擔多少，再交任課決定強度。",
+            "action": "導師已請他先說自己今天能負擔多少，再交任課決定強度。",
+            "tradeoff": "不替本人估算；需花時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "你也想讓他痛快玩一次，提議今天改做他挑的安全小活動。",
+          "action": "導師已向任課提出更換當節部分活動的建議，先讓學生自選安全提案；最終課程與強度仍由任課核定。",
+          "tradeoff": "熱心帶私心；會擠掉原計畫。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2160131725
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "75b8b51b7ab9066191c6fd56c52be9eef32ada7d78a781019493b22656df7d66"
+      },
+      "consequenceDirections": {
+        "A": "他仍參與記錄或觀察，但跑步願望未實現；不以退出扣態度。",
+        "B": "任課可接受或拒絕調整，他能提喜歡的活動；其他同學也有不參加的權利。",
+        "C": "原練習可續，他可能高興，同學得搬移重排；須由任課確認場地。",
+        "D": "他能表達照顧以外的力氣限制，任課仍可不同意；隊伍需等安排。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e7d83a15613587e8ab2643a8a13a838c4f797a362ee4ab4e039746a01a15e363",
+    "draftSha256": "1e99dce663a6310b3010cd5e4510de7e09a78aa2f80cfc2c1499e33ea4997908",
     "seedAssignmentVersion": 1
   }
 }

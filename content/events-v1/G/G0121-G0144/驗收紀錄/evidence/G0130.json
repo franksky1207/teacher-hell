@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "77e2ae39526d4a4bb0eabd54e304b3a408e7ec8bd2dcaf8747d818983fe286ec",
+      "checkedAt": "2026-11-27T03:57:12.282Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "請他挑自己最熟的例題，只換回自己的講法。",
+            "action": "導師已請他挑自己最熟的例題，只換回自己的講法。",
+            "tradeoff": "較自在，但原示範內容需改。"
+          },
+          {
+            "id": 2,
+            "text": "只給兩個具體觀察，不替他重編整段。",
+            "action": "導師已只給兩個具體觀察，不替他重編整段。",
+            "tradeoff": "範圍可負擔，但其他問題留著。"
+          },
+          {
+            "id": 3,
+            "text": "今天先停練，說清剩餘時間不夠重做。",
+            "action": "導師已今天先停練，說清剩餘時間不夠重做。",
+            "tradeoff": "保住休息，但焦慮未消。"
+          },
+          {
+            "id": 4,
+            "text": "用手機只錄他同意的一小段，讓他自己挑要改哪裡。",
+            "action": "導師已用手機只錄他同意的一小段，讓他自己挑要改哪裡。",
+            "tradeoff": "看得見動作，但需保管及刪除約定。"
+          },
+          {
+            "id": 5,
+            "text": "交換角色，請他用自己的方法教你一道熟題。",
+            "action": "導師已交換角色，請他用自己的方法教你一道熟題。",
+            "tradeoff": "能找回本人節奏，但練習時間更長。"
+          },
+          {
+            "id": 6,
+            "text": "把目標縮到開場三句，當天只練這個。",
+            "action": "導師已把目標縮到開場三句，當天只練這個。",
+            "tradeoff": "可完成小段，但後半尚未準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被學得有點受用，還是先把你自己的糟糕手勢做一遍給他看。",
+          "action": "導師已用自己的示範呈現原本多餘的手勢，明說不需照抄；沒有要求同事跟著演或替他編新稿。",
+          "tradeoff": "拆掉神奇榜樣，但會顯得自己也很笨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2237437114
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "c929165244a38efa481d4040f90430f9f82fed87c83bf6115f4d9b0ab10077e2"
+      },
+      "consequenceDirections": {
+        "A": "他可辨認模仿習慣，也可能更緊張；不向其他人流傳錄影。",
+        "B": "他能先改兩處，可能覺得不夠；教師需守住有限回饋。",
+        "C": "他可能帶著可用開場離開；完整示範仍有不確定。",
+        "D": "同事可能放鬆或更困惑；教師示範的缺點不等於已給他新版本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0831c3e8088b9bfbba4a7ea106ecadcd37225646d5f0fd428597622208173b1e",
+    "draftSha256": "77e2ae39526d4a4bb0eabd54e304b3a408e7ec8bd2dcaf8747d818983fe286ec",
     "seedAssignmentVersion": 1
   }
 }

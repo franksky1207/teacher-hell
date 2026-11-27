@@ -14,14 +14,155 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4bea49bc942d55e126a16a6a50ee5fff8f1d76784e69f9650348e4e13317c578",
+      "checkedAt": "2026-11-27T03:57:12.274Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問那句嗓門的玩笑讓他哪裡不舒服。",
+            "action": "導師已先問那句嗓門的玩笑讓他哪裡不舒服。",
+            "tradeoff": "先顧關係，陪練時間縮短。"
+          },
+          {
+            "id": 2,
+            "text": "再確認他今天還願不願陪練，拒絕也照原工作走。",
+            "action": "導師已再確認他今天還願不願陪練，拒絕也照原工作走。",
+            "tradeoff": "保留選擇，但可能臨時少幫手。"
+          },
+          {
+            "id": 3,
+            "text": "由你先試一段，請他只給願意給的短評。",
+            "action": "導師已由你先試一段，請他只給願意給的短評。",
+            "tradeoff": "把受看位置換回教師，但需容忍被批評。"
+          },
+          {
+            "id": 4,
+            "text": "改用可分享的舊課例一起看，不要求兩人現場演。",
+            "action": "導師已改用可分享的舊課例一起看，不要求兩人現場演。",
+            "tradeoff": "降低緊張，少了實際演練。"
+          },
+          {
+            "id": 5,
+            "text": "把今天縮為一個轉場步驟，先問他肯不肯一起試。",
+            "action": "導師已把今天縮為一個轉場步驟，先問他肯不肯一起試。",
+            "tradeoff": "小範圍較可行，但其他部分留待以後。"
+          },
+          {
+            "id": 6,
+            "text": "另約正式交流時間，今天讓他先回自己的備課。",
+            "action": "導師已另約正式交流時間，今天讓他先回自己的備課。",
+            "tradeoff": "不勉強開練，但原準備落空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "怕又當面尷尬，今天自己錄一段練習，不請同事留下評。",
+          "action": "導師已取消本次共同陪練，請同事回原工作，由自己用可分享教材錄一段練習供本人回聽，不錄他人或學生。",
+          "tradeoff": "避開同事當面評價，保有自練時間；代價是少了外部回饋，同事可能覺得又被排開。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1238847669
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "34681d4eca3978d433db05501d3f2997ed0f87bd26d1d23806aa6bd924a3cc67"
+      },
+      "consequenceDirections": {
+        "A": "同事可保住時間，也可能覺得又被退開；須清楚說明不是嫌棄。",
+        "B": "教師取得自己的練習錄音，能私下重聽卻少了同事觀察；對方可能接受離開或覺得被拒，當次合作未推進。",
+        "C": "他有具體可評內容，可能願重開對話；不必示範自己的嗓音。",
+        "D": "兩人可能完成一次短練；同事仍可不接，原目標縮小。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "當批語意審查發現原情緒邀同事看自己練，與普通候選3實際太近；改為取消共同練習、自己錄音回聽，只依工具重新抽選一次。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "先問那句嗓門的玩笑讓他哪裡不舒服。",
+                "action": "導師已先問那句嗓門的玩笑讓他哪裡不舒服。",
+                "tradeoff": "先顧關係，陪練時間縮短。"
+              },
+              {
+                "id": 2,
+                "text": "再確認他今天還願不願陪練，拒絕也照原工作走。",
+                "action": "導師已再確認他今天還願不願陪練，拒絕也照原工作走。",
+                "tradeoff": "保留選擇，但可能臨時少幫手。"
+              },
+              {
+                "id": 3,
+                "text": "由你先試一段，請他只給願意給的短評。",
+                "action": "導師已由你先試一段，請他只給願意給的短評。",
+                "tradeoff": "把受看位置換回教師，但需容忍被批評。"
+              },
+              {
+                "id": 4,
+                "text": "改用可分享的舊課例一起看，不要求兩人現場演。",
+                "action": "導師已改用可分享的舊課例一起看，不要求兩人現場演。",
+                "tradeoff": "降低緊張，少了實際演練。"
+              },
+              {
+                "id": 5,
+                "text": "把今天縮為一個轉場步驟，先問他肯不肯一起試。",
+                "action": "導師已把今天縮為一個轉場步驟，先問他肯不肯一起試。",
+                "tradeoff": "小範圍較可行，但其他部分留待以後。"
+              },
+              {
+                "id": 6,
+                "text": "另約正式交流時間，今天讓他先回自己的備課。",
+                "action": "導師已另約正式交流時間，今天讓他先回自己的備課。",
+                "tradeoff": "不勉強開練，但原準備落空。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "不想再尷尬猜，直接說自己今天不會拿嗓門開玩笑，請他看著你練。",
+              "action": "導師已明確承諾不以嗓門取笑同事，提出由自己示範、請對方觀察的邀請；同事是否接受仍自主。",
+              "tradeoff": "護住關係也護自己面子，但作了承諾就得守住。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1541648223
+            },
+            "selectedIds": [
+              4,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 4,
+              "D": 6
+            },
+            "optionsDigest": "803bf0bab04b4533d6a81b69bfc507f711a91d05ee45b5f123316b11c59183fb"
+          },
+          "previousConsequenceDirections": {
+            "A": "同事可選是否留下觀察；教師把失言後的尷尬帶進自己的示範，可能更緊張。",
+            "B": "同事能退出，導師需自己完成練習；不再以到場當成同意。",
+            "C": "同事可指出轉場問題；方法到真課堂仍需試。",
+            "D": "同事可保住時間，也可能覺得又被退開；須清楚說明不是嫌棄。"
+          }
+        }
+      ],
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "200f21f03141687bbdad1fffa336bab31399f1b3da274892cd804956b0a8de44",
+    "draftSha256": "4bea49bc942d55e126a16a6a50ee5fff8f1d76784e69f9650348e4e13317c578",
     "seedAssignmentVersion": 1
   }
 }

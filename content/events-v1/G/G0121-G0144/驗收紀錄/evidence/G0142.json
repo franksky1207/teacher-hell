@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cf3a1d7acc6e1207377fb3491da3ff6cb6138c0b44a4924f73ec0258785be111",
+      "checkedAt": "2026-11-27T03:57:12.290Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "讓全組穿自備衣物，保留原角色不必買新的。",
+            "action": "導師已讓全組穿自備衣物，保留原角色不必買新的。",
+            "tradeoff": "費用少；造型不齊。"
+          },
+          {
+            "id": 2,
+            "text": "用教室可用紙材做角色標示，讓組員自願分工。",
+            "action": "導師已用教室可用紙材做角色標示，讓組員自願分工。",
+            "tradeoff": "不需購物；手作費時。"
+          },
+          {
+            "id": 3,
+            "text": "把服裝需求刪掉，改用開場台詞說明身分。",
+            "action": "導師已把服裝需求刪掉，改用開場台詞說明身分。",
+            "tradeoff": "準備較省；台詞要改。"
+          },
+          {
+            "id": 4,
+            "text": "問學校有無允許借用的服裝或配件，沒借到也不要求買。",
+            "action": "導師已問學校有無允許借用的服裝或配件，沒借到也不要求買。",
+            "tradeoff": "保留造型；借還增加工作。"
+          },
+          {
+            "id": 5,
+            "text": "請全組共同檢查哪些造型真的必要，先不決定誰退出。",
+            "action": "導師已請全組共同檢查哪些造型真的必要，先不決定誰退出。",
+            "tradeoff": "目的更清楚；排練暫停。"
+          },
+          {
+            "id": 6,
+            "text": "讓本人自選穿現有衣物回到角色，其他人也享同樣選擇。",
+            "action": "導師已讓本人自選穿現有衣物回到角色，其他人也享同樣選擇。",
+            "tradeoff": "不拆全案；可能視覺不一致。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他連自己都剪了很捨不得，這次你自己做一份簡單配件給全組用。",
+          "action": "導師已用本人可支配的安全材料製作簡單共用配件供全組自願選用，不動班費、不要求家庭負擔，也不代完成學生主要演出。",
+          "tradeoff": "熱心換成教師工時；可能太像成人代做。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 514689637
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "7566f987f0825c2ab0d797fdbb09124b88e092ea362244d4ddf93bdf32d5cd51"
+      },
+      "consequenceDirections": {
+        "A": "他可回到演出，組員可能失望；需把辨識方法另想清楚。",
+        "B": "可刪不必要要求，大家可能有分歧；不讓本人揭家計求同意。",
+        "C": "全組有共用辨識物，他不必出錢；教師失去備課時間，孩子仍可不用。",
+        "D": "觀眾可聽懂角色，表演者得重新練；負責者可保留設計想法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "475ede89855e0831d64cf0572e099880e871aec1948e1d6d80e66bda0de2d67f",
+    "draftSha256": "cf3a1d7acc6e1207377fb3491da3ff6cb6138c0b44a4924f73ec0258785be111",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ad46aa106dc2e7a2a51ab7c0d82407c4d46da3077f6716ab6e3b375dc7910e96",
+      "checkedAt": "2026-11-27T03:57:12.288Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私下向當事學生道歉，讓他選是否還想談。",
+            "action": "導師已私下向當事學生道歉，讓他選是否還想談。",
+            "tradeoff": "針對傷害；家長未必滿意。"
+          },
+          {
+            "id": 2,
+            "text": "把例子改寫到無法指認，先確認適合再用。",
+            "action": "導師已把例子改寫到無法指認，先確認適合再用。",
+            "tradeoff": "保留教學；重寫費工。"
+          },
+          {
+            "id": 3,
+            "text": "請家長列實際受影響的部分，逐項說明會怎麼改。",
+            "action": "導師已請家長列實際受影響的部分，逐項說明會怎麼改。",
+            "tradeoff": "回應具體；無法給全面禁令。"
+          },
+          {
+            "id": 4,
+            "text": "改用你自己的學習失誤作當節例子。",
+            "action": "導師已改用你自己的學習失誤作當節例子。",
+            "tradeoff": "不再取用學生經驗；自己丟面子。"
+          },
+          {
+            "id": 5,
+            "text": "以後用個人作品前先問用途與公開範圍，不把一次同意當永久。",
+            "action": "導師已以後用個人作品前先問用途與公開範圍，不把一次同意當永久。",
+            "tradeoff": "較可靠；準備步驟增加。"
+          },
+          {
+            "id": 6,
+            "text": "約自願親師短談，由孩子決定是否參與。",
+            "action": "導師已約自願親師短談，由孩子決定是否參與。",
+            "tradeoff": "可直接聽不同需要；時段難配。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "不想再被說拿學生開玩笑，這週撤掉預定生活例子，改回課本題。",
+          "action": "導師已撤下本人本週預定的生活案例、改用現有課本題，未承諾由該家長決定全班所有未來題材。",
+          "tradeoff": "暫避爭議；犧牲原備課趣味。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2773166695
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "cdbcc0e97436d73d9f3758eabe6ecf492df2b3f596cb6a8ba9de06ad873204e1"
+      },
+      "consequenceDirections": {
+        "A": "孩子不再擔心被影射，其他學生可能覺得無聊；教師需重備，不宣告永遠禁用。",
+        "B": "要求有可處理範圍，家長可能覺得你閃避；教師須確實完成承諾。",
+        "C": "教師承擔被看的位置，學生不用認領；自有案例未必同樣貼題。",
+        "D": "本人可說想停哪裡，也可不出席；不能由家長取代其他家庭決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／本輪逐篇開場、候選行動差異、合法時段與持碼、固定映射及後果可行性語意審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a3c82dda05abb22b6ee6f903403d00ee5fba859ef417daaee3dcaf70713c92b6",
+    "draftSha256": "ad46aa106dc2e7a2a51ab7c0d82407c4d46da3077f6716ab6e3b375dc7910e96",
     "seedAssignmentVersion": 1
   }
 }

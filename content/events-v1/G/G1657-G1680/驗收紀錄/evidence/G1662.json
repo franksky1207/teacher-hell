@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "55a2b69ed12b40651c876e9a21bb31c9ef3283b1d377bc8a3c91fd30a0002104",
+      "checkedAt": "2026-11-28T03:34:34.419Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我拿到口頭開拍確認後讓她背對導師自行開頭，老師不再給點頭暗號，讓她真正自己決定何時開始。",
+            "action": "與student_a確認無須教師視覺暗號，改由其自行決定開頭時機並重新試錄。",
+            "tradeoff": "背對導師的站位會犧牲原本練習好的正面畫面。"
+          },
+          {
+            "id": 2,
+            "text": "我把拍攝手機接回自己手上，讓她對全班明說「我要自己按開始囉」再從第一格重演一次。",
+            "action": "由導師接手拍攝並安撫原拍攝同學，讓student_a以公開宣告方式自行啟動分享。",
+            "tradeoff": "得重新交接器材，還會少掉另一組一段試錄時間。"
+          },
+          {
+            "id": 3,
+            "text": "我先立刻跟拿手機的同學說「不是你按錯，是我跟她沒約好暗號」，再跟student_a口頭講好這次直接數三二一就開錄。",
+            "action": "先替拍攝同學澄清非其失誤，隨即建立明確口頭倒數啟動重錄。",
+            "tradeoff": "多數了一個口頭三二一，跟她原本想要「完全不靠別人報幕」有點小落差。"
+          },
+          {
+            "id": 4,
+            "text": "我問她既然分鏡都練熟了，要不要乾脆把原本的第一個動作「深呼吸轉身看鏡頭」當成她自己給拍攝者的開拍訊號？",
+            "action": "引導student_a改以自身設計動作作為與拍攝者之同步暗號，不依賴導師視線。",
+            "tradeoff": "得現場跟拍攝同學再默契試一次那個轉身手勢。"
+          },
+          {
+            "id": 5,
+            "text": "為免拍攝同學更愧疚，我請他原位拿好手機，這次我站到攝影機後面改看他螢幕點頭。",
+            "action": "保留原拍攝同學職務以維護其信心，由導師配合明確給予單次起步確認。",
+            "tradeoff": "還是靠老師點頭啟動，她沒能練到真正靠自己開頭。"
+          },
+          {
+            "id": 6,
+            "text": "我讓下一組先上去試錄五分鐘，給student_a和拍攝同學兩分鐘在台下講好自己的暗號再回來重錄。",
+            "action": "暫時調整試錄順序以提供兩人重新協調啟動暗號的緩衝時間。",
+            "tradeoff": "本來站在台上準備好要開講的她，退下來等五分鐘反而更緊張。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看拿手機的同學快急哭了、student_a也繃得像木頭，連忙舉雙手投降笑說「我的鍋我的鍋！我根本不知道我在點頭當暗號啦！來，拍攝的別慌，這次你們兩個自己比個OK就開始」。",
+          "action": "主動承擔未約定暗號之誤會安撫拍攝同學，交由兩生自行比手勢啟動重錄。",
+          "tradeoff": "雖然瞬間解除兩人的愧疚與僵硬，重新對焦試錄還是多耗掉一組時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2911465421
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "6285cea974693ba7f7f392d0ec2722b51d4989dd03a718cfc63de2b3bf2ee551"
+      },
+      "consequenceDirections": {
+        "A": "可發展把「深呼吸轉身看鏡頭」當成她給拍攝者的開拍訊號後，兩人現場重練默契的緊湊。",
+        "B": "可發展讓下一組先試錄五分鐘給兩人講好暗號後，原本準備好的她退下來等反而更緊張。",
+        "C": "可發展請原拍攝同學原位拿好並由導師看螢幕點頭後，還是沒能讓她練到完全靠自己開頭。",
+        "D": "可發展舉手笑說「我的鍋」並交由兩生比OK自啟重錄後，解除愧疚卻多耗掉一組時間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c40e2975910ec3960f044c05ed629e26a18f5d0b9077487ea9bbe2f0edddba59",
+    "draftSha256": "55a2b69ed12b40651c876e9a21bb31c9ef3283b1d377bc8a3c91fd30a0002104",
     "seedAssignmentVersion": 1
   }
 }

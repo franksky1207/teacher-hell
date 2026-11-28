@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1af92e96e30778c0e0102fb10d3aed4d8a4f8e815c8759871b2213650321a21b",
+      "checkedAt": "2026-11-28T03:34:34.450Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我把第三條的雙方說法各命名清楚，只針對這一條重新現場問一次全班表態。",
+            "action": "命名區分第三條爭議方案並僅就該條重新進行現場表決。",
+            "tradeoff": "會消耗一點剩下的班內遊戲遊玩時間。"
+          },
+          {
+            "id": 2,
+            "text": "我這次先依既有規則不重投，約定下次先讓大家寫在紙條或想清楚後再一起議定。",
+            "action": "維持本次程序結果不重問，改進下次商議前之個人預先思考機制。",
+            "tradeoff": "這回有不同意見的人雖然被點出了沉默原因，心裡還是沒被聽到。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻改用「全班閉眼趴著舉手」快速重問一次第三條，既省時間又讓大家不怕跟朋友不同邊。",
+            "action": "採不記名閉眼舉手方式快速重問爭議條文，消除同儕從眾壓力。",
+            "tradeoff": "大家趴下來又抬頭笑成一團，收心開玩稍微慢了半拍。"
+          },
+          {
+            "id": 4,
+            "text": "我直接改成「正反兩邊都要同時舉手數人頭」，不能只問不同意誰舉手，今天先把第三條算清楚。",
+            "action": "修正表決問法為雙向計數並立即重審第三條規則。",
+            "tradeoff": "重新數完人頭後發現兩邊票數超接近，還得再處理平手怎麼辦。"
+          },
+          {
+            "id": 5,
+            "text": "我肯定他敢在事後指出沉默不是同意，請他先幫我問出旁邊兩三個剛才不敢舉的人到底卡在第三條哪個字，現場一分鐘調好。",
+            "action": "快速收集少數沉默異議焦點並於現場微調第三條遊戲規則。",
+            "tradeoff": "只問他旁邊幾個人，其他排沒舉手的同學還是沒被問到。"
+          },
+          {
+            "id": 6,
+            "text": "我笑著說「今天這輪先照這版試玩一次當測試，玩完覺得第三條真的怪，下週馬上改掉」。",
+            "action": "先以現有規則進行一次試玩體驗，保留下週依實際遊玩回饋修訂之空間。",
+            "tradeoff": "對那條規則不滿意的人這輪玩起來還是有點憋屈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他好不容易鼓起勇氣替全班打破沉默，笑著拍手說「抓到了吼！原來大家都在裝木頭等別人舉手！來，遊戲少玩三分鐘沒關係，第三條我們閉眼舉手重投一次」。",
+          "action": "公開肯定student_a點破沉默從眾現象，立即以閉眼不記名方式重投爭議條文。",
+          "tradeoff": "雖然氣氛超好、大家終於敢舉手了，玩遊戲時間真的少了三分鐘。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1075543002
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "b178afe0499d3b029a303e59e6e7c07b8abec64b2a3c0e47fec6963cf0684de8"
+      },
+      "consequenceDirections": {
+        "A": "可發展拍手笑著點破大家裝木頭並用閉眼舉手重投第三條後，少了三分鐘玩遊戲卻投得真實。",
+        "B": "可發展立刻改用全班閉眼趴著舉手重問第三條後，大家笑成一團、收心開玩稍微慢半拍。",
+        "C": "可發展先照這版試玩一輪測試、下週覺得怪再改後，對第三條不滿的人這輪玩得有點憋屈。",
+        "D": "可發展把雙方說法命名清楚只重問第三條後，消耗剩餘遊戲時間並終於聽見歧見。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "07d6550e9b06ce3fdf4adb8eb8cfb685cfcae5735b6d0a4eec16c5548d0d36ee",
+    "draftSha256": "1af92e96e30778c0e0102fb10d3aed4d8a4f8e815c8759871b2213650321a21b",
     "seedAssignmentVersion": 1
   }
 }

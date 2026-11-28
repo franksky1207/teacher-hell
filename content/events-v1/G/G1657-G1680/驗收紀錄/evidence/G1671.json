@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d7f54e97f254fbfd4b0e90aebcfc2a07cd82be1e04f817402cd3f356e3cf98f9",
+      "checkedAt": "2026-11-28T03:34:34.443Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先把全員帶離欄線外並請場地人員排除袋子遮擋，讓整組全部退回已核可的後方安全觀賽區。",
+            "action": "立即撤離危險區域並清理通道，安排全組返回核可安全看台位置。",
+            "tradeoff": "安全區視角比較遠又被前面擋住，原來最想看的那段未必看得到。"
+          },
+          {
+            "id": 2,
+            "text": "先把人帶回安全區並清理袋子後，讓願意靠前站定點看清楚的幾名同學在安全區輪流口頭講解給後面聽。",
+            "action": "撤離風險站位並恢復通道暢通後，於合法安全區內採輪流觀賽與同儕講解。",
+            "tradeoff": "大家失去整群並排擠在一起歡呼看球的熱鬧感。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻跟student_a走過去吹哨或揮手把正在跟過來的隊友全攔進畫線內，由student_a親口講清楚是因為沒退路才退。",
+            "action": "導師協助阻攔跟隨隊伍並引導入畫線內安全區，由student_a向同伴說明撤離原因。",
+            "tradeoff": "本來是帶頭佔好位置的他得向大家承認這處不能站，有點尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "把人全帶進場地畫線內並收好背包後，我請場地人員確認畫線區側邊有沒有合法的階梯坐席可讓大家分兩排坐著看。",
+            "action": "撤離危險邊緣並清理障礙物，向場地人員詢問畫線區內合法階梯坐席空間。",
+            "tradeoff": "分兩排坐下得重新找位子，錯過場上最精采的兩分鐘攻防。"
+          },
+          {
+            "id": 5,
+            "text": "我先把整群人帶回安全集合線內把袋子整齊靠牆放好，再告訴隊友們「誰的背包不靠牆就先別看這節」。",
+            "action": "強制全員退回安全線內並統一置放隨身背包以確保逃生退路。",
+            "tradeoff": "規定太硬讓幾個原本想站近一點的男生小聲嘀咕。"
+          },
+          {
+            "id": 6,
+            "text": "撤回安全區並請場地人員清開通道後，我直接站在這組最外側當成人界線，免得大家看嗨了又不知不覺往前擠。",
+            "action": "將全組引導至安全區並清理通道，由導師於現場外側維持觀賽界線。",
+            "tradeoff": "導師自己得整場站著當人形護欄，沒辦法好好坐下休息。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那幾個隊友還以為要換VIP座位正興奮地扛著書包往欄邊衝，趕緊大喊揮手「通通退進白線裡面！包放下！你們老大發現沒退路才叫老師救人的，別再跟啦」。",
+          "action": "大聲喝止隊伍繼續往邊緣移動，立即將全員帶回白線內安全區並清理背包障礙。",
+          "tradeoff": "在看台上大喊把好幾排人的目光都吸過來，student_a臉紅著趕快叫隊友退後。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 141883002
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "61fc683a57b3c354b762b22d055b84653f5da0940c8bcf15d8e9afec95b44c3d"
+      },
+      "consequenceDirections": {
+        "A": "可發展帶入畫線內並詢問場地人員側邊階梯坐席後，分兩排重新找位錯過精采兩分鐘攻防。",
+        "B": "可發展全員退回安全線內並規定誰背包不靠牆就先別看後，幾個男生小聲嘀咕規定太硬。",
+        "C": "可發展於合法安全區輪流觀賽並由靠前者口頭講解給後面聽，失去整群並排看球的熱鬧。",
+        "D": "可發展大喊喝止隊伍退進白線後，吸引好幾排目光且student_a臉紅叫隊友快退。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b399d2f3088e607fcf2675b2fac4abbf5c533f699ef627e812ee9b81f21b8d65",
+    "draftSha256": "d7f54e97f254fbfd4b0e90aebcfc2a07cd82be1e04f817402cd3f356e3cf98f9",
     "seedAssignmentVersion": 1
   }
 }

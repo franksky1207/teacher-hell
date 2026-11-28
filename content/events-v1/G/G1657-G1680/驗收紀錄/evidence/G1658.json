@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "78be4fc38845a837573e81fd37077bf13334c1efc919eaa180b85b235f034270",
+      "checkedAt": "2026-11-28T03:34:34.406Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我決定兩班直接分開重發各自專屬的勘誤單，並簡短向已經收到舊單的學生說明為何重發。",
+            "action": "將合併勘誤拆分為兩班獨立更正版本重新發布並附簡短說明。",
+            "tradeoff": "已經看過第一張的學生收到重複通知會一頭霧水。"
+          },
+          {
+            "id": 2,
+            "text": "我用課內一分鐘短例當場替本班分流核對到底改哪一句，也請teacher_a在另班同樣點一下。",
+            "action": "保留現有紙本，改於課堂以短例現場口頭分流標註各班適用勘誤。",
+            "tradeoff": "少掉一題原本課內練習的時間，且兩班得各自再花一分鐘對照。"
+          },
+          {
+            "id": 3,
+            "text": "我先不指責是他昨晚自己傳混了，順著他的原則點頭說「對，確實分開才不會混，我現在馬上拆成甲乙兩張重傳」。",
+            "action": "體諒同事睡眠不足不揭破其誤傳，立即重製分班別勘誤版本。",
+            "tradeoff": "自己多做一次重排重傳，心裡也有點冤枉明明是他傳混的。"
+          },
+          {
+            "id": 4,
+            "text": "我把昨晚他傳來的原始訊息攤在桌上給他對一下，溫和說「你昨晚是不是太累把兩班看混了？沒關係我們現在分開貼就好」。",
+            "action": "禮貌出示原始交接訊息釐清誤會來源，隨即與同事共同修正為分班勘誤。",
+            "tradeoff": "最怕混淆又講原則的他發現是自己弄混的，當場臉紅到耳根。"
+          },
+          {
+            "id": 5,
+            "text": "我請各班小老師進班時直接在黑板寫出「本班只看第幾條」，免得整張重印浪費紙張。",
+            "action": "透過小老師於黑板補充班別對應範圍，避免重印全部勘誤單。",
+            "tradeoff": "沒來得及看黑板的學生拿著手上的紙回家還是會看錯。"
+          },
+          {
+            "id": 6,
+            "text": "我先讓疲倦的他坐下來喝口水，約定今天下午空堂我們一起把這兩班的更正句對齊標色再發最終版。",
+            "action": "先讓過勞同事短暫休息，約定下午空堂共同核對後發布明確分色終版。",
+            "tradeoff": "今天上午學生手裡拿著那張混合勘誤表多困惑了半天。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他眼睛紅通通還硬要講原則質問我，無奈笑著把電腦轉過去說「大哥，你昨晚睡不好傳給我時就是同一張啦！來，別唸了，我現在幫你拆成兩班重發」。",
+          "action": "以輕鬆語氣點出其昨晚誤傳事實，隨即協助將勘誤拆分為兩班各自版本重發。",
+          "tradeoff": "被當場抓包自己睡迷糊，teacher_a尷尬地抓頭連說抱歉抱歉。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4283348125
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "af3c0375b4c660b0a2c7a3942443d909c75e62db9bf02c956a7c49225a1fcc69"
+      },
+      "consequenceDirections": {
+        "A": "可發展讓睡眠不足的同事喝水休息並約下午空堂合對分色終版後，學生上午多困惑半天。",
+        "B": "可發展轉過電腦笑著點出是他昨晚傳混後，最怕混淆又講原則的teacher_a抓頭連聲道歉。",
+        "C": "可發展用課內一分鐘短例現場口頭分流標註勘誤句後，兩班各自對照且少一題練習。",
+        "D": "可發展請小老師於黑板補充本班適用條目後，沒看到黑板的學生拿紙回家仍可能看錯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a55bf3f5817a9dbefcb27c56be36086c210476449655a80a7b984d3459fe4de",
+    "draftSha256": "78be4fc38845a837573e81fd37077bf13334c1efc919eaa180b85b235f034270",
     "seedAssignmentVersion": 1
   }
 }

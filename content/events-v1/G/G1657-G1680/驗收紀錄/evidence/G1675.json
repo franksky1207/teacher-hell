@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1b115ed5ff1ec510df74862d89d4cca942d6aaf55d6e733ec88a8e3c4b964bc1",
+      "checkedAt": "2026-11-28T03:34:34.452Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我用另一套課內教材重做一張完全空白的示範遮罩，只教全班「遮住前後看單詞」的方法，絕不提他家那句念法。",
+            "action": "以教師自製空白遮罩搭配課內教材講解通用閱讀技巧，嚴守學生家庭私密口訣。",
+            "tradeoff": "少掉他媽媽那句雖然土卻其實超好記的節奏提示。"
+          },
+          {
+            "id": 2,
+            "text": "我請student_a自己挑一張完全沒寫任何家裡念法的純白遮罩留給同桌用，我不把這招拿去全班推廣。",
+            "action": "尊重學生分享邊界，僅保留同桌間去隱私化之輔助卡使用，其餘同學各自練習。",
+            "tradeoff": "其他一樣會漏字的同學得自己另外試找適合自己的方法。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻跟他說「沒問題，你家的念法是秘密武器我絕對不講」，只問他願不願意我用「挖空一張小紙卡」這概念教大家。",
+            "action": "保證絕對保密家庭口訣，僅徵詢是否可用純物理挖空遮罩概念進行課堂分享。",
+            "tradeoff": "沒有口訣只拿一張挖空紙卡教，部分同學覺得看起來有點單薄。"
+          },
+          {
+            "id": 4,
+            "text": "我先小聲安撫他這句念法其實超有智慧、一點都不傻，但既然他介意我就不在全班提、只把這招留給他們兩個小秘密使用。",
+            "action": "肯定該家庭方法價值並完全尊重其不公開意願，不納入班級教學。",
+            "tradeoff": "同桌那邊雖然受惠了，全班還是不知道有這麼好用的摺紙小工具。"
+          },
+          {
+            "id": 5,
+            "text": "我請他有空時幫我把「摺紙方法」單純畫成三個摺線步驟圖就好，上面的口訣框留白讓每個同學自己填自己喜歡的歌詞。",
+            "action": "去識別化僅萃取純摺紙步驟，口訣部分交由學生各自創作。",
+            "tradeoff": "得請他在課間再幫忙畫一張步驟圖，增加了他一點小麻煩。"
+          },
+          {
+            "id": 6,
+            "text": "我當下先笑著把課本幫他合上說「好好好，秘密武器不外傳」，下節課再自己用螢光筆畫框取代摺紙教大家。",
+            "action": "完全保密並撤回借用其摺紙方法構想，教師改以其他通用劃記方法教學。",
+            "tradeoff": "螢光筆畫框對容易跳行的學生來說，效果沒有實體摺紙遮罩那麼直接。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他死死蓋住課本深怕全家念法曝光的模樣又心疼又好笑，趕緊蹲下來小聲說「安心啦！老師嘴巴超緊，你媽媽的秘密口訣我們絕對不講，我只借『摺紙遮字』這四個字行不行？」。",
+          "action": "以溫柔幽默語氣保證保密家庭口訣，僅徵求借用純物理遮字概念。",
+          "tradeoff": "他緊繃的肩膀總算垮下來笑著點頭，還特地把寫有口訣那面朝下壓好。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2112067298
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "ac74c9f37d94b6decfe5b9bb1ea667eb5ded62a276c10b0f6a462df1ca48e979"
+      },
+      "consequenceDirections": {
+        "A": "可發展尊重他只留純白遮罩給同桌、不推全班後，其他一樣會漏字的同學得各自找方法。",
+        "B": "可發展蹲下來保證嘴巴超緊只借「摺紙遮字」四字後，student_a把有口訣那面朝下壓好。",
+        "C": "可發展用另一課內教材重做空白遮罩只教通用法後，少了媽媽那句土卻超好記的節奏提示。",
+        "D": "可發展保證絕對保密並只問能否借「挖空小紙卡」概念教大家後，沒口訣只拿空卡略顯單薄。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f6cb5b64bd773c1887e527af3120efc686d5b0c528a97d6d1888f267dde045b7",
+    "draftSha256": "1b115ed5ff1ec510df74862d89d4cca942d6aaf55d6e733ec88a8e3c4b964bc1",
     "seedAssignmentVersion": 1
   }
 }

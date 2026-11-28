@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9d500623ee3cdba70b1197b0b642eeb2aab6b0cc03dbf5017ece767d0f5be894",
+      "checkedAt": "2026-11-28T03:34:34.426Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我保留他這筆紀錄但清楚標註「有提示」，另請他講出接受手勢前的卡點思路，直接針對那步排小練習。",
+            "action": "如實加註「受提示」標記並訪談其卡關步驟，立即取得教學診斷線索。",
+            "tradeoff": "雖然馬上有教學線索，但還沒取得他能獨立完成的證明。"
+          },
+          {
+            "id": 2,
+            "text": "我不拿這筆判斷獨立程度，另給他一張同構短題讓他完全自己再做一次，依然不計分。",
+            "action": "作廢該筆受提示秒數作為獨立指標，改以同構短題重新進行無提示實作檢核。",
+            "tradeoff": "會多用掉一輪練習時間，他自己也可能失去剛才「最快」的得意感。"
+          },
+          {
+            "id": 3,
+            "text": "我肯定他老實回報，直接把紀錄表上的秒數劃掉改畫一個問號，請他下節課前把卡住那步自己推一遍給我看。",
+            "action": "清除不實最快秒數紀錄，要求student_a於下節課前針對卡點進行獨立推導確認。",
+            "tradeoff": "把原本練出來的進步證據整個劃掉，心裡還是有點可惜。"
+          },
+          {
+            "id": 4,
+            "text": "我請那位好心比手勢的同學下次不要在計時練習比暗號，同時把student_a這張單獨留著當「差一步就獨立」的基準線。",
+            "action": "提醒同儕勿於獨立練習提示，將該紀錄修正為半獨立參考線。",
+            "tradeoff": "隔壁同學只是好心幫一把，被提醒時有點不好意思。"
+          },
+          {
+            "id": 5,
+            "text": "我問他除了第三步之外前兩步是不是都靠自己跑完？確認後在表格改記「前兩步獨立＋第三步待補」，下節照樣補教那步。",
+            "action": "細分紀錄各步驟實際獨立狀態，依真實卡點保留下節課該步驟之教學。",
+            "tradeoff": "其他同學的紀錄都只有總秒數，單獨拆這格對老師後續整理稍微繁瑣。"
+          },
+          {
+            "id": 6,
+            "text": "我跟他說「老師就是要抓這個真卡點，不是在選誰最快」，請他放心把那步寫進自己錯題筆記，下節我一定講。",
+            "action": "肯定其誠實回饋教學意義，註記該紀錄非獨立完成並納入下節講解範圍。",
+            "tradeoff": "沒讓他當場再做一題驗證，下節講完前不確定他自己推不推得出來。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他明明刷出全班最快卻自己跑來拆台，忍不住笑著豎起大拇指說「你比那個最快秒數還帥好不好！來，這筆我註記『差一咪咪』，等一下下課我單獨考你一題沒手勢的」。",
+          "action": "高度肯定其誠實態度並更正紀錄為受提示，約定課後給予單題無提示補測。",
+          "tradeoff": "他聽完得意地笑出來，馬上又緊張起等一下下課那題會不會卡住。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2283611953
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "3ac225381c88075ec15e68bdfa134742389220db5387a8206d8a8c2316fe36c3"
+      },
+      "consequenceDirections": {
+        "A": "可發展誇他比最快秒數還帥並約下課單獨考一題沒手勢的後，他笑完馬上緊張下課那題。",
+        "B": "可發展細分紀錄為「前兩步獨立＋第三步待補」並保留教學，整理表格較繁瑣的代價。",
+        "C": "可發展劃掉秒數改畫問號並要他下節課前推導一遍後，進步證據被劃掉的一點可惜。",
+        "D": "可發展肯定誠實並請他寫進錯題筆記待下節講解後，講完前還不確定他自己推不推得出。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f710bf8f99bc3d8bd807bfd0a201e589cc26cafac91676fb1cdab929fdf1ef5f",
+    "draftSha256": "9d500623ee3cdba70b1197b0b642eeb2aab6b0cc03dbf5017ece767d0f5be894",
     "seedAssignmentVersion": 1
   }
 }

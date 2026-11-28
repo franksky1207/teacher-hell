@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1e60c2bc1be2ebcae3aa2271e82f09688280977a928121e59f7aded86ade6dca",
+      "checkedAt": "2026-11-28T03:34:34.428Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我更正錯版筆記並向班上承認沒核版後，公開拿自己的備課筆記示範怎麼被錯版誤導，只在student_a自願時讓他補充。",
+            "action": "立即更正筆記並公開檢討自身未核版疏失，以自身筆記示範版本比對、不強迫學生公開認錯。",
+            "tradeoff": "導師得把自己的備課疏失完整攤在全班面前。"
+          },
+          {
+            "id": 2,
+            "text": "我當天按核對過的文本交回書面更正，私下依student_a可準備的時間約定一段他要親自讀過的內容，再回來互核。",
+            "action": "完成全班錯版筆記更正與教師認錯，私下與student_a約定可行補讀進度並互核。",
+            "tradeoff": "保護了學生說出家庭窘境的空間，但班上看不到一次公開承認讀不完的示範。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻喊停抄筆記並帶全班把正確本班版本的頁碼對出來，兩人的書面與網摘誤用都先各自收起來、下節再從這頁重談。",
+            "action": "立即更正錯版人名並重定正確文本頁碼，暫緩深入討論至下節課。",
+            "tradeoff": "這節課本來要帶完的結尾回看進度整個中斷。"
+          },
+          {
+            "id": 4,
+            "text": "我更正完錯版人名並承認自己疏失後，順便教全班一分鐘「怎麼對譯者與出版社版本號」，不再追究他昨晚看網摘的事。",
+            "action": "完成更正與公開認錯，將事件轉化為版本核對教學而不懲處疲勞學生。",
+            "tradeoff": "他私下還是有點內疚自己昨天偷懶看了網摘捷徑。"
+          },
+          {
+            "id": 5,
+            "text": "我更正筆記並向全班認錯後，請student_a這週選一天有空時跟我一起用正確版本重新對一遍那段結尾，當作我們兩個人的補課。",
+            "action": "完成公開更正與認錯，約定師生共同於課餘以正確版本補齊該段共讀。",
+            "tradeoff": "兩人各自多一件要找時間兌現的補課約定。"
+          },
+          {
+            "id": 6,
+            "text": "我先更正錯版筆記並認錯，再直接公開展示兩版封面頁差異，提醒大家網摘最常混版。",
+            "action": "公開更正筆記與承認教師未核版疏失，對照封面版本差異並提醒網路摘要風險。",
+            "tradeoff": "全班聽完雖然立刻改掉錯筆記，但對「網路捷徑」的警戒度各自不同。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他被我認錯感召也跟著老實招認看網摘，嘆口氣苦笑說「好啦，今天老師跟你一樣都猜中錯版，先別管網摘了，筆記全擦掉，這節我們兩個一起把這頁正確的讀完」。",
+          "action": "坦承雙方版本疏失後立即更正筆記，於當堂帶領全班與student_a共同閱讀正確文本段落。",
+          "tradeoff": "堂上公開認自己也讀錯版有點糗，而且原定要回看前文的進度得往後順延。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 573268858
+        },
+        "selectedIds": [
+          3,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "36fe1d578058b0daa8e4f43db0e9d7a42ffdd0f87fe5ece7be965012d22a1fac"
+      },
+      "consequenceDirections": {
+        "A": "可發展苦笑兩人都猜中錯版並帶全班當堂共讀正確頁後，公開認錯糗感與進度順延。",
+        "B": "可發展更正並順便教一分鐘「怎麼對譯者與出版社版本號」後，學生私下仍內疚看網摘。",
+        "C": "可發展喊停抄筆記並對出正確頁碼、下節重談後，這節課原定結尾回看進度中斷。",
+        "D": "可發展更正認錯並約定這週選一天師生共補那段結尾後，兩人各自多一件待兌現約定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4984f890723389fd4615c4f589a15625cc22b79dda7a121c44b1151be0b35ba9",
+    "draftSha256": "1e60c2bc1be2ebcae3aa2271e82f09688280977a928121e59f7aded86ade6dca",
     "seedAssignmentVersion": 1
   }
 }

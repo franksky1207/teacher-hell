@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "23a078316462ae02f2cbdb71dd9e777e9f2010274fe32b6d112b8bad2b18afd4",
+      "checkedAt": "2026-11-28T03:34:34.430Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我直接提出一題完全中性的替代題給全班玩，讓他們兩個都不必在朋友面前爭誰的題目贏。",
+            "action": "以導師權責改採第三方中性題目進行活動，避免兩生喜好差異曝光。",
+            "tradeoff": "兩邊都少了一項自己最擅長的題型可發揮。"
+          },
+          {
+            "id": 2,
+            "text": "我讓student_a自己去邀朋友一起合做提示與新結尾，不替他偷偷在背後改題。",
+            "action": "不私下偷換題目，引導student_a與好友公開溝通共同改編題目。",
+            "tradeoff": "他得親口對朋友承認剛才跟著說喜歡其實只是順勢附和。"
+          },
+          {
+            "id": 3,
+            "text": "我維持剛才全班投出來的那一題不暗中換題，只私下告訴他「下次不想跟風就直接投你想玩的」。",
+            "action": "依公開投票結果執行原定題目，鼓勵student_a日後誠實表達個人意見。",
+            "tradeoff": "他這次得硬著頭皮陪朋友玩完自己其實沒那麼喜歡的題目。"
+          },
+          {
+            "id": 4,
+            "text": "我先問他是不是怕朋友生氣才不敢講？提議下次玩「兩分鐘快閃加碼題」，今天照原題、結尾多留兩分鐘給他出第二題。",
+            "action": "維持原票選主題並評估於剩餘時間增設短時補充題，兼顧雙方期待。",
+            "tradeoff": "原本時間就只夠一題，硬加第二題最後可能兩題都玩不完。"
+          },
+          {
+            "id": 5,
+            "text": "我告訴他投票已經結束我不能私下改題，但如果他跟朋友講好要把結尾改寫成他想玩的版本，我完全歡迎。",
+            "action": "維持程序公平不暗中換題，開放原組在雙方合意下自行改編結尾。",
+            "tradeoff": "朋友一問「為什麼好好的結尾要改掉」，他還是得自己圓過去。"
+          },
+          {
+            "id": 6,
+            "text": "我把兩題都收進班級題庫抽籤箱當場抽一次，今天抽到哪一題就大家一起玩哪一題，不靠誰偷偷改票。",
+            "action": "改以公開隨機抽籤決定本輪題目，消除私下介入或人情壓力。",
+            "tradeoff": "死黨看到原本投贏的題目還要重抽可能會覺得莫名其妙。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他為了顧朋友面子搞得像諜報片一樣來私下喬票，忍不住笑說「你不要自己當雙面間諜好不好！去跟你朋友講你想加這段新結尾啦，他真把你當兄弟不會生氣的」。",
+          "action": "以幽默語氣拒絕私下暗改題目，鼓勵student_a向好友坦白提出共同改編。",
+          "tradeoff": "他抓著後腦勺苦笑，走回去找死黨時腳步拖得像灌鉛。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1956862194
+        },
+        "selectedIds": [
+          6,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "dbc14c49b9d88e59e338363d80e41f1d01b0d994796c6cc10dbed4a3502eb612"
+      },
+      "consequenceDirections": {
+        "A": "可發展把兩題放抽籤箱當場重抽決定玩哪題後，死黨看著原本投贏的題目被重抽的困惑。",
+        "B": "可發展笑他當雙面間諜並催他去跟朋友講想改結尾後，student_a腳步像灌鉛般走回去。",
+        "C": "可發展讓student_a自己邀朋友合做提示與新結尾後，他得承認剛才跟著說喜歡是附和。",
+        "D": "可發展試圖在結尾加兩分鐘快閃第二題後，原本只夠一題的時間最後兩題都玩不完。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "970cbea997d90eb18374f2890d509ed72d04d17c824a49a30899ef863f443df1",
+    "draftSha256": "23a078316462ae02f2cbdb71dd9e777e9f2010274fe32b6d112b8bad2b18afd4",
     "seedAssignmentVersion": 1
   }
 }

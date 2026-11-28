@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a05519e74b6dde1f1f2c6ec3594ede6356145a3457a3735f448f21ff4658f147",
+      "checkedAt": "2026-11-28T03:34:34.432Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我乾脆讓全組全部改成在桌上定點展示，免得拿著移動又有別件跟著鬆脫。",
+            "action": "移除鬆脫物件後，將全班展示方式統一調整為定點桌上展示。",
+            "tradeoff": "少了原本設計的走動互動效果，其他準備好走位的小組有點失望。"
+          },
+          {
+            "id": 2,
+            "text": "我維持安全起見空手移動說明、用手機或投影照片呈現原作細節，不讓鬆脫作品拿上台。",
+            "action": "維持手持安全規範，改以空手走動搭配照片呈現作品原貌。",
+            "tradeoff": "雖然安全又公平，但student_a失去親手拿實體作品展示的成就感。"
+          },
+          {
+            "id": 3,
+            "text": "我維持其他黏穩組別手持移動，唯獨他這件有鬆脫風險的准許放在講桌定點展示、人站旁邊講。",
+            "action": "依作品實際結構風險採差異化展示，允許未黏穩作品於講桌定點陳列說明。",
+            "tradeoff": "他覺得只有自己那件留在桌上顯得很顯眼，像在公開展示黏壞的作品。"
+          },
+          {
+            "id": 4,
+            "text": "我先把鬆脫件拆下來收好，給這組五分鐘用現場安全白膠或紙膠帶做臨時加固，加固過關再一起手持上台。",
+            "action": "移除鬆脫危險件後給予短時安全補強機會，視加固結果決定展示方式。",
+            "tradeoff": "白膠沒那麼快乾，五分鐘硬上台手裡還是要提心吊膽。"
+          },
+          {
+            "id": 5,
+            "text": "我當場肯定他測試抓出風險很有用，說明「原本設計移動是為了讓後排看清楚，但既然底座會掉，今天改成各組自選坐著或走動」。",
+            "action": "採納結構安全回饋，開放各組依作品穩固度自由選擇定點或移動展示。",
+            "tradeoff": "一組站著一組坐著，台下觀眾視線一直切來切去有點亂。"
+          },
+          {
+            "id": 6,
+            "text": "我請他這組先排在最後一組，讓他們這十分鐘先用現有材料把底座重貼平、或用兩隻手托著上台穩穩講。",
+            "action": "調整展示順序爭取安全補強時間，並限定雙手平托替代單手揮舞。",
+            "tradeoff": "延後上台讓他這十分鐘全花在緊張補底座，沒心思聽前面幾組講。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他拿著測試紀錄質問得理直氣壯，笑著拍拍桌面說「好喔好喔，被你抓到流程漏洞了！鬆掉的先收起來，今天這件我准你放講桌上穩穩講，大家也別拿在手上甩」。",
+          "action": "大方承認流程設計疏失並收起鬆脫件，核准改採定點桌面穩固展示。",
+          "tradeoff": "現場臨時大轉彎改規則，其他已經練好走動台步的組員嘆了一口氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3796859465
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "026c7493f8dc9b8a32318b5bc351b2bb6faef7ccd8a2d913f029a8699eac1129"
+      },
+      "consequenceDirections": {
+        "A": "可發展大方承認漏洞並准他放講桌穩穩講後，其他練好走動台步的組員嘆口氣的落差。",
+        "B": "可發展全班改成定點桌上展示後，少了走動效果與準備好走位小組的微微失望。",
+        "C": "可發展維持安全空手移動並以照片呈現原作細節後，student_a失去親手拿實體作品展示。",
+        "D": "可發展開放各組依穩固度自選坐著或走動展示後，台下視線一直切換的混亂感。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aa825a6e2dfd712a4e2310a15749ddbfbf9a82137df02cf02aa8d8e11ab1f2cc",
+    "draftSha256": "a05519e74b6dde1f1f2c6ec3594ede6356145a3457a3735f448f21ff4658f147",
     "seedAssignmentVersion": 1
   }
 }

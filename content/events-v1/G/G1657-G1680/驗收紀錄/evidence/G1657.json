@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6ecf670223a1d07b654032fecaa3231528897a8544c860f68b43f1f06d0dd105",
+      "checkedAt": "2026-11-28T03:34:34.402Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請三方當面核對原本答應的範圍，由願意的人重新分配訪談和剪片，並當面跟替補講清楚。",
+            "action": "召集student_a、原組與替補三方核實原承諾範圍後重新協商分工。",
+            "tradeoff": "剛被找來接班的替補同學聽完一頭霧水，覺得自己像被叫來當備胎。"
+          },
+          {
+            "id": 2,
+            "text": "我保留已通知的新訪談人，讓student_a以自己寫好的訪談提綱獨立協助準備問題，不必碰剪片。",
+            "action": "維持新替補者訪談任務以守住對其之承諾，保留student_a提綱支援且免除剪片。",
+            "tradeoff": "保住了拒絕剪片的自由，卻拿不回他原本最想跟同學面對面訪談的機會。"
+          },
+          {
+            "id": 3,
+            "text": "我問剛走過來的替補同學自己原本手上組別忙不忙、其實是不是也只是被組長臨時拉來救火。",
+            "action": "先向替補學生核實其真實負荷與接手意願，再決定訪談歸屬。",
+            "tradeoff": "萬一替補同學說他超想做這個訪談，反而更沒台階把他請回去。"
+          },
+          {
+            "id": 4,
+            "text": "我當場點出組長沒聽完就整列擦掉太衝動，提議訪談拆成「兩人一起問不同題目」，剪片另找沒跨組的人。",
+            "action": "釐清組長誤解並協調訪談由兩生分工合問，剪片另覓組內人力。",
+            "tradeoff": "一個訪談塞兩個人去問，被訪的同學可能覺得陣仗太大。"
+          },
+          {
+            "id": 5,
+            "text": "我請student_a自己決定：要為了保住訪談親自去跟替補道歉換回來，還是乾脆把這組的訪談也放掉減負。",
+            "action": "將是否協商換回訪談或全面退出該組協作交由student_a自主決定。",
+            "tradeoff": "跨三組已經夠累的他，突然被逼著自己去跟替補開口換人壓力很大。"
+          },
+          {
+            "id": 6,
+            "text": "我先讓替補同學回原位等兩分鐘，單獨把這組長和student_a拉開確認那張紙原本寫什麼再重定。",
+            "action": "暫緩替補交接，先行釐清原組內部溝通誤會與實際承諾。",
+            "tradeoff": "替補站在旁邊乾等兩分鐘，全班都在看這桌到底出了什麼事。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他只是想守住自己負荷上限卻差點被整組除名，嘆口氣對組長說「人家講的是不接剪片，你們怎麼連訪談一起擦掉啦！來，替補先別動，我們三個兩分鐘講開」。",
+          "action": "當場替student_a澄清並未退出訪談，立即召集三方兩分鐘內重對合理分工。",
+          "tradeoff": "幫student_a講話講得太直，組長捏著橡皮擦站在原地有點沒面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 234861266
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "6c305b4d85933f03fbb4bd3fc660399c8bfdcea470d0f91f0ed4f86805946c12"
+      },
+      "consequenceDirections": {
+        "A": "可發展當場替他澄清沒退出訪談並召集三方兩分鐘講開後，組長捏著橡皮擦沒面子的僵硬。",
+        "B": "可發展先讓替補等兩分鐘、拉開組長與student_a確認原本分工後，全班盯著看的壓力。",
+        "C": "可發展先向替補核實真實負荷與意願後，若替補也超想接該訪談反而更難請回去的兩難。",
+        "D": "可發展訪談拆成兩人合問不同題目、剪片另找人後，被訪同學面對兩人陣仗的不自在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a0236a400a69827b438f3ded623d4be80db8de0435e64e7032b62b98d4d7ee59",
+    "draftSha256": "6ecf670223a1d07b654032fecaa3231528897a8544c860f68b43f1f06d0dd105",
     "seedAssignmentVersion": 1
   }
 }

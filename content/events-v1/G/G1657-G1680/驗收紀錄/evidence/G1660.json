@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ddec3abcaff3c5556565d95a5e290bdb6f4ac8430485c7fbf520ce86e571d430",
+      "checkedAt": "2026-11-28T03:34:34.412Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我們先把這段原創推論抽掉按期交件，保住準時交付，下次取得授權再補入教材。",
+            "action": "暫時移除未完成授權與署名之學生推論段落，依原期限準時提交其餘共同範例。",
+            "tradeoff": "交出去的成品少掉整份最令人信服的亮點推論。"
+          },
+          {
+            "id": 2,
+            "text": "我支持他把名字補上，現在分頭去取得學生本人授權，並由我去向承辦協調延後補交這段。",
+            "action": "向承辦窗口申請延後提交該段落，同時立即徵詢學生署名授權。",
+            "tradeoff": "得自己去跟催件的承辦重新協調交付時程，兩邊都趕。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻趁這節下課跑去教室問那名學生願不願意具名授權，拿得到就壓線補進第二欄準時交。",
+            "action": "把握交件前最後課間即時徵詢學生授權，若獲同意則補齊署名並如期送件。",
+            "tradeoff": "萬一學生剛好去上體育課或不想具名，回來還是只剩半小時重改。"
+          },
+          {
+            "id": 4,
+            "text": "如果聯繫不上學生或他不想具名，我建議改在第二欄清楚註明「引自課堂匿名學生原創推論（經同意改寫）」，絕不掛成老師成果。",
+            "action": "徵得學生同意下以匿名學生貢獻註記取代具名或教師掛名，如期交件。",
+            "tradeoff": "還是得先問過學生同意改寫，且沒寫出名字對堅持要還公道的同事稍嫌不夠。"
+          },
+          {
+            "id": 5,
+            "text": "我先把這段從今天公開分享拿掉，請teacher_a改用他自己另外編的一段教師示範補上那個格子。",
+            "action": "撤除未授權學生推論，改以同事自身原創教學示範替補空缺以準時交件。",
+            "tradeoff": "多班待交已經累翻的他，還得在最後兩小時硬擠出一段新示範。"
+          },
+          {
+            "id": 6,
+            "text": "我肯定他累成這樣還守住學生署名，這份先標「待補授權」送審草稿給承辦，明天拿到授權再放定稿。",
+            "action": "先向承辦說明狀況送出標註待授權之版本，俟完成學生授權後方納入正式分享。",
+            "tradeoff": "承辦可能會直接退件說等授權齊了再一次送。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他忙到快虛脫還堅持不搶學生功勞，心裡突然很敬佩，直接站起來說「你先坐著別動！我去教室抓那孩子問同不同意具名，承辦那邊晚半小時算我的」。",
+          "action": "肯定同事原則並主動承擔前往徵詢學生授權與向承辦協調緩衝之責。",
+          "tradeoff": "自己下節課前得樓上樓下狂奔找學生又去求承辦寬限。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3262880064
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "b5a0af9abb3ef2b7bc64ffdd6114622eeb72f192d07b63158407015502a3d0a0"
+      },
+      "consequenceDirections": {
+        "A": "可發展支持補上學生名字並分頭徵詢授權與協調承辦延後，兩邊都趕的交付壓力。",
+        "B": "可發展先抽掉這段準時交件後，交出去的共同教材少掉整份最令人信服的亮點推論。",
+        "C": "可發展肯定原則並親自去教室找孩子問授權、扛下半小時延誤後，樓上樓下奔波的代價。",
+        "D": "可發展徵得學生同意改採匿名原創推論註記準時交件後，堅持具名公道的同事覺得稍嫌不夠。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e0dd5ce9c04465abde6f98e08c68788eefc69038d1a099629096081adb88a341",
+    "draftSha256": "ddec3abcaff3c5556565d95a5e290bdb6f4ac8430485c7fbf520ce86e571d430",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "790a7e687d0cf5d50503b3a2a41e9b5f326d5c71224a21456eb7b39e261c7cca",
+      "checkedAt": "2026-11-28T03:25:19.694Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著誠懇接過線並說「真的謝謝你救命，上次會議讓你多忙很抱歉，下課請你喝咖啡！」。",
+            "action": "當場致謝借線並就先前會議造成負擔致歉，約定課後請喝咖啡化解積怨。",
+            "tradeoff": "講完還得狂奔進教室上課，差點遲到且下課還得破費買咖啡。"
+          },
+          {
+            "id": 2,
+            "text": "我只簡單道謝接過線就先衝進教室上課，等下課歸還時再私下好好說聲謝謝並解釋上次會議初衷。",
+            "action": "先行借線準時進班授課，課後歸還私物時再行致謝與說明上次會議立場。",
+            "tradeoff": "不耽誤一秒正課，但當下這股冷言酸氣得先悶在心裡進教室。"
+          },
+          {
+            "id": 3,
+            "text": "我接過線笑說「謝謝！設備問題我下課自己報修，不會再叫大家開會填表了」，先給他一個台階下。",
+            "action": "致謝借線並承諾自行處理後續報修，以幽默回應消解其對開會填表的怨氣。",
+            "tradeoff": "沒正面談開上次年級會議的不滿，只是順勢把話圓過去。"
+          },
+          {
+            "id": 4,
+            "text": "我急著接線前先問清楚「這條新的拆了沒關係嗎？真的急用我下課還你、這條算我跟你買一條新的補給你都行」。",
+            "action": "確認私物拆封意願並誠懇致謝借用，課後依原樣歸還或替補。",
+            "tradeoff": "太客氣算得太清，嘴硬心軟的同事翻了個白眼說「不用啦快去上課」。"
+          },
+          {
+            "id": 5,
+            "text": "我先說聲謝謝把線抓起來衝進教室，下課還線時順便把上次會議其實我也替大家擋掉的兩張表告訴他。",
+            "action": "準時上課後於課間還線時誠懇溝通上次會議的真實脈絡，試圖化解誤解。",
+            "tradeoff": "下課十分鐘講會議脈絡有點趕，同事累得要命未必想聽解釋。"
+          },
+          {
+            "id": 6,
+            "text": "我還是先接過他這條私備轉接線進班上課，並承諾放學前一定妥善收好歸還原位。",
+            "action": "即時借用同事私備轉接線救急上課，並承諾妥善保管準時歸還。",
+            "tradeoff": "他嘴上酸完看我急著跑走，心裡可能還嘀咕老師連解釋都不想聽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他嘴上還在酸手上卻拆包裝給我，忍不住笑著雙手合十說「哥你嘴巴好毒手好暖！我先衝去上課，下課回來給你跪謝加請飲料行不行」。",
+          "action": "以自嘲幽默接住同事的嘴硬心軟，立即借線進班授課並約定課後致謝。",
+          "tradeoff": "同事被我一句「嘴毒手暖」逗得冷臉破功了一秒，嘴上還是唸著快去上課。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4037126308
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "3aa60e21d0991123116cae6d53147e5324d278e32542de0b15a090413fdc3be5"
+      },
+      "consequenceDirections": {
+        "A": "可發展誠懇接線並約下課請喝咖啡化解積怨後，狂奔進教室差點遲到還得破費。",
+        "B": "可發展先借線進班、下課還線時補講上次替大家擋掉兩張表後，累壞同事未必想聽。",
+        "C": "可發展接過私備轉接線並承諾放學收好歸還後，同事看導師急著跑走仍小聲嘀咕。",
+        "D": "可發展笑著雙手合十喊「嘴毒手暖」後，同事冷臉破功一秒嘴上還是唸著快去上課。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b8ad23f0b5d36c56478a31f063316a76e0d0f1c51d84fb25fdb0eaebd7853f1d",
+    "draftSha256": "790a7e687d0cf5d50503b3a2a41e9b5f326d5c71224a21456eb7b39e261c7cca",
     "seedAssignmentVersion": 1
   }
 }

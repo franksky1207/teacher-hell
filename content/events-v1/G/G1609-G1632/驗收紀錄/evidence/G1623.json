@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8497f1924f23a2fb4e7c42a36c6d26d700bffb1f950d32adc4bbe8794fd9c1e1",
+      "checkedAt": "2026-11-28T03:25:19.677Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著體諒他太累，但明確婉拒跟著全面停考，這週我班上還是照原計畫考完那兩張關鍵複習卷。",
+            "action": "婉拒集體停考提議，維持本班原定關鍵單元晨考複習進度。",
+            "tradeoff": "疲憊的同事覺得導師太卷、讓他自己停考顯得很沒面子。"
+          },
+          {
+            "id": 2,
+            "text": "我折衷只停掉兩張非核心的單字抽背，把重點單元小考延到下週初再補，讓兩班都稍微喘口氣。",
+            "action": "取消非核心抽背並適度延後部分測驗時程，保留關鍵複習進度並兼顧雙方負荷。",
+            "tradeoff": "本週的複習節奏稍微延後，下週初改卷工作反而變多。"
+          },
+          {
+            "id": 3,
+            "text": "我告訴他我考卷都印好了不考浪費紙，但這週考完後我改用課堂對答案不記平時成績，幫彼此少改兩疊。",
+            "action": "照常發卷練習但改為自主核對不計分，兼顧複習效度與減輕教師批改負荷。",
+            "tradeoff": "學生一聽不計分可能寫得隨便，且同事其實想連監考都省掉。"
+          },
+          {
+            "id": 4,
+            "text": "我先問清楚別棟資深導師是不是因為那幾班進度本來就超前才自習，別盲目跟著停考。",
+            "action": "婉拒跟風停考，提醒teacher_a核對各班實際教學進度差異。",
+            "tradeoff": "在累得要死的同事面前講教學進度差異，聽起來有點像說教。"
+          },
+          {
+            "id": 5,
+            "text": "我誠實說這兩張複習卷停不得，但我可以借他我這班的標準答案卷，他班上想考或下週用都方便。",
+            "action": "維持本班原定測驗，提供自身現成解答卷協助減輕同事後續備課負荷。",
+            "tradeoff": "他如果這週硬要停考，下週拿去補考還是得自己改。"
+          },
+          {
+            "id": 6,
+            "text": "我乾脆說今天早自習我們照考，明天跟週五看他班上停不停我尊重他，各班自己抓節奏。",
+            "action": "婉拒同年級統一停考綁定，重申各班依自身教學需要獨立決定。",
+            "tradeoff": "他沒拉到同盟，走回座位時肩膀垮得更低了。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他黑眼圈都快掉到臉頰還想拉我一起偷懶，忍不住笑著把那疊考卷抱緊說「別想拖我下水啦！我考卷都印好了不考會被浪費紙的雷劈，你真的撐不住就先讓你們班自習兩天」。",
+          "action": "以幽默語氣堅決拒絕跟風停考，維持本班原定測驗並表示理解同事自主減負。",
+          "tradeoff": "雖然沒傷和氣，但teacher_a還是得自己面對同年級只有他停考的壓力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2045693901
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "fd061ca585506365049af808c3e32f40de25f771d39c357d2dbf28db9178f815"
+      },
+      "consequenceDirections": {
+        "A": "可發展笑著婉拒跟風停考並照考兩張關鍵卷後，疲憊同事覺得導師太卷的微妙距離。",
+        "B": "可發展提醒他先看別棟是不是進度超前後，在累壞同事面前講教學差異的反效果。",
+        "C": "可發展改用課堂對答案不計分幫彼此少改兩疊後，學生寫得隨便與同事仍想省監考。",
+        "D": "可發展抱緊考卷幽默拒絕被拖下水後，teacher_a自己面對只有他停考的同年級壓力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ce548a8cab13fc84706fef50d791c38364ebf049989ece6600ca395894f16d76",
+    "draftSha256": "8497f1924f23a2fb4e7c42a36c6d26d700bffb1f950d32adc4bbe8794fd9c1e1",
     "seedAssignmentVersion": 1
   }
 }

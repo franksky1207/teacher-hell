@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2f9a7efb76a7b04e59bbf43943cb676fb2cb537f7e6b61a3c54108dd35f5a179",
+      "checkedAt": "2026-11-28T03:25:19.690Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻在班群公開澄清「上次是建議結伴搭大眾運輸，私車接送涉及保險與各家作息，不建議在群裡配對」，並私訊提供校車路線。",
+            "action": "於班群立即公開澄清並劃清私車接送界線，私下提供校車或大眾運輸替代資訊。",
+            "tradeoff": "快速替同區家長解了圍，但原本挺老師的parent_a當場超尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我先私下打電話跟這位家長溝通請他自己收回公開徵車貼文，再幫他一起查校車或安心公車路線。",
+            "action": "私下致電勸導parent_a自行撤回群組貼文並協助查詢學校校車或公車路線。",
+            "tradeoff": "保住了他在班群的面子，但已經看到貼文的同區家長心裡還是怪怪的。"
+          },
+          {
+            "id": 3,
+            "text": "我先在班群簡短回覆「私家車共乘因保險責任學校不建議班群媒合，同區結伴走大路搭車較合適」，不直接點名批評他。",
+            "action": "以校方安全與保險規範於班群溫和澄清立場，避免公開指責parent_a。",
+            "tradeoff": "他那則貼文還掛在上面，同區家長還是覺得有點壓力。"
+          },
+          {
+            "id": 4,
+            "text": "我立刻打電話先了解他這幾天是不是家裡突然沒人接送、才急成這樣，同時在群組補上學校校車與結伴路線表。",
+            "action": "電話關懷家庭接送突發困境並於群組補充合規通勤資源，澄清原意為結伴步行。",
+            "tradeoff": "如果他沒主動刪文，兩則訊息並排在群組裡還是有點尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我在班群貼出學校現行放學導護時間與合法計程車／校車搭乘處說明，並明確寫出「導師無法代為協調私人接送」。",
+            "action": "於班群明確公告導師不涉入私人共乘媒合，提供合法公共通勤指引。",
+            "tradeoff": "公事公辦把界線畫死，原本熱情挺老師的家長覺得被當眾打臉。"
+          },
+          {
+            "id": 6,
+            "text": "我先私訊請他撤文，並建議他如果真的需要找固定長期接送，還是透過合法付費交通車業者比較有保障。",
+            "action": "私下勸撤公開徵車文並建議尋求合法商業交通車資源，不以班群人情代勞。",
+            "tradeoff": "家裡負擔已經夠重的他一聽要多花錢請交通車，嘆了好大一口氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著那排死寂的已讀數字頭皮發麻，立刻私訊打給他急著說「爸爸你快點先收回那則！我那天是講走路搭公車，你這樣標我，同區開車的家長全部不敢講話了啦」。",
+          "action": "立即私電坦白說明同區家長已讀壓力，促請parent_a迅速收回群組徵車貼文並另尋校車路線。",
+          "tradeoff": "話講得太直戳破社會性死亡現場，parent_a那頭尷尬到連忙掛電話刪文。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 177925626
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "67613d5e2ecc20ffb95759c34b1e0aa7cbb9bc2f77192c0e358bbc826fd2980e"
+      },
+      "consequenceDirections": {
+        "A": "可發展在班群公告導護位置並寫明導師無法媒合私車後，熱情挺老師的家長覺得被打臉。",
+        "B": "可發展私下勸撤貼文並建議找合法付費交通車後，家裡負擔重的他一聽花錢就嘆氣。",
+        "C": "可發展私電請他自己收回公開徵車文並幫查校車路線後，已讀的同區家長心裡仍怪怪的。",
+        "D": "可發展急著私電直白說同區家長全不敢講話了快收回後，parent_a尷尬掛電話立刻刪文。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8e15a12766a272e921b9dbe197ea158cee5497bb921869794303053653a34e61",
+    "draftSha256": "2f9a7efb76a7b04e59bbf43943cb676fb2cb537f7e6b61a3c54108dd35f5a179",
     "seedAssignmentVersion": 1
   }
 }

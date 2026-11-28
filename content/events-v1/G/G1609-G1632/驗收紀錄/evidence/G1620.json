@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b56bfa06a9a286fe6dd285cb63bf0168bf863527551448447f4e12dbaa6f1269",
+      "checkedAt": "2026-11-28T03:25:19.670Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先向別班同學與導師致歉化解誤會，再把student_a叫回來明確禁止未經授權在走廊攔人執法。",
+            "action": "立即向別班致歉並解散未授權走廊安全小隊，嚴正重申學生無權攔阻他班人員。",
+            "tradeoff": "熱血挺老師的他當場覺得超委屈，搞不懂好心維護安全錯在哪。"
+          },
+          {
+            "id": 2,
+            "text": "致歉並解散走廊攔人小隊後，我把他的安全熱情引導回只負責自己班門口鋪擦手紙與口頭提醒自己人。",
+            "action": "解散跨班攔阻行為並向別班致歉，將其安全服務限縮於本班門口合法範圍。",
+            "tradeoff": "保留了他的號召力用在正途，但那三個跟風隊員未必馬上收斂。"
+          },
+          {
+            "id": 3,
+            "text": "我先讓別班男生趕快去廁所並跟別班導師致意，再把四個隊員一起帶回教室講清「提醒」跟「攔人」的界線。",
+            "action": "立即放行他班學生與致歉後，對四名參與學生進行職權與安全執法界線指導。",
+            "tradeoff": "四個人排排站聽訓，原本覺得自己立功的士氣瞬間垮掉。"
+          },
+          {
+            "id": 4,
+            "text": "向別班致歉並解散小隊後，我請他若真的覺得這區太滑需要人看，先寫建議單去問學務處要不要設正規志工。",
+            "action": "立即解散私設小隊與致歉，引導改循學校正規安全志工或總務管道反映。",
+            "tradeoff": "他聽完覺得跑學務處太麻煩，只悶悶地說以後不管別班了。"
+          },
+          {
+            "id": 5,
+            "text": "致歉並撤除小隊後，我當場請student_a自己去向那位趕廁所的別班男生為伸手攔人道個歉。",
+            "action": "解散小隊後要求student_a親自向受阻之他班學生致歉，釐清越權責任。",
+            "tradeoff": "原本挺老師的他去向差點吵架的別班道歉，面子掛不住。"
+          },
+          {
+            "id": 6,
+            "text": "我先跟別班導師協調好雙方各帶回管教，回班後不只解散小隊，還直接把教室門口防滑擦乾工作交給他們四個負責這週。",
+            "action": "向別班致歉並解散攔人小隊，指派該四生本週專責維護本班門口地面乾燥。",
+            "tradeoff": "變成變相懲罰性勞動，另外三個原本只是被號召的同學有點無奈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著別班導師走過來的尷尬臉色只能趕快賠笑，轉頭壓低聲音對這小子說「先放人家去廁所！誰准你替我當走廊警察的，回去解散，下課再來找我」。",
+          "action": "立即放行他班學生並向別班導師致歉，當場嚴厲喝止解散小隊並約談課後檢討。",
+          "tradeoff": "在別班面前直接罵自己班的人氣王，student_a眼眶微紅地收隊回班。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 86014426
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "98bbb491108c47719c03e3b402b9053d8553061c6055d87c7ed67ff59d51cfc6"
+      },
+      "consequenceDirections": {
+        "A": "可發展要求他親自去向趕廁所的別班男生道歉後，熱血挺老師的他面子掛不住的委屈。",
+        "B": "可發展當場壓低聲音喝止解散小隊並約課後檢討後，人氣王眼眶微紅收隊回班。",
+        "C": "可發展解散小隊後引導他改寫建議單問學務處設志工，他覺得麻煩而悶悶不樂。",
+        "D": "可發展將四個隊員帶回教室講清提醒與攔人界線後，原本以為立功的士氣瞬間垮掉。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9a2b42a80ab23a9241939c93b6634af8ca9a5d86fc16022adbfe9a2e3d87ab58",
+    "draftSha256": "b56bfa06a9a286fe6dd285cb63bf0168bf863527551448447f4e12dbaa6f1269",
     "seedAssignmentVersion": 1
   }
 }

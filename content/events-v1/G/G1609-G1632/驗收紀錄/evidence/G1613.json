@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "275b440bcd6d7c7480e57434178360851154f42999df6a1694f349a6d2ca56d6",
+      "checkedAt": "2026-11-28T03:25:19.646Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我趕緊帶他去班級櫃取出登記簿核對缺哪兩人，立刻請那兩名學生補交或聯絡家長確認。",
+            "action": "立即會同student_a核對登記簿找出缺件學生並通知補繳或向家長確認。",
+            "tradeoff": "原本得意報喜的他當場羞愧得頭都抬不起來。"
+          },
+          {
+            "id": 2,
+            "text": "我先自己致電學務處溝通寬限到明天補齊，再笑著拍拍他肩膀說下次交件前先對座號再慶祝。",
+            "action": "向學務處申請隔日補件並私下寬慰student_a，隨後再安排核對缺件名單。",
+            "tradeoff": "保住了這名負責學生的顏面，但導師得自己扛學務處催件壓力。"
+          },
+          {
+            "id": 3,
+            "text": "我先讓他自己回班開櫃把登記簿拿來跟學務處退回的回條一號一號對出來，查明後向我回報。",
+            "action": "交由student_a自行完成登記簿與實體回條逐號複核並回報缺漏名單。",
+            "tradeoff": "把查漏責任交回他手上，他緊繃得連去開櫃都在發抖。"
+          },
+          {
+            "id": 4,
+            "text": "我請他先把那兩張被退回來的空白單拿去學務處道歉領回，同時對照名單找那兩位同學明天帶簽名。",
+            "action": "要求student_a親自向學務處說明疏失並領回錯單，同時啟動缺件補交。",
+            "tradeoff": "叫一個這麼敬重老師的乖學生去行政處室認錯，他心裡超煎熬。"
+          },
+          {
+            "id": 5,
+            "text": "我陪他一起在登記簿對出是哪兩個座號後，由我直接聯絡那兩位家長先確認意願，紙本明天補交。",
+            "action": "核對缺件座號後由導師致電家長先行口頭確認，次日補齊紙本簽名。",
+            "tradeoff": "老師多打兩通電話善後，student_a在一旁自責到一直說對不起。"
+          },
+          {
+            "id": 6,
+            "text": "我趁這個機會教他以後收表單都要「先劃掉沒交的座號、再數張數」的雙重核對法，今天先查明缺誰。",
+            "action": "現場指導雙重核對方法並立即查明兩位缺件學生辦理補收。",
+            "tradeoff": "慌張的他當下根本聽不太進去方法，只一直想著趕快把那兩張變出來。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抓著鑰匙快哭出來的樣子忍不住笑了出來，摸摸他頭說「好啦沒關係，開心是好事，但我們現在要先去開櫃子把那兩個漏網之魚抓出來，快走」。",
+          "action": "以輕鬆安撫語氣化解其自責情緒，立即帶同前往班級櫃核對登記簿並處理補交。",
+          "tradeoff": "雖然沒讓他太難過，但學務處那邊今天下班前還是等著我們補回消息。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 933500197
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "5d8a4e590ab6930f82b94d1aa6d86b6e3596705e386a192a3f6cc325408c6201"
+      },
+      "consequenceDirections": {
+        "A": "可發展對出座號由導師先電聯家長口頭確認後，一旁自責到一直道歉的student_a。",
+        "B": "可發展現場教他雙重核對法並立刻查缺誰時，慌張學生一邊找名字一邊手忙腳亂。",
+        "C": "可發展笑著摸頭先拉他去開櫃抓出漏網之魚後，兩人趕在下班前補回學務處的進度。",
+        "D": "可發展會同取出登記簿核對並立刻通知補繳時，原本得意報喜的他羞愧低頭的收尾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8d76062e5c3da2fdd0dacafabc5237dc6338f19103fac3d9cfd709545ff34b0c",
+    "draftSha256": "275b440bcd6d7c7480e57434178360851154f42999df6a1694f349a6d2ca56d6",
     "seedAssignmentVersion": 1
   }
 }

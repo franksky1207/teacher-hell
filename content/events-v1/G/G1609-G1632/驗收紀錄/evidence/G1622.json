@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "95525e1ae2e63fd26e79a095bd410a8bce0e158b306347773119f36f237933ca",
+      "checkedAt": "2026-11-28T03:25:19.675Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我順手在底下幽默回一句同樣的梗，再補一行「下次還是想看你自己的真心話喔」。",
+            "action": "於週記批註以幽默回應接納其壓力，並溫和提醒下次須回歸真實書寫。",
+            "tradeoff": "解除了他的緊張，但那幾個帶頭敷衍的死黨覺得這招很混得過去。"
+          },
+          {
+            "id": 2,
+            "text": "批改完下課我單獨叫他來辦公室，笑著點破「我看你一直偷瞄我，自己也覺得敷衍對吧？明天補兩句真心話回來」。",
+            "action": "課後私下約談點破從眾心態並要求明日補寫真實生活反思。",
+            "tradeoff": "高關注度的他當場臉紅超糗，覺得全班都在看他被叫進辦公室。"
+          },
+          {
+            "id": 3,
+            "text": "我直接在他的還有那幾個死黨的週記上同時蓋一個重寫章，約好放學前每人補寫五十字真實近況。",
+            "action": "一視同仁退回所有複製梗圖週記之學生（含死黨與student_a），要求補寫真實內容。",
+            "tradeoff": "公平守住了底線，但student_a怕死黨怪他害大家被抓包。"
+          },
+          {
+            "id": 4,
+            "text": "我下課把這幾個死黨和student_a一起叫到走廊笑著問「你們這幾本是不是開同一個模板複製貼上」，當場約定下不為例。",
+            "action": "課後集體口頭點破跟風敷衍並設下下不為例界線，本次暫免重寫。",
+            "tradeoff": "雖然沒單獨針對他，但下週交週記大家會不會再換別的梗很難說。"
+          },
+          {
+            "id": 5,
+            "text": "我先在台上不動聲色改完，下課只私訊聯絡簿或便條夾在他的本子裡問他「是不是被朋友拱著寫這句」。",
+            "action": "以不公開夾紙條方式私下關心並確認其從眾壓力，不當眾點名。",
+            "tradeoff": "沒馬上要求補寫，他今晚打開週記才看到字條，緊張延長了半天。"
+          },
+          {
+            "id": 6,
+            "text": "我當場在講台合上本子笑著對全班說「某幾位同學複製貼上的梗我記住了喔，想寫好笑的下次要寫原創」，點到為止。",
+            "action": "當堂以不點名幽默提醒全班勿抄梗敷衍，保留週記原狀。",
+            "tradeoff": "沒點名卻讓student_a整節課心裡七上八下，不確定老師有沒有生氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他偷瞄我瞄到脖子都快扭到了也有點好笑，直接拿紅筆在旁邊畫個流汗表情寫「你一直偷看我眉頭幹嘛啦！這篇先過，下週不准再跟他們一起交作業廢文」。",
+          "action": "以趣味紅筆批註直接點破其偷瞄緊張，本次通融並約定下週不可再跟風敷衍。",
+          "tradeoff": "他發回本子打開看到肯定又笑又羞，只是對那幾個死黨沒多做處理。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1201033643
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e62bb047ae80107d13986dd00144a1e4ab74b3b4ef9688abbd4f3980c441ae79"
+      },
+      "consequenceDirections": {
+        "A": "可發展夾便條問是不是被朋友拱寫這句後，student_a今晚打開本子才看到的緊張延長。",
+        "B": "可發展把幾個死黨跟student_a一起叫到走廊點破下不為例，下週會不會換別的梗。",
+        "C": "可發展課後單獨約談點破偷瞄並要求明天補真心話後，高關注度的他臉紅超糗。",
+        "D": "可發展用紅筆畫流汗表情吐槽別再跟他們交廢文後，student_a打開本子又笑又羞。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b65a2caac11695aaa9019af0ad9d78580baa0e746147af83e6253246687c0419",
+    "draftSha256": "95525e1ae2e63fd26e79a095bd410a8bce0e158b306347773119f36f237933ca",
     "seedAssignmentVersion": 1
   }
 }

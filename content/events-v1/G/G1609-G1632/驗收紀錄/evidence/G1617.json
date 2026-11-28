@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d4addff08564f055514648c979a4db58cc49e560134f8e7f3e145f9c9970cfec",
+      "checkedAt": "2026-11-28T03:25:19.663Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持正式班表並在必要時發正確公告，再陪student_a一起去向那位同學收回私下承諾，並問兩人有無合規換班空間。",
+            "action": "維持正式早自習作息並澄清公告，陪同student_a向受影響同學收回私下承諾並檢視合規調整可能。",
+            "tradeoff": "製表的student_a得當面承受對朋友失信的難堪。"
+          },
+          {
+            "id": 2,
+            "text": "我維持正式班表與正確資訊後，按原程序開放相關學生重新提出輪值困難，不私下指定誰代班。",
+            "action": "澄清正式作息並恢復原程序，開放確實有早自習困難的學生依正規流程提出協調。",
+            "tradeoff": "他本來想幫朋友卸下的那幾天值日，最終可能還是落回原人手上。"
+          },
+          {
+            "id": 3,
+            "text": "我請student_a先把草稿上劃掉的名字全部復原交給我看，今天下課前他自己去跟那位同學講清楚看錯影片了。",
+            "action": "要求立即恢復正式輪值草稿，並由student_a自行向該同學說明誤會與撤回承諾。",
+            "tradeoff": "沒老師陪著講，他怕朋友覺得被耍而一直拖到放學才敢開口。"
+          },
+          {
+            "id": 4,
+            "text": "我直接在早自習進班統一宣布「網路傳的取消早自習是假的，下月輪值照舊」，幫他順便把台階鋪掉一部分。",
+            "action": "由導師於班級公開澄清謠言並確認輪值照舊，間接替student_a解除私下誤諾。",
+            "tradeoff": "雖然少了當面拆穿的尷尬，但那位同學聽完失落之餘還是會私下找他算帳。"
+          },
+          {
+            "id": 5,
+            "text": "我先確認一下他跟那位同學原本為什麼需要早到代班，把誤會講開後再看兩人下個月怎麼自己公平輪。",
+            "action": "維持正式班表，釐清兩生原有互助背景後再協助依正式規範重整輪值。",
+            "tradeoff": "多花時間去問前因後果，早自習的正式公告拖慢半拍。"
+          },
+          {
+            "id": 6,
+            "text": "我提醒他以後沒看到學校正式公文前絕不能先改班表或亂答應別人，這次先由他照原表補回缺額。",
+            "action": "重申未經官方確認不可更動班務之紀律，要求依正式班表復原排班。",
+            "tradeoff": "話講得比較硬，原本親近老師的他低著頭說不出話。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抓著那張劃得亂七八糟的草稿一臉懊惱，嘆口氣說「以後不要看短片就先放話好不好！走，現在離打鐘還有五分鐘，我陪你去跟阿凱講清楚是我說沒取消的」。",
+          "action": "口頭唸過輕信謠言後，立即陪同student_a向該同學澄清正式公告與收回承諾。",
+          "tradeoff": "等於老師幫他扛了「壞消息宣布人」的臉色，自己也差點趕不上早自習點名。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 891871174
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "68bd74cd8b9e9b06f0046858f3e6848bd41699b5ea21d3b421d30cd2df1c1b36"
+      },
+      "consequenceDirections": {
+        "A": "可發展重申未見公文不能改班表並要求復原後，親近老師的他低頭不語的懊惱。",
+        "B": "可發展早自習公開澄清謠言並照舊後，那位以為解脫的同學私下找student_a算帳。",
+        "C": "可發展限他下課前自己去跟朋友講清看錯影片後，他拖到最後一刻才敢開口的煎熬。",
+        "D": "可發展早自習前五分鐘陪他去跟阿凱講是我說沒取消後，導師幫忙扛臉色的師生情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2db86442a1ebf0786772e3cc2143d465545d9c44a2b054124fe98d7e11975bad",
+    "draftSha256": "d4addff08564f055514648c979a4db58cc49e560134f8e7f3e145f9c9970cfec",
     "seedAssignmentVersion": 1
   }
 }

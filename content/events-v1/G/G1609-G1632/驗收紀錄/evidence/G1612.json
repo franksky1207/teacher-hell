@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "44c5466f5737b62c69d40dedf048df6f8189ea1a8c610a289685b29e7ca7d6f9",
+      "checkedAt": "2026-11-28T03:25:19.643Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我答應趁他下午空堂一起各演一遍情境，讓他下次在自己課堂先停一下、清楚提醒收好再按程序個別處理。",
+            "action": "利用同事空堂進行課堂處置演練，支持teacher_a於自己課堂獨立建立管教權。",
+            "tradeoff": "下次上課還是只有他一個人面對全班，沒有導師當場撐腰。"
+          },
+          {
+            "id": 2,
+            "text": "在雙方有合適時段且同意下，我陪他進班一次，但由他自己說出課堂要求和上課方式，我只補充班規。",
+            "action": "於合適時段短暫陪同進班一次，明確由teacher_a主導講述課堂要求、導師僅從旁補位。",
+            "tradeoff": "兩人得另外對齊時段，進班時學生眼神可能還是習慣望向導師。"
+          },
+          {
+            "id": 3,
+            "text": "我先問清楚剛才偷傳零食的是哪幾排，下節課間我直接以導師身分去提醒班規，但不說是他來告狀。",
+            "action": "由導師於課間另行重申全班飲食規範，保護teacher_a不直接暴露衝突。",
+            "tradeoff": "學生雖然收斂一點，但科任老師自己面對違規還是沒學會怎麼喊停。"
+          },
+          {
+            "id": 4,
+            "text": "我教他一個不吵架的降溫句：看到有人吃東西直接停筆安靜看三秒、請人收進書包就好，不用長篇訓話。",
+            "action": "提供低衝突課堂即時制止技巧，婉拒親自陪同進班盯人。",
+            "tradeoff": "對極怕起衝突的他來說，光要安靜看學生三秒心跳就快破表。"
+          },
+          {
+            "id": 5,
+            "text": "我建議他下節進班乾脆先把「上課禁止飲食與手機」兩條寫在黑板角落當默契提醒，減輕口頭開口壓力。",
+            "action": "建議採用黑板視覺提示輔助課堂常規管理，維持科任獨立授課。",
+            "tradeoff": "學生看到角落一行字未必會自己把零食收起來。"
+          },
+          {
+            "id": 6,
+            "text": "我請他下次再遇到有人傳零食，直接記下座號下課交給我依班規處理，課堂上先穩住教學流暢。",
+            "action": "建立課後座號回報與導師接手班規登記機制，避免科任課中僵持。",
+            "tradeoff": "久了學生會覺得科任只能「下課去跟導師告狀」，管教威信更弱。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他連在茶水間講這件事都在緊張，乾脆拍拍他手臂說「別怕啦，學生只是試探你有沒有在看！下午空堂我當頑皮學生跟你演兩遍，這次你自己鎮住全場」。",
+          "action": "鼓勵並約定下午空堂進行角色扮演演練，婉拒代為進班撐腰。",
+          "tradeoff": "teacher_a苦笑著說好，心裡大概已經在擔心下午演練會不會笑場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 684925517
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "a34ac7ab3886b3b7a2b786796f8dd96aa8af2a1b9112dcc893c269e0e6aa6660"
+      },
+      "consequenceDirections": {
+        "A": "可發展教他停筆安靜看三秒的低衝突制止句後，極怕衝突的科任敢不敢真的喊停。",
+        "B": "可發展拍拍他手臂約定下午空堂當頑皮學生演練後，teacher_a緊張又笑場的練習。",
+        "C": "可發展合適時段陪同進班一次並由科任主導講規範後，學生眼神還是望向導師的難題。",
+        "D": "可發展用下午空堂先演練情境讓他獨立回班上課後，沒有導師在場時的實戰結果。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "84390fac978df09553721ee583ce8e07b820d9f010c3275245849c5589d78736",
+    "draftSha256": "44c5466f5737b62c69d40dedf048df6f8189ea1a8c610a289685b29e7ca7d6f9",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "710fd56aa03e68653413d2a8f12e343637efa404a61581c7cf175f4ea0070857",
+      "checkedAt": "2026-11-28T03:25:19.682Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我趁早自習直接在全班面前坦率笑著說明昨天是回處室急件，以後在講台用手機一定先講一聲，並私下肯定他敢對事不對人。",
+            "action": "於全班公開說明昨日公務急訊原因並建立日後講台使用報備默契，私下肯定student_a原則性。",
+            "tradeoff": "得在全班三十幾雙眼睛面前先認一次自己沒先說明的疏忽。"
+          },
+          {
+            "id": 2,
+            "text": "我私下把他叫來辦公室，清楚解釋昨天是在回急件公務、教師原本就有聯絡公務需求而非雙標。",
+            "action": "私下向student_a澄清昨日公務事實及教師與學生手機規範的職責差異。",
+            "tradeoff": "講原則又不滿的他心裡還是覺得老師只在私下找理由解釋。"
+          },
+          {
+            "id": 3,
+            "text": "我在那張列印紙條背面親筆寫明昨天回覆公務的事實與抱歉沒先口頭告知，夾回他週記裡當正式回函。",
+            "action": "以書面親筆回函形式正式回應學生質疑並致歉未事前說明。",
+            "tradeoff": "沒對全班說明，昨天也有看到導師低頭滑手機的其他同學照樣心裡犯嘀咕。"
+          },
+          {
+            "id": 4,
+            "text": "我進教室直接把教務處昨天那則緊急通知的狀況口頭講給全班聽，同時重申「以後老師非緊急公務也不在講台看手機」。",
+            "action": "公開澄清公務背景並設定教師自身在講台的手機使用自律標準。",
+            "tradeoff": "把自己綁進跟學生差不多的講台限制，以後臨時有事會比較卡。"
+          },
+          {
+            "id": 5,
+            "text": "我請他下課來辦公室，在不揭露個人隱私的前提下向他說明昨天聯絡的處室名稱與公務事由。",
+            "action": "私下具體說明昨日聯絡單位與公務性質（不揭露他生或個人隱私），並肯定其守規精神。",
+            "tradeoff": "太像在向學生交待自清，導師心裡也有點五味雜陳。"
+          },
+          {
+            "id": 6,
+            "text": "我順著他的紙條在班會加一條「導師在教室用手機須先報備公務，否則口頭公開致歉」讓大家笑著訂下共識。",
+            "action": "藉此事件於班會建立師生雙方透明的手機使用告知約定。",
+            "tradeoff": "開了讓全班隨時監督老師的口子，以後講台動作得更小心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看到那張排版精美得像公文的抗議條差點笑出來，乾脆站起來清清嗓子對全班說「有人抓到我昨天在講台滑手機啦！那是教務處急件，但沒先講是我不對，下次我先舉手報備行不行？」。",
+          "action": "當場以自嘲大方態度向全班承認未先說明之疏忽並澄清公務事由。",
+          "tradeoff": "全班哄堂大笑後，一臉嚴肅的student_a突然耳朵紅起來低下頭。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1646693205
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "78929deb90c90d59bd2c82a51b2c70f3f41ee7fa7ff5ee26e0c13a2f7b5332ce"
+      },
+      "consequenceDirections": {
+        "A": "可發展當場自嘲大方承認未先報備並澄清急件後，一臉嚴肅的student_a耳朵紅了起來。",
+        "B": "可發展私下叫來辦公室澄清公務需求與班規差異後，原則派的他還是覺得在找理由。",
+        "C": "可發展在班會訂下導師用手機須先報備的共識後，全班隨時盯講台的有趣日常。",
+        "D": "可發展在紙條背面親筆寫正式回函夾回週記後，沒對全班說明時其他同學的嘀咕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b50545bec626e9d160fb4339bc98c59ec00367e18f493cd634683ac752690a50",
+    "draftSha256": "710fd56aa03e68653413d2a8f12e343637efa404a61581c7cf175f4ea0070857",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ae217e39dc670b01abf4f191d88539ce18d618527be4827ea59a18cd0682da02",
+      "checkedAt": "2026-11-28T01:20:35.581Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外替他詢問正式合格監督人力，後續不再靠他硬撐。",
+            "action": "提出合法替代人力需求，必要當下監督已接續，未核定不當已有人。",
+            "tradeoff": "增加協調且人力未必有空。"
+          },
+          {
+            "id": 2,
+            "text": "我私下陪他談這兩天的疲累，讓他自己決定是否尋求專業協助。",
+            "action": "額外自願成人關懷，不診斷、不洩私人作息，不延誤必要健康處理。",
+            "tradeoff": "占教師時間，對方可能防衛。"
+          },
+          {
+            "id": 3,
+            "text": "我提出由自己另在合規可用時段承擔一次後續監督，需有權者核可。",
+            "action": "自願增加本人有限監督支援，不擅排重考或改分，不保證獲准。",
+            "tradeoff": "教師多付工作時間。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他一起向有權者核對後續支援分工，別把每次空堂都算可接。",
+            "action": "額外成人工作協調，不代減其課表或抹去本次事實。",
+            "tradeoff": "多會談，可能讓他覺得被管。"
+          },
+          {
+            "id": 5,
+            "text": "我不再加私下善後，按正式權責交接，維持正常同事往來。",
+            "action": "婉拒非必要額外承擔，必要真實回報、照看與健康支持照常。",
+            "tradeoff": "他可能覺得自己被切出去。"
+          },
+          {
+            "id": 6,
+            "text": "經他意願，我協助查正式休息或健康諮詢管道，不替他請假。",
+            "action": "提供核實成人可用資訊，申請由本人及有權者依法決定，不假設有病或已核假。",
+            "tradeoff": "增加查詢，可能不願使用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實想怪他，卻也知道自己鬆了口氣就全交過去；我願額外寫下自己交辦支援時沒核對的部分，提交後續分工檢討。",
+          "action": "承認責怪與內疚，額外記錄本人確實交付監督時未詢精神適任的事實及改進建議，不替同事或學生免責、不把必要真實回報只留此分支。",
+          "tradeoff": "教師增加正式自我說明並可能被問責。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2537799308
+        },
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "570de471a042453c4dc1a51cb2870ddf08238c0ad8d551c59d78428a41676705"
+      },
+      "consequenceDirections": {
+        "A": "可發展責任同事看到教師也願承認自己的安排盲點，仍可能互相有怨。",
+        "B": "可承接責任感強者面對需要休息的羞愧。",
+        "C": "可發展同事受支持卻覺得把麻煩丟給人的矛盾。",
+        "D": "可承接有空堂但極疲累不是用再多責任感就能補足。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8d17469d2e14f1ed907a9bd03fc0c9f2002ff057abfd47c60543ca9a3d6b0607",
+    "draftSha256": "ae217e39dc670b01abf4f191d88539ce18d618527be4827ea59a18cd0682da02",
     "seedAssignmentVersion": 1
   }
 }

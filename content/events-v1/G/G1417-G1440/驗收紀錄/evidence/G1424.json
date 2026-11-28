@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9435a1f52294d8837b28a2f658638c9d909ba3c074e2cc41a6707deb8f6db39e",
+      "checkedAt": "2026-11-28T01:20:35.583Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外用兩個已核實不同條件的例題，和他檢查口訣適用範圍。",
+            "action": "準備正確可比範例，分辨適用與不適用，不刻意造假讓口訣失敗。",
+            "tradeoff": "占課間，學生可能感到被考倒。"
+          },
+          {
+            "id": 2,
+            "text": "我另用一段時間解釋本單元為何評量推導，不加新題作挑戰。",
+            "action": "提供有限一般評量理由說明，不以耐心替代必要概念更正。",
+            "tradeoff": "花解釋時間，未必說服跟風者。"
+          },
+          {
+            "id": 3,
+            "text": "在規範允許下，我讓全班都能選擇等值的正確解法，但仍交必要理由。",
+            "action": "於本科權責內提供公平解題路徑，不降低必要評量證據或只對該生開特例。",
+            "tradeoff": "教師批改需辨識多種路徑。"
+          },
+          {
+            "id": 4,
+            "text": "我請他自願帶來一題真正覺得省時的例子，我們下次有限比較。",
+            "action": "提出未來自願同題比較，不假定學生已驗證、不要求抄傳付費講義。",
+            "tradeoff": "需排時間且問題可能仍懸著。"
+          },
+          {
+            "id": 5,
+            "text": "我不加額外個別教學，這次依既有正式課程要求，保留正常提問。",
+            "action": "婉拒非必要擴充，不撤必要學習支持或堵專業質疑。",
+            "tradeoff": "學生可能認為老師只守舊。"
+          },
+          {
+            "id": 6,
+            "text": "我額外整理本單元幾種常見正確路徑的公開比較，所有人可自願看。",
+            "action": "製作本人合法教學材料，不抄原付費教材，不宣稱全班已學會。",
+            "tradeoff": "增加備課工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句浪費時間刺到；我願讓他自己選一題合宜題目，和我各用認為好的方法並排算，接受我的方法可能也不是最快。",
+          "action": "因不服輸提出自願有限同題成人學生比較，教師先核實題目適切與正確性，不賭分數、不羞辱或預定贏家。",
+          "tradeoff": "教師花時間且可能在速度上輸。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3619613855
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "dd787dda962990c5c167100213115f6ec4c18079162d41d263f7ac8af1b35bd8"
+      },
+      "consequenceDirections": {
+        "A": "可發展效率原則遇到條件界線的專業質疑。",
+        "B": "可發展學生對專業的質疑遇到教師願實際受比較，效率不等於全部理解。",
+        "C": "可承接家庭支持買教材與教師要求不同證據的落差。",
+        "D": "可發展教師時間有限與學生希望立刻證明教法有效的衝突。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "387c801461a2e15d9a1eaf7e4f5339833369b58fe11b29679407f08f63b823b5",
+    "draftSha256": "9435a1f52294d8837b28a2f658638c9d909ba3c074e2cc41a6707deb8f6db39e",
     "seedAssignmentVersion": 1
   }
 }

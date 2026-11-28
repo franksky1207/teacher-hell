@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3c04081b3a26e6144becd563894d8791fb528e15a1ff4c4ba26c5eee37607901",
+      "checkedAt": "2026-11-28T01:20:35.572Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不討回，自己買份正常晚餐補上，飯局另核對真的可行的日期。",
+            "action": "接受已完成贈與，合法自費取得當晚食物並與成人協調未來邀約，不假設大家有空。",
+            "tradeoff": "增加餐費與時間，家人特製心意拿不回。"
+          },
+          {
+            "id": 2,
+            "text": "我厚著臉問一位熟人是否還有安全未開封的一盒，對方不願就不拿。",
+            "action": "提出自願返還請求，僅在食安與對方同意成立後取回，不強求或假設冷藏無問題。",
+            "tradeoff": "尷尬並可能空手。"
+          },
+          {
+            "id": 3,
+            "text": "我向熟人坦白這週真沒空，取消自己提出的聚餐，食物就留給他們。",
+            "action": "及時收回真實本人邀約，尊重各人既有安排，不討物或強迫同意。",
+            "tradeoff": "失信面子，可能讓熟人掃興。"
+          },
+          {
+            "id": 4,
+            "text": "我提議改成之後一次短時間外帶碰面，別約成一整晚。",
+            "action": "提出縮小未來成人聚會規模與時長的新方案，需各人同意不假設已改成。",
+            "tradeoff": "少了長聊，仍需排程。"
+          },
+          {
+            "id": 5,
+            "text": "我問家人願不願提供簡單加熱方式，自己用剩下的食材做一餐，不再加新約。",
+            "action": "自願聯絡遠方家人取得合宜料理資訊，依現有安全食材實際做飯，不要求家人再寄。",
+            "tradeoff": "多花做飯與聯絡時間。"
+          },
+          {
+            "id": 6,
+            "text": "我今晚先用既有安全食物簡單吃好，將群組靜音到必要聯絡以外，明天再核對飯局。",
+            "action": "維持正常飲食與必要勤務聯絡，延後非必要社交回覆，不假稱聚餐已取消。",
+            "tradeoff": "時間債未解，熟人可能繼續熱烈討論。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得家人的那幾盒；我願自費買一份熟人也願意的替代晚餐，提出交換安全未開封那盒，對方不答應就算了。",
+          "action": "因想追回家人心意，先向成人提出自願交換，確認對方意願與食安後才購買交付，不把送出食物當仍屬自己。",
+          "tradeoff": "增加採買與可能實際餐費，熟人可能覺得大費周章。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3752772110
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "549e86dcba91c9fc5dae96cb0e11f0557372a43d447f42df4113e0a151221e86"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師想保面子又放不下家人補給的荒謬成本，交換未必成功。",
+        "B": "可發展社交熱情留下的時間債與家人心疼。",
+        "C": "可發展高社交性的人第一次容忍訊息不即時接住。",
+        "D": "可發展工作負荷如何迫教師承認自己社交答應太快。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2bfd50b60e8847e1be942c608d7f2c6385cd7501ab7fa5ae0daeef290a5b51f5",
+    "draftSha256": "3c04081b3a26e6144becd563894d8791fb528e15a1ff4c4ba26c5eee37607901",
     "seedAssignmentVersion": 1
   }
 }

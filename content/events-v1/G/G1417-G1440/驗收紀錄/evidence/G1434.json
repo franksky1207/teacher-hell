@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64b46ac763f12a380f44d5cabf66a26988485b452563b376da24405c37357143",
+      "checkedAt": "2026-11-28T01:20:35.603Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我加快自己可完成的準備，程序和食安都真的完成才本週辦。",
+            "action": "投入額外工作完成合法預估審核與合格採買協調，不先保證趕得上。",
+            "tradeoff": "本週教師工作更擠，仍可能需另告知未能成行。"
+          },
+          {
+            "id": 2,
+            "text": "我提出延至兩週後下一次班會，這次把可行時間和原因說清楚。",
+            "action": "協商真實延後原有活動，不單方面假稱學生已諒解，不虛報準備完成。",
+            "tradeoff": "全班失望、教師信用受考驗。"
+          },
+          {
+            "id": 3,
+            "text": "這週先用原時段做無食品的自願同樂，食品承諾另依法準備再協商。",
+            "action": "提出不需食品採買的合法替代，不冒充原有點心已兌現、不新增強制費用。",
+            "tradeoff": "教師需準備替代內容，學生可能覺得縮水。"
+          },
+          {
+            "id": 4,
+            "text": "我先邀幹部在權限內挑一種簡單合格品項，少選項但程序不省。",
+            "action": "提出有限自願參與的合規採買方案，須實際核准經費與安全確認，不讓學生自行墊款。",
+            "tradeoff": "幹部多協調、種類少。"
+          },
+          {
+            "id": 5,
+            "text": "我請有權者確認是否可採合法集中訂購，沒有就不私下亂買。",
+            "action": "查詢實際可用供應與程序，未取得不宣布食品已齊或課程已核可。",
+            "tradeoff": "多聯繫，可能沒有更快方法。"
+          },
+          {
+            "id": 6,
+            "text": "我在可用班務請大家自願選擇原期簡版或下次完整準備，再依法決定。",
+            "action": "在必要條件下蒐集一般偏好，不以票數取消食安、過敏支持或合法收費程序。",
+            "tradeoff": "占班務時間，少數仍可能不滿。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也很想吃那場餅乾；我願額外親自跑一趟依法核准的市售採買，清楚記帳，不再把急件塞給股長。",
+          "action": "承認貪吃與想兌現的私心，經經費和程序許可後自願承擔本人合法採買路程，只購標示完整適切品項；未核可不先買，教師不額外占學生份。",
+          "tradeoff": "教師多交通時間，可能仍無法如期。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1014039247
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "e83e4a1af52feeb4cdbd90fc1c8a4eb53c7147eec9db6931c767d13a0ae02bfe"
+      },
+      "consequenceDirections": {
+        "A": "可發展被派來催的學生發現同學期待並不相同。",
+        "B": "可發展學生看見老師也期待同樂與教師為先前隨口承諾付時間的代價。",
+        "C": "可承接熱鬧想像碰上供應與核可不全由老師控制。",
+        "D": "可承接家長想幫忙與學生自己參與準備的不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9659fe31c84020f97cd941d1d8c36732a80187f6456f64a8fc271afd32f33a35",
+    "draftSha256": "64b46ac763f12a380f44d5cabf66a26988485b452563b376da24405c37357143",
     "seedAssignmentVersion": 1
   }
 }

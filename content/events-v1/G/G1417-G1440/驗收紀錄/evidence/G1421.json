@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d8a1015e717c6339e66109e032a8ca8f328d2922508d2525c97feb9dce4618d7",
+      "checkedAt": "2026-11-28T01:20:35.577Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在合法白日時段調整他可完成的等值工作，不把免留校當欠債。",
+            "action": "依權責安排適量合規工作與合理調整，必要休息學習保留，不要求清晨抵債。",
+            "tradeoff": "教師需重排且學生可能仍覺得不等量。"
+          },
+          {
+            "id": 2,
+            "text": "若雙方自願公平，我協助和合適同學交換午間與放學項目。",
+            "action": "提出實際合法輪值互換，徵各方同意且不侵午休權益，不預設同學接受。",
+            "tradeoff": "多協調，可能無交換對象。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問有權成人能否接手最後門窗確認，他完成放學前可合法做的部分。",
+            "action": "提出成人正式值勤銜接需求，不把安全檢查單獨丟學生，不假設人力已到。",
+            "tradeoff": "增加協調，學生可能仍介意有人多做。"
+          },
+          {
+            "id": 4,
+            "text": "我和他一起重看班務工作量，提出全班公平的可調輪值建議。",
+            "action": "額外核對實際既有任務與負擔，必要當日安排先合法接續，不用家計當公開討論素材。",
+            "tradeoff": "導師花整理時間且全班可能有意見。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加任何補償要求，這次按合理合法調整辦，讓他把時間先留給家裡。",
+            "action": "不把非必要加做當免留校條件，必要公平班務依法接續，不宣稱所有義務永久免除。",
+            "tradeoff": "教師承受學生不肯接受好意與其他人疑問。"
+          },
+          {
+            "id": 6,
+            "text": "經他和家長同意，我額外查可用的正式家庭支持資訊，別讓每次都卡同一班車。",
+            "action": "最小個資詢問正式資源，不假設補助、照顧替手或家庭願用。",
+            "tradeoff": "多聯繫，學生可能覺得被當弱勢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他一直算份量很心酸；我願額外陪他與有權者談一次實際可行的長期安排，讓他自己提出底線，不只替他說可憐。",
+          "action": "因心疼又尊重原則，提出教師有限陪同自願協商，須家長必要同意與正式權責接續，不逼公開家況、不保證核准。",
+          "tradeoff": "教師多花陪同與會談時間，學生可能不願被協助。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2002811703
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "e18a95ff1946416ff0f2df6c011387306b0c8b3c4e314f98f4c946aa1db2ff1a"
+      },
+      "consequenceDirections": {
+        "A": "可發展高度配合者第一次當面談自己不能退讓的時間。",
+        "B": "可發展不願佔便宜者如何面對自己確實需要被支持。",
+        "C": "可承接想自己扛責任與同學自願協作的界線。",
+        "D": "可承接講原則者能否接受公平不等於每個人同時離校。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f737b4ac1871b86fbfcc94963b6fc6dcb9f2690465baaafa1396ff365d814ecb",
+    "draftSha256": "d8a1015e717c6339e66109e032a8ca8f328d2922508d2525c97feb9dce4618d7",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1008560efa87c92ffb3f0d4c3340873acc278d030d17c72b0452c17f39966496",
+      "checkedAt": "2026-11-28T01:20:35.570Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我審過合適內容後整套作為自願補充，按實際使用記錄作者。",
+            "action": "投入完整適切性審閱，確認後依法公平提供，不承諾獎金或成績效果。",
+            "tradeoff": "教師增加審閱與學生選用引導。"
+          },
+          {
+            "id": 2,
+            "text": "我只協商使用目前單元合適章節，照實標示貢獻，不為掛名全塞。",
+            "action": "提出部分合法選用，需作者同意，不自行刪改或假稱整套已使用。",
+            "tradeoff": "同事可能覺得心血只用一小角。"
+          },
+          {
+            "id": 3,
+            "text": "我先不加這套教材，維持既有學習安排，不承諾不存在的使用貢獻。",
+            "action": "婉拒額外資源，既有實際貢獻仍須如實，不否定其作者身分。",
+            "tradeoff": "對方可能失落，導師少了可用資料。"
+          },
+          {
+            "id": 4,
+            "text": "我額外陪他查正式提報條件，讓他用真實作品自行申請。",
+            "action": "查公開或合法可知評鑑入口，不代填虛假成果、不保證獲獎。",
+            "tradeoff": "花協助時間，條件可能不符。"
+          },
+          {
+            "id": 5,
+            "text": "經他同意，我向確實可能適用的同科教師介紹作品，由他自己決定授權。",
+            "action": "額外媒合合法教材需求，不洩家計或宣布別班已用，不形成互相掛名。",
+            "tradeoff": "增加聯繫，可能沒人接。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他在正式允許的教學交流提出原創方法，不拿學生進步作未證實宣傳。",
+            "action": "額外詢問既有成人專業交流的申請可能，需核可，不創造已成立場次。",
+            "tradeoff": "多申請與可能的分享準備。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想幫他一把，又不想拿一句掛名打發；我願額外做一份有具體例子的教材閱讀回饋，哪怕最後沒獎金也讓心血被認真讀過。",
+          "action": "因心疼其投入，徵同意後額外投入有限深讀並回饋實際優缺點，不假裝學生已使用或成績已進步，不取代共同真實署名。",
+          "tradeoff": "教師犧牲備課餘裕且可能必須說不好聽的建議。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 286403100
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "d451ccd621d707ab8a67e52f1ae143e61048704edfb952ad12c7c075ec149dd1"
+      },
+      "consequenceDirections": {
+        "A": "可承接家計壓力與教學適切性之間的人情。",
+        "B": "可發展樂觀同事要的經濟回報與教師能給的專業回應未必相等。",
+        "C": "可發展同事教學成就期待與實際使用未必變成績效的落差。",
+        "D": "可發展想被看見的教學成就是否願意接受不同使用方式。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ddcbd50ee8ddad38789e48efa65c111fab3db186ea6e760aedb6c7800028cb94",
+    "draftSha256": "1008560efa87c92ffb3f0d4c3340873acc278d030d17c72b0452c17f39966496",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b3efcc948a4590b8a2f9350c542cdf7b129f4c01c2f0c51cfc0e573a82bdac7a",
+      "checkedAt": "2026-11-28T01:20:35.567Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他看可公開的最新檢測紀錄，確認日期和對象，不只丟截圖。",
+            "action": "核實公開資訊後限時說明，不宣稱永遠不會有水質問題。",
+            "tradeoff": "花早課前時間，可能被繼續追問。"
+          },
+          {
+            "id": 2,
+            "text": "我協助向總務約正式諮詢，讓有權者回覆檢測問題。",
+            "action": "提出合法成人諮詢需求，不假設承辦有空或可私人參觀設備。",
+            "tradeoff": "多排程且家長可能焦急。"
+          },
+          {
+            "id": 3,
+            "text": "我另和他討論孩子自己可合規攜帶的水量，減少每天搬全班水的負擔。",
+            "action": "在保留自帶水權外額外討論可行日常安排，不指定大量飲用或代保證家庭水源。",
+            "tradeoff": "增加溝通，家長可能仍想幫全班。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他自願逐項找出截圖缺的來源，不把轉傳者公開示眾。",
+            "action": "額外陪查證公開訊息，必要澄清已做，不要求接觸私人群組成員。",
+            "tradeoff": "耗時且可能讓家長羞於承認誤信。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加個別服務，請他依公開正式管道查詢，今天先正常上班。",
+            "action": "婉拒非必要代辦與搬水提案，必要資訊、供水與正常求助照常。",
+            "tradeoff": "家長可能覺得用心被擋。"
+          },
+          {
+            "id": 6,
+            "text": "我額外向學校提出一般飲水資訊更容易查到的建議，不轉匿名截圖。",
+            "action": "提出公開資訊可近性改善需求，不假設已改版或家長疑慮全校普遍。",
+            "tradeoff": "多協調，未必獲採。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕他白請假心裡更慌；我願多留一段合法工作空檔，陪他在核可範圍看公開標示，搬水照樣不收。",
+          "action": "因不忍熱心落空，提出經核可、教師陪同的有限公開區域資訊查看，不開設備、不替檢驗背書、不讓他供水。",
+          "tradeoff": "教師花接待時間與申請，可能未核可或仍說服不了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3348758698
+        },
+        "selectedIds": [
+          5,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "49679370846cf09786cd83bf67169b6b01468cd9d628ea9d6a0cfbaa45601e41"
+      },
+      "consequenceDirections": {
+        "A": "可承接願投入人力的家長接受專業窗口而非立即供水。",
+        "B": "可發展教師界線與家長願請假的人力投入未被採用。",
+        "C": "可發展安全需求與照顧全體的熱心如何縮回家庭可掌握範圍。",
+        "D": "可發展家長看到實物標示與教師願陪同後仍有不安的可能。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ca243af4478f436a10e9bb20dee6bfa7b1058e52f539338545981ac37837575a",
+    "draftSha256": "b3efcc948a4590b8a2f9350c542cdf7b129f4c01c2f0c51cfc0e573a82bdac7a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "50122891cbb146a2e80b2410a2aaafdc3c4094652a9cad31e6a7ac9e7d81bb40",
+      "checkedAt": "2026-11-28T01:20:35.593Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "條件確認後，我挪開自己可調的非必要班務，今天借這十分鐘。",
+            "action": "在權責許可和必要訊息接續下配合依法核可實測，不以報告期限取代安全判斷。",
+            "tradeoff": "教師重排成績說明與班務。"
+          },
+          {
+            "id": 2,
+            "text": "我提出明天真正可調的時段，今天先保留原安排。",
+            "action": "協商新的合法實測時間，未同意不視為已改期，必要安全規定照常。",
+            "tradeoff": "職員報告可能需說明未完成。"
+          },
+          {
+            "id": 3,
+            "text": "我先和他用成人工作時間看圖核對，學生實測另待正式可行安排。",
+            "action": "額外投入成人前置協調，不把紙上或成人走查寫成全班實測完成。",
+            "tradeoff": "教師增加時間，報告仍缺學生資料。"
+          },
+          {
+            "id": 4,
+            "text": "我請他向有權主管協調可用時段，不由我私下先借再補程序。",
+            "action": "提出正式課務協調，不阻正常安全作業或預設主管批准今天。",
+            "tradeoff": "增加行政往返、關係可能較生硬。"
+          },
+          {
+            "id": 5,
+            "text": "我提出只借本次可調的短段做合法室內說明，走測另排，不混寫結果。",
+            "action": "協商有限說明方案，必須符合原必要班務與權限，不以說明當實測交差。",
+            "tradeoff": "職員得做兩次工作。"
+          },
+          {
+            "id": 6,
+            "text": "我不加額外代排，提供自己已定班務時段，讓他依法另找合適班級。",
+            "action": "婉拒非必要臨借，依法必須配合事項另照規辦，不把學生推給不安全活動。",
+            "tradeoff": "這班可能錯過先熟悉路線的機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想替他把今天報告救回來；我願額外出席一次主管協調，自己去說為什麼班務也得留，不讓他一人當催班的壞人。",
+          "action": "因不忍同事夾在期限中，提出本人額外參與有權成人協調，據實說明雙方時程，不保證報告能完成或代編數據。",
+          "tradeoff": "教師多花時間並可能被要求調整自己的安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1671885058
+        },
+        "selectedIds": [
+          6,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "73be7c6b2edbeadc7bcc308405247a778065ad0bf0931265bbd18f74d45fc580"
+      },
+      "consequenceDirections": {
+        "A": "可發展高執行力需要的實測證據與先準備的價值差異。",
+        "B": "可發展原本互相願合作的人如何一起面對制度時間壓力。",
+        "C": "可承接守住排程並非否定安全工作的職場感受。",
+        "D": "可發展協作順利但臨時借時成為往後期待的可能。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba63ece330f2818ed7d68766a3e43831b36dffaba2fb5a002a35e2879b450b23",
+    "draftSha256": "50122891cbb146a2e80b2410a2aaafdc3c4094652a9cad31e6a7ac9e7d81bb40",
     "seedAssignmentVersion": 1
   }
 }

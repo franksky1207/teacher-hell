@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ff33dc84f0673404170899e8574562a6876b186ac7fc7fa3d9e2c2bc6d47dfc9",
+      "checkedAt": "2026-11-28T01:20:35.607Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我現在結束額外傾訴，提出明天一段有限可行的續談，對方可不接受。",
+            "action": "清楚收尾並提出有限工作聯絡時段，不假設已約定，不遲到。",
+            "tradeoff": "家長可能感到被冷落，教師另付明日時間。"
+          },
+          {
+            "id": 2,
+            "text": "我只再聽兩分鐘最急的一件，然後準時離開，不開第二題。",
+            "action": "在確保備課進班仍足的前提下有限傾聽，必要急迫事項依法接續，不承諾無限安撫。",
+            "tradeoff": "教師少了喝水放空，收尾可能仍艱難。"
+          },
+          {
+            "id": 3,
+            "text": "我請他用正式私密文字寫一項核心需求，自己在可行工作時段回覆。",
+            "action": "提出最小必要書面聯絡，未收到不當已知全部，不要求詳述家庭私事。",
+            "tradeoff": "教師多文字工作，家長可能不擅縮短。"
+          },
+          {
+            "id": 4,
+            "text": "經他同意，我另外查適合成人照顧或經濟支持的正式資訊，不代約或包解決。",
+            "action": "有限查詢合法資源，必要支持共同維持，不洩家庭資料或保證受助。",
+            "tradeoff": "教師增加查詢時間，可能條件不符。"
+          },
+          {
+            "id": 5,
+            "text": "我不另約私人續談，告知正常聯絡與必要求助管道，現在先進班。",
+            "action": "婉拒非必要長期情緒陪談，正常親師及急迫接續照常。",
+            "tradeoff": "家長可能失落，教師承受愧疚。"
+          },
+          {
+            "id": 6,
+            "text": "如果他願意，我協助向有權窗口提出正式成人諮詢需求，等確認再安排。",
+            "action": "提出合規支援邀請，未取得同意與資源不宣稱已轉介完成，不診斷。",
+            "tradeoff": "多協調，家長可能覺得被轉走。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得掛，卻不能拿下一班孩子的時間付；我願另挪自己今天可調的一小段休息，提出一通限時回電，這次不假裝隨時都在。",
+          "action": "承認心軟，提出本人額外有限休息時段回電，必要勤務不受影響，家長同意才成約，不以個人休息犧牲作無限承諾。",
+          "tradeoff": "教師少私人喘息，回電時對方可能仍停不下來。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3257336890
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "ebd9fff4edc159363a5f4febc6831944e06a5b34da9d1c3b331f140c187b9d26"
+      },
+      "consequenceDirections": {
+        "A": "可承接家計負擔需要的實際支持不只幾句教師安慰。",
+        "B": "可承接健談與焦慮在一個具體停點前的反應。",
+        "C": "可發展支持與依賴的溫暖也會帶來教師真實時間代價。",
+        "D": "可承接善表達的家長願不願讓別的合法成人提供支持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b3c527d6ef909f66008132d2ea42b568d8b64457046c03289d2dbc1d50f6606c",
+    "draftSha256": "ff33dc84f0673404170899e8574562a6876b186ac7fc7fa3d9e2c2bc6d47dfc9",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "201315d06e8f04171cbca50b7d5274bbdceef238ef01eadee69c0974146e80d4",
+      "checkedAt": "2026-11-28T01:20:35.575Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外逐項回覆這份計畫，說明哪些不適合全班，不交出他人資料。",
+            "action": "有限書面分析一般負荷與教學安排，不將必要說明只留此分支。",
+            "tradeoff": "增加備課外文書且可能收到下一版。"
+          },
+          {
+            "id": 2,
+            "text": "我邀親子一次看實際一週時間，先讓孩子說有沒有空。",
+            "action": "提出有限自願三方協調，不邀整個家族決定孩子作息。",
+            "tradeoff": "教師時間與家長可能覺得被削弱。"
+          },
+          {
+            "id": 3,
+            "text": "適合的補充部分可經核實作為全班自願選用，不另訂加量指標。",
+            "action": "審查後公平提供有限適切資源，不因家長壓力增加必交作業或認定學生已完成。",
+            "tradeoff": "需審閱設計且可能提高比較壓力。"
+          },
+          {
+            "id": 4,
+            "text": "我維持原建議，不追加私人讀書計畫服務，問題走固定正式聯絡。",
+            "action": "婉拒非必要個別增量服務，必要支持與合理說明照常。",
+            "tradeoff": "可能讓責任感強的家長更不放心。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問有權的相關科任是否願一起提供一般負荷意見，不讓家族只跟我辯題量。",
+            "action": "提出有限成人專業協調，未取得同意不承諾共同會談，不洩個別他生。",
+            "tradeoff": "多排程且科任未必有空。"
+          },
+          {
+            "id": 6,
+            "text": "我另用一次可用班務讓學生自願討論自己的可行讀書安排，不交家庭計畫互比。",
+            "action": "提供全班自願時間規劃機會，不強制公開私人作息或以家族支持衡量態度。",
+            "tradeoff": "占班務時間，家長可能嫌不夠直接。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實被那份全家確認版刺到；我願拿出一段自己的備課時間，親自做一輪原本推薦的練習，記下實際難點再回應。",
+          "action": "承認專業被質疑的刺痛，額外實作本人原推薦的適齡練習並據實整理教師體驗，不宣稱等於學生作答時間或已證明全班適合。",
+          "tradeoff": "教師多投入實作，可能發現自己估量太輕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1434835908
+        },
+        "selectedIds": [
+          3,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "812a136f728289eea562aa85b5d1da03942943e0a9bfab6f18c99114eb972af5"
+      },
+      "consequenceDirections": {
+        "A": "可發展大家族為孩子決定與學生自己掌握步調的差別。",
+        "B": "可發展高度關注者是否將詳細回應當繼續逐條要求。",
+        "C": "可發展護專業面子的行動也可能迫教師承認原安排須修，不保證說服全家。",
+        "D": "可發展家族意見被部分採用後對導師決策的期待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29b95a604913ce8e3817f9ed65abcffce4e1ad8941224678adde6879d0455c8b",
+    "draftSha256": "201315d06e8f04171cbca50b7d5274bbdceef238ef01eadee69c0974146e80d4",
     "seedAssignmentVersion": 1
   }
 }

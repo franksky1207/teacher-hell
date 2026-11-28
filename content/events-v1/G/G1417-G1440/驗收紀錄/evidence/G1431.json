@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bc760b84291a471cf4049488251c965bd02b71ab37b7d1725cbc5c6d630e8fb4",
+      "checkedAt": "2026-11-28T01:20:35.596Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外向全班重申自由選擇，不點名，讓不買的人不用各自解釋。",
+            "action": "提供一般公開自願原則說明，必要權益與反施壓已共同維持。",
+            "tradeoff": "可能被訂衣幹部當潑冷水。"
+          },
+          {
+            "id": 2,
+            "text": "我陪他練一句自己的回話，讓他不用拿家計當理由。",
+            "action": "額外自願短演練，不要求他自己對抗排擠或作為取得支持條件。",
+            "tradeoff": "占課間，學生可能覺得簡單決定被當難題。"
+          },
+          {
+            "id": 3,
+            "text": "我提出班級一般合照採人人已有校服的方案，再依法和相關人協調。",
+            "action": "提出不需額外花錢的共同合照安排，尊重既有合法規定，不禁止學生私下自願穿班服。",
+            "tradeoff": "部分同學期待落差，教師多協調。"
+          },
+          {
+            "id": 4,
+            "text": "若他願意，我邀幹部單獨談訂購溝通，別讓班服成為忠誠測驗。",
+            "action": "額外一般溝通不揭求助來源與家計，必要停止施壓不等待。",
+            "tradeoff": "教師多花時間，幹部可能覺得被指責。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加活動或代購，尊重他已作好的選擇，必要支持照常。",
+            "action": "不將不買延伸為額外輔導任務，維持正常班級參與。",
+            "tradeoff": "教師需容忍他仍可能不安而不是立刻解決情緒。"
+          },
+          {
+            "id": 6,
+            "text": "我額外詢問大家想留下什麼免費的共同紀念，不讓衣服是唯一版本。",
+            "action": "提出全班自願可行的非付費紀念想法蒐集，不預設新活動已成或抹掉別人已付的訂單。",
+            "tradeoff": "增加規劃，可能被認為多一件事。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也不想再買一件只穿幾次的衣服；若訂購尚未由我承諾，我自己也不訂，正常和大家合照，不拿他當理由。",
+          "action": "承認教師私人消費偏好，確認本人未成立購買承諾後選擇不參加自願訂衣，不要求別人跟隨或宣稱與學生財務一樣。",
+          "tradeoff": "放棄穿同款的參與感，可能被說老師帶頭不支持設計。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2951081227
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "e9721780c00cad7f9aea82a049b5d595c042e94df3109358ae3f1632e64534d8"
+      },
+      "consequenceDirections": {
+        "A": "可發展親近學生如何看待教師把私下支持變成公共立場。",
+        "B": "可發展學生看見教師也能不買而不道歉，仍可能不想被拿來類比。",
+        "C": "可承接家計務實與想和朋友留下共同記憶並不矛盾。",
+        "D": "可發展共同行程和私人紀念衣物能否分開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fee69df06f37f5202cb6c34f92be936ef61f23f2fca82bfe5ac3f18207892ef7",
+    "draftSha256": "bc760b84291a471cf4049488251c965bd02b71ab37b7d1725cbc5c6d630e8fb4",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6384806926468c47724f695ff9c9d56c0c35bb9dab5327cf4567e8fae3da18bb",
+      "checkedAt": "2026-11-28T01:20:35.604Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我邀他依法申請暫減一項班務職責，由正式分工接續。",
+            "action": "提出經本人意願與權責允許的職務調整，不擅撤換或懲罰，必要支持照常。",
+            "tradeoff": "可能讓他覺得失去教師肯定。"
+          },
+          {
+            "id": 2,
+            "text": "若副手也自願且合規，我協助把真實可分的庶務分開，不只教他列清單。",
+            "action": "核對既有幹部工作後提出合法公平分工，不強迫他人接任或宣稱已減量。",
+            "tradeoff": "需多人協調，學生可能不願放手。"
+          },
+          {
+            "id": 3,
+            "text": "我額外和他盤一週實際任務，讓他自己選先向哪個權責者談。",
+            "action": "有限自願負荷整理，只用本人真實資訊，不假定可刪他科或培訓。",
+            "tradeoff": "花時間且可能選不出願放的事。"
+          },
+          {
+            "id": 4,
+            "text": "經適當同意，我邀家長談如何把支持改成留空檔，不只多報項目。",
+            "action": "提出有限親師生協調，不把支持家庭當責怪對象、不預設家庭同意減課。",
+            "tradeoff": "多聯繫，學生可能怕被當不可靠。"
+          },
+          {
+            "id": 5,
+            "text": "我停止本人接下來的非必要臨時幫忙邀請，自己的零碎事自己做。",
+            "action": "調整教師未來額外請託方式，不虛構既有活動取消，不撤正式必要責任。",
+            "tradeoff": "導師多工作，他可能覺得不被需要。"
+          },
+          {
+            "id": 6,
+            "text": "我額外協助他查正式時間管理或負荷支持資源，是否使用由本人依法選。",
+            "action": "查核合法資訊與必要同意，不把詢問當已諮商或診斷。",
+            "tradeoff": "教師增加查詢，學生可能嫌又多任務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想聽他繼續說沒問題，這樣我也省事；我願多留一段自己的工作空檔，親自接回這次本來可由教師完成的班務收尾，明說不是他失格。",
+          "action": "承認依賴能者的便利，提出有限本人親做的既有班務收尾，不代做學生學習評量或無權的正式職務；未實際核對可接內容前不宣稱完成減量。",
+          "tradeoff": "教師增加本人勞動，學生仍可能把幫忙讀成失去信任。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 117847043
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "dbb8f36ad5dc3acd146c48fa03f7d88ec00e5b20ae96544ccc900f6b14617969"
+      },
+      "consequenceDirections": {
+        "A": "可發展關注教師評價的人遇到教師不再多派事的解讀。",
+        "B": "可承接家庭支持他多做與班級實際人力承接的差別。",
+        "C": "可發展高適應力學生對暫不全扛的接受。",
+        "D": "可發展教師願少用一次好用的學生，卻無法控制他對評價的擔心。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0ae6d8ef94925e85a28d58a7ea3622fe1837c3628cb81d6de8cb8607534b634a",
+    "draftSha256": "6384806926468c47724f695ff9c9d56c0c35bb9dab5327cf4567e8fae3da18bb",
     "seedAssignmentVersion": 1
   }
 }

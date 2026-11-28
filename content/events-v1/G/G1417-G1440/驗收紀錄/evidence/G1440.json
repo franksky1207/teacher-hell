@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d02f9b0574aab186e88508a4d5008b6b9cbfe88f997c5aa8226017649946a8b1",
+      "checkedAt": "2026-11-28T01:20:35.610Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他向教務核對待補測的合法註記與可行時程，拿確實回覆再談。",
+            "action": "提出有限共同查核，必要權利與真實記錄照常，不保證核准跨週或特定日。",
+            "tradeoff": "雙方花時間，焦慮可能暫時不減。"
+          },
+          {
+            "id": 2,
+            "text": "經學生必要意願與健康確認，我提出漸進的小段合法補測安排供有權者評估。",
+            "action": "協調不壓迫恢復的可行時段，未適任不測、不保證兩天完成，不任意拆改正式評量。",
+            "tradeoff": "排程更複雜，科任可能覺得稽核欄仍未清。"
+          },
+          {
+            "id": 3,
+            "text": "我保留原來依法等恢復的方向，不追加替好友催考。",
+            "action": "婉拒非必要加速服務，必要健康與合法補測接續照常，非以好友體諒換學生權益。",
+            "tradeoff": "私交可能變冷。"
+          },
+          {
+            "id": 4,
+            "text": "我邀有權主管和相關人共同排出合法接續，不讓我們兩人互相保證。",
+            "action": "提出正式有限協調，最小健康個資，不假設主管同意或學生已可測。",
+            "tradeoff": "多排程且事情更正式。"
+          },
+          {
+            "id": 5,
+            "text": "我經適當同意額外和家長核對學生可用時間，把真實限制交有權者安排。",
+            "action": "有限親師聯繫，不向家長要求立刻康復或揭同事私人焦慮，不保證家庭願意安排。",
+            "tradeoff": "教師多聯絡，家長可能增加擔心。"
+          },
+          {
+            "id": 6,
+            "text": "我額外幫他整理這次已知待辦時序與必要窗口，未知的保留未知。",
+            "action": "有限成人行政協助，僅使用本人合法可知資訊，不代填成績或抹除待補狀態。",
+            "tradeoff": "增加文書，可能仍無法消除焦慮。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想替老朋友把空格補滿；我願多出一次自己合法可用的監督時段，但等孩子確實適任、由有權者排定，不拿兩天當交情測驗。",
+          "action": "承認想幫好友的心軟，額外提出本人有限合規監督人力，須正式排定與學生健康、權利條件成立，不擅命補考或保證完成。",
+          "tradeoff": "教師增加工作時間且可能一直排不成，同事仍可能覺得太慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 579225995
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "57e3ccf608a7effb167d0ac5b99af939ffda74a09cc251beb7a084dee9f08606"
+      },
+      "consequenceDirections": {
+        "A": "可承接協作與健康合理安排不等於立即結清。",
+        "B": "可發展親近同事發現導師不能替自己焦慮找學生承擔。",
+        "C": "可發展好友看到導師願付勞力但不願壓孩子時的感激或不諒解。",
+        "D": "可發展把排程從兩位教師的方便拉回孩子真實生活。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "88b9fbc8ac96bd5c14afe9d8e6fcd29c04d65be3e147d6081605aa7f98afc4b7",
+    "draftSha256": "d02f9b0574aab186e88508a4d5008b6b9cbfe88f997c5aa8226017649946a8b1",
     "seedAssignmentVersion": 1
   }
 }

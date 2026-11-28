@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4f6c19226613e379af13a063fb3a31b68c38110062f2ddd753f45f3f0f51e50e",
+      "checkedAt": "2026-11-28T01:20:35.590Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外確認一次可公開排修資訊，有確定才回覆，不答應每日催。",
+            "action": "在必要通報外有限詢問進度，不虛稱已排日期。",
+            "tradeoff": "花聯繫時間，總務可能也無答案。"
+          },
+          {
+            "id": 2,
+            "text": "我告知固定有限回覆時段，新危險另即時反映，不每節更新。",
+            "action": "建立本人非必要進度詢答界線，必要安全訊息不等待。",
+            "tradeoff": "學生可能覺得教師不夠積極。"
+          },
+          {
+            "id": 3,
+            "text": "若他願意，我陪他依正式學生反映管道提出一般意見，不當工程監工。",
+            "action": "額外合法陪同學生表意，最小必要資訊、不進工區，不保證加速排程。",
+            "tradeoff": "教師多陪同與排程。"
+          },
+          {
+            "id": 4,
+            "text": "我向有權者提出更清楚的一般動線告示建議，不加派學生站崗。",
+            "action": "提出預防性可讀資訊改善，既有足夠隔離照常，不擅施工或保證採用。",
+            "tradeoff": "多協調，學生可能認為只換牌沒修。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加催件服務，讓正式排程繼續，正常求助仍可用。",
+            "action": "不反覆代辦非必要催詢，必要安全追蹤與異常處理照常。",
+            "tradeoff": "導師承受學生失望。"
+          },
+          {
+            "id": 6,
+            "text": "我額外邀總務在方便時說明一般修繕流程，讓全班自願了解，不辦個案問罪。",
+            "action": "提出合法一般教育說明邀請，未答應不宣布，無法取代這件工程或必要照看。",
+            "tradeoff": "增加協調，可能無空或引更多問題。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也煩每天繞那一小段；我願額外核對自己這週實際受影響的搬運路線，向有權者提出合法替代路線需求，不叫他替我盯。",
+          "action": "承認本人不耐，依真實已有隔離與本人可知動線提出成人工作便利改善，不虛造事故或未發生工時，不代專業安全認證。",
+          "tradeoff": "教師多整理與協調，可能沒有更方便方案。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2841988016
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "1e314e29737cd7e7bccc629c0505105a8b2b1d96413e9fda0582e96056bee6b7"
+      },
+      "consequenceDirections": {
+        "A": "可發展有口才的學生接受表意不等於取得決策權。",
+        "B": "可發展清楚表達的催促遇到工程不確定性。",
+        "C": "可發展支持安全的人怎麼看待不能立刻完成的成人工作。",
+        "D": "可發展學生發現老師也被影響，仍須區分便利需求與安全必要責任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "680571c1a25db4df49e809f19992347c6984bbb0541ad5c83699b6b867a786a1",
+    "draftSha256": "4f6c19226613e379af13a063fb3a31b68c38110062f2ddd753f45f3f0f51e50e",
     "seedAssignmentVersion": 1
   }
 }

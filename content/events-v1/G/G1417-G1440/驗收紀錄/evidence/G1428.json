@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fe91fe43510c01baf78897cad09a00e783b352d1778686eb4f2bdebed8bdd520",
+      "checkedAt": "2026-11-28T01:20:35.592Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在權限內把這次自願分享延後，讓他安全休息後再選可行時間。",
+            "action": "合理調整非必要分享時程，必要照護共同維持，不把延後記作懲罰。",
+            "tradeoff": "教師需重排，學生可能仍怕拖累別人。"
+          },
+          {
+            "id": 2,
+            "text": "待確認適任且他願意，改為坐著只說一個重點，可隨時停。",
+            "action": "提出安全前提下的短口頭替代，不因他客氣而強制表演，未恢復不執行。",
+            "tradeoff": "少了完整展示，仍可能心裡過意不去。"
+          },
+          {
+            "id": 3,
+            "text": "我讓他安全恢復後自願交簡短文字，這次不必面對全班。",
+            "action": "在可調班務內提供非公開書面替代，不多加功課量或要求休息時寫。",
+            "tradeoff": "教師多一種處理，學生少了上台機會。"
+          },
+          {
+            "id": 4,
+            "text": "經他同意，我額外和家長談實際作息負荷，別只看課程都付了錢。",
+            "action": "提出合法必要同意下有限親師協調，不擅取消家教或判斷家長不關心。",
+            "tradeoff": "增加教師聯絡，學生可能怕家長更擔心。"
+          },
+          {
+            "id": 5,
+            "text": "必要支持之外，我另邀他在恢復後一起刪減本人可自主選擇的非必要任務。",
+            "action": "額外提供自願負荷盤點，不能由教師擅動他科正式作業或家庭契約。",
+            "tradeoff": "花個別時間，可能沒有多少真能減。"
+          },
+          {
+            "id": 6,
+            "text": "這次我在權限內免除非必要分享，不要求補一次來還這個格子。",
+            "action": "依法取消本人可調的非必要班級展示義務，正常學習與評量支持照常。",
+            "tradeoff": "教師需解釋一般公平原則，學生可能覺得準備白費。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看得心疼，也捨不得自己排好的流程；我願額外親自改成不點名的一般短閱讀，讓這個空檔不必靠另一個學生臨時頂上。",
+          "action": "承認護既定安排的私心，額外準備適切低負荷全班自願閱讀以承接本人可調非必要班務，必要照護不變，不把該生私事作教材。",
+          "tradeoff": "教師增加即時備課，原本學生交流形式落空。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 692838942
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "d89472b34169092363be2af309808b90acf753a236684ba190de6bfce20c19b4"
+      },
+      "consequenceDirections": {
+        "A": "可發展任務負荷下如何保留本人準備的意義。",
+        "B": "可發展願意配合的人是否有說不的可行空間。",
+        "C": "可發展學生不必為班會進度負責，導師也承受改流程的真實成本。",
+        "D": "可發展高度配合者能否接受不立刻完成。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7c93b1ac953404959a22a4de047a87b1db3495ce8193cca0d5b2f850588302dd",
+    "draftSha256": "fe91fe43510c01baf78897cad09a00e783b352d1778686eb4f2bdebed8bdd520",
     "seedAssignmentVersion": 1
   }
 }

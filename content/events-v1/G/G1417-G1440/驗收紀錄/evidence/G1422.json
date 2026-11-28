@@ -15,14 +15,82 @@
     "G03",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "88e14c36310ff8156cc051455533a760a811b92865eb5f91789c109844fae8d1",
+      "checkedAt": "2026-11-28T01:20:35.579Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我清楚說今天想自己買完自己走，明天再在學校聊。",
+            "action": "表達本人當日私人界線並獨自離開，不要求學生離開合法公共店面。",
+            "tradeoff": "學生可能尷尬，教師須承受被說冷淡。"
+          },
+          {
+            "id": 2,
+            "text": "這幾天我改去另一間合法店採買，自己多走一段，不靠學生猜心。",
+            "action": "選擇本人未來短期不同採買地點，不告知私人動線、不將躲避代替必要界線。",
+            "tradeoff": "增加路程時間與疲累。"
+          },
+          {
+            "id": 3,
+            "text": "我提出一次校內可自願聊的有限時段，校外不接成每日節目。",
+            "action": "提供合法有限校內交流邀請，不保證他接受或所有話都能處理。",
+            "tradeoff": "占教師課間，學生可能覺得不自然。"
+          },
+          {
+            "id": 4,
+            "text": "我改用合法配送處理這次非必要採買，今天不再逛店。",
+            "action": "教師以本人資源改採可行購物方式，不預設下單成功或向學生提供住址。",
+            "tradeoff": "配送費與失去自己逛的樂趣。"
+          },
+          {
+            "id": 5,
+            "text": "我只留兩分鐘在門口正常聊，時間到就按自己的行程離開。",
+            "action": "提出當次有限互動並實際界定結束，不承諾每日或陪行。",
+            "tradeoff": "仍付私人時間，收尾可能尷尬。"
+          },
+          {
+            "id": 6,
+            "text": "我今晚延後自己非必要的購物，改先處理原定私人安排。",
+            "action": "暫不完成今日非必要採買，由教師自行調整，必要安全與真實界線照常。",
+            "tradeoff": "所需物品得另找時間買，不能永遠靠延後。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不想連一杯飲料都喝得像逃跑；我明說想安靜，自己買好坐下休息，不陪聊也不趕他走。",
+          "action": "因想保住私人逛店樂趣，實際自費購買本人飲料並在合法公共座位獨自休息，清楚拒絕額外談話、不排斥學生合法在店或羞辱他。",
+          "tradeoff": "支付本人飲料費並承受同場安靜的尷尬，對方未必立刻理解。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3861956180
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "ec4bc3d207397d55c26f106a961a5b5563abee9c011bfab587c29aad70b7a314"
+      },
+      "consequenceDirections": {
+        "A": "可發展穩定生活中不急的學生面對別人時間有限。",
+        "B": "可發展自主學生是否能承認別人也有不聊天的自由。",
+        "C": "可發展主動社交與制度化時段間的落差。",
+        "D": "可發展教師堅持不用繞路換自由與學生把親近誤當無限可用的衝突。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d3ec26ab1effe98933a7f35cb8fba4aed66f90d4c31a56a325e27be4bf27607f",
+    "draftSha256": "88e14c36310ff8156cc051455533a760a811b92865eb5f91789c109844fae8d1",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cc03a247b9a6e6326e2270db99f51ea44f5be8d322d9906e16472474ecf129d9",
+      "checkedAt": "2026-11-28T01:20:35.598Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持原本合法輪換，不加個別分隔安排，該說的界線不藏。",
+            "action": "依真實公平判準處理，不假借抽籤掩飾指定介入。",
+            "tradeoff": "家長可能失望，導師少了私下和氣。"
+          },
+          {
+            "id": 2,
+            "text": "我額外和家長談他自己孩子實際作息與課業，別拿好友當原因。",
+            "action": "有限成人對話只談其子女可合法知情內容，不定罪他生或調查私人遊戲帳號。",
+            "tradeoff": "花聯絡時間，家長可能覺得沒處理重點。"
+          },
+          {
+            "id": 3,
+            "text": "經適當同意，我邀孩子談自己想怎麼安排課後遊戲與學習。",
+            "action": "提出自願學生交流，不代家長威脅斷友、不預設學生同意減遊戲。",
+            "tradeoff": "教師多時間，孩子可能不喜歡被過問。"
+          },
+          {
+            "id": 4,
+            "text": "我另提供一般數位使用親子協商資訊，讓家長在家處理自家規則。",
+            "action": "提供核實適切公開資訊，不代家長管理他生或保證家庭採用。",
+            "tradeoff": "增加查詢，家長可能嫌太間接。"
+          },
+          {
+            "id": 5,
+            "text": "我提出短期觀察本人課堂實際專注，再依法看需不需要支持，不追蹤朋友。",
+            "action": "額外在教師權責內有限學習觀察，必要支持不延後，不以家長好惡判準。",
+            "tradeoff": "教師增加記錄，未必有需改位的事實。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權輔導者協助一般親子協商，需本人意願和必要同意才接觸。",
+            "action": "提出合規支援需求，不將邀約說成已轉介完成、不把正常玩遊戲診斷為成癮。",
+            "tradeoff": "多協調且家長可能不願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想收下那句『最信任』就省事；但我願額外親自出席一次家長正式會談，當面承受他的失望，也不讓那個無辜孩子替我買和氣。",
+          "action": "承認想保和氣的私心，額外提出正式限時成人會面，仍不洩他生個資、不以改位交換撤回要求，未同意不認定成會。",
+          "tradeoff": "教師付出接待時間與失去好評的可能。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1488115842
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "05f2060b24af0bfda863337090278101f3ff80b60629f8610878fecaa32fa0f7"
+      },
+      "consequenceDirections": {
+        "A": "可發展敬重與肯定是否能容納教師拒絕順便幫忙。",
+        "B": "可承接高度負責與把擔憂投向朋友的差別。",
+        "C": "可發展專業肯定遇到教師重視孩子本人決定。",
+        "D": "可發展敬重教師的人遇到面對面的柔軟拒絕，肯定未必維持。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5c0ec332aaddee0793b10e7046b8818568f5847e34a28c504ae8fc5abddc10a5",
+    "draftSha256": "cc03a247b9a6e6326e2270db99f51ea44f5be8d322d9906e16472474ecf129d9",
     "seedAssignmentVersion": 1
   }
 }

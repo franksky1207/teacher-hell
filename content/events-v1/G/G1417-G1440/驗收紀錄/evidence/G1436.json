@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "889cecc826e90814db2365f53bb1dfd30efb83cec8a2ff459cdf5f94ea0ded59",
+      "checkedAt": "2026-11-28T01:20:35.606Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我私下額外談清楚往後班級共同訊息怎麼先對齊，不要求他說服行政。",
+            "action": "提出有限同事工作協議，必要自願原則已共同更正，不以支持導師換放棄本科自主。",
+            "tradeoff": "需面對尷尬，可能談不成。"
+          },
+          {
+            "id": 2,
+            "text": "我邀承辦共同說明試辦用途，讓同事不用各自猜對方臉色。",
+            "action": "提出合法成人協調，未答應不視為已同意不發表，不把學生拉來表態。",
+            "tradeoff": "多排程且同事可能緊張。"
+          },
+          {
+            "id": 3,
+            "text": "我不再把這類非強制試辦當共同立場，雙方各清楚說明自己可合法提出的選擇。",
+            "action": "解除非必要私下聯盟期待，必要學生自願和一致真實資訊仍維持，不容兩套強制命令。",
+            "tradeoff": "導師失去原有互相擋事默契。"
+          },
+          {
+            "id": 4,
+            "text": "若確實有教學用途，我邀他說明可自願使用的簡短版本，不替行政補交。",
+            "action": "提出由有權科任評估合法低負荷教學用途，無實際用途不硬編，不強迫填兩份。",
+            "tradeoff": "多協作設計，可能被學生認為仍多一件事。"
+          },
+          {
+            "id": 5,
+            "text": "我不加額外圓場或代填，正式必要資訊處理完就回原課務。",
+            "action": "婉拒非必要替同事承包善後，不撤必要更正或學生詢問權。",
+            "tradeoff": "同事可能覺得被留在尷尬中。"
+          },
+          {
+            "id": 6,
+            "text": "我經必要授權整理這次兩套訊息的實際時序，向有權者提單一明確說明的建議。",
+            "action": "額外提出真實流程改善，不寫未發生的工時或私下心理猜測，不公開同事羞辱。",
+            "tradeoff": "多文書，可能被認為小題大作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想裝作沒發生；但我願多留一段正式工作時間陪他去說明，不讓他一人面對行政，也不替他編『全班都想填』。",
+          "action": "承認想保平靜，額外提出有限成人陪同說明，需本人意願與承辦可行，不把陪同等同核准或免責。",
+          "tradeoff": "教師多付時間且可能和行政關係變緊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2341976454
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "e9e7df339f37ab5b36ecc89ad7ed1875e261da4b5822ae7a5f7cb173ef87a1f4"
+      },
+      "consequenceDirections": {
+        "A": "可承接自主教學與怕行政不滿的動機能否分清。",
+        "B": "可發展避衝突同事是否願意有人陪著仍說真實不同意見，並不保證恢復默契。",
+        "C": "可發展口頭支持未必意味行動完全一致的失落。",
+        "D": "可發展支持立場的人因行動落差讓友情降溫。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e3684c5a906381ac812d8bd372adc157699c5981def46d86fc67d0ef54002c99",
+    "draftSha256": "889cecc826e90814db2365f53bb1dfd30efb83cec8a2ff459cdf5f94ea0ded59",
     "seedAssignmentVersion": 1
   }
 }

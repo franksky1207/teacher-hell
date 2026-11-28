@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "44ae347885025ae1f1e8782527a5f067a718a9af3bd184f1c31835974b4a5197",
+      "checkedAt": "2026-11-28T00:39:11.983Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另寫具體貢獻回饋，不轉成新分數。",
+            "action": "在必要說明外為實際可確認的本人貢獻提供文字回饋，不比較他人人格或改原評比。",
+            "tradeoff": "增加書面工作，學生可能仍只在意分數。"
+          },
+          {
+            "id": 2,
+            "text": "若雙方願意，我陪你們談工作量怎麼會分成這樣。",
+            "action": "提出自願組內回顧，聚焦事前同意與實際負荷，不迫使套版者認錯。",
+            "tradeoff": "多方時間與衝突風險。"
+          },
+          {
+            "id": 3,
+            "text": "下次分組前我把你的權重提議交全班討論。",
+            "action": "於未來任務前提出是否採個別貢獻項目的公開討論，不承諾採用或回溯改分。",
+            "tradeoff": "占班務時間，可能得不到多數支持。"
+          },
+          {
+            "id": 4,
+            "text": "我幫你把這份分工當成個人學習反思，想留才留。",
+            "action": "額外邀學生以可合法使用資料整理本人學到與承擔的工作，不要求公開或交作業。",
+            "tradeoff": "教師需指導，學生可能嫌是在加工作。"
+          },
+          {
+            "id": 5,
+            "text": "如果你願意，下次可提等值個人作品，我先確認課程容不容許。",
+            "action": "詢問未來同類活動可否合法選個人形式，未同意不預設名額或免團隊學習。",
+            "tradeoff": "多出課程協調，可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "這次不加新活動，我們談你下次願接多少，拒絕也得說在前面。",
+            "action": "額外與學生談未來自願承擔及事前協商界線，不叫其替別人補缺。",
+            "tradeoff": "個別時間投入，可能被解讀為要他少努力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我承認以前太喜歡把事情交給做得快的人；下次我自己承接統整，不再默認你會包完。",
+          "action": "因被質問而心虛，提出下一次合法同類班務由導師額外承擔非必要成人統整工作、學生保留各自學習任務，不回改本次分數。",
+          "tradeoff": "教師多做統整，學生可能覺得能力被收回。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1427570083
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "949c89a3e3121dd9f62bbc15cbae889eb570d00e67a3a491b271ca7f255e33e0"
+      },
+      "consequenceDirections": {
+        "A": "可承接從求分差轉整理自身能力的抗拒或收穫。",
+        "B": "可承接強主見者如何聽見對方對約定的理解。",
+        "C": "可發展想控制付出與仍需合作的現實。",
+        "D": "可發展教師承認偏好能幹者的私心及學生對被減負的矛盾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3787afc1ec233deae0f588b9fcfc594aca8a80f2b6338848cad8892c2ba995fa",
+    "draftSha256": "44ae347885025ae1f1e8782527a5f067a718a9af3bd184f1c31835974b4a5197",
     "seedAssignmentVersion": 1
   }
 }

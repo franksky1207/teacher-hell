@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "11238823b66c29da4e27a25ad4c12d017fa4612b054dec5860366b7fb2ea2ce9",
+      "checkedAt": "2026-11-28T00:39:11.947Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我只做正常照看，不另給個別專注報告。",
+            "action": "明確婉拒額外監看，保留必要聯絡與全班正常照看。",
+            "tradeoff": "家長仍不放心，導師須承受期待落空。"
+          },
+          {
+            "id": 2,
+            "text": "孩子知情也願意，我在自己值勤時看一次，只談實際看見的。",
+            "action": "徵詢學生意願後，限本人原定值勤內一次有限觀察並給知情回饋，不監控全晚。",
+            "tradeoff": "增加工作與被視為家長眼線的壓力。"
+          },
+          {
+            "id": 3,
+            "text": "讓他自己選一個這兩天想完成的目標，你們回家再談。",
+            "action": "邀學生自願設定可自行回顧的目標，由家庭自願討論，不代驗證達成。",
+            "tradeoff": "需引導設定，家長可能仍要教師背書。"
+          },
+          {
+            "id": 4,
+            "text": "若雙方願意，我約你們一起說清楚試留兩天怎麼判斷。",
+            "action": "提出親師生共同討論邀約，待同意及合法時段成立再談。",
+            "tradeoff": "增加排程，孩子可能覺得小事被放大。"
+          },
+          {
+            "id": 5,
+            "text": "我提供晚自習現有的使用規則，你們別把交朋友直接當沒認真。",
+            "action": "額外整理可公開的晚自習活動與休息界線供家庭參考，不揭他人出勤或替孩子評價。",
+            "tradeoff": "花整理時間，不能回答孩子實際專注程度。"
+          },
+          {
+            "id": 6,
+            "text": "先問他為什麼選留校，我願意另外聽，但要他同意才轉述。",
+            "action": "在合法課間邀學生自願談選擇留校的原因，不探問或外傳私人關係。",
+            "tradeoff": "多花個別時間，也可能得不到可向家長分享的答案。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想準時下班；請別把兩天試留變成我每天等你的電話。",
+          "action": "坦承私人休息需求，與家長提出限定正常工作時段回覆非緊急訊息的聯絡約定，緊急管道照常。",
+          "tradeoff": "可能被認為不夠熱心，需當面說明界線。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 209269749
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "1ba0772e0572819b1932dce99ac041af6c64dd470626c1d5cbb071a754421899"
+      },
+      "consequenceDirections": {
+        "A": "家長可能重新詢問孩子或繼續催導師，專業肯定與放手意願可發展。",
+        "B": "學生自主回報與家長原本想由第三方監看之間可產生張力。",
+        "C": "可承接家長彈性配合後期待對等投入，與教師守住晚間私人時間的摩擦。",
+        "D": "可發展孩子真實需要與家長接送讓步是否對得上，導師不能代報秘密。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d952c733e3bc89e80a3a015cc8750c7d71a93d60a9b291e44137eed98c03c5a6",
+    "draftSha256": "11238823b66c29da4e27a25ad4c12d017fa4612b054dec5860366b7fb2ea2ce9",
     "seedAssignmentVersion": 1
   }
 }

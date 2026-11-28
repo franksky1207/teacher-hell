@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "75cede76a79ce0e0c9a6e9b19fa4227fe1aa740f19639a2ca7ce9f5ed9561996",
+      "checkedAt": "2026-11-28T00:39:11.973Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我私下謝謝他，但明說不用替我加碼站台。",
+            "action": "額外私訊說明教師不需要家長代為擴張管制，保留其正常意見表達。",
+            "tradeoff": "花人際溝通時間，對方可能覺得被切割。"
+          },
+          {
+            "id": 2,
+            "text": "我邀雙方另約一次說明，不在群裡打字接龍。",
+            "action": "提出自願合法時段會談，未同意不轉交聯絡資料。",
+            "tradeoff": "多方協調，爭論可能延續。"
+          },
+          {
+            "id": 3,
+            "text": "我把我的群組提醒改得更精簡，今後必要事項另列，不接教育辯論。",
+            "action": "額外調整本人未來公告形式，保留正式反映與緊急管道，不限制他人合法意見。",
+            "tradeoff": "需要持續整理，也可能被認為不願討論。"
+          },
+          {
+            "id": 4,
+            "text": "若他願意，我請他自己補一句這是個人主張，不代表老師。",
+            "action": "邀本人自願補充立場歸屬，不代署名或逼其公開道歉。",
+            "tradeoff": "可能使家長更沒面子，需額外聯絡。"
+          },
+          {
+            "id": 5,
+            "text": "我請大家自願把想談的問題另送正式管道，整理後只回覆共同規範。",
+            "action": "額外彙整不含個案私事的共通疑問，依校方權責回覆，不承諾改政策。",
+            "tradeoff": "整理工作增加，也可能仍有人要求立即表態。"
+          },
+          {
+            "id": 6,
+            "text": "我先和他談最擔心孩子用手機的哪個時刻，不直接辯輸贏。",
+            "action": "額外邀家長自願說明個人擔憂，不將私人說明轉貼或當其他家庭共同需求。",
+            "tradeoff": "花個別時間，可能被其他家長視為偏袒。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想連自己的稱讚都被拿來吵；我今天關掉非緊急群組通知，晚點按工作時段回。",
+          "action": "因被過度支持拖累而暫停非緊急推播，告知合理回覆時間並維持緊急聯絡與必要訊息。",
+          "tradeoff": "少了即時掌握，家長可能指責冷處理。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1571756944
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "f7c44eb59918b310781cb839e2e0e121b3be821c1281bc32687a426ae1e37300"
+      },
+      "consequenceDirections": {
+        "A": "可發展關注導師動態者是否能接受較少互動回應。",
+        "B": "可承接群體熱議轉成可回覆問題的難度。",
+        "C": "可發展教師保護心情與家長期待全天候在場的衝突。",
+        "D": "可承接社交主動家長是否願意聽見接送需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "72bd9c72f061ff59cfc1bb603cfe00875d00d5dd3a5ca456b8e71c7aa0ea8cd3",
+    "draftSha256": "75cede76a79ce0e0c9a6e9b19fa4227fe1aa740f19639a2ca7ce9f5ed9561996",
     "seedAssignmentVersion": 1
   }
 }

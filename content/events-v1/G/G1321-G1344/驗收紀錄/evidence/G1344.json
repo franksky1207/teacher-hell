@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0483daa93af0c65eb3c70a59500fed1dbd5dcacf029a8154366c2b9582fcbd6c",
+      "checkedAt": "2026-11-28T00:39:11.990Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "你可以先不再參與，我另外告訴你能公開的處理進度。",
+            "action": "在必要告知外提出限定工作時段的適度進度回覆，不揭其他學生私密處理或承諾處分。",
+            "tradeoff": "教師增加回覆，學生可能仍嫌慢。"
+          },
+          {
+            "id": 2,
+            "text": "你想安慰他，先問他要不要有人陪，不替他出頭決定。",
+            "action": "協助學生提出尊重當事者意願的自願陪伴邀請，必要成人支持不變。",
+            "tradeoff": "可能被拒而失落，也需教師協調。"
+          },
+          {
+            "id": 3,
+            "text": "我陪你把剛才最想打人的那一秒說出來，想一個下次能用的停手動作。",
+            "action": "額外與學生自願練習不傷人的暫停及求助方式，不把自控取代學校處理。",
+            "tradeoff": "花個別時間，學生可能認為自己反被檢討。"
+          },
+          {
+            "id": 4,
+            "text": "若各方願意，等事實清楚後再談一次怎麼修復，不急著現在對質。",
+            "action": "提出查核後依法自願修復會談的可能，保護者及被嘲者不必出席作證或原諒。",
+            "tradeoff": "後續協調與不確定等待。"
+          },
+          {
+            "id": 5,
+            "text": "我另準備一段全班討論，談聽人說完，不拿這位同學當例子。",
+            "action": "於合法班級時間用不辨識個案的情境談說話差異與同儕互動，不模仿口吃或要求個案示範。",
+            "tradeoff": "增加備課與班務，也可能被猜起因。"
+          },
+          {
+            "id": 6,
+            "text": "你願意的話，把你希望老師做到的事寫給我，我逐項說哪些能答應。",
+            "action": "額外邀學生自願表達期待，教師依權責回應可承諾的具體支持，不把書寫當受理條件。",
+            "tradeoff": "需閱讀回覆，可能引出無法滿足的要求。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很火，但不想把你變成我的糾察；今天我自願多留一個課間在班上，讓你去喘口氣。",
+          "action": "在必要保護人力已成立外，導師額外於合法課間留班提供一般互動與觀察，允許該生自願正常休息，不讓他負責監控同學。",
+          "tradeoff": "少一段私人休息，也可能被看成老師偏袒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2432738466
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "cf4852a6a022cfdb198bbaa5744d016bb3160cb86b11db742935ab5f49562fb3"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師願額外承擔的心意與學生是否能放下英雄責任，必要防護不依選項才有。",
+        "B": "可發展學生是否覺得教師真的面對風氣而非只處理兩人。",
+        "C": "可承接守約求助後對教師的尊重如何面對非全盤答應。",
+        "D": "可承接求公道是否等於要求當場看到道歉的不同理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0d38e19e111b8e7b809ee28e1189474fafa028c9fb32bcb532fb692bc8d828a6",
+    "draftSha256": "0483daa93af0c65eb3c70a59500fed1dbd5dcacf029a8154366c2b9582fcbd6c",
     "seedAssignmentVersion": 1
   }
 }

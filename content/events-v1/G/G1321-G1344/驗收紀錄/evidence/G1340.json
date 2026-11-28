@@ -15,14 +15,155 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "28c8b446acafb34935a0d97f7d85362a0d23ebe3a02eed51032ecd95b6f06cb4",
+      "checkedAt": "2026-11-28T00:39:11.985Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "交接後我另向總務寫下卸貨動線建議。",
+            "action": "在必要通報外額外提出卸貨區與消防空間配置建議，不自行改場地。",
+            "tradeoff": "花紀錄與協調時間。"
+          },
+          {
+            "id": 2,
+            "text": "我請警衛在交接後教我下次怎麼開口，不把每次都丟給他。",
+            "action": "額外徵詢有經驗同仁是否願提供合法溝通做法，不取代本次安全責任。",
+            "tradeoff": "暴露自己的不自在，也占同仁餘裕。"
+          },
+          {
+            "id": 3,
+            "text": "等事情平穩，我向送貨窗口詢問正式聯絡方式，以後走窗口談。",
+            "action": "經校方許可詢問廠商正式對口，非必要不蒐個人資訊，不私自接洽契約。",
+            "tradeoff": "增加聯絡整理，可能仍要當場面對。"
+          },
+          {
+            "id": 4,
+            "text": "我向主管提出下次需要雙人導護，不假裝自己一人就夠。",
+            "action": "額外提出合法成人配置需求，不在核可前少做必要值勤。",
+            "tradeoff": "可能被看作能力不足，未必有人力。"
+          },
+          {
+            "id": 5,
+            "text": "我用這次一般風險寫一則不點名的校內提醒。",
+            "action": "額外撰寫不含廠商或學生身分的一般消防設備可及提醒，經有權窗口核定才發布。",
+            "tradeoff": "多出書寫與審定，不保證採用。"
+          },
+          {
+            "id": 6,
+            "text": "交接完就回去，不再加碼追著他講道理。",
+            "action": "完成必要安全與交接後停止非必要私人說服，回原課務，不阻擋後續合法處理。",
+            "tradeoff": "保留時間但可能對自己沒講更多耿耿於懷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每次都靠裝兇；我願意用自己的休息，詢問正式成人溝通訓練。",
+          "action": "因護面子疲累，向合法校內成人研習窗口詢問是否有非暴力衝突溝通訓練及參與條件，未報名或支付費用，不保證課程能消除害怕，本次必要消防處理照常。",
+          "tradeoff": "增加私人詢問時間，可能無課可上，也須承認自己需要練習。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4009099206
+        },
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "5cf39f70d8fb07297a3b5e8aa8e5bf8f1d7b8c56466e88fab4be1f1c5ba7f098"
+      },
+      "consequenceDirections": {
+        "A": "可發展安全工作如何在不靠私人爭吵下持續合作。",
+        "B": "可發展教師想被看作果斷卻願意向正式成人資源承認恐懼的取捨，不把培訓當立即解決卸貨事件。",
+        "C": "可承接維持果斷形象與承認需要幫忙的矛盾。",
+        "D": "可承接避開衝突與怒氣無處放的真實感。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒陪練與普通2詢問如何開口過近；改為教師自願參與正式成人溝通訓練查詢，不將當次消防責任選項化。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "交接後我另向總務寫下卸貨動線建議。",
+                "action": "在必要通報外額外提出卸貨區與消防空間配置建議，不自行改場地。",
+                "tradeoff": "花紀錄與協調時間。"
+              },
+              {
+                "id": 2,
+                "text": "我請警衛在交接後教我下次怎麼開口，不把每次都丟給他。",
+                "action": "額外徵詢有經驗同仁是否願提供合法溝通做法，不取代本次安全責任。",
+                "tradeoff": "暴露自己的不自在，也占同仁餘裕。"
+              },
+              {
+                "id": 3,
+                "text": "等事情平穩，我向送貨窗口詢問正式聯絡方式，以後走窗口談。",
+                "action": "經校方許可詢問廠商正式對口，非必要不蒐個人資訊，不私自接洽契約。",
+                "tradeoff": "增加聯絡整理，可能仍要當場面對。"
+              },
+              {
+                "id": 4,
+                "text": "我向主管提出下次需要雙人導護，不假裝自己一人就夠。",
+                "action": "額外提出合法成人配置需求，不在核可前少做必要值勤。",
+                "tradeoff": "可能被看作能力不足，未必有人力。"
+              },
+              {
+                "id": 5,
+                "text": "我用這次一般風險寫一則不點名的校內提醒。",
+                "action": "額外撰寫不含廠商或學生身分的一般消防設備可及提醒，經有權窗口核定才發布。",
+                "tradeoff": "多出書寫與審定，不保證採用。"
+              },
+              {
+                "id": 6,
+                "text": "交接完就回去，不再加碼追著他講道理。",
+                "action": "完成必要安全與交接後停止非必要私人說服，回原課務，不阻擋後續合法處理。",
+                "tradeoff": "保留時間但可能對自己沒講更多耿耿於懷。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想再演不怕的人；我向同事坦白自己剛剛腿軟，請他陪我練一次那句話。",
+              "action": "因護面子疲累而自願向可信成人說明害怕，徵求其於合法休息時段陪演練一段非威脅性提醒，不以學生當陪練或揭他人個資。",
+              "tradeoff": "暴露脆弱並花私人餘裕，同事可能沒空。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4166512904
+            },
+            "selectedIds": [
+              4,
+              3,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 4,
+              "D": 3
+            },
+            "optionsDigest": "79555e335b2c1fa2dd52f49b755d8f0beb36b050c56e7cc1c954017757aa57a8"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展想被認可的教師能否接受不果斷的一面，演練不等於未來必然不怕。",
+            "B": "可承接避開衝突與怒氣無處放的真實感。",
+            "C": "可承接認同依賴與承認負荷的面子代價。",
+            "D": "可發展安全工作如何在不靠私人爭吵下持續合作。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "eea2eff88fb4315cfe0d6d78bff7c008e776001ce25f8ca9e3d401db3f5a9112",
+    "draftSha256": "28c8b446acafb34935a0d97f7d85362a0d23ebe3a02eed51032ecd95b6f06cb4",
     "seedAssignmentVersion": 1
   }
 }

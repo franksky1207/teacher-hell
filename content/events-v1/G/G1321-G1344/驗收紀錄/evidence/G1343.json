@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "35b39a358e4d6e429effc01cdb82f696d272577c6832830f81830b786e37e82f",
+      "checkedAt": "2026-11-28T00:39:11.988Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "非必要那部分延後，今天不再趕完。",
+            "action": "協商將不影響安全與既定期限的剩餘盤點延到合法可用時段，必要檢查照常。",
+            "tradeoff": "需再約時間，兩人後續工作仍在。"
+          },
+          {
+            "id": 2,
+            "text": "我額外接可由導師核對的普通清冊，你只做你的專業部分。",
+            "action": "在權限內自願分擔非專業清冊整理，專業醫材判斷仍由合格人員執行。",
+            "tradeoff": "教師增加文書負擔，需交接清楚。"
+          },
+          {
+            "id": 3,
+            "text": "我幫你向主管詢問能否另派支援，不讓你一人趕後面幾班。",
+            "action": "額外提出合格成人支援需求，未獲安排不宣稱有人接手。",
+            "tradeoff": "協調時間且可能無人可派。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，我陪你把本週過量任務一起提出調整申請。",
+            "action": "徵求職員意願後額外向有權主管反映實際排程負荷，不拿摔盒作人格評斷。",
+            "tradeoff": "教師承擔具名協調與同事可能拒絕的情面。"
+          },
+          {
+            "id": 5,
+            "text": "我把教室這邊的備品位置整理好，減少你下次搬來搬去。",
+            "action": "在校方核准與急救可及條件不變下，額外整理非醫材判斷的置物動線，不私自改醫療配置。",
+            "tradeoff": "需花整理時間，未必能減少所有搬運。"
+          },
+          {
+            "id": 6,
+            "text": "今天公事照接好，我另邀你在正常休息喝口水，不談誰弄壞。",
+            "action": "在必要工作交接後提出成人自願短休邀請，不要求同事放棄值勤。",
+            "tradeoff": "花自己的休息餘裕，對方可能不願被照顧。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他一直道歉也煩了；我願自己多走這趟，把已送辦的文件帶到窗口，讓他別再來回跑。",
+          "action": "坦承不想再聽自責，在合法權限及資訊範圍內額外代送已依法完成的紙本文件至指定窗口，不代簽或承諾審核結果。",
+          "tradeoff": "多走路與占工作餘裕，仍不能代專業人員處理設備。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4088913318
+        },
+        "selectedIds": [
+          5,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "8e167d1dec13c34dad99dc297f2eb415581747a1b57fad48ff8349aecdbe00d3"
+      },
+      "consequenceDirections": {
+        "A": "可承接家庭支持休息與職場不敢減量的拉扯。",
+        "B": "可發展嘴硬的體貼被理解或被覺得不耐煩，代送不等於報損只有此分支才成立。",
+        "C": "可發展疲勞同事是否能接受停止硬撐而非視為失職。",
+        "D": "可發展合作從補錯誤轉成減少疲勞勞動的可能。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "08ec05083d2ac837ffcbf9da12dacf070d661282c732cf6c711273fb40a95808",
+    "draftSha256": "35b39a358e4d6e429effc01cdb82f696d272577c6832830f81830b786e37e82f",
     "seedAssignmentVersion": 1
   }
 }

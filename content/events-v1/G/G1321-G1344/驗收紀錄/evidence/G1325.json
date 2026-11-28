@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b7c6026bdc5039b588b25eb5aa487c21f08f976fd7963429d06d708d260a9eeb",
+      "checkedAt": "2026-11-28T00:39:11.956Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "樣衣先不進班，先談需求和預算，之後再決定要不要看它。",
+            "action": "暫不接受將樣衣作首輪提案，依班務程序先徵集需求與負擔範圍，物主自行保管。",
+            "tradeoff": "家長前期投入可能白費，導師要主持討論。"
+          },
+          {
+            "id": 2,
+            "text": "完成需求討論後，這件可以和其他符合預算的提案一起看。",
+            "action": "在必要需求與預算程序後，徵詢物主願否將樣衣作非唯一參考，不預設採用。",
+            "tradeoff": "多收集比較工作，可能沒適合預算的其他款。"
+          },
+          {
+            "id": 3,
+            "text": "你們若想自己揪團，就別叫班服；我不代收代訂。",
+            "action": "向家長說明合法私人自願購買與正式班服的區別，不使用未授權班級名義，不干涉合法選購。",
+            "tradeoff": "家長可能覺得教師切割熱心，仍需防止排斥。"
+          },
+          {
+            "id": 4,
+            "text": "若只想保暖，我把統一外套這題擱下，先談現有穿著能否夠用。",
+            "action": "在正式需求討論中提出不新增班級消費、依既有合法保暖服裝處理的方案，不宣稱已否決全班提案。",
+            "tradeoff": "可能讓期待班級造型的人失望。"
+          },
+          {
+            "id": 5,
+            "text": "我請你先向揪團家長說明還沒定案，再由學生談自己的選擇。",
+            "action": "邀家長自願向其聯絡圈補充尚未成立的採購狀態，教師另依正式程序聽學生需求，不假定訊息已傳。",
+            "tradeoff": "需額外聯絡，也可能被理解為當眾拆台。"
+          },
+          {
+            "id": 6,
+            "text": "如果最後沒選這件，我陪你問廠商樣衣怎麼處理，不保證能退。",
+            "action": "徵得家長意願後，額外詢問樣衣物權與歸還條件，不代付費或保證廠商接受。",
+            "tradeoff": "導師多一段商務聯絡，可能被捲入私人交情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點怕自己也被漂亮衣服說服；班會我先不表態，請學生主持，我只守程序。",
+          "action": "坦承喜歡樣衣但怕形成教師偏好壓力，徵求自願學生主持合法需求討論，導師保留必要公平與支持責任、不替任何款背書。",
+          "tradeoff": "須準備主持支援並放下控制感，討論可能較慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 563314905
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "7ab01b17eb325d53f17eefd7b199e21604f42d1ea6fbdbf783244ba2f025b419"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長對公平比較的接受與同儕消費壓力。",
+        "B": "可發展號召派家長是否接受自己的現成方案不是起點。",
+        "C": "可承接家長對導師正派為人的敬重，是否能容納教師不替其方案加持。",
+        "D": "可發展家長願不願承認熱心也有未被採用的風險。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c82e74e930d34bee46b3f74febc5fa661fed2a6d76ba5978cf5c9c2b1651b825",
+    "draftSha256": "b7c6026bdc5039b588b25eb5aa487c21f08f976fd7963429d06d708d260a9eeb",
     "seedAssignmentVersion": 1
   }
 }

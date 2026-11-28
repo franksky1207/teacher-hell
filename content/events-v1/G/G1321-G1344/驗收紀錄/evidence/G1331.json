@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "549a9f40efd5fe3206dc5106885845aaa1ae04fe1393e0affcdd7b03ff436b6e",
+      "checkedAt": "2026-11-28T00:39:11.969Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天照時結束，討論單請先帶回，下次正式提案再排。",
+            "action": "明確維持十五分鐘簽領，不收下額外討論工作，告知既有正式提案管道。",
+            "tradeoff": "家長可能覺得熬夜白費。"
+          },
+          {
+            "id": 2,
+            "text": "我收一份，另排工作時間看，再回覆能怎麼提，不答應採用。",
+            "action": "自願接受一份討論單供後續合法工作時間閱讀及有限回覆，當日準時結束。",
+            "tradeoff": "增加閱讀回覆負擔，家長可能把收件當同意。"
+          },
+          {
+            "id": 3,
+            "text": "十五分鐘內簽完若還有空，只聽你說最想問的一件，不現場表決。",
+            "action": "在原時段剩餘且家長自願留下下，有限聽取一項意見，不延長或宣布班級決議。",
+            "tradeoff": "文件作業時間需控好，其他議題無法展開。"
+          },
+          {
+            "id": 4,
+            "text": "你願意的話，我替你問承辦能否另約合適的議題說明，不讓今天的人被迫留下。",
+            "action": "提出向有權承辦詢問正式議題交流機會，需各方同意，不保證另有座談。",
+            "tradeoff": "多一段協調且可能排很久。"
+          },
+          {
+            "id": 5,
+            "text": "先問這三位是否願意把意見各自交回，我只協助彙整不具名問題。",
+            "action": "徵求各人自願在既有管道提供非個案意見，導師額外彙整，不把沉默當贊成或要求填表。",
+            "tradeoff": "增加整理，家長可能不願參與。"
+          },
+          {
+            "id": 6,
+            "text": "我和你另約短段，先談你想當聯絡人的工作邊界，不談三題政策。",
+            "action": "徵求家長自願於合法時間討論其聯絡投入與議程權限，不否定其正式提案權。",
+            "tradeoff": "額外談話，也可能被認為只關心控制熱心。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看到你真的累了；我想請你今天把紙放下，和大家一起準時走，我自己也不加這場。",
+          "action": "因不想用彼此熬夜換稱職形象，明確婉拒新增座談，額外提議由家長自主暫停這週非必要聯絡工作，教師不再追加請託，必要訊息仍由正式管道承接。",
+          "tradeoff": "導師須自己接回非必要聯絡投入，家長可能覺得被撤換而受傷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 403182222
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "535aca80b70948a99a6cf44cd315b29dd47dabe0f20e18f5f9c1531f14de66cf"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長如何取捨最重要問題及不被完整聽完的挫折。",
+        "B": "可發展熱心家長的急切與真正代表性、程序之間的摩擦。",
+        "C": "可發展家庭支持與本人過勞是否能形成可持續的參與。",
+        "D": "可發展不再用過量工作換肯定的代價，是否接受休息由本人決定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d446757fe4dd1f3c295409cc4edbd3a037a786f52cba272bb1b447b37423a54e",
+    "draftSha256": "549a9f40efd5fe3206dc5106885845aaa1ae04fe1393e0affcdd7b03ff436b6e",
     "seedAssignmentVersion": 1
   }
 }

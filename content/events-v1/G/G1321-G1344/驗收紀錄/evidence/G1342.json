@@ -15,14 +15,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "617039fc274ea62b9313e3af952c68b1e88d8820610851cdc488ff63adb6a245",
+      "checkedAt": "2026-11-28T00:39:11.987Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次提案先結束，我不另加替代活動。",
+            "action": "完成必要說明後婉拒額外遊戲化規劃，保留其未來正常提案權。",
+            "tradeoff": "學生可能失落，導師保留工作時間。"
+          },
+          {
+            "id": 2,
+            "text": "我陪你讀公開條款，看免費到底換了什麼。",
+            "action": "額外與學生閱讀合法公開服務條款及宣傳限制，不登入、不測試蒐集真資料。",
+            "tradeoff": "花休息時間，學生可能覺得被說教。"
+          },
+          {
+            "id": 3,
+            "text": "若大家願意，你可提不記姓名、不計出勤的紙本共同寵物創作。",
+            "action": "允許於合法班務程序提出純創作自願活動，不替代正式點名、不公布個別出勤。",
+            "tradeoff": "增加活動規劃與材料時間，可能無人參與。"
+          },
+          {
+            "id": 4,
+            "text": "把你的想法寫成不含真資料的介面模型，我只看設計不拿來點名。",
+            "action": "提出學生可自願製作離線概念模型供合法分享，不要求交作業或部署。",
+            "tradeoff": "學生另花創作時間且成果不會立即使用。"
+          },
+          {
+            "id": 5,
+            "text": "我替你問資訊組有沒有願意聽概念的人，不保證採用。",
+            "action": "徵求校內合格成人於合法時段交流意願，不移交學生帳密或未核可軟體。",
+            "tradeoff": "協調耗時且可能沒人有空。"
+          },
+          {
+            "id": 6,
+            "text": "你想省哪一步，我陪你看現有紙本流程，先找真麻煩。",
+            "action": "在不接觸他人出勤私資下討論導師可公開的點名動作，額外分析可合法簡化的部分，不先改程序。",
+            "tradeoff": "花工作餘裕，可能發現沒有可省的步驟。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想養的是不用拿誰遲到當飼料的寵物；我自願畫自己的版本，請你挑缺點。",
+          "action": "導師因也被可愛圖樣吸引，額外畫一張本人原創、不收個資的班級吉祥物概念請學生自願回饋，不假定全班採用或新增集點。",
+          "tradeoff": "花私人創作時間並暴露畫技，學生可能嫌落伍。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3374913976
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "4751315f6bb7f4e89be96e3746c69d341fe71fb562af635e83a902de17b1977b"
+      },
+      "consequenceDirections": {
+        "A": "可發展熟練操作與判斷廣告可信度不是同一能力。",
+        "B": "可發展學生的熱情是否能接受實際問題比廣告複雜。",
+        "C": "可發展想替教師省工的期待與純設計創作的落差。",
+        "D": "可發展師生共同喜歡創意卻拒絕商業打卡時的趣味與親近，不能偷渡新出勤制度。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3293f1869111d43eec6fae2c205eb22254702d00df42214df8c5b8e7400280b9",
+    "draftSha256": "617039fc274ea62b9313e3af952c68b1e88d8820610851cdc488ff63adb6a245",
     "seedAssignmentVersion": 1
   }
 }

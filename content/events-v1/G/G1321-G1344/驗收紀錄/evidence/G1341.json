@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "da849815676c2a2056683c43648b813917e5c3193f3156c1476babe657e97364",
+      "checkedAt": "2026-11-28T00:39:11.986Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "不改黑板，我額外和你每週看一次哪些步驟最容易漏。",
+            "action": "維持私下追蹤並提供限定每週流程回顧，不以幹部抓到人數評價。",
+            "tradeoff": "教師增加固定時間，學生可能嫌不夠有力。"
+          },
+          {
+            "id": 2,
+            "text": "我提議歸還當下就用一次簡單勾記，省掉回座後再簽。",
+            "action": "在權責內提出靠近歸還動作的低個資確認方式，先試可行並公平告知，不預設省工。",
+            "tradeoff": "需調整工具與說明，仍可能漏。"
+          },
+          {
+            "id": 3,
+            "text": "追蹤提醒由我接回，你只報掃具數量。",
+            "action": "調整合法班務分工，導師額外承擔後續人際提醒，學生保留適量管理工作。",
+            "tradeoff": "教師工作增加，幹部可能覺得失權。"
+          },
+          {
+            "id": 4,
+            "text": "先讓全班談怎樣才不容易忘，不用你一人替大家想。",
+            "action": "於合法班級時段徵集自願一般流程意見，不公開漏簽者。",
+            "tradeoff": "占班務時間且可能提不出好方法。"
+          },
+          {
+            "id": 5,
+            "text": "如果你願意，找一位自願副手輪流整理，不增加盯人。",
+            "action": "提出合法自願分工與輪流整理需求，未獲同意不任命同學。",
+            "tradeoff": "需協調副手，幹部可能不願分享工作與認可。"
+          },
+          {
+            "id": 6,
+            "text": "我另給你具體工作回饋，但不把嚴格抓人當優點。",
+            "action": "額外就已完成的整理與及時通報寫個別回饋，不公開比較幹部。",
+            "tradeoff": "花書寫時間，也可能不符學生想要的公開誇獎。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常忘小事；這週我自願接一輪歸還整理，讓你看老師也得找方法。",
+          "action": "因不喜歡自己被推成嚴師靠山，導師額外於合法工作段承擔一次掃具歸還整理，不故意漏登、不拿學生當實驗。",
+          "tradeoff": "犧牲工作餘裕，也可能讓學生覺得老師在否定自己。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3708784225
+        },
+        "selectedIds": [
+          5,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "c9770e59a420718de6210a94e846aa21a459e5fd0bdaf8ca4338398464302aa6"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師實際接觸麻煩後與幹部對負荷的理解，不能保證一次找出答案。",
+        "B": "可發展主動幹部是否接受少抓到錯誤反而是改善。",
+        "C": "可承接認同依賴對分擔責任的矛盾。",
+        "D": "可發展認可需求能否轉向流程品質而非嚇人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "59fc549234a56245c601b53f6f42c7611b4db3cd2f8528849260c03122779da3",
+    "draftSha256": "da849815676c2a2056683c43648b813917e5c3193f3156c1476babe657e97364",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "43e8d45c1ac3e499ad7a8915296f44f092d5a5c1f62493e311e54ecaf1ad3e12",
+      "checkedAt": "2026-11-28T00:39:11.964Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我這次替你彙整大家可行時段，最後仍由你確認。",
+            "action": "自願在正常工作聯絡時段彙整五人合法可行時段供科任決定，不代定評量。",
+            "tradeoff": "增加跨科聯絡與反覆確認負擔。"
+          },
+          {
+            "id": 2,
+            "text": "這次重約請你直接通知，我不另開一條傳話。",
+            "action": "婉拒非必要代約，由科任依既有正式管道通知，導師維持必要學生支持。",
+            "tradeoff": "同事可能覺得被推回工作，導師承受情面壓力。"
+          },
+          {
+            "id": 3,
+            "text": "我陪你把這次通知草稿核一遍，不替你逐個追。",
+            "action": "額外協助核對科任擬出的時間地點與可讀性，正式發布仍由有權者辦理。",
+            "tradeoff": "占一段工作時間，也不能保證每個人讀到。"
+          },
+          {
+            "id": 4,
+            "text": "我們另約十分鐘通話，別今晚在長訊裡越寫越累。",
+            "action": "提出次一合法工作時段的短通話處理非緊急協作，必要即時處置不延後。",
+            "tradeoff": "需挪時段，今晚未能立刻滿足其情緒需求。"
+          },
+          {
+            "id": 5,
+            "text": "我向課務端詢問有沒有既定統一補測時段可銜接。",
+            "action": "查詢現有合法平時補測安排供科任選擇，不另造制度或保證有空位。",
+            "tradeoff": "增加詢問與等待，可能無可用安排。"
+          },
+          {
+            "id": 6,
+            "text": "我把通知送達這一段的問題帶去共同備課，先徵求你同意不點名。",
+            "action": "徵詢科任願否以去識別的一般案例向相關教學協調提出流程改善，不替其公開失誤。",
+            "tradeoff": "多整理一次資料，也可能被拒絕。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句配合度刺到了；我想請你先把對全班的那句話收回，再談額外幫忙。",
+          "action": "坦白受到概括責備的感受，請科任對原私訊用語作明確修正；必要補測支持照常，非必要代約先不承諾。",
+          "tradeoff": "可能使疲勞同事更防衛，也需面對直接衝突。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3936153235
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "19022d1fda9d6bbd6e198b986e10f8f702dc57a9c5331bbe7c218f61b8f56ecb"
+      },
+      "consequenceDirections": {
+        "A": "可發展負荷重時對有限幫忙的感受與資訊品質改善。",
+        "B": "可發展希望省工的同事面對正式資源限制的反應。",
+        "C": "可發展疲勞同事是否接受協作有限度，或日後依賴導師承包。",
+        "D": "可發展科任是否能承認情緒化問責與導師不願吞下黑鍋的關係代價。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "907d78004d55b6f88562b83c892d65f70cbfce98ef099688902f5fb1da99cda4",
+    "draftSha256": "43e8d45c1ac3e499ad7a8915296f44f092d5a5c1f62493e311e54ecaf1ad3e12",
     "seedAssignmentVersion": 1
   }
 }

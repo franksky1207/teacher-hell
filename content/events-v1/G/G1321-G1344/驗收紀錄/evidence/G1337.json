@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a96686854b0627d863505c33243648c1e8237ab41a1a0f31671436bdceea1bad",
+      "checkedAt": "2026-11-28T00:39:11.980Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核准後只收安全放得下的部分，其餘請你領回。",
+            "action": "徵詢家長願否分量贈與，校方核可且確認責任空間才收部分，餘物約合法領回。",
+            "tradeoff": "清櫃與分批交接耗時，家長可能掃興。"
+          },
+          {
+            "id": 2,
+            "text": "這次整批婉拒，約你方便的時間領回。",
+            "action": "不新增受贈管理，安排物主合法領回全數，不擅拆用。",
+            "tradeoff": "承受好意全退的尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "你若願意，我陪你問健康中心能不能正式接。",
+            "action": "詢問其他校內受贈單位需求與規範，未同意不移物。",
+            "tradeoff": "增加協調，可能同樣不缺。"
+          },
+          {
+            "id": 4,
+            "text": "先問店家是否可依規退貨，運費與程序由你決定。",
+            "action": "徵詢家長願否向賣方查合法退貨條件，導師可協助整理品項資訊，不保證可退。",
+            "tradeoff": "多一段聯絡，可能有運費或被拒。"
+          },
+          {
+            "id": 5,
+            "text": "若你想另捐，我查正式校外管道，你選好再自行交付。",
+            "action": "依物主意願查詢可公開受贈需求，不擅自轉贈、不承諾收受。",
+            "tradeoff": "導師查詢時間與家長後續運送負擔。"
+          },
+          {
+            "id": 6,
+            "text": "我申請校方共用庫評估，若不收就照約領回。",
+            "action": "提出由正式共用耗材庫審核數量及保管的申請，不先認定有空間或獲准。",
+            "tradeoff": "等待及追蹤耗時，可能仍全退。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再用自己的櫃子硬塞；我拍一張不含個資的空間示意，讓你親眼看困難。",
+          "action": "因怕拒絕好意又不願犧牲工作空間，額外整理合法可分享的櫃區容量示意供家長理解，不公開其捐贈或學生資料。",
+          "tradeoff": "花整理時間，可能被說小題大作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1038476853
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "48205132668dfd8dabe7da7acfb58bea38423e29791b2aead11d74d83a3ebc3b"
+      },
+      "consequenceDirections": {
+        "A": "可承接家長的衛生關心是否能接受超出本班的公共使用。",
+        "B": "可承接家長是否願為衝動訂單收尾，不替其作消費決定。",
+        "C": "可發展資源熱心與教師實際收納負荷被看見後的反應。",
+        "D": "可發展資源提供期待與真實需求不合的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c184a041aa6e4fd4164fc011488f609151403b0c3687aa59357afaa97591ea91",
+    "draftSha256": "a96686854b0627d863505c33243648c1e8237ab41a1a0f31671436bdceea1bad",
     "seedAssignmentVersion": 1
   }
 }

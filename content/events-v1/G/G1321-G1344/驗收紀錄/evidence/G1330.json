@@ -16,14 +16,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c6403883f826a749a33d2001ea04a7eb4dffa24dbd71282dbde4485e53407ca2",
+      "checkedAt": "2026-11-28T00:39:11.967Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不再勸你開手機，但請你把現有查詞方式向學生說清楚。",
+            "action": "尊重科任決定，提出由其額外說明既有可及查詞安排的邀請，必要支持照常。",
+            "tradeoff": "學生可能覺得導師沒有替他們爭取。"
+          },
+          {
+            "id": 2,
+            "text": "我把最卡的幾個實例整理給你，你再決定要不要調整。",
+            "action": "徵求學生自願提供不含個資的具體查詞困難，額外整理供科任判斷，不代授專業。",
+            "tradeoff": "花整理時間，科任未必改變。"
+          },
+          {
+            "id": 3,
+            "text": "可否只開固定短段試一次？規則由你在課內決定。",
+            "action": "向科任提出合法限時教學用途試行建議，待其同意與可及條件成立才進行。",
+            "tradeoff": "多出管理準備，可能遭拒。"
+          },
+          {
+            "id": 4,
+            "text": "我幫你查校內有沒有可借的紙本工具，不要求學生自己買。",
+            "action": "向正式資源窗口詢問適用紙本工具及借用條件，未取得不稱已供應。",
+            "tradeoff": "詢問耗時，可能數量不足或不適合課程。"
+          },
+          {
+            "id": 5,
+            "text": "若你願意，我邀資訊同仁介紹可控的現有功能，你不用現在決定。",
+            "action": "徵詢科任與支援者的自願短段交流，不暗示能保證封鎖一切分心。",
+            "tradeoff": "占多方時間，疲憊同事可能不想再學。"
+          },
+          {
+            "id": 6,
+            "text": "我讓學生先找一名代表把需求講給你聽，我不替兩邊翻譯。",
+            "action": "徵求合法自願的學生代表與科任直接溝通，導師必要陪同與支持不變。",
+            "tradeoff": "協調及陪同耗時，代表不能替全班同意。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想被自己以前那句話綁住；我在自己的課先試合法查詢，再把真實麻煩告訴你。",
+          "action": "坦承立場可能調整，僅在自己課程、校規與可及性允許下自願設計有限教學查詢，待實際執行後才分享觀察，不替科任承諾。",
+          "tradeoff": "增加自身備課管理工作，可能發現比預想更難。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 787268288
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "783392ebe399e1cf5703b50d15440c1da82c44316a61b5692e057d4ff7183a63"
+      },
+      "consequenceDirections": {
+        "A": "可承接原支持禁滑立場與教學用途彈性是否能分開。",
+        "B": "可發展不從眾同事是否願接受具體需求而非流行壓力。",
+        "C": "可發展同事對教師不再用口號勸人的看法，未試前不能稱有效。",
+        "D": "可發展不願跟風與真正管理負擔的界線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1ada8efd007760074daa23e1c019285fdc528ff5a2ac360959ea3b655136af83",
+    "draftSha256": "c6403883f826a749a33d2001ea04a7eb4dffa24dbd71282dbde4485e53407ca2",
     "seedAssignmentVersion": 1
   }
 }

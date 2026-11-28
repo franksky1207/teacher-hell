@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1f25124f2ce0085a7001c442f30c62e63d18e54238a276a4b6d565c082514f93",
+      "checkedAt": "2026-11-28T00:39:11.954Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "原手繪作主體，大字版另找合意的位置，不把誰蓋掉。",
+            "action": "提出以原手繪為主、印字另作輔助的排版，須作者同意與評比規則容許才採行。",
+            "tradeoff": "需重新排版，也可能降低股長預期的視覺效果。"
+          },
+          {
+            "id": 2,
+            "text": "兩個版本並排試看，請組員依事先說好的內容需求一起選。",
+            "action": "在不損作品下安排組員共同比較兩版，先確認合理評準與同意，不由股長獨決。",
+            "tradeoff": "占合作時間，可能仍談不攏。"
+          },
+          {
+            "id": 3,
+            "text": "我們先問承辦是否能同時展示創作過程，不讓成品只剩一種聲音。",
+            "action": "提出保留兩版與過程說明的申請，待規範及作者同意確認才展示。",
+            "tradeoff": "增加說明整理，可能不合評比格式。"
+          },
+          {
+            "id": 4,
+            "text": "這面牆交回原組員決定，你改負責別的已分配工作。",
+            "action": "在既有分工與合理班務權責內提出由原作者掌握此區，與股長協調其原有其他工作，不懲罰性撤職。",
+            "tradeoff": "導師需接回協調，股長可能覺得失去統籌能力的肯定。"
+          },
+          {
+            "id": 5,
+            "text": "若大家都願意，就重做一張真正合寫的版本，時間不夠也不熬夜補。",
+            "action": "提出自願在合法可用時段共同重製的方案，需作者及組員同意，不強加額外負擔。",
+            "tradeoff": "多花創作時間，未必趕得上原展示進度。"
+          },
+          {
+            "id": 6,
+            "text": "我先申請這一區不參評，作品仍照原意願展示。",
+            "action": "向有權承辦詢問局部不參評的可能，待規範與組員意見確認，不擅自取消全班資格。",
+            "tradeoff": "可能失去名次機會或申請不成立。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想贏，但不想替誰背書；我自願留下來做最笨的裁貼，決定交你們談。",
+          "action": "承認自己同樣在意名次，提出於合法工作餘裕內承接經作者同意的普通裁貼勞動，不代選成品或要求學生留下。",
+          "tradeoff": "增加導師勞動，組員仍可能無法形成合意。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1624448589
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ca5d33925150e5d3e81a6c7aaa7840125dae0c295a396798bc17cdd67ef7a5e3"
+      },
+      "consequenceDirections": {
+        "A": "可承接對名次的執著與保留多版本的代價。",
+        "B": "可發展為了共同所有權犧牲現成效率，股長是否願意不求最快最好。",
+        "C": "可發展實際參與決策能否讓受傷組員願意繼續合作。",
+        "D": "可發展股長看見教師不憑職權決定卻願出力時的反應，不能保證和解或得獎。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4554be8b32909f67965fd8182cd1f6a7d49c777a5557c34e281d43e693415202",
+    "draftSha256": "1f25124f2ce0085a7001c442f30c62e63d18e54238a276a4b6d565c082514f93",
     "seedAssignmentVersion": 1
   }
 }

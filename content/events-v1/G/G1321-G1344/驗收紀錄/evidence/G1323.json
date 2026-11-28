@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f2862fc0e82278224a6e8578525f7312bb67897c7cc67aab8f3899e576c2c887",
+      "checkedAt": "2026-11-28T00:39:11.952Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪你把開窗提案送總務，請他們回覆，不先承諾照做。",
+            "action": "協助正式提出班級通風建議，保留原規範直到有權回覆。",
+            "tradeoff": "花送件說明時間，可能被拒絕。"
+          },
+          {
+            "id": 2,
+            "text": "先讓全班談體感，不只讓簽名的人替大家回答。",
+            "action": "於合法班務時間徵詢所有人可自願表達的悶熱、噪音等感受，不以投票推翻安全規範。",
+            "tradeoff": "占用班務且意見可能分裂。"
+          },
+          {
+            "id": 3,
+            "text": "在規定範圍內，我們先試調座向與可用送風，不動大窗。",
+            "action": "與權責者確認可行的座向與既有送風調整，再於不影響他人權益下試行。",
+            "tradeoff": "導師需安排，未必改善悶感。"
+          },
+          {
+            "id": 4,
+            "text": "換位那件事我另外跟你說清楚，別讓連署替我們吵舊帳。",
+            "action": "邀學生自願於合法課間討論上次換位理由與不滿，通風提案仍正常受理。",
+            "tradeoff": "教師需直面被討厭的感受，學生可能拒談。"
+          },
+          {
+            "id": 5,
+            "text": "我請環境承辦來說明一次規定的依據，大家可以事先交問題。",
+            "action": "提出有權成人對全班的說明邀約，問題自願且不揭個人病況，未同意不宣稱已排定。",
+            "tradeoff": "多方協調且學生可能覺得老師搬權威。"
+          },
+          {
+            "id": 6,
+            "text": "想要大開窗，我提出關冷氣的可行時段供大家討論，不讓兩套規定打架。",
+            "action": "在校規、空氣與天候安全許可下提出暫停冷氣、採自然通風的方案，先確認可行與需求，不直接實施。",
+            "tradeoff": "失去冷房舒適，怕熱者可能反對。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服氣被說成不聽；我願多花一段課間，坐你說最悶的位置把感受記下來。",
+          "action": "因不甘被貼標籤，自願於安全合法時段親自體驗指定座位並據實記下主觀感受，不作空氣品質檢測或醫療判斷。",
+          "tradeoff": "犧牲休息，體驗不能證明全班狀況。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 36080145
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "a1c53fd45d7e4f00d570aa5705287c869ebc2bd965037afa0ef86934766f982b"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生認為折衷是敷衍或實際協商的不同反應。",
+        "B": "可發展學生對教師親自投入的反應，仍可能質疑未改大窗的決定。",
+        "C": "可承接健康訴求者是否願承擔自己提案的體感代價。",
+        "D": "可承接號召力遇到不同需求時的同儕關係變化。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2f22b98c4219b72df0bebb8cbe2e0c852e6f02b1289cdcf16e69f5840629dd02",
+    "draftSha256": "f2862fc0e82278224a6e8578525f7312bb67897c7cc67aab8f3899e576c2c887",
     "seedAssignmentVersion": 1
   }
 }

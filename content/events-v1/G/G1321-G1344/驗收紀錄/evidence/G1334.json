@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8bbc126eac767dc243729a5bf99408ed2a99731075a904307d7bec5851d21e05",
+      "checkedAt": "2026-11-28T00:39:11.974Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "線上先留著，我額外集中一段時間收電話回覆。",
+            "action": "在核准備援之上自願提供限定工作時段人工協助，依法核對本人資料，不代登入。",
+            "tradeoff": "增加人工整理負荷。"
+          },
+          {
+            "id": 2,
+            "text": "我正式提出簡易驗證改版，請你評估，不要求現在拆。",
+            "action": "向權責者提出符合資安的簡化驗證方案，核可前保留現行合法備援。",
+            "tradeoff": "增加改版協調，職員可能覺得心血被退貨。"
+          },
+          {
+            "id": 3,
+            "text": "我邀幾位願意的家長做一次不輸真帳密的操作走查。",
+            "action": "經同意與授權，用測試介面觀察家長卡點供職員參考，不蒐集密碼。",
+            "tradeoff": "需安排測試，不能保證代表所有使用者。"
+          },
+          {
+            "id": 4,
+            "text": "紙本也能有效，我提議這次全班以紙本為主、線上自願。",
+            "action": "提出經權責同意後的紙本主要收件安排，保留已有效線上回覆，不要求重填。",
+            "tradeoff": "增加紙張處理與合併紀錄。"
+          },
+          {
+            "id": 5,
+            "text": "我先申請一段正式客服協助時間，不把你午休再賠進來。",
+            "action": "向有權單位詢問可用成人客服支援，不預設人力取得。",
+            "tradeoff": "多一段申請且可能來不及。"
+          },
+          {
+            "id": 6,
+            "text": "這次先不改系統，我把下一次前的需求確認一起做。",
+            "action": "與職員協商未來建置前先核對使用者身分與備援需求，本次照現有有效雙軌收件。",
+            "tradeoff": "導師增加未來需求說明，不能消除當次額外人工。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再當密碼客服；我願把多出的整理工時講明，請主管決定誰正式接。",
+          "action": "因被大量求救耗盡耐心，額外整理已實際接聽與人工處理的工作內容向主管提出分工請求，不虛構尚未發生耗時。",
+          "tradeoff": "需具名承受抱怨觀感，職員可能覺得幫忙害導師告狀。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4279725158
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "ab2bd14bee7430597e3973f684c73374ad75558ee4e4c8cb2f2071b510a20928"
+      },
+      "consequenceDirections": {
+        "A": "可發展技術熟手看見真實使用困難的反應。",
+        "B": "可發展幫忙出於善意卻需要正式工時承接的職場現實。",
+        "C": "可承接責任感與對使用者門檻的理解是否能調整。",
+        "D": "可發展私人善意與正式負荷界線，不以停止必要備援逼人改系統。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9e4fa11dc4c89bd355cfcec1cb1a2dc0a23ffc6d5fee576d2ce7c00d5790e690",
+    "draftSha256": "8bbc126eac767dc243729a5bf99408ed2a99731075a904307d7bec5851d21e05",
     "seedAssignmentVersion": 1
   }
 }

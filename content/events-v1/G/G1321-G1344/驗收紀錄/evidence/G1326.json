@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2767e3ef77c50585b5617de3623f60a65250806c14f62ab59dc12acc889f91ed",
+      "checkedAt": "2026-11-28T00:39:11.959Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這科以後由你直接收，我不另做催繳名單。",
+            "action": "與科任提出終止非必要代催、回歸其直接收件的分工，必要學生支持及交接照常。",
+            "tradeoff": "導師失去統整便利，同事可能覺得被賭氣退回工作。"
+          },
+          {
+            "id": 2,
+            "text": "我願繼續幫收，但每次只依你確認過的當日版本。",
+            "action": "提出由科任在正常工作時段提供有效期限版本，導師據此協作，不要求先經導師批准寬限。",
+            "tradeoff": "增加雙方更新負擔，仍可能有時差。"
+          },
+          {
+            "id": 3,
+            "text": "我把全班對公平的疑問帶給你，不把那個家庭拿來解釋。",
+            "action": "自願整理不含家庭個資的一般期限疑問，請科任依其評量權責作一致說明。",
+            "tradeoff": "導師多做整理，同事可能覺得被學生問責包圍。"
+          },
+          {
+            "id": 4,
+            "text": "我先和你談你說『逼太緊』是哪些時候，不急著談表格。",
+            "action": "另約合法短段討論實際催繳互動，徵詢可調整的說法與頻率。",
+            "tradeoff": "需要面對私人不滿，可能聽到刺耳評價。"
+          },
+          {
+            "id": 5,
+            "text": "讓學生自己向你查繳交狀態，我幫大家認清聯絡窗口就好。",
+            "action": "提出學生依既有可用管道直接確認本科繳交狀態，導師額外協助說明而不建立第二份收件紀錄。",
+            "tradeoff": "學生需更自主，初期可能反覆詢問。"
+          },
+          {
+            "id": 6,
+            "text": "我提議每週固定一次核對，不再每天追這科。",
+            "action": "與科任協商將非必要代催頻率降為每週有限核對，仍即時維持必要期限通知與個別支持。",
+            "tradeoff": "可能較晚發現一般漏交，同事需承擔較多日常掌握。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的覺得剛才很糗；我願請你看一次我怎麼催，再直接告訴我哪裡太硬。",
+          "action": "坦白被當眾更正的尷尬，額外邀科任在合法課務許可下觀察一次導師平常班務，不作評鑑、不讓學生表演或揭家庭事。",
+          "tradeoff": "暴露自己的工作方式，且需挪時段面對批評。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1828631122
+        },
+        "selectedIds": [
+          3,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "5069a45c8fa0bb81cc6ad52045922d3b2c3728e89ab1e30263a7b90f7e713050"
+      },
+      "consequenceDirections": {
+        "A": "可承接從容步調與導師想即時掌握的不同容忍度。",
+        "B": "可承接同事承認大方向規範但不喜導師風格的關係裂縫。",
+        "C": "可發展寬限與一致性的不同期待，不以公開家庭困難換理解。",
+        "D": "可發展彼此的不滿能否變具體，或科任拒絕多花這段時間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5afafcb8c9ba1bade9d08a3029574c05d5e088d816bdff1355dc7b8329ba07db",
+    "draftSha256": "2767e3ef77c50585b5617de3623f60a65250806c14f62ab59dc12acc889f91ed",
     "seedAssignmentVersion": 1
   }
 }

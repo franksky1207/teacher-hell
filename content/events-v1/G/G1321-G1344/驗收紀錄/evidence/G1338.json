@@ -16,14 +16,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "043f7b19b0a1001ee89f07e6fd5d900f3206475ddd951e2d9f76182f608776f5",
+      "checkedAt": "2026-11-28T00:39:11.982Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "延後一次定稿，願意留下的段落逐一再確認。",
+            "action": "在必要同意之外增加本次逐段主動回看確認機會，配合延期與重新排版。",
+            "tradeoff": "教師與學生多花時間。"
+          },
+          {
+            "id": 2,
+            "text": "這次改用共同事件，不收個人玩笑。",
+            "action": "徵詢參與者後縮減內容為無可辨識私人玩笑的共同回憶，必要授權仍維持。",
+            "tradeoff": "失去原本生動趣事，需改稿。"
+          },
+          {
+            "id": 3,
+            "text": "把回顧拆成自願投稿的小卡，各人只寫自己的部分。",
+            "action": "提出本人自寫自選、可不交的回顧形式，不要求代寫或保留他人玩笑。",
+            "tradeoff": "整體風格零散，教師需重排。"
+          },
+          {
+            "id": 4,
+            "text": "不急著交班級成品，這次先不公開回顧。",
+            "action": "決定暫停本次非必要公開，妥善保存或依意願刪除草稿，不阻擋日後新提案。",
+            "tradeoff": "準備心力暫無公開成果。"
+          },
+          {
+            "id": 5,
+            "text": "願意的同學可以只錄一段自己的回憶，不互虧也不替人配音。",
+            "action": "提出經同意的自願本人音檔分享方案，確認合法使用範圍，未取得不公開。",
+            "tradeoff": "增加媒介處理與聆聽時間，未必有人願錄。"
+          },
+          {
+            "id": 6,
+            "text": "你願意的話，先和同學談『當時笑了』不等於現在還想留。",
+            "action": "邀其自願主持由導師陪同的一般同意經驗交流，不逼任何人說撤回內容。",
+            "tradeoff": "額外班務與可能被猜中身分。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕被寫成笑話；我願用自己的小糗事示範一次改稿，但最後還是由我決定能留哪句。",
+          "action": "導師自願提供不涉他人隱私的本人小事，與學生共同演示從口述到文字及本人刪改的過程，不轉用任何學生原玩笑。",
+          "tradeoff": "暴露私人小糗且花教學餘裕，示範可能仍被取笑。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2748866488
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "f5d568589e6ad7284f1a94cd3c7457b2610c02d1fd3aa1135d7436bd95feabc3"
+      },
+      "consequenceDirections": {
+        "A": "可承接網路說法被親身感受修正，以及號召力能否尊重不參與。",
+        "B": "可承接號召者對熱鬧消退的可惜。",
+        "C": "可承接帶頭者對主動收手的挫折或鬆口氣。",
+        "D": "可發展教師也會後悔的真實感與學生理解自主撤回的不同反應，不把示範當必要權利來源。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d416482b36e3d247de275a32ba53f26c38aa12460d559698a77aee9bc69c0a43",
+    "draftSha256": "043f7b19b0a1001ee89f07e6fd5d900f3206475ddd951e2d9f76182f608776f5",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a26c75a85f478b9ed8ee7248fd675227d454288757e83268c5bf3ff790801097",
+      "checkedAt": "2026-11-28T00:39:11.961Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我們找個你自在的候車位置，不必為避開他們改搭違規車。",
+            "action": "額外陪學生檢視合法安全候車動線及自願選擇，不要求透露每日行蹤。",
+            "tradeoff": "花課間時間，位置改變也未必避開熟人。"
+          },
+          {
+            "id": 2,
+            "text": "想有人一起等，我幫你問有沒有自願搭同班車的同學。",
+            "action": "徵詢該生意願後向適當同學提出自願結伴邀請，不揭求助細節、不預設有人接受。",
+            "tradeoff": "需協調且可能被拒絕，學生可能怕被視為需要照顧。"
+          },
+          {
+            "id": 3,
+            "text": "你想怎麼回那句膽小，我陪你練一句你說得出口的。",
+            "action": "在必要反嘲諷處理之外，與學生自願練習簡短拒絕話語，不要求其獨力處理霸凌。",
+            "tradeoff": "額外練習可能尷尬，也不保證對方停止。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，我們約那些同學談一次朋友為什麼不能拒絕。",
+            "action": "在保護與各方自願下提出修復會談，必要違規處理不作交換。",
+            "tradeoff": "多方時間與情緒負擔，未必談得成。"
+          },
+          {
+            "id": 5,
+            "text": "我請班會談安全選擇怎麼不變成比誰有錢，不用你出來作證。",
+            "action": "額外準備不指向當事者的一般情境討論，聚焦消費與同儕壓力，不重做必要法規通知。",
+            "tradeoff": "占班會時間並有被猜到起因風險。"
+          },
+          {
+            "id": 6,
+            "text": "你願意讓家裡知道你的難受嗎？我可以陪你說，但不替你安排接送。",
+            "action": "徵詢該生是否願讓家長參與一般情緒支持，經同意及必要規範才聯絡，不把接送當必須花錢買的解法。",
+            "tradeoff": "多出聯絡，學生可能不想被家長過度保護。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不喜歡被笑膽小；今天正常下班若順路，我想和你在站牌聊兩句，不談那群人。",
+          "action": "提出導師於合法正常離校且不影響必要職務時，自願在公開候車處短暫陪伴的邀約，不保證同班車、不做私人載送。",
+          "tradeoff": "用自己的返程餘裕，也可能使學生更怕被注意。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 695482365
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "487e6882205468c779d71e1a04443e4713b6b6394bf02eb3d0d4919f9059f37e"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生保留原則卻不願社交破裂的掙扎。",
+        "B": "可發展教師坦承自己也怕被笑帶來的親近或尷尬，不取代必要安全處理。",
+        "C": "可發展寬裕學生仍被財力語言孤立的處境，及教師主持時的關係壓力。",
+        "D": "可承接同儕是否能接受不跟風仍可當朋友，不能預設和好。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fb6d3089051dae3504778f0487f076ef58cd86a19e530484c4d22ec4a15b5c18",
+    "draftSha256": "a26c75a85f478b9ed8ee7248fd675227d454288757e83268c5bf3ff790801097",
     "seedAssignmentVersion": 1
   }
 }

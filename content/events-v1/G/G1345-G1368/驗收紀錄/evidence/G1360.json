@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8c23d84e30ebea5eb05dc03a75b950fc8e7521130856e047ff00dc9d926e327f",
+      "checkedAt": "2026-11-28T00:48:25.674Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "明天不另請你代看，我自己接原班務。",
+            "action": "婉拒新增自願代看，按合法課務承擔自身工作，不取消必要支援。",
+            "tradeoff": "教師失去可用空檔，同事可能覺得被嫌。"
+          },
+          {
+            "id": 2,
+            "text": "你若願意，先談清楚安靜自習的具體做法再協作。",
+            "action": "額外與科任協調合法代看範圍與可行提醒方式，未同意不排入。",
+            "tradeoff": "需交辦時間，也可能被看作不信任。"
+          },
+          {
+            "id": 3,
+            "text": "我邀你先看我帶一小段，再決定還想不想幫。",
+            "action": "提出合法自願觀察班務邀約，不作考核或叫學生演乖。",
+            "tradeoff": "花共同時段且可能無空。"
+          },
+          {
+            "id": 4,
+            "text": "若要幫忙，改為你願意的成人文書工作，自習我自己看。",
+            "action": "在資格及校規允許下提出不同合法分工，待其自願同意，不移轉學生機密。",
+            "tradeoff": "導師仍進班，需另作交接。"
+          },
+          {
+            "id": 5,
+            "text": "我和學生談不同老師在時也要自主守約，不讓你獨扛。",
+            "action": "額外於合法班務自願討論共同自習約定，不把過錯全歸同事或強迫承認。",
+            "tradeoff": "占班務，學生可能認為規定反覆。"
+          },
+          {
+            "id": 6,
+            "text": "我向主管詢問正式代看支援，以後不只靠你私人空堂。",
+            "action": "提出成人支援制度詢問，未取得不宣稱有人接班。",
+            "tradeoff": "多協調且可能無資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想保留這個空檔；但這次我願和你一起在班上坐一段，不拿你的好意當免費休息。",
+          "action": "坦承需要喘息，額外提出合法時段共同代看交流，經其意願與課務允許才成立，必要看顧不空窗。",
+          "tradeoff": "少了獨自休息的便利，也可能讓同事覺得被監督。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 393814186
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "31d15465c841a2905c712938c27ba497416f3744143a0f588c61da503edfde45"
+      },
+      "consequenceDirections": {
+        "A": "可發展尊重與專業肯定能否容納一起承受現場噪音管理。",
+        "B": "可發展敬重與好意未被再次接受的微妙失落。",
+        "C": "可發展專業肯定與實際管理差異。",
+        "D": "可承接以為輕鬆的工作被具體看見後的感受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cc0d0ea12f9592e415ef6b0eb476522d086d108c1f8ef13574ed1d58b678a292",
+    "draftSha256": "8c23d84e30ebea5eb05dc03a75b950fc8e7521130856e047ff00dc9d926e327f",
     "seedAssignmentVersion": 1
   }
 }

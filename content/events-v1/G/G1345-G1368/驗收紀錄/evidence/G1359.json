@@ -16,14 +16,82 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e55f4bd9623ab40cd319fc22046254f80373544d96c1ca042300acaaf432c25d",
+      "checkedAt": "2026-11-28T00:48:25.672Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我申請一次限定純板書的合法試行，不先承諾全科都拍。",
+            "action": "向有權者與相關科任提出核可試行，範圍及可及性確認才執行。",
+            "tradeoff": "增加管理與授權協調。"
+          },
+          {
+            "id": 2,
+            "text": "先不拍，我和科任協調課內留出實際抄寫空間。",
+            "action": "額外協商合法課內板書收尾節奏，不占休息或減必要內容。",
+            "tradeoff": "增加跨科工作，科任未必同意固定安排。"
+          },
+          {
+            "id": 3,
+            "text": "我請願意的同學自願分享本人筆記，教師不把支援全壓學生。",
+            "action": "徵詢合法授權的有限自願筆記交流，必要支持另由成人維持。",
+            "tradeoff": "內容不一定完整，需管理與尊重拒絕。"
+          },
+          {
+            "id": 4,
+            "text": "先讓科任評估能否提供已授權的重點檔，不由學生拍。",
+            "action": "詢問科任可合法提供既有內容的可能，不假定已有檔案或同意。",
+            "tradeoff": "多聯絡且可能無檔可供。"
+          },
+          {
+            "id": 5,
+            "text": "我幫你詢問學校安全儲存規範，先不改班規。",
+            "action": "額外向資訊窗口查核既有平台權限與保存方式，不上傳真資料測試。",
+            "tradeoff": "花查詢時間，短期仍無固定拍攝。"
+          },
+          {
+            "id": 6,
+            "text": "我先聽全班是哪些地方抄不完，再決定要申請哪種調整。",
+            "action": "於合法班務蒐集自願一般學習困難，不要求揭病況或比較抄寫快慢。",
+            "tradeoff": "增加整理，學生可能覺得一直在問。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想讓你累到還自願包全班；若試行核准，我願自己接一週拍攝整理。",
+          "action": "因心疼而提出在核准、授權與本人能力範圍內，導師額外承接一週有限合法板書存檔，未核可不拍，不取代其他必要支持。",
+          "tradeoff": "增加碎片工作，可能反悔覺得很累；全科不一定能覆蓋。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1119782362
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "d259b938efe8dcaa219bd5c2688ee10e140085a424cca0c34b43de4cc9b6db0f"
+      },
+      "consequenceDirections": {
+        "A": "可承接技術解法未被採用的失望。",
+        "B": "可承接拍照便利改為成人教材提供的資源限制。",
+        "C": "可發展熟手對資安實際限制與等待的理解。",
+        "D": "可發展學生對教師保護其時間的感受，及便利由誰實際負擔的取捨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ce623fdfdd4b29065678d0f223b247b98262ae93ab7abd8cd4c97103fa515507",
+    "draftSha256": "e55f4bd9623ab40cd319fc22046254f80373544d96c1ca042300acaaf432c25d",
     "seedAssignmentVersion": 1
   }
 }

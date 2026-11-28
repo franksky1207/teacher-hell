@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "878e6e1378081eb488d1e65e429cb8569f4b0bbc5176a57565993d159104a28d",
+      "checkedAt": "2026-11-28T00:48:25.678Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "後門先不設，我申請到正式回收空間評估安全處理。",
+            "action": "詢問有權承辦可用安全場所與方法，未獲准不帶學生移作業。",
+            "tradeoff": "協調耗時且可能不方便。"
+          },
+          {
+            "id": 2,
+            "text": "我先聽後門座位同學的需求，再決定是否提試行。",
+            "action": "合法自願徵詢影響，不以多數壓少數安全權益。",
+            "tradeoff": "占班務且可能遭反對。"
+          },
+          {
+            "id": 3,
+            "text": "不踩，向承辦詢問能否用安全拆折方式處理。",
+            "action": "徵求專業安全建議，僅合格無尖銳普通箱依核准方式操作，不讓學生自行刀割。",
+            "tradeoff": "增加指導及分類時間。"
+          },
+          {
+            "id": 4,
+            "text": "先減少箱子進教室，我們談領物後可否在核准處完成拆箱。",
+            "action": "提出在合法指定地點由有權成人安排的拆箱分流，待核可才改，不轉嫁他班。",
+            "tradeoff": "需協調領物流程。"
+          },
+          {
+            "id": 5,
+            "text": "我願額外和你做一次安全空間測量，沒有空間就不試。",
+            "action": "經授權在不影響課間動線下量測一般可用空間，不以量到尺寸取代全面安全核定。",
+            "tradeoff": "花師生時間，結果可能否決方案。"
+          },
+          {
+            "id": 6,
+            "text": "這次維持原核准回收方式，我不加新區。",
+            "action": "拒絕新增空間安排，必要回收與支持照常，保留未來合法提案。",
+            "tradeoff": "學生可能覺得彈性白費。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也受不了箱子硬塞；我自願向權責者申請，讓我接一週可合法承擔的普通折箱工作。",
+          "action": "因不耐現況，提出本人在合法工作段額外處理合格普通無尖銳紙箱，經承辦確認安全才做，不替代必要資收制度或要求學生陪。",
+          "tradeoff": "消耗教師體力時間，無法長期包辦。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1629950284
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "daf307810e9df8aa5d447a1fb7026ca7c1824908ff33cfd0b542f91aac9abe8f"
+      },
+      "consequenceDirections": {
+        "A": "可承接環保目標與日常取物便利的取捨。",
+        "B": "可承接不從眾者是否能尊重同樣不想吵的人。",
+        "C": "可發展幹部退讓後仍被改地點的失望。",
+        "D": "可發展幹部看見教師也不完美地用代勞解決麻煩，是否更願再協商。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1cab2c4af074a0ab7eff20a20257b121de49cdec4f306e49bcb25c4a45ac77ba",
+    "draftSha256": "878e6e1378081eb488d1e65e429cb8569f4b0bbc5176a57565993d159104a28d",
     "seedAssignmentVersion": 1
   }
 }

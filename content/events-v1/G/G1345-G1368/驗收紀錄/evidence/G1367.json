@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9284bcdcba9e80b798f0c841166f463a19362e2d8149e4efd9581b1af9e7fef7",
+      "checkedAt": "2026-11-28T00:48:25.685Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另邀孩子自願談近況，不替家長問隱私。",
+            "action": "提供額外合法個別談話邀請，學生可拒，必要支持不變。",
+            "tradeoff": "花個別時間，可能被猜到家長來電。"
+          },
+          {
+            "id": 2,
+            "text": "先由你們在家談一個具體作息，不把每晚關門都當問題。",
+            "action": "額外協助家長準備不逼問的家庭作息話題，不診斷或保證有效。",
+            "tradeoff": "家長需實際投入，仍怕說錯話。"
+          },
+          {
+            "id": 3,
+            "text": "若孩子願意，我們安排一次親子共同說明各自需要。",
+            "action": "提出合法自願三方交流，未經同意不轉述孩子私談。",
+            "tradeoff": "多方時間與尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "我先向合格同仁詢問一般家庭溝通資源，確認適用再提供。",
+            "action": "查詢公開一般支持資訊，不直接讓輔導者介入個案或交不必要資料。",
+            "tradeoff": "查詢耗時，家長可能嫌太間接。"
+          },
+          {
+            "id": 5,
+            "text": "我和你約定有限回報時點，只談可分享的一般近況。",
+            "action": "額外約定正常工作段的有限聯繫，不承諾全天監看或披露私密。",
+            "tradeoff": "增加定期聯絡，家長可能要求更多。"
+          },
+          {
+            "id": 6,
+            "text": "我提供全班自願的一般休息討論，不把你孩子變成教材。",
+            "action": "在合法班務中額外談作息自主與壓力，不揭個案、不取代必要個別支持。",
+            "tradeoff": "占班務且無法立刻回應單一家庭。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也怕把關心做過頭；我願先請孩子評評我最近的班級負擔，不只問他怎麼了。",
+          "action": "因擔心自己也造成壓力，額外邀學生自願談可公開班務負荷與其感受，教師願聽批評，不探家庭私事或代家長蒐情。",
+          "tradeoff": "暴露自己可能有問題，仍需花時間且未必願談。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2308988941
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "86552cbeda7a85c84616263146fd848753b3806b5dc031d930eab0a7beac0422"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長發現導師不是替成人盯孩子而是也肯被質問的複雜感受。",
+        "B": "可承接安穩家庭遇到少年變化時的不適應。",
+        "C": "可發展親近家長的安心與孩子不想被注目的矛盾。",
+        "D": "可承接資訊與實際介入必須分開的期待落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "437007f7d02bbaae4ea596bea20f5d827deb7e438d492114703893e3882ca0f6",
+    "draftSha256": "9284bcdcba9e80b798f0c841166f463a19362e2d8149e4efd9581b1af9e7fef7",
     "seedAssignmentVersion": 1
   }
 }

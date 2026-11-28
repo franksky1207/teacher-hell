@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7396fc270dd47c80e65ceb941ac0dab204fa8f28f70ffa0e232483f442c89fad",
+      "checkedAt": "2026-11-28T00:48:25.657Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若她願意，改坐著念一小段，不站起來。",
+            "action": "徵詢本人對減少注目形式的意願，符合支持需求才採行。",
+            "tradeoff": "需教師個別協調，不保證緊張減少。"
+          },
+          {
+            "id": 2,
+            "text": "先不讓她輪值，之後用她願意的其他形式參與。",
+            "action": "在合理支持下提出不要求口頭輪值的替代參與，不把免除當獎懲。",
+            "tradeoff": "需安排等值形式，其他同學也可能提出需求。"
+          },
+          {
+            "id": 3,
+            "text": "若雙方都想試，兩人合讀，不由你一個人全代。",
+            "action": "提出知情自願的共同帶讀方案，不把幹部意願當對方同意。",
+            "tradeoff": "需準備配合，對方可能不想。"
+          },
+          {
+            "id": 4,
+            "text": "我先找她談自己的偏好，你暫不用替她選。",
+            "action": "額外提供自願個別討論，必要支持已接續，不以會談作權益門檻。",
+            "tradeoff": "教師增加時間，股長可能覺得善意被推開。"
+          },
+          {
+            "id": 5,
+            "text": "我提議全班改成自願帶讀，沒人想念就安靜看。",
+            "action": "依合法班務權責徵詢自願制安排，保留必要閱讀支持，不懲罰沉默。",
+            "tradeoff": "教師失去輪值便利，活動可能安靜下來。"
+          },
+          {
+            "id": 6,
+            "text": "如果她願意，我替她詢問合格支持者可提供的表達協助。",
+            "action": "依法徵詢並向合格校內人員詢問自願支持，不預設輔導已介入。",
+            "tradeoff": "增加協調，也可能使學生怕被標籤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服自己被說殘忍，但願意先由我念一週，暫時不催任何人。",
+          "action": "承認被質疑的不舒服，在可合法用時段內自願承擔一週非必要帶讀工作，學生可安靜閱讀，不推給幹部。",
+          "tradeoff": "犧牲教師班務餘裕並暴露自己的表達方式，長期制度仍要談。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1968571890
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "78bb6e0bc27a2651f2e7400214f30afc8a8a156e6ab938b55f20e8f2d76ad9f2"
+      },
+      "consequenceDirections": {
+        "A": "可發展公平是否等於人人做一樣，以及股長的保護欲。",
+        "B": "可發展幹部看見導師願承擔減壓成本後的信任或持續質疑。",
+        "C": "可承接同理幫忙與尊重別人自主之間的差別。",
+        "D": "可承接幹部是否能接受不是每人都要公開表現。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "89dd3e1f088b488fd8dca3c00edb692baabb09cea0638cfe992b9e738abca7d7",
+    "draftSha256": "7396fc270dd47c80e65ceb941ac0dab204fa8f28f70ffa0e232483f442c89fad",
     "seedAssignmentVersion": 1
   }
 }

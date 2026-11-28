@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3b173bf314f646d292070ddb02fb9e368c441043b54b673c1c0ef0676cda745b",
+      "checkedAt": "2026-11-28T00:48:25.665Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天準時離校，後續由正式維修接手。",
+            "action": "婉拒額外志工工作，按清場時間完成交接，不延後必要報修。",
+            "tradeoff": "家長可能覺得被草草打發。"
+          },
+          {
+            "id": 2,
+            "text": "若你願意，我陪你詢問下次依法登記能做哪些項目。",
+            "action": "額外向總務詢問未來合格志工項目，不預准桌椅施工。",
+            "tradeoff": "增加聯絡且未必有合適工作。"
+          },
+          {
+            "id": 3,
+            "text": "清場前我多花十分鐘聽你說已看到的現象，交承辦參考。",
+            "action": "自願收集不含學生姓名的一般現象，不重做或延後必要報修、不讓其拆驗。",
+            "tradeoff": "少一段下班時間，觀察未必專業。"
+          },
+          {
+            "id": 4,
+            "text": "你可把書車維修方式寫給有權保管者，我幫安排合法交接。",
+            "action": "徵詢家長自願提供本人已完成工作之維護建議，專業採用由總務決定。",
+            "tradeoff": "增加整理與協調。"
+          },
+          {
+            "id": 5,
+            "text": "我另約你談可持續的志工時間，不再每次順手加碼。",
+            "action": "提出成人自願工作邊界討論，未成立不安排新任務。",
+            "tradeoff": "花額外時間，家長可能覺得被嫌管多。"
+          },
+          {
+            "id": 6,
+            "text": "若校方同意，我替你申請正式修繕志工資格評估。",
+            "action": "詢問職務與技能資格程序，不把會鎖螺絲當已獲校產維修權。",
+            "tradeoff": "多程序與等待，可能不符條件。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想下班也怕傷你心；我願自己寫一段具體感謝書車修好的訊息，今天不再找你多做。",
+          "action": "額外用本人時間撰寫可依法分享的具體致謝，經同意才以適當範圍分享，不拿致謝換桌椅施工或揭家人資訊。",
+          "tradeoff": "增加書寫與界線溝通，家長可能仍要繼續修。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2848665498
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7d8083f26ddf1cfb97f887fa4f24c4b428c4cb07daeb950eb35f5f5b690298ed"
+      },
+      "consequenceDirections": {
+        "A": "可承接想出力與接受職權邊界的落差。",
+        "B": "可承接把熱心轉合法長期參與的現實代價。",
+        "C": "可發展被肯定限定貢獻而非無限工作時的心情。",
+        "D": "可發展負責者能否把完成限定範圍視為足夠。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "08ac6b946b3cbe1863b7c930d332c82e5f6bffec9b9e8cb2f0c31bda61125f43",
+    "draftSha256": "3b173bf314f646d292070ddb02fb9e368c441043b54b673c1c0ef0676cda745b",
     "seedAssignmentVersion": 1
   }
 }

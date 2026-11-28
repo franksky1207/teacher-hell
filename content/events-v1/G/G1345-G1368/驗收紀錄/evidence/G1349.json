@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "20f18a1089e452a5596cd32325420a216ccbb40d40dcbe45e53b88bbe49d128e",
+      "checkedAt": "2026-11-28T00:48:25.652Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另約一小段，和你讀孩子願意分享的訪談設計。",
+            "action": "經學生同意額外解讀草稿中的觀察與提問，不作升學顧問。",
+            "tradeoff": "花工作時間，家長可能仍要保證。"
+          },
+          {
+            "id": 2,
+            "text": "規準說清楚就好，這個問題請你直接聽孩子怎麼想。",
+            "action": "不增加作品指導，邀家庭自行在願意下交流，必要支持照常。",
+            "tradeoff": "可能被覺得敷衍。"
+          },
+          {
+            "id": 3,
+            "text": "若你們都願意，我陪一次親子訪談，之後交回給孩子。",
+            "action": "提出合法校內或遠端短段訪談陪同邀約，待雙方同意，不代編答案。",
+            "tradeoff": "協調與陪同時間。"
+          },
+          {
+            "id": 4,
+            "text": "我先幫你核對那篇社團說法的公開依據，不拿它當規定。",
+            "action": "額外核對可公開查證的器材與學習歷程宣稱，不保證所有升學採同標準。",
+            "tradeoff": "查詢耗時且未必有明確結論。"
+          },
+          {
+            "id": 5,
+            "text": "你願意的話，我請孩子自選一小段，向你說明為什麼選它。",
+            "action": "徵詢學生是否願自主介紹其題材選擇，不強迫展示或說服家長。",
+            "tradeoff": "學生可能不願，導師需協調。"
+          },
+          {
+            "id": 6,
+            "text": "工作室先別為這份作品保留整段，我們問孩子實際需要哪一點支援。",
+            "action": "提出親子自行確認有限資源需求的方案，不代學生接受器材或場地。",
+            "tradeoff": "家長可能覺得準備被縮減，需另聯絡。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想知道第一份工作怎麼來；我願以普通聽眾身分，另聽你講那台相機。",
+          "action": "因被家庭舊物吸引而額外邀家長於合法成人交流時段自願說自己的經歷，不取學生素材或承諾幫作品加分。",
+          "tradeoff": "占私人餘裕，家長可能又想把故事做成升學優勢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 819630105
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "d44c961e81504c5178e613259d96c96cf662c50c51bfe8c372954444830aa3b6"
+      },
+      "consequenceDirections": {
+        "A": "可承接教師界線與家長未獲背書的焦慮。",
+        "B": "可承接提供資源不等於作品照成人想像的親子界線。",
+        "C": "可發展誤信專業器材神話後的鬆動或不服。",
+        "D": "可發展被當作有人生而非只有器材的大人看待時的心情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f2222cd20015b043663dd45f0c1554771c6a036957f7bf29d76a022fcaf3662",
+    "draftSha256": "20f18a1089e452a5596cd32325420a216ccbb40d40dcbe45e53b88bbe49d128e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "06e8b483057bdc5bee856d15cf798be2fbb8dcc5be81fc3e22f54c525566c909",
+      "checkedAt": "2026-11-28T00:48:25.660Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "改到班會開頭五分鐘，時間到由成人結束。",
+            "action": "提出在核准班會內前移限時自願分享，必要議程不受損且教師保留控時責任。",
+            "tradeoff": "開頭熱鬧後較難收心。"
+          },
+          {
+            "id": 2,
+            "text": "這學期不再口頭輪流，改自願留言。",
+            "action": "在合法範圍內停止本項非必要口頭活動，提供不涉隱私的自願留言形式。",
+            "tradeoff": "失去即時笑聲，需管理留言。"
+          },
+          {
+            "id": 3,
+            "text": "一次只邀一位，沒講完留到下次自願機會。",
+            "action": "提出固定單一自願分享者與公平輪候安排，依法控時不保證每人必輪到。",
+            "tradeoff": "教師多安排，其他人需等待。"
+          },
+          {
+            "id": 4,
+            "text": "我先和你一起練怎麼收尾，再決定要不要恢復。",
+            "action": "額外與學生自願演練不羞辱人的主持收尾，不承諾活動一定恢復。",
+            "tradeoff": "花課間時間，學生可能覺得小題大作。"
+          },
+          {
+            "id": 5,
+            "text": "先停一次，讓全班自願提想保留哪部分，再談。",
+            "action": "於合法班會內回顧活動需求，不將本次延誤責任推給個人投票。",
+            "tradeoff": "占討論時間且可能意見分裂。"
+          },
+          {
+            "id": 6,
+            "text": "若要錄音分享，我先問學校能否在核准管道自願播放短段。",
+            "action": "詢問合法不公開個資的音檔分享形式，須作者同意，不把查詢當可用平台已取得。",
+            "tradeoff": "多出錄製管理與授權確認。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我自己也笑到捨不得停；下次我當那個先被鈴切斷的人，你來按。",
+          "action": "坦承自己的縱容，在合法活動若恢復且學生願意下，導師自願準備一段可中止的本人分享，接受學生依法計時，最終控時責任仍在教師。",
+          "tradeoff": "花準備時間並放下面子，學生也可能不敢切老師。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3229767369
+        },
+        "selectedIds": [
+          2,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "8cdf76e2e0450c1e98f6d245547c07ceef8e8785242d5984b3a2fbcd34e1fab1"
+      },
+      "consequenceDirections": {
+        "A": "可發展號召者能否接受熱情不能無限擴張。",
+        "B": "可承接現場魅力換成可控媒介的代價。",
+        "C": "可發展師生親近能否容納真的停下來，而不是笑著多兩分鐘。",
+        "D": "可承接學生對歡樂傳統被改掉的可惜。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "899c8e9f3b2f8de9815e0b1457bf276e8e4f3990a6115b86f12549487ddf7cbc",
+    "draftSha256": "06e8b483057bdc5bee856d15cf798be2fbb8dcc5be81fc3e22f54c525566c909",
     "seedAssignmentVersion": 1
   }
 }

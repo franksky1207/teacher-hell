@@ -15,14 +15,155 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0a3491f3b00b30c6f27c108dd3c3a4831e97ba7b25165a00ad0ee696a0031f63",
+      "checkedAt": "2026-11-28T00:48:25.666Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外打一通問是否方便到校，不要求家長趕。",
+            "action": "正常聯絡時段邀家長自主評估實體補簽到校可行性，不以拒絕影響孩子權益。",
+            "tradeoff": "打斷備課，也可能無法來。"
+          },
+          {
+            "id": 2,
+            "text": "本次照合法補件，不增加急件追人。",
+            "action": "不作非必要催簽，依法保留缺件接續與其他有效送件。",
+            "tradeoff": "失去今日一次齊全的機會。"
+          },
+          {
+            "id": 3,
+            "text": "我問是否可由校規允許的家長本人就近正式簽送，不代簽。",
+            "action": "向正式窗口查詢既有合法實體簽送方式及期限，不假設有特別服務。",
+            "tradeoff": "額外詢問且可能沒有選項。"
+          },
+          {
+            "id": 4,
+            "text": "請學生自己說明卡在哪，我只協助他依法和家裡聯絡。",
+            "action": "在不影響正課下額外協助自願學生與家長溝通，不讓學生負責逼家長趕到。",
+            "tradeoff": "占教師課間，未必趕上。"
+          },
+          {
+            "id": 5,
+            "text": "我替你整理這次全班缺件原因的非個資概況，下次提前提醒。",
+            "action": "額外彙整已知可公開的一般缺件原因供未來正式提醒，不改本次期限或重複必要登錄。",
+            "tradeoff": "增加整理，職員可能只在意今天。"
+          },
+          {
+            "id": 6,
+            "text": "若學生想問社團資格，我陪他查清補件後怎麼銜接。",
+            "action": "額外協助查詢正式補件後的實際程序與限制，不承諾原志願一定保留。",
+            "tradeoff": "花說明與聯絡時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服只差一張；如果家長願意簽、學校也准，我自己跑一趟接正本。",
+          "action": "因在意一次齊全，提出先取得家長自願及校方合法公出許可後，於不影響課務安全與截止規範下協助收送家長本人依法簽妥的正本；未簽、未核准或時間不足就不出發，合法補件照常。",
+          "tradeoff": "教師多花交通與工作時間，可能完全辦不成，不能以此逼家長配合。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3348530084
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "7aa4a901a0adaaeee684c93c8b7b471edcd461754a7d71ee32adc744f42a1204"
+      },
+      "consequenceDirections": {
+        "A": "可承接學生自主與成人效率期待的落差。",
+        "B": "可發展條理派同事接受未來改善但當前仍有缺件。",
+        "C": "可承接行政好友的整齊期待與學生真正擔心的事不同。",
+        "D": "可發展行政好友對教師不服輸的投入感激或擔心，以及教師為追整齊承擔的代價，不保證趕上死線。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒拒急追與普通2走補件實質重疊，改為教師願自行申請合法正本交付協助，不虛構已簽妥或已獲准。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我額外打一通問是否方便到校，不要求家長趕。",
+                "action": "正常聯絡時段邀家長自主評估實體補簽到校可行性，不以拒絕影響孩子權益。",
+                "tradeoff": "打斷備課，也可能無法來。"
+              },
+              {
+                "id": 2,
+                "text": "本次照合法補件，不增加急件追人。",
+                "action": "不作非必要催簽，依法保留缺件接續與其他有效送件。",
+                "tradeoff": "失去今日一次齊全的機會。"
+              },
+              {
+                "id": 3,
+                "text": "我問是否可由校規允許的家長本人就近正式簽送，不代簽。",
+                "action": "向正式窗口查詢既有合法實體簽送方式及期限，不假設有特別服務。",
+                "tradeoff": "額外詢問且可能沒有選項。"
+              },
+              {
+                "id": 4,
+                "text": "請學生自己說明卡在哪，我只協助他依法和家裡聯絡。",
+                "action": "在不影響正課下額外協助自願學生與家長溝通，不讓學生負責逼家長趕到。",
+                "tradeoff": "占教師課間，未必趕上。"
+              },
+              {
+                "id": 5,
+                "text": "我替你整理這次全班缺件原因的非個資概況，下次提前提醒。",
+                "action": "額外彙整已知可公開的一般缺件原因供未來正式提醒，不改本次期限或重複必要登錄。",
+                "tradeoff": "增加整理，職員可能只在意今天。"
+              },
+              {
+                "id": 6,
+                "text": "若學生想問社團資格，我陪他查清補件後怎麼銜接。",
+                "action": "額外協助查詢正式補件後的實際程序與限制，不承諾原志願一定保留。",
+                "tradeoff": "花說明與聯絡時間。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不想為了全齊再當衝刺隊；我直接向好友說，今天把備課做完比那一張漂亮更重要。",
+              "action": "坦白自己的工作優先順序，婉拒非必要急追並提出今後以約定時點接收一般缺件提醒，必要即時資訊不阻擋。",
+              "tradeoff": "可能傷好友情面，失去被看作最俐落班級的滿足。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3777457152
+            },
+            "selectedIds": [
+              5,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": 5,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "662bb5633a5d0de78cd39ea8d006dde5482639ef1b4a599629cacfc7ced24012"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接學生自主與成人效率期待的落差。",
+            "B": "可發展條理派同事接受未來改善但當前仍有缺件。",
+            "C": "可發展親近與支持是否能容納導師不再追求一次完美。",
+            "D": "可發展親近職員對努力試一次與接受不齊全的感受。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e50880802e060fa277a11e7a8f3ab352cf6b47ebd96fa0e6a6f2544f7a277cf2",
+    "draftSha256": "0a3491f3b00b30c6f27c108dd3c3a4831e97ba7b25165a00ad0ee696a0031f63",
     "seedAssignmentVersion": 1
   }
 }

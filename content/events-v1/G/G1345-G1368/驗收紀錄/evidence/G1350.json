@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "17d9cfb31a2effcd5c8cf2df60bdfff0ca559006e616dbf12549a45febbc1215",
+      "checkedAt": "2026-11-28T00:48:25.654Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "私訊附自己的兩筆計算，請他核對並退還誤收。",
+            "action": "傳送本人必要明細及試算請對方核對退款，不先定性故意。",
+            "tradeoff": "花說明時間，鄰居可能尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "明天再當面問，今晚先休息。",
+            "action": "保留本人明細並計畫次日於雙方方便時詢問，不過期限仍須自負延後風險。",
+            "tradeoff": "等待使惦記延長，也可能不好約。"
+          },
+          {
+            "id": 3,
+            "text": "我打電話問一次，不在文字裡猜語氣。",
+            "action": "於合理晚間時間先詢問是否方便通話，願意才說明本人差額。",
+            "tradeoff": "可能打擾對方，亦需面對即時反應。"
+          },
+          {
+            "id": 4,
+            "text": "先問他那兩筆採用哪個單價，別先把一百五十當定案。",
+            "action": "私下詢問本人訂單適用價格與合併方式，再依實際資料處理差額。",
+            "tradeoff": "多一輪核對，可能發現自己理解不全。"
+          },
+          {
+            "id": 5,
+            "text": "我不追這次，但下一團不參加，保住之後的時間。",
+            "action": "自主放棄本次追討並停止下一次尚未成立的本人購買意願，不取消已有效訂單。",
+            "tradeoff": "承擔一百五十損失與失去團購便利。"
+          },
+          {
+            "id": 6,
+            "text": "請他確認後若真有差額，問能否下次抵扣，不自己先少付。",
+            "action": "提出需雙方明確同意的合法差額折抵方案，不先宣稱有退款或未來購買義務。",
+            "tradeoff": "需再買才可能用上，對帳更久。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心，也懶得再跑一趟拿零錢；問他能不能用等值現有食材補差，剛好省明天買菜。",
+          "action": "因疲憊又想省錢，私下請主購核對本人差額，若確有誤收且雙方同意，再詢問是否有適合保存與飲食需求的等值現有食材可合法補差；未確認不稱已取貨，不被迫接受不想要品項。",
+          "tradeoff": "要再協商品項與交付，可能沒有現貨，也可能為省小錢反而多花時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3761348891
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "51a0ec93049fa894d8b20bb751cf7c255012581f637b05398a5441a2ac1f6d06"
+      },
+      "consequenceDirections": {
+        "A": "可發展精打細算卻選擇退出人情交易的懊惱。",
+        "B": "可發展疲倦與保住荷包的時間取捨。",
+        "C": "可承接條理判斷遇到尚缺資訊時的彈性。",
+        "D": "可發展主購是否接受不同於退款或下次折抵的當次實物補差，教師貪方便與精算之間的矛盾。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒只是不賠笑地要求退款，與普通1相同行動；改為詢問經核對後以等值現有食材補差的合意方案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "私訊附自己的兩筆計算，請他核對並退還誤收。",
+                "action": "傳送本人必要明細及試算請對方核對退款，不先定性故意。",
+                "tradeoff": "花說明時間，鄰居可能尷尬。"
+              },
+              {
+                "id": 2,
+                "text": "明天再當面問，今晚先休息。",
+                "action": "保留本人明細並計畫次日於雙方方便時詢問，不過期限仍須自負延後風險。",
+                "tradeoff": "等待使惦記延長，也可能不好約。"
+              },
+              {
+                "id": 3,
+                "text": "我打電話問一次，不在文字裡猜語氣。",
+                "action": "於合理晚間時間先詢問是否方便通話，願意才說明本人差額。",
+                "tradeoff": "可能打擾對方，亦需面對即時反應。"
+              },
+              {
+                "id": 4,
+                "text": "先問他那兩筆採用哪個單價，別先把一百五十當定案。",
+                "action": "私下詢問本人訂單適用價格與合併方式，再依實際資料處理差額。",
+                "tradeoff": "多一輪核對，可能發現自己理解不全。"
+              },
+              {
+                "id": 5,
+                "text": "我不追這次，但下一團不參加，保住之後的時間。",
+                "action": "自主放棄本次追討並停止下一次尚未成立的本人購買意願，不取消已有效訂單。",
+                "tradeoff": "承擔一百五十損失與失去團購便利。"
+              },
+              {
+                "id": 6,
+                "text": "請他確認後若真有差額，問能否下次抵扣，不自己先少付。",
+                "action": "提出需雙方明確同意的合法差額折抵方案，不先宣稱有退款或未來購買義務。",
+                "tradeoff": "需再買才可能用上，對帳更久。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我累到不想再當好相處的人；今晚就把這次差額問清楚，語氣不用先賠笑。",
+              "action": "因不甘小額也要吞下，直接私訊提出本人計算及核對退款請求，坦白金額對自己有影響，不辱罵公審。",
+              "tradeoff": "可能比普通核對更顯壓力，仍不保證對方接受。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2545743904
+            },
+            "selectedIds": [
+              4,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 4,
+              "D": 2
+            },
+            "optionsDigest": "994b21dc1387523aff4d6cde1bbc8790c6f5ffba33f35cdec9d23ff5b5bac715"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展教師不再用笑臉維持鄰里形象的面子代價與社交變化。",
+            "B": "可發展維持社交與綁住下次消費的取捨。",
+            "C": "可承接條理判斷遇到尚缺資訊時的彈性。",
+            "D": "可發展疲倦與保住荷包的時間取捨。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2b4707533c29995de357627ee9ce9774c372d4578e6601c5b72b3cfd5e6c41dc",
+    "draftSha256": "17d9cfb31a2effcd5c8cf2df60bdfff0ca559006e616dbf12549a45febbc1215",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1793d4f92afbc438825d0b30292d8110993fbf338405aa10ae2b1b442a73fd1c",
+      "checkedAt": "2026-11-28T00:48:25.681Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "設備不碰，你若願意可以只整理經我確認的普通紙張。",
+            "action": "提出經同意的有限安全班務範圍，不把整理當懲罰。",
+            "tradeoff": "教師需清楚交辦，學生可能不甘只碰紙。"
+          },
+          {
+            "id": 2,
+            "text": "我邀你聽專業人員願意提供的一般說明，不動手練接線。",
+            "action": "徵詢成人與學生意願作安全介紹，工作人員未同意不加派教學。",
+            "tradeoff": "增加協調時間。"
+          },
+          {
+            "id": 3,
+            "text": "我自己先整理可由我決定的桌面物品，線路留專業。",
+            "action": "額外承擔本人合法普通桌面整理，不拆設備、不動學生私物。",
+            "tradeoff": "花教師餘裕，未必整齊到學生滿意。"
+          },
+          {
+            "id": 4,
+            "text": "你願意的話，先畫理想桌面讓我看，不直接搬或拔。",
+            "action": "邀學生自願提出不含線路操作的空間構想，未授權不實施。",
+            "tradeoff": "多一輪提案，學生可能覺得慢。"
+          },
+          {
+            "id": 5,
+            "text": "暫時不安排你做講桌班務，之後再自願談。",
+            "action": "停止本次額外講桌協助，不懲罰性撤其他權益或阻擋正常參與。",
+            "tradeoff": "學生可能覺得被全盤否定。"
+          },
+          {
+            "id": 6,
+            "text": "我帶全班討論『看起來整齊』和『能安全使用』不同，不提你的名字。",
+            "action": "額外準備合法一般空間辨識討論，不示範錯誤接電或公開個案。",
+            "tradeoff": "占班務且可能被猜到。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把蜘蛛網藏起來；我申請由專業人員評估安全理線，不讓你替我的嫌亂買單。",
+          "action": "因承認自己也嫌亂而額外提出合法線路整理評估需求，未核可不宣稱完工，不以此免除必要修復。",
+          "tradeoff": "多追蹤程序且可能無預算，需向同事承認自己的環境期待。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1030246856
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "f928e3a62fec09175670774339bdb0370a5938979803dc8494691a9f0804cf83"
+      },
+      "consequenceDirections": {
+        "A": "可承接關係與界線在暫停協助後的變化。",
+        "B": "可發展教師支持整潔但不用完美線束衡量幫忙的差別。",
+        "C": "可承接同學對好意與越權的不同理解。",
+        "D": "可發展學生對教師承認自己也促成整潔壓力的反應，支援不是獎勵擅拔線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5835a39e0b345bf83b133718d7e798272201e6365ddc063249addaf38ca92955",
+    "draftSha256": "1793d4f92afbc438825d0b30292d8110993fbf338405aa10ae2b1b442a73fd1c",
     "seedAssignmentVersion": 1
   }
 }

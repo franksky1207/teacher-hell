@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "046267c36c7087026ff5ca5f696e2867624b5c2dac7b0a2e5515d4ea5c06f2d1",
+      "checkedAt": "2026-11-28T00:48:25.644Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "下月仍留探索題，我另約一段時間說明原設計。",
+            "action": "在權責內維持題目方向並提供額外有限說明，不把家長正常疑問當冒犯。",
+            "tradeoff": "花說明時間，家長可能仍不認同。"
+          },
+          {
+            "id": 2,
+            "text": "我提出保留探索、增一個自選學習困難欄，先評估全班負荷。",
+            "action": "提出未來自願欄位調整，須合校規且不追加不必要工作，不先宣稱已改。",
+            "tradeoff": "教師需改版，學生可能仍感成績壓力。"
+          },
+          {
+            "id": 3,
+            "text": "請孩子願意時說說他寫這欄的意思，我不代他答。",
+            "action": "徵求學生意願安排親師生討論其願分享內容，不逼其揭露私事。",
+            "tradeoff": "多方時間及孩子被成人檢視的尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "如果是你們想做分數整理，可在家自願用，我不改全班單子。",
+            "action": "提供不強迫學生、不代課程專業的家庭自願反思建議，不另要求繳交。",
+            "tradeoff": "家長需自行投入，教師可能被看成不願協助。"
+          },
+          {
+            "id": 5,
+            "text": "我先聽全班這張單真的卡在哪，再決定下月怎麼問。",
+            "action": "於合法時段徵詢自願、可匿名的題目使用感受，不把回覆當成績。",
+            "tradeoff": "占班務與整理時間，家長未必願等。"
+          },
+          {
+            "id": 6,
+            "text": "我把你的意見交教學協調討論，不只由我們兩個爭。",
+            "action": "依法去識別後提出未來題目方向建議供教學同仁評估，未定案不改本次。",
+            "tradeoff": "增加協調，可能沒有共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點被『浪費時間』刺到；我願意用自己的例子填一次，讓你挑哪裡空泛。",
+          "action": "因想護住設計而額外撰寫本人真實且不涉他人的學習反思示例，邀家長自願具體回饋，不拿學生原稿作樣本。",
+          "tradeoff": "暴露自己的學習挫折並花時間，也可能被批得更直接。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4155033050
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "95e938697de5be088a65be2cde136542dfee6e0a77876666d0eb86729265dea3"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師不再只說理念而承擔被質疑的面子代價。",
+        "B": "可承接有空家長願否承擔自己提出的額外檢討。",
+        "C": "可發展家長是否看見分數之外的真實學習，未必消除焦慮。",
+        "D": "可承接折衷是否讓兩種學習價值並存或都失焦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7d5a88d6c89175c6383e21736c138bba8f37aa11b95e5c280cbfa01ce99a38f7",
+    "draftSha256": "046267c36c7087026ff5ca5f696e2867624b5c2dac7b0a2e5515d4ea5c06f2d1",
     "seedAssignmentVersion": 1
   }
 }

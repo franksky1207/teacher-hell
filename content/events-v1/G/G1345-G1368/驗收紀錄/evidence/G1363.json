@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4054ce55e77273d80c29ebd73190c39098a8c848a56cba23fd00294138454246",
+      "checkedAt": "2026-11-28T00:48:25.680Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "一週班務由我接，你不再當這段聯絡窗口。",
+            "action": "在合法職務程序下由導師承接一週普通班務，明確告知必要接續不揭個人學業。",
+            "tradeoff": "教師午間工作增加。"
+          },
+          {
+            "id": 2,
+            "text": "我徵求自願且適量的臨時分工，不找你暗中教到會。",
+            "action": "提出有成人支援的合法短期自願分擔，無人願意仍不逼原幹部回任。",
+            "tradeoff": "協調與訓練耗時。"
+          },
+          {
+            "id": 3,
+            "text": "我先申請延後非必要統計，必要項目照接，別把忙拆給別人就算。",
+            "action": "向有權者提出可延後工作需求，未准前由成人維持責任，不繼續壓原學生。",
+            "tradeoff": "增加行政協調且可能遭拒。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，我們按程序談長期換職，不只撐過這週。",
+            "action": "提供自願合法職務調整討論與申請，必要暫時減負先維持。",
+            "tradeoff": "需長期交接，學生可能怕被視為放棄。"
+          },
+          {
+            "id": 5,
+            "text": "我另外陪你問科任能否提供合適的學習支援，不替你保證補救成效。",
+            "action": "徵求學生意願聯絡合格任課教師，僅必要資訊且不擅改課程。",
+            "tradeoff": "教師多跨科聯絡，學生可能怕被知道落後。"
+          },
+          {
+            "id": 6,
+            "text": "你想讓家裡知道多少，我陪你按規範說清楚，不把當幹部當罪名。",
+            "action": "在必要聯繫之外提出自願家庭作息討論，尊重隱私不承諾絕對保密。",
+            "tradeoff": "增加會談，家庭未必有餘裕。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想中午永遠追表；這次我申請把自己的收件方式簡化，承認我也做不完。",
+          "action": "因被求助照見自己負荷，額外向權責者提出簡化非必要班務收件的教師意見，未核可不省必要程序，學生減負照常。",
+          "tradeoff": "需具名面對主管，可能被看成不夠俐落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1953097915
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "6dd74c9b3778c80218489a94b3d05994da8d680eeed86364bbef506383213b27"
+      },
+      "consequenceDirections": {
+        "A": "可承接家長對學生角色與課業的不同期待。",
+        "B": "可發展學生看見教師也肯承認上限的信任與制度仍未鬆動的失落。",
+        "C": "可發展過勞是否源於工作量本身而非不夠會分工。",
+        "D": "可發展專業肯定與接受別的成人支持的尷尬。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8114362eae6469defe8ce739357ecaa3d3e728a0b9c1ef4518f4b8ee5d1e5363",
+    "draftSha256": "4054ce55e77273d80c29ebd73190c39098a8c848a56cba23fd00294138454246",
     "seedAssignmentVersion": 1
   }
 }

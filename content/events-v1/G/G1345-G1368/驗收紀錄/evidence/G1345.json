@@ -16,14 +16,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2f497288d97c72f80ae3f910a5796a504bcfce3ccb0c0f7f01c386cf4fe2ad04",
+      "checkedAt": "2026-11-28T00:48:25.640Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "全批回館，我陪你如實說明需求不合，不說這些是垃圾。",
+            "action": "提出將館藏依程序退回，由導師額外說明不合現行需求，合法暫置與搬運由有權成人安排。",
+            "tradeoff": "多一趟協調，職員可能失落。"
+          },
+          {
+            "id": 2,
+            "text": "若館方同意，我只留一小本作版本比較，其餘退回。",
+            "action": "徵詢有權者核可少量非現行題庫用途，限安全空間，其他館藏依法歸還。",
+            "tradeoff": "需篩選及清楚標示，不保證有人看。"
+          },
+          {
+            "id": 3,
+            "text": "我替你問任課老師有沒有適用的歷史示例需求，不先送。",
+            "action": "詢問合格教師是否願評估少量舊教材的合法比較用途，未同意不轉交。",
+            "tradeoff": "多方聯絡，可能全無需求。"
+          },
+          {
+            "id": 4,
+            "text": "書先回合法保管處，我們下次改由學生先列想借什麼。",
+            "action": "提出未來依學生自願需求媒合館藏的合作方式，不把本次舊書硬留。",
+            "tradeoff": "需整理需求並再協調，職員可能嫌慢。"
+          },
+          {
+            "id": 5,
+            "text": "我陪你問館方是否有正式校外轉贈規範，不能讓班上替它們找家。",
+            "action": "額外詢問館藏汰換或轉贈程序，不擅辦報廢或承諾受贈人。",
+            "tradeoff": "花行政詢問時間，可能仍需回庫。"
+          },
+          {
+            "id": 6,
+            "text": "這批不收，我另請你幫忙找幾本現行合用的書，願意再合作。",
+            "action": "婉拒本次不合需求資源，額外提出合法館藏查詢需求，不保證有書或已取得。",
+            "tradeoff": "導師需說清需求，職員可能覺得被加工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得你白流汗；我願多留一段陪你把三箱送回核准位置，不叫學生搬。",
+          "action": "因不忍熱心落空，提出本人安全負荷內協助成人依法搬回合法保管處，使用核准工具與同意，不勉強搬重物。",
+          "tradeoff": "消耗自己的時間體力，仍不能換成收下。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 323140626
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "66bb61c42311a5b1e19c53e8947005f06c8b57af49a30acaa56b3a45a02ddef3"
+      },
+      "consequenceDirections": {
+        "A": "可發展敬重導師卻未獲稱讚時的受傷與對資源價值的不同理解。",
+        "B": "可發展活化不等於多搬幾箱的取捨，不能誤當現行備考材料。",
+        "C": "可發展由先做再說轉成先問需求的合作改變。",
+        "D": "可發展職員對教師拒收卻願同行出力的複雜感受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "adbda5676ed03369dbafb635c61705deb296f0ab755dfe6a769f9b622cc8a3ce",
+    "draftSha256": "2f497288d97c72f80ae3f910a5796a504bcfce3ccb0c0f7f01c386cf4fe2ad04",
     "seedAssignmentVersion": 1
   }
 }

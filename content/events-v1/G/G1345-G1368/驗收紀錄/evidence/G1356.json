@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9092d9edf2ae1a0978690aff4b0d3fd50d997ffc2106d00c698c5f4b7a6a07fc",
+      "checkedAt": "2026-11-28T00:48:25.667Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "保留你的分類，我額外和你做不露個資的物品索引。",
+            "action": "在安全保管不變下整理一般外觀索引供合法招領，不列病假資料或先認定物主。",
+            "tradeoff": "花師生整理時間。"
+          },
+          {
+            "id": 2,
+            "text": "這次不再精編，安全收好，讓大家依規慢慢領。",
+            "action": "不新增索引工作，保留必要保管招領與缺席者權益。",
+            "tradeoff": "幹部可能覺得白忙，查找較慢。"
+          },
+          {
+            "id": 3,
+            "text": "我提議分短段輪流看守認領，不都算你的工作。",
+            "action": "徵詢自願合法成人或學生輕量協助，在不揭個資下安排認領協作，最終責任仍在教師。",
+            "tradeoff": "需協調且未必有人願意。"
+          },
+          {
+            "id": 4,
+            "text": "若校方有正式失物櫃，我先問能否依程序移交。",
+            "action": "詢問有權窗口接受條件，未同意不轉出、不使物主失去領取方式。",
+            "tradeoff": "多一段交接與等待。"
+          },
+          {
+            "id": 5,
+            "text": "我陪你把下次整頓的授權範圍寫清楚，不再靠我隨口一句。",
+            "action": "額外與幹部形成可理解的整理委託範圍，禁止擅處分是共同底線而非此分支才有。",
+            "tradeoff": "教師需更清楚交辦，學生自主空間縮小。"
+          },
+          {
+            "id": 6,
+            "text": "想讓大家記得領，我幫你準備一次不點名的實物展示。",
+            "action": "依法於班務短段展示可公開外觀、不含私密物品，保留缺席者後續認領。",
+            "tradeoff": "占班務與搬放時間，不保證有人認。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想把角落清乾淨，但願意把自己的備課書挪回私人袋，先讓這些失物有安全位置。",
+          "action": "在既有合法空間與保管許可下，導師自願移走自己的非必要備課書，騰出一段可用安全保管處，不壓走學生物品。",
+          "tradeoff": "教師日後多背自己的書，空間仍有限。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3149448938
+        },
+        "selectedIds": [
+          4,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "e79afa2ea9a3cc1e5013b0862851f64ec5cd5fcd137d471a99eafd46e113de0f"
+      },
+      "consequenceDirections": {
+        "A": "可發展班級空間改善與移交後不如自己管理的失落。",
+        "B": "可發展整理成果被看見與仍無法立刻清空的差別。",
+        "C": "可承接高執行力者對先問再做的耐心。",
+        "D": "可發展幹部看見教師也為尊重物權付出便利後的反應，不保證失物很快領走。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "48c3fe7b1ca42cd9f6bde1a665d918a267ecc5e48f75feef76cced3d03935e14",
+    "draftSha256": "9092d9edf2ae1a0978690aff4b0d3fd50d997ffc2106d00c698c5f4b7a6a07fc",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,155 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e8fb22859c6a99cca15e32511fd7ce7de0321b9ff888c525de6609fef2381a7f",
+      "checkedAt": "2026-11-28T00:48:25.686Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪你查正式來源，現在不急著判誰贏。",
+            "action": "額外用合法公開官方資料協助來源核對，不假裝有法律資格作終局判斷。",
+            "tradeoff": "花課間時間，可能無法立即找到完整答案。"
+          },
+          {
+            "id": 2,
+            "text": "我替你把問題轉正式窗口，要求回覆可公開依據。",
+            "action": "額外協助依法提出疑問，不保證有利結論。",
+            "tradeoff": "增加轉件追蹤。"
+          },
+          {
+            "id": 3,
+            "text": "你可自行向窗口問，我提供位置和方式，不代寫。",
+            "action": "婉拒額外代辦，提供正常合法詢問資訊，必要支持不變。",
+            "tradeoff": "學生需自行整理，可能覺得被推走。"
+          },
+          {
+            "id": 4,
+            "text": "我先和你看貼文時間與引用是不是同一件事，不登入去吵。",
+            "action": "額外檢視公開文的日期、上下文及來源鏈，不公開個資或指控作者。",
+            "tradeoff": "耗時且可能資料已失。"
+          },
+          {
+            "id": 5,
+            "text": "若你關心的是負擔，我們另談正式可用的用品支持，不把它當已證實違法。",
+            "action": "徵詢本人是否願了解合法用品協助，不推定貧困、不交換撤回疑問。",
+            "tradeoff": "多一段溝通，可能被認為岔題。"
+          },
+          {
+            "id": 6,
+            "text": "我邀全班自願討論怎麼分辨網路權益文，不拿你當錯例。",
+            "action": "額外準備一般去識別來源辨識討論，不替代個別正式查詢。",
+            "tradeoff": "占班務且可能被猜起因。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想一直隔著截圖吵；我願申請一段公開答問，自己坐在那裡接受你們問。",
+          "action": "因不甘只被當成照本宣科，向有權單位提出合法自願、不影響教學的規則答問時段申請；若核可，導師自願出席說明本人職責並承認未知，法律及採購問題仍由合格權責者回答，未核准不宣稱活動成立。",
+          "tradeoff": "多花準備與現場時間，可能被更尖銳質問或不獲排程。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 597979509
+        },
+        "selectedIds": [
+          4,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "a1ce68bd3a118043a7d2e2230b2ffd348a5267748de2dadf070c74a1cb81e2cd"
+      },
+      "consequenceDirections": {
+        "A": "可發展資訊蒐集多不等於理解準確的挫折。",
+        "B": "可發展有時間研究者是否願意自己完成查證。",
+        "C": "可發展主見學生與教師直接面對彼此不確定性的反應，與一般媒體識讀課或代送一份問題不同。",
+        "D": "可承接權益主張與實際需求是否相同。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒具名列疑問仍與普通2正式轉詢過近，改為教師在獲准後自願參與有限公開規則答問，承擔現場質疑。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我陪你查正式來源，現在不急著判誰贏。",
+                "action": "額外用合法公開官方資料協助來源核對，不假裝有法律資格作終局判斷。",
+                "tradeoff": "花課間時間，可能無法立即找到完整答案。"
+              },
+              {
+                "id": 2,
+                "text": "我替你把問題轉正式窗口，要求回覆可公開依據。",
+                "action": "額外協助依法提出疑問，不保證有利結論。",
+                "tradeoff": "增加轉件追蹤。"
+              },
+              {
+                "id": 3,
+                "text": "你可自行向窗口問，我提供位置和方式，不代寫。",
+                "action": "婉拒額外代辦，提供正常合法詢問資訊，必要支持不變。",
+                "tradeoff": "學生需自行整理，可能覺得被推走。"
+              },
+              {
+                "id": 4,
+                "text": "我先和你看貼文時間與引用是不是同一件事，不登入去吵。",
+                "action": "額外檢視公開文的日期、上下文及來源鏈，不公開個資或指控作者。",
+                "tradeoff": "耗時且可能資料已失。"
+              },
+              {
+                "id": 5,
+                "text": "若你關心的是負擔，我們另談正式可用的用品支持，不把它當已證實違法。",
+                "action": "徵詢本人是否願了解合法用品協助，不推定貧困、不交換撤回疑問。",
+                "tradeoff": "多一段溝通，可能被認為岔題。"
+              },
+              {
+                "id": 6,
+                "text": "我邀全班自願討論怎麼分辨網路權益文，不拿你當錯例。",
+                "action": "額外準備一般去識別來源辨識討論，不替代個別正式查詢。",
+                "tradeoff": "占班務且可能被猜起因。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也不想被一句網路說的考倒；我願用自己的備課餘裕，把不確定的地方列出來請權責者回答。",
+              "action": "坦承不知道完整依據，額外以教師本人名義整理尚待確認的具體問題交正式窗口，不把疑問寫成指控或保證免費鎖。",
+              "tradeoff": "占備課並承受被認為找麻煩的觀感。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2565411136
+            },
+            "selectedIds": [
+              1,
+              3,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 1,
+              "D": 5
+            },
+            "optionsDigest": "10aca3e430df74e846dffc364c63483cc9320b3e19d563c6620a9f4f07059b7e"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展有時間研究者是否願意自己完成查證。",
+            "B": "可發展學生對教師願承認不知道又不迎合錯誤確信的尊重或失望。",
+            "C": "可發展有主見者對匿名文失去確定性的反應。",
+            "D": "可承接權益主張與實際需求是否相同。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6ccb8b73ba0d804ddedd01052fde0956e3aa1e680ef273bb3b60baecdc83518c",
+    "draftSha256": "e8fb22859c6a99cca15e32511fd7ce7de0321b9ff888c525de6609fef2381a7f",
     "seedAssignmentVersion": 1
   }
 }

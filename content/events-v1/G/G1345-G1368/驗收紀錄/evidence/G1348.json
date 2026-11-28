@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4c6dcef6cec161c33b09ed7ee53a5355f0a74c996b40d2f073cbdd999ef201fb",
+      "checkedAt": "2026-11-28T00:48:25.650Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我願協助找合法可調時段，確認前不再寫黑板。",
+            "action": "額外彙整雙方可行課務供正式調課確認，不代其他教師同意。",
+            "tradeoff": "增加跨節溝通，可能沒有空間。"
+          },
+          {
+            "id": 2,
+            "text": "照你原課表安排，這次我不代調。",
+            "action": "婉拒額外調度，維持必要通知與學生支持，由科任自行依法安排。",
+            "tradeoff": "同事可能更尷尬，導師需守住情面壓力。"
+          },
+          {
+            "id": 3,
+            "text": "我陪你向課務窗口問一次，不替你去問每位老師。",
+            "action": "提出共同正式詢問邀約，限合法時段與必要資料。",
+            "tradeoff": "占共同工作時間，也不保證獲准。"
+          },
+          {
+            "id": 4,
+            "text": "我幫你把明天通知草稿看清楚，但時段由你依法決定。",
+            "action": "額外協助核對依法安排的測驗通知可讀性，不代發布未核可變更。",
+            "tradeoff": "花核對時間，可能仍有人誤讀。"
+          },
+          {
+            "id": 5,
+            "text": "如果不是必要測驗，你可以先評估是否減少這一次，不用為趕改卷借課。",
+            "action": "向科任提出於其合法課程規範內評估非必要小測量的建議，不代取消評量。",
+            "tradeoff": "可能被視為干涉專業，對方未必同意。"
+          },
+          {
+            "id": 6,
+            "text": "我另約你談借課怎麼開口，先別把怕拒絕變成學生的慌張。",
+            "action": "邀合法短段成人溝通會談，聚焦未來提出需求與接受拒絕，不重做必要規則澄清。",
+            "tradeoff": "增加情緒勞動，同事可能感到被訓話。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想早收工；我寧可拿自己的備課餘裕幫你分普通卷紙，不把班務時段讓出去。",
+          "action": "因理解疲倦而自願於合法權限內分擔無學生機密的空白測驗紙張整理，不代出題評分或改時段，不取學生勞動。",
+          "tradeoff": "增加自己的瑣務，對方可能覺得沒幫到真正困難。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2147072462
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "038d769c72be35e563a08af58184e0fc6a96510b4a8de17fd20742df5d1fbdaf"
+      },
+      "consequenceDirections": {
+        "A": "可發展科任對專業體諒的期待與程序等待。",
+        "B": "可承接怕開口者如何學會直接處理自己的安排。",
+        "C": "可發展教師願幫另一件實際工作卻拒絕讓課的職場微妙感。",
+        "D": "可發展有人陪同與工作仍由自己說明的不同感受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2a9d177ad595ad73212e030fe577a73ce6fc6dd49f9be42e69e28319e78b1486",
+    "draftSha256": "4c6dcef6cec161c33b09ed7ee53a5355f0a74c996b40d2f073cbdd999ef201fb",
     "seedAssignmentVersion": 1
   }
 }

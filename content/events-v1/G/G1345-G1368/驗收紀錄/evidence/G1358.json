@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a04a30e934ae3cd90571ef748b17cf09d6f7cca1a38be16bd89bc19957ad0501",
+      "checkedAt": "2026-11-28T00:48:25.670Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "你同意後，我完整轉正式窗口，清楚標為家長建議。",
+            "action": "依法轉交原完整文件及來源，不背書採納，正常提案照常受理。",
+            "tradeoff": "增加轉介回覆與行政情面負擔。"
+          },
+          {
+            "id": 2,
+            "text": "我不代遞全文，提供正式管道讓你自行提出。",
+            "action": "婉拒額外轉件，由本人可自由使用既有合法提案方式。",
+            "tradeoff": "家長可能覺得教師不支持。"
+          },
+          {
+            "id": 3,
+            "text": "若你願意，我先和你把最重要的三個問題摘出來。",
+            "action": "經作者同意額外協助摘要疑問供其自行確認轉交，不擅改原意。",
+            "tradeoff": "整理耗時，可能被視為削弱提案。"
+          },
+          {
+            "id": 4,
+            "text": "我先問教務處能公開說明哪些標準，再回你。",
+            "action": "額外查詢合法公開資訊，不要求披露機密或替校方承諾。",
+            "tradeoff": "增加詢問且未必有更多細節。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問能否安排一次正式意見交流，不保證評審會改。",
+            "action": "徵詢有權成人與家長的自願交流，未同意不排會。",
+            "tradeoff": "協調時間與可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "若你只要未來制度討論，我協助依規去識別交教學會議參考。",
+            "action": "取得作者同意後提出一般評量透明議題，不代要求當次競賽採其細則。",
+            "tradeoff": "需重整問題與等待議程。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想問清楚，不願只當轉信箱；我另寫自己的疑問，具名和你的分開送。",
+          "action": "因被迫二選一表態而不服，額外依自己實際理解提出獨立教師意見，不代家長背書或混同兩份來源。",
+          "tradeoff": "承擔具名專業意見與同事關係成本。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1229588094
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "427611a1a74445d21b19224ced0ad94e589e821f8eacacfc3e355828fc48e119"
+      },
+      "consequenceDirections": {
+        "A": "可發展高行動力面對多人專業流程的焦躁。",
+        "B": "可發展高執行力家長面對專業自主審酌的等待。",
+        "C": "可承接從孩子機會轉公共制度的動機差異。",
+        "D": "可發展家長發現教師也關心透明卻不同意其全表的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e058320be05d910db89c3e1a559e04c10c7e8811ce3b8ed8dd06d7cbed6586af",
+    "draftSha256": "a04a30e934ae3cd90571ef748b17cf09d6f7cca1a38be16bd89bc19957ad0501",
     "seedAssignmentVersion": 1
   }
 }

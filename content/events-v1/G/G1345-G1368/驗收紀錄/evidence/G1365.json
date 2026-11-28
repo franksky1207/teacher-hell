@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ce781afaab2495c1cce22afe8d06fcd9870d530f76a75740d0d1208ca7c8ee68",
+      "checkedAt": "2026-11-28T00:48:25.682Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我和你共備一小段無聲回應，不要求整堂變成寫題。",
+            "action": "額外提出合法共備，教學採用仍由科任決定，不代學科設計。",
+            "tradeoff": "花雙方備課時間。"
+          },
+          {
+            "id": 2,
+            "text": "我邀相鄰老師談可行音量和時段，不以他們讓課換方便。",
+            "action": "提出合法自願教學協調，必要安靜權益不作交換。",
+            "tradeoff": "多方時間與人際壓力。"
+          },
+          {
+            "id": 3,
+            "text": "若有合適空間，我替你問可否依法借用，不先把活動搬去。",
+            "action": "詢問有權場地窗口，未核可不假定有可吵鬧教室。",
+            "tradeoff": "增加申請與移動負荷。"
+          },
+          {
+            "id": 4,
+            "text": "我先聽學生實際學到什麼，不只數笑聲。",
+            "action": "於合法班務蒐集自願一般學習回饋供科任參考，不作人氣評鑑。",
+            "tradeoff": "整理耗時，可能聽到不想聽的意見。"
+          },
+          {
+            "id": 5,
+            "text": "這次不另加指導，我維持必要協作，後續教法請你自行調整。",
+            "action": "不額外共備或評鑑，尊重科任依法自主，必要音量界線照常。",
+            "tradeoff": "同事可能覺得缺乏支援。"
+          },
+          {
+            "id": 6,
+            "text": "你願意的話，我陪你問校內正式教學支持，不只讓我一人說。",
+            "action": "徵詢其意願後向合格教學支援者詢問合法交流，不保證有空或認同。",
+            "tradeoff": "增加協調，也可能怕被認定能力不足。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點吃味他們那麼捧場；我願請你介紹自己最得意的一題，讓我真的試答一次。",
+          "action": "坦承想被學生喜歡的私心，額外邀同事於合法成人交流時段示範一題其有權使用的內容，自己實際試答，不重現高音量或保證教法有效。",
+          "tradeoff": "暴露自己可能答不好的面子，花私人餘裕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3622179924
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "13ae9ba36e25c7f0db59d48783b211a838da2f6c49904c31b52f0e80f7453e99"
+      },
+      "consequenceDirections": {
+        "A": "可承接新進教師對導師不當免費顧問的反應。",
+        "B": "可發展認可依賴遇到具體學習證據的張力。",
+        "C": "可發展創意被保留卻需改形式的失落。",
+        "D": "可發展兩位教師在承認人氣誘惑後能否更誠實談方法的代價。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cc9903516cae7eae41d000d9777a76b78d62540eb822a6d216f16e52f1a75605",
+    "draftSha256": "ce781afaab2495c1cce22afe8d06fcd9870d530f76a75740d0d1208ca7c8ee68",
     "seedAssignmentVersion": 1
   }
 }

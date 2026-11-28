@@ -16,14 +16,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4868d36568c3776fdcc13b1247389ba15c3ffc4ce51a214772fe58f6c330cd23",
+      "checkedAt": "2026-11-28T00:48:25.669Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "條件都確認而且有餘裕，最多八分鐘，我在場控時。",
+            "action": "須依法核實所有條件與個人同意，依實際集合步行時間提早結束，無餘裕不安排。",
+            "tradeoff": "導師多留控時，仍可能練不完整。"
+          },
+          {
+            "id": 2,
+            "text": "放學不排，問明早正常到校後有沒有合法自願短段。",
+            "action": "提出不要求提早到校的隔日合法短練詢問，時間須全員可行。",
+            "tradeoff": "可能沒有共同時間。"
+          },
+          {
+            "id": 3,
+            "text": "先只確認每個人的交接句，不完整跑一次。",
+            "action": "在合法課間與全員願意下提出限定交接句練習，不占必要休息或交通。",
+            "tradeoff": "缺少完整舞台感，需導師協調。"
+          },
+          {
+            "id": 4,
+            "text": "回家各自自願順稿，不另約全組上線。",
+            "action": "提供不新增強制夜間活動的個別練習方案，必要教學支持不變。",
+            "tradeoff": "無法確認合體效果。"
+          },
+          {
+            "id": 5,
+            "text": "我幫你問任課老師明天能否有合法短段準備，不替他答應。",
+            "action": "向授課者提出課內有限準備需求，不擅改評量或時程。",
+            "tradeoff": "增加跨科協調，可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "我願看你們自願寫的一頁站位草圖，不必把所有人留下。",
+            "action": "額外閱讀合法可用的簡短分工站位圖並給一般呈現建議，不代學科審查。",
+            "tradeoff": "花教師餘裕，圖不能取代排演。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也看你緊張到煩了；你願意就先對我一人講開頭，這次不動員整組。",
+          "action": "因想讓焦慮先有出口，自願用合法課間聽組長本人練一段開頭，不要求其他組員到場或保證成績。",
+          "tradeoff": "教師少休息，組長可能覺得仍沒整體練到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1008469297
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "c841ffdd95bfbe2a102b87d23408b9b0e64e7c794cc661f0cbba60476bbf15af"
+      },
+      "consequenceDirections": {
+        "A": "可發展號召別人之前先承受自己上台的不安。",
+        "B": "可承接數人行程不合時改以資訊協作的限制。",
+        "C": "可發展動員者是否能刪減自己以為不可少的內容。",
+        "D": "可發展學生願不願把不完美準備帶到正式課堂。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "46eacf9a4e640e749c31f6a1f127a024e289ca24d1db86ba6fbe831b6c6e50d7",
+    "draftSha256": "4868d36568c3776fdcc13b1247389ba15c3ffc4ce51a214772fe58f6c330cd23",
     "seedAssignmentVersion": 1
   }
 }

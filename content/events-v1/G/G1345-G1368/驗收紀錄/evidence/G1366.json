@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "34a1e2d862ad265eb809ad67198a0c389fefff600e146af2330494ef433b625c",
+      "checkedAt": "2026-11-28T00:48:25.683Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外協調一次合法課間同儕短談，大家真願意才排。",
+            "action": "提出不占必要休息的自願白天同儕交流，成人責任照常。",
+            "tradeoff": "教師需媒合與控時。"
+          },
+          {
+            "id": 2,
+            "text": "正常求助管道照常，我不再另設固定小組。",
+            "action": "維持必要科任與學習支持，婉拒額外班級共學安排。",
+            "tradeoff": "學生可能失落，家長仍需理解教師界線。"
+          },
+          {
+            "id": 3,
+            "text": "我替孩子問科任，能不能在正常課內集中回應幾個問題。",
+            "action": "徵詢學生意願及任課合法課務安排，不代承諾加時。",
+            "tradeoff": "跨科聯絡，未必能排。"
+          },
+          {
+            "id": 4,
+            "text": "若親子願意，我另約短談，把孩子想問問題和接送疲倦都說出來。",
+            "action": "提出自願合法親師生討論，不洩未同意私談、不以改接送為目標強迫。",
+            "tradeoff": "多方時間難湊。"
+          },
+          {
+            "id": 5,
+            "text": "我提供既有合規的非同步提問方式，不新增夜間即時服務。",
+            "action": "額外說明已可合法用的提問資訊，未有平台則不假定已有，不保證即時答覆。",
+            "tradeoff": "教師需核對資訊，學生失去現場討論感。"
+          },
+          {
+            "id": 6,
+            "text": "我問孩子想一起讀的是誰，再徵求對方白天有沒有空，不先訂時段。",
+            "action": "經本人同意提供一次有限媒合詢問，對方拒絕不失權益。",
+            "tradeoff": "可能被拒且需要聯絡。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想下班再當催人機器；我願把自己的班務空檔挪一小段，白天聽孩子問，不叫家長再等。",
+          "action": "在本人授課資格與合法工作時段內提出有限一般學習討論，專科問題轉合格科任，不延後必要班務或接送，不保證解答所有題。",
+          "tradeoff": "教師少一段備課餘裕，孩子可能需要別科專業仍得轉介。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2099552660
+        },
+        "selectedIds": [
+          2,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "b11f6ddff80b82278ae314bef58f2dd7bc60e1abcac29571ffdd577ab622aaa9"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長是否接受不改接送仍能留住共學。",
+        "B": "可發展疲勞家長對教師額外投入的感受與教師不願延長下班的私心。",
+        "C": "可承接準時回家與額外同儕機會減少的代價。",
+        "D": "可承接特定同伴關係與一般資源替代的落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f7d62a2ff1aa5a1cf828ca3fdb34d075ac46007dfb774121ff70b73de4c9dd0c",
+    "draftSha256": "34a1e2d862ad265eb809ad67198a0c389fefff600e146af2330494ef433b625c",
     "seedAssignmentVersion": 1
   }
 }

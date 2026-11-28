@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2ac2585ac48475b6db3ea778f9be830a9faae88aaa018d4ec9c4a0b4395a0de7",
+      "checkedAt": "2026-11-28T00:48:25.662Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另約你談上次借課，不把舊事留在下課鐘裡。",
+            "action": "額外邀合法短段成人會談，休息權要求不作和解交換。",
+            "tradeoff": "需面對私人不滿。"
+          },
+          {
+            "id": 2,
+            "text": "我提議與下一節老師三方協調收尾節奏。",
+            "action": "邀自願教學協調，必要準時下課不延後。",
+            "tradeoff": "多方時間難約。"
+          },
+          {
+            "id": 3,
+            "text": "我請主管協助看整體銜接，不再只私下反覆提醒。",
+            "action": "額外提出正式課務協調需求，提供真實時序不斷言動機。",
+            "tradeoff": "可能升高同事摩擦。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，未講完的重點改留合法課內下一次，我幫學生整理疑問。",
+            "action": "提出額外彙整自願問題供科任後續合法課內回應，不代做學科解答。",
+            "tradeoff": "增加整理時間且可能被拒。"
+          },
+          {
+            "id": 5,
+            "text": "我向學生徵詢一般課間需求，整理給你看，不把人當投訴名單。",
+            "action": "額外蒐集自願去識別使用經驗，不延遲必要權益。",
+            "tradeoff": "花整理與保護身分時間。"
+          },
+          {
+            "id": 6,
+            "text": "我願協助申請你要的合法額外課程機會，但由學生自願。",
+            "action": "向權責者詢問合法非必要自願補充時段，不強留、不承諾有名額。",
+            "tradeoff": "增加協調，可能沒有可用時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不服氣被說不負責；我直接把自己的班務收尾方式拿出來，請你同樣挑毛病。",
+          "action": "坦白被刺到，額外提出互相檢視可公開教學收尾設計的自願交流，不作考核或拿學生演示。",
+          "tradeoff": "暴露自己的缺點，需花準備時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2621757338
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "1ff23aabe5e6be3103bc2f8d68fdffbbbf3b9b62f920ea076cf794f0145e5450"
+      },
+      "consequenceDirections": {
+        "A": "可承接科任有餘裕與學生未必願加課的落差。",
+        "B": "可承接負責是否能容許內容分次完成。",
+        "C": "可發展教師間從防衛到具體比較的關係，也可能更不愉快。",
+        "D": "可承接個人節奏放進共同課務後的不同立場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e930518ccc140292024ad9bfe816a3f097f40147214dade91ac5399eadec0fcd",
+    "draftSha256": "2ac2585ac48475b6db3ea778f9be830a9faae88aaa018d4ec9c4a0b4395a0de7",
     "seedAssignmentVersion": 1
   }
 }

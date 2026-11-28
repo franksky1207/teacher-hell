@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6ce5a409a63afe7487e5439ea205f26936cccd4a44dae1fb6074bc64349dcad8",
+      "checkedAt": "2026-11-28T03:20:24.914Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻在班群和教室通知該檔案有版權與錯題問題、請大家刪除勿印，再私下溫和向他說明法律與錯題風險。",
+            "action": "立即公告要求全班刪除盜版檔案並停用，課後私下對student_a進行著作權與教材查證指導。",
+            "tradeoff": "一片好心又花了錢的焦慮學生當場嚇哭，怕自己變罪犯。"
+          },
+          {
+            "id": 2,
+            "text": "我先叫他立刻自己把班群連結收回，我在教室統一只說「網購題庫有舊課綱錯誤、一律用學校講義」，不點名他。",
+            "action": "要求student_a立即撤回群組連結，由導師於班級不點名澄清盜版與錯題風險並禁用。",
+            "tradeoff": "保住了他的面子，但全班可能只當成錯題問題而沒意識到買盜版的嚴重性。"
+          },
+          {
+            "id": 3,
+            "text": "我通知全班立刻刪除該盜版檔後，順便幫他看看這份到底誤信了哪幾題舊課綱，免得他自己背錯。",
+            "action": "立即下架並禁用盜版檔，另針對student_a考前焦慮提供正確新課綱範圍釐清。",
+            "tradeoff": "等於多花課間幫他看盜版檔裡的錯題，還得小心別讓他以為老師默許他自己偷看。"
+          },
+          {
+            "id": 4,
+            "text": "我請他立刻收回連結並通知全班刪除後，問他願不願意回家跟家長講一聲被網拍騙錢的事，申請退費。",
+            "action": "完成下架與禁用後，建議student_a與家長說明網購疑似盜版教材情形。",
+            "tradeoff": "焦慮的他一想到要跟爸媽承認半夜亂刷卡就更緊張。"
+          },
+          {
+            "id": 5,
+            "text": "我當場在班群直接由管理員權限刪掉連結並發公告禁用，下課再單獨留他下來把話講清楚。",
+            "action": "立即由導師端移除連結與公告禁止使用，課後單獨約談說明版權與錯題。",
+            "tradeoff": "群組裡大家突然看見老師秒刪訊息，反而更引人猜測發生什麼事。"
+          },
+          {
+            "id": 6,
+            "text": "我收回群組連結並禁用後，把這件考前亂買秘笈的案例拿去班會講怎麼挑合法參考書。",
+            "action": "完成下架與停用，將網購非法題庫風險納入班會學習宣導。",
+            "tradeoff": "班會一講大家雖然知道不能買，student_a坐在台下還是超尷尬。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他眼眶下掛著黑眼圈還以為自己立了大功，心一軟先拿走他手裡那疊紙說「傻孩子，你被網拍騙了，這是舊課綱盜版啦！快點收回連結，老師等一下發真的重點給你」。",
+          "action": "立即接過紙本並督促其收回盜版連結，同時承諾提供合規校內複習重點以緩解其考前焦慮。",
+          "tradeoff": "語氣太像在哄小孩，自己還得額外整理一份重點給他定心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 386199375
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "867ff724a352c5211cf48b1fb2f97cb06d4b43600c5365d0e0da1410daa7c833"
+      },
+      "consequenceDirections": {
+        "A": "可發展下架禁用並建議跟家長講申請退費後，焦慮學生怕被爸媽罵亂刷卡的掙扎。",
+        "B": "可發展下架後順便幫他揪出舊課綱錯題後，避免背錯卻得小心別讓他以為能偷看。",
+        "C": "可發展哄著收走紙本並給校內正規重點後，他鬆口氣卻得由導師另撥時間整理重點。",
+        "D": "可發展公開禁用並私下講清楚著作權風險後，好心又花錢的他嚇哭與後續調適。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0d8c5e0256265848df93e296959156a64461d93a6d156f85d83e548503cb21cf",
+    "draftSha256": "6ce5a409a63afe7487e5439ea205f26936cccd4a44dae1fb6074bc64349dcad8",
     "seedAssignmentVersion": 1
   }
 }

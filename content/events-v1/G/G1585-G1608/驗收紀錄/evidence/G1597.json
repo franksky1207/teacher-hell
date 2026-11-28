@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "80db2134d8b4e04438dc351f167472a983fc7b951804b4c8f785b659654d151e",
+      "checkedAt": "2026-11-28T03:20:24.908Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先陪他把安全疑點和比分爭議分開整理好，交給體育教師調查後由老師正式回覆。",
+            "action": "完成傷勢評估聯繫後，協助student_a釐清安全事實與比分情緒並轉交體育教師調查。",
+            "tradeoff": "當下他還是等不到立刻停賽的裁定，心裡氣沒消。"
+          },
+          {
+            "id": 2,
+            "text": "我先確保他完成校護檢查，再問他願不願意在適合時向體育教師單獨把經過親口說清楚。",
+            "action": "完成傷勢處置後，安排student_a於適當時機向權責體育教師單獨陳述經過。",
+            "tradeoff": "雖然能親口表達，但他得重述一遍令人火大的碰撞經過。"
+          },
+          {
+            "id": 3,
+            "text": "我明確告訴他這學期禁不禁賽不是導師說了算，請他先安心冰敷等體育老師看過現場同學說法。",
+            "action": "完成傷勢照護，明確說明停賽處分屬體育與校方權責，靜待客觀調查。",
+            "tradeoff": "好勝的他覺得導師在打官腔，嘴唇抿得緊緊的。"
+          },
+          {
+            "id": 4,
+            "text": "我請他先別急著喊整學期禁賽，先寫下當時旁邊有誰看到經過，交給體育老師一起核對。",
+            "action": "完成健康確認後，請student_a記錄在場目擊同學名單供體育教師查證。",
+            "tradeoff": "把目擊者寫出來讓他擔心會不會被說小題大作。"
+          },
+          {
+            "id": 5,
+            "text": "我先把他送去健康中心檢查確認沒扭傷，告知會等體育老師調查完再跟他對結果，現在先回班休息。",
+            "action": "依校方程序先完成健康檢查與交辦體育教師調查，暫不進行任何懲處或對質。",
+            "tradeoff": "他一想到下午對方還活蹦亂跳就氣得坐不住。"
+          },
+          {
+            "id": 6,
+            "text": "我先肯定他重視球場安全是對的，但也點出「贏球輸球跟安全裁定是兩回事」，等調查出來再說。",
+            "action": "完成傷勢處置與轉介調查，當場釐清安全警覺與比賽勝負界線。",
+            "tradeoff": "話講得太直，正在氣頭上的他覺得老師不挺他。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他連腳都還沒給校護看就急著喊禁賽，忍不住按住他肩膀說「先去給護理師看腳有沒有事！禁賽這種事等查清楚再講，你人沒受傷才重要啦」。",
+          "action": "強硬先帶往健康中心檢查傷勢，暫時擱置禁賽要求並交由體育教師依程序調查。",
+          "tradeoff": "氣頭上的他覺得導師完全沒聽進去他被故意推的事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 12599520
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "13de9d2e3f922c966508d5d1f1393fa48c9cba35ac59010e9b4b815c34302957"
+      },
+      "consequenceDirections": {
+        "A": "可發展送去健康中心並先回班休息等調查後，好勝學生一想到對手還在場上就坐不住。",
+        "B": "可發展強硬先押去健康中心看腳後，氣頭上的他覺得導師完全沒聽進去被撞的事。",
+        "C": "可發展請他寫下目擊同學名單供體育老師核對後，他擔心被說小題大作的猶豫。",
+        "D": "可發展講明禁賽屬體育權責並請他先冰敷後，他抿著嘴覺得導師太公事公辦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "804163dbe5a459a0a909b39d21e3ee092acd19a8b7e510226c314a5426b82012",
+    "draftSha256": "80db2134d8b4e04438dc351f167472a983fc7b951804b4c8f785b659654d151e",
     "seedAssignmentVersion": 1
   }
 }

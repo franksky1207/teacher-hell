@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9ce1e6b1173bc9d0fc6d899dfe8ef5b46fb6163ffde636c13d190f026c543ca2",
+      "checkedAt": "2026-11-28T03:20:24.902Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我明確向全班說明網路梗圖有侵權風險不能印，趁機把他的原創設計拿出來讓全班重新欣賞討論。",
+            "action": "退回具版權疑慮之網路梗圖，公開展示student_a原創設計供班級重新評選。",
+            "tradeoff": "原本起鬨要印梗圖的同學有點掃興，student_a也怕被說靠老師護航。"
+          },
+          {
+            "id": 2,
+            "text": "我退回侵權梗圖後不直接指定他的原創，改由班會開放兩天讓大家自己手繪原創搞笑元素。",
+            "action": "拒絕印製未授權梗圖，給予兩天期限開放全班提交原創設計重選。",
+            "tradeoff": "交件時程變得極度趕迫，student_a昨晚熬夜描邊的工等於白費。"
+          },
+          {
+            "id": 3,
+            "text": "我先退回梗圖檔案，單獨問他願不願意把原本的素描拿出來參選，不強迫他公開。",
+            "action": "拒絕侵權圖檔並尊重student_a意願，由其決定是否改交自身原創作品。",
+            "tradeoff": "如果他怕被同學說掃興還是不敢交，班服設計就得另找人畫。"
+          },
+          {
+            "id": 4,
+            "text": "我請那幾個起鬨要印梗圖的同學跟student_a一起看清楚授權規定，決定是要自己原創搞笑圖還是選他的。",
+            "action": "向起鬨學生與student_a說明版權界線，要求提出合法原創替代方案。",
+            "tradeoff": "那幾個愛鬧的男生可能嘴巴上碎念「老師連開玩笑都不給印」。"
+          },
+          {
+            "id": 5,
+            "text": "我先誇他熬夜排版的技術很強，但明確說這張不能印，請他用同等級的排版力幫自己的原創完稿。",
+            "action": "退回侵權梗圖，鼓勵student_a轉以自身原創稿件進行完稿送選。",
+            "tradeoff": "沒先跟全班說清版權問題前，起鬨同學會以為是student_a自己反悔。"
+          },
+          {
+            "id": 6,
+            "text": "我問他能不能先取得該梗圖原作者的書面免費授權，拿不到授權就一律用原創重選。",
+            "action": "要求須取得合法權利人授權方可採用網路圖，否則依原創作品重行決定。",
+            "tradeoff": "根本不可能在交件前聯絡到海外迷因原作者，只是多一道死胡同。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他捏著素描本委屈巴巴的樣子有點心疼，直接伸手把那本素描抽出來看了一眼說「這張比網路梗圖帥十倍好不好！侵權的我不能印，你那張借我拿進班上秀一下」。",
+          "action": "當場肯定並取出student_a原創素描本，明確拒收侵權梗圖並預備帶進班級討論。",
+          "tradeoff": "太明顯偏愛他的原創，進教室後得花力氣安撫那幾個想印搞笑圖的男生。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 152863331
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "119ab0ed3a2167ef06d446031a0df33f662c0c737f0a728ac1e723a227d2708b"
+      },
+      "consequenceDirections": {
+        "A": "可發展退回版權梗圖並秀出他原創設計後，起鬨男生與他本人面對重選的反應。",
+        "B": "可發展誇他排版力並勸他用來完稿自己作品後，全班還未聽清版權原因時的誤會。",
+        "C": "可發展要他先取得梗圖原作者書面授權後，發現根本聯絡不到而轉回原創的現實。",
+        "D": "可發展直接抽出他的素描本誇帥十倍後，導師進教室安撫想印搞笑圖男生的拉鋸。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "be2abd4efed63c816405f7eec61233cddc63c9118a83fb04dd70adb5106431ed",
+    "draftSha256": "9ce1e6b1173bc9d0fc6d899dfe8ef5b46fb6163ffde636c13d190f026c543ca2",
     "seedAssignmentVersion": 1
   }
 }

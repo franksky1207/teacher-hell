@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5bce0dd1c8414eccf1f8c39febb0bcafa64e3ca6e8d14ab23dd3abaf604105cf",
+      "checkedAt": "2026-11-28T03:20:24.928Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我誠懇同理他加班辛勞，當場准許這名學生免附合照、改寫自己觀察家中環境即可。",
+            "action": "安撫家長情緒並針對該生放寬作業形式為免附合照之自主環境觀察。",
+            "tradeoff": "沒在班上統一說明，其他同樣加班的家庭可能還是硬擠時間拍。"
+          },
+          {
+            "id": 2,
+            "text": "我道歉安撫後，早自習直接在教室與班群統一宣布「這張學習單不強制親子合照、可改寫個人觀察」。",
+            "action": "統一修正全班作業規範，取消強制親子合照要求並維持一致評量標準。",
+            "tradeoff": "已經昨晚熬夜拍好貼上去的家長看到公告可能哭笑不得。"
+          },
+          {
+            "id": 3,
+            "text": "我先接住他的怒氣並把繳交期限往後延到週末後，讓忙碌家庭不用在平日晚上九點趕這張單子。",
+            "action": "維持作業內容不變，將全班繳交期限延後至涵蓋週末以減輕平日加班壓力。",
+            "tradeoff": "若是週末也要輪班的家庭，還是會卡在那個合照要求上。"
+          },
+          {
+            "id": 4,
+            "text": "我感謝他點出雙薪家庭的痛點，說明如果是別科或共編單我會立刻反映，班級這邊先不扣他孩子分。",
+            "action": "確認作業出處並保障該生評量權益，若屬跨科作業則轉達原出題教師調整。",
+            "tradeoff": "家長當下覺得老師是在把責任推給出題單位。"
+          },
+          {
+            "id": 5,
+            "text": "我請他今天先不用急著簽名或貼照片，等孩子自己把能寫的觀察寫完交來、我先看過再說。",
+            "action": "暫免家長簽名與合照期限要求，先收受學生本人完成之觀察內容。",
+            "tradeoff": "家長還是想知道到底最後要不要補那張照片。"
+          },
+          {
+            "id": 6,
+            "text": "我坦承這項設計確實沒顧及輪班與加班家庭，問他願不願意改由學生畫個小插圖取代貼合照。",
+            "action": "承認作業設計欠妥，提供手繪插圖替代親子合照的彈性交件方案。",
+            "tradeoff": "畫圖對不擅長美術的學生來說又變成另一種麻煩。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他罵到自己也有點心虛，直接老實說「爸爸你先別氣，這題真的是我沒想周全，晚上九點還要找照片太折磨大人了，今天進班我就直接宣布免合照」。",
+          "action": "坦率承認設計疏失並當即承諾今日於全班取消親子合照強制要求。",
+          "tradeoff": "乾脆認錯雖瞬間熄火，等一下進教室宣布還得向已交的同學交代。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1752725099
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "88dd1ccf89022523947d2e4533df039f89c5f41c1b46954ec65c592b5e8b5ad9"
+      },
+      "consequenceDirections": {
+        "A": "可發展暫免簽名與合照期限並先收學生觀察內容後，家長追問到底還要不要補拍。",
+        "B": "可發展延後期限涵蓋週末後，週末照樣要輪班的家庭仍卡在合照這關。",
+        "C": "可發展早自習統一宣布全班取消強制親子合照後，昨晚熬夜拍好貼上的家長反應。",
+        "D": "可發展坦率認錯並立刻承諾今天進班宣布免合照後，熄滅怒火與進班說明的收尾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d138e2ee44d20d6369129a45c31f781eb9a43b0742f8065b523cbdba3df3d718",
+    "draftSha256": "5bce0dd1c8414eccf1f8c39febb0bcafa64e3ca6e8d14ab23dd3abaf604105cf",
     "seedAssignmentVersion": 1
   }
 }

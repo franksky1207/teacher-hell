@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1763136ab15db5455fcd8b035d429a2914181035c37dbb4ef22250e4d95ac671",
+      "checkedAt": "2026-11-28T03:20:24.875Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我溫和明確地婉拒為單一學生客製出題批改，改推薦幾本適合自練的坊間題本或校內共編題庫。",
+            "action": "婉拒每週個別加出與批改加強卷，提供公開合宜之既有自學題庫參考。",
+            "tradeoff": "焦頭爛額的家長覺得沒人替他盯進度，還是很無助。"
+          },
+          {
+            "id": 2,
+            "text": "我婉拒每週出新卷批改，但從手邊既有公開舊題庫抽出一份附詳解的練習給孩子回家對答案。",
+            "action": "拒絕長期客製出題與代改，一次性提供既有附詳解公開練習卷供家庭自行核對。",
+            "tradeoff": "家長這週鬆口氣，卻可能過兩週又打來問還有沒有下一份。"
+          },
+          {
+            "id": 3,
+            "text": "我先建議他把目標放在孩子自己訂正現有錯題本，這比另外寫新卷更有用也不必大人陪寫。",
+            "action": "婉拒額外出卷，引導改以現有錯題本複習與自主訂正。",
+            "tradeoff": "高成就期待的家長總覺得題目寫不夠多心裡不踏實。"
+          },
+          {
+            "id": 4,
+            "text": "我請他先問孩子自己願不願意參加校內既有課後自習或找同儕組讀書小組，老師不私下開小灶。",
+            "action": "婉拒個別額外批改，建議善用既有合法校內資源或同儕學習。",
+            "tradeoff": "孩子未必想留校，家長也未必放心沒大人盯。"
+          },
+          {
+            "id": 5,
+            "text": "我向他說明若我有整理全班共同可用的進階補充練習，會統一發給全班自選，不單獨針對個人。",
+            "action": "拒絕一對一客製出題，重申補充教材須維持全班公平公開原則。",
+            "tradeoff": "家長覺得全班統一發的進度太慢，滿足不了他的急迫感。"
+          },
+          {
+            "id": 6,
+            "text": "我約他先讓孩子自己拿最近兩次考卷來辦公室問我錯在哪裡，取代每週另出新卷。",
+            "action": "婉拒每週另出加強卷與批改，提供一般課間開放答疑機會。",
+            "tradeoff": "得看孩子自己會不會主動拿著考卷走進辦公室。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽見他那邊還在敲鍵盤也跟著心累，直接老實回他「爸爸你加班辛苦了，但我每天改四十個人的考卷也快改到眼花了，週一真的沒辦法再順便改一張」。",
+          "action": "以自身真實工作負荷直白婉拒額外出卷與批改，並推薦既有參考書自練。",
+          "tradeoff": "話太實誠有點像在比誰比較累，家長聽完頓了一下才說不好意思。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1042634268
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "9476dfad8dc5450b4b5b60ffedbdd779522cdb171de487ba51fbb2a4da9b061c"
+      },
+      "consequenceDirections": {
+        "A": "可發展重申全班公平原則後，忙碌家長對學校沒法客製加練的失落與自救。",
+        "B": "可發展婉拒出卷並推薦坊間題本後，過勞家長還得自己挑書盯進度的無奈。",
+        "C": "可發展破例給一次舊題庫附詳解後，家長下週會不會又打來要下一份。",
+        "D": "可發展導師坦白改四十份考卷也很累後，家長從焦急轉為不好意思的互動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc52051db3b2fa6bfaf85c3ccd1a71407b1d14fc141f0048ac5a605e66e9a22c",
+    "draftSha256": "1763136ab15db5455fcd8b035d429a2914181035c37dbb4ef22250e4d95ac671",
     "seedAssignmentVersion": 1
   }
 }

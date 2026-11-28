@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "244cb185082e6c78ca5e7bf4590661334338f20c8749283641e906ef91afa088",
+      "checkedAt": "2026-11-28T03:20:24.894Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著把前兩版退回他手上，明確約定週五統一只看一個最終定稿，這兩天自己先挑好。",
+            "action": "退回重複舊版並設定週五單一定稿批改時點，要求學生先行自主篩選。",
+            "tradeoff": "正處於興奮期的他當場像被潑了一盆冷水。"
+          },
+          {
+            "id": 2,
+            "text": "我花兩分鐘快速掃過他第三版的大標題給一個簡短方向，請他週末前別再印新版本來了。",
+            "action": "現場給予兩分鐘結構性簡短口頭回饋，並要求暫停繼續送交新版。",
+            "tradeoff": "接住了他的衝勁，但導師自己的備課空檔還是被切碎。"
+          },
+          {
+            "id": 3,
+            "text": "我請他拿一張便利貼自己寫出「第三版到底比第一版好在哪裡」，寫清楚明天再拿來換我看。",
+            "action": "要求student_a先完成自我檢視摘要，明日再行受理單一版本批閱。",
+            "tradeoff": "把球丟回去讓他冷靜思考，但明天他還是會準時出現。"
+          },
+          {
+            "id": 4,
+            "text": "我當場指出他這樣一天改三版反而沒沉澱，要他今天先把三份全部收進資料夾放過夜再決定。",
+            "action": "暫拒今日任何版本批改，要求學生放涼稿件過夜後再行送閱。",
+            "tradeoff": "他手裡熱騰騰的第三版沒人誇，走回教室時肩膀有點垮。"
+          },
+          {
+            "id": 5,
+            "text": "我只留下他手上最新這份第三版放待改疊，前兩版當場請他自己拿去回收。",
+            "action": "僅收受最新單一版本納入正常待批序列，淘汰先前重複草稿。",
+            "tradeoff": "沒給他排隊插隊看，他今天剩餘課間還是會一直探頭看我有沒有改到。"
+          },
+          {
+            "id": 6,
+            "text": "我鼓勵他先找班上兩位寫作不錯的同學互讀這三版，聽完同儕意見再拿最終版來找我。",
+            "action": "引導先進行同儕互評篩選版本，導師僅於後段審閱最終版。",
+            "tradeoff": "急著聽老師專業肯定的他覺得同學看不出門道。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱著三疊紙喘吁吁的可愛樣子忍不住笑出來，直接把筆蓋套上說「你這產量比作家還猛，但老師眼睛只有一雙，今天下班前只准你留最喜歡的一張在我桌上」。",
+          "action": "以幽默語氣制止重複催問，限定僅留單一自選版本待閱。",
+          "tradeoff": "他笑著選了半天還是站在桌邊猶豫哪一張，差點又講掉五分鐘。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1345561077
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "e7bb3e3605edb5bafb67f2e2a1def17b7c6526cb6e16ed83665bbe2c6ea37d3e"
+      },
+      "consequenceDirections": {
+        "A": "可發展笑著限定桌上只准留一張後，student_a挑來挑去又多耗五分鐘的可愛糾結。",
+        "B": "可發展叫他先找同學互讀三版後，急著聽老師專業肯定的他願不願意聽同儕意見。",
+        "C": "可發展退回前兩版並約定週五定稿後，處於興奮期的學生如何沉澱篩選。",
+        "D": "可發展兩分鐘掃過第三版大標題給方向後，他能否真的忍住週末前不再印第四版。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fc321e67f47cfc450d4d8ddacd92debeb0cc956ecff4dc8a53240da30aae113b",
+    "draftSha256": "244cb185082e6c78ca5e7bf4590661334338f20c8749283641e906ef91afa088",
     "seedAssignmentVersion": 1
   }
 }

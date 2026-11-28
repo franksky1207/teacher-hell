@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b572b813208340bf3223ca918f2a974d0d8e2fed9c90cee1ac8a346bceaeddbc",
+      "checkedAt": "2026-11-28T03:20:24.904Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我委婉謝絕打破抽籤分組，但規定這項報告一律限定在學校午休或課間討論、禁止週末外出集合。",
+            "action": "維持原抽籤分組不變，將報告討論時段限定於校內日間合法空檔以解除接送負荷。",
+            "tradeoff": "習慣課後或週末約去圖書館的組員得重新適應在校趕進度。"
+          },
+          {
+            "id": 2,
+            "text": "我先去問原組員跟同社區那組有沒有人自願對調，雙方都同意才破例微調。",
+            "action": "不單方面強行換組，先徵詢兩組相關學生自願互換意願後再行決定。",
+            "tradeoff": "得額外花時間協調兩組學生，還可能問完一圈沒人想換。"
+          },
+          {
+            "id": 3,
+            "text": "我維持原分組，但主動替這組開個規則：不能外出討論的組員可用晚上線上語音對接十五分鐘。",
+            "action": "維持原組別，核准該組以校內討論搭配有限線上對接替代實體外出。",
+            "tradeoff": "不是每個組員家裡晚上都方便準時上線。"
+          },
+          {
+            "id": 4,
+            "text": "我請家長先跟孩子確認這組原本有沒有打算外出，其實許多組根本只打算在學校做完。",
+            "action": "暫不更動分組，先向該組核實實際討論方式與地點規劃再回覆家長。",
+            "tradeoff": "萬一該組真的已經約好週末去市區，回頭還得再處理一次。"
+          },
+          {
+            "id": 5,
+            "text": "我跟家長說明抽籤組別不能因單一家庭調整，若確實無法配合校外討論，該生可改繳個人簡版報告。",
+            "action": "維持原分組公平性，提供改採個人作業評量的合法替代選項。",
+            "tradeoff": "孩子突然變成自己做一份，少了同儕合作經驗也覺得被孤立。"
+          },
+          {
+            "id": 6,
+            "text": "我建議家長跟同組另一位住附近或順路的同學家長私下聯繫共乘，導師不介入改組。",
+            "action": "維持原抽籤分組，建議家庭間自行評估是否協調合法接送支援。",
+            "tradeoff": "不熟的家長彼此開口借搭便車其實很有心理壓力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽見電話那頭抽油煙機轟轟響著覺得他也不容易，乾脆說「組別先不拆免得別人生氣，這週五社團課或自習課如果有空檔，我直接借他們教室討論完就好」。",
+          "action": "維持原分組不拆組，承諾於校內合法自習或社團空檔協調場地讓該組完成討論。",
+          "tradeoff": "得自己另外盯著這組在學校空檔收尾，還要小心別組抗議不公平。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2788402519
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "b3ec7fafad648615317a6617f61043c6df5ca56edefc1e72a86ada62312731b7"
+      },
+      "consequenceDirections": {
+        "A": "可發展先去核實該組原本有沒有打算外出後，發現其實能校內解決或真已約外出的分岔。",
+        "B": "可發展建議家長私下與順路組員家長協調共乘後，不熟的家庭開口借搭便車的壓力。",
+        "C": "可發展不拆組但借週五社團自習空檔給他們討論後，別組會不會跟著抗議偏心。",
+        "D": "可發展核准校內討論加夜間線上語音對接後，各組員家裡上線時間能不能配合。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "791cc7c71204b497fd4bd1655e28fece508a5e3b935f7a4d169bc32a7ed7f2c9",
+    "draftSha256": "b572b813208340bf3223ca918f2a974d0d8e2fed9c90cee1ac8a346bceaeddbc",
     "seedAssignmentVersion": 1
   }
 }

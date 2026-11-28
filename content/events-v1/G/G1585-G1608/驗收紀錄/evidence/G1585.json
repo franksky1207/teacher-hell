@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "962a67ffcc39db85aa251ccbe195192682b18109d722ab8f950d027be258e825",
+      "checkedAt": "2026-11-28T03:20:24.872Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我同意全班成績與回饋先一起暫緩，等系統承辦回信確認兩案後再共同公布。",
+            "action": "已請承辦核對紀錄並收集學生證據，在查明前暫緩公布全班跨科回饋與期限認定。",
+            "tradeoff": "沒遲交的同學也得跟著多等一兩天才能拿到評語。"
+          },
+          {
+            "id": 2,
+            "text": "我先發還全班含這兩人的內容評語，期限認定分開保留，並請承辦一併查同一時段有無其他卡件。",
+            "action": "先發放學習內容回饋並單獨保留兩案期限認定，同時請承辦清查該時段系統異常紀錄。",
+            "tradeoff": "承辦回覆後還得再對照一次並個別通知受影響學生。"
+          },
+          {
+            "id": 3,
+            "text": "我請這兩名學生先補齊當時上傳畫面或轉檔時間截圖交給承辦，其餘同學今天照常先領回饋。",
+            "action": "收集兩生當時佐證送請承辦核對並暫留兩案認定，其餘全班今日先行領取回饋。",
+            "tradeoff": "這兩名學生發現只有自己沒拿到最終認定，心理壓力較大。"
+          },
+          {
+            "id": 4,
+            "text": "我約teacher_a明天同一節空堂再一起對承辦回信，今天先不對班上釋出任何風聲。",
+            "action": "已完成送查與留證，與同事約定明日空堂共同複核承辦回覆後再對班說明。",
+            "tradeoff": "今天課堂上學生追問報告進度時，兩位老師得口徑一致地先擋著。"
+          },
+          {
+            "id": 5,
+            "text": "我提議先把這兩案的內容優缺點口頭跟學生講，書面評分條等承辦查完再一起發。",
+            "action": "暫緩書面分數與期限認定，於查證期間先給予口頭教學回饋。",
+            "tradeoff": "口頭講一遍、過兩天書面又發一遍，雙邊都多花時間。"
+          },
+          {
+            "id": 6,
+            "text": "我問teacher_a願不願意把兩案送交既定評量程序前先各自標註「待查證」，其餘進度照跑。",
+            "action": "於送查期間依程序標註兩案為待查證保留，其餘班級進度照常推進。",
+            "tradeoff": "萬一系統沒留下清楚紀錄，後續仍得走正式評量程序會更耗時。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱著規章這麼緊繃也有點好笑，嘆口氣說「放心啦，我比你還怕被說放水，評語今天先給學生看，期限那格我空著等你一起畫押」。",
+          "action": "先行發放內容回饋並保留期限認定空白，承諾待承辦查證完成後與同事共同定案。",
+          "tradeoff": "話講得像在安撫他的疑心，teacher_a嘴上沒說什麼卻還是盯著那兩格空白。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2699391225
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "93e53cf857b7ec8221d241b001214478ae42793c0a92ccbd914ad5c9285be4db"
+      },
+      "consequenceDirections": {
+        "A": "可發展先發內容評語並清查同時段系統紀錄後，兩生與同事對期限認定的反應。",
+        "B": "可發展口頭承諾共同畫押後，等待承辦回信期間兩人對公平與進度的拉鋸。",
+        "C": "可發展全班回饋一起壓著等承辦回覆時，無辜同學的催問與同事的堅持。",
+        "D": "可發展先給口頭回饋卻延後書面分數後，學生對評語與結果落差的焦慮。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2bf995da23c7414635348ac0f7e317d93323b5d7d20c303f40d80c169eaa712e",
+    "draftSha256": "962a67ffcc39db85aa251ccbe195192682b18109d722ab8f950d027be258e825",
     "seedAssignmentVersion": 1
   }
 }

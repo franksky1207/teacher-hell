@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "05e9dc47fee7a6b232371faa76331f4c4745c09c239c09c42542677cc2af8d55",
+      "checkedAt": "2026-11-28T03:20:24.922Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我停下手邊工作專心追問他「是不是看到有同學在互相灌水？直接告訴老師沒關係」，一次挖出真實狀況。",
+            "action": "主動關門或壓低音量追問具體互評漏洞實情，取得真實狀況後再行修正制度。",
+            "tradeoff": "極度怕衝突的student_a被這樣直球追問，整個人緊張到握緊紙邊。"
+          },
+          {
+            "id": 2,
+            "text": "我先感謝他敢來講、不逼他當場指認誰灌水，回教室後自己用不記名檢視各組給分分布。",
+            "action": "不強迫學生具名檢舉，由導師自行透過抽檢各組評分分布查核漏洞。",
+            "tradeoff": "保護了student_a不被當抓耙子，但導師得花更多時間自己核對數據。"
+          },
+          {
+            "id": 3,
+            "text": "我先把互評加分的權重暫時凍住不納入成績，只告訴他「老師聽懂了，這週我會自己重檢一次」。",
+            "action": "暫緩採計互評加分，由導師重新檢視該制度公平性設計。",
+            "tradeoff": "其他認真互評的組別突然發現加分被暫停，心裡一頭霧水。"
+          },
+          {
+            "id": 4,
+            "text": "我遞給他一張空白便利貼，說不想用講的沒關係，只寫「是哪一種現象」就好、不用寫名字。",
+            "action": "提供不具名書寫現象的替代回饋方式，降低學生當面揭發衝突的心理壓力。",
+            "tradeoff": "就算寫下來，他還是擔心字跡或來過辦公室被同學發現。"
+          },
+          {
+            "id": 5,
+            "text": "我當場跟他把這張互評表攤開，直接示範如果我把自評互評改為「必須附一句具體事證才算分」行不行。",
+            "action": "與student_a就制度修訂方向進行具體協商，預備於全班調整評分要件。",
+            "tradeoff": "要全班每格寫具體事證，大家以後填表肯定抱怨連連。"
+          },
+          {
+            "id": 6,
+            "text": "我先安撫他說不怪任何同學，問他願不願意這週小組分組討論時幫我多留意一下邊緣組員有沒有被孤立。",
+            "action": "暫不追問名單，邀請student_a於日後協助留意班級分組互動狀況，並由導師檢視評分。",
+            "tradeoff": "把觀察壓力部分留在這個怕衝突的孩子身上，他反而更焦慮。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他繞圈子繞到快把自己繞暈了也有點好笑又心急，乾脆把筆放下來雙手一攤說「好啦不要再客氣了！你都站十分鐘了，直接講哪裡有漏洞，老師保證不把你名字講出去」。",
+          "action": "以直爽態度打破客套並口頭保證保密，促請student_a直接說明制度漏洞。",
+          "tradeoff": "直球逼問讓他嚇一跳，雖然終於開口卻還是講得結結巴巴。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2678577837
+        },
+        "selectedIds": [
+          2,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "5417c428385e2c49687aec597b6838aad5e923daf27ee24f00f5a2d6773c67fe"
+      },
+      "consequenceDirections": {
+        "A": "可發展放下筆保證保密逼他直說後，結結巴巴終於吐出實情的怕衝突學生。",
+        "B": "可發展感謝提醒並自行不記名抽檢各組分數分布後，導師從數據揪出漏洞的過程。",
+        "C": "可發展請他幫忙多留意邊緣組員後，把觀察壓力留在怕衝突學生身上的後續反應。",
+        "D": "可發展關門低音量直球追問灌水實情後，student_a緊張講完最怕被發現來過辦公室。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75695f4e03fe51f3c101ad4cba95011e9ff5c296ff65a202a25ec683a175abf6",
+    "draftSha256": "05e9dc47fee7a6b232371faa76331f4c4745c09c239c09c42542677cc2af8d55",
     "seedAssignmentVersion": 1
   }
 }

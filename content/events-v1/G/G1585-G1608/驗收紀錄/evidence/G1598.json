@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eaaeb8a8b6643274782da7999ee99945af2661aa0ad6e6138ff4846e23f8008c",
+      "checkedAt": "2026-11-28T03:20:24.910Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我坦然接受提醒，決定明早起改由老師或小老師抽查、或是交錯排數交換批改補漏洞。",
+            "action": "採納同事觀察意見，調整早自習批改方式為交錯排數交換與抽查核對。",
+            "tradeoff": "導師自己早自習收發和核對的工作量立刻變重。"
+          },
+          {
+            "id": 2,
+            "text": "我感謝他提醒，但先不全面取消互改，改為每天隨機抽檢後兩排十份考卷讓學生知道老師在看。",
+            "action": "維持互改主架構，新增導師每日隨機抽檢後排考卷機制。",
+            "tradeoff": "觀察入微的同事覺得這只是治標，換個方式照樣能放水。"
+          },
+          {
+            "id": 3,
+            "text": "我請teacher_a這週有空經過時幫我留意一下他們通常怎麼對答案，我再決定要不要整個停掉互改。",
+            "action": "先收集更多具體現象觀察，暫維持現行早自習互改機制。",
+            "tradeoff": "等於把空堂同事也拉進班級督導，他未必想管這麼細。"
+          },
+          {
+            "id": 4,
+            "text": "我決定明早進教室直接跟全班攤開講「老師知道有人在放水」，先給最後一次自省機會不改制。",
+            "action": "維持互改制度，於早自習公開警告並給予全班一次誠實調整機會。",
+            "tradeoff": "光靠口頭警告，過三天後排可能又恢復原樣。"
+          },
+          {
+            "id": 5,
+            "text": "我乾脆把早自習小考改成「考完直接自己對詳解訂正、不打分數」，徹底拿掉放水的誘因。",
+            "action": "取消早自習互改計分，改採學生自主對照詳解訂正機制。",
+            "tradeoff": "少了分數壓力，部分怠惰學生可能連寫都懶得認真寫。"
+          },
+          {
+            "id": 6,
+            "text": "我問teacher_a願不願意偶爾空堂順手幫我收那幾排他的本科小考去改，看看是不是真的落差很大。",
+            "action": "邀請同事於其本科範圍抽批一次，交叉比對真實學習落差。",
+            "tradeoff": "原本只是好意提醒的同事反而自己多了一疊要改。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽完苦笑著拍了一下額頭說「被你看穿了……我就是圖早自習省一點改卷時間才放手給他們互改的，結果後面給我來這招，明天起我親自抽改」。",
+          "action": "坦承省時考量並決定隔日起由導師親自執行部分抽改檢核。",
+          "tradeoff": "在同事面前承認自己圖省事有點丟臉，早自習喘息時間也確定沒了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1806933325
+        },
+        "selectedIds": [
+          4,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "58a2c1942e522b263e76bfcc2520bab7f3d22e8eb70a6086f9d30ce78cabe921"
+      },
+      "consequenceDirections": {
+        "A": "可發展苦笑承認圖省事並改為親自抽改後，同事被這份坦白打動與早自習變忙的代價。",
+        "B": "可發展維持互改但每天抽檢後兩排十份後，觀察入微的同事評估這招究竟有沒有效。",
+        "C": "可發展進班攤開講並給最後一次自省機會後，後兩排收斂幾天或照舊的觀察。",
+        "D": "可發展改成對詳解不打分數拿掉放水誘因後，部分懶散學生會不會連寫都不認真。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba370278905507225c87847f9c89bc6cce59aaaa81c598b226b5d3e6734d80db",
+    "draftSha256": "eaaeb8a8b6643274782da7999ee99945af2661aa0ad6e6138ff4846e23f8008c",
     "seedAssignmentVersion": 1
   }
 }

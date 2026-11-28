@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "52f1fd275262663a301066475095be6d08932d60abdf83348c66a5b4dedf4db5",
+      "checkedAt": "2026-11-28T03:20:24.899Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著感謝他的好意，但攔下強膠貼條說明會傷地磚，約他一起向總務處申請公發可拆式止滑墊。",
+            "action": "婉拒私貼工業防滑條，邀teacher_a共同向總務處申請合規可拆式止滑設備。",
+            "tradeoff": "興沖沖抱著材料來的同事有點失落，三大捲不知放哪裡。"
+          },
+          {
+            "id": 2,
+            "text": "我請他先收好那幾捲工業貼條，我先去借總務處現有的立式防滑警示牌擺在轉角應急。",
+            "action": "拒絕私貼校產地磚，改以總務處既有移動式警示牌處理現場濕滑風險。",
+            "tradeoff": "完全沒用到他花錢買來的心意，同事抱著捲筒有點尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "我趕緊提醒他教師群組裡也要補一句「先問總務處再貼」，免得別班已經有人撕開貼下去了。",
+            "action": "立即攔下本班張貼，並提醒teacher_a於教師群組補充總務處校產規定以免擴散。",
+            "tradeoff": "剛在群組狂推銷完就要自己潑冷水，同事面子有點掛不住。"
+          },
+          {
+            "id": 4,
+            "text": "我帶他先去跟總務處確認這捲工業背膠到底能不能用，總務沒點頭前先不動手。",
+            "action": "暫緩張貼，陪同向總務處核實該材料是否符合校產維護規範。",
+            "tradeoff": "明知多半會被打槍還多跑一趟總務處，只是為了給同事一個台階。"
+          },
+          {
+            "id": 5,
+            "text": "我謝過他後建議他把這捲留著貼在自己家陽台或車庫階梯，學校這邊我來拿拖把先擦乾。",
+            "action": "婉拒於校內使用強膠貼條，導師先以擦乾積水處理現場防滑。",
+            "tradeoff": "他買了三大捲當家用實在太多，聽完苦笑一聲。"
+          },
+          {
+            "id": 6,
+            "text": "我先請風紀或衛生股長這兩節雨天固定去擦轉角水漬並提醒慢走，同事的貼條確定不貼。",
+            "action": "婉拒強膠貼條，安排雨天轉角擦乾與安全通行提醒。",
+            "tradeoff": "學生每節要去擦水比較費工，同事也覺得老師太謹慎。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱著那一大捲像在推銷神器的樣子笑到不行，連忙按住他的手說「大哥先別撕背膠！這黏下去總務處會叫我們兩個拿鏟子刮地磚刮到畢業」。",
+          "action": "以幽默警告及時制止撕開強膠貼條，保住走廊磨石子地磚並另行處理防滑。",
+          "tradeoff": "雖然笑場化解了尷尬，他在群組推銷完卻抱著三大捲回辦公室還是很糗。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1299557404
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "a58cfc9d96da51c0e50a12369d579cd7784fb0accee2a323d133eaf7f9895dad"
+      },
+      "consequenceDirections": {
+        "A": "可發展先帶他去總務處問背膠規定後，總務一句打槍讓同事抱回三捲的台階。",
+        "B": "可發展攔下強膠貼條並約他申請公發止滑墊後，熱心同事把三大捲另作他用的去處。",
+        "C": "可發展拒絕私貼並先借立式警示牌後，同事覺得心意被擱置卻也守住地磚。",
+        "D": "可發展按住他手開玩笑說刮地磚刮到畢業後，同事在群組推銷完卻收手的糗樣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5c815f867dabf4ab5ed770d8b6da5cfa8cff568e850ec6f26087265d44b3296d",
+    "draftSha256": "52f1fd275262663a301066475095be6d08932d60abdf83348c66a5b4dedf4db5",
     "seedAssignmentVersion": 1
   }
 }

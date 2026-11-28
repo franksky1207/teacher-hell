@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f60bfebcbfc441702218c28380ba9de197e478b6e7fb95d45eb44619fa8954a4",
+      "checkedAt": "2026-11-28T03:20:24.897Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先穩住雙方，請student_a認真道歉並負責在放學前買齊材料、聽從學藝股長指揮一起復原。",
+            "action": "要求student_a正式致歉並承擔材料與協作復原立體機關之勞務責任。",
+            "tradeoff": "本來難得有空想幫忙卻闖大禍的他懊惱到不行。"
+          },
+          {
+            "id": 2,
+            "text": "我肯定他想幫忙的出發點，再一起評估被壓扁處能不能改貼立體泡棉邊框收尾，免得重做太累。",
+            "action": "協調雙方採行折衷局部修補方案，由student_a協助完成簡化修復。",
+            "tradeoff": "兩個人今天能準時回家，但學藝股長心裡對立體作品被毀還是超心疼。"
+          },
+          {
+            "id": 3,
+            "text": "我先請學藝股長自己評估這幾頁還救不救得回來，再決定是要今天重折還是直接換成平面海報。",
+            "action": "將修復方式選擇權交給原創作者學藝股長，由student_a負擔相應協助。",
+            "tradeoff": "學藝股長在氣頭與委屈上，當下其實很難馬上判斷。"
+          },
+          {
+            "id": 4,
+            "text": "我當場提醒全班「想幫忙前一定要先問過原本負責的人」，今天先讓兩人分開冷靜，下午再對接修復。",
+            "action": "現場重申未經同意勿動他人成果的原則，暫緩修復至下午課間再行處理。",
+            "tradeoff": "公佈欄半毀狀態先掛在後面一整個下午，學藝股長看了就難過。"
+          },
+          {
+            "id": 5,
+            "text": "我直接陪著student_a先用美工刀小心把壓死的膠帶挑開，看看裡面的折線還能救多少。",
+            "action": "導師現場協助拆膠檢視受損程度，視實際狀況再安排student_a後續補救。",
+            "tradeoff": "導師自己午休前這段休息時間全耗在牆報前面。"
+          },
+          {
+            "id": 6,
+            "text": "我請student_a先去外面洗把臉、別急著辯解，把現場先交給原本有參與製作的同學救場。",
+            "action": "先支開衝動闖禍者冷靜，另請原協助同學評估修復，事後再要求student_a致歉補工。",
+            "tradeoff": "student_a覺得自己好心想幫忙還被趕出去，心裡又愧又悶。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看學藝股長快哭出來、這小子也急得快抓狂，乾脆先拍拍兩人說「一個熬夜折的、一個好心幫倒忙，現在都別哭，放學我留二十分鐘跟你們一起把機關救回來」。",
+          "action": "安撫雙方情緒並承諾放學後陪同兩人共同修復立體牆報。",
+          "tradeoff": "自己放學又多留二十分鐘當美勞救援隊，還得看著兩人邊折邊生悶氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3391685248
+        },
+        "selectedIds": [
+          4,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 1,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "493b87974d39d68d44706f856f0bec01f762461e7956fb6c3f30460e74f17788"
+      },
+      "consequenceDirections": {
+        "A": "可發展先支開他洗臉並請原製作同學救場後，闖禍者覺得委屈與補工的後續。",
+        "B": "可發展要求他道歉買材料聽學藝指揮復原後，兩人從僵持到一起修好機關的過程。",
+        "C": "可發展導師承諾放學留二十分鐘一起搶救後，師生三人邊折邊消氣的教室畫面。",
+        "D": "可發展當場重申原則並延至下午修復時，學藝股長看著半毀牆報撐過下午的心情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a7b1300100f7b2a4d6a33a64a8f7622316fd83855cb48412ec8045777d521a96",
+    "draftSha256": "f60bfebcbfc441702218c28380ba9de197e478b6e7fb95d45eb44619fa8954a4",
     "seedAssignmentVersion": 1
   }
 }

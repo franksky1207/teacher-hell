@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bf8e08c9e4a81e80fa18e498cfbf1cd96c79de109b924671f21e5b1909c7a01c",
+      "checkedAt": "2026-11-28T03:20:24.912Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我冷靜說明班費由學生總務依校規保管並固定期末公開，婉拒今天下班前單獨拍照，但歡迎他依程序到校查閱。",
+            "action": "拒絕當日單獨私傳發票照片，重申正規結算時程並開放依校內程序預約查閱。",
+            "tradeoff": "衝動又想表現的家長在電話裡越講越激動，覺得老師心虛。"
+          },
+          {
+            "id": 2,
+            "text": "我下課先請學生總務把目前帳本收據整理好，由我親自在班群提前公布本階段收支簡表止謠。",
+            "action": "與學生總務核對現有帳目後，於班群統一公開本階段班費收支簡表。",
+            "tradeoff": "徹底展現透明，但等於被一則匿名謠言牽著鼻子加班整理帳目。"
+          },
+          {
+            "id": 3,
+            "text": "我請總務處或學務處窗口直接向他說明本校班費保管與稽核辦法，不私下對單一家長交出原件照片。",
+            "action": "婉拒私傳發票照片，轉由校內權責處室說明班費管理與公開稽核制度。",
+            "tradeoff": "家長覺得導師把事情往上推給行政，口氣更差。"
+          },
+          {
+            "id": 4,
+            "text": "我明確告訴他發票單據涉及學生總務的班級帳務紀錄，若要查帳請正式約時間到校當面看帳本。",
+            "action": "拒絕手機傳照，邀請家長依預約時間到校在場查閱實體帳冊與收據。",
+            "tradeoff": "要特地約一個他能請假到校的時段，還得陪著一起翻帳本。"
+          },
+          {
+            "id": 5,
+            "text": "我先聽完他在匿名社團看到了什麼，提醒他網路貼文沒查證前別直接套在導師和學生總務身上。",
+            "action": "先澄清匿名網文與本班實際保管情形之差異，維持原定期結算公開時程。",
+            "tradeoff": "沒給他看到實質單據前，他心裡的懷疑根本消不掉。"
+          },
+          {
+            "id": 6,
+            "text": "我問他願不願意等這週五學生總務正常週結算出來，我請總務拍一張「結算總表」貼班群。",
+            "action": "婉拒今日逐張拍發票，承諾依既定週五結算節點公開階段總表。",
+            "tradeoff": "離週五還有幾天，這段空窗他可能先在私人小群組亂猜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到那句匿名八卦說老師偷用班費買咖啡差點氣笑，直接回他「爸爸，我連買一包衛生紙都自己掏錢！發票都在學生總務那裡，要查帳歡迎約時間來學校一本一本翻，我不傳私照」。",
+          "action": "嚴正澄清清白並拒絕下班前單獨傳照，開放預約到校現場查閱帳冊。",
+          "tradeoff": "語氣帶刺把話講死，急著當家長英雄的parent_a掛電話前超不服氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 357119849
+        },
+        "selectedIds": [
+          2,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "61d22445435c831880c3534d8ebebfd759d2f8ae9658c586a93c6c5c7f95081a"
+      },
+      "consequenceDirections": {
+        "A": "可發展轉由行政處室說明班費稽核辦法後，想當家長代表的對方口氣更硬或收斂。",
+        "B": "可發展硬氣回嗆歡迎來學校一本一本翻後，急著查帳的家長會不會真的預約到校。",
+        "C": "可發展請學生總務整理並提前在班群貼收支簡表後，成功止謠卻被謠言牽著加班。",
+        "D": "可發展拒絕傳照但開放預約到校看實體帳本後，雙方喬時間與學生總務的緊張感。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16c894f3a7dffaf654cbefbc86c37cb880d223e50aa9bca53900c61e8d9560b0",
+    "draftSha256": "bf8e08c9e4a81e80fa18e498cfbf1cd96c79de109b924671f21e5b1909c7a01c",
     "seedAssignmentVersion": 1
   }
 }

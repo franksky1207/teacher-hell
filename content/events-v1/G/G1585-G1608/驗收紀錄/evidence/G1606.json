@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7e3368e7aa6a0df620d4af0599ba31959ca7126f354bb6c6902846bcc025af35",
+      "checkedAt": "2026-11-28T03:20:24.926Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我當場微笑接住「謝謝提醒，後半段我們照老師說的按學號走」，下課再私下找他談別在學生面前僵掉。",
+            "action": "當場順勢採納同事動線建議完成後半段，課後私下溝通公開拆台界線。",
+            "tradeoff": "顧全了大局與活動流暢，但當下在學生面前導師威信受損。"
+          },
+          {
+            "id": 2,
+            "text": "我當場冷靜明確回「這部分先照原定分組走完這十分鐘，下課我們再一起微調」。",
+            "action": "當場穩住原定分組流程完成該段活動，將調整延至課後與同事協調。",
+            "tradeoff": "穩住了主導權，但本就不滿的同事臉色當場更鐵青。"
+          },
+          {
+            "id": 3,
+            "text": "我當場只點頭說「我先看第一組跑看看會不會卡，老師你幫我顧後門那側動線好嗎」，先把流程轉起來。",
+            "action": "不當場爭辯動線對錯，立即將同事引導至實際動線協助位置以化解僵局。",
+            "tradeoff": "同事覺得導師沒聽進去他的話，一臉不情願走到後門站著。"
+          },
+          {
+            "id": 4,
+            "text": "我直接走過去低聲對他說「器材辛苦你了，這個先照原本跑，有卡我馬上改你的版本」，不讓學生聽見細節。",
+            "action": "壓低音量致謝與安撫同事後先按原案啟動，保留現場隨機調整空間。",
+            "tradeoff": "學生雖然沒聽清對話，但還是看得出來兩位老師氣氛超僵。"
+          },
+          {
+            "id": 5,
+            "text": "我乾脆當場宣布第一輪用原組、第二輪直接換成teacher_a說的學號排法，讓學生兩邊都配合。",
+            "action": "採兩輪並行方式兼顧原案與同事意見，避免現場停擺或爭執。",
+            "tradeoff": "學生換兩套動線有點混亂，且沒處理他上次跨科累積的不滿。"
+          },
+          {
+            "id": 6,
+            "text": "活動一結束我就立刻在教室門口先跟他道謝今天搬器材，再直問上次跨科作業是不是還沒講開。",
+            "action": "現場簡短穩住活動進行後，課後立即向同事致謝並主動釐清先前跨科心結。",
+            "tradeoff": "把舊怨直接當場掀開，下節課前未必有足夠時間談完。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他當著全班面這麼一頂也有點掛不住臉，深吸一口氣笑著對學生說「好喔，我們先看這組會不會卡，卡了我現場請teacher_a示範學號版給大家看」。",
+          "action": "以帶點硬氣的微笑維持原組先行測試，把同事置於現場驗證位置。",
+          "tradeoff": "話裡帶刺像在賭會不會卡死，teacher_a站在旁邊冷冷等著看笑話。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1696561471
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "26bacc783902a74cc8d87e94db8a19434c77d7b2a45099f49230c46cf04f09f4"
+      },
+      "consequenceDirections": {
+        "A": "可發展兩輪並行各跑一次後，學生換動線的混亂與上次跨科心結仍待課後解開。",
+        "B": "可發展硬氣笑說卡死就請他現場示範學號版後，teacher_a站在旁邊冷眼看的火藥味。",
+        "C": "可發展請他去顧後門動線把流程轉起來後，同事覺得沒被聽進去的一臉不情願。",
+        "D": "可發展當場微笑接下按學號走並課後私談後，如何在威信受損與同事舊怨間修補。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5e2760a266cceb7a711014acdee3bfc855c005a70313b5f473ae58f1907bc237",
+    "draftSha256": "7e3368e7aa6a0df620d4af0599ba31959ca7126f354bb6c6902846bcc025af35",
     "seedAssignmentVersion": 1
   }
 }

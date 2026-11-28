@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "76e39b09d0e6d484975c38cf9fe79367fe5024edb1c786a4e184da786aefd0c4",
+      "checkedAt": "2026-11-28T03:20:24.883Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著誇他很有行政創意，但明確說導師無權自訂切結書，還是得照規定提前送件或由家長當天急事致電補假。",
+            "action": "婉拒自擬切結書，重申須依學務處既有提前紙本或家長當日急事補假程序辦理。",
+            "tradeoff": "原本以為條理分明就能搞定一切的他當場有點洩氣。"
+          },
+          {
+            "id": 2,
+            "text": "我帶他拿著這份想法去問學務處生輔組，能不能針對長期校外培訓生申請專案學期公假表。",
+            "action": "拒絕私下破例，陪同或協助向學務處詢問既有長期培訓專案請假管道；未核准前仍依舊制。",
+            "tradeoff": "多跑一道跨處室申請手續，且培訓單位也未必拿得出正式公文。"
+          },
+          {
+            "id": 3,
+            "text": "我先請他跟培訓單位溝通能不能每月初就給一個月課表，這樣就能一次提前三天交完假單。",
+            "action": "拒絕口頭先放行，指導學生回頭向培訓單位爭取固定排程以符合校規。",
+            "tradeoff": "培訓單位若本來就常臨時調課，這招還是卡住。"
+          },
+          {
+            "id": 4,
+            "text": "我先把這張A4紙退還給他，提醒他警衛室也不能代收預簽空白條子，安全點名必須以家長當日確認為準。",
+            "action": "明確退回自製承諾書與警衛室留條構想，堅持校內離校安全核對程序。",
+            "tradeoff": "他聽完覺得學校連這麼有彈性的折衷都不收，嘴角往下垂。"
+          },
+          {
+            "id": 5,
+            "text": "我請他明天先讓家長在聯絡簿或正式管道把這學期固定培訓時段寫清楚，我再幫他轉問學務處怎麼接。",
+            "action": "要求家長正式提供已知固定時程，再協助向學務處諮詢合規請假銜接。",
+            "tradeoff": "得等家長寫來且學務處未必肯開特例。"
+          },
+          {
+            "id": 6,
+            "text": "我跟他說只有固定那一天下午能提前送件，臨時加練如果沒來得及跑完程序就得留在學校不能放行。",
+            "action": "明確劃定「已核准固定日可放行、臨時未核准不得離校」的門禁底線。",
+            "tradeoff": "等於提醒他臨時改期可能被迫缺席培訓，壓力回到他身上。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他連甲乙雙方簽名欄都排出來實在忍不住笑出聲，彈了一下紙角說「你這格式寫得比我還專業，可惜學務處不認導師私章，走，我先教你哪幾格不用重寫」。",
+          "action": "幽默退回無效自擬切結書，現場指點正確校內請假或專案公假申請要件。",
+          "tradeoff": "雖然氣氛沒僵，但該跑的正式紙本程序一點也沒少。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 763065886
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "8d6fe67e3a3fd679c4813e28ab1224ff4805eaaf8a4a0b0fb1abad18a3f2ec30"
+      },
+      "consequenceDirections": {
+        "A": "可發展帶學生去學務處問專案公假表後，培訓單位能否配合開立正式證明的現實。",
+        "B": "可發展婉拒自製切結書並重申急事補假程序後，能言善道的學生如何向家長交代。",
+        "C": "可發展幽默點出格式專業但導師印章沒效後，學生邊笑邊學著走正規表單。",
+        "D": "可發展要求他先向培訓單位爭取月課表後，校外單位臨時調課時他仍須取捨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4bdf4af82ae16e9dc0aeabab59cfc16263375cceebb3ff4b763e3add7234a298",
+    "draftSha256": "76e39b09d0e6d484975c38cf9fe79367fe5024edb1c786a4e184da786aefd0c4",
     "seedAssignmentVersion": 1
   }
 }

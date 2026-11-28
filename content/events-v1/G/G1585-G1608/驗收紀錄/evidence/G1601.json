@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "39f1e41541bf7a2a1e5f025d518c17480646c18322b9f5b642375dc220dd1990",
+      "checkedAt": "2026-11-28T03:20:24.916Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著感謝他的肯定，但婉轉請他把開場發言時間留給其他家長，「老師更想聽大家真實遇到的困難」。",
+            "action": "婉拒家長於座談會開場進行個人吹捧發言，保留開放溝通時間予全體家長。",
+            "tradeoff": "一片熱情想替老師撐場面的家長有點意外又失落。"
+          },
+          {
+            "id": 2,
+            "text": "我先答應讓他簡單分享自家孩子這學期的適應心得就好，提醒別把焦點全放在稱讚導師身上。",
+            "action": "允許有限度分享學生實際適應觀察，約束發言內容避免流於對導師之吹捧造勢。",
+            "tradeoff": "接住了他的善意，但現場他一講嗨會不會又誇起來很難控制。"
+          },
+          {
+            "id": 3,
+            "text": "我請他把那三點肯定寫成會後回饋單或私訊給我當鼓勵就好，座談會現場直接照既定流程走。",
+            "action": "婉拒現場造勢發言，引導改以書面或私下方式表達對導師的肯定。",
+            "tradeoff": "他本來想當著全班家長面前替老師講公道話，沒機會表現了。"
+          },
+          {
+            "id": 4,
+            "text": "我提議請他改在「家長自由交流」那段帶頭分享一個自己在家看孩子讀書的小困擾，幫大家破冰。",
+            "action": "拒絕開場造勢，邀請改於交流時段以真實家庭經驗拋磚引玉。",
+            "tradeoff": "生活順遂的他得硬擠出一個小困擾來講，可能還是順口誇回老師。"
+          },
+          {
+            "id": 5,
+            "text": "我先向他說明座談會本來就只有四十分鐘，開場我必須把時間全用來報班務和回答疑問。",
+            "action": "以時間有限與議程規範為由婉拒家長額外開場發言。",
+            "tradeoff": "公事公辦擋下來，快樂家長聽完笑聲明顯小了一半。"
+          },
+          {
+            "id": 6,
+            "text": "我請他在會場幫忙招呼剛進門的陌生家長入座拿資料就好，發言環節還是交給大家自由舉手。",
+            "action": "拒絕安排造勢發言，將家長協助引導至現場接待等非干預性分工。",
+            "tradeoff": "他幫忙發資料時還是可能忍不住私下逢人就誇導師。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他說已經想好三點要造勢差點把水噴出來，連忙笑著求饒「大哥千萬別這樣！你開場幫我吹這麼大，等一下別的家長會以為我們套好招，真的會尷尬死」。",
+          "action": "以自嘲求饒語氣直接婉拒開場造勢發言，維持親師座談自然雙向交流。",
+          "tradeoff": "話太直白戳破他的熱情企劃，電話那頭沉默兩秒才哈哈笑著答應。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1489231606
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "023ab7ade51bee60f887a142ebf3e9e62c51dd9f5eabfd3a0e6965581c0d9a5f"
+      },
+      "consequenceDirections": {
+        "A": "可發展婉轉請他把發言留給其他家長後，熱情爸爸從失落到真的安靜旁聽的轉折。",
+        "B": "可發展請他改當會場接待發資料後，他在門口招呼時還是忍不住逢人就誇老師的畫面。",
+        "C": "可發展請他改寫進會後回饋單當鼓勵後，座談會現場順利保住開放提問空間。",
+        "D": "可發展笑著求饒怕被以為套好招後，快樂家長哈哈大笑收起三點造勢講稿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9c649e2946f8317d683c5e763146720627f5a27b67753a1fecde7ef18c78b9b1",
+    "draftSha256": "39f1e41541bf7a2a1e5f025d518c17480646c18322b9f5b642375dc220dd1990",
     "seedAssignmentVersion": 1
   }
 }

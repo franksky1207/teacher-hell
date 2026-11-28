@@ -16,14 +16,82 @@
     "G09",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d0920aac3ed39b5ab0900f955651bf9b619f44780aad6b348e39c48389a92b9f",
+      "checkedAt": "2026-11-28T03:20:24.878Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先謝謝他的安全提醒，再客觀解釋幾十顆鋰電池塞進密閉木櫃更危險，改在班上宣導勿在教室充電與檢查膨脹。",
+            "action": "婉拒將行動電源集中鎖入密閉木櫃，改於班級宣導正確鋰電池使用與檢查安全。",
+            "tradeoff": "一片好心的職員聽完覺得自己像被上了一堂物理課，有點尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我先婉拒塞進木櫃，改主動約staff_a一起去問總務處或設備組，確認校內正確的鋰電池保管指引。",
+            "action": "暫不更動現行手機櫃用途，邀staff_a共同向總務專業窗口確認合規鋰電池安全規範。",
+            "tradeoff": "多跑一趟行政確認，職員也得跟著去問。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先拿那支網傳影片給我看，當場跟他核對影片裡真正起火的原因再決定班上怎麼提醒。",
+            "action": "拒絕立即把行動電源鎖入木櫃，先就網傳影片來源與防災要點與staff_a討論。",
+            "tradeoff": "在走廊上對著手機看影片講道理，耽誤早自習收心。"
+          },
+          {
+            "id": 4,
+            "text": "我直接說學校木櫃原本就只核可收手機、不能放電池類，請他若有全校安全考量先向總務處提案。",
+            "action": "依既有設備用途規範婉拒變更手機櫃存放物，建議循總務正式管道研議。",
+            "tradeoff": "講得比較公事公辦，原本覺得在挺導師的職員有點冷掉。"
+          },
+          {
+            "id": 5,
+            "text": "我先在班上口頭提醒大家行動電源放書包別壓到或悶著，木頭手機櫃維持只放手機。",
+            "action": "維持手機櫃原用途，立即於班上進行簡易書包放置與防壓提醒。",
+            "tradeoff": "沒正面點破木櫃更危險的原因，職員明天可能還會再提。"
+          },
+          {
+            "id": 6,
+            "text": "我問他能不能幫我向總務處借一份正式的鋰電池安全海報貼在教室，取代把電池鎖進木櫃。",
+            "action": "婉拒木櫃集中存放，請staff_a協助取得校方正式安全宣導海報。",
+            "tradeoff": "既保留他的參與感又守住安全，但得看總務處有沒有現成海報。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我嚇得立刻把櫃門關上說「母湯喔！幾十顆鋰電池擠在這個沒散熱的木櫃裡，萬一燒起來我整間教室都沒了，這個真的萬萬不可」。",
+          "action": "以直白驚呼當場否定密閉木櫃集中存放鋰電池的構想，維持原手機保管方式。",
+          "tradeoff": "反應太大讓staff_a站在原地有點下不了台，連忙說我只是好意提醒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2171104936
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "fbe2482c69c5f8bf6f67ab514947b05dda948c448c97c381437d46b31fd555b5"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師驚呼喊停密閉木櫃後，職員從下不了台到理解鋰電池風險的轉折。",
+        "B": "可發展說明物理散熱風險並改做班級宣導後，好心職員被上了一課的反應。",
+        "C": "可發展約職員一起去總務處問正確指引後，兩人共同確認規範的職場互動。",
+        "D": "可發展只先口頭提醒學生書包防壓後，職員會不會隔天又想出別的鎖櫃點子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f13a521b25fd6704279d1d1c2726a076e965bfb0955f9326b9619a994e93caa3",
+    "draftSha256": "d0920aac3ed39b5ab0900f955651bf9b619f44780aad6b348e39c48389a92b9f",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bc4c895a5a872b82903bbbc6681567cb07a231a870e31ddf44cea230bb9cba07",
+      "checkedAt": "2026-11-28T03:20:24.881Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先誠懇道歉沒在今早再確認一次，立刻捲起袖子自己先頂上陪他整理開頭。",
+            "action": "致歉並親自暫代缺席人力協助parent_a啟動二手書整理工作，同時聯繫遲到家長。",
+            "tradeoff": "導師自己的課間與備課時間直接被吃掉，其實也沒做錯什麼卻先扛了鍋。"
+          },
+          {
+            "id": 2,
+            "text": "我先說明昨晚有發通知提醒，現在立刻打給遲到家長確認狀況，並請他決定今天改期或只做一半。",
+            "action": "釐清昨晚已通知的事實並立即聯繫缺席家長，將是否縮減或改期交由在場志工決定。",
+            "tradeoff": "在氣頭上的原則派家長覺得導師第一時間只在撇清責任。"
+          },
+          {
+            "id": 3,
+            "text": "我先請他喝口水坐下消消氣，自己去搬出那箱書放到旁邊，再找空堂同事看誰能支援十分鐘。",
+            "action": "先安撫parent_a情緒，聯繫遲到家長並詢問校內空堂同事能否短暫協助。",
+            "tradeoff": "未必找得到願意幫忙搬書的空堂同事，且耽誤開工時間。"
+          },
+          {
+            "id": 4,
+            "text": "我直白感謝他準時守約，提議今天他先只整理最輕鬆的一半就準時離開，剩下的我放學後自己收。",
+            "action": "肯定parent_a準時付出並縮減其今日工作量至原定一半，剩餘由導師課後自理。",
+            "tradeoff": "導師放學後得自己加班收尾這堆二手書。"
+          },
+          {
+            "id": 5,
+            "text": "我先走出門外撥電話給遲到家長確認對方幾點能到，再回來跟parent_a對後續安排。",
+            "action": "暫時離開桌邊撥打電話查明另名家長狀況後，再與parent_a協調後續分工。",
+            "tradeoff": "電話打不通或對方還在睡，回來更難交代。"
+          },
+          {
+            "id": 6,
+            "text": "我坦承這段時間確實只能一人做，問他願不願意直接取消今天這場、改約下週確定能兩人到齊的日子。",
+            "action": "聯繫遲到家長並提出今日活動改期方案，避免單人白做苦工。",
+            "tradeoff": "都已經推掉事情跑來學校了，改期等於讓他今天這趟完全白跑。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他氣成這樣又想到自己昨晚明明有提醒也有點委屈，乾脆先深呼吸說「對不起讓你白等這麼久，昨晚群組我確實有發但今早漏掉私訊對點，今天這批我陪你一起清完」。",
+          "action": "坦承今早未再逐一私訊確認之疏失並致歉，親自陪同parent_a完成今日主要整理。",
+          "tradeoff": "接下全部情緒和勞務，自己上午剩餘的空檔直接歸零。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3126396614
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "c4ab7ee35c8bc10eaff36be9da5a87c5644aa872dae0ef1652358a69cac40f15"
+      },
+      "consequenceDirections": {
+        "A": "可發展釐清昨晚有通知並聯繫遲到家長後，氣頭上的志工對改期或縮減的決定。",
+        "B": "可發展坦承今早漏私訊並陪他清完書箱後，導師失去空檔卻穩住親師關係。",
+        "C": "可發展讓準時志工只做一半先走、導師放學自收後，他消氣卻仍有疙瘩的收尾。",
+        "D": "可發展安撫後去借空堂同事支援十分鐘時，找不到人或臨時救場的辦公室現實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "983ba298fb1e598d6996c45364541716576c52e6713e9186265921627ce282b0",
+    "draftSha256": "bc4c895a5a872b82903bbbc6681567cb07a231a870e31ddf44cea230bb9cba07",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "31e23549a573bafb589b4ca0a180c4b53abe8d7823639f6fdd857212b3bdd290",
+      "checkedAt": "2026-11-28T03:20:24.929Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我清楚婉拒提前放學與私開後門，說明前門已有義交與導護，今天放學我會多留十分鐘陪學生安全通過該路段。",
+            "action": "拒絕提前下課與私開後門，維持正常放學並由導師親自陪同學生通過前門施工段。",
+            "tradeoff": "導師多耗了放學後的下班時間去當現場陪走。"
+          },
+          {
+            "id": 2,
+            "text": "我先向學務處確認施工期間的官方建議步行路線圖卡，貼進班群澄清現場有義交管制並請接送避開施工側。",
+            "action": "拒絕擅改放學動線與時間，向學務處取得官方安全路線說明並於班群公開降溫。",
+            "tradeoff": "有空又焦慮的家長明天下午可能還是繼續跑去巷口盯梢拍照。"
+          },
+          {
+            "id": 3,
+            "text": "我請學務處生輔組確認現場圍籬與義交配置是否足夠後，由我統一在班群回報學校實地確認結果。",
+            "action": "維持正常課表與前門放學，向學務處核實現場安全管制措施並於班群說明。",
+            "tradeoff": "在學務處回報前，班群裡的緊張氣氛還得掛著一陣子。"
+          },
+          {
+            "id": 4,
+            "text": "我明確告知課表與後門門禁規定不能單班更動，但放學前五分鐘我會在教室再三叮嚀大家走對側人行道。",
+            "action": "拒絕提前放學與開後門，於放學前加強班級步行避開施工側之安全宣導。",
+            "tradeoff": "對照他在群組發的那堆特寫照片，只靠口頭叮嚀他覺得不夠安心。"
+          },
+          {
+            "id": 5,
+            "text": "我問這位剛好有空的家長既然人在附近，放學時要不要直接到校門口原本合法接送區等自家孩子一起走。",
+            "action": "婉拒更動全班放學，建議焦慮家長依正常接送區自行陪同自家孩子返家。",
+            "tradeoff": "他其實想當全班安全的吹哨者，覺得導師只叫他顧自己孩子太敷衍。"
+          },
+          {
+            "id": 6,
+            "text": "我先在班群發一句「現場有義交且後門不開放，大家按正常時間接送」，再約他放學後短談三分鐘講清校規。",
+            "action": "立即於班群穩定秩序並婉拒改動，課後私下向家長說明門禁與課表限制。",
+            "tradeoff": "群組還沒貼出詳細路線圖前，其他家長還是會私訊問東問西。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著班群那排驚嘆號也有點無奈，直白跟他說「爸爸，前門都有義交和導護老師站著啦，你發那些特寫把大家嚇壞了，後門鎖著不能走，等一下我親自帶他們過路口」。",
+          "action": "於通話中直白點出群組照片造成不必要恐慌並拒絕開後門，承諾放學親自陪走前門路口。",
+          "tradeoff": "點破他製造恐慌讓parent_a面子有點掛不住，自己放學也確定得晚走。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 274874516
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "b5886a5d3b68a45a641f2b811b829fae86447dc2e15c5fbcb944f8fe6468dd85"
+      },
+      "consequenceDirections": {
+        "A": "可發展拒絕開後門並親自陪走前門路口十分鐘後，焦慮家長現場盯梢與其他家長反應。",
+        "B": "可發展直白點出特寫照嚇壞大家後，parent_a面子掛不住卻也跟著導師一起看路口。",
+        "C": "可發展貼出學務處官方建議步行路線圖卡降溫後，有空家長明天還會不會再去拍。",
+        "D": "可發展堅守門禁只口頭叮嚀走對側人行道後，parent_a覺得老師不夠重視風險。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "51a7a53f09ba9afaff2749e9559b30ee05958bb6309a5a0aac0dca563ba2c43a",
+    "draftSha256": "31e23549a573bafb589b4ca0a180c4b53abe8d7823639f6fdd857212b3bdd290",
     "seedAssignmentVersion": 1
   }
 }

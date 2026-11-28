@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "029567c679a926b27cc67a26c0ecd9431838a8c17e3d0cc932132b704f995f59",
+      "checkedAt": "2026-11-28T03:20:24.918Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻走過去喊停、誇獎已經很整齊，宣布現在全部人馬上去吃飯，剩下的下午再說。",
+            "action": "立即中止書櫃過度整理，要求包含student_a在內全組立即領餐用餐。",
+            "tradeoff": "焦慮的幹部看著沒排完的一角被晾在那裡，整個午飯吃得心神不寧。"
+          },
+          {
+            "id": 2,
+            "text": "我先讓四名組員去領便當，自己留下陪student_a花兩分鐘收好最後幾本書順便聊聊他最近壓力。",
+            "action": "立即放行其餘組員用餐，導師陪同student_a兩分鐘簡易收尾並關懷近期焦慮，隨即送去吃飯。",
+            "tradeoff": "佔用了導師自己的午餐時間，他自己也晚幾分鐘才吃到飯。"
+          },
+          {
+            "id": 3,
+            "text": "我請全組立刻去吃飯，當場把那幾本沒放回去的書推齊成一疊告訴他「這樣就及格了」。",
+            "action": "立即解除全組扣留令讓全員用餐，由導師示範可接受的五分鐘整理標準。",
+            "tradeoff": "完美主義發作的他看著不對齊的書脊還是很想衝回來重排。"
+          },
+          {
+            "id": 4,
+            "text": "我讓組員先去吃飯，要求student_a也必須先去領便當，等下午掃除時間或班會再來收尾。",
+            "action": "強制全員準時用餐，將書櫃剩餘整理明確延後至日間掃除時段。",
+            "tradeoff": "被當眾撤銷命令讓這名有威信的幹部在組員面前有點沒面子。"
+          },
+          {
+            "id": 5,
+            "text": "我先讓大家全部去吃飯，約好下午下課單獨找他問問最近是不是成績壓力太大。",
+            "action": "立即終止整理並確保全員用餐，課後單獨約談關懷student_a近期焦慮狀態。",
+            "tradeoff": "中午沒當場點出不能因自己焦慮就扣住同學吃飯的權限界線。"
+          },
+          {
+            "id": 6,
+            "text": "我請副班長先幫這組把便當領好放桌上，並當場要求student_a放手讓組員入座開動。",
+            "action": "立即解除扣留並安排領餐入座，結束午餐時段整理任務。",
+            "tradeoff": "那四個餓肚子的組員坐下來後，整頓飯氣氛都有點僵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他蹲在那裡滿頭汗還跟書皮較勁也有點心疼又無奈，直接走過去把那堆書推齊說「老師肚子餓了，這排我說過關了！現在全部去吃飯，誰再搬一本我扣他便當雞腿」。",
+          "action": "以幽默語氣當場喊停並親自簡易推齊書本，強制全組立刻去吃飯。",
+          "tradeoff": "雖然瞬間解除緊張氣氛，student_a卻苦笑著盯著那排沒照顏色排的書。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4077652693
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "8726d14b558d4459dd64d0b9b399ba0e437a6980e17ecb3bd37c60a664bd458f"
+      },
+      "consequenceDirections": {
+        "A": "可發展推齊書本開玩笑威脅扣雞腿後，全組鬆口氣去吃飯與幹部苦笑盯著書櫃。",
+        "B": "可發展當場喊停全體去吃飯後，焦慮幹部看著沒排完的一角整個午飯食不知味。",
+        "C": "可發展讓組員先吃並把收尾延到下午掃除後，幹部在組員面前被撤令的失落。",
+        "D": "可發展親自推齊幾本書示範及格標準後，完美主義的他手癢想重排的克制。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f8be133536590b92ac23564dfef0774d71d10f515d66770cbed3ad5350887f26",
+    "draftSha256": "029567c679a926b27cc67a26c0ecd9431838a8c17e3d0cc932132b704f995f59",
     "seedAssignmentVersion": 1
   }
 }

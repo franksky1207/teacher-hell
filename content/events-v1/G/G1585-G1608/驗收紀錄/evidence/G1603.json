@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5a1d1ed1ab8efbc11723b69cedd8abf46dd1f4b17ca9486f3e50ca4b9fce766c",
+      "checkedAt": "2026-11-28T03:20:24.920Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "健康處置完成後，我陪他訂一個維持正常午休的個人複習計畫，讓他不必向同學交代自己喝了什麼。",
+            "action": "立即停飲並依校護程序處置評估後，為其訂定免靠提神飲之個人作息複習計畫。",
+            "tradeoff": "沒在班上點出跟風喝能量飲的迷思，他那幾個朋友可能繼續灌。"
+          },
+          {
+            "id": 2,
+            "text": "健康處置完成後，我在不揭露當事人的情況下，把班上剩餘複習交流改成互換短題，提供不用硬撐的共同做法。",
+            "action": "立即停飲並完成校護評估程序後，調整班級複習交流方式以降低盲目刷題風氣。",
+            "tradeoff": "全班少了一段安靜自己刷題的時間，好勝同學可能覺得節奏被打亂。"
+          },
+          {
+            "id": 3,
+            "text": "我陪他去健康中心交由校護評估與聯繫家長時，順便讓他先把自己剩餘未喝的提神飲交出來丟掉。",
+            "action": "立即沒收或令其丟棄手邊剩餘提神飲並陪同至健康中心依規評估處置。",
+            "tradeoff": "花錢買來的飲料直接丟掉，好勝的他眼裡還閃過一點不捨與驚慌。"
+          },
+          {
+            "id": 4,
+            "text": "等校護評估與家長程序確定後，我這週趁班會不點名直接請校護或我自己宣導高濃度咖啡因的風險。",
+            "action": "完成即時停飲與健康中心評估處置後，安排全班正確提神與睡眠衛教宣導。",
+            "tradeoff": "那幾個桌上也擺能量飲的好友可能會立刻猜到是誰出事。"
+          },
+          {
+            "id": 5,
+            "text": "我陪同至健康中心處理並依規定通知家長後，私下明確撤回他自己加碼的「午休後硬刷題」要求。",
+            "action": "完成必要停飲、醫療評估與家長聯繫後，調整導師對其個人練習的期望壓力。",
+            "tradeoff": "這名好勝又信任老師的學生怕老師以為他偷懶不唸書。"
+          },
+          {
+            "id": 6,
+            "text": "完成校護評估及校方後續程序後，我先請他這幾天改用溫水與正常午休，暫停所有課外加題競賽。",
+            "action": "完成健康中心評估及必要聯繫後，暫緩其額外加練並要求維持基礎作息。",
+            "tradeoff": "他看著旁邊同學還在狂寫題本，心裡還是焦慮得不得了。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他手抖還問不喝會不會輸給別人，心裡又急又氣地把那半罐抽走說「贏那幾題心臟都要跳出來了是要贏去哪裡！飲料放下，現在馬上跟我去健康中心」。",
+          "action": "立即抽走能量飲以嚴肅口吻制止比較心態，親自陪同前往健康中心由校護評估並依程序聯繫家長。",
+          "tradeoff": "語氣又急又重把本來就心慌的他嚇了一跳，一路低頭不敢講話。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4126483893
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "a57f961d138d336705e0cb1b4dbaf8796181deed43a61f426244888f92865c5e"
+      },
+      "consequenceDirections": {
+        "A": "可發展健康處置後在班會宣導高濃度咖啡因風險，桌上有罐子的好友們各自對號入座。",
+        "B": "可發展醫療與家長聯繫後撤回他自我加碼的午休刷題，讓他怕被當偷懶的焦慮。",
+        "C": "可發展健康處置後訂定免提神飲個人作息計畫，雖保住隱私卻沒打破同儕跟風。",
+        "D": "可發展急著抽走半罐直接押去健康中心後，他嚇到一路低頭的後悔與後續照護。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0fda75df756f180f727b90d894d33eef9aaac4f7bb03fb03bc98ea3d91827068",
+    "draftSha256": "5a1d1ed1ab8efbc11723b69cedd8abf46dd1f4b17ca9486f3e50ca4b9fce766c",
     "seedAssignmentVersion": 1
   }
 }

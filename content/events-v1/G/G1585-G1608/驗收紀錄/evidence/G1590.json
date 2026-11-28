@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5b70e35e5f74716f5623f497a18c8b59fece1ea5ba652e370be6ac76dca96fcc",
+      "checkedAt": "2026-11-28T03:20:24.888Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我於心不忍只認領最單純的兩頁表格幫他分擔，並私下提醒他下次主任亂派要開口說家裡有事。",
+            "action": "自願協助分擔少部分簡單彙整工作，私下提醒同事建立拒絕界線。",
+            "tradeoff": "救了老實同事一把，卻也等於替主管的亂派工買了單。"
+          },
+          {
+            "id": 2,
+            "text": "我溫和但堅定告訴他這不是導師業務、我沒辦法代簽，改陪他一起去向主任說明他的真實負荷。",
+            "action": "婉拒代為分擔非導師業務，提議陪同teacher_a向主管反映過勞並請求重新調度。",
+            "tradeoff": "極怕衝突的同事嚇得連忙擺手，根本不敢一起走進主任室。"
+          },
+          {
+            "id": 3,
+            "text": "我先接過名單幫他一起看這份表到底哪些其實系統裡早就有了，教他怎麼跟主任回報不用重盤。",
+            "action": "不直接代做盤點，協助同事釐清既有資料來源以減輕無效工時並回報主管。",
+            "tradeoff": "他還是得自己鼓起勇氣去跟主任開口說這份表不用重做。"
+          },
+          {
+            "id": 4,
+            "text": "我明確拒絕替主任的跨處室派工背書，請他自己先回絕或只做到正常下班時間為止。",
+            "action": "拒絕承擔非本職行政業務，建議同事依自身法定工時上限處理。",
+            "tradeoff": "老實人最後大概還是自己熬夜吞下去，看著有點於心不忍。"
+          },
+          {
+            "id": 5,
+            "text": "我只答應幫他核對我們自己年級走廊這兩間教室的器材現況，其餘全校樓層請他回報主任另派。",
+            "action": "僅核實本班周邊有限範圍，拒絕承接全校性盤點並要求回報主管重新分配。",
+            "tradeoff": "還是幫了小忙，卻沒辦法解決他手上剩下那大半疊。"
+          },
+          {
+            "id": 6,
+            "text": "我先請他把這疊表放我桌上喝口水喘五分鐘，等他冷靜一點再決定要不要一起去找組長對接。",
+            "action": "先讓過勞同事短暫喘息，將是否向主管或承辦組反映留待其決定。",
+            "tradeoff": "問題還沒解決，課間鈴聲馬上又要響了。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那副想哭又不敢拒絕的樣子也有點氣主管，直接把表格推回去一半說「你不要每次都笑著接啦！這張我幫你劃掉兩頁，剩下你敢不敢跟我去主任那邊說一句做不完？」。",
+          "action": "協助劃除明顯不合理或重複項目，當場半推半拉鼓勵同事向主任反映負荷。",
+          "tradeoff": "怕衝突的他被我一激更緊張，一直小聲說算了算了我自己做就好。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 663867375
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "c4d33d1d59231680454f1e74d82cc807dfd2b9c86b06857342719dae4d2e0dde"
+      },
+      "consequenceDirections": {
+        "A": "可發展先讓他喘五分鐘再決定後，老實同事敢不敢把資料抱去對承辦組。",
+        "B": "可發展拒絕代簽並勸他做到下班為止後，怕衝突的他最後還是硬撐或終於放手。",
+        "C": "可發展幫他劃掉兩頁並拉著他去找主任後，極怕衝突的同事在主任室門口的掙扎。",
+        "D": "可發展分擔兩頁簡單表格並提醒設立界線後，主管下次還會不會繼續轉嫁業務。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "75a45c3ec8164a8a2eb9657703241b614f5cfaf6a90209269adabdc8ed6309d7",
+    "draftSha256": "5b70e35e5f74716f5623f497a18c8b59fece1ea5ba652e370be6ac76dca96fcc",
     "seedAssignmentVersion": 1
   }
 }

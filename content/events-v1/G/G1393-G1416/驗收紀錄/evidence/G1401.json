@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "24e965d43f578ce9c60bd5e14fc63836b291495453169c17254a6fd64136a3d8",
+      "checkedAt": "2026-11-28T01:09:58.115Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請承辦先留步，把原則守住，但換我自己接著說。",
+            "action": "現場接回本人班務說明並邀合法協調，停止借同事火力升級，不撤正當立場。",
+            "tradeoff": "可能讓科任覺得被截話。"
+          },
+          {
+            "id": 2,
+            "text": "我先讓場面停下，另約雙方在主管能在場時談。",
+            "action": "提出合法後續協調時段，不宣稱已約成，不以冷靜期延誤必要事項。",
+            "tradeoff": "多方排程且事情暫未談妥。"
+          },
+          {
+            "id": 3,
+            "text": "我私下具體謝謝他的支持，再問能否下次先讓我回應。",
+            "action": "在必要當下處理後額外談彼此合作界線，不要求他替行政感受負全責。",
+            "tradeoff": "花私人工作餘裕並可能碰到舊怨。"
+          },
+          {
+            "id": 4,
+            "text": "我額外寫一份本人立場交承辦，不讓他的幾句話變成唯一紀錄。",
+            "action": "合法書面說明自身處理依據，不把科任的尖話歸成共同聲明。",
+            "tradeoff": "增加文書與正式往來。"
+          },
+          {
+            "id": 5,
+            "text": "如果他願意，我另外約時間把上次調課的疙瘩談完。",
+            "action": "額外邀同事處理既有未解關係，不用這次支持要求其放棄申訴或翻舊帳相抵。",
+            "tradeoff": "需面對自己先前的處理與不快。"
+          },
+          {
+            "id": 6,
+            "text": "這次按必要程序往下辦，我不再額外替兩邊互傳好話。",
+            "action": "拒絕承包非必要職場和事工作，不扣留應交資訊或煽動對立。",
+            "tradeoff": "兩邊可能都認為導師不近人情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實有點痛快，但不想躲在他後面；我主動申請由自己出席後續額外說明，讓他回去做自己的事。",
+          "action": "承認被護航的快感，額外提出本人獨自承擔可由自己合法說明的協調出席，不強阻必要關係人參與、不保證主管接受。",
+          "tradeoff": "教師增加正式面對行政的時間與壓力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 258259128
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "ad2fe916188016813f900ba16ce779b3ab7fd75f80926e87abb3e1fa5817bdae"
+      },
+      "consequenceDirections": {
+        "A": "可發展衝動支持與導師想掌握節奏的摩擦。",
+        "B": "可發展科任是否覺得導師終於自己接球，而非把衝動同事當盾。",
+        "C": "可承接口才強者對導師是否願自己扛立場的看法。",
+        "D": "可發展不滿並未消失仍願挺人的矛盾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b2721b7bb19430ac7f5e3827993c4b34e1086e4b744f9a88be1a4d748b70d08d",
+    "draftSha256": "24e965d43f578ce9c60bd5e14fc63836b291495453169c17254a6fd64136a3d8",
     "seedAssignmentVersion": 1
   }
 }

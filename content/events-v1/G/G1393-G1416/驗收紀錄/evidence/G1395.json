@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c01ca914dfb2dce14876e8311e39fbe2ad7efc14ecb647e84255d24dcca33669",
+      "checkedAt": "2026-11-28T01:09:58.102Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不加新活動，正常結伴資訊由大家依法自行選。",
+            "action": "婉拒額外組織與宣傳，不阻擋合法自願結伴或必要支持。",
+            "tradeoff": "學生可能覺得熱心被退。"
+          },
+          {
+            "id": 2,
+            "text": "我陪你向校安說一般需求，不把排班表當批准申請。",
+            "action": "額外帶學生依法向有權者表達通勤感受，資訊最小化。",
+            "tradeoff": "需陪同，可能沒立即解方。"
+          },
+          {
+            "id": 3,
+            "text": "我請全班自願談候車困難，不蒐集誰每天走哪。",
+            "action": "額外徵集一般問題供正式安全規劃，不公開個人位置。",
+            "tradeoff": "花班務整理。"
+          },
+          {
+            "id": 4,
+            "text": "你若想用專長，做一份核准公開安全資訊的圖稿給校方審。",
+            "action": "提出自願公共資訊創作，正式窗口核定才分享，不新增官方護送承諾。",
+            "tradeoff": "花設計與審核時間。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問有沒有合法既有成人交通志工計畫可參考，不替你入隊。",
+            "action": "查詢正式制度及資格，不假定存在或適合學生。",
+            "tradeoff": "增加查詢，可能無可行機會。"
+          },
+          {
+            "id": 6,
+            "text": "若你願意，我和你談為什麼每天等人對你很重要。",
+            "action": "額外邀自願個別談參與期待，不把關心當心理診斷。",
+            "tradeoff": "花課間，可能被說想太多。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也怕黑；我申請自己在合法勤務內多看一次那段環境，不叫你替我顧大家。",
+          "action": "坦承本人也不安心，額外向有權者提出成人合規環境查看需求，導師僅依核可安全範圍同行，不代做專業認證。",
+          "tradeoff": "占教師時間且可能不獲安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 859365397
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "edd4fe6e32e96b60f9b2fac535f58b21f3ef6bc974844b043abf9c2bf20f6135"
+      },
+      "consequenceDirections": {
+        "A": "可發展從當小隊長改成提供資訊的失落或滿足。",
+        "B": "可發展號召者聽見同學不願被編進表的反應。",
+        "C": "可發展學生看見成人也願付出而非只拒絕的感受，仍不保證改善照明。",
+        "D": "可承接有空想出力與法定職務資格不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "50d4c88fce0f6eb10c30745396c2930e9aae1bc3458dc47d9e5157a569eaf171",
+    "draftSha256": "c01ca914dfb2dce14876e8311e39fbe2ad7efc14ecb647e84255d24dcca33669",
     "seedAssignmentVersion": 1
   }
 }

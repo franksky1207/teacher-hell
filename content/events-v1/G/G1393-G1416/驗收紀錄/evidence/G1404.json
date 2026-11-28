@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6631a78dc82b1aa3665b621a496fad57b43f880da31461ceed1c917f4c547fb5",
+      "checkedAt": "2026-11-28T01:09:58.119Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這個單元先不借，我照原進度教，也自己向學生解釋。",
+            "action": "婉拒現階段借用，真實說明尚未安排使用，不貶同事資源。",
+            "tradeoff": "同事可能失落，教師承受學生期待落空。"
+          },
+          {
+            "id": 2,
+            "text": "我請他只借與這次單元相容的一小部分，先確認真的用得上。",
+            "action": "提出有限合法借用與適切性檢核，未相容不硬塞，不假設拆件可借。",
+            "tradeoff": "需挑選與少量改教案。"
+          },
+          {
+            "id": 3,
+            "text": "我先排一段有限備課試用，再決定要不要正式借進課堂。",
+            "action": "徵同事同意於本人可用工作時間試用，不向學生保證下週使用。",
+            "tradeoff": "占備課時間，可能白忙。"
+          },
+          {
+            "id": 4,
+            "text": "我請他一起看現有教案，有適合處再共同改，不整套換掉。",
+            "action": "提出自願有限共同備課，由教師各依專業權責判斷，不保證他能參與本班授課。",
+            "tradeoff": "雙方需排時間且可能理念不合。"
+          },
+          {
+            "id": 5,
+            "text": "先讓他保管，等真正教到相應單元再重新問，不先佔著。",
+            "action": "不形成目前借用或未來保證，將是否借用留待合適教學時點。",
+            "tradeoff": "學生等不到下週的新奇，同事可能以為被敷衍。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我向同科詢問是否有現在真正需要的老師接洽，轉介前先問他。",
+            "action": "經物主同意媒合適配的成人教學需求，不擅轉借或宣布已借出。",
+            "tradeoff": "增加協調且未必媒合成。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想讓學生也覺得我的課好玩；我願額外花自己的備課餘裕，認真改一個適合的活動，再由我承擔試教不順的尷尬。",
+          "action": "承認不服輸，在教學適切與權限確認後自願投入額外備課設計一段活動，不壓縮必要學習、不強迫同事或學生額外留校；未完成不宣稱已可用。",
+          "tradeoff": "教師多備課且可能必須放棄原來喜歡的非必要活動段落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 545717327
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "ebd91f0d348c726ead6554723ab5a72e88994c0d7677b92622d75de0bbde0e47"
+      },
+      "consequenceDirections": {
+        "A": "可發展教具善意與導師護教學面子的私心如何互相推高投入。",
+        "B": "可承接好意資源與導師現有教學設計的拉扯。",
+        "C": "可發展專業肯定與對方希望幫忙成功的心意。",
+        "D": "可承接幫導師的心意能否轉成讓別的課程受益。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "584a180685938d27fbb40ab85a459252a80a9eaa9f6fbfd1f326738719c4a034",
+    "draftSha256": "6631a78dc82b1aa3665b621a496fad57b43f880da31461ceed1c917f4c547fb5",
     "seedAssignmentVersion": 1
   }
 }

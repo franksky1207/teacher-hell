@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b1300e630280a5f26fad8b30245a90b366607d87b67f89aa9397e68a98c17eb1",
+      "checkedAt": "2026-11-28T01:09:58.116Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在下次班務重申既有一般標準，不提任何人的進度。",
+            "action": "額外公開說明全班既有合法作業規則，不增新罰則或暗示個案。",
+            "tradeoff": "占班務時間，落後者仍可能感到被影射。"
+          },
+          {
+            "id": 2,
+            "text": "我私下具體回饋你這次週記的內容，不把它變成守法獎狀。",
+            "action": "額外給本人實際作業學習回饋，不以他人失誤襯托或提供秘密。",
+            "tradeoff": "需教師閱讀回饋時間。"
+          },
+          {
+            "id": 3,
+            "text": "如果你願意，我陪你想一句不再替大家追問的回話。",
+            "action": "提供自願短時間同儕界線演練，不要求其公開對抗小圈圈。",
+            "tradeoff": "占教師課間，他可能怕回去被笑。"
+          },
+          {
+            "id": 4,
+            "text": "請大家把一般規則疑問交給我，別再讓你當催辦窗口。",
+            "action": "額外開一段有限正式的一般規範問答，不接收索取同學個資，不強迫他公布身分。",
+            "tradeoff": "教師多承擔直接回應。"
+          },
+          {
+            "id": 5,
+            "text": "我不再加公開說明，請你先去完成自己的事，疑問仍可正常提出。",
+            "action": "結束非必要個案催詢，不否定合法求助或扣學生評價。",
+            "tradeoff": "他可能覺得老師在迴避公平。"
+          },
+          {
+            "id": 6,
+            "text": "我讓全班自願討論『準時付出為什麼值得』，不拿遲交者當例子。",
+            "action": "額外安排一般價值討論，禁帶入可辨認個案、不投票決定懲罰。",
+            "tradeoff": "花課程外可用班務時間且未必有共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被一直追著罰人弄得煩，但不拿你出氣；我自願接下向門口同學直接說明界線的那一段，讓你不用回去交差。",
+          "action": "承認疲累，經學生意願額外在不揭露他求助內容下向在場同學給一般界線回應，不保證停止議論、不公開個案。",
+          "tradeoff": "教師承受現場質問，學生可能不願被看成找老師撐腰。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3680475934
+        },
+        "selectedIds": [
+          1,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "2f0d299ab6de57d5e7ed7cc028452b60c58f027e400784eb1f8d853bac9a2125"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師保留既有節奏與學生期待立即可見結果的衝突。",
+        "B": "可發展從眾者退出傳話角色的真實代價。",
+        "C": "可發展規範認同與群體焦慮如何放大一般說明。",
+        "D": "可發展導師親自承接同儕催促，學生仍可能受圈內評價牽動。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "158626c413b49eb98600216f5c46a27af3f0ae5a924452de24674b1fbcd8a2d5",
+    "draftSha256": "b1300e630280a5f26fad8b30245a90b366607d87b67f89aa9397e68a98c17eb1",
     "seedAssignmentVersion": 1
   }
 }

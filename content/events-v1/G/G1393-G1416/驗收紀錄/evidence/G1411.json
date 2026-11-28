@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a18e5b828a19bdd6b4d806ee6aa439ad60d408b89f5da04e6b3111a0c99699b8",
+      "checkedAt": "2026-11-28T01:09:58.134Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另約親子共同談一次，先聽孩子對投入和負擔的真話。",
+            "action": "提出有限自願三方交流，不以退出為預設答案或揭他人名次。",
+            "tradeoff": "時間成本與家長可能感到被質疑。"
+          },
+          {
+            "id": 2,
+            "text": "我設定自己可提供的非必要進度回覆時段，不每則即時聊。",
+            "action": "明確告知有限工作回覆安排，正式公布與必要訊息依規即時處理。",
+            "tradeoff": "家長可能覺得投入不被重視。"
+          },
+          {
+            "id": 3,
+            "text": "我額外詢問承辦可否辦全體自願的一般報名問答，不只替一家解惑。",
+            "action": "提出公平公開資訊機會，待核准才安排，不提供暗示名單。",
+            "tradeoff": "增加協調與工作時間。"
+          },
+          {
+            "id": 4,
+            "text": "我請孩子自願列出本人真想做的部分，再提供一次有限的課內專業回饋。",
+            "action": "在合法公平可提供的範圍內回應學生本人計畫，不代做或額外私授評選優勢。",
+            "tradeoff": "教師需斟酌公平，孩子可能與家長想像不同。"
+          },
+          {
+            "id": 5,
+            "text": "我不加個別輔導，所有非必要競賽指導都循既有公開管道。",
+            "action": "婉拒追加私人服務，不撤其正常參賽與必要支持。",
+            "tradeoff": "家長可能覺得老師支持只停在口頭。"
+          },
+          {
+            "id": 6,
+            "text": "我邀家長談他最怕錯過什麼，不討論別人排名。",
+            "action": "額外自願成人對話，釐清成就焦慮而不把財力當病因。",
+            "tradeoff": "占工作餘裕且可能仍被問回名單。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想回一句『收據不是推薦函』，但我願多做一次所有參與者都可自願使用的原創說明示例，把自己的備課空檔拿出來。",
+          "action": "承認被盯的不耐，額外製作經權責確認且公平開放的原創投入說明示例，不制定新甄選門檻或替特定生改稿。",
+          "tradeoff": "教師增加備課工作，家長可能仍認為投資沒被算進去。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2319215747
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "b9cc30cf531262de2184fc9bbc99b1b5aa60921f89c31880953c223d44327e53"
+      },
+      "consequenceDirections": {
+        "A": "可承接高關注度與教師不做私人推薦顧問的界線。",
+        "B": "可發展寬裕外援與校內教師時間的不同邊界。",
+        "C": "可發展老師將不耐轉為額外公平教學投入，並不保證能平息高關注。",
+        "D": "可發展家長接受資訊所有人同得而非付出多就先知。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "15bfea3bcace812a525e898ef3c82fa932f9accea95e0a9527292c901d0ea7cf",
+    "draftSha256": "a18e5b828a19bdd6b4d806ee6aa439ad60d408b89f5da04e6b3111a0c99699b8",
     "seedAssignmentVersion": 1
   }
 }

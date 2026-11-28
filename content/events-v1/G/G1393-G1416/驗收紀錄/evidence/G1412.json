@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fb218558ab818e083e00c7345c458882c6db9b82d87d5e0f25acad93d5ae30db",
+      "checkedAt": "2026-11-28T01:09:58.135Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次學生照原安排分享，主管和附帶點心都先婉拒。",
+            "action": "不接受交換議程的資源提案，真實說明未經核准不邀入班。",
+            "tradeoff": "家長準備心意落空。"
+          },
+          {
+            "id": 2,
+            "text": "若家長願意，我提出五分鐘純家長經驗分享，保留原學生時段並依法送審。",
+            "action": "提出不含主管推銷且不壓縮學生權益的短分享申請，須實際可用時間與核准、不假設已成行。",
+            "tradeoff": "教師需審內容與控時，家長可能不滿縮短。"
+          },
+          {
+            "id": 3,
+            "text": "簡報若能合法公開，我先審適切性作為自願課外參考，不換任何上台時間。",
+            "action": "經提供者同意確認可用的非商業資訊，無課內強制閱讀或甄選加分。",
+            "tradeoff": "花審閱時間，資源可能仍不適合。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問正式校級生涯講座管道，讓主管另依規申請，不直接塞進班會。",
+            "action": "提供或協助詢問合法提案入口，不承諾場次、講師或全體出席。",
+            "tradeoff": "增加聯繫且未必有機會。"
+          },
+          {
+            "id": 5,
+            "text": "若點心真的能無條件提供，我只向有權者提出純食品捐贈審核，不夾講座。",
+            "action": "提出依法獨立審查食品與無條件提供的可能，未核准不收、不預設家長接受。",
+            "tradeoff": "多審核與配送工作，仍可能整案取消。"
+          },
+          {
+            "id": 6,
+            "text": "我另請家長自願聽學生原本要分享什麼，今天不談換人。",
+            "action": "提出課外合法成人說明，不帶學生強制說服贊助者或未核准入班。",
+            "tradeoff": "花解釋時間，可能仍被說內容不夠專業。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕孩子辛苦準備只剩暖場；我願額外幫原分享者各做一次不加評分的短彩排，這次不靠大人的精緻場面。",
+          "action": "因護學生舞台，提出對原分享者公平可選的有限額外彩排，必要支持照常，學生可拒絕，不新增強迫留校。",
+          "tradeoff": "教師犧牲餘裕，家長可能認為自己好意被比較。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1046970329
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "768c6f6f146c473caee060396b739cc336e59ca97f6f8ed1a4952efa9d7dd4dd"
+      },
+      "consequenceDirections": {
+        "A": "可承接成人想給最好的與學生想自己講的落差。",
+        "B": "可發展人力投入與資源豐盛何者真的支持學生自己發聲。",
+        "C": "可發展願給資源卻希望其被隆重使用的期待。",
+        "D": "可承接從主辦大人舞台改為有限參與的落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "10d8493e015138af2da6e9f4837451e28d1f6ace64cf4e22b87c2154444db052",
+    "draftSha256": "fb218558ab818e083e00c7345c458882c6db9b82d87d5e0f25acad93d5ae30db",
     "seedAssignmentVersion": 1
   }
 }

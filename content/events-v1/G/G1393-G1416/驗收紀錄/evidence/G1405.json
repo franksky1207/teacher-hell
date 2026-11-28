@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "140e57076e4451a034853db78d8b6c293bda95a0d20029f5462d0d31d46b72db",
+      "checkedAt": "2026-11-28T01:09:58.120Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪你和家長出席正式協調，把實際疑問當面提清楚。",
+            "action": "在必要受理外自願陪同依法約定的協調，不代承諾賠償或曝光他人。",
+            "tradeoff": "占教師時間且不保證立即定責。"
+          },
+          {
+            "id": 2,
+            "text": "我申請增加合規分隔收納，核准後再處理，不拿來抵掉這次責任。",
+            "action": "提出額外物理收納改善需求，必要危險處理照常，不擅施工或假設資源已得。",
+            "tradeoff": "多申請與管理工作。"
+          },
+          {
+            "id": 3,
+            "text": "若你想帶回，我協助詢問未來非必要高價設備不帶校的合法選擇。",
+            "action": "查明自願不攜帶或依法申請的具體方案，不推卸既有保管責任、不剝奪必要學習。",
+            "tradeoff": "增加聯繫，學生可能覺得被勸退。"
+          },
+          {
+            "id": 4,
+            "text": "我另約你談等候時最擔心什麼，不把你當只在乎價格。",
+            "action": "額外邀自願個別交流，不重做已啟動的必要查證。",
+            "tradeoff": "花課間，學生未必願談。"
+          },
+          {
+            "id": 5,
+            "text": "我不加班級活動或新規，先由正式窗口處理這次申訴。",
+            "action": "不追加非必要工作，必要說明、支持與進度依法提供。",
+            "tradeoff": "學生可能覺得導師沒有親自多做。"
+          },
+          {
+            "id": 6,
+            "text": "我徵得相關人的同意，額外檢視一回實際拿放流程，只談操作不找戰犯。",
+            "action": "向有權者提出有限成人流程觀察，不公開質問、不使學生重演危險或接觸無關私物。",
+            "tradeoff": "增加成人協調與觀察時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也替新東西被刮心疼，願額外陪你向店家詢問原廠殼的修復報價，先知道選擇，不替任何人認賠。",
+          "action": "因心疼而提供有限查詢協助，經本人家長意願才聯絡，不取得未授權物品或直接委修付款，不取代正式責任處理。",
+          "tradeoff": "教師花聯絡時間，報價可能令學生更生氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1666079874
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "7b79a4199aa2aa5228fe3305fe5c836327213b6c47ad370d2fc57b18783a9abc"
+      },
+      "consequenceDirections": {
+        "A": "可承接財力充裕仍可能真心珍惜物品與守規的信任。",
+        "B": "可發展程序認同在慢而未知的結果前能否維持。",
+        "C": "可承接想立刻恢復原樣的情緒與修復實際代價，家境好不等於無所謂。",
+        "D": "可發展守規範卻失安全感的學生是否接受仍需查證。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f1f42eb41727c337497913e960b0925c8f7a903de7fc7f1e511adad5c51c87fe",
+    "draftSha256": "140e57076e4451a034853db78d8b6c293bda95a0d20029f5462d0d31d46b72db",
     "seedAssignmentVersion": 1
   }
 }

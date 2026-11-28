@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "705c6d65f2c8cf8186e27def77853afaf6901c5b035718342d7c5bee3db5f040",
+      "checkedAt": "2026-11-28T01:09:58.096Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若他願意，我另在班務裡具體肯定這次提醒。",
+            "action": "徵得學生意願後額外肯定其即時指出危險，不把必要認錯限在此分支。",
+            "tradeoff": "承受公開被提醒的面子。"
+          },
+          {
+            "id": 2,
+            "text": "我另約他談這次失望，先聽不替自己找理由。",
+            "action": "額外邀自願個別交流，不要求道歉或取消原指正。",
+            "tradeoff": "花時間聽刺耳話。"
+          },
+          {
+            "id": 3,
+            "text": "我向有權者詢問合法搬運動線，別再拿通風當藉口。",
+            "action": "額外提出搬運與環境便利的合法改善需求，不擅裝門止。",
+            "tradeoff": "增加協調，未必有資源。"
+          },
+          {
+            "id": 4,
+            "text": "我把原本要一次搬完改成少量多趟，自己的麻煩自己背。",
+            "action": "調整本人可合法掌握的資料搬運方式，不減安全與課務。",
+            "tradeoff": "增加走動體力時間。"
+          },
+          {
+            "id": 5,
+            "text": "我請全班自願提出大人也容易漏的校內安全問題，不點人。",
+            "action": "額外蒐一般安全使用經驗交有權者，不派學生危險巡查。",
+            "tradeoff": "整理與跟進工作增加。"
+          },
+          {
+            "id": 6,
+            "text": "這次必要處理完成就收尾，不另讓他上台或開活動。",
+            "action": "不追加非必要公開事件，保留正常回饋與求助權。",
+            "tradeoff": "可能被認為不夠重視。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我臉上真的掛不住，但我願多寫一份自己的違規檢討交權責窗口，不把學生寫成鬧事者。",
+          "action": "坦承羞愧，額外以本人名義說明自己的方便動機與可改工作安排，真實必要通報照常，不增記學生負面紀錄。",
+          "tradeoff": "多書寫並承受正式被看見的面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3123321071
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "1408bc17507aaa8c6ed0f48acf2b227b6d8dcef8e3665ccfad60d605b3245dc0"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師為自己錯誤負額外說明成本，學生仍可能不立刻恢復肯定。",
+        "B": "可發展號召力是否能容納所有人平等提醒。",
+        "C": "可發展專業肯定是否容許教師犯錯及學生不想當英雄的可能。",
+        "D": "可發展教師是否願改掉自己方便的工作習慣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9d1e815fde1a2a167f92413eb169fb36aa8bb2f12d5646f166ced39dd133d0c4",
+    "draftSha256": "705c6d65f2c8cf8186e27def77853afaf6901c5b035718342d7c5bee3db5f040",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0c348f6565f8a41cdf463875e55cfc22a78b8acc2991ef8181c5c6f9d82434f4",
+      "checkedAt": "2026-11-28T01:09:58.138Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提出依法借整段，但先確認學生必要自習支持與後續安排，不拿講義當交換價。",
+            "action": "在有權範圍評估並送必要程序協調，未同意核定不宣布借課。",
+            "tradeoff": "學生自主時間減少，教師需協調替代支持。"
+          },
+          {
+            "id": 2,
+            "text": "我只提議借一小段針對最必要重點，其餘保留自習，由他評估是否值得。",
+            "action": "提出有限合法時段折衷，科任可拒絕，不強迫壓縮成不可行教學。",
+            "tradeoff": "兩邊都未必滿意。"
+          },
+          {
+            "id": 3,
+            "text": "不借這段，我願額外坐下對齊下週日常測驗，避免再擠。",
+            "action": "保留現有自習，額外邀有權科任協調未來可調教學節奏，不保證所有老師同意。",
+            "tradeoff": "同事當下進度仍吃緊，導師花協調時間。"
+          },
+          {
+            "id": 4,
+            "text": "我額外詢問有權教務窗口是否有合規補充時段，不自行把學生留下來。",
+            "action": "提出正式課務需求，未核准不加課、不預設學生自願或有空。",
+            "tradeoff": "行政溝通增加，可能沒有時段。"
+          },
+          {
+            "id": 5,
+            "text": "講義若適合且獲授權，我只協助安排公平自願取用，不換補講時間。",
+            "action": "經科任意願核對合法補充資料並適當提供，必要教學不改成強迫自主苦讀。",
+            "tradeoff": "需審內容與印務，科任可能不願無互惠提供。"
+          },
+          {
+            "id": 6,
+            "text": "這次不加借課或代辦，我讓他走正式課務協調，不再自己接。",
+            "action": "婉拒非必要額外承擔，必要說明及學習支持仍辦，不阻申請。",
+            "tradeoff": "同事可能覺得只有禮貌沒有合作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心虛，也不想只講辛苦；我願額外接下經允許可由成人協助的這份講義印裝，讓他少跑一次，借課仍另照事實談。",
+          "action": "因看見負荷與自身排程影響，提出本人有限印裝勞力，須權限及對方接受，不代批本科卷或拿勞力買其撤回專業質疑。",
+          "tradeoff": "教師增加零碎勞動且未解當下授課時數。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 882096608
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "1000f475fd330febf13c4ff3ee0230d7b5d3e1822150894cd22283c368a0b8a2"
+      },
+      "consequenceDirections": {
+        "A": "可承接高負荷與求肯定者對半步協作的感受。",
+        "B": "可承接導師工作界線與對方認可需求未被滿足。",
+        "C": "可發展合作意願與被看見的需要是否能在不讓課時也得到回應。",
+        "D": "可發展資源交換期待遭拆開後的職場情緒。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60631c86bb089855fb7e0ac51cf49a7fe733ea6eecf20446600517970b90ed60",
+    "draftSha256": "0c348f6565f8a41cdf463875e55cfc22a78b8acc2991ef8181c5c6f9d82434f4",
     "seedAssignmentVersion": 1
   }
 }

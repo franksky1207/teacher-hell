@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4b21e6d2d72fd944e066025dc00827a72bb6b835b8dc3f42abc18680cfd0c3e4",
+      "checkedAt": "2026-11-28T01:09:58.139Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪家長參與正式協調，讓他親自問程序內能答的問題。",
+            "action": "提出有限合法成人會面，不揭無關學生個資、不保證查出單一責任者。",
+            "tradeoff": "增加時間與可能的當面緊張。"
+          },
+          {
+            "id": 2,
+            "text": "我經他同意額外查維修可能與報價，再交正式窗口處理，不先承諾付錢。",
+            "action": "提供有限物品修復資訊協助，未委修付款、不動班費或向學生追繳。",
+            "tradeoff": "多聯繫，報價可能不划算。"
+          },
+          {
+            "id": 3,
+            "text": "我婉謝未來私人器材出借，另向學校申請公共備品。",
+            "action": "不再追加非必要私人借用，申請依法公共資源不保證已買到。",
+            "tradeoff": "暫時少了便利，家長可能覺得被切斷關係。"
+          },
+          {
+            "id": 4,
+            "text": "我額外檢視講桌物品配置，提合法固定與收納改善，不拿它取代追查。",
+            "action": "提出預防性空間調整並經有權同意才執行，必要安全處理已共同維持。",
+            "tradeoff": "教師增加整理與協調。"
+          },
+          {
+            "id": 5,
+            "text": "正式事件處理之外，我另排一般的借物尊重討論，不提這次誰碰倒。",
+            "action": "額外班務討論共同價值，不公開個案、連坐反省或代替查證。",
+            "tradeoff": "占班務時間，家長可能覺得仍太抽象。"
+          },
+          {
+            "id": 6,
+            "text": "我不加其他活動或代修，由正式窗口依事實接續，正常關係照常。",
+            "action": "婉拒額外善後工作，必要告知、物權與責任處理不撤。",
+            "tradeoff": "家長可能覺得導師只走程序。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很怕辜負這份信任；我願自費安排合法的物品領送，把損壞物照他同意的方式還給他，不讓他再為我的班多跑一趟。",
+          "action": "因歉疚，額外提出本人負擔經物主同意的安全物流或親送合法交接成本，不代認全部法律責任、不掩蓋調查或把運送當賠款。",
+          "tradeoff": "教師增加時間或實際成立的運送費用，家長未必領情。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 65951925
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "ba9663c738cac0d66fe0a0f8d9179c53af9fc3b75c0da1181c138612efc6b972"
+      },
+      "consequenceDirections": {
+        "A": "可發展制度保管與個人不愛惜並非同一件事。",
+        "B": "可承接支持資源與不想再把人情放上講桌的界線。",
+        "C": "可發展家長要責任態度而非錢，教師額外善後仍可能不能換回借物信心。",
+        "D": "可發展敬重導師與想看見具體責任承接的需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0e678356d1b5ecc8c8eab6369601a9706ecbadc635d969672aa89176c947cbeb",
+    "draftSha256": "4b21e6d2d72fd944e066025dc00827a72bb6b835b8dc3f42abc18680cfd0c3e4",
     "seedAssignmentVersion": 1
   }
 }

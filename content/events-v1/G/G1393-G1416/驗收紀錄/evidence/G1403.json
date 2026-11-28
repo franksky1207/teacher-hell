@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "946eefc515ce3a061f71b95f9aa1d8234d0c732de1dd3c2b38f30064894d46e3",
+      "checkedAt": "2026-11-28T01:09:58.118Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我調整自己可管的當晚讀書安排，支持隔天發還。",
+            "action": "在合法權責內配合本科教師批改時程，以當晚既有教材替代該張考卷訂正。",
+            "tradeoff": "導師重排安排，學生少即時個別卷面。"
+          },
+          {
+            "id": 2,
+            "text": "我提議少量題目加足夠當堂講解，請他判斷是否仍能當日發。",
+            "action": "提出減題與保留教學時間方案，由科任依專業評估，不強令互改。",
+            "tradeoff": "可能犧牲練習量並需重新設計。"
+          },
+          {
+            "id": 3,
+            "text": "考卷隔天發，當天只提供老師核實的一般重點，別趕著逐張完成。",
+            "action": "提出科任自願於原教學時間提供已確認共通概念的折衷，不洩個別答案進度或要求加班。",
+            "tradeoff": "增加備課協調且不能取代個人錯題。"
+          },
+          {
+            "id": 4,
+            "text": "我提議把小考挪到他認為足夠處理的本科課段，再依法協調讀書安排。",
+            "action": "提出由有權科任評估日常測驗節點調整，不擅改正式課表。",
+            "tradeoff": "原單元節奏可能要重排。"
+          },
+          {
+            "id": 5,
+            "text": "先短期採隔天發還，我額外收集學生一般使用感受供他決定要不要調整。",
+            "action": "協議在權限與雙方同意下有限試行與自願回饋，不以學生投票否定專業或新增評分。",
+            "tradeoff": "增加導師整理工作，未必能立即定案。"
+          },
+          {
+            "id": 6,
+            "text": "我不再指定班級共同訂正時間，讓學生依合法本科要求自行安排。",
+            "action": "解除導師本人非必要統一讀書安排，必要學習支持與科任規範仍在。",
+            "tradeoff": "導師少了整齊進度可掌握。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服自己排的節奏得改；我願額外陪他看一回實際批改過程，再回來改我的安排，不把麻煩丟給他證明。",
+          "action": "承認護原安排的私心，徵科任同意後安排教師有限合法觀摩日常批改，不帶走個資、不假設已觀摩或要其做額外示範。",
+          "tradeoff": "教師投入額外工作餘裕並可能看見自己安排的盲點。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 458275016
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "d16c5c66ffeff6e16f7634838bd7eb2eeacaf92828db446144c8b671720fc588"
+      },
+      "consequenceDirections": {
+        "A": "可發展彈性是否又變成好配合者多做一份工作。",
+        "B": "可發展專業反思是否能促成雙向配合，而非一方永遠遷就。",
+        "C": "可發展理性協商遇上不同學生複習習慣的反應。",
+        "D": "可發展配合者首次提出需求能否被真正接住。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f204d0768b67dc392679505fba6423542d07cb8161e360d6df591bd8466d141c",
+    "draftSha256": "946eefc515ce3a061f71b95f9aa1d8234d0c732de1dd3c2b38f30064894d46e3",
     "seedAssignmentVersion": 1
   }
 }

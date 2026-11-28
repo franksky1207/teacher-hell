@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7d3e33475cfa013b895b941405d4dd52fb38e4e7e683f6223bb98ee3ba5df5c3",
+      "checkedAt": "2026-11-28T01:09:58.099Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外到現場向主管完整說明預約與教學需求。",
+            "action": "在必要受理外自願出席有限協調，依法保留原權益。",
+            "tradeoff": "占備課時間與職場摩擦。"
+          },
+          {
+            "id": 2,
+            "text": "若真正等值替代能獲合法確認，我願和學生討論是否接受。",
+            "action": "提出需設備、時間與學生權益等值的替代評估，未確認不讓步或保證有空間。",
+            "tradeoff": "增加評估與轉場。"
+          },
+          {
+            "id": 3,
+            "text": "我先改用合法不計分練習，正式展示保留原權益另依法排定。",
+            "action": "僅在課程權責允許且不減學生權益下暫作等值準備，正式評比不因行政失誤扣分。",
+            "tradeoff": "導師需重備與再協調。"
+          },
+          {
+            "id": 4,
+            "text": "我申請主管與相關借用者一起談，不讓職員一人傳話。",
+            "action": "額外提出正式多方協調，不自行找資深者對罵。",
+            "tradeoff": "多方排程且可能緊張。"
+          },
+          {
+            "id": 5,
+            "text": "我額外整理完整預約異動紀錄，提後續流程改善。",
+            "action": "合法保存必要時序並提出異動確認建議，不曝光不必要個資。",
+            "tradeoff": "增加文書與被認為追究的觀感。"
+          },
+          {
+            "id": 6,
+            "text": "我不再額外代找場地，請有權行政端提出合法方案。",
+            "action": "婉拒替行政失誤承包額外媒合，必要照看與教學支持照常。",
+            "tradeoff": "可能暫無便利解，關係更僵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句好說話氣到；我具名申請以後這類異動必須留下我的明確回覆，不再用口頭猜我會讓。",
+          "action": "因不願被當默認者，額外提出本人合法借用異動的書面確認需求，不否定學校有權依法緊急調度。",
+          "tradeoff": "增加確認工作並可能被視為難合作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1433168825
+        },
+        "selectedIds": [
+          1,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "06ad71a5d17f413feab85de641662275f91a6b077ae3712e86789115bff95b67"
+      },
+      "consequenceDirections": {
+        "A": "可承接效率與不再讓班級吞損失的界線。",
+        "B": "可發展職員對導師從私下體諒轉明確程序的反應，不保證獲准。",
+        "C": "可發展學生準備被打斷與職員對延後成本的理解。",
+        "D": "可發展怕衝突職員面對具體權利主張的壓力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a84324605abc4a2fc4593f3c212558a07001ef127adb1d9e1bb3986ff34da2a",
+    "draftSha256": "7d3e33475cfa013b895b941405d4dd52fb38e4e7e683f6223bb98ee3ba5df5c3",
     "seedAssignmentVersion": 1
   }
 }

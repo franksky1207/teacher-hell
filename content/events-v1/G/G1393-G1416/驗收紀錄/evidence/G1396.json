@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f010ce0657e32f3cc7536d541dca52c8d24c7e0e09d810cd1bf72d8577ebaea5",
+      "checkedAt": "2026-11-28T01:09:58.104Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "你們都願意，我陪一次親子預算對話，不代你說全部。",
+            "action": "提出合法自願三方交流，家長決定可分享範圍，孩子有表達意願。",
+            "tradeoff": "時間與情緒負擔。"
+          },
+          {
+            "id": 2,
+            "text": "我不另作介入，提供一般誠實溝通說法，讓你自行談。",
+            "action": "完成必要底線後不承諾額外協調，不阻斷後續求助。",
+            "tradeoff": "家長可能仍感孤單。"
+          },
+          {
+            "id": 3,
+            "text": "若你願意，我先核對正式補助條件，確認才給資訊。",
+            "action": "依法以最小個資詢問公開支持資格，不推定低收或保證名額。",
+            "tradeoff": "查詢耗時，可能無適用。"
+          },
+          {
+            "id": 4,
+            "text": "我幫你問主辦是否有正式分期或延期方案，不替你答應付款。",
+            "action": "徵家長意願查合法收費方案，核實後由家庭決定，不擔保債務。",
+            "tradeoff": "多聯絡且仍可能負擔不起。"
+          },
+          {
+            "id": 5,
+            "text": "先問孩子真正想從營隊得到什麼，你同意後我只談興趣，不說家計。",
+            "action": "經適當同意邀學生自願談參加動機，不暗中勸退或說謊。",
+            "tradeoff": "花個別時間，可能更確定他很想去。"
+          },
+          {
+            "id": 6,
+            "text": "我協助查不強迫參加的低費公開替代資訊，不說和原營隊一樣。",
+            "action": "提供經核實可用的合法活動資訊，不保證等值或替家庭選。",
+            "tradeoff": "增加查詢，孩子可能不喜歡。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心軟但不想用假話當幫忙；我願額外陪你排練一次怎麼親口說這次負擔不了。",
+          "action": "承認難以拒絕求援，提供成人自願私下對話演練，不洩個資、不代家長宣布決定或保證孩子諒解。",
+          "tradeoff": "花教師私人餘裕，家長可能覺得還是被推回最難的工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1975834021
+        },
+        "selectedIds": [
+          6,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "d5676659483cb0d4af698ebfc5fea75e3c0427bc28b237cc4ff0d03c7f093096"
+      },
+      "consequenceDirections": {
+        "A": "可發展期待補助與自尊顧慮。",
+        "B": "可發展家庭面子與誠實說明的情緒成本，不把誠實本身限於此分支。",
+        "C": "可發展成人想擋費用與孩子真實願望的碰撞。",
+        "D": "可承接協調合作並非只找一句漂亮勸退理由。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "07a4de80c2b7a82e1ce602f6c67145b5b6232f4306ad42dc7a31e17cf69b0bae",
+    "draftSha256": "f010ce0657e32f3cc7536d541dca52c8d24c7e0e09d810cd1bf72d8577ebaea5",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a7a0286badc8ca634c3b3996e22e9fbd4039efa86a710a28dfaf9bfab0d36e54",
+      "checkedAt": "2026-11-28T01:09:58.136Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另提出一次可以拒絕的短談邀請，不在走廊攔他表態。",
+            "action": "提供自願限時對話機會，不預設接受或要求和好。",
+            "tradeoff": "教師可能被拒，關係仍冷。"
+          },
+          {
+            "id": 2,
+            "text": "我把往後自己可決定的非必要班務邀請改為先問意願，不再默認他會接。",
+            "action": "實際調整本人額外邀請方式，必要公平輪值另依法處理，不專挑學生來證明改變。",
+            "tradeoff": "教師可能較難找到協助。"
+          },
+          {
+            "id": 3,
+            "text": "我用私人短箋交代自己先前沒問的疏失，明說不用回覆。",
+            "action": "額外提供不需當場表態的有限書面關係說明，真實必要更正已共同完成。",
+            "tradeoff": "教師花斟酌時間，字句可能仍被讀為壓力。"
+          },
+          {
+            "id": 4,
+            "text": "我尊重現在的距離，不追加和好工作，只維持正常教學往來。",
+            "action": "停止非必要追問，不冷落學習或把最低互動視為違規。",
+            "tradeoff": "導師要忍受沒有被原諒的感覺。"
+          },
+          {
+            "id": 5,
+            "text": "我在原有可調的學習任務中提供全班都能用的題目選擇，不拿他做例子。",
+            "action": "在教學權責內增加有限公平選擇，保持必要學習目標，不以此要求學生感謝。",
+            "tradeoff": "教師需多準備與處理不同路徑。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，可用文字告訴我下次最不希望我怎麼開口，不必解釋全部心情。",
+            "action": "提供自願、最少揭露的互動偏好回覆方式，不把未回覆當同意。",
+            "tradeoff": "需要教師配合且可能等不到回應。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點受不了自己像被拒於門外；我願把下次找額外幫手的空缺留著自己做，也不再用『只有你最可靠』把他拉回來。",
+          "action": "承認失落，決定教師自行承接尚未交辦的非必要班務，不另設本不存在的活動或取消既有義務。",
+          "tradeoff": "教師增加本人工作，學生未必知道或因此靠近。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4108967532
+        },
+        "selectedIds": [
+          4,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "5a8651946682d16eecfbe496174010a123f92b171a53357e35739f06f357d917"
+      },
+      "consequenceDirections": {
+        "A": "可發展不滿不是靠學生繼續幫忙就能證明已和好的情感代價。",
+        "B": "可發展避衝突者能否較安全地說出一個界線。",
+        "C": "可承接學生不吵架也有保留情感距離的自主。",
+        "D": "可發展不滿未必能被一張歉意說明化開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "74e791d6e05f3190f66d42ec7162d1517223170e9fd45b51adf2cecfb9989fe6",
+    "draftSha256": "a7a0286badc8ca634c3b3996e22e9fbd4039efa86a710a28dfaf9bfab0d36e54",
     "seedAssignmentVersion": 1
   }
 }

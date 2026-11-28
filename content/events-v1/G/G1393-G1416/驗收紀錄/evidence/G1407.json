@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ff72053339d4b64607568dc9810856e05548980bff6264de2a33081bd323c809",
+      "checkedAt": "2026-11-28T01:09:58.123Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我順著笑一次，接著直接改用平常說話，把公告講完。",
+            "action": "接納這回笑聲並回到必要班務，不新增表演或處罰。",
+            "tradeoff": "可能讓以後接話更難收。"
+          },
+          {
+            "id": 2,
+            "text": "我停到安靜再說，之後私下邀他談場合，不當眾點名。",
+            "action": "先完成班務，額外提出有限自願個別界線溝通，不誣指惡意。",
+            "tradeoff": "氣氛暫冷且占課間。"
+          },
+          {
+            "id": 3,
+            "text": "這次讓他在我同意的三十秒內模仿完，之後換我宣布。",
+            "action": "提供當次有限自願表演空間並明確交回話輪，不保證同學準時停。",
+            "tradeoff": "占班務時間與可能難收場。"
+          },
+          {
+            "id": 4,
+            "text": "我把公告先寫在板上，改請大家安靜讀完，再處理一般問題。",
+            "action": "本次改用書面與問答完成可行班務，不假設學生都已讀懂或讓必要訊息漏接。",
+            "tradeoff": "需另整理文字，互動變少。"
+          },
+          {
+            "id": 5,
+            "text": "我請他自願幫忙在笑聲後提醒同學回來聽，不當紀律糾察。",
+            "action": "提出有限同儕提醒邀請，教師仍負秩序與公告責任，不以人氣強派工作。",
+            "tradeoff": "學生可拒絕且可能被說倒戈。"
+          },
+          {
+            "id": 6,
+            "text": "我邀全班在下次可用班務討論開玩笑的時機，不把今天拿來批鬥。",
+            "action": "額外安排一般界線討論，教師保留必要班務決定權，不投票決定羞辱他人。",
+            "tradeoff": "占時間且未必有一致標準。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想贏一次；我拿自己的新開場試給大家接，這次笑完就算，接受可能完全不好笑。",
+          "action": "因不服輸自願投入一段有限新開場互動，僅以教師本人為笑點且不延誤必要公告，不要求學生配合笑。",
+          "tradeoff": "花教師準備與面子，可能冷場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 332442277
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "59e33df3fc5d43c16d5284613043481982f2ed4297c0e456d06538b15c89f588"
+      },
+      "consequenceDirections": {
+        "A": "可承接人格尊重與被提醒分寸後的尷尬。",
+        "B": "可發展尊重教師的學生遇到教師主動搶回笑點，未必照原劇本接招。",
+        "C": "可承接群體影響力與對導師的真誠尊重如何一起使用。",
+        "D": "可發展班級迷因碰上教師換傳達方式的失落或新笑點。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c61cde0065cf4115bdb77d1ffda0fe104be967ace66e25425033389dc512306e",
+    "draftSha256": "ff72053339d4b64607568dc9810856e05548980bff6264de2a33081bd323c809",
     "seedAssignmentVersion": 1
   }
 }

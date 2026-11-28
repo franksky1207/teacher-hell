@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6d9763e2f56a73dfa339c49b6144fa1604014d0226a594fd4ddbe6140c7ee476",
+      "checkedAt": "2026-11-28T01:09:58.108Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次照原本學生自己的成果展示，我陪你把東西搬回車上。",
+            "action": "拒絕追加外來佈景並額外協助合法校門外搬運，肯定心意不以此換孩子接受。",
+            "tradeoff": "占教師時間，也可能讓家長難堪。"
+          },
+          {
+            "id": 2,
+            "text": "先問孩子和組員，要不要在規定允許內借一件最基本的支架。",
+            "action": "提出經全組自願且教師權限內公平核可的有限借用評估，不預設接受或提高評分。",
+            "tradeoff": "需協調公平，家長大半道具仍可能用不到。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問能否供各組同等自願借用，不讓你只替自己孩子搭舞台。",
+            "action": "向有權者提出公平公共借用方案，須同意、場地與課程許可才實施，家長不進班代作。",
+            "tradeoff": "增加管理與歸還工作，家長可能不願外借。"
+          },
+          {
+            "id": 4,
+            "text": "我請你先坐下聽孩子講完原來設計，今天不急著卸貨。",
+            "action": "額外在合法會面處邀親子自願說明已有作品與想法，沒有同意不安排展示或入校。",
+            "tradeoff": "花家長與教師時間，仍可能談不攏。"
+          },
+          {
+            "id": 5,
+            "text": "我不再代協調佈景，請你和孩子課後自行談這半天的心意。",
+            "action": "婉拒額外介入家庭期待，維持既有課程、門禁與正常師生支持。",
+            "tradeoff": "家長可能覺得好意被教師擋住。"
+          },
+          {
+            "id": 6,
+            "text": "若你還想幫忙，我向承辦詢問今天是否有正式開放的成人搬運支援。",
+            "action": "查詢真實活動人力需求與資格，未取得許可不派家長工作，不以支援交換孩子評價。",
+            "tradeoff": "教師多協調且可能沒有可參與工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱紙板的樣子很心疼；我願額外留在校門陪你等孩子下課，再讓他自己決定要不要一起把道具載回去。",
+          "action": "因不忍親子都下不了台，提出教師有限額外陪等，家長可拒絕；不耽誤學生上課，不強制孩子善後或接受道具。",
+          "tradeoff": "延後教師自己的下班安排且不保證孩子願意同車。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1440035183
+        },
+        "selectedIds": [
+          2,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "2c0e86801eb9c5b443157882c094e390aa47d2d3da83f73b993776f9c51c2c27"
+      },
+      "consequenceDirections": {
+        "A": "可承接孩子自主與家長半天付出的折衷是否真的被接受。",
+        "B": "可發展認可孩子現有成果是否比把佈景做漂亮更難。",
+        "C": "可發展教師承接家長失落的私人時間代價與孩子被等待的壓力。",
+        "D": "可承接信任與對教師必須替家長說服孩子的期待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6c59bb590595463f4f12091a7caf40e5a7eea20809fb1750e4979398ad524da1",
+    "draftSha256": "6d9763e2f56a73dfa339c49b6144fa1604014d0226a594fd4ddbe6140c7ee476",
     "seedAssignmentVersion": 1
   }
 }

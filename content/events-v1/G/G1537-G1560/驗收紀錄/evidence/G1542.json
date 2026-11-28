@@ -15,14 +15,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "87f09b67fb84e5bfb9cca49e68eff2cec391e73cf588550935872448e9fedfed",
+      "checkedAt": "2026-11-28T02:54:05.890Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "他若願意，我額外陪他在安全位置聽檢查人員解釋復用依據。",
+            "action": "提出有限專業說明陪同，不保證即能取得人員時間。",
+            "tradeoff": "教師課間、學生可能仍怕。"
+          },
+          {
+            "id": 2,
+            "text": "我陪他走到另一個正常飲水點，今天不練回去。",
+            "action": "在必要替代資訊之外額外實際有限陪行，不逼使用原機。",
+            "tradeoff": "教師時間、原機仍避開。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他私下談近來睡不好與緊張，不只盯這台機器。",
+            "action": "額外有限自願生活支持，必要健康評估不待此選項。",
+            "tradeoff": "多時間、學生可能不想說。"
+          },
+          {
+            "id": 4,
+            "text": "依本人意願，我詢問合格專業人員後續焦慮支持是否可行。",
+            "action": "提出合規非強迫協作，不宣稱已治療或已轉介成功。",
+            "tradeoff": "協調成本、學生怕被貼標籤。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加接近練習或檢查任務，正常支持照走。",
+            "action": "婉拒非必要改造計畫，不放任缺水或真實危險。",
+            "tradeoff": "安心可能慢慢才回來。"
+          },
+          {
+            "id": 6,
+            "text": "我額外邀他寫下自己想問的一個問題，由他決定是否交給權責窗口。",
+            "action": "有限自願提問整理，不當已得專業答案。",
+            "tradeoff": "教師陪讀時間、他可能越想越多。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想趕快證明他不用怕，才發現又在催；我願多留一個合宜課間，陪他在安全地方聊點和機器無關的事，今天不把勇敢當我們的進度。",
+          "action": "教師提出額外有限自願關係陪伴，不作暴露治療、不撤必要照護或替代飲水，不假稱焦慮已解。",
+          "tradeoff": "教師少休息、可能聊完仍不敢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 680749874
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "9e0ea8155c07784bdcdfc3a44ce2462416ec6e81297c0c4bda2c45ec5450c285"
+      },
+      "consequenceDirections": {
+        "A": "可承接主動警覺也能有一個停問的邊界。",
+        "B": "可發展重安全的孩子不必每次都靠提出問題維持和老師的親近。",
+        "C": "可發展老師不把每個擔心變作業。",
+        "D": "可承接條理清楚的人也有需要別人幫忙的時候。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5b3c774462665e8fe112324305cefea92347e636c907aa39fbc778ac357cb1dd",
+    "draftSha256": "87f09b67fb84e5bfb9cca49e68eff2cec391e73cf588550935872448e9fedfed",
     "seedAssignmentVersion": 1
   }
 }

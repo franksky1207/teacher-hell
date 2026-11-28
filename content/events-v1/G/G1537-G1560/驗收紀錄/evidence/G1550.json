@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "07a526afa3018f48a42dff9e0e60ede508d31215d8af0d4fa62e3a609bb68353",
+      "checkedAt": "2026-11-28T02:54:05.905Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在安全可行時，我額外陪他從合法公共位置看一次整理後的現況。",
+            "action": "有限自願現場陪同，不代專業檢查或保證零風險。",
+            "tradeoff": "教師課間、可能每次都想再看。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他向有權窗口提出具體一個問題，不陪去看現場。",
+            "action": "有限提問協助，不預設已獲回覆。",
+            "tradeoff": "教師時間、他可能仍堅持老師到場。"
+          },
+          {
+            "id": 3,
+            "text": "我另談最近家庭與課業壓力，不只談樹枝。",
+            "action": "額外有限自願生活交流，必要支持不待此才做。",
+            "tradeoff": "時間、他可能不願談。"
+          },
+          {
+            "id": 4,
+            "text": "我不增加本人側門值勤承諾，依原分工完成必要照看。",
+            "action": "拒絕非必要額外駐點，不放掉實際風險接續。",
+            "tradeoff": "被學生覺得不夠在意。"
+          },
+          {
+            "id": 5,
+            "text": "我提出一般校園施工訊息怎麼表達更清楚的改善意見。",
+            "action": "額外合法資訊流程提案，不把當下必要更正拖後。",
+            "tradeoff": "多協調、未必採納。"
+          },
+          {
+            "id": 6,
+            "text": "若本人願意，我邀合格專業人員協助後續焦慮支持。",
+            "action": "提出有限合法協作，不宣稱已接受或治好。",
+            "tradeoff": "聯絡成本、學生怕被看成小題大作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點煩被追著問，又怕他真以為我不管；我願把自己那句含糊提醒的原意另寫清楚給全班，額外說明我能做與不能保證的範圍，不叫他猜我會站在哪裡。",
+          "action": "教師額外一般職務範圍與訊息表達說明，不重複清運真假更正充唯一行動，不披本人焦慮或取消必要照看。",
+          "tradeoff": "教師文書時間、承認自己說話不夠清楚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 942433393
+        },
+        "selectedIds": [
+          2,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "7bc4703796e2168408328fbf4291150aafbcbfe9895e82596e28dbb86059570b"
+      },
+      "consequenceDirections": {
+        "A": "可發展眼見也未必能解全部焦慮。",
+        "B": "可發展被緊盯的成人把界線說明白，也容許學生還沒安心。",
+        "C": "可發展廣傳提醒背後也有睡不好的晚上。",
+        "D": "可承接信任不同角色是安全支持的一部分。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "107f9cca94466383aeca5db6f9d75c1e03052c5d436c1dc3e010f1057babdebc",
+    "draftSha256": "07a526afa3018f48a42dff9e0e60ede508d31215d8af0d4fa62e3a609bb68353",
     "seedAssignmentVersion": 1
   }
 }

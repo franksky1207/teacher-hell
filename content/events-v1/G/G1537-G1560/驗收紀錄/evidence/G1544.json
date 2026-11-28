@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6f785b79ef051e36341148b21562199f1bfd5cbf716c3aa7bbdac2235e78835c",
+      "checkedAt": "2026-11-28T02:54:05.895Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持現行合規評估節奏，不加私人每天氣象播報。",
+            "action": "不新增非必要回報承諾，必要風險變化照常告知。",
+            "tradeoff": "家長還是焦慮。"
+          },
+          {
+            "id": 2,
+            "text": "我額外向承辦詢問室內備案真實費用和容量，暫不改單。",
+            "action": "提出合法替代方案查詢，不稱場館已取得。",
+            "tradeoff": "行政時間、可能增加失望。"
+          },
+          {
+            "id": 3,
+            "text": "若合規可行，我提出提早轉室內的正式申請，由有權者決定。",
+            "action": "申請變更並如實處理契約與同意，不保證核准。",
+            "tradeoff": "多行政、學生戶外期待落空。"
+          },
+          {
+            "id": 4,
+            "text": "我邀家長把最在意的具體風險告訴我，不再只比較兩張圖。",
+            "action": "有限成人需求交流，必要專業評估仍有權者負責。",
+            "tradeoff": "教師通話時間。"
+          },
+          {
+            "id": 5,
+            "text": "我邀學生自願說想保留的參訪學習重點，供承辦評估替代。",
+            "action": "額外有限公平需求蒐集，不讓人氣壓安全。",
+            "tradeoff": "班務時間、期待更多。"
+          },
+          {
+            "id": 6,
+            "text": "我提出由承辦做一次有限一般方案說明，減少個別群組猜測。",
+            "action": "提出合規成人說明需求，未同意不稱已約好。",
+            "tradeoff": "多排程、可能仍沒有確定答案。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很捨不得自己排好的戶外行程；我願額外重備一份真正能在合法室內做的學習路徑，讓備案不只是躲雨，不先拿去保證一定成行。",
+          "action": "教師在權責內額外準備可行替代教學構想，需正式核定資源，不假稱已有館位或安全認證。",
+          "tradeoff": "多備課時間、可能完全用不到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3963990944
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "79be679cfefbd8d0fd153db671fbf5e86d6adc5ef370bdcb3124da091c11a7e6"
+      },
+      "consequenceDirections": {
+        "A": "可承接理性備案仍有真實資源限制。",
+        "B": "可發展配合與想早一點確定的矛盾。",
+        "C": "可承接擅長找資料的人仍需要被理解害怕什麼。",
+        "D": "可發展放不下原計畫的老師能否認真對待別人提供的路。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a8a0870ab4f78336c4b3c3c8bac730718db76dc0fd01d68ed7fa85329dd946e6",
+    "draftSha256": "6f785b79ef051e36341148b21562199f1bfd5cbf716c3aa7bbdac2235e78835c",
     "seedAssignmentVersion": 1
   }
 }

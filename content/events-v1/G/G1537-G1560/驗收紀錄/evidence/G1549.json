@@ -16,14 +16,155 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "71b2ea3c804fcab938655e6d9c5d0345713afe341918d84403a85cd5363c6bb1",
+      "checkedAt": "2026-11-28T02:54:05.903Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不再看額外表，正常休息各自保留，心意先道謝。",
+            "action": "婉拒非必要續工，不再美化不存在的要求。",
+            "tradeoff": "同事覺得白忙。"
+          },
+          {
+            "id": 2,
+            "text": "我留有限時間只看空白版型，談是否有本人真需要的合法用途。",
+            "action": "額外有限成人版型交流，無用途就不造資料。",
+            "tradeoff": "少午休、可能仍放棄。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他一起整理正式通知入口，以後先核實再分工。",
+            "action": "額外有限資訊使用協商，不把這次真實更正當尚未做。",
+            "tradeoff": "多時間、像被上課。"
+          },
+          {
+            "id": 4,
+            "text": "我提議這餐只吃便當不談公務，不強迫他陪。",
+            "action": "提出新自願成人休息邀約，不假稱原有私人聚餐。",
+            "tradeoff": "自己的安靜午休變社交。"
+          },
+          {
+            "id": 5,
+            "text": "我協助詢問現有真實工作是否有合規減量方式，不拿假表換新表。",
+            "action": "額外有限負荷協調，不預設主管准減。",
+            "tradeoff": "教師多聯絡。"
+          },
+          {
+            "id": 6,
+            "text": "我願多花一段可用空檔，和他只核對本週實際已收到的正式通知，分清真要做與只是別校傳聞。",
+            "action": "提出額外有限共同盤點合法可知的既有正式工作，不接假表或擴建個資庫，不以本次盤點取代已必要完成的真實更正。",
+            "tradeoff": "兩位教師多一段工作時間，仍可能有沒看懂的要求。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想下次又一起白忙；我願額外向有權教務提出一般發布說明的請求，請他們判斷能否把本校真正新增要求說清，不點名這位熱心同事。",
+          "action": "教師提出新的有限正式資訊預防協調，不擅自公告、不假稱已採納，必要當下更正已完成，不散布別校人員指控。",
+          "tradeoff": "教師多聯絡，可能被同事認為把糗事變大。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2594767099
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "fb1b3f6cbce060e30aa8cbe4f571ee0d6ecba9f1c81cfc3da9fb210a4ceb7342"
+      },
+      "consequenceDirections": {
+        "A": "可發展合作不是一定要陪做完。",
+        "B": "可發展過勞者未必需要更多提前準備。",
+        "C": "可承接同理也能表現在陪對方停下。",
+        "D": "可發展被假要求惹煩的老師願承擔正式溝通，仍得小心不把同事當成被通報的錯誤。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "普通6與普通1皆只拒絕本次續工，情緒候選也只以疲勞語氣拒絕十分鐘，形成實質重疊；集中改成真實既有工作盤點及一般資訊發布協調後只重抽一次。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我不再看額外表，正常休息各自保留，心意先道謝。",
+                "action": "婉拒非必要續工，不再美化不存在的要求。",
+                "tradeoff": "同事覺得白忙。"
+              },
+              {
+                "id": 2,
+                "text": "我留有限時間只看空白版型，談是否有本人真需要的合法用途。",
+                "action": "額外有限成人版型交流，無用途就不造資料。",
+                "tradeoff": "少午休、可能仍放棄。"
+              },
+              {
+                "id": 3,
+                "text": "我邀他一起整理正式通知入口，以後先核實再分工。",
+                "action": "額外有限資訊使用協商，不把這次真實更正當尚未做。",
+                "tradeoff": "多時間、像被上課。"
+              },
+              {
+                "id": 4,
+                "text": "我提議這餐只吃便當不談公務，不強迫他陪。",
+                "action": "提出新自願成人休息邀約，不假稱原有私人聚餐。",
+                "tradeoff": "自己的安靜午休變社交。"
+              },
+              {
+                "id": 5,
+                "text": "我協助詢問現有真實工作是否有合規減量方式，不拿假表換新表。",
+                "action": "額外有限負荷協調，不預設主管准減。",
+                "tradeoff": "教師多聯絡。"
+              },
+              {
+                "id": 6,
+                "text": "我保留正常合作但拒絕本次私人共編，不替他決定刪不刪本人空表。",
+                "action": "不承接額外共作並尊重自有檔案，不留班級真資料。",
+                "tradeoff": "他可能覺得關係疏遠。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也累到不想再聽一個欄位；我願直說今天連十分鐘都沒有，把自己的午休留下來，不再笑著說看一下又在心裡怪他。",
+              "action": "教師明確拒絕額外版型討論並保留本人可用休息，不撤必要工作，不虛構已有私人邀約需要取消。",
+              "tradeoff": "得親口令熱心同事失望。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1673495796
+            },
+            "selectedIds": [
+              3,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 5,
+              "C": 3,
+              "D": "emotional"
+            },
+            "optionsDigest": "f93d7cdefcf71b06df1191b91d53338ec0d96097333fcbb4e56cc39613ac0b95"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接好意沒有被用上也不等於不再互相幫忙。",
+            "B": "可發展過勞者未必需要更多提前準備。",
+            "C": "可發展熱心的人能否接受不立刻行動。",
+            "D": "可發展善意與疲勞相撞時不成熟的笑臉也可少戴一次。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "af24513e39dce23bbb9359d1753deb6bbc90bc8a61750f80804b975f2e2ad654",
+    "draftSha256": "71b2ea3c804fcab938655e6d9c5d0345713afe341918d84403a85cd5363c6bb1",
     "seedAssignmentVersion": 1
   }
 }

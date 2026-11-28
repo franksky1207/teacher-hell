@@ -15,14 +15,155 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "33e174f758ef05f08a4f7ab3355a908ec0399acbfe0ef6f9119335e0bb41efd5",
+      "checkedAt": "2026-11-28T02:54:05.909Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另留有限時間聽他說角落讓他安心在哪，不先保證位子。",
+            "action": "額外自願深入需求交流，不把必要適性支持獨占此分支。",
+            "tradeoff": "教師時間、學生可能更期待特准。"
+          },
+          {
+            "id": 2,
+            "text": "我額外說明換位實際程序與可行申請方式，正常安排照辦。",
+            "action": "有限一般程序說明，不承諾靠配合換優先。",
+            "tradeoff": "他可能覺得被公事公辦。"
+          },
+          {
+            "id": 3,
+            "text": "若合規且雙方自願，我提供抽籤後公平換位協商的可能資訊。",
+            "action": "提出有條件同儕交換途徑，不當對方已答應或剝必要調整。",
+            "tradeoff": "多協調、未必有角落。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全班自願說一般座位需求，不公開誰帶餅乾。",
+            "action": "額外公平需求蒐集，必要合理調整不需多數同意。",
+            "tradeoff": "班務時間、可能更多想要角落。"
+          },
+          {
+            "id": 5,
+            "text": "我和本人及必要成人談過渡支持，不把不安等同必須原位。",
+            "action": "提出有限合規支持協作，未同意不稱已安排。",
+            "tradeoff": "多聯絡、學生怕小事變大。"
+          },
+          {
+            "id": 6,
+            "text": "我不加私人陪抽或特別承諾，必要支持依正常途徑接好。",
+            "action": "拒絕非必要個別加碼，不剝合理調整或關心。",
+            "tradeoff": "親近感可能受挫。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的想吃那包，也怕他垮臉；我願多留一段合宜課間，邀他到可用教室從幾個位置看看感受，不保證哪格歸他，也不讓餅乾替我省掉理解。",
+          "action": "教師提出額外有限自願座位環境體驗，須不擾課、符合適性安全，非強迫暴露治療，不抽改他人座位或保證取得，必要合理支持仍所有分支維持。",
+          "tradeoff": "教師少休息，學生可能還是只喜歡角落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1064211952
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "b874348518f3907136675bef225806f83836902761cd11dd550c615946c75c09"
+      },
+      "consequenceDirections": {
+        "A": "可承接一個人舒服也要看見其他人的需要。",
+        "B": "可承接老師不收禮後還能不能照常說笑。",
+        "C": "可發展被照顧不一定是空間永遠不變。",
+        "D": "可發展貪吃又想被喜歡的老師選擇多理解，而不是以一次通融換回笑臉。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選暫停點心聊天與共同婉拒帶條件贈物及普通6不加碼界線不足；改為不保證分配的有限實際座位環境體驗邀請。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我另留有限時間聽他說角落讓他安心在哪，不先保證位子。",
+                "action": "額外自願深入需求交流，不把必要適性支持獨占此分支。",
+                "tradeoff": "教師時間、學生可能更期待特准。"
+              },
+              {
+                "id": 2,
+                "text": "我額外說明換位實際程序與可行申請方式，正常安排照辦。",
+                "action": "有限一般程序說明，不承諾靠配合換優先。",
+                "tradeoff": "他可能覺得被公事公辦。"
+              },
+              {
+                "id": 3,
+                "text": "若合規且雙方自願，我提供抽籤後公平換位協商的可能資訊。",
+                "action": "提出有條件同儕交換途徑，不當對方已答應或剝必要調整。",
+                "tradeoff": "多協調、未必有角落。"
+              },
+              {
+                "id": 4,
+                "text": "我邀全班自願說一般座位需求，不公開誰帶餅乾。",
+                "action": "額外公平需求蒐集，必要合理調整不需多數同意。",
+                "tradeoff": "班務時間、可能更多想要角落。"
+              },
+              {
+                "id": 5,
+                "text": "我和本人及必要成人談過渡支持，不把不安等同必須原位。",
+                "action": "提出有限合規支持協作，未同意不稱已安排。",
+                "tradeoff": "多聯絡、學生怕小事變大。"
+              },
+              {
+                "id": 6,
+                "text": "我不加私人陪抽或特別承諾，必要支持依正常途徑接好。",
+                "action": "拒絕非必要個別加碼，不剝合理調整或關心。",
+                "tradeoff": "親近感可能受挫。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我真的想吃那包，也怕他垮臉就心軟；我願把這次非必要的吃點心聊天停在這裡，等位置依公平需要接好再正常相處，不讓一包餅乾替我們決定關係。",
+              "action": "教師暫停本人可免私人點心社交，不收帶條件物或處分物主財物，不停止必要照護或以冷落逼學生撤需求。",
+              "tradeoff": "失去當下親近氣氛、教師得忍住被喜歡的誘惑。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2809638069
+            },
+            "selectedIds": [
+              2,
+              5,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 4,
+              "B": "emotional",
+              "C": 2,
+              "D": 5
+            },
+            "optionsDigest": "0251bd4f309b63c9188cde2a530864fa5cc1b7b001a9701366966ceb266b95c5"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接一個人舒服也要看見其他人的需要。",
+            "B": "可發展受信任的大人也會貪吃想討好，但不用把界線說成學生人品不好。",
+            "C": "可承接聽話不是可兌換一次通融的點數。",
+            "D": "可發展被照顧不一定是空間永遠不變。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b8b55623bbbe9306f928e2b88531bb44e01609d8058b6eb32bfca408edc7def4",
+    "draftSha256": "33e174f758ef05f08a4f7ab3355a908ec0399acbfe0ef6f9119335e0bb41efd5",
     "seedAssignmentVersion": 1
   }
 }

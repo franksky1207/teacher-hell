@@ -15,14 +15,155 @@
     "G02",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "36bf7211e8ecf5cb77f6b0e70d8841a00a99eb1be225ac3527a97230cac1f523",
+      "checkedAt": "2026-11-28T02:54:05.918Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我私下陪他回看自己聽懂到按送出的那段，不再加公開訓話。",
+            "action": "額外有限自願行為回顧，不代替必要公平責任處理。",
+            "tradeoff": "教師時間、他可能只說被起鬨。"
+          },
+          {
+            "id": 2,
+            "text": "我邀願意的同學談被誤導的不便，不逼道歉換免責。",
+            "action": "有限自願修復交流，不公開羞辱。",
+            "tradeoff": "協調時間、可能吵起來。"
+          },
+          {
+            "id": 3,
+            "text": "我提出班群正式公告標示方式，依權責和實際需求協商。",
+            "action": "額外一般流程提案，不限制正常學生言論或預稱新制已成。",
+            "tradeoff": "教師整理成本。"
+          },
+          {
+            "id": 4,
+            "text": "我正常結束此回掃除，必要責任接續，不追加一套傳訊練習。",
+            "action": "婉拒非必要加碼，不以熱心免責或造懲罰公差。",
+            "tradeoff": "同學可能覺得太輕。"
+          },
+          {
+            "id": 5,
+            "text": "我邀他暫停自願轉述班務，重要安排先由教師正式發布。",
+            "action": "提出有限非懲罰性工作分工協商，不剝正常群組參與。",
+            "tradeoff": "他少了搶先報信的滿足。"
+          },
+          {
+            "id": 6,
+            "text": "我提出下一週在原合宜掃除前，自己額外當面確認一次安排，不再只等學生層層轉述。",
+            "action": "教師承諾本人可行的一週有限額外在場提醒，未到時不稱已完成，不取代本次必要更正或撤學生合理發言。",
+            "tradeoff": "教師每天多一段時間，仍不能保證無誤傳。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣得想叫他全區重掃；我願把自己早上那句工具說明重寫成一段真正清楚的版本，額外整理下一次可用的發布格式，不拿勞動替我出氣。",
+          "action": "教師額外改善未來本人公告呈現，不重做當下必要更正充選項，不暗示本次錯傳全是教師害的。",
+          "tradeoff": "教師文書時間、承認自己也可改。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1956624240
+        },
+        "selectedIds": [
+          2,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "8a968b01e2a1197d0b1e9953757f7fb2ced4673b463a97d3e81f8767a4ea720a"
+      },
+      "consequenceDirections": {
+        "A": "可承接自己有做不代表沒影響別人。",
+        "B": "可發展判斷力為何在朋友旁邊讓位。",
+        "C": "可承接老師不必靠做大場面證明有處理。",
+        "D": "可發展有怒氣的成人仍不必把每個失誤變一項掃地任務。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6主要另問起鬨者說過什麼，與各分支必要查證責任重疊；改為下一週教師額外實際提醒的有限承諾。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我私下陪他回看自己聽懂到按送出的那段，不再加公開訓話。",
+                "action": "額外有限自願行為回顧，不代替必要公平責任處理。",
+                "tradeoff": "教師時間、他可能只說被起鬨。"
+              },
+              {
+                "id": 2,
+                "text": "我邀願意的同學談被誤導的不便，不逼道歉換免責。",
+                "action": "有限自願修復交流，不公開羞辱。",
+                "tradeoff": "協調時間、可能吵起來。"
+              },
+              {
+                "id": 3,
+                "text": "我提出班群正式公告標示方式，依權責和實際需求協商。",
+                "action": "額外一般流程提案，不限制正常學生言論或預稱新制已成。",
+                "tradeoff": "教師整理成本。"
+              },
+              {
+                "id": 4,
+                "text": "我正常結束此回掃除，必要責任接續，不追加一套傳訊練習。",
+                "action": "婉拒非必要加碼，不以熱心免責或造懲罰公差。",
+                "tradeoff": "同學可能覺得太輕。"
+              },
+              {
+                "id": 5,
+                "text": "我邀他暫停自願轉述班務，重要安排先由教師正式發布。",
+                "action": "提出有限非懲罰性工作分工協商，不剝正常群組參與。",
+                "tradeoff": "他少了搶先報信的滿足。"
+              },
+              {
+                "id": 6,
+                "text": "我和起鬨者另談各人實際說過什麼，不讓傳送者獨扛整串起鬨。",
+                "action": "額外有限事實與同儕影響交流，必要查證處理仍各分支維持。",
+                "tradeoff": "教師時間、其他人可能覺得被追究。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我氣得想叫他全區重掃；我願把自己早上那句工具說明重寫成一段真正清楚的版本，額外整理下一次可用的發布格式，不拿勞動替我出氣。",
+              "action": "教師額外改善未來本人公告呈現，不重做當下必要更正充選項，不暗示本次錯傳全是教師害的。",
+              "tradeoff": "教師文書時間、承認自己也可改。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1826852765
+            },
+            "selectedIds": [
+              2,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 2,
+              "C": 5,
+              "D": 1
+            },
+            "optionsDigest": "6c8459f256b633d522dcb28064921771e85fc5d400ea27277ee692941b1fc196"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展有怒氣的成人仍不必把每個失誤變一項掃地任務。",
+            "B": "可承接自己有做不代表沒影響別人。",
+            "C": "可發展配合的人能否接受幫忙先停一下。",
+            "D": "可發展判斷力為何在朋友旁邊讓位。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "62ca70c8fadbd723267d8ac9e2ca9a32e9935125fb1243487a37ae4add8e1bca",
+    "draftSha256": "36bf7211e8ecf5cb77f6b0e70d8841a00a99eb1be225ac3527a97230cac1f523",
     "seedAssignmentVersion": 1
   }
 }

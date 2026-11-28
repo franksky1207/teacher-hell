@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9a877d68a92cd6cb19f08790e5ca0df064acc2f3f00cbfc84f944bc7d2c106c0",
+      "checkedAt": "2026-11-28T02:54:05.911Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我婉拒這份附條件資源，維持現有合宜公開學習入口。",
+            "action": "不接受綁評分的贈與，必要資源支持不減。",
+            "tradeoff": "優質工具用不到、家長不滿。"
+          },
+          {
+            "id": 2,
+            "text": "我協商僅作自選補充，對方真願撤條件且授權核可才用。",
+            "action": "提出合法資源協商，不假稱已取得帳號。",
+            "tradeoff": "多談判、可能破局。"
+          },
+          {
+            "id": 3,
+            "text": "我邀有權校內窗口一起處理正式受贈與授權，不私下談成。",
+            "action": "提出有限正式成人協作，未核定前不用。",
+            "tradeoff": "行政時間、關係正式化。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問公開或校方可合法取得的替代資料，不綁單一家長。",
+            "action": "額外有限資源查詢，不假稱新資源已到位。",
+            "tradeoff": "教師時間、品質可能較弱。"
+          },
+          {
+            "id": 5,
+            "text": "我邀學生先說真正需要哪種資料，再考慮是否值得申請。",
+            "action": "額外有限需求交流，不把受贈當課程目標。",
+            "tradeoff": "占課務、可能期待落空。"
+          },
+          {
+            "id": 6,
+            "text": "若合適，我改邀家長做一次自願一般業界交流，與評分完全分開。",
+            "action": "提出新有限專業分享邀請，須核可及本人願意，不評個生作品。",
+            "tradeoff": "排程時間、對方可能不願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我差點為了省資源費點頭；我願自己多備一段合法公開資料的查找練習，公平給全班，不讓學生拿題目自主權換我方便。",
+          "action": "教師額外在權責內準備一般查找練習，不代作學生專題或假稱公開資料都同等完整。",
+          "tradeoff": "教師備課時間、可能更慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1187914714
+        },
+        "selectedIds": [
+          4,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "c85062d82f4d665435aafdeed4b4daf908731107e523bfd352f3de0fc9b0dbe6"
+      },
+      "consequenceDirections": {
+        "A": "可承接被看重也能不是坐評審席。",
+        "B": "可發展拒絕交換條件後成人也要承擔真實教學成本。",
+        "C": "可承接教學自主也有查找成本。",
+        "D": "可發展專業工具不一定是高中題目真正缺的東西。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8653d1c9546816fd00f0beec8866254c53c736b2db0bbb7744276f59929caa91",
+    "draftSha256": "9a877d68a92cd6cb19f08790e5ca0df064acc2f3f00cbfc84f944bc7d2c106c0",
     "seedAssignmentVersion": 1
   }
 }

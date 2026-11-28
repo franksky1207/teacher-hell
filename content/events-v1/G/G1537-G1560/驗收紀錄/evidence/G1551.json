@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "75ef9c9a35763821f01829c57eff252b90dcc9d5f99ac418f559b7e3323ad2ca",
+      "checkedAt": "2026-11-28T02:54:05.907Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不加全班新活動，維持現有合宜規範。",
+            "action": "拒絕非必要試辦，不否定正常親師互動。",
+            "tradeoff": "他覺得點子沒被看見。"
+          },
+          {
+            "id": 2,
+            "text": "我邀家長和孩子自願談自己家庭的可行使用界線，不代別家決定。",
+            "action": "有限家庭資訊交流，不推極端全天斷網。",
+            "tradeoff": "教師時間、親子可能不同意。"
+          },
+          {
+            "id": 3,
+            "text": "我提出一段合宜時段的自願螢幕使用反思，不集中收手機。",
+            "action": "有限公平自願學習提案，不以參加取悅家長或評比。",
+            "tradeoff": "占班務、家長可能嫌不夠。"
+          },
+          {
+            "id": 4,
+            "text": "我額外查核文章真正來源，把可證實與不能背書的部分回覆。",
+            "action": "有限資訊查核，不虛構專家資格或已證實無效。",
+            "tradeoff": "教師查詢時間。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問合格專業窗口有無一般數位使用說明可供家庭參考。",
+            "action": "有限合法資訊需求，不當直接介入治療或已取得。",
+            "tradeoff": "多聯絡、未必有合適資料。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他另談為什麼很想我們班被稱讚，不拿別班當輸贏。",
+            "action": "有限成人動機交流，不逼承認虛榮。",
+            "tradeoff": "時間、可能傷親近感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也常被手機拖著走，不想裝成全都會的老師；我願自己在合宜私人時間試一段自選不滑螢幕，不要求全班替我做到，再只分享我真遇到的困難。",
+          "action": "教師提出本人有限私人行為嘗試及親歷回應，保留必要聯絡，不稱已執行或證實教養法有效，不將私人困難推給學生。",
+          "tradeoff": "私人娛樂減少、可能發現自己先做不到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3685268570
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "1c5bebf3d1d73d5e85361a36585854e1f41ec1de79bf5c7781761fa00be8602d"
+      },
+      "consequenceDirections": {
+        "A": "可發展要被認同也能接受需要再問。",
+        "B": "可發展親近的家長看到老師不是拒絕改變，而是不替全班答應。",
+        "C": "可發展親近並不保證提案採納。",
+        "D": "可承接好點子後面也是大人的認可需求。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "63cf2d71904b7164805aba4ef595c315537105656d5b7604d21d6086c51e1577",
+    "draftSha256": "75ef9c9a35763821f01829c57eff252b90dcc9d5f99ac418f559b7e3323ad2ca",
     "seedAssignmentVersion": 1
   }
 }

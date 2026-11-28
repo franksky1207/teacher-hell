@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "60a9fd533809eae5e56a4fd3d7aa0fb0e211d32dc70d20ad75002fc92351eee4",
+      "checkedAt": "2026-11-28T02:54:05.899Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我向學生提出延後這次額外提早回饋，守住已排私人課。",
+            "action": "真實協商調整非必要提前承諾，必要學習接續不延。",
+            "tradeoff": "食言感、學生可能失望。"
+          },
+          {
+            "id": 2,
+            "text": "我放棄這堂已付費興趣課，依真實條款處理，保原回稿安排。",
+            "action": "取消真有預約，不假稱可退全款。",
+            "tradeoff": "金錢及難得休閒損失。"
+          },
+          {
+            "id": 3,
+            "text": "我今天晚間在合理體力範圍先批一段，保留課程再依實際能力接續。",
+            "action": "實際投入本人有限時間，不承諾疲勞硬完成。",
+            "tradeoff": "週五休息縮短、仍可能需協商。"
+          },
+          {
+            "id": 4,
+            "text": "我提出先回有限核心意見、完整回饋另定，學生可提出實際需要。",
+            "action": "協商縮小本次額外服務，不假稱原完整承諾已履。",
+            "tradeoff": "回饋較少、須重新取得理解。"
+          },
+          {
+            "id": 5,
+            "text": "我問實際各稿使用時點，依公平需要協商分批，不獎勵催得最大聲者。",
+            "action": "額外蒐真需求再排有限回饋，不虛造硬期限。",
+            "tradeoff": "聯絡和排程成本。"
+          },
+          {
+            "id": 6,
+            "text": "我查課程原本是否允許合法轉讓，真能轉且找到願意者才換回費用。",
+            "action": "詢問既有契約選項，不預設有人接或可私自轉。",
+            "tradeoff": "多聯絡、仍失去上課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我就是想有一段不像老師的時間；我願停止自己往後這段期間的非必要提前批稿加碼，既有承諾照實個別接續，不再用下次我可以更早還證明負責。",
+          "action": "明確收回未來可控額外服務供給，非剝必要教學或取消既有義務，既有承諾仍需真實合法協商，不虛構已拒一個未存在邀約。",
+          "tradeoff": "學生失去額外便利、教師得忍住不討好。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3661866210
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "44cc3e0ce23b4a33bc6337ca0e3d2159edafb5144fcf94a14e9dfa7ae41308ab"
+      },
+      "consequenceDirections": {
+        "A": "可承接責任感是否總由私人生活付帳。",
+        "B": "可承接有預算買興趣也會在棄權時心疼。",
+        "C": "可發展保住一次興趣課以外，導師敢不敢讓私人時間長期有位置。",
+        "D": "可承接信用能否靠說清範圍而非全做。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d8d486b5f2e34248b635af6d75bb3fbf0df7dc3f6a0112363ee3dbc512ac1054",
+    "draftSha256": "60a9fd533809eae5e56a4fd3d7aa0fb0e211d32dc70d20ad75002fc92351eee4",
     "seedAssignmentVersion": 1
   }
 }

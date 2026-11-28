@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "90943e5850546fea936c7b760d760e4db9f490be29ba0a3d7ea2f64559271ad2",
+      "checkedAt": "2026-11-28T02:54:05.877Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持本人原課堂節奏，他的合宜資料作自選參考。",
+            "action": "不增必讀材料，必要範圍已說明。",
+            "tradeoff": "同事覺得又被擱置。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他共同整合一份不重工的參考，協商後才採。",
+            "action": "提出成人合規共備，不預稱整合完成。",
+            "tradeoff": "教師多備課、可能再爭主次。"
+          },
+          {
+            "id": 3,
+            "text": "我另邀他談原先共備的舊分歧，不用學生群組傳話。",
+            "action": "有限成人專業關係交流，不要求立刻和解。",
+            "tradeoff": "時間、舊怨可能更明。"
+          },
+          {
+            "id": 4,
+            "text": "我請有權教學窗口主持一般材料發布分工。",
+            "action": "提出正式協商，不私撤他群組權或處罰。",
+            "tradeoff": "事情正式化。"
+          },
+          {
+            "id": 5,
+            "text": "我不加額外整合或私談，正常課務和合宜交流照常。",
+            "action": "婉拒非必要共備加碼，不撤合理資料使用權。",
+            "tradeoff": "表面客氣、怨仍在。"
+          },
+          {
+            "id": 6,
+            "text": "我邀學生自願說兩份使用困難，只談方法不票選老師。",
+            "action": "有限公平學習回饋，不揭同事私怨。",
+            "tradeoff": "教師整理時間、可能更刺面子。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想證明原講義沒輸；我願挑一段真正能互補的內容，額外自己重備一次示例，不拿學生再背一份替我爭口氣。",
+          "action": "教師額外在本人權責內準備合法正確互補示例，不洩題、不假稱同事已同意改其材料。",
+          "tradeoff": "備課時間、放下原版本全好的面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3465090735
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "f5e6972f8ea85ca16f01ae255d4d01d3c27f9f4ff99d4cfb3ee1a452fee62423"
+      },
+      "consequenceDirections": {
+        "A": "可發展資料競爭背後想被聽見的話。",
+        "B": "可發展同事都想獲認可時，誰願先讓學生少做一點。",
+        "C": "可發展認可需求碰上教學自主。",
+        "D": "可發展教師工作上限不會替每次尷尬解套。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "836654701073493d6b70b8a094c2f786e1180b39974f383ebcdc2f1e533c2882",
+    "draftSha256": "90943e5850546fea936c7b760d760e4db9f490be29ba0a3d7ea2f64559271ad2",
     "seedAssignmentVersion": 1
   }
 }

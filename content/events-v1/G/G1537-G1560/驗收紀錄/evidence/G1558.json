@@ -15,14 +15,82 @@
     "G01",
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a68ad951a41550f29e4e10c17e9da7e92607ff61a42364f9093bf91f97ab7906",
+      "checkedAt": "2026-11-28T02:54:05.920Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持今日合宜安排，不追加當場改制討論。",
+            "action": "不因未證實比較急改課務，正常支持照常。",
+            "tradeoff": "學生覺得意見被晾著。"
+          },
+          {
+            "id": 2,
+            "text": "我提出合適班務時段談頻率，不把降低頻率先當答案。",
+            "action": "額外有限公平需求協商，未同意不稱已排班會。",
+            "tradeoff": "占班務、可能更多抱怨。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他用真實一週準備情況說明困難，不蒐朋友名字。",
+            "action": "有限自願學習負荷交流，不當新必交證明。",
+            "tradeoff": "教師時間、他可能沒想過。"
+          },
+          {
+            "id": 4,
+            "text": "我提出短期公平改為另一種合宜複習形式，再依真實回饋調整。",
+            "action": "在本人權責內提出有限試行，不洩題或擅改他科。",
+            "tradeoff": "教師多備課、學生未必更喜歡。"
+          },
+          {
+            "id": 5,
+            "text": "我額外整理公開一般教學理由，不與隔壁班比誰好。",
+            "action": "提供有限非個資說明，必要正確資訊早已維持。",
+            "tradeoff": "教師文字時間、未必說服。"
+          },
+          {
+            "id": 6,
+            "text": "我邀相關科任協商本班實際練習負荷，不把免考傳言當指標。",
+            "action": "提出有限成人協作需求，不預設別人接受調整。",
+            "tradeoff": "協調時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想用今天加考讓他閉嘴；我願把本人這週可調的一段教學時間改做公開公平的額外單字應用練習，讓我真看他們卡在哪，不把考更多當我贏。",
+          "action": "教師額外準備並帶領本人權責內合宜全班練習，非必要處不得強迫額外留校，不增加報復性評量或承諾題目暗示。",
+          "tradeoff": "教師備課與可調課程時間，原想講的內容要重排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2606296793
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "1db28f6023b58d87f7d7dbbfc8724cd2c95041265c0c9a6e913839d2b8d47744"
+      },
+      "consequenceDirections": {
+        "A": "可承接一個小考背後還有其他科目的日子。",
+        "B": "可發展老師的專業也要能讓學生聽得懂。",
+        "C": "可承接願意調整不等於向大聲者讓步。",
+        "D": "可發展被挑戰的老師願意多教一次，也容許學生還是不喜歡考。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "276d7f2151cc952f6b9b09030e1466ec99ac038b2a0b49c020f4a724fc5f92b7",
+    "draftSha256": "a68ad951a41550f29e4e10c17e9da7e92607ff61a42364f9093bf91f97ab7906",
     "seedAssignmentVersion": 1
   }
 }

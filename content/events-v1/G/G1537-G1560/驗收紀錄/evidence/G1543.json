@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "729a191fceeadf54611f5783b4be4889bf65aa445e61234b69bc7e2cfc8cb3a6",
+      "checkedAt": "2026-11-28T02:54:05.892Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "必要事實補清後，我不再追加追究，先回原課務。",
+            "action": "不擴大非必要人際爭論，不撤真實更正。",
+            "tradeoff": "悶氣自己承擔。"
+          },
+          {
+            "id": 2,
+            "text": "我另邀他談下次先確認再副本的合作方式。",
+            "action": "有限成人流程協商，不要求延誤都不留紀錄。",
+            "tradeoff": "教師時間、他可能防衛。"
+          },
+          {
+            "id": 3,
+            "text": "我提出由主管釐清一般催件層級，不只為我設例外。",
+            "action": "額外制度提案，未准不稱規定已改。",
+            "tradeoff": "正式化的人際代價。"
+          },
+          {
+            "id": 4,
+            "text": "我額外整理本人可核實的收件時間線，留下可追查工作脈絡。",
+            "action": "有限事實整理，不虛造缺件理由或披多餘個資。",
+            "tradeoff": "教師查檔時間。"
+          },
+          {
+            "id": 5,
+            "text": "我協商未來合理分段送件方式，由窗口依權責決定。",
+            "action": "提出可行新工作安排，不把部分送出冒充全完。",
+            "tradeoff": "多往返、可能不准。"
+          },
+          {
+            "id": 6,
+            "text": "我額外向合適同事詢問一般處理經驗，限不涉個資的情境。",
+            "action": "有限成人專業諮詢，不散播私人指控或拉票。",
+            "tradeoff": "教師時間、可能被看成抱怨。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想回他一封抄更多人的信；我願直接提出正式成人會談，把我受影響的工作和合作界線當面談完，不讓副本名單替我出氣。",
+          "action": "教師提出額外有限正式溝通，限必要成人知情，不重複寄必要更正充行動、不保證對方接受。",
+          "tradeoff": "多排程、須親自承受衝突。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2430168649
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "2c8906f568fac52ee7f148168ada0e742b70d90cc6b66b837ce0df1d6b925f18"
+      },
+      "consequenceDirections": {
+        "A": "可承接被問責者也需要知道怎麼守合理界線。",
+        "B": "可承接判斷回來後能否改下一次做法。",
+        "C": "可承接除了短說明還要不要留更完整證據。",
+        "D": "可發展不甘被小題大作，不代表要用更大的題還回去。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e0ca604bfb8014370ca22a995cefa25aeda5ea31c101868655408e38cfcbe07f",
+    "draftSha256": "729a191fceeadf54611f5783b4be4889bf65aa445e61234b69bc7e2cfc8cb3a6",
     "seedAssignmentVersion": 1
   }
 }

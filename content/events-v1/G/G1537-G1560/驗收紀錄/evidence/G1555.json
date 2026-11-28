@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f7b793e43c439f9bd91996438addee1902da4dcfe06d86abba4cc73f09c14b30",
+      "checkedAt": "2026-11-28T02:54:05.916Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持合宜進度，不為追上傳聞加發額外題本。",
+            "action": "拒絕非必要題量加碼，必要支持不減。",
+            "tradeoff": "家長仍不安。"
+          },
+          {
+            "id": 2,
+            "text": "我額外整理公平自願進階練習資訊，不要求購買或回報。",
+            "action": "提供有限合法適切資訊，未做不當已多練。",
+            "tradeoff": "查找時間、可能造成隱形跟風。"
+          },
+          {
+            "id": 3,
+            "text": "我邀親子談孩子真實負荷和需要，不由別班數量替他決定。",
+            "action": "有限自願需求交流，不把孩子叫來證明家長錯。",
+            "tradeoff": "教師時間、親子可能不同調。"
+          },
+          {
+            "id": 4,
+            "text": "我額外用合法一般例題說明怎樣算有理解，不點名個生成績。",
+            "action": "有限具體教學說明，不洩題或保證考試結果。",
+            "tradeoff": "占課間、未必消比較。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問相關科任一般練習安排，確認是否有真實落差值得協調。",
+            "action": "有限合法成人協作，不拿家長傳聞當指控。",
+            "tradeoff": "多聯絡、可能無需改。"
+          },
+          {
+            "id": 6,
+            "text": "我不承接額外私人升學顧問，正常教學與必要說明照常。",
+            "action": "婉拒非必要逐日比較服務，不拒正當問題。",
+            "tradeoff": "家長覺得疏遠。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被比得也很想加兩本證明自己；我願多看一輪本人已收的真實學習回應，只針對真的需要處備課，不拿整班刷題替我贏回面子。",
+          "action": "教師額外合法分析既有可用課內回應，依本人權責準備適切內容，不虛報測得成效或強加題量。",
+          "tradeoff": "備課時間、可能看見自己的缺口。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1182325250
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "79f75e6d0ed5521a73a7e2772afcd9a6e94301d20a677e37b1c4a6ad8dc72356"
+      },
+      "consequenceDirections": {
+        "A": "可承接能說服人的家長也有談不完的焦慮。",
+        "B": "可承接安心抓手也可能成新壓力。",
+        "C": "可發展被質疑的教師願意改進，卻不靠題本厚度表演。",
+        "D": "可承接把多寡焦慮轉成看得見的思考。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "96d1e647fd5fb77d2446df34fa5be1a05657bf01189614be6a179d851f268221",
+    "draftSha256": "f7b793e43c439f9bd91996438addee1902da4dcfe06d86abba4cc73f09c14b30",
     "seedAssignmentVersion": 1
   }
 }

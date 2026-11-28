@@ -16,14 +16,155 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c7d4bfc551047cbdd650877c2224fa9a1dcee736ef5629962bd5d8673e15b637",
+      "checkedAt": "2026-11-28T02:54:05.900Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外協助查合法晚自習申請條件，孩子意願與核准都不能跳。",
+            "action": "有限正式資源查詢，不把等家長冒充已同意讀晚自習。",
+            "tradeoff": "多行政、可能不合需要。"
+          },
+          {
+            "id": 2,
+            "text": "我邀家長自行列可委任成人，再協助核對正式接送要件。",
+            "action": "額外有限安排資訊協助，不假設親友已同意。",
+            "tradeoff": "聯絡成本、家長還要求人。"
+          },
+          {
+            "id": 3,
+            "text": "我協助問合規交通服務條件，是否委託由家長依法決定。",
+            "action": "提出有限交通查詢，不替家長下單或保證絕對安全。",
+            "tradeoff": "多協調、學生可能不喜歡。"
+          },
+          {
+            "id": 4,
+            "text": "我邀家長和有權校方談兩週實際需求，不私下答應每天陪。",
+            "action": "提出正式有限成人協商，必要當日接續不待會成。",
+            "tradeoff": "多排程、可能仍無校內方案。"
+          },
+          {
+            "id": 5,
+            "text": "我另邀學生說自己的通勤能力和想法，不只聽成人替他怕。",
+            "action": "有限自願學生需求交流，不逼獨自搭車。",
+            "tradeoff": "教師時間、親子可能意見不同。"
+          },
+          {
+            "id": 6,
+            "text": "我不承接額外私人代找長期服務，正式必要支持仍照辦。",
+            "action": "拒絕非必要個人代理工作，不撤合法照護交接。",
+            "tradeoff": "家長可能覺得冷漠。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我怕一心軟就每天七點半；若家長孩子願意且程序能接好，我願另外提出一次本人可用時間的公車陪行練習，先看孩子自己能做到哪，不替全校答應永遠等接送。",
+          "action": "教師提出額外一次合法自願公共通勤陪行支持，需校方核可、必要同意及原職務交接，未核定不成行，不私車載生、不稱練過即保證安全，不撤當日必要照護。",
+          "tradeoff": "教師私人或可調時間、家長可能仍不接受搭公車。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 109885088
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "d9746306bfdb1d89496e1fc6db79f2632a8b76868e6b548a2c8b0c39b2967548"
+      },
+      "consequenceDirections": {
+        "A": "可承接願付錢與取得合適服務不同。",
+        "B": "可承接導師關心和代辦所有家庭困難的界線。",
+        "C": "可發展安全安排中孩子不是一件待寄放物品。",
+        "D": "可發展想守下班時間的老師願投入一次能力支持，但不能替家長直接消掉安全焦慮。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選跨窗口正式協調與普通候選4同為正式成人需求協商，差異不足；改為有條件一次實際公共通勤陪行提案。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我額外協助查合法晚自習申請條件，孩子意願與核准都不能跳。",
+                "action": "有限正式資源查詢，不把等家長冒充已同意讀晚自習。",
+                "tradeoff": "多行政、可能不合需要。"
+              },
+              {
+                "id": 2,
+                "text": "我邀家長自行列可委任成人，再協助核對正式接送要件。",
+                "action": "額外有限安排資訊協助，不假設親友已同意。",
+                "tradeoff": "聯絡成本、家長還要求人。"
+              },
+              {
+                "id": 3,
+                "text": "我協助問合規交通服務條件，是否委託由家長依法決定。",
+                "action": "提出有限交通查詢，不替家長下單或保證絕對安全。",
+                "tradeoff": "多協調、學生可能不喜歡。"
+              },
+              {
+                "id": 4,
+                "text": "我邀家長和有權校方談兩週實際需求，不私下答應每天陪。",
+                "action": "提出正式有限成人協商，必要當日接續不待會成。",
+                "tradeoff": "多排程、可能仍無校內方案。"
+              },
+              {
+                "id": 5,
+                "text": "我另邀學生說自己的通勤能力和想法，不只聽成人替他怕。",
+                "action": "有限自願學生需求交流，不逼獨自搭車。",
+                "tradeoff": "教師時間、親子可能意見不同。"
+              },
+              {
+                "id": 6,
+                "text": "我不承接額外私人代找長期服務，正式必要支持仍照辦。",
+                "action": "拒絕非必要個人代理工作，不撤合法照護交接。",
+                "tradeoff": "家長可能覺得冷漠。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我怕一心軟就每天七點半；我願額外把兩週的實際需求和校內可供範圍帶進正式協調，要求有權者一起承接，不拿自己的下班替全校答應。",
+              "action": "教師主動投入有限正式跨窗口協調請求，提出真實持續需求與責任配置，不預稱已核定、不讓當日安全懸空。",
+              "tradeoff": "教師協調與人際成本、可能被嫌把小事放大。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4131576191
+            },
+            "selectedIds": [
+              3,
+              6,
+              5
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": "emotional",
+              "C": 6,
+              "D": 5
+            },
+            "optionsDigest": "d3537c41b1675e16bcc55d0cd791e827b5e3769b898d0be911fce570169e9cc0"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接願付錢與取得合適服務不同。",
+            "B": "可發展想準時下班的成人仍願把照看問題放到有權決定的位置。",
+            "C": "可承接導師關心和代辦所有家庭困難的界線。",
+            "D": "可發展安全安排中孩子不是一件待寄放物品。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ac681f28a79114eb07f3da9f69a12bdbeb68e18d79326d6099a3923fca880b91",
+    "draftSha256": "c7d4bfc551047cbdd650877c2224fa9a1dcee736ef5629962bd5d8673e15b637",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5d6a04182cbd51f0144da7bbd037505d298618e0cc5d68bc72078ea17f41321f",
+      "checkedAt": "2026-11-28T02:54:05.921Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另邀他私下說不想被知道的擔心，不立刻加對質。",
+            "action": "額外自願個別支持，不免除必要公平查證。",
+            "tradeoff": "教師時間、他可能仍說沒事。"
+          },
+          {
+            "id": 2,
+            "text": "若各方願意，我陪一次有限分工協商，不逼他當場告狀。",
+            "action": "提出自願修復對話，責任不以和解免除。",
+            "tradeoff": "多協調、可能拒絕。"
+          },
+          {
+            "id": 3,
+            "text": "我提議下次採清楚可見的輪流分工，讓每人知道範圍。",
+            "action": "額外合理程序改善，不用新增公差懲罰。",
+            "tradeoff": "教師督導增加。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全班談幫忙和丟包的差別，避免可辨識細節。",
+            "action": "額外一般合作學習，不點名供審判。",
+            "tradeoff": "班務時間、他可能怕被猜。"
+          },
+          {
+            "id": 5,
+            "text": "我不再追加訓練或調解計畫，必要責任處理照常接續。",
+            "action": "婉拒非必要加碼，不把安全收尾當事情從未發生。",
+            "tradeoff": "關係可能仍僵。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問合適專業同事後續關係支持，先尊重學生意願。",
+            "action": "提出合規有限支持協作，不假稱已介入或免責。",
+            "tradeoff": "多聯絡、他怕被標籤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想把那兩個叫回來罵，可也看見自己只管收完的方便；我願額外親自參與下一次合宜器材交接的成人督導，不再把最後有沒有收好丟給最會忍的人。",
+          "action": "教師提出額外有限下次成人在場督導，與科任合法協調、不預設已排成，不用當次必要安全處理充新增行動。",
+          "tradeoff": "教師課間與協調成本、可能無法每次在場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2159177187
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "6d0e14273f3cb869a536378925bee808cf1dfdddf0dfa5c339867f0daa8642b8"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生見到老師承擔監督，而不必靠撕破臉取得保護。",
+        "B": "可承接怕衝突不等於只能由導師替他說。",
+        "C": "可承接同儕文化需要不只一個人練勇敢。",
+        "D": "可發展敬重老師也會害怕老師出手。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a981f461ad5db6f699b9d15fd14ceb4f013df500346feff63983b887548c91c9",
+    "draftSha256": "5d6a04182cbd51f0144da7bbd037505d298618e0cc5d68bc72078ea17f41321f",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1d7c917c6ccf76f2dc018a742bbb331fa6a6af8d01c527f81c24aafbd91f1cd7",
+      "checkedAt": "2026-11-28T02:54:05.885Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持現有合法學生自理流程，不加群組核對活動。",
+            "action": "拒非必要改制，必要支持照常。",
+            "tradeoff": "家長覺得熱情沒出口。"
+          },
+          {
+            "id": 2,
+            "text": "我和有需要家庭依學生意願談有限私人核對，不公開接龍。",
+            "action": "提出合宜個別支持協商，不承諾教師夜間無限回覆。",
+            "tradeoff": "多個別聯繫。"
+          },
+          {
+            "id": 3,
+            "text": "我提出在校內可調時間教學生互核記錄，不由家長接手。",
+            "action": "公平有限自願學習支持，不披個別資料。",
+            "tradeoff": "占班務、未必立刻改善。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他另談最想被看見哪種用心，不幫他造一場評比。",
+            "action": "有限成人動機交流，不否認正常家長參與。",
+            "tradeoff": "時間、他可能尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我蒐集家庭對資訊取得的自願一般意見，再決定需不需要新安排。",
+            "action": "額外需求蒐集，不讓多數強迫少數夜間在線。",
+            "tradeoff": "教師整理成本。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他把表改作自己家庭自願工具，不放群裡點別人的名。",
+            "action": "提出私用界線建議，仍尊重學生自主隱私，不預稱採納。",
+            "tradeoff": "他失去帶領全班的成就感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想被說帶班有一套，差點就接了；我願公開把本班家長不必晚上上線這件事說明白，額外替不方便出聲的人承擔掃興，不拿全員打卡當我的漂亮數字。",
+          "action": "教師額外承擔成人群組一般工作時段界線說明，不披誰反對，不把必要功課資訊只留此分支提供。",
+          "tradeoff": "少了漂亮團結畫面、得面對提案者失落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1111782268
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "6baa7ea2faf1291b36314fc83ef54d81fd8acb9735e2863264fb7687e79b1037"
+      },
+      "consequenceDirections": {
+        "A": "可發展最團結的想像能否容納沒空的人。",
+        "B": "可發展老師的認可需求也可能推著家長一起忙。",
+        "C": "可承接全班形象與個別實際困難不同。",
+        "D": "可發展認同規範不等於需要加碼監督。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cbb3ea7eaec750273e57b7c927b8854c5bf18f1ac213f5842d697f513b28f651",
+    "draftSha256": "1d7c917c6ccf76f2dc018a742bbb331fa6a6af8d01c527f81c24aafbd91f1cd7",
     "seedAssignmentVersion": 1
   }
 }

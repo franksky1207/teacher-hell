@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dc5f8c73b2080d4e23af395082b6ca5e079ea27760f3f4426363164a47c7447f",
+      "checkedAt": "2026-11-28T02:54:05.882Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我邀兩方自願談可行安全玩法，把提案送合適班務時段處理。",
+            "action": "有限規則協商，必要安全不等投票才維持。",
+            "tradeoff": "教師時間、雙方都可能不服。"
+          },
+          {
+            "id": 2,
+            "text": "我維持現有合宜規範，不追加全面桌遊新制。",
+            "action": "婉拒非必要擴張禁令，原安全休閒權共同維持。",
+            "tradeoff": "發文者覺得心意落空。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他私下談那次差點受傷後還怕什麼。",
+            "action": "額外自願個別交流，不以談過取代安全處理。",
+            "tradeoff": "教師時間、他怕被當膽小。"
+          },
+          {
+            "id": 4,
+            "text": "我提出合適安全區域試用的協商，先問有權者與實際空間。",
+            "action": "額外場地提案，未准不稱已有桌遊區。",
+            "tradeoff": "多協調、可能空間不足。"
+          },
+          {
+            "id": 5,
+            "text": "我請各種玩法的自願參與者提出安全需求，不讓人氣最高者代表全部。",
+            "action": "額外公平需求蒐集，不將危險與合法需求等量妥協。",
+            "tradeoff": "整理成本、聲量多。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權安全人員做一般風險說明，避免我和他只爭誰懂。",
+            "action": "提出有限合法教育支援，不保證能即時安排。",
+            "tradeoff": "多聯絡、他可能覺得被升級處理。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我差點順勢讓他替我當壞人；我願親自多留一段合宜課間，和願意的同學實際走一次桌椅間的可用動線，不叫他再替我巡抓誰在玩。",
+          "action": "教師額外帶領自願安全空間確認，不試危險拋物、不撤基本照看，不賦予學生糾察權或宣稱保證零風險。",
+          "tradeoff": "教師課間時間、學生可能嫌掃興。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3612704874
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "5d5e44a706a77e9ef5ecd05347c6dc3c24dd8478da2910baade550849b9472cd"
+      },
+      "consequenceDirections": {
+        "A": "可發展受敬重的老師不必接受代行立規。",
+        "B": "可承接同儕影響力不能憑空變出地方。",
+        "C": "可發展導師願出力，就不必拿人氣學生替自己發禁令。",
+        "D": "可發展強硬原則底下真有害怕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ffa3f71d91aa20cc5972ba7711b84fba544f0c8d7745fa9a5f7ab48a87dc1d57",
+    "draftSha256": "dc5f8c73b2080d4e23af395082b6ca5e079ea27760f3f4426363164a47c7447f",
     "seedAssignmentVersion": 1
   }
 }

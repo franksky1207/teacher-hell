@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7b0e4ce2ef39bb0263e403c031d40b9bfcb7956e9e1615ae06ca4de835a370dd",
+      "checkedAt": "2026-11-28T02:54:05.888Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他準備一段額外當面說明，承認失言但不要求學生體諒才作數。",
+            "action": "有限成人溝通準備，必要更正早已共同接續。",
+            "tradeoff": "教師時間、同事仍可能害怕。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他與願意的受影響學生再談感受，不逼收下道歉。",
+            "action": "提出額外自願關係修復，不將出席當成績條件。",
+            "tradeoff": "多時間、學生可能拒談。"
+          },
+          {
+            "id": 3,
+            "text": "我不再替他潤飾，正常支持接著，讓他自己決定額外怎麼說。",
+            "action": "婉拒非必要代寫代言，不免除原有責任。",
+            "tradeoff": "朋友可能覺得被丟下。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他檢視真實批改工作哪部分可合規分擔，先不加新訓話。",
+            "action": "提出成人工作協商，不代評或預設有支援。",
+            "tradeoff": "多協調、成效不確定。"
+          },
+          {
+            "id": 5,
+            "text": "我和他提一個可行卷首提醒方式，公平適用而不加懲罰。",
+            "action": "額外一般學習流程提案，未同意不稱已改。",
+            "tradeoff": "備課時間、仍可能有人忘。"
+          },
+          {
+            "id": 6,
+            "text": "若合適，我邀他在正式教師交流談一般過勞失言經驗，不曝學生。",
+            "action": "提出自願成人專業交流，不逼公開懺悔。",
+            "tradeoff": "面子與會務時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很怕上課被問倒；他若願意、課務可行，我額外陪他進班坐一小段，只支持說清楚，不替他回答或幫學生吞掉不滿。",
+          "action": "提出教師額外有限共同在場合宜支持，需本科同意及合法課務，不代評、不替必要更正背書免責。",
+          "tradeoff": "教師少空堂、學生可能覺得兩個老師來壓場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1935507079
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "e3ede97230085297d22c792f534cdc63b3e11f25f7b9e1e445f314ba158e1810"
+      },
+      "consequenceDirections": {
+        "A": "可承接喊零分之外還有沒被處理的負荷。",
+        "B": "可發展成年人需要陪伴，也得容許學生不立刻原諒。",
+        "C": "可發展導師能幫到哪裡。",
+        "D": "可承接家庭支持的成人也會需要學面對尷尬。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "134a7cac30a095640e9a3ef82890e24399294b2b4a71ed8298054125e12ccf61",
+    "draftSha256": "7b0e4ce2ef39bb0263e403c031d40b9bfcb7956e9e1615ae06ca4de835a370dd",
     "seedAssignmentVersion": 1
   }
 }

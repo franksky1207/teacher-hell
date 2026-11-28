@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2ac681bb3e7516e3c341dcbad1a85ed215be7bebd1d83ce7f40cfbf482535662",
+      "checkedAt": "2026-11-28T02:54:05.919Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我協商停用這組架，物主帶回可帶物，採各自合法防水收納。",
+            "action": "提出尊重物主的有限替代，不擅丟財物或強買。",
+            "tradeoff": "換鞋不便、學生失望。"
+          },
+          {
+            "id": 2,
+            "text": "我申請真正可用的公共雨具位置，核准前維持合法暫存。",
+            "action": "提出場地協調，不把樓梯平台當天然空地。",
+            "tradeoff": "教師行政時間、可能不准。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問是否可在不縮逃生線的前提重新配置教室，由有權者核可。",
+            "action": "提出合法空間調整評估，不自行判定搬進就安全。",
+            "tradeoff": "可能挪掉其他收納。"
+          },
+          {
+            "id": 4,
+            "text": "我邀學生自願提出實際雨具需求，評估能否縮小班級共用規模。",
+            "action": "額外有限需求協商，不動必要安全。",
+            "tradeoff": "班務時間、仍可能沒共識。"
+          },
+          {
+            "id": 5,
+            "text": "我額外向合法資源窗口問合宜收納用品，不承諾已拿到或要求家長捐。",
+            "action": "有限資源查詢，不以新物品保證安全。",
+            "tradeoff": "查找時間、可能無料。"
+          },
+          {
+            "id": 6,
+            "text": "我和職員另談怎麼向學生解釋空間取捨，不只用評比說服。",
+            "action": "額外成人溝通協作，不要求他撤回有理安全判斷。",
+            "tradeoff": "教師時間、可能刺認可需求。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也捨不得自己教室看起來擠；我願額外清掉本人在教室內確有、可自行移回的非必要備課物，騰出的地方仍請有權者判斷能否安全用，不先把架塞進去。",
+          "action": "教師實際提出承擔本人合法備課物收整及便利損失，未確認合規前不移入雨具架，不侵學生物或假稱空間一定足夠。",
+          "tradeoff": "教師收整時間、備課取物較不便。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2473865431
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "0f9cb4976c7a2f9a6be00feab9ea8dae16d5cb63855f21569fe18783616a3732"
+      },
+      "consequenceDirections": {
+        "A": "可承接自費買來不代表永遠得維持同樣用途。",
+        "B": "可發展安全改善不能只靠最有心的人自費。",
+        "C": "可發展要求學生配合前教師也願拿自己的方便進來談。",
+        "D": "可承接專業被重視不必靠班級吃下全部不便。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "164754ad969b7e6cad466ceac1a325ea71b24b1ccaac088f590dd6346a02dda1",
+    "draftSha256": "2ac681bb3e7516e3c341dcbad1a85ed215be7bebd1d83ce7f40cfbf482535662",
     "seedAssignmentVersion": 1
   }
 }

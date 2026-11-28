@@ -15,14 +15,155 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0459520d97c2f83e1931faebdd4c9b791c942b29534a319bae52361b4238751f",
+      "checkedAt": "2026-11-28T02:54:05.914Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他設計有限重點回饋方式，先給必要可用的學習訊息。",
+            "action": "提出本科可行教學諮詢，不替其決定全部評分。",
+            "tradeoff": "教師時間、他怕被看成偷懶。"
+          },
+          {
+            "id": 2,
+            "text": "若同科資格和授權都合適，我協商分擔有限客觀核對，仍由他覆核評量。",
+            "action": "提出合規成人協作，不預設本人必有資格或已完成。",
+            "tradeoff": "少自己的空堂、可能不成。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他協商合法分批發還，必要複習支持另外接好。",
+            "action": "提出真實進度安排，不空簽或漏學生需求。",
+            "tradeoff": "信用與說明負擔。"
+          },
+          {
+            "id": 4,
+            "text": "我和他提出向有權者釐清實際工作量的需求。",
+            "action": "額外正式負荷協商，不取消必要教學。",
+            "tradeoff": "面子、行政時間。"
+          },
+          {
+            "id": 5,
+            "text": "我邀一位願意的合格同科前輩談不同批改做法，不找權威叫他照抄。",
+            "action": "提出有限成人交流，不當支援已取得。",
+            "tradeoff": "多協調、他可能更自卑。"
+          },
+          {
+            "id": 6,
+            "text": "我不承接私人代改，只提供有限方向，回自己課務。",
+            "action": "婉拒非必要人力加碼，必要學生支持依原權責接續。",
+            "tradeoff": "新人可能失望。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "被他叫專業，我也想一口救整箱；若合法授權，我願只幫本班已依規改好的部分做有限整併發還準備，讓他把力氣留給真正要自己判斷的回饋，不裝我每科都會。",
+          "action": "教師提出有限非評量收整協作，僅依法授權必要知情範圍，不拆密件、不代評改分或預稱已核完，科任仍負責評量與覆核。",
+          "tradeoff": "教師少空堂，只做不起眼的收整而非當救星。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4229861626
+        },
+        "selectedIds": [
+          2,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "032fa6f03c0d4fc3be67c25cb4f9178433d687735e606046cb7cd1c39633436f"
+      },
+      "consequenceDirections": {
+        "A": "可發展想被新人佩服的老師願做不耀眼的工作，也不讓崇拜換走自己的無限時間。",
+        "B": "可發展他以為人人寫滿，其實也許有別種專業。",
+        "C": "可發展從眾的步調不一定要靠熬夜追上。",
+        "D": "可承接救一次工作量會不會留下原習慣。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選共同做回饋示例與普通1設計重點回饋方式實質重疊；改為依法授權的非評量收整協作，與普通2客觀核對也分開。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我陪他設計有限重點回饋方式，先給必要可用的學習訊息。",
+                "action": "提出本科可行教學諮詢，不替其決定全部評分。",
+                "tradeoff": "教師時間、他怕被看成偷懶。"
+              },
+              {
+                "id": 2,
+                "text": "若同科資格和授權都合適，我協商分擔有限客觀核對，仍由他覆核評量。",
+                "action": "提出合規成人協作，不預設本人必有資格或已完成。",
+                "tradeoff": "少自己的空堂、可能不成。"
+              },
+              {
+                "id": 3,
+                "text": "我邀他協商合法分批發還，必要複習支持另外接好。",
+                "action": "提出真實進度安排，不空簽或漏學生需求。",
+                "tradeoff": "信用與說明負擔。"
+              },
+              {
+                "id": 4,
+                "text": "我和他提出向有權者釐清實際工作量的需求。",
+                "action": "額外正式負荷協商，不取消必要教學。",
+                "tradeoff": "面子、行政時間。"
+              },
+              {
+                "id": 5,
+                "text": "我邀一位願意的合格同科前輩談不同批改做法，不找權威叫他照抄。",
+                "action": "提出有限成人交流，不當支援已取得。",
+                "tradeoff": "多協調、他可能更自卑。"
+              },
+              {
+                "id": 6,
+                "text": "我不承接私人代改，只提供有限方向，回自己課務。",
+                "action": "婉拒非必要人力加碼，必要學生支持依原權責接續。",
+                "tradeoff": "新人可能失望。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "被他叫專業，我也想一口答應救整箱；我願先收回那個全包姿態，只拿本人一段可用空檔陪他改一份合宜示例，把方法交回他，不用我替他做完才算幫。",
+              "action": "教師提出額外有限共同研擬回饋示例，依法資格與個資授權，非代評整箱、不許諾全部完成。",
+              "tradeoff": "教師時間、得忍住當救星。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1650287537
+            },
+            "selectedIds": [
+              2,
+              1,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 2,
+              "B": 4,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "04351a20b87dc2683aa8a654847c804aceb933ee6cb34912f3fcc9463434179f"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接救一次工作量會不會留下原習慣。",
+            "B": "可承接新人敢不敢讓人知道自己撐不住。",
+            "C": "可發展專業認可不等於每本半頁字。",
+            "D": "可發展成人也可能靠被需要滿足自己，卻得讓新人找回可持續節奏。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aeaf1f7555b0204e1579ae91f3020d38c82733df4cc1a819187f17aff5e103ab",
+    "draftSha256": "0459520d97c2f83e1931faebdd4c9b791c942b29534a319bae52361b4238751f",
     "seedAssignmentVersion": 1
   }
 }

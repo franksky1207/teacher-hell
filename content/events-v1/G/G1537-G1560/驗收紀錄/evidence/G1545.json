@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5399b69039feaed547ab6446e453f290ce4761c3896e01f181232c3d3ffe1f13",
+      "checkedAt": "2026-11-28T02:54:05.897Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持原決議，物資經物主意願收回，不再加新裝飾。",
+            "action": "不採額外改風格提案，原作與正常參與不受損。",
+            "tradeoff": "帶物者當眾失望。"
+          },
+          {
+            "id": 2,
+            "text": "若合法協商且作者真願意，我接受有限安全角落點綴，不動主體。",
+            "action": "提出有限混合方案，未同意不貼。",
+            "tradeoff": "視覺可能不搭、善後增加。"
+          },
+          {
+            "id": 3,
+            "text": "我安排合適可調班務重新討論提案，未決前維持原作。",
+            "action": "提出公平變更協商，不以聲量當已翻案。",
+            "tradeoff": "多班務時間、原作者不安。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他用自己的口才介紹同學已做出的紙材，不要假裝一定喜歡。",
+            "action": "提出自願支持原作者的分享邀請，不逼說違心話。",
+            "tradeoff": "他失去當主導者的光彩。"
+          },
+          {
+            "id": 5,
+            "text": "我和他私下談那兩袋為什麼非今天用不可。",
+            "action": "額外有限個別動機交流，不交換特權。",
+            "tradeoff": "教師時間、他可能只說隔壁有。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問是否有合規可拆卸私人小樣展示機會，不改全班風格。",
+            "action": "提出新有限自願樣式提案，需權責及物主同意、不預設場地。",
+            "tradeoff": "多協調、仍可能不採。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點羨慕隔壁；我願收起自己想拍漂亮班照的念頭，額外和原作者親手把已剪好的紙完成一角，不叫他們為我們的比較重新來。",
+          "action": "教師提出額外有限合法手作協助，須作者自願、非代做評量，不強迫放棄後續合法討論。",
+          "tradeoff": "教師時間、放掉華麗面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1431401096
+        },
+        "selectedIds": [
+          5,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "8e3ad764a081c309fd15aa36c7b93fd89eb6b08ee9720966531619f17a5c208d"
+      },
+      "consequenceDirections": {
+        "A": "可發展民主也能討論改變但不是帶貨先贏。",
+        "B": "可發展承認自己也被比較帶走，比只訓學生從眾更難。",
+        "C": "可發展免費也不是跳過共識的票。",
+        "D": "可發展熱心也有不想輸給別班的急。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7fd6b2e91ca0a16f0a13528c5bc6bcc67eb0f96f0742e8ce20ffd18e35d0ec24",
+    "draftSha256": "5399b69039feaed547ab6446e453f290ce4761c3896e01f181232c3d3ffe1f13",
     "seedAssignmentVersion": 1
   }
 }

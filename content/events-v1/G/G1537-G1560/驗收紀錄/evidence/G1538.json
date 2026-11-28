@@ -15,14 +15,155 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "66adbfcaa94f701a22266dcbb2e1e6205184e41e85483b8699b1eb998a73514a",
+      "checkedAt": "2026-11-28T02:54:05.880Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我取消這次到宅，不再追加非急迫檢修，費用依真實約定辦。",
+            "action": "終止原預約並依法結算，非單選才付應付費。",
+            "tradeoff": "白花出勤成本、安心感沒買到。"
+          },
+          {
+            "id": 2,
+            "text": "我詢問改到本人能在場的下班時段做正常檢視，另趟報價先核實。",
+            "action": "提出新時段委託協商，未答應按原約取消。",
+            "tradeoff": "可能多付再訪成本。"
+          },
+          {
+            "id": 3,
+            "text": "我先只請專業方提供正式可行的檢修範圍與報價，今天不約新場。",
+            "action": "額外有限服務諮詢，未委託不稱已修或已付款。",
+            "tradeoff": "還需決定、可能更多費用。"
+          },
+          {
+            "id": 4,
+            "text": "我利用之後私人空檔向官方核對真正適用資訊，不以舊圖推住宅有問題。",
+            "action": "額外有限合法資訊查核，無真實急迫警訊不亂報事故。",
+            "tradeoff": "私人時間。"
+          },
+          {
+            "id": 5,
+            "text": "我把這次原圖日期與可查原始來源留作本人購物前核對提醒。",
+            "action": "實際整理有限私人資訊，不冒稱已做居家檢查。",
+            "tradeoff": "花時間承認自己沒看日期。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問這趟依約應付的出勤費，能否有部分抵之後本人能在場的真實服務，不先答應再約一趟，也不拿不同意抵扣當拒付理由。",
+            "action": "提出額外有限費用安排協商，按合法原約處理已發生費用，未同意不宣稱取得抵用額度或新預約，不把非急需求硬說成必要維修。",
+            "tradeoff": "多協商時間，可能被吸引再消費，對方也可能不答應。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想偷偷吞掉這筆糗錢；我願在原私人群補上原始日期，說自己竟真的叫了師傅、正在按約處理這趟，不拿群友當害我花錢的人。",
+          "action": "教師額外主動分享本人親歷與已核實過期資訊，不披師傅個資、不虛報已付款或宣稱住宅全安全。",
+          "tradeoff": "公開丟臉、可能被笑。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3025438364
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "d8b769ce5fa60dd52a93be063ad8e2ad448f90efbdeb60a063f84db3cccbd444"
+      },
+      "consequenceDirections": {
+        "A": "可發展想把烏龍費用救回用途的人，是否反而為了不白花再承諾一筆未必需要的服務。",
+        "B": "可發展快速下單的人願不願在下次多停一分鐘。",
+        "C": "可承接烏龍起因也可能轉成真正需要的檢視。",
+        "D": "可發展要安全感的成人也能承認自己是舊圖的下一站。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原普通6停止研究直接赴校與普通1取消並不追加檢修的實質行動重疊；改為保留原約費用責任的額外抵扣協商，不為更換組合重抽。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我取消這次到宅，不再追加非急迫檢修，費用依真實約定辦。",
+                "action": "終止原預約並依法結算，非單選才付應付費。",
+                "tradeoff": "白花出勤成本、安心感沒買到。"
+              },
+              {
+                "id": 2,
+                "text": "我詢問改到本人能在場的下班時段做正常檢視，另趟報價先核實。",
+                "action": "提出新時段委託協商，未答應按原約取消。",
+                "tradeoff": "可能多付再訪成本。"
+              },
+              {
+                "id": 3,
+                "text": "我先只請專業方提供正式可行的檢修範圍與報價，今天不約新場。",
+                "action": "額外有限服務諮詢，未委託不稱已修或已付款。",
+                "tradeoff": "還需決定、可能更多費用。"
+              },
+              {
+                "id": 4,
+                "text": "我利用之後私人空檔向官方核對真正適用資訊，不以舊圖推住宅有問題。",
+                "action": "額外有限合法資訊查核，無真實急迫警訊不亂報事故。",
+                "tradeoff": "私人時間。"
+              },
+              {
+                "id": 5,
+                "text": "我把這次原圖日期與可查原始來源留作本人購物前核對提醒。",
+                "action": "實際整理有限私人資訊，不冒稱已做居家檢查。",
+                "tradeoff": "花時間承認自己沒看日期。"
+              },
+              {
+                "id": 6,
+                "text": "我不另研究，按約處理今天後就去上班，晚間先保留休息。",
+                "action": "停止非必要追查與加約，不漏真實費用及必要安全。",
+                "tradeoff": "擔心可能還黏著。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我很想偷偷吞掉這筆糗錢；我願在原私人群補上原始日期，說自己竟真的叫了師傅、正在按約處理這趟，不拿群友當害我花錢的人。",
+              "action": "教師額外主動分享本人親歷與已核實過期資訊，不披師傅個資、不虛報已付款或宣稱住宅全安全。",
+              "tradeoff": "公開丟臉、可能被笑。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 692528654
+            },
+            "selectedIds": [
+              5,
+              2,
+              6
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 6,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "2c288c5f3c78a004a90518669a1ea83b023f4c4a82ec10898b1b402f86df2be6"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展要安全感的成人也能承認自己是舊圖的下一站。",
+            "B": "可承接恢復理性不必立刻完成一份居家研究。",
+            "C": "可發展快速下單的人願不願在下次多停一分鐘。",
+            "D": "可承接烏龍起因也可能轉成真正需要的檢視。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29910febbbecf112ab6aacddc673c0f6e966f0224bb712bcaffc4219b3320cb4",
+    "draftSha256": "66adbfcaa94f701a22266dcbb2e1e6205184e41e85483b8699b1eb998a73514a",
     "seedAssignmentVersion": 1
   }
 }

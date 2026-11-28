@@ -15,14 +15,155 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e1e9037da44c32778c3a4e6415996bb9251f079722838007f7857bd1d8537ece",
+      "checkedAt": "2026-11-28T02:43:52.824Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我開放符合核心的替代紀錄，公平條件下不再重填公版。",
+            "action": "以合理可讀證據替代重工，不私給一人秘密特權。",
+            "tradeoff": "批閱更費力。"
+          },
+          {
+            "id": 2,
+            "text": "我只保留必要公版大綱，細項可用他的實際方法。",
+            "action": "刪非必要重工，保留有教學理由的有限共同架構。",
+            "tradeoff": "他仍需轉換格式。"
+          },
+          {
+            "id": 3,
+            "text": "我提出短期公平試用替代方式，再用真實回饋調整。",
+            "action": "有限試行不預稱有效，不把支持拖到試驗通過才給。",
+            "tradeoff": "教師追蹤、學生仍不確定。"
+          },
+          {
+            "id": 4,
+            "text": "我另請他自願解釋一段自己的複習，先理解雙份工作在哪。",
+            "action": "有限個別學習交流，不要求再做一份證明。",
+            "tradeoff": "課後時間、他可能覺得還在被檢查。"
+          },
+          {
+            "id": 5,
+            "text": "我邀全班匿名自願回饋真實使用困難，不公開他的表。",
+            "action": "額外需求蒐集，個別必要支持不待多數決。",
+            "tradeoff": "教師整理時間、可能聽見更多不好用。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問相關科任一般方法上的意見，只用合法匿名材料。",
+            "action": "有限成人教學諮詢，不轉傳個資或宣稱對方背書。",
+            "tradeoff": "協調成本、無立刻答案。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不甘心那張滿分表被說沒用；我願重新細讀他這份已交的內容，額外回一段真正針對思路的意見，不再叫他做新的一份讓我安心。",
+          "action": "教師額外重讀既有合法作業，提供有限具體思路回饋，不把格式滿分當學習成效，不新增學生重工，不虛構先前已有強制美觀規定。",
+          "tradeoff": "教師多批閱時間，可能看見自己原回饋太表面。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3457014081
+        },
+        "selectedIds": [
+          3,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "c6f47fec27c6bd2b94a80a3fd09c9e28b783c25f49f90cfe4e7d816aa38f509c"
+      },
+      "consequenceDirections": {
+        "A": "可承接教學質疑能否被當專業資訊。",
+        "B": "可承接教師便利和個人適性的折衷。",
+        "C": "可發展被質疑的教師願不願把功夫花回學生已做的事，而不是再收一張漂亮表。",
+        "D": "可發展適應快不等於每套方法都該永久採用。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選撤除原先未確立的版面美觀要求，誤把學生自發整齊當教師已強制；改為教師額外實際重讀並回饋既交內容。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我開放符合核心的替代紀錄，公平條件下不再重填公版。",
+                "action": "以合理可讀證據替代重工，不私給一人秘密特權。",
+                "tradeoff": "批閱更費力。"
+              },
+              {
+                "id": 2,
+                "text": "我只保留必要公版大綱，細項可用他的實際方法。",
+                "action": "刪非必要重工，保留有教學理由的有限共同架構。",
+                "tradeoff": "他仍需轉換格式。"
+              },
+              {
+                "id": 3,
+                "text": "我提出短期公平試用替代方式，再用真實回饋調整。",
+                "action": "有限試行不預稱有效，不把支持拖到試驗通過才給。",
+                "tradeoff": "教師追蹤、學生仍不確定。"
+              },
+              {
+                "id": 4,
+                "text": "我另請他自願解釋一段自己的複習，先理解雙份工作在哪。",
+                "action": "有限個別學習交流，不要求再做一份證明。",
+                "tradeoff": "課後時間、他可能覺得還在被檢查。"
+              },
+              {
+                "id": 5,
+                "text": "我邀全班匿名自願回饋真實使用困難，不公開他的表。",
+                "action": "額外需求蒐集，個別必要支持不待多數決。",
+                "tradeoff": "教師整理時間、可能聽見更多不好用。"
+              },
+              {
+                "id": 6,
+                "text": "我詢問相關科任一般方法上的意見，只用合法匿名材料。",
+                "action": "有限成人教學諮詢，不轉傳個資或宣稱對方背書。",
+                "tradeoff": "協調成本、無立刻答案。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我有點不甘心自己那套沒用；我願撤掉本人原先對這張表非必要的版面整齊要求，讓我下次真的看思路，不再靠漂亮格子給自己安心。",
+              "action": "承認教師偏好整齊，停止本人確實推行的額外美觀要求，保留必要清楚核心與公平評量，不把字醜當學得好。",
+              "tradeoff": "教師判讀較累、放掉漂亮示範的成就感。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 149901880
+            },
+            "selectedIds": [
+              2,
+              3,
+              4
+            ],
+            "finalChoiceMap": {
+              "A": 3,
+              "B": 2,
+              "C": 4,
+              "D": "emotional"
+            },
+            "optionsDigest": "d1b18fe0e532b0fe12814aebe0d7efc71a1ff0483b41ea4dd128ebc9a839412e"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展適應快不等於每套方法都該永久採用。",
+            "B": "可承接教師便利和個人適性的折衷。",
+            "C": "可承接教學質疑能否被當專業資訊。",
+            "D": "可發展自尊受刺的教師能否不把美觀誤當成效。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5512a6b0c4637557930a9d20ad394b0218b38782e5983a262c8099a597d68659",
+    "draftSha256": "e1e9037da44c32778c3a4e6415996bb9251f079722838007f7857bd1d8537ece",
     "seedAssignmentVersion": 1
   }
 }

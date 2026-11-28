@@ -15,14 +15,155 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "00578fed4e692e4129132ee330b1e775b5c7e9f5aba938f22d9ee0ae190d3f6c",
+      "checkedAt": "2026-11-28T02:43:52.852Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他練一句不透露家境的拒絕，真正對朋友說仍由他決定。",
+            "action": "有限自願界線演練，必要真實更正另共同接續。",
+            "tradeoff": "教師時間、他還是會怕。"
+          },
+          {
+            "id": 2,
+            "text": "在他願意且合宜時，我陪他和朋友談往後邀約別追問到底。",
+            "action": "提出有限自願同儕協商，不要求披家境或保證和好。",
+            "tradeoff": "多協調、他可能更尷尬。"
+          },
+          {
+            "id": 3,
+            "text": "我不加一套人際訓練，完成必要支持後讓他先回正常生活。",
+            "action": "拒絕非必要加碼，不放任假指控續傳。",
+            "tradeoff": "下次仍可能亂編。"
+          },
+          {
+            "id": 4,
+            "text": "我邀家長只談可行生活安排與孩子意願，不找補習老師對質。",
+            "action": "提出合規有限家庭支持交流。",
+            "tradeoff": "聯絡時間、學生怕被責備。"
+          },
+          {
+            "id": 5,
+            "text": "我協助詢問本人願用的合規資源，不把朋友消費習慣當標準。",
+            "action": "額外有限資源查詢，不保證得到補助。",
+            "tradeoff": "多文件、他可能拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "我安排一般班級邀約界線討論，不點名誰負擔不起。",
+            "action": "有限公共同儕溝通，不重演個案供猜。",
+            "tradeoff": "占班務、可能仍被猜。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點心軟，也很想直接說別理他們；我願多留一次空檔，陪他只算自己願談的日常花費，想好下次真能答應多少，不追著問家裡到底多窮。",
+          "action": "教師提出有限自願日常支出與邀約負擔討論，不索帳戶或逼披家計，不代家長決策或作專業投資建議，不取代各分支必要真實更正與支持。",
+          "tradeoff": "教師時間，學生可能不想連私下都把錢攤開。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1489318736
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "b60e9639b1ec1f887b614b037813e522c2311571b1ab258551780159fdb50a54"
+      },
+      "consequenceDirections": {
+        "A": "可發展愛分享的人學著留一句不想說。",
+        "B": "可發展一次糗事不必變成全套改造。",
+        "C": "可發展省錢與不想說窮能否同在。",
+        "D": "可發展愛面子的師生不只談勇敢說不，也承認有些邀約是真想去卻目前負擔不起。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選現場陪同拒絕邀約，與普通候選2的自願同儕協商實質重疊；改為有限日常支出與可承擔邀約的自願討論，不逼暴露家庭財務。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我額外陪他練一句不透露家境的拒絕，真正對朋友說仍由他決定。",
+                "action": "有限自願界線演練，必要真實更正另共同接續。",
+                "tradeoff": "教師時間、他還是會怕。"
+              },
+              {
+                "id": 2,
+                "text": "在他願意且合宜時，我陪他和朋友談往後邀約別追問到底。",
+                "action": "提出有限自願同儕協商，不要求披家境或保證和好。",
+                "tradeoff": "多協調、他可能更尷尬。"
+              },
+              {
+                "id": 3,
+                "text": "我不加一套人際訓練，完成必要支持後讓他先回正常生活。",
+                "action": "拒絕非必要加碼，不放任假指控續傳。",
+                "tradeoff": "下次仍可能亂編。"
+              },
+              {
+                "id": 4,
+                "text": "我邀家長只談可行生活安排與孩子意願，不找補習老師對質。",
+                "action": "提出合規有限家庭支持交流。",
+                "tradeoff": "聯絡時間、學生怕被責備。"
+              },
+              {
+                "id": 5,
+                "text": "我協助詢問本人願用的合規資源，不把朋友消費習慣當標準。",
+                "action": "額外有限資源查詢，不保證得到補助。",
+                "tradeoff": "多文件、他可能拒絕。"
+              },
+              {
+                "id": 6,
+                "text": "我安排一般班級邀約界線討論，不點名誰負擔不起。",
+                "action": "有限公共同儕溝通，不重演個案供猜。",
+                "tradeoff": "占班務、可能仍被猜。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我以前也會為了不去硬找理由；我願承認這點，額外陪他留在朋友面前把那句『我這次不去，也不想細講』說完，不替他編得更漂亮。",
+              "action": "教師提出有限自願現場陪同界線表達，重點非重做必要謠言更正，須各方願意、不披經濟。",
+              "tradeoff": "教師多時間、學生可能嫌老師在更怪。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1234612741
+            },
+            "selectedIds": [
+              1,
+              5,
+              2
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 5,
+              "D": 2
+            },
+            "optionsDigest": "9333af0651245c79014a94d1a38da1c2ac94d2854684f7290139ca7129efefec"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展成人肯陪尷尬，仍不能替他活過那個眼神。",
+            "B": "可發展愛分享的人學著留一句不想說。",
+            "C": "可發展省錢與不想說窮能否同在。",
+            "D": "可承接朋友善意也可能形成壓力。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9af36f888c65285c84ba342ce9509cca2e1b93732bc4d440ec5b316fd29c7e80",
+    "draftSha256": "00578fed4e692e4129132ee330b1e775b5c7e9f5aba938f22d9ee0ae190d3f6c",
     "seedAssignmentVersion": 1
   }
 }

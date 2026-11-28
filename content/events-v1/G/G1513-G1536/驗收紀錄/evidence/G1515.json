@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4887747145d0f5b77ee10fd51fb1aa687c3907c8ae6d01bcb3330b8618c2be47",
+      "checkedAt": "2026-11-28T02:43:52.816Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我發可核實、去個資的親歷評論，不提猜測的熟人關係。",
+            "action": "發布有限客觀消費經驗，不誇大或披個資。",
+            "tradeoff": "須承擔公開回應和熟人尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我先向店家提出具體補救要求，暫不公開。",
+            "action": "正式提出私下消費協商，不稱已退費。",
+            "tradeoff": "聯繫精力、怒氣得先吞。"
+          },
+          {
+            "id": 3,
+            "text": "我走合法消費申訴入口，讓爭點留在紀錄裡。",
+            "action": "提出真實申訴，未裁定不宣稱業者違法確定。",
+            "tradeoff": "文件時間、處理可能慢。"
+          },
+          {
+            "id": 4,
+            "text": "我只在合法一般評價管道留下精簡真實評分，不進地方社團長篇交鋒。",
+            "action": "公開有限評價，不以未查證親屬關係攻擊。",
+            "tradeoff": "資訊較少、仍可能被認出。"
+          },
+          {
+            "id": 5,
+            "text": "我今晚不處理非急迫爭議，保留證據與真實期限，先休息。",
+            "action": "暫緩非必要評論協商，不放掉急迫安全或法定期限。",
+            "tradeoff": "事情懸著、可能睡不下。"
+          },
+          {
+            "id": 6,
+            "text": "我先詢問另一位合格業者檢視及補救的合法報價，再決定要不要追修。",
+            "action": "提出專業查詢，未委託不宣稱已修好或已付錢。",
+            "tradeoff": "查詢時間、可能還得多花費。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我氣得想讓整個社區知道；我先寫完整但不發布的版本，再刪掉所有猜測，只留下自己願意署責的親歷，今晚花這段時間也不讓怒氣替我造證據。",
+          "action": "實際整理並修改私人未公開草稿，不預設之後發布，不撤必要合法維權。",
+          "tradeoff": "耗休息時間、還沒有對外出氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3793587691
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "2f6c87c0b9e5ea3d3332acd3ee85e08752610fafb2b83b619265256e17326f5b"
+      },
+      "consequenceDirections": {
+        "A": "可發展喜歡主動分享的人能否忍住當下的送出衝動。",
+        "B": "可承接用錢買省事卻多出協商。",
+        "C": "可發展重負荷成人選擇不今晚討完公道。",
+        "D": "可承接有預算也不想把時間全給爛工程。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aebdf0c3920e89164b9e3d3b3147ef71f04724dbbc886615daa26775fc858f68",
+    "draftSha256": "4887747145d0f5b77ee10fd51fb1aa687c3907c8ae6d01bcb3330b8618c2be47",
     "seedAssignmentVersion": 1
   }
 }

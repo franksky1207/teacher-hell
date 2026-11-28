@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9002480bb986fb98910fc7e62351442af31f8565d76e54bc9c132cfd125fada1",
+      "checkedAt": "2026-11-28T02:43:52.813Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若核派可行，我接受有限支援，但把可做範圍講清楚。",
+            "action": "自願提出有界線支援，原必要班務不可漏。",
+            "tradeoff": "少備課時間。"
+          },
+          {
+            "id": 2,
+            "text": "我請他親自向承辦更正，再由窗口另找合適人力。",
+            "action": "要求修復真實代答錯誤，不逼公開羞辱。",
+            "tradeoff": "新人難堪、關係變冷。"
+          },
+          {
+            "id": 3,
+            "text": "我陪他一起聯絡承辦，明確拒絕這次非必要支援。",
+            "action": "教師共同出面更正並拒額外工作。",
+            "tradeoff": "花協調時間、自己成拒絕者。"
+          },
+          {
+            "id": 4,
+            "text": "我只提出能支援的一小段，由承辦決定是否另排接續。",
+            "action": "提出部分支援，未核定不當已安排人力。",
+            "tradeoff": "行程切碎、可能仍不夠。"
+          },
+          {
+            "id": 5,
+            "text": "我請有權主管釐清本次工作優先順序，再決定額外支援。",
+            "action": "提出真實工作排程請求，不自行取消必要工作。",
+            "tradeoff": "正式化、人際壓力。"
+          },
+          {
+            "id": 6,
+            "text": "我拒絕本次支援，但另邀他談以後怎麼傳達未確認邀請。",
+            "action": "額外有限成人合作對話，不假稱已講好。",
+            "tradeoff": "多時間、對方可能委屈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再當那個總會答應的人；我自己致電承辦拒絕，理由就是真實工作安排，不借新人的嘴躲掉尷尬。",
+          "action": "教師主動承擔拒絕的成人協調與評價，不把未確認說成已核派，不代新人免責。",
+          "tradeoff": "教師親自得罪人、無法藏在新人背後。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2178681043
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "3611933eab4c26f7a2b8ca55a24f9a906c03968b60aa3e3874cd48f2862edead"
+      },
+      "consequenceDirections": {
+        "A": "可承接熱心與職權的距離。",
+        "B": "可發展新人的順口承諾暴露工作分配問題。",
+        "C": "可發展護自己時間與保新人熱情能否同時成立。",
+        "D": "可承接善意協作不等於整場吞下。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4f56fd716228087377689b71dfef45913ea2e6c664964b6ce089a82e27d5859a",
+    "draftSha256": "9002480bb986fb98910fc7e62351442af31f8565d76e54bc9c132cfd125fada1",
     "seedAssignmentVersion": 1
   }
 }

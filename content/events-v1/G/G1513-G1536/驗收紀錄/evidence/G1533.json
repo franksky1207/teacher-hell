@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f6d724e5b9fa8643f1860ff94ab12a73899773f91a42165366e8a30c28457ee8",
+      "checkedAt": "2026-11-28T02:43:52.850Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "等身體允許，我和他重訂自願有限角色，不再讓他接整包。",
+            "action": "提出後續合理參與範圍，必要當下減負不待此選項。",
+            "tradeoff": "教師多協調、他怕被降級。"
+          },
+          {
+            "id": 2,
+            "text": "我邀全班自願分擔可做的事，找不到人就縮小非必要工作。",
+            "action": "提出公平新分工，不強塞兩名副手或假稱有人已接。",
+            "tradeoff": "班務規模縮小。"
+          },
+          {
+            "id": 3,
+            "text": "我停止自己提出的那部分非必要班務，讓大家少一件實際工作。",
+            "action": "在權責內刪本人可免任務，不取消必要職務或學習權。",
+            "tradeoff": "教師放掉原想完成的成果。"
+          },
+          {
+            "id": 4,
+            "text": "我另邀家長和合適專業人員一起談各項生活負荷。",
+            "action": "提出合規必要範圍外的有限整體協作，未同意不當已談。",
+            "tradeoff": "多排程、學生怕事情變大。"
+          },
+          {
+            "id": 5,
+            "text": "我額外留一次個別時間，聽他怕停下會失去什麼。",
+            "action": "有限自願關係支持，不要求立刻改觀念。",
+            "tradeoff": "教師時間、焦慮未必降。"
+          },
+          {
+            "id": 6,
+            "text": "我不急著安排回任，照專業接續，容許一段沒有特別工作的日子。",
+            "action": "不加非必要復任計畫，不剝日後合理自願參與。",
+            "tradeoff": "他可能覺得空下來更不安。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽見安排很好，竟還有點高興；我願把我本來額外要他做的班務整理自己接回來，別讓他的佩服替我省一整疊工作。",
+          "action": "教師承認便利與被認可的私心，實際承接本人可控非必要額外整理，不拿加班換學生繼續過量。",
+          "tradeoff": "教師增加工作、得承認自己也受益。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2951672534
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "dde00f7c182dff1c46a367f6957b4e215b80f7a8c8d7fda6087322f4f0c14782"
+      },
+      "consequenceDirections": {
+        "A": "可承接休息不一定立即讓人安心。",
+        "B": "可發展被肯定的帶班也會製造多餘負擔。",
+        "C": "可發展學生看見老師少一個快手，仍沒有因此失去肯定。",
+        "D": "可承接一個人扛全班不是唯一讓事情走下去的方法。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4b183bff0532f8b2c3f756f2c68c11c0c782681542ab5b43b09f67b7f93b288e",
+    "draftSha256": "f6d724e5b9fa8643f1860ff94ab12a73899773f91a42165366e8a30c28457ee8",
     "seedAssignmentVersion": 1
   }
 }

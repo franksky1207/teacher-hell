@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e235bc32ce248e631f31cff4f9bbeb53deded7e2fdd37af8475afa294d1cb27d",
+      "checkedAt": "2026-11-28T02:43:52.820Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外說明一般合法管理程序，不談哪個孩子被查。",
+            "action": "提供有限一般程序解釋，必要處置不依家長滿意才做。",
+            "tradeoff": "教師通話時間、他可能嫌軟弱。"
+          },
+          {
+            "id": 2,
+            "text": "我邀有權行政共同回覆一般隱私界線，避免變兩人爭辯。",
+            "action": "提出成人合法說明協作，不保證即有空。",
+            "tradeoff": "多協調、對方可能認為推責。"
+          },
+          {
+            "id": 3,
+            "text": "我安排額外班級一般討論：公平不等於每個人都被懷疑。",
+            "action": "有限不點名公民討論，保留正常課務。",
+            "tradeoff": "占班務、可能引更多舊怨。"
+          },
+          {
+            "id": 4,
+            "text": "我不承接他額外每天回報查核的期待，必要告知照常。",
+            "action": "婉拒非必要私人監督承諾，不撤依法必要查證。",
+            "tradeoff": "被質疑沒有積極證明。"
+          },
+          {
+            "id": 5,
+            "text": "我邀他談自己孩子因這件事最困擾什麼，先不替全班下結論。",
+            "action": "額外限定本子女情境的交流，不請孩子蒐證或指認。",
+            "tradeoff": "通話成本、家長可能覺得岔開。"
+          },
+          {
+            "id": 6,
+            "text": "我依權責提出檢視現有手機櫃一般流程，不增加侵入性檢查。",
+            "action": "額外有限流程改善提案，未核准不稱已改制度。",
+            "tradeoff": "行政時間、可能被誤解是抓漏洞技巧。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句完全支持壓得想點頭；我願另約一次正式親師說明，親口承擔這個不翻包的決定，不把拒絕全推給法規三個字。",
+          "action": "教師額外承擔正式成人溝通與責任，必要合法底線所有分支同在，不承諾私報他生或迫服。",
+          "tradeoff": "少課務準備時間、可能正面失去認同。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 814663331
+        },
+        "selectedIds": [
+          3,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 1,
+          "D": 5
+        },
+        "optionsDigest": "e8815e4d99273da20925610dfa30bc19f3e92e3eea7077b612b49ef51cae31c8"
+      },
+      "consequenceDirections": {
+        "A": "可發展同學怎麼看集中管理與信任。",
+        "B": "可發展維持信任有時得接受支持者仍然生氣。",
+        "C": "可發展支持規範者能否接受權力也受規範。",
+        "D": "可發展口中的全班公平背後也有自家孩子心情。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ddc9c8911a4dfc646fb5594b32bc39f4d48273bcd0771d9127258a75357c8195",
+    "draftSha256": "e235bc32ce248e631f31cff4f9bbeb53deded7e2fdd37af8475afa294d1cb27d",
     "seedAssignmentVersion": 1
   }
 }

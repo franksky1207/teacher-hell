@@ -16,14 +16,82 @@
     "G05",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2a34374e9e815e76f1d19766a974286f84ebb4309a9629343d80ac1c96560a5c",
+      "checkedAt": "2026-11-28T02:43:52.822Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不追加全班辯論，個別申請照實處理，暫時承受偏心猜測。",
+            "action": "拒絕非必要公開說明，不撤任何人的正常申請權。",
+            "tradeoff": "班級風向未必穩。"
+          },
+          {
+            "id": 2,
+            "text": "我用可調班務談不同讀書環境，不談任何人的家境或申請。",
+            "action": "額外一般學習選擇討論，不暗示留校者更乖。",
+            "tradeoff": "占班務時間。"
+          },
+          {
+            "id": 3,
+            "text": "我另邀他談自己想怎麼回應朋友，回答不回答都可以。",
+            "action": "有限自願界線討論，不要求改口或替班級宣傳。",
+            "tradeoff": "多時間、他怕又被勸留。"
+          },
+          {
+            "id": 4,
+            "text": "我提出全班自願比較實際學習需求的活動，不要交成果證明才准退出。",
+            "action": "額外有限學習規畫交流，不新增退出門檻。",
+            "tradeoff": "教師整理成本、有人可能敷衍。"
+          },
+          {
+            "id": 5,
+            "text": "若本人願意，我額外協助詢問適切助學資源，不以此交換留校。",
+            "action": "提出合規資源查詢，未取得不稱已補足家用。",
+            "tradeoff": "多聯絡、本人可能不願暴露。"
+          },
+          {
+            "id": 6,
+            "text": "我和有權同事談晚自習一般支持怎麼兼容離校者，不拿他當案例示眾。",
+            "action": "額外成人制度支持提案，不改申請規則或預設採納。",
+            "tradeoff": "教師多協調。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實怕班上散掉才想他改口；我願親自向同學承認，老師喜歡人多不等於你們都該留下，這次不請他替我的面子收拾。",
+          "action": "教師額外公開一般立場並承擔評價，不披家境、不取消必要程序、不宣稱已知道每人最佳方式。",
+          "tradeoff": "失去留校人數漂亮的面子、可能更多申請。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3959739212
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "d9ec736dcae34a31386845f59a3b42dc2aff4e58431a382b295482269584d5ba"
+      },
+      "consequenceDirections": {
+        "A": "可承接影響力不是一種環境適合所有人的證據。",
+        "B": "可發展支持導師的人仍能自由作不同選擇。",
+        "C": "可發展自主選擇與朋友把他當答案的負擔。",
+        "D": "可承接留校風氣是否有真實需求基礎。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82c467910f9c6756a249d63d061ae3fafc3b31e61747c9dd7b60edc1361850a6",
+    "draftSha256": "2a34374e9e815e76f1d19766a974286f84ebb4309a9629343d80ac1c96560a5c",
     "seedAssignmentVersion": 1
   }
 }

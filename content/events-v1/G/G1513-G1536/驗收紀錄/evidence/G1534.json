@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e43a5382a629644a773f0de698d1d89383e1db2ff38248c32b5da12888c4180",
+      "checkedAt": "2026-11-28T02:43:52.851Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請他考慮在自己的合宜正課用安靜版，不借早自習。",
+            "action": "提出本科專業內替代，不替他核定課程成效。",
+            "tradeoff": "他得收起按鈴。"
+          },
+          {
+            "id": 2,
+            "text": "若確有合格班會餘裕，我協調短場舉牌試用。",
+            "action": "提出符合既有時段條件的有限安排，不預設今日必有。",
+            "tradeoff": "少班務時間、試不到聲光。"
+          },
+          {
+            "id": 3,
+            "text": "我只邀他先和成人用假情境討論規則，暫不帶進班。",
+            "action": "提出有限無學生資料的成人備課協作。",
+            "tradeoff": "教師時間、學生反應仍未知。"
+          },
+          {
+            "id": 4,
+            "text": "我婉拒這次合作，不替他另排活動，仍照常支持本科教學。",
+            "action": "拒絕非必要跨班務實驗，不撤正當專業互動。",
+            "tradeoff": "同事失望、關係尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我向有權窗口詢問正式教學交流場域，不承諾班級試跑。",
+            "action": "額外成人資源協調，未核准不當已有場地。",
+            "tradeoff": "多行政、可能排很後。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他改為學生自願匿名回饋紙上構想，不實際搶答。",
+            "action": "提出合法有限需求交流，不以回饋等同已驗證效果。",
+            "tradeoff": "多整理、失去現場熱度。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想玩，不想只當掃興的人；我願拿自己的備課空檔和他安靜試一輪，當一次會答錯的玩家，不拿學生早晨替我們兩個試。",
+          "action": "提出教師額外成人有限無鈴模擬參與，未同意不當已試，不用模擬保證學生有效。",
+          "tradeoff": "少備課時間、可能被同事笑反應慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3409193137
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "88ba7e8123192c93977ef4719158da102364348a6bcafb70fb3937e032f4b90c"
+      },
+      "consequenceDirections": {
+        "A": "可發展學得快的人願不願先慢一拍。",
+        "B": "可發展拒絕跨界仍能用自己的時間回應熱情。",
+        "C": "可承接好教具也需要真的可用時空。",
+        "D": "可發展替學生提氣前先問他們需不需要。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1b6a5030cc2fd335f8a937d2a3959fd02a80deed4167baae534da9c006111d2d",
+    "draftSha256": "3e43a5382a629644a773f0de698d1d89383e1db2ff38248c32b5da12888c4180",
     "seedAssignmentVersion": 1
   }
 }

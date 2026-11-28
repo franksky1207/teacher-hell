@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "774695e2cb0ca3e3948c167edaf058fc13eae69e3d68aafa75fbb58c5ed8df9d",
+      "checkedAt": "2026-11-28T02:43:52.834Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外問正式財務窗口能否併入核准繳費單，不先說能。",
+            "action": "提出合法併單查詢，不擅改期限。",
+            "tradeoff": "多跑窗口、可能不准。"
+          },
+          {
+            "id": 2,
+            "text": "我協助查現有官方無現金繳款方式，沒有就如實回覆。",
+            "action": "查核正式收款入口，不提供私人帳號替代。",
+            "tradeoff": "查詢時間、未必有選項。"
+          },
+          {
+            "id": 3,
+            "text": "若他有信任的成人，我協助核對依規代繳所需事項。",
+            "action": "有限提供合法代理資訊，未委任不當代理已到。",
+            "tradeoff": "多交接、家長可能不願麻煩人。"
+          },
+          {
+            "id": 4,
+            "text": "我不加私人跑腿，正常合法程序與必要支持照辦。",
+            "action": "婉拒非必要代付代收工作。",
+            "tradeoff": "可能被覺得僵化。"
+          },
+          {
+            "id": 5,
+            "text": "我提出依真實出差情況申請可行延期，由有權者決定。",
+            "action": "協助合法時程申請，未准不稱免逾期。",
+            "tradeoff": "多文件、可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "我另向校方提出一般付款不便的改善意見，不拿家長財力當理由。",
+            "action": "額外有限制度提案，當下義務仍依法接續。",
+            "tradeoff": "教師時間、改變未必很快。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也討厭現金袋，卻差點叫他自己想辦法；我願額外陪他在合適時段和財務窗口通一次電話，讓我也聽見這流程到底難在哪。",
+          "action": "提出教師有限三方成人協調，不代收或允諾特准，需雙方可行時段。",
+          "tradeoff": "少一段課務空檔、未必解決。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2178597238
+        },
+        "selectedIds": [
+          4,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "234483e896940999190696cab1fd31afbaa5dc53d46981218f71ab0c5f51b79e"
+      },
+      "consequenceDirections": {
+        "A": "可承接全力支持不代表教師要變付款助理。",
+        "B": "可承接現代付款習慣與學校系統。",
+        "C": "可承接個別不便能否變公共需求。",
+        "D": "可發展不收錢與願意陪他碰制度不是同一件事。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "08e768b5d2ec0c36218f3f8d1d67a53fa4335aa6049699737f084d509eb8d0e9",
+    "draftSha256": "774695e2cb0ca3e3948c167edaf058fc13eae69e3d68aafa75fbb58c5ed8df9d",
     "seedAssignmentVersion": 1
   }
 }

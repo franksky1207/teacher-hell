@@ -15,14 +15,82 @@
     "G10",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "02e4883aec3314adc0f95248716c1e121abae5369ffd77f05eff678a4da8edf8",
+      "checkedAt": "2026-11-28T02:43:52.846Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我用剩餘空檔送出官方書面取消請求，留真實時間紀錄後準時進班。",
+            "action": "提出合法有限取消需求，不當已攔截出貨。",
+            "tradeoff": "未必及時被讀到。"
+          },
+          {
+            "id": 2,
+            "text": "我先打客服，但到進班時點就停止等待，之後按合法空檔續處理。",
+            "action": "有限私人通話，不漏必要照看或自稱已退。",
+            "tradeoff": "可能排到前面又得掛。"
+          },
+          {
+            "id": 3,
+            "text": "我依法詢問是否可取得合格核定的短時接替，真接好才排隊通話。",
+            "action": "提出合法工作支援需求，未同意仍本人準時在場。",
+            "tradeoff": "欠協作人情、可能沒人。"
+          },
+          {
+            "id": 4,
+            "text": "我先進班，等第一個合法空檔依真實退訂退貨條件處理。",
+            "action": "暫緩非急迫私人協商，不撤真實消費權。",
+            "tradeoff": "可能錯過攔出貨、損失自己承擔。"
+          },
+          {
+            "id": 5,
+            "text": "我利用短空檔先詢問發卡或付款官方窗口可行權益，不亂報盜刷。",
+            "action": "提出真實付款權益諮詢，不假稱止付或爭議款已准。",
+            "tradeoff": "聯絡時間、可能仍須找店家。"
+          },
+          {
+            "id": 6,
+            "text": "我整理真實訂單、條款與優惠畫面，留到可用時間依法申訴。",
+            "action": "有限保存本人合法消費資料，不上班偷拍或洩卡號。",
+            "tradeoff": "沒有立刻止損的痛快。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想把昨晚的自己罵一頓；我先按真實官方條件取消下一期自動續約，準時進班，這期怎麼止損留到可用時間，不再把怕損失變第二次亂按。",
+          "action": "優先處理實存的未來續約設定或正式提出取消，不假稱本期已退款，不放掉真實期限及必要課務。",
+          "tradeoff": "本期仍可能受損、承認一時無法全救。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 883373199
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "a00738bd91f3b06d7a00b532b6ca6f67d8f87779afaf07272ec32b0b9583f91f"
+      },
+      "consequenceDirections": {
+        "A": "可發展成人先停止重複付錢，還得承受已做錯的那一筆。",
+        "B": "可承接金錢焦慮與工作時間的切割。",
+        "C": "可發展焦慮時還能否分清後悔與詐欺證據。",
+        "D": "可承接付出錢能否換回此刻準時。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7589c710a3ce95aa44f04e4fe3e765f04a77aa8a2bc7cd6d38eae8f120f7b2aa",
+    "draftSha256": "02e4883aec3314adc0f95248716c1e121abae5369ffd77f05eff678a4da8edf8",
     "seedAssignmentVersion": 1
   }
 }

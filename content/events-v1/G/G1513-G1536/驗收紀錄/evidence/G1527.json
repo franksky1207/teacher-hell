@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "db30662cc8382ba68ed738bbd31b98395a6cfa2bd64da924852511433d94bc08",
+      "checkedAt": "2026-11-28T02:43:52.839Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我用本人可用午間空檔趕核，必要照看另依既有合法分工不漏。",
+            "action": "實際投入可行本人時間核對，不跳過專業檢查。",
+            "tradeoff": "少休息、更疲累。"
+          },
+          {
+            "id": 2,
+            "text": "我提出明早可行期限，請有權承辦核定，不擅自拖到大家等。",
+            "action": "真實協商延期，未准不稱已免責。",
+            "tradeoff": "同事更不滿、可能需其他接續。"
+          },
+          {
+            "id": 3,
+            "text": "我先交確實核完的部分，請承辦決定能否分段接續。",
+            "action": "提出真實部分交付，不空簽其餘完成。",
+            "tradeoff": "多往返、同事仍被卡一段。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問合格同事可否支援部分核對，責任不假裝已移走。",
+            "action": "提出合法保密協作需求，未同意不宣稱有人代做。",
+            "tradeoff": "欠協作人情、仍可能無援。"
+          },
+          {
+            "id": 5,
+            "text": "若學生真願且無急迫需要，我協商改一場非急晤談，騰出核題時間。",
+            "action": "提出合理改期，未接好不取消學生約定。",
+            "tradeoff": "教師食言感、學生可能拒絕。"
+          },
+          {
+            "id": 6,
+            "text": "我請有權主管釐清當日工作優先順序，不私自犧牲正課。",
+            "action": "提出正式真實排程求援，不以主管名義壓同事。",
+            "tradeoff": "正式化、曝露自己延誤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想回他一句你以為只有你累；我願把今晚本人可調私人空檔留給核對，不再讓他的熬夜替我緩衝，但不保證疲累時能硬交未確認的題。",
+          "action": "承認想反擊，提出真實可行本人加班交付安排，依法保密與核定期限接續，過疲則依權責求援不草率簽。",
+          "tradeoff": "少私人休息、未必修復舊怨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2721829088
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "f73d6322dfb8e1c2978734d460df8db47ace4b6a01782f5aa9324d67033d5442"
+      },
+      "consequenceDirections": {
+        "A": "可承接疲勞互催背後的工作安排。",
+        "B": "可發展成人工作卡關不能悄悄由學生付帳。",
+        "C": "可發展負起延誤成本與把熬夜正常化之間的風險。",
+        "D": "可發展先補交件是否足以補信任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "69265af69e9e015deca555810ced4bc2689b4a793299d6a437ae21abe88c1c3f",
+    "draftSha256": "db30662cc8382ba68ed738bbd31b98395a6cfa2bd64da924852511433d94bc08",
     "seedAssignmentVersion": 1
   }
 }

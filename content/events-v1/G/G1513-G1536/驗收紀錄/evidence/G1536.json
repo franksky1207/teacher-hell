@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8df622f47e06750a8c3721d3d6039ecf58693fccb7f5f79a51885f0f49026578",
+      "checkedAt": "2026-11-28T02:43:52.853Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另邀他自願重談原題，改不改都不影響這份已合格。",
+            "action": "額外有限個別學習對話，不逼重寫。",
+            "tradeoff": "教師時間、他怕突出。"
+          },
+          {
+            "id": 2,
+            "text": "我只留簡短私人回饋歡迎之後再談，不追加面談。",
+            "action": "提供有限非強迫肯定，未回不催。",
+            "tradeoff": "好點子可能真的放下。"
+          },
+          {
+            "id": 3,
+            "text": "我公平開放一次自願改題機會，不只為他多開後門。",
+            "action": "在權責內提出有限公平選擇，不假稱學生已選改。",
+            "tradeoff": "多收件批閱時間。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全班談選題和同儕眼光，不拿他的舊構想當示範。",
+            "action": "額外一般學習文化討論，避免個案可辨識。",
+            "tradeoff": "占班務、可能仍尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我邀他先留一小段私人觀察，不必立刻變這次作業。",
+            "action": "提出有限自願興趣延續，不再新增必交任務。",
+            "tradeoff": "多投入自己的時間、可能不願。"
+          },
+          {
+            "id": 6,
+            "text": "我維持正常教學，不替他規畫另一條路，讓他先用這個題目走。",
+            "action": "不加非必要個人發展安排，支持現有合格任務。",
+            "tradeoff": "教師得接受自己的遺憾。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點不服那個好題就這樣沒了；我願先整理自己記得、又不涉隱私的題目亮點，只私下問他要不要留著，不拿老師的喜歡逼他翻案。",
+          "action": "教師額外有限整理既有談話中的非敏感想法，提出交還本人參考，未願接收不發給他人或代完成作業。",
+          "tradeoff": "教師備課時間、可能白寫。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3176436711
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "1a9e4c6f3350df6582538e3cf0457cd3508d14c83ba42172d9f14ba1d807db50"
+      },
+      "consequenceDirections": {
+        "A": "可承接老師能否容許合格但不最喜歡的選擇。",
+        "B": "可發展自主比被老師救回題目更難。",
+        "C": "可發展想留住學生火花的大人能否接受火花不替自己表演。",
+        "D": "可承接從眾風氣不只靠勸一人勇敢。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e6f878bc6871e28d783ed046efbe51ac7e315524cf13b8aaae905b57572e6b60",
+    "draftSha256": "8df622f47e06750a8c3721d3d6039ecf58693fccb7f5f79a51885f0f49026578",
     "seedAssignmentVersion": 1
   }
 }

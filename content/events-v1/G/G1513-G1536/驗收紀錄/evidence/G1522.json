@@ -16,14 +16,82 @@
     "G08",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e93c7bb8bbed4e1287f53a0eaae9a462368460c681d2879cb614ba3cd0b3e3e9",
+      "checkedAt": "2026-11-28T02:43:52.831Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我搬到已確認的一樓場地，保留投影片，接受搬運會吃掉排練時間。",
+            "action": "合規移至可用場地，安全搬運與照看不省。",
+            "tradeoff": "少練習、沒有原冷氣舒適。"
+          },
+          {
+            "id": 2,
+            "text": "我回本班做全組口頭排練，請大家用話補重要畫面。",
+            "action": "採可用原班口述，不使用停用設備。",
+            "tradeoff": "學生覺得準備被打折。"
+          },
+          {
+            "id": 3,
+            "text": "我回班改做兩兩互練，這次不追求每組完整登台。",
+            "action": "調整可控排練形式並維持照看，不充正式評量。",
+            "tradeoff": "失去全班舞台回饋。"
+          },
+          {
+            "id": 4,
+            "text": "我協調延後非必要完整排練，今天只做本班可行準備。",
+            "action": "提出可調時程變更，不承諾原場何時修復。",
+            "tradeoff": "另排時間、熱情可能降。"
+          },
+          {
+            "id": 5,
+            "text": "我和學生挑最需口頭說清的段落，這次不逐頁走完。",
+            "action": "在可用本班做有限重點演練，由作者自願說明取捨。",
+            "tradeoff": "有些組拿不到完整回饋。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問能否在下一個合適時段正式借別的安全投影場地，不先保證。",
+            "action": "提出新合法場地申請，當下維持本班可行課務。",
+            "tradeoff": "多聯絡、可能借不到。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看他們完整演一次；若正式核可、照看交通和自願條件都接好，我願另留本人課後時間陪一場，不叫學生為我的遺憾留下。",
+          "action": "提出教師額外課後排練支援，需合法時段場地、相關同意及接續，未核准不宣稱成行。",
+          "tradeoff": "教師私人時間，學生也可能不想再排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2245664467
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "f72c97ac708f55edecb6140ff105cb18efb1774ec122bb737ef258c47f0dee8e"
+      },
+      "consequenceDirections": {
+        "A": "可發展想保住熱情的老師能否接受學生選擇不要加場。",
+        "B": "可承接同事讓步後教師仍得面對期待落空。",
+        "C": "可發展失去畫面後才看見真正依賴哪一頁。",
+        "D": "可承接保住形式需要付等待成本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cf1518283772466f26d7d72a3ff15630482f0bb6796464bcc6c6b4b874b6f953",
+    "draftSha256": "e93c7bb8bbed4e1287f53a0eaae9a462368460c681d2879cb614ba3cd0b3e3e9",
     "seedAssignmentVersion": 1
   }
 }

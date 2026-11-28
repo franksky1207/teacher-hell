@@ -15,14 +15,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "26fe5a2a0e1db84aa193db4afcd599597e083ed5c5b566394205746fe047cc56",
+      "checkedAt": "2026-11-28T02:43:52.807Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我協調用原組員同意的原素材簡易交件，不採外包版。",
+            "action": "提出可行組內原作方案，依規揭露，不逼同意。",
+            "tradeoff": "他付的錢可能白花。"
+          },
+          {
+            "id": 2,
+            "text": "若規則容許且組員願意，我保留合法轉場，內容由原作者重新決定。",
+            "action": "提議合規混合版本，未同意不送件。",
+            "tradeoff": "多核實時間、主導權仍有爭議。"
+          },
+          {
+            "id": 3,
+            "text": "我向承辦詢問合法延交可能，讓組員有時間討論。",
+            "action": "提出申請，未核准不宣稱有延期。",
+            "tradeoff": "可能被拒而失去送件。"
+          },
+          {
+            "id": 4,
+            "text": "我協調不以這組代表全班，其他作品依原公平程序選。",
+            "action": "在權責內重開真實代表協商，不私推外包。",
+            "tradeoff": "班級期待落空。"
+          },
+          {
+            "id": 5,
+            "text": "若無合規可行共識，我接受本組不參加這次非必要徵件。",
+            "action": "停止額外參賽壓力，保留正常課務與作者權。",
+            "tradeoff": "全組失去展示機會。"
+          },
+          {
+            "id": 6,
+            "text": "我邀組員各自說明願意保留什麼，由他先聽完再提版本。",
+            "action": "額外有限自願創作協商，不保證會有共識。",
+            "tradeoff": "時間與當場難堪。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想贏，差點就說好；我願多花自己課間，陪原組員把願意留下的字卡錄成一版簡單作品，別拿他那筆錢替我撐場。",
+          "action": "提出教師額外有限錄製協助，須作者自願、守規授權，不代做學生必須自製部分。",
+          "tradeoff": "教師時間、畫面不華麗。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2008702019
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "e87e4cc46a51c8f113fd0d9d61bbee633af7d776394b6add6c6470494eee9d91"
+      },
+      "consequenceDirections": {
+        "A": "可發展成人放掉勝負面子後學生是否更委屈。",
+        "B": "可承接不是每份熱心都得變成成果。",
+        "C": "可發展好勝者容不容許等待。",
+        "D": "可承接漂亮效果能否不吞掉作者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ffd8dad2dcfcfdee1ca381358b33a431cd2991029ddb11d6cc25b3cf10602f6",
+    "draftSha256": "26fe5a2a0e1db84aa193db4afcd599597e083ed5c5b566394205746fe047cc56",
     "seedAssignmentVersion": 1
   }
 }

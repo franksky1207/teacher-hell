@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e615a2e3be9a320751d4eb0e94b718f6d49b6bcb3abc11af2eda005e2a05b727",
+      "checkedAt": "2026-11-28T02:43:52.843Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他依正式途徑整理一個具體詢問，不保證可翻盤。",
+            "action": "額外有限程序協助，法定權益不依此才有。",
+            "tradeoff": "教師時間、可能被誤會站隊。"
+          },
+          {
+            "id": 2,
+            "text": "若已有合法評語，我陪他讀具體建議，沒有就不編評審想法。",
+            "action": "額外有限學習回饋，必要資訊照常接。",
+            "tradeoff": "他可能覺得老師只要他改。"
+          },
+          {
+            "id": 3,
+            "text": "我邀家長一起談這次期待，不把投入時間算成應得名次。",
+            "action": "提出有限親師生交流，不預設同意或披他生。",
+            "tradeoff": "多排程、學生怕更失望。"
+          },
+          {
+            "id": 4,
+            "text": "我正常接續課務，暫不加下一場訓練或代跑。",
+            "action": "不承接非必要加碼，必要關懷與正當程序仍在。",
+            "tradeoff": "他可能覺得被拋下。"
+          },
+          {
+            "id": 5,
+            "text": "我邀他自願為自己保留這次作品，不拿落選就否定兩個月。",
+            "action": "額外有限作品回顧，不假稱作品應得冠軍。",
+            "tradeoff": "教師時間、他可能不願再看。"
+          },
+          {
+            "id": 6,
+            "text": "我提供確有公開的其他合適發表資訊，由他自己決定是否另投。",
+            "action": "有限資訊查詢，不保證收件或替他報名。",
+            "tradeoff": "查找成本、可能像叫他換地方贏。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也心疼他準備那麼久，想替他贏回來；我願額外陪他在合適場合自己向承辦提出具體問題，話讓他說，不替他把評審叫來教訓。",
+          "action": "提出教師有限成人陪同支持，需合法程序與本人意願，不干預分數或預稱面談成立。",
+          "tradeoff": "教師課間時間、得忍住替他講完。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2364849412
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "127ffaa76b6f3cbf8741a7a90a68bc2fb4e20b53bbb38915aa0373a3017e5151"
+      },
+      "consequenceDirections": {
+        "A": "可發展家庭支持會不會變一定要贏的壓力。",
+        "B": "可發展被信任的老師如何陪輸，而不是代打。",
+        "C": "可承接失敗後不必立刻變下一個計畫。",
+        "D": "可承接家人投入和他人評分間的落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "aa1730bf3de57c8ab8bb20b03d6315bb565a0f579cbed7f09d6b740fa8aa2b12",
+    "draftSha256": "e615a2e3be9a320751d4eb0e94b718f6d49b6bcb3abc11af2eda005e2a05b727",
     "seedAssignmentVersion": 1
   }
 }

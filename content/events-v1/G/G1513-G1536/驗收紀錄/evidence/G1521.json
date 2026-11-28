@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b820e67cb0303c73bfc0f7792a830b2eb8fa6a3f3a4179499e18989e89292c5a",
+      "checkedAt": "2026-11-28T02:43:52.829Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我留一段可用空堂和他修清楚，不超出真實事實。",
+            "action": "額外合作潤飾可讀性，非變造事實。",
+            "tradeoff": "備課時間縮短。"
+          },
+          {
+            "id": 2,
+            "text": "我只完成必要清楚說明，拒絕非必要字句美容，先回備課。",
+            "action": "婉拒額外潤稿，不漏應補事實與簽核。",
+            "tradeoff": "朋友覺得心意被擋。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先標需要釐清的實際問題，約有限時間再回覆。",
+            "action": "協商分段處理，必要期限內完成不假稱已准延。",
+            "tradeoff": "多一次往返。"
+          },
+          {
+            "id": 4,
+            "text": "我提出用正式窗口一次列清需求，不反覆私下磨字。",
+            "action": "額外流程釐清請求，未同意不改問責制度。",
+            "tradeoff": "事情變正式、友情尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我主動整理原有可核實送件紀錄供必要窗口參考，不只靠文字解釋。",
+            "action": "額外整理真實既有脈絡，依法限知情，不捏造文件。",
+            "tradeoff": "教師查檔時間。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他另談本次協作的時間上限，以後先約再拉椅子。",
+            "action": "提出有限成人工作界線協商，不封正當問責。",
+            "tradeoff": "多對話、朋友可能受傷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點怕他以為我不領情；必要補件公事公辦後，我願另拿一段自己的休息邀他喝杯各付各的咖啡，朋友別只剩一起改檢討單。",
+          "action": "提出新的一次私人平等邀約，未接受不宣稱成行，不送禮換問責寬放、不以私交改真實紀錄。",
+          "tradeoff": "私人時間、邀約可能被拒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 538514868
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 5
+        },
+        "optionsDigest": "398dbc960d9d5df95fb234d32c3941d4f09fda2bbc1eb5940bac54e9ac15f43c"
+      },
+      "consequenceDirections": {
+        "A": "可發展把友情留在文件以外也需要主動付出。",
+        "B": "可承接親近的人也要學敲門。",
+        "C": "可承接熟悉不等於每次都要慢慢聊。",
+        "D": "可發展敘事漂亮和證據完整是不同工作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92fdd418254bd609d23352d51bf486c1ab28653e39bf4eafc71a63f854c41a32",
+    "draftSha256": "b820e67cb0303c73bfc0f7792a830b2eb8fa6a3f3a4179499e18989e89292c5a",
     "seedAssignmentVersion": 1
   }
 }

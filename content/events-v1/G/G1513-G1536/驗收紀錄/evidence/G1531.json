@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "884cc27a51f6f1b904591f8b5046b7425d85cf2be1f565298a73881273fd456f",
+      "checkedAt": "2026-11-28T02:43:52.847Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另私訊談他的具體擔心，不在群裡繼續來回。",
+            "action": "額外有限成人情緒交流，不撤公開必要事實。",
+            "tradeoff": "教師時間、可能變固定安撫。"
+          },
+          {
+            "id": 2,
+            "text": "我邀學校有權窗口做一次一般放學安全說明，不拿截圖辦恐慌大會。",
+            "action": "提出有限正式說明需求，不宣稱已成會。",
+            "tradeoff": "多協調、可能排不到。"
+          },
+          {
+            "id": 3,
+            "text": "我額外整理確有的通學替代資訊，費用資格照實，不叫全班改路。",
+            "action": "有限合法交通資訊查詢，不保證車位或特定路絕對安全。",
+            "tradeoff": "查找成本、可能增更多選擇焦慮。"
+          },
+          {
+            "id": 4,
+            "text": "我不承接額外逐人到家追蹤，必要聯絡仍依風險進行。",
+            "action": "婉拒非必要全面私人追蹤，不漏急迫個案。",
+            "tradeoff": "家長可能覺得不夠關心。"
+          },
+          {
+            "id": 5,
+            "text": "我邀他自願把核實範圍回傳原社團，不替我當官方發言人。",
+            "action": "提出有限自願來源回饋，不假稱已發或要求揭個資。",
+            "tradeoff": "可能再次尷尬、教師需說明範圍。"
+          },
+          {
+            "id": 6,
+            "text": "我提出以後未證實提醒集中於一個既有合法窗口核實的協商。",
+            "action": "額外一般資訊流程提案，必要緊急通報不需等此提案。",
+            "tradeoff": "教師協調、可能被嫌管言論。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被嚇得想改路；我願下班用自己的時間看看這段合法公共通學環境，把可確認的照明、路口問題交有權窗口，不把走一趟當警方保證。",
+          "action": "提出教師額外本人非值勤踏查一般公共環境，不追蹤學生或疑似人物、不處理危險接觸，必要照看完成才行。",
+          "tradeoff": "私人時間、可能仍無法讓家長放心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3175043658
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "331115d68c0e43e481ed535196d048202e3c1b1a4f7d91fcae3fac4ce73f0265"
+      },
+      "consequenceDirections": {
+        "A": "可承接安心期待能否不變教師無限責任。",
+        "B": "可發展教師承認自己也怕，仍不把感覺包成安全認證。",
+        "C": "可發展面子被照顧後是否仍能接受不確定。",
+        "D": "可承接關注教師個人與了解學校分工不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdedc8ae5b50bfef962be0bd13545711871475066f0fddf24375129417fce4c6",
+    "draftSha256": "884cc27a51f6f1b904591f8b5046b7425d85cf2be1f565298a73881273fd456f",
     "seedAssignmentVersion": 1
   }
 }

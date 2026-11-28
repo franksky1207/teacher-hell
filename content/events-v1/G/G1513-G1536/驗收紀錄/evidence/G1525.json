@@ -15,14 +15,82 @@
     "G07",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "00c21d7c9f1f0954a6082b461e2ea8af3a3ba403b8e0d4ec54eebd8a584452cb",
+      "checkedAt": "2026-11-28T02:43:52.836Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不追問作者，照常和他相處，不加一場拆穿。",
+            "action": "保留匿名界線，不額外討論身分。",
+            "tradeoff": "自己得吞那點隔膜。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他以一般同事身分看看後續使用需求，不提字跡。",
+            "action": "提出有限自願安全使用交流，必要改善原已完成。",
+            "tradeoff": "多協調、他可能躲。"
+          },
+          {
+            "id": 3,
+            "text": "我經正式窗口額外回覆改善後的實況，感謝提出者但不猜名。",
+            "action": "合法一般回饋，不以感謝取代必要安全修復。",
+            "tradeoff": "多整理、仍不知道對方感受。"
+          },
+          {
+            "id": 4,
+            "text": "我另找有限時間和他說自己歡迎不同意見，不要求承認投稿。",
+            "action": "提出一般成人關係對話，不指控檢舉。",
+            "tradeoff": "教師先示弱、可能更尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我提出定期一般動線檢視的有限建議，由有權者決定。",
+            "action": "額外制度提案，不把現有風險延到未來才處理。",
+            "tradeoff": "多會務負擔。"
+          },
+          {
+            "id": 6,
+            "text": "我把自己原搬運安排中可免的便利收回，以後少安排非必要跨區搬運。",
+            "action": "調整本人可控的額外班務需求，安全必要工作仍進行。",
+            "tradeoff": "教室收納與備課不便。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的很想問是不是你；我願忍住，改把自己原本評估失準的地方在合適成人工作場合講清楚，不拿找出誰提醒來抵消丟臉。",
+          "action": "教師額外主動分享本人判斷限制及改進經驗，不披匿名線索或學生細節，不將必要安全回報獨占此分支。",
+          "tradeoff": "教師面子與額外說明時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2826030604
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "b82e439c9d03bd737a56db87ed7aa6066119f6b4d98b0728ae5bc288f7fdf795"
+      },
+      "consequenceDirections": {
+        "A": "可發展匿名提醒不必換來身分盤問。",
+        "B": "可發展怕被質疑的大人先承認自己不是每次都看得到死角。",
+        "C": "可發展一次提醒是否需要變長期溝通。",
+        "D": "可承接怕衝突者能否不靠署名也參與。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bba5f21f8dcd4cec12018ed6626e45bf106237eabd095a2db95baef180d17f91",
+    "draftSha256": "00c21d7c9f1f0954a6082b461e2ea8af3a3ba403b8e0d4ec54eebd8a584452cb",
     "seedAssignmentVersion": 1
   }
 }

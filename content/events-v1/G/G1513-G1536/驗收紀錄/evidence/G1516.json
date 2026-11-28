@@ -14,14 +14,82 @@
   "plannedTags": [
     "G02"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4630a1a57196fac36814855c372e100e6f0e03bed2cc7b238acc791e9037090a",
+      "checkedAt": "2026-11-28T02:43:52.818Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我試行各桌輪流先洗，教師先承擔輪序提醒。",
+            "action": "於原午餐時段有限試作輪序，不延午休。",
+            "tradeoff": "教師多提醒、全班多記一件事。"
+          },
+          {
+            "id": 2,
+            "text": "我不改清洗程序，經同意只用板提示目前人潮。",
+            "action": "保留原程序，將有限現況提示與固定桌序分開。",
+            "tradeoff": "尖峰還會排隊、原表得改。"
+          },
+          {
+            "id": 3,
+            "text": "我提出自願錯開起身的短期試用，不固定誰最後。",
+            "action": "有限非強迫時間分散，個別吃飯需求優先。",
+            "tradeoff": "難預估、可能仍擠。"
+          },
+          {
+            "id": 4,
+            "text": "我邀各桌推自願代表談最不願犧牲哪段時間，再決定可調安排。",
+            "action": "額外有限公平協商，不以討論拖過午休。",
+            "tradeoff": "占可調班務時間、結果延後。"
+          },
+          {
+            "id": 5,
+            "text": "我暫不採新制，自己在原時段多觀察幾次真實等待。",
+            "action": "教師額外有限蒐集現況，不叫學生全天計時。",
+            "tradeoff": "多在場時間、倡議者失望。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問有權處室現有洗手台配置能否合規分流。",
+            "action": "提出場地使用查詢，不預設新增設備或可借別區。",
+            "tradeoff": "協調成本、未必可行。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也最討厭排隊，差點只看平均；我願在不延誤照看下，把自己這幾次的可調清洗排最後，先體驗那一桌一直等的感覺，不把它當全班新規。",
+          "action": "教師自願承擔本人可調等候，維持必要值勤與食安，不要求學生跟著犧牲、不虛稱已驗證成效。",
+          "tradeoff": "教師少自己的午間空檔。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3806764723
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "ded79b5730370259782c4e187939a7e99873bfa6be2e7c18300b5ac7b76d172c"
+      },
+      "consequenceDirections": {
+        "A": "可發展自發調整能否少一點管理。",
+        "B": "可發展提出效率者看見老師也在乎誰把時間讓出去。",
+        "C": "可承接誰等最久也可能是資源配置問題。",
+        "D": "可承接說平均前先聽承受最慢者。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0f90333d1508adbe7fd018d83962fbdadd46df125f7d5b5f480b321593e9ea8f",
+    "draftSha256": "4630a1a57196fac36814855c372e100e6f0e03bed2cc7b238acc791e9037090a",
     "seedAssignmentVersion": 1
   }
 }

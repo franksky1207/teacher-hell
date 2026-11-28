@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5aef8c40045347a73ab5db0da8240d60ddcade52173142d8654a55200dd3c6d8",
+      "checkedAt": "2026-11-28T02:43:52.827Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我邀他私下談調組後感受，不要求接受我的理由才算談成。",
+            "action": "提出有限自願關係對話，不保證答應或和好。",
+            "tradeoff": "教師先低頭、可能被拒。"
+          },
+          {
+            "id": 2,
+            "text": "我只就實際成果正常肯定，暫不追問他為什麼不理我。",
+            "action": "給適切真實回饋，不拿表揚交換親近。",
+            "tradeoff": "怨氣可能繼續。"
+          },
+          {
+            "id": 3,
+            "text": "我提出全班公平檢視分組需求，不保證他能回原圈。",
+            "action": "依權責蒐真實需求再決定，不以冷戰取得指定組權。",
+            "tradeoff": "協調時間、其他組可能被牽動。"
+          },
+          {
+            "id": 4,
+            "text": "我問他是否願由家長一起談適應，只限本人狀況。",
+            "action": "提出合規自願親師生交流，不把告狀壓回去。",
+            "tradeoff": "多排程、他可能覺得被包圍。"
+          },
+          {
+            "id": 5,
+            "text": "我不再追加他的額外班務，正常公平分工照走。",
+            "action": "停止非必要加碼委託，不剝一般參與或拿工作當討好。",
+            "tradeoff": "教師得另承接工作。"
+          },
+          {
+            "id": 6,
+            "text": "我留下簡短私人書面邀談，讓他自行決定何時回。",
+            "action": "提供非強迫有限回應管道，不抄家長或連續催答。",
+            "tradeoff": "等待成本、可能沒有回。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有點賭氣，才一直等他先轉頭；我願當面承認我上次沒先問的做法讓人難受，說完就停，不拿這句換他摘耳機和我好。",
+          "action": "教師主動表達對自身決策溝通不足的承擔，不虛構違法或要求學生立刻回應，原必要說明不以此獨占。",
+          "tradeoff": "教師面子、可能只得到一個嗯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3523021035
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "670895db3a7fad1edc14904e139abf157bd9c6b8f84e19ddfd278bcbdd06d521"
+      },
+      "consequenceDirections": {
+        "A": "可發展事情做到好仍有權生老師氣。",
+        "B": "可承接有家庭後盾不是一定要對抗學校。",
+        "C": "可發展大人放掉冷戰輸贏，關係仍可能需要等。",
+        "D": "可承接班務參與不等於感情已修復。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "36493a9f43147863f6844a356fa93311d54a7c79cd957488d8af1774ac107551",
+    "draftSha256": "5aef8c40045347a73ab5db0da8240d60ddcade52173142d8654a55200dd3c6d8",
     "seedAssignmentVersion": 1
   }
 }

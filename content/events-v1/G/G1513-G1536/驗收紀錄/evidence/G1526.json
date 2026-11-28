@@ -15,14 +15,155 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1b18eab4574ff71ea0c428ce838aa024281765be7d0bdbb0a343d20a3e3c9c57",
+      "checkedAt": "2026-11-28T02:43:52.837Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若他願意，我協調只借展自有一冊，清楚說明範圍。",
+            "action": "建立有限合法保管出借安排，不掩飾不是整套。",
+            "tradeoff": "他得承受縮水的眼光。"
+          },
+          {
+            "id": 2,
+            "text": "我支持他暫取消自己提出的整套展示，不急著補另一個節目。",
+            "action": "撤尚未合法成立的展示提案，原物權交還照常。",
+            "tradeoff": "錯過這次展示、面子掛不住。"
+          },
+          {
+            "id": 3,
+            "text": "我協助他向父親提出之後有限借展申請，不替父親答應。",
+            "action": "額外協助合法自願物主溝通，未准不再帶來。",
+            "tradeoff": "多聯絡、可能仍被拒。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他自願講自己為什麼喜歡那一本，不要求提供實物。",
+            "action": "提出有限閱讀分享，不逼公開道歉或編讀過全套。",
+            "tradeoff": "分享未必得到熱烈稱讚。"
+          },
+          {
+            "id": 5,
+            "text": "我額外私下陪他練如何回應同學失望，實話不用加自責表演。",
+            "action": "有限自願人際支持，不免除必要物權處理。",
+            "tradeoff": "教師時間、學生怕更丟臉。"
+          },
+          {
+            "id": 6,
+            "text": "我邀班上自願提出合法自有讀物的共享想法，不讓他負責補整套。",
+            "action": "提出新公平自願閱讀提案，未取得書不宣稱已有書庫。",
+            "tradeoff": "多班務、可能無人響應。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想看整套，剛才差點跟著嫌少；我願先問能否讀他自有那冊，若他願意，就花一段時間好好看，再私下告訴他我真喜歡哪裡，不靠本數稱讚。",
+          "action": "教師提出本人額外有限閱讀及具體私人回應，須學生自願且合宜保管，未同意不當已借得，不虛構原先教師有催他找整套書。",
+          "tradeoff": "教師少休息，學生也可能不願借給老師。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 653033142
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "9a44b958a0d3a8dfb15a5fa86fea403701399dbe0dbe785f7ac9fcb3a2fa4d51"
+      },
+      "consequenceDirections": {
+        "A": "可承接想被稱讚選書而非只被稱讚有書。",
+        "B": "可發展想獲肯定的孩子能否感到一本也值得成人認真看，而不是靠搬來整個家庭收藏換眼光。",
+        "C": "可承接敬重老師的人也可說這次做不到。",
+        "D": "可承接提供資源不必靠一個人的認可需求撐。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選撤除教師未確立的催借安排，且停留在收起期待；改成尊重學生自有物權的有限閱讀邀請與真實具體回應。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "若他願意，我協調只借展自有一冊，清楚說明範圍。",
+                "action": "建立有限合法保管出借安排，不掩飾不是整套。",
+                "tradeoff": "他得承受縮水的眼光。"
+              },
+              {
+                "id": 2,
+                "text": "我支持他暫取消自己提出的整套展示，不急著補另一個節目。",
+                "action": "撤尚未合法成立的展示提案，原物權交還照常。",
+                "tradeoff": "錯過這次展示、面子掛不住。"
+              },
+              {
+                "id": 3,
+                "text": "我協助他向父親提出之後有限借展申請，不替父親答應。",
+                "action": "額外協助合法自願物主溝通，未准不再帶來。",
+                "tradeoff": "多聯絡、可能仍被拒。"
+              },
+              {
+                "id": 4,
+                "text": "我邀他自願講自己為什麼喜歡那一本，不要求提供實物。",
+                "action": "提出有限閱讀分享，不逼公開道歉或編讀過全套。",
+                "tradeoff": "分享未必得到熱烈稱讚。"
+              },
+              {
+                "id": 5,
+                "text": "我額外私下陪他練如何回應同學失望，實話不用加自責表演。",
+                "action": "有限自願人際支持，不免除必要物權處理。",
+                "tradeoff": "教師時間、學生怕更丟臉。"
+              },
+              {
+                "id": 6,
+                "text": "我邀班上自願提出合法自有讀物的共享想法，不讓他負責補整套。",
+                "action": "提出新公平自願閱讀提案，未取得書不宣稱已有書庫。",
+                "tradeoff": "多班務、可能無人響應。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也期待那整套，剛才差點露出失望；我願先收起自己的收藏慾，這次不再請他額外找書填角落，讓他知道不是拿來多少才值得我好好說話。",
+              "action": "教師停止本人對此次額外借書的催請與期待，不剝學生願合法分享的權利、不虛稱原有固定借書義務。",
+              "tradeoff": "教師放掉豐富閱讀角的便利與期待。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 4058718253
+            },
+            "selectedIds": [
+              2,
+              3,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 1,
+              "C": 3,
+              "D": 2
+            },
+            "optionsDigest": "a03c8176585194c4bf4ccceae78640d6d2ef2d0a8dab84b192efe8e46fb45722"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展敬重導師的學生能否相信少提供也不會失去關係。",
+            "B": "可發展認可不一定隨冊數增加。",
+            "C": "可發展家庭穩定仍有不是孩子可作主的收藏。",
+            "D": "可承接敬重老師的人也可說這次做不到。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "752f56813c45f5f10e1fca5969609b02e1bbb6b5531ba65702e352a22f3909a8",
+    "draftSha256": "1b18eab4574ff71ea0c428ce838aa024281765be7d0bdbb0a343d20a3e3c9c57",
     "seedAssignmentVersion": 1
   }
 }

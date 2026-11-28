@@ -14,14 +14,82 @@
   "plannedTags": [
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4211eac7f56a1a0f3abd8c4606d675c958d25a316c8502961fe3467868d404db",
+      "checkedAt": "2026-11-28T02:23:56.229Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我設定非急迫交流的固定有限回覆時段，不每天到門口聊。",
+            "action": "建立本人額外工作界線，正常必要聯絡照常。",
+            "tradeoff": "家長可能被冷落。"
+          },
+          {
+            "id": 2,
+            "text": "我另約一次正式短會談，聽完這段班務心得，平日不再隨到隨談。",
+            "action": "提出有限成人交流邀約，未同意不算已約好。",
+            "tradeoff": "付未來時間，可能仍有更多心得。"
+          },
+          {
+            "id": 3,
+            "text": "我協助問真正公開的正式志工入口，有需求才依法參與。",
+            "action": "有限核實管道，不承諾職位或以志工交換子女待遇。",
+            "tradeoff": "多查詢、可能無機會。"
+          },
+          {
+            "id": 4,
+            "text": "我不追加個別服務，必要訊息照正常管道接。",
+            "action": "婉拒非必要每日社交，不禁止其合法接送或正常打招呼。",
+            "tradeoff": "家長可能感到疏遠。"
+          },
+          {
+            "id": 5,
+            "text": "我提供現有可公開班務資訊，請他不用逐件來向我確認。",
+            "action": "額外整理核實一般資訊，不洩學生細節或承諾每日報告。",
+            "tradeoff": "教師多文字、家長可能還想真人聊。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權家長工作窗口接收一般參與建議，不都由我私下媒合。",
+            "action": "提出合法分流協作需求，不假定有人接手或直接把個資轉出。",
+            "tradeoff": "增加協調，可能被認為推走。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也愛聽稱讚，難怪每次都聊過頭；我願自己準時結束今天這段，回去完成收尾，不再把家長捧場當休息。",
+          "action": "承認享受肯定而自願中止非必要延聊、實際回工作，必要回應已接好、不責怪熱心家長。",
+          "tradeoff": "放棄當下被欣賞的舒服，關係可能短暫冷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1823439564
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "9fc579cffc5727e7e85c088adc422f95f738527644fe0277dc5f024397c6c90c"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長發現教師也有控制不了的社交習慣，而非只有自己造成麻煩。",
+        "B": "可發展認同規範者接受教師自己的時間規範。",
+        "C": "可發展專業肯定與想參與教師日常的差別。",
+        "D": "可承接支持沒有惡意也會超過別人餘裕。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "65e69e518a6c2c5840880f7f62ffa39fe01ee98b22adfd98db8cd4d14beff225",
+    "draftSha256": "4211eac7f56a1a0f3abd8c4606d675c958d25a316c8502961fe3467868d404db",
     "seedAssignmentVersion": 1
   }
 }

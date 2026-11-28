@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a74bbf06ffbd1456ee09870efe0128f184ccfc8b181eea66d1fc003ebebfa9df",
+      "checkedAt": "2026-11-28T02:23:56.212Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外核對免費正式學習資源，先看孩子真用得上什麼。",
+            "action": "適切公開資訊協助，不以自學取代必要教學或保證資源已取得。",
+            "tradeoff": "教師多查詢，家長可能仍想真人盯。"
+          },
+          {
+            "id": 2,
+            "text": "我申請一次有限公平自願的課後問答，核准與交通接好才辦。",
+            "action": "自願增加合法教學時段，不強迫留校或預告永久服務。",
+            "tradeoff": "教師少休息，未必排得成。"
+          },
+          {
+            "id": 3,
+            "text": "我邀親子看真正卡住的題型，再談合宜深度，不先用題量代表支持。",
+            "action": "有限自願需求交流，正常支持不以出席交換。",
+            "tradeoff": "花時間、家長可能仍不放心。"
+          },
+          {
+            "id": 4,
+            "text": "我在可調本科課內提出低壓進階選路，所有人同樣可選。",
+            "action": "額外備不同深度任務，必要基礎不撤、評量公平。",
+            "tradeoff": "備課更重、學生差異管理增加。"
+          },
+          {
+            "id": 5,
+            "text": "我不加下班後私人加課，說清既有支持安排，正常問題仍答。",
+            "action": "婉拒非必要工時擴張，不拿教師休息抵銷學生必要權益。",
+            "tradeoff": "家長可能失望。"
+          },
+          {
+            "id": 6,
+            "text": "經必要同意，我詢問學校可用的正式扶助或教學支援，不承諾名額。",
+            "action": "最小知情提出合法需求，未核定不當已有課或補助。",
+            "tradeoff": "多協調與等待。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很心軟，也不服學校只能打底的說法；我願多做一次公平公開的解題講解錄稿，合規才提供，讓孩子不必用錢買我多講一遍。",
+          "action": "承認想證明教學，額外製作本人原創適切教學內容，依法權利與個資安全確認後提供可及替代，不錄學生或正式考題、不保證已完成或能提分。",
+          "tradeoff": "教師額外備錄時間，沒有設備網路的學生仍需合理可及安排。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2378445500
+        },
+        "selectedIds": [
+          4,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "c1a9b9402799dd6d213a082118c2fe8e432c51ef95fe72ff15facc0ae226cf3e"
+      },
+      "consequenceDirections": {
+        "A": "可承接專業質疑能否促成課內可見改變。",
+        "B": "可發展家長期待真人陪伴與教師選擇可重用支援的差別。",
+        "C": "可承接家長體諒與想多要一點的矛盾。",
+        "D": "可發展沒有補習也未必每個困難都靠多留半小時。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "38a389e01fa615651a3af25e349970f330dcd9d216d4e5de54057736d10e4b2f",
+    "draftSha256": "a74bbf06ffbd1456ee09870efe0128f184ccfc8b181eea66d1fc003ebebfa9df",
     "seedAssignmentVersion": 1
   }
 }

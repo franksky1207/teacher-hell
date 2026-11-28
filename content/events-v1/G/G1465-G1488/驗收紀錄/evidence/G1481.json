@@ -16,14 +16,155 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5f9e26eb3f853afca29128dfc713079ddb39fd6ea643ef441e11b5ceb7dc3aca",
+      "checkedAt": "2026-11-28T02:23:56.219Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪雙方家庭核對真實預算和自願分工，不替任何家同意。",
+            "action": "有限合法成人協調，必要知情原就維持，不以出資保成績。",
+            "tradeoff": "教師時間、可能談出不同意。"
+          },
+          {
+            "id": 2,
+            "text": "我協助查學校實際可用基礎材料，先評估較省的版本。",
+            "action": "額外合法資源查詢，未取得不列已可用，不私拿庫存。",
+            "tradeoff": "協調時間、可能降低作品規模。"
+          },
+          {
+            "id": 3,
+            "text": "經必要同意，我查正式材料支援申請資格，不公開家境。",
+            "action": "核實支援入口，不保證名額或代填假資料。",
+            "tradeoff": "多申請準備、可能來不及。"
+          },
+          {
+            "id": 4,
+            "text": "我邀兩生重新分出各自真想學的一段，不先把一人寫講全包。",
+            "action": "額外有限學習分工交流，必要真實參與原就要求。",
+            "tradeoff": "教師花時間，兩人可能得重想合作。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加媒合或代辦，讓兩人依已說清的合法條件自行決定。",
+            "action": "婉拒非必要承包，必要安全知情與正常指導照常。",
+            "tradeoff": "可能仍報不成、學生覺得少幫一把。"
+          },
+          {
+            "id": 6,
+            "text": "若規則允許，我額外陪他們比較縮小設計的可行性，不先保證同樣能贏。",
+            "action": "在有權教學範圍提供有限設計回饋，不代作或冒工程鑑定。",
+            "tradeoff": "教師多工作、原期待的規模縮水。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我嘴上說照條件辦，其實也很想他們有機會上場；若校規允許，我願自費申請添一批公用基礎材料，讓同等需要的人都能公平自願借用。",
+          "action": "承認想成全參賽，提出本人可負擔且依法核可的公共材料採購贈用申請，不指定只給此生、不替學生買名次或假設已買到，必要知情與公平分工照常。",
+          "tradeoff": "教師可能實際自付費用並增加保管工作，未核可不購買、即使有材料也可能不夠原設計。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3370084187
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "977224b0975ef31a3a8c487fd9e6d7a3306656af6b474b24d782df52bed83561"
+      },
+      "consequenceDirections": {
+        "A": "可發展家庭資源差距下教師願付個人成本，但學生未必想以公共支援取代自己談妥的合作。",
+        "B": "可承接想拿獎與保持財務自主的矛盾。",
+        "C": "可承接不想被幫的自尊與想參賽。",
+        "D": "可發展互補不是讓一個人用勞力抵到無上限。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選陪兩人規劃與普通4學習分工協商過近；改合法公共基礎材料申請，清楚區分查既有物資、正式補助與教師自願出資。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我額外陪雙方家庭核對真實預算和自願分工，不替任何家同意。",
+                "action": "有限合法成人協調，必要知情原就維持，不以出資保成績。",
+                "tradeoff": "教師時間、可能談出不同意。"
+              },
+              {
+                "id": 2,
+                "text": "我協助查學校實際可用基礎材料，先評估較省的版本。",
+                "action": "額外合法資源查詢，未取得不列已可用，不私拿庫存。",
+                "tradeoff": "協調時間、可能降低作品規模。"
+              },
+              {
+                "id": 3,
+                "text": "經必要同意，我查正式材料支援申請資格，不公開家境。",
+                "action": "核實支援入口，不保證名額或代填假資料。",
+                "tradeoff": "多申請準備、可能來不及。"
+              },
+              {
+                "id": 4,
+                "text": "我邀兩生重新分出各自真想學的一段，不先把一人寫講全包。",
+                "action": "額外有限學習分工交流，必要真實參與原就要求。",
+                "tradeoff": "教師花時間，兩人可能得重想合作。"
+              },
+              {
+                "id": 5,
+                "text": "我不追加媒合或代辦，讓兩人依已說清的合法條件自行決定。",
+                "action": "婉拒非必要承包，必要安全知情與正常指導照常。",
+                "tradeoff": "可能仍報不成、學生覺得少幫一把。"
+              },
+              {
+                "id": 6,
+                "text": "若規則允許，我額外陪他們比較縮小設計的可行性，不先保證同樣能贏。",
+                "action": "在有權教學範圍提供有限設計回饋，不代作或冒工程鑑定。",
+                "tradeoff": "教師多工作、原期待的規模縮水。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我看見他用全包換材料很心疼；我願多留一段公平可申請的指導空檔，陪兩人真正一起做一次規劃，不拿自費替他買參賽資格。",
+              "action": "承認心軟，提出合法有限自願共同規劃指導，對同等需求公平開放、不代作品或承諾金錢、雙方可拒絕。",
+              "tradeoff": "教師少休息，學生可能還是想快點報名。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 133868444
+            },
+            "selectedIds": [
+              4,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": "emotional",
+              "B": 4,
+              "C": 2,
+              "D": 1
+            },
+            "optionsDigest": "00eaec7213a997456f59c9cf545ee199242b25c725ccc4bd07e2e6988074d8a5"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展信任合作能否從交易分工轉為共同學習，不保證減少費用。",
+            "B": "可發展互補不是讓一個人用勞力抵到無上限。",
+            "C": "可承接成就動機與不想增加家計的取捨。",
+            "D": "可發展善協作者接受有些條件不能只靠兩人談定。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +185,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d7529cd4f7c2c13da77675f711a89919bd760e525d7910ff9a08187335c65e52",
+    "draftSha256": "5f9e26eb3f853afca29128dfc713079ddb39fd6ea643ef441e11b5ceb7dc3aca",
     "seedAssignmentVersion": 1
   }
 }

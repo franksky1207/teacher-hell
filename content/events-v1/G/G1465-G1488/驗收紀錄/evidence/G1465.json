@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d6e1177614ce9c3045b1e9d8083eadafc97a180915ac18170a7242d116d3f473",
+      "checkedAt": "2026-11-28T02:23:56.184Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另外編少量進階題，原雙週看板不動，所有人自願取用。",
+            "action": "額外備題並核實後公平提供，不使他人必做。",
+            "tradeoff": "增加教師備課，可能越催越快。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他用原題找第二解法，願不願做由他選，不當新作業。",
+            "action": "提出自願深究既有內容的挑戰，不宣稱已達成。",
+            "tradeoff": "需回饋時間，他可能嫌原地打轉。"
+          },
+          {
+            "id": 3,
+            "text": "若同行者都願意，我給一段有限同好互相提問時間，不把他們派去教人。",
+            "action": "提出合法公平可選討論機會，教師維持必要支持。",
+            "tradeoff": "多照看協調，可能變互相比快。"
+          },
+          {
+            "id": 4,
+            "text": "我核對可合法提供的公開進階資源，讓他自願自己選。",
+            "action": "額外查適切資料，不侵權、不保證已借到或立即讀懂。",
+            "tradeoff": "花查詢時間，學生可能仍想要老師新題。"
+          },
+          {
+            "id": 5,
+            "text": "我維持雙週更新，不再加私人的催題服務。",
+            "action": "婉拒非必要追加供題，正常教學及必要答疑照常。",
+            "tradeoff": "學生失望、可能說班級太慢。"
+          },
+          {
+            "id": 6,
+            "text": "我請他自願試出一題並說明正確性，我核過才可能公開。",
+            "action": "提出學生自主創題機會，不代當義務出題員、不預定公開或加分。",
+            "tradeoff": "教師需審題，他可能不想反過來做。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被他那句破完挑起勝負欲；我願多留一段和他一起研究一題真正沒把握的延伸，不裝作老師早有答案。",
+          "action": "因不服輸提出有限自願共同研究，核實適切合法題材，未知據實、不賭分或要求他配合演出。",
+          "tradeoff": "教師花額外時間、暴露不熟與可能卡住。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4090454085
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "269ec842d6ab803fed1535dd90ba7001d7cea5ecc08207cac44f71acf5b3f96f"
+      },
+      "consequenceDirections": {
+        "A": "可發展號召者對加碼不是無限更新的反應。",
+        "B": "可發展群體影響力是否能容納不同解法。",
+        "C": "可承接破關者成為設計者的不同成就感。",
+        "D": "可發展號召力與快速適應碰到真的未解問題，教師也未必贏回面子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2c2129dfa5d5635bd002d9f5b4ee02346f5c280cd4669a4c01862729f62681fb",
+    "draftSha256": "d6e1177614ce9c3045b1e9d8083eadafc97a180915ac18170a7242d116d3f473",
     "seedAssignmentVersion": 1
   }
 }

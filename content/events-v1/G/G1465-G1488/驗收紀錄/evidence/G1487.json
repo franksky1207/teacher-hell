@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b9d27fd6c80e785e0597e17a4aa8849ebcabfd160b729614f7adbd91f832f95a",
+      "checkedAt": "2026-11-28T02:23:56.230Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我用一句自嘲收回話題，今天只談正常課務。",
+            "action": "選擇有限幽默轉場，不提供私人行程或以笑話羞辱學生。",
+            "tradeoff": "可能讓他覺得更親切、更想猜。"
+          },
+          {
+            "id": 2,
+            "text": "我減少自己非必要日常閒聊，課間保留給正常提問。",
+            "action": "調整本人額外互動時間，不冷落必要學習支持。",
+            "tradeoff": "學生可能覺得疏遠。"
+          },
+          {
+            "id": 3,
+            "text": "我私下邀他談被研究的感受，不要求全班認錯。",
+            "action": "額外自願有限界線交流，不拿學生私事報復。",
+            "tradeoff": "花課間、可能讓他尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "我提出一般辨別觀察與推測的短活動，不用教師真行程當題。",
+            "action": "額外適切班務討論，僅用合法虛構例子，不蒐個資。",
+            "tradeoff": "佔班務時間、學生可能對號入座。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加活動，只清楚拒答私人細節，正常招呼照常。",
+            "action": "維持有限日常界線，不承諾每次都解釋穿著。",
+            "tradeoff": "教師承受被說神祕。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他把好奇用在本人自願分享的興趣，教師不提供私人追問材料。",
+            "action": "提出一般自願興趣交流，不強迫說自己私事或假設有人參與。",
+            "tradeoff": "花互動時間、可能不是他想聊的。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點賭氣，明天偏要照自己喜歡的穿，不為了少被猜就改；今天我照樣正常走進班，不交代襯衫的故事。",
+          "action": "承認不服被觀察而自我審查，保留本人合法日常穿著選擇並維持正常互動，不虛構已換衣、不故意製造誤導學生的私人事件。",
+          "tradeoff": "教師得承受繼續被注意的不自在，不能保證熱潮停。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 395753375
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "b98a2a9ff7964ce4c893620dc79567091600ed25910bfa24213b9c86792b2362"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生尊重教師為人能否也尊重不回答。",
+        "B": "可發展敏銳關注遇到教師不給新線索。",
+        "C": "可承接尊重和社交熱情未必換來同樣靠近。",
+        "D": "可發展自主維持日常比躲避更有面子成本，尊敬學生可能仍覺得有趣。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "99e3b528d3ac371186c9a5ff8d47cdeae6fcaa45d57c13d0715f99b5b1aeb11a",
+    "draftSha256": "b9d27fd6c80e785e0597e17a4aa8849ebcabfd160b729614f7adbd91f832f95a",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a13857c96ee1d23eac42f0c4cbc140e212c65d7c3a26975b2cc3e411e7a24107",
+      "checkedAt": "2026-11-28T02:23:56.211Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另約他私下談那句話，真實幫忙照謝，不用學生名譽還人情。",
+            "action": "自願有限成人界線對話，必要事實釐清已共同維持。",
+            "tradeoff": "情緒時間、可能被說計較。"
+          },
+          {
+            "id": 2,
+            "text": "我不追加爭辯，只額外向學生具體回饋今天真實辛苦。",
+            "action": "有限肯定學生實際工作，不煽學生對立或隱瞞必要更正。",
+            "tradeoff": "同事說法仍可能留下觀感。"
+          },
+          {
+            "id": 3,
+            "text": "我額外整理可合法公開的實際分工，交正常承辦作事實參考。",
+            "action": "以本人已知實據作有限書面說明，不編工時或曝光個資。",
+            "tradeoff": "多文書、被看成報功。"
+          },
+          {
+            "id": 4,
+            "text": "我提出未來同類非必要協助先談工作範圍，不再讓路過幫忙變成無限人情。",
+            "action": "額外協商成人支援方式，未同意不算新制度，不阻必要工作。",
+            "tradeoff": "可能少了方便人手。"
+          },
+          {
+            "id": 5,
+            "text": "我邀主管安排有限三方工作回顧，不讓兩人私下猜。",
+            "action": "提出正式成人協調，必要真實不等核可才維持。",
+            "tradeoff": "事情變大、關係可能僵。"
+          },
+          {
+            "id": 6,
+            "text": "我不再請他做額外收尾，未來可由自己依法承擔的部分自己安排。",
+            "action": "調整本人非必要求助，不擅排斥其正式職務或剝奪資源。",
+            "tradeoff": "教師多勞力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我心裡很酸，也想讓人知道；我願額外申請讓學生自願以真實工作心得呈現成果，由他們自己說，不替我罵人。",
+          "action": "承認不甘，提出合規公平可選的學生工作成果表達機會，不點同事作敵人、不要求歌功或透露他人資料，未核准不當已公開。",
+          "tradeoff": "教師多協調與準備，學生可能根本不想再談。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 463095102
+        },
+        "selectedIds": [
+          1,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "fbcc749e1079532be58e3a9f1a327aca9abbea14357f4517250e7ad0b5ca360e"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師的護班私心與學生不願成成人功勞戰工具的不同選擇。",
+        "B": "可發展舊不滿在功勞話語裡如何露出。",
+        "C": "可發展同事願主動報訊卻未必願當面接受追問。",
+        "D": "可承接保住不欠人情與失去協助的實際代價。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d7a10ec88a8f6270895ea5e8b922259fb6d5c4a17e204a37679ce88cd80b1897",
+    "draftSha256": "a13857c96ee1d23eac42f0c4cbc140e212c65d7c3a26975b2cc3e411e7a24107",
     "seedAssignmentVersion": 1
   }
 }

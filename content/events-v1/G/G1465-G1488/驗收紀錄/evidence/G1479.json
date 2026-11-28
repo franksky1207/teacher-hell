@@ -15,14 +15,82 @@
     "G02",
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "08bf64a5bb5bb3c6e068e5ef146b22174c6c2a202107be0b4e822499c5541cb7",
+      "checkedAt": "2026-11-28T02:23:56.214Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我明早合法到班再處理，今晚不回這件非急事。",
+            "action": "延後非必要班務訊息，保留必要聯絡，不虛稱已取得物資。",
+            "tradeoff": "放不下心，明早多工作。"
+          },
+          {
+            "id": 2,
+            "text": "我只回已收到和明早處理，不再加誰去借的清單。",
+            "action": "一次有限真實回覆，不讓學生今晚去跑、不保證結果。",
+            "tradeoff": "少一點休息，可能仍被追問。"
+          },
+          {
+            "id": 3,
+            "text": "我把明早要問的事記在自己備忘，不發到學生群。",
+            "action": "自我有限工作提醒，必要資訊未傳不當已交辦。",
+            "tradeoff": "仍佔私人時間，但學生不用陪加班。"
+          },
+          {
+            "id": 4,
+            "text": "我告知正式正常收件時段，這件明天談，急事走既有必要管道。",
+            "action": "提出本人非必要回覆界線，不臨時切斷緊急聯絡。",
+            "tradeoff": "要花文字斟酌，學生可能覺得小題大作。"
+          },
+          {
+            "id": 5,
+            "text": "我限五分鐘寫出真實可行的明早詢問順序，未知不填成已有拖把。",
+            "action": "有限成人準備與適當回覆，不把提案當已借得、不派夜間勞務。",
+            "tradeoff": "犧牲休息，可能忍不住延長。"
+          },
+          {
+            "id": 6,
+            "text": "我向家人承認還放不下，請他願意時陪我聊兩分鐘別的，再自行放手機。",
+            "action": "自願成人支持請求，不叫家人代管班務或保證對方接受。",
+            "tradeoff": "多通話，自己仍得決定停止。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我偏不想今晚又輸給兩支拖把；我取消自己正打的長指令，把非必要通知靜音，去完成原本想安靜喝完的溫水，不再找一件班務填空。",
+          "action": "因疲累又不服習慣，實際刪除未送出長訊息並暫停非必要推播，保留必要求助，選擇當下私人休息與正常飲水，不假稱治療嗓音。",
+          "tradeoff": "教師承受未知與少即時掌控感，明早仍要接續。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3470467454
+        },
+        "selectedIds": [
+          5,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "23920c63b0ee4dd6f921a94e57a7f40465ca368020f7a0f64ba25ae88cb3d344"
+      },
+      "consequenceDirections": {
+        "A": "可發展班務掌控慾移回自己的責任。",
+        "B": "可承接主動傳達的人能否停在一句。",
+        "C": "可發展高參與的本人允許短暫沒用，而非嘴上休息手上繼續指揮。",
+        "D": "可發展對班務高度投入能否遵守自己設的停點。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "92c82270c047bfe4a77c5a83fed20f9846b6e0fa769dd9f7fd26f553469403a6",
+    "draftSha256": "08bf64a5bb5bb3c6e068e5ef146b22174c6c2a202107be0b4e822499c5541cb7",
     "seedAssignmentVersion": 1
   }
 }

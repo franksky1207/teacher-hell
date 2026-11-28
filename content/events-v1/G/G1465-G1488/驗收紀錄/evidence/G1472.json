@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0fc61c4d7ee39881a5dcc282d36a43bf03dd5374e587b5f56ddefd47e3388e1f",
+      "checkedAt": "2026-11-28T02:23:56.204Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請他現在回文字區做自己的部分，不加額外處罰。",
+            "action": "接回真實分工，安全收好工具後在合法可用時間處理，不強迫無限加時。",
+            "tradeoff": "打斷熱鬧、學生可能掃興。"
+          },
+          {
+            "id": 2,
+            "text": "我約定先完成手上安全可停的一小片，再按明確有限時段轉回。",
+            "action": "提出當次工作切換節點，未完成不假稱已補齊，不延誤必要課程。",
+            "tradeoff": "教師多追蹤，可能被讀成有空就可拖。"
+          },
+          {
+            "id": 3,
+            "text": "若各人同意，我協調真實互換分工，不讓文字區無人承擔。",
+            "action": "提出公平自願交換，不把有餘裕當他人必須接手。",
+            "tradeoff": "多人協調，可能無人願換。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全組短暫核對各區進度，再由大家提出合理調整。",
+            "action": "額外有限工作協商，教師維持責任與安全，不公開羞辱。",
+            "tradeoff": "占製作時間。"
+          },
+          {
+            "id": 5,
+            "text": "我陪他把文字區先定一個可完成小段，之後讓他自己做。",
+            "action": "額外有限引導，不代寫內容或把陪同變所有人的義務。",
+            "tradeoff": "教師花時間，學生可能還想回去剪。"
+          },
+          {
+            "id": 6,
+            "text": "我保留分工，邀他自己提可行完成時點，不替他安排每一步。",
+            "action": "提出學生自主限時規劃，教師核對合法時段，不把口頭承諾當完成。",
+            "tradeoff": "教師需等待追蹤、可能仍落空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想坐進那桌聊，偏偏冷門區空著；我願拿自己的課間陪他在文字區各做各的，讓這邊不再只有他一人，但字還是他來寫。",
+          "action": "承認也被熱鬧吸引，額外提出教師有限同場工作陪伴，不代作、不強迫學生陪老師，不侵正常休息權。",
+          "tradeoff": "教師放棄私人課間，學生可能仍嫌無聊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 596847053
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "84c386650ccac9c1f9577ed063607fd350bc88f90f17649bc1afdd298c5245c8"
+      },
+      "consequenceDirections": {
+        "A": "可發展合作不一定是擠在一桌，教師也承受不去熱鬧處的選擇。",
+        "B": "可承接熱鬧區人多與冷區缺人的整體代價。",
+        "C": "可承接信任和協作需要真實可驗證的接續。",
+        "D": "可承接從眾的人能否真的從熱鬧退開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "33215f63dcad55e9aa95c6bcf286fd41072b00c4859ac89c3e5c3bb5fc95c555",
+    "draftSha256": "0fc61c4d7ee39881a5dcc282d36a43bf03dd5374e587b5f56ddefd47e3388e1f",
     "seedAssignmentVersion": 1
   }
 }

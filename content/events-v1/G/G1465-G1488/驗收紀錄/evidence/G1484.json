@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e109310569d229b3a4c0cfd20573b6156df595dd81c59a4d24e8021d7eb45197",
+      "checkedAt": "2026-11-28T02:23:56.226Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "必要回覆之外，我額外向組員直接說明狀態，不再只讓總召傳話。",
+            "action": "有限一般工作說明，不揭私事、不假稱已核准。",
+            "tradeoff": "教師承受多人追問。"
+          },
+          {
+            "id": 2,
+            "text": "我協助他和組員重分真實可分的庶務，先問意願不直接派。",
+            "action": "額外合法公平分工協調，未同意不當減量已成。",
+            "tradeoff": "教師多排程、學生可能不想放手。"
+          },
+          {
+            "id": 3,
+            "text": "我另約有限工作檢視，把這次卡點和未來可提前準備處分開。",
+            "action": "額外成人學生流程交流，不以未來改善代替這次必要回覆。",
+            "tradeoff": "花課間，疲累者可能嫌又多一會。"
+          },
+          {
+            "id": 4,
+            "text": "我額外詢問承辦是否有可合法獨立進行的準備，不要全員空轉。",
+            "action": "查核真實可做範圍，未確認不允未核活動先行。",
+            "tradeoff": "多聯繫、可能沒有可分開的事。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加活動代辦，必要簽核與回覆依法按已說清的時程處理。",
+            "action": "婉拒非必要承包工作，原應負責不卸責，不以自律當等候理由。",
+            "tradeoff": "學生可能仍感到沒多幫一點。"
+          },
+          {
+            "id": 6,
+            "text": "經本人意願，我另談這幾天的真實負荷，是否需正式職責調整。",
+            "action": "有限自願關懷與合法調整評估，不擅撤總召或用健康換和氣。",
+            "tradeoff": "教師時間、學生可能覺得被看成撐不住。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很心虛被大家盯著；我願額外親自到下一次合法組內協調聽一段，不只把簽名推回去就當自己盡責。",
+          "action": "承認壓件後的尷尬，提出有限正式可行的組內工作旁聽回饋，不代學生做全部活動或取代本次必要核查，不預設組員同意。",
+          "tradeoff": "教師增加時間且可能聽見對自己的不滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 138336450
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "30d683b4c510d08de7027bc2207e295adb9512232b3bfce4fd8905534c934b64"
+      },
+      "consequenceDirections": {
+        "A": "可承接有號召力的學生也會怕說累就失位置。",
+        "B": "可發展總召看見教師也願接受工作檢視，但未必立即恢復信用。",
+        "C": "可發展導師承認壓件也不能因此答應所有額外要求。",
+        "D": "可承接盡責總召對再加管理工作的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5b925aead9a03e336bc00e803eb7509760c28b066a786fe0c7da93b6e1ce3672",
+    "draftSha256": "e109310569d229b3a4c0cfd20573b6156df595dd81c59a4d24e8021d7eb45197",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1e1ceb54ce538648768dfaa7c431985029f9b5147f76b723f4a4aba54810e131",
+      "checkedAt": "2026-11-28T02:23:56.197Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不加私人轉圖服務，正常安全資訊照官方核實版本。",
+            "action": "婉拒非必要轉發，必要風險反映與正確提醒仍辦。",
+            "tradeoff": "家長心血可能落空。"
+          },
+          {
+            "id": 2,
+            "text": "經同意，我額外協助整理觀察來源和限制，供有權者參考。",
+            "action": "有限整理其真實測量情況，不冒專業認證或保證採用。",
+            "tradeoff": "多文書，可能被持續追問。"
+          },
+          {
+            "id": 3,
+            "text": "若家長願意，我陪他申請正式交通意見交流，不直接改班級動線。",
+            "action": "提出合法成人協商需求，未排定不當已成會。",
+            "tradeoff": "教師多陪同時間。"
+          },
+          {
+            "id": 4,
+            "text": "我額外核對校方公開路線與他的疑問，列未知交有權者答。",
+            "action": "有限公開資料比對，不實測危險或猜巷弄照明足夠。",
+            "tradeoff": "查詢時間，答案可能不完整。"
+          },
+          {
+            "id": 5,
+            "text": "我另邀他談希望全班照走最怕的是什麼，不以恐懼決定他人路線。",
+            "action": "自願有限成人交流，必要安全不延誤。",
+            "tradeoff": "教師多時間，家長可能嫌不具體。"
+          },
+          {
+            "id": 6,
+            "text": "我提出以後非緊急安全建議的有限收件與回覆方式，不逐張即時審圖。",
+            "action": "建立本人額外工作界線，急迫風險即時正常處理，保留合法反映權。",
+            "tradeoff": "家長可能覺得教師越設門檻。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實怕辜負他那幾小時；我願自願另挪一段合法成人工作時間，申請和專業承辦一起看實際路口，圖不先放出去。",
+          "action": "承認心軟，提出合規成人安全現地觀察需求，須核可安全條件與權限，不保證已去或可改路線、不帶學生試驗。",
+          "tradeoff": "教師付現地時間與可能被要求後續跟進。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1675418690
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "e803a8a304493083f3d92a8def1dfa94913481d4e3a7b545cf67504180a06984"
+      },
+      "consequenceDirections": {
+        "A": "可發展規律生活如何讓人想把風險全部排進表格。",
+        "B": "可發展家長看見自己勞力被認真對待，仍要接受有權者可能不同意。",
+        "C": "可承接高關注和工作可用時間的差距。",
+        "D": "可承接秒數詳細不等於整條路安全。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "13ddabc1a4afec350cc33b9dce95902395d29de2d922d2af3e394d7690adad13",
+    "draftSha256": "1e1ceb54ce538648768dfaa7c431985029f9b5147f76b723f4a4aba54810e131",
     "seedAssignmentVersion": 1
   }
 }

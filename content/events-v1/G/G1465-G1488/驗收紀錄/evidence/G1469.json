@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3a594b5410462d2adc72ae2d461cfd97b97b8a674e13606c4db1dc3cdd9d9644",
+      "checkedAt": "2026-11-28T02:23:56.195Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若核可安全且不擾課，我提出短期暫放桌側，照護評估仍照做。",
+            "action": "在權責許可下評估有限過渡使用，不保證療效或以此替代必要照護。",
+            "tradeoff": "需額外追蹤、其他人可能要求比照。"
+          },
+          {
+            "id": 2,
+            "text": "我不加私人電器通融，依規妥善收置，健康安排仍由專業接好。",
+            "action": "維持合規設備界線，不沒收無據或撤掉合理照護。",
+            "tradeoff": "學生可能更覺得針對。"
+          },
+          {
+            "id": 3,
+            "text": "我額外陪他和校護談實際課堂困擾，讓他自己說。",
+            "action": "提出有限正式合規協商出席，必要醫護處理原就維持，不假設已獲新安排。",
+            "tradeoff": "教師時間、學生可能不想說。"
+          },
+          {
+            "id": 4,
+            "text": "我邀家長提供產品真實資料給有權者，不由價錢決定能不能用。",
+            "action": "額外協助設備資料核對，不宣稱已驗證效能或安全。",
+            "tradeoff": "多聯絡與可能失望。"
+          },
+          {
+            "id": 5,
+            "text": "我另邀他談上次座位的不滿，這次不把健康當和好條件。",
+            "action": "有限自願關係對話，必要合理需求不受是否和好影響。",
+            "tradeoff": "教師情緒時間。"
+          },
+          {
+            "id": 6,
+            "text": "我額外記錄本人真實見到的粉塵與一般干擾，向有權者提環境改善需求。",
+            "action": "有限成人觀察提案，不造假檢測或讓學生去測危險，不把必要安全修復留此。",
+            "tradeoff": "教師增加觀察整理，未必有新資源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也煩每樣東西都像在考驗我是不是針對人；我願當面留一段時間和他一起核清我這次怎麼判斷，把說過的理由寫給他，不拿不耐煩壓過他的不舒服。",
+          "action": "承認被懷疑的不耐，額外有限師生書面理由交流，不代專業診斷或以同意教師換照護。",
+          "tradeoff": "教師多時間，留下可被追問的判斷。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 748379012
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "dd1feab676381ba75b85762e0cf3444cbeba5deed14b21c3db2997349b56366c"
+      },
+      "consequenceDirections": {
+        "A": "可發展想掌握身體的人能否接受專業共同判斷。",
+        "B": "可發展私人自保和共同環境處理的不同尺度。",
+        "C": "可發展學生能否把具體不同意說出來，信任仍不保證恢復。",
+        "D": "可承接舊怨如何壓過對一般規則的接受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bc7994cc79a3b29f254a86f58ebaed548ca4c7ef292d07033973f03a19365dce",
+    "draftSha256": "3a594b5410462d2adc72ae2d461cfd97b97b8a674e13606c4db1dc3cdd9d9644",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "64786dc75e8ba674cd2ced01d5a586ec62129a337a242f218c99d4b0c3bc7a87",
+      "checkedAt": "2026-11-28T02:23:56.232Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提出合規短期輪流試行，先讓各排自願協商且保留成人介入。",
+            "action": "在權限與全班合理知情下評估有限自治，不預設同意或撤必要健康支持。",
+            "tradeoff": "教師多追蹤、可能吵更多。"
+          },
+          {
+            "id": 2,
+            "text": "我維持總務股長合法管理，不開各排操作，仍收具體不適反映。",
+            "action": "拒絕非必要程序放權，必要合理調整照常，不讓幹部當獨斷者。",
+            "tradeoff": "學生覺得老師不肯信任。"
+          },
+          {
+            "id": 3,
+            "text": "我先蒐集不含健康私事的一般冷熱感受，再談真正要改什麼。",
+            "action": "額外全班自願需求確認，不當溫度檢測或票決少數權益。",
+            "tradeoff": "多整理、學生嫌拖。"
+          },
+          {
+            "id": 4,
+            "text": "我提出固定可討論調整的短時點，不在上課中輪番搶按。",
+            "action": "協商合法有限操作節奏，實際管理資格由權責者決定。",
+            "tradeoff": "少即時便利、教師需追蹤。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問有權者是否可調整合規風向或座位環境，不只轉溫度數字。",
+            "action": "額外提出設備環境諮詢，不擅拆機、換座或保證可改善。",
+            "tradeoff": "多協調、未必有資源。"
+          },
+          {
+            "id": 6,
+            "text": "我邀全班一般討論權責與爭議回到誰，不只問誰先拿。",
+            "action": "額外有限自治討論，必要規則與健康照護不由投票取消。",
+            "tradeoff": "花班務時間，代表可能失去原有主導。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也怕熱，更不想每排都拿著遙控器；我願在自己合法在場的時段多管一週，親自聽前後排感受再照規調，不裝作放手只是為大家好。",
+          "action": "承認教師自身體感與怕爭執的私心，在可支配班務權限內提出本人合法在場時段有限接回操作與回饋工作，非在場仍按核可成人分工，維持節能健康界線、不假稱一週已完成。",
+          "tradeoff": "教師增加注意與操作負擔，學生可能認為自治被教師私心收走。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2279392293
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "947ab928574ca39349d42b7fad87f2e0afe470e6f35d29733d9614cea17fb331"
+      },
+      "consequenceDirections": {
+        "A": "可發展自主號召力遇到後排不同感受。",
+        "B": "可承接協商彈性仍可能碰到拒絕。",
+        "C": "可發展有號召力的學生面對教師願多做卻不願立即放權，協商仍有權力與人性摩擦。",
+        "D": "可承接真正放權也包含接受不同意見。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選主持一次協商與普通6自治討論同質；改教師有限在場親自管理的實際工作和不放權取捨，不只是更認真討論。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我提出合規短期輪流試行，先讓各排自願協商且保留成人介入。",
+                "action": "在權限與全班合理知情下評估有限自治，不預設同意或撤必要健康支持。",
+                "tradeoff": "教師多追蹤、可能吵更多。"
+              },
+              {
+                "id": 2,
+                "text": "我維持總務股長合法管理，不開各排操作，仍收具體不適反映。",
+                "action": "拒絕非必要程序放權，必要合理調整照常，不讓幹部當獨斷者。",
+                "tradeoff": "學生覺得老師不肯信任。"
+              },
+              {
+                "id": 3,
+                "text": "我先蒐集不含健康私事的一般冷熱感受，再談真正要改什麼。",
+                "action": "額外全班自願需求確認，不當溫度檢測或票決少數權益。",
+                "tradeoff": "多整理、學生嫌拖。"
+              },
+              {
+                "id": 4,
+                "text": "我提出固定可討論調整的短時點，不在上課中輪番搶按。",
+                "action": "協商合法有限操作節奏，實際管理資格由權責者決定。",
+                "tradeoff": "少即時便利、教師需追蹤。"
+              },
+              {
+                "id": 5,
+                "text": "我詢問有權者是否可調整合規風向或座位環境，不只轉溫度數字。",
+                "action": "額外提出設備環境諮詢，不擅拆機、換座或保證可改善。",
+                "tradeoff": "多協調、未必有資源。"
+              },
+              {
+                "id": 6,
+                "text": "我邀全班一般討論權責與爭議回到誰，不只問誰先拿。",
+                "action": "額外有限自治討論，必要規則與健康照護不由投票取消。",
+                "tradeoff": "花班務時間，代表可能失去原有主導。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我其實也怕又多一樁要我裁判；我願先多留一段合法班務時間陪他們實際協商一次，自己不先給答案，但不把麻煩全丟總務股長。",
+              "action": "承認怕麻煩，提出額外成人主持的有限實際協商機會，不預設制度已建立、由學生依法自願表達，必要成人責任不卸。",
+              "tradeoff": "教師多付時間、未必得到省事結果。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 1817455166
+            },
+            "selectedIds": [
+              6,
+              2,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 1,
+              "C": "emotional",
+              "D": 2
+            },
+            "optionsDigest": "408f30610f4a0098406834624fcc2a01e5a892b1ffd44545f77bb1fc0f796c1d"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接真正放權也包含接受不同意見。",
+            "B": "可發展自主號召力遇到後排不同感受。",
+            "C": "可發展學生體貼教師忙碌的說法遇到自治真正需要的成人投入。",
+            "D": "可承接協商彈性仍可能碰到拒絕。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c0db7296b3fdaf8d0320bb890bddfd90f2b5f7fe533dcf31acfc6bedc5dde523",
+    "draftSha256": "64786dc75e8ba674cd2ced01d5a586ec62129a337a242f218c99d4b0c3bc7a87",
     "seedAssignmentVersion": 1
   }
 }

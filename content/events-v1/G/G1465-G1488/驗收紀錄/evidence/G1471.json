@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b9c4241cb00edd845070644aa7a3a0f188791cfb7f3bc11fd278dc75b5e08c6c",
+      "checkedAt": "2026-11-28T02:23:56.201Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "若他願意，我請他用自己的短文寫示範回饋，核過才分享。",
+            "action": "提出合法自願個人例稿創作，不擅展示他人作品或給他評量權。",
+            "tradeoff": "教師需審，學生可能嫌大材小用。"
+          },
+          {
+            "id": 2,
+            "text": "我只邀他協助不含私密內容的合規收件格式整理，其他人也能自願做。",
+            "action": "提出有限公平行政協助，教師自行檢核，不讓其看評語分數或指責同學。",
+            "tradeoff": "管理交接時間，學生未必想做。"
+          },
+          {
+            "id": 3,
+            "text": "我安排公平自願的雙向互評，作者可依規選可分享片段，不設單人初審。",
+            "action": "在教學權限內調整一般練習，正式評分由教師主責。",
+            "tradeoff": "教師需多組管理。"
+          },
+          {
+            "id": 4,
+            "text": "我另提供較深的寫作挑戰給所有有興趣者，不用批同學來滿足他。",
+            "action": "額外設計適切自願個人練習，不強迫加入或增加必交量。",
+            "tradeoff": "增加備課回饋。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加角色，維持原互評安排，正常指導照常。",
+            "action": "婉拒非必要特別舞台，不把熱心當越界懲處。",
+            "tradeoff": "學生可能失落。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他談想從當初審學到什麼，再由本人選可行方向。",
+            "action": "有限自願學習目標交流，不以談心交換評分權。",
+            "tradeoff": "課間時間，可能覺得被拖延。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想有人幫我改完；我願額外拿自己寫的一小段讓他回饋，這次被挑毛病的是我，不借同學作品省事。",
+          "action": "承認想省力，提出教師自有合法非私密文字的有限自願對等練習，不改學生正式分數、不預設其願意或必須讚老師。",
+          "tradeoff": "教師花準備時間並承受被學生指出不足的面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2098906694
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "7af0f947e08a22a5e158a2fe259a5f480a0da383c63ef18160b0187bb7dee6e2"
+      },
+      "consequenceDirections": {
+        "A": "可發展全力支持不一定換來更多職務。",
+        "B": "可發展信任教師的人遇到老師真願受評論，支持未必只有幫忙打分。",
+        "C": "可發展成就需求與支持活動的不同表現。",
+        "D": "可承接適應快的人也可能還沒分清成長與地位。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a337c207c63bf57844b58d08444dd9f6fc1ae1a811cf4dc41ce46c59b44c4857",
+    "draftSha256": "b9c4241cb00edd845070644aa7a3a0f188791cfb7f3bc11fd278dc75b5e08c6c",
     "seedAssignmentVersion": 1
   }
 }

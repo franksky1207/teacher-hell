@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a1ca5513f2f45513eab13d8e7373b9c799b9ca15561e1f492bde8998d1d089a0",
+      "checkedAt": "2026-11-28T02:23:56.208Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外把適用用途和限制寫清楚給全班家庭，不指這一家。",
+            "action": "提供公平一般選購判斷資訊，不新增強制或保證成效。",
+            "tradeoff": "教師多文書，已買者可能疑惑。"
+          },
+          {
+            "id": 2,
+            "text": "若孩子願意，我提供本人合法樣書一次有限借閱機會。",
+            "action": "按公平可用規則提出自願借閱，不保證隨時有書、不讓其餘人失必要支持。",
+            "tradeoff": "教師管理歸還、他家可能想比照。"
+          },
+          {
+            "id": 3,
+            "text": "我邀親子談孩子真正需要加強哪裡，不把每條通知都當必買清單。",
+            "action": "提出有限自願學習需求對話，必要支持不取決於參加。",
+            "tradeoff": "多排程、家庭可能仍怕漏掉。"
+          },
+          {
+            "id": 4,
+            "text": "我另外核對合法免費公開練習，公平提供適用者自願用。",
+            "action": "額外適切資源查詢，不抄付費本、不假稱同等內容或已練會。",
+            "tradeoff": "教師花時間、資源可能有限。"
+          },
+          {
+            "id": 5,
+            "text": "我不再額外個別推介，家庭可按既有清楚資訊自行決定。",
+            "action": "婉拒非必要私人選購顧問，正常答疑與必要公平支持照常。",
+            "tradeoff": "家長可能覺得教師不肯給明確答案。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我協助查正式教材支援條件，不逕行替他申請或捐書。",
+            "action": "最小知情提供核實入口，不保證減免或標記學生家計。",
+            "tradeoff": "查詢時間與自尊顧慮。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實不想每本都被當成成績保險；我願多編一小組全班可選的原創練習，明確把自己的教學放在買書之前。",
+          "action": "承認不耐與想證明專業，額外製作適切合法免費練習，必要學習與公平原已保障，不以此暗示原先不買會吃虧。",
+          "tradeoff": "教師多備題和回饋，家長可能覺得既然有新題更不需要買。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3614254268
+        },
+        "selectedIds": [
+          4,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "12379537fa4f6f7a30f66e47507458777642cfc9131cba646c3cd7c764f4cb52"
+      },
+      "consequenceDirections": {
+        "A": "可承接資源接近不等於被勸買。",
+        "B": "可承接買不買之外仍有選擇但不是無成本替代。",
+        "C": "可發展家長肯定專業但仍可選擇不花錢。",
+        "D": "可發展老師願付實際工作而不是保證考不考，仍不能替所有人算出同一答案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1c725ab8635c627974836a43ea8a3fbef7bd222d1c58d25799f0135a3f779699",
+    "draftSha256": "a1ca5513f2f45513eab13d8e7373b9c799b9ca15561e1f492bde8998d1d089a0",
     "seedAssignmentVersion": 1
   }
 }

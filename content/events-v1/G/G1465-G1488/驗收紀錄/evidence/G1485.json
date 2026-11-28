@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f052737bb7c90537fbfbfa04d381018cc94ac9727b68156a8c11c9f672f4ddab",
+      "checkedAt": "2026-11-28T02:23:56.227Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核可後作自願備品，不設咳一聲領一片的規則，另外說明用途。",
+            "action": "依法有限接收與一般說明，不以自願備品替代必要衛生措施。",
+            "tradeoff": "多管理、家長可能不滿使用率。"
+          },
+          {
+            "id": 2,
+            "text": "經物主同意，我協助問健康中心統一受贈調度，不留本班專箱。",
+            "action": "額外合規媒合，未接受不移交或宣稱已捐成。",
+            "tradeoff": "教師多協調、家長覺得心意離孩子遠。"
+          },
+          {
+            "id": 3,
+            "text": "我婉謝本班新增私人物資，正常衛生支持仍按校方安排。",
+            "action": "不受非必要贈品，不退掉必要照護或斷物資供應。",
+            "tradeoff": "家長可能覺得不領情。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他和有權校護正式談一般疑問，由專業回答而非我擔保。",
+            "action": "提出有限成人諮詢邀請，不預設校護有空或答覆絕對安全。",
+            "tradeoff": "教師接待時間、可能仍怕。"
+          },
+          {
+            "id": 5,
+            "text": "我額外提供核實一般衛教資訊給全體，不談誰咳嗽。",
+            "action": "公平自願健康資訊協助，必要指引原已維持，不代診斷。",
+            "tradeoff": "花核對時間、家長可能認為太軟。"
+          },
+          {
+            "id": 6,
+            "text": "我另私下談捐物是否仍願無條件，不願就尊重撤回合法提案。",
+            "action": "有限成人意願確認，必要受贈條件依法處理，不以情緒逼捐或扣孩子待遇。",
+            "tradeoff": "教師花時間、可能失去物資。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想直接收下省事，卻不想每聲咳嗽都像替他值班；我願現在親口把我不做的監控說明白，讓他決定還送不送。",
+          "action": "承認想省物資安排的私心，額外當次直接成人界線對話，拒不當強制已為共通，不保證保住關係或受贈，必要健康照護不變。",
+          "tradeoff": "教師承受失望與可能被覺得不負責。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1020255182
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "6f591fa1425f811d3f30fc5dd0df34e21160b075c20d74c4cd5442542c2d286d"
+      },
+      "consequenceDirections": {
+        "A": "可承接心意和希望換取具體政策之間的差距。",
+        "B": "可發展對方的同理能否容許導師拒絕以監控回報捐物。",
+        "C": "可發展同理全班與高安全需求並不總同方向。",
+        "D": "可承接高保障需求不是一盒物資能解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "207295dad2a675cb6a72812a5d3f87eeba6527405145dcf875ec86534b6491f5",
+    "draftSha256": "f052737bb7c90537fbfbfa04d381018cc94ac9727b68156a8c11c9f672f4ddab",
     "seedAssignmentVersion": 1
   }
 }

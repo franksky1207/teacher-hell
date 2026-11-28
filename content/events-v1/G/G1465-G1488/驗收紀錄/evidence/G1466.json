@@ -16,14 +16,82 @@
     "G05",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0bc1a5eadf367a2645424321ad04ffee75029038293e94cf2be7b48719eb166e",
+      "checkedAt": "2026-11-28T02:23:56.187Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他看廣告證據和賣方資訊，別只算標價。",
+            "action": "額外有限公開資訊查核，不冒醫療效能認證。",
+            "tradeoff": "教師時間、可能讓希望更落空。"
+          },
+          {
+            "id": 2,
+            "text": "經必要同意，我協助查正式照護輔具支援入口。",
+            "action": "核實合法資訊，不保證資格、資源或現金已得。",
+            "tradeoff": "多查詢，可能沒有適用。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他與願意的家庭成人一起談實際照護負擔，不讓他獨自背。",
+            "action": "提出有限自願親師家庭交流，不要求公開病情或替家庭決策。",
+            "tradeoff": "教師多聯絡，學生怕家人難過。"
+          },
+          {
+            "id": 4,
+            "text": "我幫他列出想問原醫療專業者的疑問，由家庭依法去問。",
+            "action": "額外整理一般問題，不代診斷、不假設已取得醫療回覆。",
+            "tradeoff": "花時間，仍需家庭安排。"
+          },
+          {
+            "id": 5,
+            "text": "我不替他選購或代辦，正常支持照常，錢先由本人依法保管。",
+            "action": "婉拒非必要消費顧問工作，不奪財物或強令交出手機。",
+            "tradeoff": "學生可能覺得老師也沒辦法。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我陪他把自己能負擔與不能負擔的範圍寫清楚，不再算成一個人要救全家。",
+            "action": "有限自願預算與角色對話，不叫他負家庭醫療債。",
+            "tradeoff": "教師多時間，可能難接受自己做不到。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想一句『別買』就結束，卻捨不得他那個表情；我願另挪一次工作空檔，陪他向合法支援窗口提出實際問題，不替他承諾會有救星。",
+          "action": "承認怕沉重又心軟，提出有限合規陪同諮詢，必要同意與可行時段先成立，不預設服務已取得。",
+          "tradeoff": "教師付陪同與情緒負擔，可能仍無立即解答。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1134217877
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "31d38a18fdc3dcc01f7fbb86b7559a572b7a60267df1857ff6b718c071673ce7"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生需要被陪著面對有限希望，教師不能靠熱心保證家庭處境改變。",
+        "B": "可發展合理守界線和家庭沉重需求未解。",
+        "C": "可承接省錢希望和制度資源的真實限制。",
+        "D": "可發展務實精算遇到根本不能成立的療效前提。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d9205483125cf24b5aed0c4d3387319a0a5775ad1959526b1838c11c6d72e66f",
+    "draftSha256": "0bc1a5eadf367a2645424321ad04ffee75029038293e94cf2be7b48719eb166e",
     "seedAssignmentVersion": 1
   }
 }

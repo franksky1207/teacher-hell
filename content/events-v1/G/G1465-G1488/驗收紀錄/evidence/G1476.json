@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f8c211f571a113e0e14b943e166982f0a56f187ef3f5efcbee24da3b989c546b",
+      "checkedAt": "2026-11-28T02:23:56.209Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我自願多做一週有限課前提醒，別讓每次到鐘響才吵。",
+            "action": "提出本人可用合法時段的額外成人提醒，不讓學生代糾察或保證零壓線。",
+            "tradeoff": "教師少課間休息。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他具體談最常遇到的情況，協商合法比例回應，不代他判每案。",
+            "action": "額外成人有限情境討論，必要合法界線原就維持。",
+            "tradeoff": "花時間、對方可能嫌麻煩。"
+          },
+          {
+            "id": 3,
+            "text": "我另請有權主管共同釐清可行範圍，不讓我們互相保證。",
+            "action": "提出正式有限協調需求，不預設主管背書、不擴大學生懲處。",
+            "tradeoff": "事情正式化，舊怨可能加深。"
+          },
+          {
+            "id": 4,
+            "text": "我額外蒐集一般課間動線與上課準備困難，不問誰挺哪位老師。",
+            "action": "有限學生自願實況回饋，不搜個別健康秘密或以票數判管教。",
+            "tradeoff": "教師多整理，可能發現原時程不合理。"
+          },
+          {
+            "id": 5,
+            "text": "我不接額外替本科趕人工作，正常班務和必要輔導照辦。",
+            "action": "婉拒非必要新增勤務，不放任不合規措施或阻本科合法管理。",
+            "tradeoff": "同事可能覺得不支持。"
+          },
+          {
+            "id": 6,
+            "text": "我另約談他對我過去處理的不滿，學生當次仍按合法事實辦。",
+            "action": "自願有限成人關係對話，不用和解換安全或合法權益。",
+            "tradeoff": "教師情緒工作，可能談不攏。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想頂回去『你累我也累』；我願現在和他直接把新增工作各由誰扛談清楚，不再口頭全接，也不拿學生當我們誰贏的證據。",
+          "action": "承認生氣，額外提出當次有限實際成人分工協商，雙方同意才成立，必要合法管教與支持照常，不以工作量交換無差別處罰。",
+          "tradeoff": "花即時空檔、可能失去好配合形象。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1194746836
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "a1d56120b057f510c27e5c26e4aafa839f683905f4fa4b3716a7d559bc99f20f"
+      },
+      "consequenceDirections": {
+        "A": "可發展對方在高負荷下願否承認導師也有上限，協作仍可能破裂。",
+        "B": "可承接原則遇到實際差異是否仍要一律。",
+        "C": "可承接原則之爭也含被同事不體諒的感覺。",
+        "D": "可發展過重負荷者對被拉進說明程序的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b30d02f51b42cc6f0e8a81e6741e65e3ebfba911fb18f105b0f06d6518963e87",
+    "draftSha256": "f8c211f571a113e0e14b943e166982f0a56f187ef3f5efcbee24da3b989c546b",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,155 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c6b9758edde17bebb0e73469f449881ab1db6cf9ac48116f30847df08a16e3ab",
+      "checkedAt": "2026-11-28T02:23:56.224Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天不加留校，我協助申請之後真正可用的午間時段。",
+            "action": "額外未來合法預約協助，今天按原安全交通返家，不假設預約成功。",
+            "tradeoff": "教師多聯繫、學生今日手感落空。"
+          },
+          {
+            "id": 2,
+            "text": "所有條件真能接好才申請今天有限陪練，否則照原車走。",
+            "action": "提出教師自願合法額外陪同，未核可與家長交通未成立不使用，不視為已完成練習。",
+            "tradeoff": "教師延後下班、可能白忙協調。"
+          },
+          {
+            "id": 3,
+            "text": "我提供可合法公開的操作概念資料，今天不做實物。",
+            "action": "額外核實低風險自願學習資訊，不讓學生在家代做危險操作。",
+            "tradeoff": "查詢時間、無法取代手感。"
+          },
+          {
+            "id": 4,
+            "text": "我協助問合格指導者的正常開放機會，不自己承包每次看場。",
+            "action": "提出合法支援詢問，不假定對方有空或可免原程序。",
+            "tradeoff": "增加聯繫、可能等很久。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加私人陪練服務，必要課內學習照常。",
+            "action": "婉拒非必要時間投入，不剝奪正常操作與安全支持。",
+            "tradeoff": "學生可能覺得撒嬌也沒用。"
+          },
+          {
+            "id": 6,
+            "text": "我另邀他在正常可行課間說清想補哪個動作，先把目標縮小。",
+            "action": "有限自願需求對話，不宣稱已練好、不把問過當場地核准。",
+            "tradeoff": "占教師課間、學生可能嫌不是練。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想說今天不行就下班，可是也想讓家裡知道他真的想練；經他願意，我另約和家長一起聽他說目標，今天照原校車走。",
+          "action": "承認想休息仍提出額外有限親師生目標對話邀請，學生及家長自願、合法時段成立才談，不以此取代正常借用申請、不假設家長已同意留校。",
+          "tradeoff": "教師增加聯絡時間，學生可能不想讓家長介入或覺得老師轉移話題。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1920175219
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "2e5cdbbb73bcf0dc923647ec8812e6e35d9c60a9c6cba73c21031a4f2144b7bc"
+      },
+      "consequenceDirections": {
+        "A": "可承接適應快也可能更急著把所有機會抓住。",
+        "B": "可承接成就動機接受不同型態準備的失落。",
+        "C": "可承接教師自己的下班也是實際安排。",
+        "D": "可發展親近撒嬌與真正向家庭說清學習目標的不同代價，今日安全返程不變。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選安排未來正式陪練與普通1協助未來預約實質接近；改新增親師生學習目標對話，不重複必要通知與返家交接。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "今天不加留校，我協助申請之後真正可用的午間時段。",
+                "action": "額外未來合法預約協助，今天按原安全交通返家，不假設預約成功。",
+                "tradeoff": "教師多聯繫、學生今日手感落空。"
+              },
+              {
+                "id": 2,
+                "text": "所有條件真能接好才申請今天有限陪練，否則照原車走。",
+                "action": "提出教師自願合法額外陪同，未核可與家長交通未成立不使用，不視為已完成練習。",
+                "tradeoff": "教師延後下班、可能白忙協調。"
+              },
+              {
+                "id": 3,
+                "text": "我提供可合法公開的操作概念資料，今天不做實物。",
+                "action": "額外核實低風險自願學習資訊，不讓學生在家代做危險操作。",
+                "tradeoff": "查詢時間、無法取代手感。"
+              },
+              {
+                "id": 4,
+                "text": "我協助問合格指導者的正常開放機會，不自己承包每次看場。",
+                "action": "提出合法支援詢問，不假定對方有空或可免原程序。",
+                "tradeoff": "增加聯繫、可能等很久。"
+              },
+              {
+                "id": 5,
+                "text": "我不追加私人陪練服務，必要課內學習照常。",
+                "action": "婉拒非必要時間投入，不剝奪正常操作與安全支持。",
+                "tradeoff": "學生可能覺得撒嬌也沒用。"
+              },
+              {
+                "id": 6,
+                "text": "我另邀他在正常可行課間說清想補哪個動作，先把目標縮小。",
+                "action": "有限自願需求對話，不宣稱已練好、不把問過當場地核准。",
+                "tradeoff": "占教師課間、學生可能嫌不是練。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也很想準時走；若他願意，我跟他一起把這次未成的十五分鐘寫成正式申請，讓我自己選能負擔的陪同時段，不再靠當天撒嬌決定。",
+              "action": "承認想保下班，額外提出以真實目標和教師可用時段作有限正式申請，未核可不假設取得，今天仍按必要交通接續。",
+              "tradeoff": "教師多申請工作，學生可能不喜歡親近被換成排程。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3720845603
+            },
+            "selectedIds": [
+              6,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "4a143a8faa6342839c7d5cf83f9a122bd9645311da705829aeb4b6b2eaf56d25"
+          },
+          "previousConsequenceDirections": {
+            "A": "可承接適應快也可能更急著把所有機會抓住。",
+            "B": "可發展信任親近導師與真正專業支持範圍不同。",
+            "C": "可發展安全意識與急著進步的拉扯。",
+            "D": "可發展安全配合的熱心學生如何接受被喜歡也仍要等。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c94cfe448b8c551caf29f6ade4e3e8bce17caba3a0d11401359e3ffc539c433f",
+    "draftSha256": "c6b9758edde17bebb0e73469f449881ab1db6cf9ac48116f30847df08a16e3ab",
     "seedAssignmentVersion": 1
   }
 }

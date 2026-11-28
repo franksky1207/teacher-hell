@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "46e2cc9a35ff48322324e95aabb319f72dcc694862536005dba8c195d135bba7",
+      "checkedAt": "2026-11-28T02:23:56.189Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提出保留必要週五接續的有限微掃試行，依法核可再辦。",
+            "action": "評估真實可行時段與自願公平分工，不讓試行撤校規必要事項。",
+            "tradeoff": "教師需監督和可能重排。"
+          },
+          {
+            "id": 2,
+            "text": "我維持現行安排，不加新制，願意多排也不當交換條件。",
+            "action": "婉拒非必要程序改動，正常合理班務與支持照常。",
+            "tradeoff": "學生可能覺得付出被否定。"
+          },
+          {
+            "id": 3,
+            "text": "我和他先實看現有合法掃除一次，記真實哪段重複再談。",
+            "action": "額外有限成人陪同流程觀察，不虛造已測工時、不派危險巡查。",
+            "tradeoff": "教師多時間，可能發現確有浪費。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全班自願談實際可用時段，表先不分給任何人。",
+            "action": "提出一般分工需求蒐集，不逼同學接受已排名字。",
+            "tradeoff": "占班務時間，可能打散他原案。"
+          },
+          {
+            "id": 5,
+            "text": "我陪他向有權衛生窗口問清清運限制，不把傳聞當規則。",
+            "action": "額外合法有限協商，不預設承辦准免檢或立即改制。",
+            "tradeoff": "多陪同，學生可能覺得繞遠。"
+          },
+          {
+            "id": 6,
+            "text": "我先精簡本人要求的非必要重複檢查，清運與必要清潔仍在。",
+            "action": "依法移除確有可免的教師附加複核，不改全校標準或宣稱因此必省十五分。",
+            "tradeoff": "教師少了自己偏好的重複保障。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想週五早點收工，願意多花自己一段時間陪他核對這張表的負荷，自己的班務不能只拿別班當理由。",
+          "action": "承認私人求省時，額外有限核算現有工作與新提案的合理分配，不假造測試成果、不直接把人派上。",
+          "tradeoff": "教師增加評估時間、可能看出自己要求太多。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2183112907
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "3f6d4a855a5e6f271cec4451c1b7886d0f9b19be92ac11ade335b2a4b691df89"
+      },
+      "consequenceDirections": {
+        "A": "可承接效率原則能否接受先有證據。",
+        "B": "可發展原則者接受試辦不是直接取消週五。",
+        "C": "可發展教師同樣想省力卻仍須承受調整成本，學生不一定滿意。",
+        "D": "可承接從眾好點子遇到本班真實限制。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0de2f74ec73ba337378eb1315902581a6c77ec3b261d596bc2715e8b81f606ae",
+    "draftSha256": "46e2cc9a35ff48322324e95aabb319f72dcc694862536005dba8c195d135bba7",
     "seedAssignmentVersion": 1
   }
 }

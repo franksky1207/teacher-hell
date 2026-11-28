@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d546983a96ffc98b3856d1b31cedb54253b46bd41be7519af21176216d8f1470",
+      "checkedAt": "2026-11-28T02:23:56.205Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核可後我收原封點心，另作不帶推銷的一般來源說明。",
+            "action": "依法適量受贈並額外說明保留法定標示原因，不把基本食安只放此分支。",
+            "tradeoff": "教師多解釋，可能仍被說替店家曝光。"
+          },
+          {
+            "id": 2,
+            "text": "我婉謝食品，不讓他再為這次備四十份。",
+            "action": "不接受非必要資源，不毀包裝、不禁止家長合法正常參與。",
+            "tradeoff": "家長失望，班上另依既有合法方案。"
+          },
+          {
+            "id": 3,
+            "text": "我陪他向有權者詢問收受規範，答案出來再決定。",
+            "action": "額外有限合規協商，未核定不送入班、不保證獲准。",
+            "tradeoff": "增加接待與等待。"
+          },
+          {
+            "id": 4,
+            "text": "我提出以原有合法經費依法採購的可能，不把贈品與商家曝光綁一起。",
+            "action": "詢問公平合法採購方式，無預算授權不訂、不保證採其店或用班費。",
+            "tradeoff": "多行政、家長可能覺得心意被當交易。"
+          },
+          {
+            "id": 5,
+            "text": "若物主願意，我協助查其他真正可合法受贈的公共需求。",
+            "action": "有限媒合，不轉交未同意食品、不假設對方接受或搬走即算捐成。",
+            "tradeoff": "增加聯絡，偏離家長本想給這班。"
+          },
+          {
+            "id": 6,
+            "text": "我另邀家長以純家長身分參與原茶會，食品仍獨立審查。",
+            "action": "提出合法可行的成人參與邀請，未核准不入班、不換贈品。",
+            "tradeoff": "教師多接待，家長可能沒空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想吃，卻不想拿全班替我的嘴饞過關；我願自費另買自己的那份，班上的收受照樣獨立依法決定。",
+          "action": "坦承貪吃，自行向合法商家按正常公開價格購買本人食品，無折扣交換或強迫推廣，不以本人試吃代替全班安全審查、不假稱全班已核可。",
+          "tradeoff": "教師負本人實際消費且可能被誤會間接鼓勵贈品。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 120489972
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "9576540e781861915673d03429eca2584b492b562953646cb8130a0813a405d9"
+      },
+      "consequenceDirections": {
+        "A": "可承接穩定事業的好意未被採用也有感受。",
+        "B": "可承接圓融者願否接受人被邀而產品未必被收。",
+        "C": "可發展家長看見教師喜歡產品仍不等於學校一定收，嘴饞與公事界線可以同時存在。",
+        "D": "可發展圓融提供者是否願接受不做商業致謝。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3ef1c7fb6b4aee272df59fdb6865a1fe17978c6186ecc4397e4d4e07bad5ae63",
+    "draftSha256": "d546983a96ffc98b3856d1b31cedb54253b46bd41be7519af21176216d8f1470",
     "seedAssignmentVersion": 1
   }
 }

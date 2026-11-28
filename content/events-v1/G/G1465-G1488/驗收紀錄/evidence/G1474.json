@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7036b4c3fefac28f4cd30657989c63b186fa8604f65719434ca02e54f07ddeb7",
+      "checkedAt": "2026-11-28T02:23:56.206Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外查一次可公開的審核進度，有答案才回，不保證日期。",
+            "action": "有限聯繫有權窗口，不加假承諾。",
+            "tradeoff": "教師多追問、可能仍未知。"
+          },
+          {
+            "id": 2,
+            "text": "我詢問有沒有真正可依法調借的公用備品，核可才安排。",
+            "action": "額外提出借調需求，不擅搬別班或把必要健康支持留待借成。",
+            "tradeoff": "協調搬運工作且可能無備品。"
+          },
+          {
+            "id": 3,
+            "text": "我邀家長直接和有權承辦正式談，由我有限陪同。",
+            "action": "提出成人合規協調，不以情緒催迫免審查。",
+            "tradeoff": "教師接待時間、可能更衝突。"
+          },
+          {
+            "id": 4,
+            "text": "我不再提供額外逐次催件，依正常正式進度聯絡。",
+            "action": "婉拒非必要無限代辦，必要資訊與安全支持照常。",
+            "tradeoff": "家長可能更火。"
+          },
+          {
+            "id": 5,
+            "text": "若他考慮退回私人使用，我協助核對新品合法退貨入口，不代決。",
+            "action": "額外消費資訊查詢，不保證退款或將物品當校產處置。",
+            "tradeoff": "多聯絡、家長可能覺得被叫放棄。"
+          },
+          {
+            "id": 6,
+            "text": "我向學校額外提清楚公開受贈流程的建議，未來先問再買。",
+            "action": "提出一般改善需求，不倒責怪家長或宣稱已改制度。",
+            "tradeoff": "多文書、當次仍得等。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很煩被當成什麼都能催動；我願親口打回去說清我能多幫一次、不能保證什麼，這次不再用含糊的盡快敷衍。",
+          "action": "承認壓力，額外當次直接成人界線對話，維持尊重與必要資訊，不甩掉原應接續責任。",
+          "tradeoff": "教師付即時時間與被嫌不熱心的面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 653552932
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "1dff05eb346d684cb0c953b90a6ce1aeb456a32eb2a68ceb2af8fc52fcd51ff5"
+      },
+      "consequenceDirections": {
+        "A": "可發展家庭支持的理直氣壯遇到具體規範。",
+        "B": "可承接購物已成與捐贈未成的差別。",
+        "C": "可發展家長對明確有限承諾或模糊安慰的不同反應，仍可能不滿。",
+        "D": "可發展導師不當兩邊傳聲筒的工作界線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60aafcc054d20a3eff837ed0176a0b22ee9e4e798fa548a20147e63e5b0162a8",
+    "draftSha256": "7036b4c3fefac28f4cd30657989c63b186fa8604f65719434ca02e54f07ddeb7",
     "seedAssignmentVersion": 1
   }
 }

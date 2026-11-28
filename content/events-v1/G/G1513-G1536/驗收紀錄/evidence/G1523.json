@@ -19,8 +19,8 @@
   "stages": {
     "stage1": {
       "status": "passed",
-      "sourceVersion": "6ba3b27d224645767eb0bcd9225bd0be45b71c995af850d67740cc3db5417b50",
-      "checkedAt": "2026-11-28T02:43:52.832Z",
+      "sourceVersion": "096a80de1196b89cac64d89e25ce7b0171a0aff05483b66f1fc81ebb8a2f2999",
+      "checkedAt": "2026-11-28T02:55:24.134Z",
       "ordinaryChoiceSelection": {
         "ordinaryCandidates": [
           {
@@ -55,9 +55,9 @@
           },
           {
             "id": 6,
-            "text": "我不再請他額外代統整紀錄，教師保留必要核實與管理。",
-            "action": "收回可免的學生額外協助，不剝正常股長身分或公平權益。",
-            "tradeoff": "教師多工作、他可能失落。"
+            "text": "我額外記錄自己一週依原合法點名流程所花的實際時間，先知道舊做法卡在哪，不把三倍快當已測結果。",
+            "action": "教師承諾於本人真實例行工作中另作一週有限非個資工時紀錄，未執行不宣稱已有耗時或結論；真實出缺紀錄仍依原合法管理，不取消必要支持。",
+            "tradeoff": "教師多一週記錄與整理，仍沒有立刻換新系統。"
           }
         ],
         "emotionalCandidate": {
@@ -68,29 +68,102 @@
         "rng": {
           "algorithm": "mulberry32",
           "version": 1,
-          "seed": 3240826373
+          "seed": 4184020677
         },
         "selectedIds": [
-          6,
-          4,
-          1
+          5,
+          3,
+          2
         ],
         "finalChoiceMap": {
-          "A": 6,
-          "B": 4,
-          "C": "emotional",
-          "D": 1
+          "A": 3,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
         },
-        "optionsDigest": "37d16a29b269871a7f4eeacc5be9954cfeb7cb30c4923cbc1e747a825050eba1"
+        "optionsDigest": "3ce5b5137490e9a9e3f7bc854e25553221742e789273c88acfdd689994d80177"
       },
       "consequenceDirections": {
-        "A": "可發展互信是否必須靠接管事情證明。",
-        "B": "可發展口才強的人是否能說清責任。",
-        "C": "可發展信任幫手不等於把覆核責任也交出去。",
-        "D": "可發展改革熱情接受較小的變化。"
+        "A": "可發展學生願不願相信老師拒絕不是不信任人。",
+        "B": "可承接一位可靠幫手不代表所有人的需求。",
+        "C": "可承接信任與資料治理是不同事。",
+        "D": "可發展信任幫手不等於把覆核責任也交出去。"
       },
       "semanticReviewed": true,
-      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查",
+      "selectionRevisionHistory": [
+        {
+          "reason": "輪末定向比較數位提案故事時，確認普通6所稱不再請學生額外統整，原開場及封存摘要未建立這項教師委託；不為湊撤回行動補造既有工作，改為教師對真實舊流程的額外有限工時紀錄。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我邀他自願重排不含真實個資的紙本版型，試改善傳遞。",
+                "action": "提出有限合法版型協作，真實紀錄仍依授權管理。",
+                "tradeoff": "他覺得被退回紙本。"
+              },
+              {
+                "id": 2,
+                "text": "我向有權窗口提出核准數位方案的需求，不現在啟用私表單。",
+                "action": "正式詢問合規系統與權限，不預稱核准。",
+                "tradeoff": "教師多行政時間。"
+              },
+              {
+                "id": 3,
+                "text": "我維持現有合法流程，不接這次額外改制。",
+                "action": "拒絕非必要改革，不撤學生正常參與權。",
+                "tradeoff": "效率疑慮留下。"
+              },
+              {
+                "id": 4,
+                "text": "我請他用假資料畫出流程，只討論哪步可以少做。",
+                "action": "有限自願無個資設計討論，不把模擬當實測更快。",
+                "tradeoff": "教師時間、學生還要重想。"
+              },
+              {
+                "id": 5,
+                "text": "我邀全班自願回饋現有流程卡在哪，不公開出缺紀錄。",
+                "action": "額外一般需求蒐集，不把多數同意當授權。",
+                "tradeoff": "整理時間。"
+              },
+              {
+                "id": 6,
+                "text": "我不再請他額外代統整紀錄，教師保留必要核實與管理。",
+                "action": "收回可免的學生額外協助，不剝正常股長身分或公平權益。",
+                "tradeoff": "教師多工作、他可能失落。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我被三倍快說動了，真有點想偷懶；我願先用自己的空檔跑一次假資料流程，親自記錄操作步驟，再決定是否提正式申請。",
+              "action": "教師額外實作無個資模擬，未做前不虛報耗時，模擬不等全班成效或核准上線。",
+              "tradeoff": "本人多測試時間、可能發現沒比較省。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 3240826373
+            },
+            "selectedIds": [
+              6,
+              4,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 6,
+              "B": 4,
+              "C": "emotional",
+              "D": 1
+            },
+            "optionsDigest": "37d16a29b269871a7f4eeacc5be9954cfeb7cb30c4923cbc1e747a825050eba1"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展互信是否必須靠接管事情證明。",
+            "B": "可發展口才強的人是否能說清責任。",
+            "C": "可發展信任幫手不等於把覆核責任也交出去。",
+            "D": "可發展改革熱情接受較小的變化。"
+          }
+        }
+      ]
     },
     "stage2": {
       "status": "not_started",
@@ -111,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6ba3b27d224645767eb0bcd9225bd0be45b71c995af850d67740cc3db5417b50",
+    "draftSha256": "096a80de1196b89cac64d89e25ce7b0171a0aff05483b66f1fc81ebb8a2f2999",
     "seedAssignmentVersion": 1
   }
 }

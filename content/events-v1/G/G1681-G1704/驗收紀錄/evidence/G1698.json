@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6c9032d64929a744aa473e47e623ab5b25fdd13bcf18e4d558fd077126c9c678",
+      "checkedAt": "2026-11-28T04:14:10.593Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「別等了，我現在先看你背面那行幫你找出卡點，三桌的共同題我另約下一段時間講。」",
+            "action": "優先針對student_a背面自留疑問進行現場拆題，將三桌共同清單延至下一時段處理。",
+            "tradeoff": "立刻解決了整理者自己的燃眉之急，但三桌已準備好的同學得延後討論。"
+          },
+          {
+            "id": 2,
+            "text": "「我們先請三桌輪流回答清單上的共同題，最後五分鐘我寫一張可直接帶走的釐清提示給你。」",
+            "action": "依清單先帶三桌處理共同題，於課末提供student_a一張書面釐清提示供其自行驗證。",
+            "tradeoff": "全班都能照進度往前走，但student_a得獨自回家驗證這張提示夠不夠用。"
+          },
+          {
+            "id": 3,
+            "text": "「背面這行我用兩分鐘先快速點破方向當『第零題』，接著再依序講正面三桌的題目。」",
+            "action": "先花兩分鐘簡短回應student_a個人疑問作為第零題，隨後接續處理正面清單。",
+            "tradeoff": "兩邊都盡量照顧到，但每一題能講的深度都得跟著壓縮一點。"
+          },
+          {
+            "id": 4,
+            "text": "「三桌先拿這張清單互助對十五分鐘，這段時間你把報告帶來講桌旁，我單獨帶你拆背面那行。」",
+            "action": "請三桌依清單先行組內互助討論，導師於講桌旁一對一協助student_a解決個人報告卡點。",
+            "tradeoff": "既沒浪費他整理好的清單又救了他的報告，但三桌少了老師即時在場示範。"
+          },
+          {
+            "id": 5,
+            "text": "「三桌先各自挑出最急的一題我現在講，省下來的兩題時間全部挪給student_a問自己的報告。」",
+            "action": "協調三桌僅保留最急迫一題進行公開示範，將剩餘時段讓給student_a發問。",
+            "tradeoff": "明確回應他替大家跑腿的付出，但三桌得在組內放棄另外兩個問題。"
+          },
+          {
+            "id": 6,
+            "text": "「正面三桌的題目我們先照進度講完讓大家動工，下課後你直接留十分鐘單獨找我拆背面那行。」",
+            "action": "本堂課依清單完成全班共同提問，另約課間十分鐘單獨協助student_a處理背面疑問。",
+            "tradeoff": "不打亂整堂課節奏且讓他完整解惑，但他得犧牲課間休息時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "翻到背面看見他自己那行寫得密密麻麻卻擺到最後，我心裡一陣酸又有點捨不得他老是替別人排順序，直接拿起紅筆把背面那行圈起來貼在最上面：「今天這張清單是我收的，第一題我先講背面這行——三桌的等我三分鐘，誰整理清單誰先問！」",
+          "action": "因心疼學生過度體貼而忽略自己，導師動用裁量權將背面個人疑問提前至第一題優先解答。",
+          "tradeoff": "護住了總是先替別人著想的學生，但台下等待的三桌同學一時有點錯愕。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 986843751
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "37ce6efeddf16534dca03472e80383b548ef9768f3cef5e317338057295576a4"
+      },
+      "consequenceDirections": {
+        "A": "可發展優先拆解student_a背面自留疑問、三桌共同題另約下段時間後，立刻解開整理者的燃眉之急，但三桌已準備好的同學得延後討論。",
+        "B": "可發展導師將背面個人疑問圈起提前至第一題優先解答後，護住了總是先替別人著想的學生，但台下等待的三桌同學一時有點錯愕。",
+        "C": "可發展請三桌拿清單互助討論、導師於講桌旁一對一協助student_a拆背面疑問後，沒浪費清單又救了他的報告，但三桌少了老師即時在場示範。",
+        "D": "可發展依清單先帶三桌處理共同題、課末留一張書面釐清提示給student_a後，全班照進度往前走，但本人得獨自回家驗證這張提示夠不夠用。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3c10b91602a48e91c4398065fc0c86aab6e40d55240554bafeb574d762044442",
+    "draftSha256": "6c9032d64929a744aa473e47e623ab5b25fdd13bcf18e4d558fd077126c9c678",
     "seedAssignmentVersion": 1
   }
 }

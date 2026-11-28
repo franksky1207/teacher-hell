@@ -15,14 +15,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0704d27c3f0bb0cf4bb9ab26b3ce853f55d7c606a37a8a89b02e6c352029ad03",
+      "checkedAt": "2026-11-28T04:12:29.325Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「你們兩個把區域劃清楚，以後各自在自己有空的時段完成交成果，不用綁一起留。」",
+            "action": "重新界定兩人班務為分區獨立完成並各自回報成果，不再要求同場留校。",
+            "tradeoff": "保住了student_a的新通勤節奏，但少了搭檔原本期待的放學同場陪伴。"
+          },
+          {
+            "id": 2,
+            "text": "「放學讓你照常趕車，但明天起你們改成在午休前固定抽十分鐘一起收尾。」",
+            "action": "保留student_a放學準時離校，改安排兩人於既有課間共同整理十分鐘交接。",
+            "tradeoff": "維持了兩人共同收尾的友情空間，卻壓縮到他剛找回的課間個人空檔。"
+          },
+          {
+            "id": 3,
+            "text": "我當著搭檔的面確認：「student_a那半邊已經驗收過關，今天剩的另一半照分工收完就可以走了。」",
+            "action": "由導師當面驗收並公開證明student_a已完成個人責任，釐清並無退班一事。",
+            "tradeoff": "立刻幫student_a洗清偷懶退班的誤會，但搭檔被當場點破心情可能更失落。"
+          },
+          {
+            "id": 4,
+            "text": "「你今天先照新時間去趕車，晚上再跟搭檔約好明天早自習一起檢查最後這區。」",
+            "action": "讓student_a依新通勤時間準時離校，約定隔日早自習由兩人共同檢查並解除誤會。",
+            "tradeoff": "不誤車也不硬逼兩人現在吵架，但這個小誤會得放到明天早上才解開。"
+          },
+          {
+            "id": 5,
+            "text": "「既然當初答應過一起留，你今天破例改搭下一班車，陪他把這十分鐘聊完收完吧。」",
+            "action": "請student_a今日延後一班車，留校十分鐘陪同搭檔完成收尾並當面說明搬家作息。",
+            "tradeoff": "最快修補兩人之間被誤會的友情，代價是student_a今天得晚一班車回家。"
+          },
+          {
+            "id": 6,
+            "text": "「你們倆現在當我面把以後『只算工作分工、不算放學同進退』講清楚，免得下次再猜。」",
+            "action": "在導師見證下請雙方立即釐清工作分工與私人友誼界線，確立往後規則。",
+            "tradeoff": "把規則講死不會再誤會，但場面瞬間變得公事公辦、兩人都有點尷尬。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他一邊盯著手錶怕誤車、一邊又急著怕傷到朋友感情，我心裡有點心疼他好不容易才適應新家通勤，乾脆自己拿起抹布：「行了，你那半早合格了，剩下五分鐘我陪你搭檔收，你快去趕車！」",
+          "action": "因體恤學生剛搬家的通勤壓力，導師親自拿起抹布替他留下陪搭檔完成最後五分鐘收尾，催促student_a準時去趕車。",
+          "tradeoff": "同時幫學生趕上車又沒讓搭檔孤單，但導師自己多留五分鐘下班且搭檔有點不好意思。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1611227026
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 2,
+          "D": 3
+        },
+        "optionsDigest": "792d44045cff4718f3058fb19ad3102fc2de565f2c1410f0fac3bfbb92895b0f"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師親自拿起抹布替student_a陪搭檔收尾並催他趕車後，他準時搭上新家班車，卻讓導師晚五分鐘下班且搭檔感到有些不好意思。",
+        "B": "可發展在導師面前釐清「只算工作分工、不算放學同進退」後，兩人日後不再誤會彼此，但當下場面變得公事公辦、朋友間略顯生分。",
+        "C": "可發展保留student_a放學準時離校、改約既有課間共同整理十分鐘後，兼顧了通勤節奏與同伴互動，但壓縮到他剛找回的課間個人空檔。",
+        "D": "可發展導師當面驗收並向搭檔證明student_a已完成個人負責部分後，立刻洗清退班誤會，但搭檔被當場點破心情更覺落寞。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "07171ccbfa311403c93995bbdb6a481131bf9845b4d888fce614e733bd047685",
+    "draftSha256": "0704d27c3f0bb0cf4bb9ab26b3ce853f55d7c606a37a8a89b02e6c352029ad03",
     "seedAssignmentVersion": 1
   }
 }

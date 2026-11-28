@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8defc0e6e85f3d9572ee4176a951db027d4e07a51bd273b94fa41da3824324a6",
+      "checkedAt": "2026-11-28T04:10:56.526Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「把筆拿來，你現在自己把那欄劃掉寫上更正，下節課間再叫同桌一起來對一下。」",
+            "action": "交還練習草稿由student_a親自劃除代簽並補註更正，另約下節課間與同桌核對確認。",
+            "tradeoff": "保住當事人自己修正原則的機會，但同桌會如何反應要等下節才知道。"
+          },
+          {
+            "id": 2,
+            "text": "「這張草稿整張作廢，下一節進班我發新單子讓有到場的人重簽一遍。」",
+            "action": "作廢整份練習簽名草稿，於下節課重新發放新表供實際出席者重簽。",
+            "tradeoff": "出席紀錄最乾淨不會漏查其他欄，但要多占用全班五分鐘上課時間。"
+          },
+          {
+            "id": 3,
+            "text": "「我知道你不是故意包庇，你先寫一張說明便條夾進來，放學前我找你跟同桌一起談完再改。」",
+            "action": "暫留原草稿並請student_a補寫書面說明，安排放學前與同桌三方核對後再正式更正。",
+            "tradeoff": "他不用當場尷尬面對同桌，但整天上課心裡還是會掛著這件事。"
+          },
+          {
+            "id": 4,
+            "text": "「我在旁邊直接蓋『練習表更正無效』章，下節課公開提醒大家練習紀錄也不能代簽，不點名誰寫的。」",
+            "action": "由導師於草稿加註更正無效，並於下節課不具名向全班重申練習表不得代簽。",
+            "tradeoff": "全班都能警覺這個習慣，但student_a坐在台下聽著還是會如坐針氈。"
+          },
+          {
+            "id": 5,
+            "text": "「你自己回去找同桌講清楚，兩個人把那格處理好再拿乾淨的那份來交給我。」",
+            "action": "不介入兩人溝通，要求student_a自行與同桌說明清楚並重新提交正確練習表。",
+            "tradeoff": "讓他自己練習對朋友守住原則，但兩人可能當場為了誰先提的起爭執。"
+          },
+          {
+            "id": 6,
+            "text": "「這欄我先圈起來暫停登錄你們組的練習次數，等缺席同學回來確認過後再補齊。」",
+            "action": "將爭議欄位標註暫緩計算該組練習次數，待缺席學生返校核實後再行補登。",
+            "tradeoff": "程序最穩妥也不逼兩人當下翻臉，但整組的練習進度要跟著延後一天。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他急得快把筆蓋捏扁、又追問我會不會誤會他，我也有點哭笑不得：「行了，我知道你的脾氣，現在當你的面我親手把它劃掉，回教室去，別再每節下課都跑來問了！」",
+          "action": "因無奈又心疼學生過度自責，導師當面親自劃除代簽欄位並明確要他停止追問、安心回班。",
+          "tradeoff": "學生當場放下了心理負擔，卻變成導師替他扛下之後向同桌解釋為何被劃掉的壓力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2235291834
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "f5459de01b118f305fd0fd3740e6ddcdc19b784266ecdd6ebc9bab3a4734ae56"
+      },
+      "consequenceDirections": {
+        "A": "可發展要求student_a自己找同桌講清楚並劃掉代簽後，他練習守住原則面對朋友，但同桌可能覺得他臨陣退縮而當場起口角。",
+        "B": "可發展作廢整張練習簽名頁、下節課發新單重簽後，出席紀錄乾淨無誤，但占用全班五分鐘課時且部分同學不解為何重簽。",
+        "C": "可發展導師當面親手劃掉代簽並要他別再每節追問後，student_a放下怕被誤會包庇的焦慮回班，卻換成導師事後要面對同桌追問為何被劃掉。",
+        "D": "可發展交還草稿讓student_a自己劃掉代簽並補註更正、下節課間再與同桌核對後，保住當事人親手修正錯誤的立場，但他到下節前心裡仍會掛著同桌的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "16d28f9f7f0fe9f3a6fac5ba5989aa1303cb88ac9a5d88a5dfa1f5825760a22f",
+    "draftSha256": "8defc0e6e85f3d9572ee4176a951db027d4e07a51bd273b94fa41da3824324a6",
     "seedAssignmentVersion": 1
   }
 }

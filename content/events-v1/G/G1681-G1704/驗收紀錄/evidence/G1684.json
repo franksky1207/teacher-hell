@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "66a3dbc50880f03e0f66c948f952ca782784b804212351a004162c687443b6e9",
+      "checkedAt": "2026-11-28T04:10:56.536Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「你拿這張草稿去找那兩位經手同學，當面把三個縮寫補成全名再交回來。」",
+            "action": "交由student_a持原表向兩位經手人當面核實並補寫全名，完成今日清點。",
+            "tradeoff": "交接速度變慢且他得跑腿問同學，但本人能真正掌握怎麼追查缺漏。"
+          },
+          {
+            "id": 2,
+            "text": "「時間快來不及了，我直接拿箱子裡這三件實物進班，一件件叫名配對寫上單子。」",
+            "action": "由導師親自帶實物進班逐件唱名配對並補齊清單，快速完成當日交接。",
+            "tradeoff": "放學前能最快結案，但學生原本在家裡學到的交班方法沒有被留下來。"
+          },
+          {
+            "id": 3,
+            "text": "「照你說的先試一次，我請全班停兩分鐘，把交接單從頭到尾念一遍全名順便抓出這三件。」",
+            "action": "採納student_a提議，當堂暫停兩分鐘請全班公開讀出各欄全名並釐清爭議道具。",
+            "tradeoff": "馬上落實了全名確認程序，但原本沒寫錯的同學會覺得放學前被打斷。"
+          },
+          {
+            "id": 4,
+            "text": "「今天先由我口頭問過那三位把道具收齊，你今晚設計一張固定全名對照表，明天早自習貼在櫃旁試用。」",
+            "action": "導師先行口頭核對完成今日收件，委託student_a設計固定全名對照表於明日試行。",
+            "tradeoff": "兼顧今天不耽誤放學與明天改進，但對照表多了一項課外準備工夫。"
+          },
+          {
+            "id": 5,
+            "text": "「把另外兩位寫縮寫的也叫過來，你們三個一起留五分鐘把整張單子重寫一份。」",
+            "action": "召集student_a與兩位縮寫經手人一同留下重寫完整交接單。",
+            "tradeoff": "讓所有用縮寫的人共同承擔責任，但會同時占用三名同學的放學時間。"
+          },
+          {
+            "id": 6,
+            "text": "「這三欄我用紅筆圈起來交給總務股長逐一核對，你先回去收拾書包。」",
+            "action": "將三個爭議欄位交由總務股長代為逐一核對去向，不讓student_a親自向同學追問。",
+            "tradeoff": "避免了當事人向同儕追問的尷尬，卻把額外核對工作轉嫁給股長。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著三個一模一樣的縮寫也有點頭痛，大家圖省事最後還不是得老師一個個對，乾脆拿紅筆把整張表劃掉：「算了，照你家裡那套念一遍全名給我聽，我現在直接聽你報、親手重抄一張。」",
+          "action": "因厭煩縮寫造成混亂，導師直接劃廢原表，改由student_a口頭報告並由導師親手重抄完整交接單。",
+          "tradeoff": "當場徹底採用了學生的全名做法，但導師多花了重抄的時間且其他寫縮寫的同學沒被提醒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 859348242
+        },
+        "selectedIds": [
+          2,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "18affb255b17c187d925c0bcb60957c04ba1cf120d5885bebf26b29104f05347"
+      },
+      "consequenceDirections": {
+        "A": "可發展召集student_a與兩位縮寫經手人留下五分鐘重寫完整交接單後，三人共同承擔把縮寫對清的責任，但同時占用了同學放學時間而引發些許怨言。",
+        "B": "可發展導師帶實物進班逐件唱名配對寫上清單後，放學前最快結案且三件道具去向無誤，但student_a在家裡學到的全名交班方法沒能留下來。",
+        "C": "可發展將爭議三欄圈起來交給總務股長逐一核對去向後，student_a不必自己追問同學而傷感情，但總務股長多了一項額外收尾工作。",
+        "D": "可發展導師劃廢原表、請student_a口頭報全名並由導師親手重抄後，徹底落實學生的全名核對法也點清道具，但導師多花抄寫時間且另外兩位寫縮寫的同學沒機會自己修正。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "013a8659a52d7e3b6147eba4981e284ededec684090fd869a2e2165ca9cc33ce",
+    "draftSha256": "66a3dbc50880f03e0f66c948f952ca782784b804212351a004162c687443b6e9",
     "seedAssignmentVersion": 1
   }
 }

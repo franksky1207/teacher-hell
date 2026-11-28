@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "67d14a9d4ad24f2eb48afced1aed043d9b6d7f00550347a6ee8d42cd012de0ee",
+      "checkedAt": "2026-11-28T04:14:10.590Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「就照賽前大家講好的加倍規則，這場正式結束！比數依student_a記的算。」",
+            "action": "維持賽前既有約定並依student_a所記比數直接宣布本場練習結束。",
+            "tradeoff": "保住了計分員的獨立專業與規則信用，但落後那群同學會抱怨被最後一分放大輸掉。"
+          },
+          {
+            "id": 2,
+            "text": "「這局照原紀錄算完，想玩的等一下另開一場五分鐘不計分的加賽，student_a你也可以先去休息或留下。」",
+            "action": "依原紀錄結算本局，另行加開五分鐘不計原結果之友誼加賽。",
+            "tradeoff": "讓不甘心的同學有台階發洩，但留下來繼續幫忙的student_a得放掉原訂結束後的休息時間。"
+          },
+          {
+            "id": 3,
+            "text": "我走過去接過他手裡的計分牌：「這場是練習賽，老師宣布這局不算勝負、大家收操！」",
+            "action": "由導師接手計分牌並宣告本場練習不計勝負直接收場，替student_a扛下紛爭。",
+            "tradeoff": "最快平息場邊起鬨，卻也拿走了student_a第一次獨立計分結案的成就感。"
+          },
+          {
+            "id": 4,
+            "text": "「兩隊現在全部站好舉手表決，要照原規則結束，還是兩隊都同意作廢重打一分鐘？」",
+            "action": "將是否重打最後一分鐘的規則決定權交還場上兩隊全體球員舉手表決。",
+            "tradeoff": "把規則還給自己訂規則的學生，但兩隊在場上可能當場爭執不休。"
+          },
+          {
+            "id": 5,
+            "text": "「今天這場照原計分結束，不過下次練習前由student_a帶大家把『不加倍、不重開』寫死再打。」",
+            "action": "維持本次計分結果結案，並委託student_a於下次練習前帶領明確訂立固定規則。",
+            "tradeoff": "讓大家為自己跟著起鬨訂的規則學一次教訓，但今天落後組還是會念到下課。"
+          },
+          {
+            "id": 6,
+            "text": "「落後那隊派一個代表過來，跟student_a當面核對最後兩分鐘紀錄，數字沒錯就收工。」",
+            "action": "安排落後隊伍派出一名代表與student_a逐筆核對末段紀錄，確認無誤後即行收工。",
+            "tradeoff": "用客觀核對取代口頭起鬨，但場面變得相當嚴肅、少了原本熱鬧玩的氣氛。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他一隻手死死抱著計分牌不肯鬆、對面幾個熟人還在起鬨，我心想這孩子好不容易硬起腰桿守規則不能讓他白被圍剿，乾脆吹一聲長哨走進場中：「哨音是我吹的！誰想重開最後一分鐘，先跟老師一對一投進三球再說——計分員今天下班！」",
+          "action": "因護短想替堅守原則的學生解圍，導師親自吹哨進場接管局面並宣告計分員下班，以單挑挑戰擋下起鬨。",
+          "tradeoff": "帥氣替學生擋住人情圍剿並保住比數，但導師自己得在場上被同學笑鬧著考驗投籃。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1984955120
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "dd27372b25b1f2d44d1a7b6f678dfa47c1241e5ce6bfa3ebc2fc439da9f2e9e3"
+      },
+      "consequenceDirections": {
+        "A": "可發展依原紀錄結算本局並另開五分鐘不計分友誼加賽後，讓不甘心的同學有台階發洩，但留下幫忙的student_a得放掉原訂結束後的休息時間。",
+        "B": "可發展將是否作廢重打最後一分鐘交還兩隊全體舉手表決後，把規則還給自己訂規則的學生，但兩隊在場上可能當場爭執不休。",
+        "C": "可發展導師吹哨進場接管局面並宣告計分員下班、以單挑挑戰擋下起鬨後，帥氣替學生解圍並保住比數，但導師自己得在場上被同學笑鬧考驗投籃。",
+        "D": "可發展維持原計分結案並委託student_a下次練習前帶大家把新規則寫死後，讓起鬨者學一次教訓，但今天落後組還是會念到下課。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e7501f5f9d8f67745d50fd277df4a9cf018050e882acd62825ddddf789db7a54",
+    "draftSha256": "67d14a9d4ad24f2eb48afced1aed043d9b6d7f00550347a6ee8d42cd012de0ee",
     "seedAssignmentVersion": 1
   }
 }

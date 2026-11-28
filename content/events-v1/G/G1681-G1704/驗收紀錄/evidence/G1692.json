@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7e959052e5fcd6d4a75ea279f22f1b8e7bb25a075ebca1fb18d907fcb4ff6a7e",
+      "checkedAt": "2026-11-28T04:12:29.343Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在徵得兩位同意後，我把兩次不同的問法並列寫上黑板：「我們今天就看同一題怎麼問會差這麼多。」",
+            "action": "取得雙方同意後，於黑板並列呈現兩人的不同提問方式作為示範對照。",
+            "tradeoff": "把兩個人的功勞都寫出來，但導師得當場向全班說明為什麼第一次問法當初被忽略了。"
+          },
+          {
+            "id": 2,
+            "text": "「如果兩個人都同意，我把這兩次問法整理成一則『共同提問』來講，好不好？」",
+            "action": "經兩位當事人同意後，將兩次發問合併為一則共同提問進行班內示範。",
+            "tradeoff": "顧全了同桌原本被漏接的感受，但student_a少了獨自被表揚的成果。"
+          },
+          {
+            "id": 3,
+            "text": "「今天先依約講student_a剛拆出來的這版，下課後我單獨找同桌補聽他上禮拜那段卡點。」",
+            "action": "維持原訂以student_a所問版本先行示範，另於課後私下向同桌致意並補聽其先前疑問。",
+            "tradeoff": "不用臨時改掉整段備課流程，但同桌當堂聽著還是會覺得自己被跳過。"
+          },
+          {
+            "id": 4,
+            "text": "「這題兩邊都有先後，為了不讓你們尷尬，我今天改用課本裡另一道類似題當示範。」",
+            "action": "暫不採用兩位學生的提問作為公開例題，改以課本既有相似題目進行示範。",
+            "tradeoff": "完全避免同桌間的比較心結，但兩位發問者的期待同時落空。"
+          },
+          {
+            "id": 5,
+            "text": "「你們兩個課間先聊五分鐘，自己決定這題今天誰來念原題，還是一起上台講。」",
+            "action": "將示範署名與發言順序交由兩位當事人課間協商決定。",
+            "tradeoff": "尊重學生自主協調，但兩位同桌可能為了不好意思推讓而花掉整個下課。"
+          },
+          {
+            "id": 6,
+            "text": "徵詢兩人同意後：「今天我們先請同桌講他上禮拜卡在哪裡，再請student_a接手念他拆開後的新問法。」",
+            "action": "經雙方同意後，依提問先後請同桌先說明原始困惑，再由student_a接續展示拆題後之問法。",
+            "tradeoff": "把先來後到的脈絡與兩種貢獻都補齊，但同桌得臨時面對被點名補講的壓力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看student_a笑容突然僵住、同桌又低著頭假裝翻課本，我心裡突然一沉，意識到上次真的漏接了同桌的舉手，乾脆放下粉筆向同桌微鞠半個躬：「這題老師欠一次示範——今天先聽你當初想問的那句，下一題再聽student_a的！」",
+          "action": "因自責先前漏接學生提問，導師當場向同桌微鞠躬致歉並調整示範順序，先回答同桌原問、再接續student_a的問法。",
+          "tradeoff": "誠實面對自己過去的疏忽讓同桌被看見，但剛才還興沖沖的student_a一時有點不知所措。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2683350401
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "7d5ed20a8d67165fc1c88d1f96ab2940df1a32929e961a6056b18433487089f9"
+      },
+      "consequenceDirections": {
+        "A": "可發展經雙方同意後依提問先後請同桌先說原困擾、再由student_a接續展示新問法後，補齊先來後到的脈絡與兩種貢獻，但同桌得臨時承受被點名補講的壓力。",
+        "B": "可發展先講student_a拆出的版本、下課後私下向同桌致意補聽後，不用臨時改動備課流程，但同桌當堂聽著仍會覺得自己被跳過。",
+        "C": "可發展請兩位當事人課間先聊五分鐘自行決定署名與順序後，尊重學生自主協調，但兩人可能為了不好意思推讓而耗掉整個下課。",
+        "D": "可發展導師當場向同桌微鞠躬致歉並調整示範順序後，誠實面對先前漏接的疏失，但剛才還興沖沖的student_a一時有點不知所措。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e765eb0b8bc0deba1ef39f38df5828594a2ee9023885bb9984817e6b20ff136e",
+    "draftSha256": "7e959052e5fcd6d4a75ea279f22f1b8e7bb25a075ebca1fb18d907fcb4ff6a7e",
     "seedAssignmentVersion": 1
   }
 }

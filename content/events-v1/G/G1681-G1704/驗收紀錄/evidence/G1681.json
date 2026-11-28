@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "513a5545b2b3690ab2f156ea4487650bf618bf866cccdf6d26adf2f3a632ba3d",
+      "checkedAt": "2026-11-28T04:10:56.514Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「你先帶大家去一樓轉角等著，我在樓上攔住他，請他順便下樓拿個東西。」",
+            "action": "立即停止原處發聲並請student_a帶同學改往一樓集合，由導師留在樓上於當事人經過時口頭請他下樓。",
+            "tradeoff": "保住了全員合唱祝賀，但晚了兩分鐘且當事人走下樓時可能已猜到有驚喜。"
+          },
+          {
+            "id": 2,
+            "text": "「今天先不唱了，等他經過時你安靜把卡片遞給他，我們改約明天午休再補唱。」",
+            "action": "中止本次發聲祝賀，改由student_a在走廊安靜交付卡片並另約明日午休補唱。",
+            "tradeoff": "完全不干擾鄰室也抓住本人經過的時機，但練歌的同學覺得這次沒做完有點失落。"
+          },
+          {
+            "id": 3,
+            "text": "「叫大家全部進我們自己教室把門關起來，我去轉角請他進班拿一下資料。」",
+            "action": "將祝賀團隊撤回本班教室關門避開鄰室，再由導師親自邀請當事人進班接受祝賀。",
+            "tradeoff": "不用跑遠就能唱歌，但教室門一關少了走廊偶遇的自然感，還得導師出面邀人。"
+          },
+          {
+            "id": 4,
+            "text": "「大家先別發聲，你帶頭在卡片背面快速寫大字舉起來，等他經過我們用比手勢的。」",
+            "action": "保留原走廊位置但改為全體無聲舉牌與手勢祝賀，完全不出聲送出卡片。",
+            "tradeoff": "守住原本的驚喜時機與地點，卻放棄了大家辛苦練好的祝賀歌。"
+          },
+          {
+            "id": 5,
+            "text": "「我去請同學先散回教室，你把『先看鄰室使用』寫進班務流程，今天派兩位代表去樓下交卡。」",
+            "action": "由導師出面請隊伍解散回班，交由student_a增補日後選點確認規範並只派兩名代表赴一樓致意。",
+            "tradeoff": "把程序補起來了，但多數想當面唱完的人只能空手散場。"
+          },
+          {
+            "id": 6,
+            "text": "「你自己決定要帶人退去樓梯間等還是先取消，我先去向隔壁外頭的巡堂老師報備動線。」",
+            "action": "將現場撤離或改期的決定權交由student_a向同學協調，導師先行向鄰近巡堂說明並協助淨空。",
+            "tradeoff": "尊重學生當主事者，但同學在現場可能會對要不要等意見分歧。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他明明想替人家好好道謝卻自責沒看門牌，有點捨不得這群人白練一場：「別慌，我現在跑下樓去拖住他三分鐘，你慢慢帶大家退到一樓！」",
+          "action": "出於捨不得學生心意落空，導師親自小跑下樓找藉口留住當事人三分鐘，讓student_a從容帶隊下樓佈陣。",
+          "tradeoff": "導師跑得氣喘吁吁又替驚喜多扛了掩護責任，當事人還差點以為樓上出了什麼急事。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4007124977
+        },
+        "selectedIds": [
+          4,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "8c331013a93fd5331a9c372fcd90e181dc6ba9886b4de5e253d9cc0603eb357a"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師解散隊伍、student_a補寫選點規範並僅派兩代表至一樓交卡後，同學雖配合散場卻對沒能一起唱完感到遺憾，student_a得承擔向大家說明改動的壓力。",
+        "B": "可發展導師親自小跑下樓拖住當事人三分鐘、student_a帶隊慢慢下樓佈陣後，驚喜合唱順利成行，但當事人一度以為樓上出急事而受驚，導師自己也氣喘吁吁。",
+        "C": "可發展中止今日發聲祝賀、改由student_a在走廊安靜交卡並另約明日午休補唱後，既未干擾鄰室也抓住本人經過的時機，但練歌同學覺得心意被切半，student_a須負責通知明日補唱。",
+        "D": "可發展留在原處改用無聲舉牌與手勢送卡祝賀後，當事人經過時收到安靜卻真誠的心意，但大家事前練的歌沒派上用場，student_a仍要安撫同學對臨時改無聲的失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "82be6f62e206a53bd811a9339557c2f33224f879cd6e016c6f80b8218db4f5e5",
+    "draftSha256": "513a5545b2b3690ab2f156ea4487650bf618bf866cccdf6d26adf2f3a632ba3d",
     "seedAssignmentVersion": 1
   }
 }

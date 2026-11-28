@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ab01508cb029b98fc6a382d2e9dca379c22d9b7ab2cd2c2bd23ae697bb3c06d9",
+      "checkedAt": "2026-11-28T04:12:29.318Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「好，那這輪給你完整播完這段長空白，讓同學直接看反應給回饋。」",
+            "action": "保留原版長空白並安排完整一輪班內試看，收集全班真實耐性回饋。",
+            "tradeoff": "保住了作者想測試的完整節奏，但會壓縮到下一組原本的試看時間。"
+          },
+          {
+            "id": 2,
+            "text": "「時間有限，你從精簡版和長空白版各截三十秒，我們兩版對照著放。」",
+            "action": "請student_a從兩版各截取三十秒片段於課堂對照播放，比較節奏差異。",
+            "tradeoff": "不耽誤其他組的時段，但原版長空白想測的耐性在三十秒裡試不出來。"
+          },
+          {
+            "id": 3,
+            "text": "「這段原素材是那一組拍的，你先拿原版去找他們看過並簽名確認要不要留白。」",
+            "action": "請student_a攜帶長空白版本先徵詢原素材拍攝小組意見，由授權組別共同決定是否保留。",
+            "tradeoff": "尊重原拍攝同學對成品的意願，但student_a得另外找人看片而延後定稿。"
+          },
+          {
+            "id": 4,
+            "text": "「今天課上先播兩分鐘精簡版讓進度走完，你的長空白完整版我放進班級共用夾讓有興趣的人點看。」",
+            "action": "課堂試播採用兩分鐘精簡版，將經授權之長空白完整版另存於班內共用資料夾供課後自願觀看。",
+            "tradeoff": "課堂節奏最穩妥，但放進資料夾後多數同學課後未必真的點開看。"
+          },
+          {
+            "id": 5,
+            "text": "「不然我們現場折衷剪一版留一半空白的，看看是不是這樣就夠了。」",
+            "action": "引導student_a現場剪輯保留一半空白長度的折衷版本並進行試看。",
+            "tradeoff": "嘗試兼顧節奏與個人堅持，但現場多花五分鐘重新匯出且兩邊都不算最純粹。"
+          },
+          {
+            "id": 6,
+            "text": "「可以照原版播，但開播前你先用三十秒口頭告訴大家『等一下會有故意留白』。」",
+            "action": "照原長空白版本完整播放，惟要求student_a於播前先行口頭說明留白設計。",
+            "tradeoff": "避免同學誤以為設備當機而打斷，但也提前破了原本想測自然反應的梗。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他幫全班剪得那麼俐落、輪到自己卻死守著一段空白不肯放，我有點好笑又偏心想護著這點執著：「行啦，老師去跟下一組借五分鐘，今天我就坐第一排陪你一秒都不快轉看完！」",
+          "action": "因欣賞學生對個人節奏的執著，導師親自向下一組協調借用五分鐘時段並全程坐前排陪看完整長空白版本。",
+          "tradeoff": "給足了學生作品被認真對待的安全感，但占用他組時段且容易讓其他組覺得老師偏心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1517816535
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "5005693ab27cffe8784146a14cd1ef0c237e56f5ec59fba001a05ba55aa40999"
+      },
+      "consequenceDirections": {
+        "A": "可發展各截三十秒精簡版與長空白版對照播放後，不耽誤其他組的試看時段，但原版長空白想測出的耐性在三十秒內無法完整試出。",
+        "B": "可發展課堂先播兩分鐘精簡版、將授權長空白完整版存入班內共用夾後，課堂進度順利走完，但多數同學課後未必真的點開看完整版。",
+        "C": "可發展照原長空白版本完整播放但請student_a播前先口頭說明留白設計後，避免了設備卡住的誤會，卻提前破了原本想測自然反應的梗。",
+        "D": "可發展導師向下一組借五分鐘並坐第一排陪看完整長空白版後，student_a的作品獲得完整對待，但占用他組時間且容易被同學看成偏心。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7897094868f0d6707441092114b1ebe1f4eb21438c9955ce952553bde63cd3dc",
+    "draftSha256": "ab01508cb029b98fc6a382d2e9dca379c22d9b7ab2cd2c2bd23ae697bb3c06d9",
     "seedAssignmentVersion": 1
   }
 }

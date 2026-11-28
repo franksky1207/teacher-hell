@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dd7986ebe1214afae750c034ccad3587e15e12801524e85ca810cc32d464a7f9",
+      "checkedAt": "2026-11-28T04:10:56.543Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我追到門口當著還沒走遠的學生講明：「這整箱都是subject_teacher老師清點標好的！」回來再自己補標最後那件。",
+            "action": "當眾向學生澄清材料全由subject_teacher清點標示，並由導師親自補標最後一件完成結案。",
+            "tradeoff": "立刻還給同事應得的功勞與尊重，但這樣當眾補話讓他現場有點尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我等學生走遠才低聲問他：「這件你是刻意留著提醒我嗎？等你想好我們再一起交接。」",
+            "action": "送走學生後私下詢問subject_teacher留下缺口的原因，待其願意時再共同完成最後一件標示與交接。",
+            "tradeoff": "給足同事台階與溝通空間，但當天學生心裡仍會以為主要都是導師在收。"
+          },
+          {
+            "id": 3,
+            "text": "我把最後這件遞回門口剛道謝的學生：「剛才真正點完一整箱的是subject_teacher老師，你們請他教最後這件怎麼標。」",
+            "action": "喚回剛道謝的學生向subject_teacher致謝，並請其現場指導學生完成最後一件標示。",
+            "tradeoff": "讓學生當面認清真正出力的人並補完工作，但同事連堂後還得再開口帶學生。"
+          },
+          {
+            "id": 4,
+            "text": "我不提上次的話，自己把最後一件補標放回箱子，只在共用櫃登記簿工整寫上他的名字。",
+            "action": "導師自行補標最後一件並將材料歸位，於共用櫃登記簿正式記錄清點負責人為subject_teacher。",
+            "tradeoff": "留下了正式署名與整齊材料，卻沒當面解開同事對「順手」那句話的心結。"
+          },
+          {
+            "id": 5,
+            "text": "「你先去休息室喝口水別管這箱了，最後這件連同櫃子我先鎖著，明天有精神再一起收。」",
+            "action": "請疲倦的subject_teacher先行休息，導師將最後一件暫鎖保管並約定明日共同補標結案。",
+            "tradeoff": "讓快撐不住的同事立刻下班休息，但材料要拖到隔天才能真正歸位。"
+          },
+          {
+            "id": 6,
+            "text": "「上次是我口誤把你的功夫講輕了，對不起。不過最後這件還是照你的標準由你貼完，我幫你端回櫃子。」",
+            "action": "為先前淡化勞力一事正式向subject_teacher致歉，尊重其負責標準由他親手貼完最後標籤並協助搬運歸位。",
+            "tradeoff": "把該有的道歉與責任主導權都給到位，但疲倦的他仍要多撐這兩分鐘。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他累成這樣還要抱著箱子來點醒我，心裡又愧疚又覺得被將了一軍，乾脆直接搶過他手裡的簽字筆：「坐旁邊喘口氣，我照你的格式自己標完，順便當面唸十遍謝謝！」",
+          "action": "因愧疚與些許被提醒的尷尬，導師請同事就座休息，親自依其格式補標最後一件並當面誇張致謝。",
+          "tradeoff": "雖然幫疲倦的同事收好尾也認了錯，但他看著這種半開玩笑的哄法未必真的消氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 687551560
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "30c5726161c06fc900e8f077f61d398d4f9c47df042bfcd4a443f12361b56c2a"
+      },
+      "consequenceDirections": {
+        "A": "可發展當著還沒走遠的學生澄清整箱都是subject_teacher清點並由導師補標最後一件後，立刻還給同事應得的功勞，但當眾補話讓現場氣氛略顯刻意、同事也有些不自在。",
+        "B": "可發展導師請同事就座休息、親自依其格式補標最後一件並當面誇張致謝後，幫疲倦的同事收好尾並認了上次的口誤，但同事對這種半開玩笑的哄法未必真正釋懷。",
+        "C": "可發展喚回學生向subject_teacher道謝並請其現場指導學生標完最後一件後，學生直接認清真正出力者並完成收尾，但連堂疲倦的同事得再花力氣開口帶學生。",
+        "D": "可發展導師正式為上次說成「順手」道歉、尊重其標準請他親手貼完最後標籤並協助搬回櫃子後，誠懇化解心結並守住同事的責任主導權，但同事仍得撐著疲倦多忙兩分鐘。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "218cb02dbf01cf4c7a78fb5f63fa98b8c54f453817a31cf579d6b1b1f12c48ce",
+    "draftSha256": "dd7986ebe1214afae750c034ccad3587e15e12801524e85ca810cc32d464a7f9",
     "seedAssignmentVersion": 1
   }
 }

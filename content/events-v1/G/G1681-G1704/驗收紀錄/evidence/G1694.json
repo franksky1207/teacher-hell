@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "07fa6904c255ac72da47694fb85ee01ba2652091b6b8cc71389c45c9c7650a2f",
+      "checkedAt": "2026-11-28T04:14:10.575Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「是我疏忽了，我去跟同組幾位還沒走的同學商量，把你挪到明天更早有空的輪次。」",
+            "action": "在徵得相關同學同意後，將student_a調往更早且有空檔的交接點並重新通知組員。",
+            "tradeoff": "保住他今天準時搭車與日後合法時段，但得立刻追回已按舊表準備的同組重通知。"
+          },
+          {
+            "id": 2,
+            "text": "「名單先不改，你現在趕緊在離校前把自己那份點清給我，最後末段由我接手完成，你去趕車。」",
+            "action": "維持原公告順序，讓student_a於離校前點清個人部分後準時搭車，由有權接手之導師完成末段點交。",
+            "tradeoff": "不驚動全組又能趕上車，但他失去了原本想和導師當面談完交付的空檔。"
+          },
+          {
+            "id": 3,
+            "text": "我立刻叫住還沒出校門的同組另一位同學：「你們兩個對調今天跟下次的最後一棒，好不好？」",
+            "action": "協調同組尚未離校的另一名組員與student_a對調當日與下次末段輪次。",
+            "tradeoff": "不用整張重排就能解決眼前的材料交接，但那位組員得臨時多留十分鐘。"
+          },
+          {
+            "id": 4,
+            "text": "「對不起，是我忘記劃掉你的舊時段。現在全組先停五分鐘，我們提早在下課前把這份點完就放人。」",
+            "action": "導師向全組致歉並將最後點交提前於離校前五分鐘由全組共同快速完成。",
+            "tradeoff": "全部人都準時放學也不留尾巴，但現場多占用五分鐘課間顯得有點趕。"
+          },
+          {
+            "id": 5,
+            "text": "「你先在走廊把點交單該簽的欄位填好，實物照舊留給同組核對後再送進來給我。」",
+            "action": "請student_a預先簽妥負責欄位後離校趕車，實物委由同組核對並送交導師。",
+            "tradeoff": "幫student_a搶回搭車時間，但同組同學得再多跑一趟送件。"
+          },
+          {
+            "id": 6,
+            "text": "「你自己決定今天要先趕那班車、明天早自習再來補點交，還是改搭下一班車把這份收完。」",
+            "action": "將準時搭車與完成當面點交的取捨交由student_a自行決定。",
+            "tradeoff": "尊重學生對自己通勤與責任的選擇權，但當場沒有老師替他扛掉的餘地。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽他講「老師你那天明明有聽到」，我才猛然想起上週真的忘了把他的新車次記下來，一陣自責又不想在組員面前推託，直接把最後那疊點交單抓過來：「是我聽過卻漏改名單，這份末段今天不用你們等了，老師自己留著點！」",
+          "action": "因自責疏忽學生先前的提醒，導師當場攬下整份末段點交工作，讓student_a與組員都準時離校。",
+          "tradeoff": "立刻解決誤車與重排的麻煩，但導師自己得留校多花時間完成整個點交收尾。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2335600241
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "23fe91c1f05d06240ec7a0715f22aeb3c93c602908109e4bf300c5beac53b18d"
+      },
+      "consequenceDirections": {
+        "A": "可發展將準時搭車與留校當面點交的取捨交由student_a自行決定後，尊重了學生自主選擇，但當場沒有老師替他扛掉兩難的餘地。",
+        "B": "可發展協調同組另一位不用趕車的組員與student_a對調當日及下次末段輪次後，不用重排整張班表就能交接，但那位組員得臨時多留十分鐘。",
+        "C": "可發展導師因自責疏忽而當場攬下整份末段點交工作後，student_a與組員都準時離校，但導師自己得留校完成點交收尾。",
+        "D": "可發展導師向全組致歉並將最後點交提前於離校前五分鐘全組完成後，全部人準時放學也不留尾巴，但現場多占用五分鐘課間顯得有些急促。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ee72d235e0b8deb91feec13d37b0b5cbb7810f6e2dfcc0fb1d81b00dbc025c78",
+    "draftSha256": "07fa6904c255ac72da47694fb85ee01ba2652091b6b8cc71389c45c9c7650a2f",
     "seedAssignmentVersion": 1
   }
 }

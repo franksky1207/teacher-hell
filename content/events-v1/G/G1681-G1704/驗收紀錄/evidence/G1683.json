@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e9d93061b13a03db58b211e351383b24d3e5db9ca9746dd2cb55d3ad68fc04d8",
+      "checkedAt": "2026-11-28T04:10:56.531Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「同學都先回原位，剛才是我沒看清楚走道寬度，這樣併桌太擠了。」",
+            "action": "導師主動收回先前的稱讚，以走道寬度不足為由請student_a帶頭將桌子搬回原位。",
+            "tradeoff": "保住了獨坐同學不用當面拒絕的體面，但全班會疑惑老師怎麼剛誇完又反悔。"
+          },
+          {
+            "id": 2,
+            "text": "我低聲問獨坐同學：「如果有一個人留著安靜陪你吃可以嗎？還是全撤？」照他的意思只留一人或請其餘回座。",
+            "action": "先徵詢獨坐同學本人意願，在其同意下僅保留一位同桌或全部退回，請student_a與其餘同學各自回原位。",
+            "tradeoff": "尊重了當事人的選擇權，但沒被留下的熱心同學得第一次面對好意沒被邀請的失落。"
+          },
+          {
+            "id": 3,
+            "text": "「既然他們桌子都搬好了，你拿便當到講桌旁或走廊角落的安靜桌吃，好嗎？」",
+            "action": "請獨坐同學改往講桌旁或走廊靜處用餐，將原併桌區留給student_a與熟人。",
+            "tradeoff": "讓雙方都能吃到飯，卻變成原本先坐著的人被迫讓出自己選好的位置。"
+          },
+          {
+            "id": 4,
+            "text": "「我們以後靠窗這排設成安靜吃飯區，併桌聊天的請搬到中間那排去。」",
+            "action": "當場劃分教室靠窗為安靜用餐區、中央為併桌交流區，請student_a改帶熟人移往中央。",
+            "tradeoff": "幫不喜歡熱鬧的同學留住長期空間，但班上以後午休前座位多了一條分區規矩。"
+          },
+          {
+            "id": 5,
+            "text": "我請其餘熟人先回座，只留student_a下來幫忙推回一張空椅，順便問他：「最近家裡是不是比較少一起吃飯？」",
+            "action": "解散併桌群體並單獨留下student_a協助復位，私下關心他近期家中用餐作息變化。",
+            "tradeoff": "沒有公開收回誇獎而是轉成單獨關心，但獨坐同學剛才已經被打斷了半頓飯。"
+          },
+          {
+            "id": 6,
+            "text": "我把student_a叫到走廊低聲說明實情：「去跟大家說換回原本那排吃比較寬，你自己收場。」",
+            "action": "私下告知student_a對方想安靜用餐的需求，要求發起人自行向熟人說明並恢復座位。",
+            "tradeoff": "讓學生自己負起號召後的善後責任，但他可能一時不知怎麼跟朋友開口。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看獨坐同學為難、student_a又一臉等著我誇獎，心裡有點煩躁自己剛才點頭太快，乾脆端起自己的便當坐去student_a原本那排空桌喊：「來，老師跟你們這組吃，靠窗那張讓給要安靜背單字的！」",
+          "action": "因懊惱自己太快誇獎造成尷尬，導師親自端便當坐到student_a原位招呼併桌，並臨時找理由淨空靠窗桌。",
+          "tradeoff": "當場保住兩邊面子，但導師自己沒法安靜吃午餐，還得硬圓一個背單字的藉口。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1834743191
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "909dc4a7cc9622308e09acfa294266d04fa97c7f402c481389d3410095612ce6"
+      },
+      "consequenceDirections": {
+        "A": "可發展請獨坐同學改往講桌旁或走廊靜處用餐、原併桌留給student_a一群人後，獨坐同學保住安靜卻感覺自己被迫讓位，student_a事後察覺對方沒回來可能感到納悶或自責。",
+        "B": "可發展導師端便當坐去student_a原位招呼併桌、臨時編理由淨空靠窗桌後，兩邊都保住面子且獨坐同學得以安靜吃飯，但導師自己沒法安靜休息還得圓謊。",
+        "C": "可發展先徵詢獨坐同學意願僅留一人或全撤、請student_a與其餘同學回原位後，尊重了當事人的空間界線，但沒被留下的熱心同學得承受好意被婉拒的失落。",
+        "D": "可發展導師收回稱讚並以走道太擠為由請student_a帶頭復位後，獨坐同學免於當面拒絕的尷尬，但全班困惑老師為何剛誇團結又馬上喊停。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "21941aba9b20f7ef4f3882315ab92aee445e9c4e50a523236c796f5d76f7daf5",
+    "draftSha256": "e9d93061b13a03db58b211e351383b24d3e5db9ca9746dd2cb55d3ad68fc04d8",
     "seedAssignmentVersion": 1
   }
 }

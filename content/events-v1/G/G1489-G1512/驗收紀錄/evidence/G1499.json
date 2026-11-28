@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "c7b3c4eac89e0075feb00a3e3e1396751d59d9ab77fc65eb586ecd9c905a4db8",
+      "checkedAt": "2026-11-28T02:35:01.866Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外作一則一般公開問答，不提私群或影射誰不懂。",
+            "action": "公平補充可公開活動資訊，必要說明已共同完成，不以群體回應取代個案權益。",
+            "tradeoff": "教師多文書、可能被猜看過截圖。"
+          },
+          {
+            "id": 2,
+            "text": "我直接以真實的近期通知溝通為由邀他談，不編不相干理由。",
+            "action": "提出自願有限成人意見交流，不透露來源、不假裝完全不知道有疑慮。",
+            "tradeoff": "教師時間、對方可能猜消息外流。"
+          },
+          {
+            "id": 3,
+            "text": "我不追加對私群的反應，正常合法聯絡照常，不拿截圖追人。",
+            "action": "拒絕非必要監看或私下攻防，必要事實及求助仍辦。",
+            "tradeoff": "怒氣可能繼續擴散、教師得忍住。"
+          },
+          {
+            "id": 4,
+            "text": "我額外整理本人已完成合法通知的時序，只供有權者必要詢問。",
+            "action": "據實保存有限工作脈絡，不蒐群員私訊或將批評當違規。",
+            "tradeoff": "文書時間、可能更在意自證。"
+          },
+          {
+            "id": 5,
+            "text": "若有正式需要，我詢問有權親師窗口可否共同接一般活動疑義。",
+            "action": "提出有限合法支援需求，不預設調解已成、不擴散截圖內容。",
+            "tradeoff": "多排程、可能被說小題大作。"
+          },
+          {
+            "id": 6,
+            "text": "我另約談他過去明確提出的態度分歧，不拿私群言論對質。",
+            "action": "自願有限舊事交流，必要當次資訊獨立辦，不逼和解。",
+            "tradeoff": "教師情緒勞動、可能更火。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的很想把截圖丟回去；我願先拿自己一段休息只寫不送出的真實回應草稿，把生氣寫完，再決定是否另約直接談，今晚不追群。",
+          "action": "承認受傷和怒氣，實際私人整理未發送草稿、不含他人個資或報復內容，停止本人非必要追看轉傳，必要工作照常，不當已對家長回覆。",
+          "tradeoff": "教師花私人時間，沒有立即澄清或贏回面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 818950537
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "8f2f57d129aeb27eafaeebf6f6b2be65553baa8f5b3cb8f1a571c2f6c6a5ad45"
+      },
+      "consequenceDirections": {
+        "A": "可發展影響力家長面對公開資訊而私人不滿仍在。",
+        "B": "可承接正面聽不滿與保護轉傳者的張力。",
+        "C": "可發展不滿與家庭支持的群體話語不一定由教師控制。",
+        "D": "可發展高影響力怒氣在外擴散時，教師選擇先承受未回嘴的成本，而非假裝不在意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "61d27ec03444f3fd15c885e9e4dfe55ffa6ee1bc4739ebc925900bc30327a2a9",
+    "draftSha256": "c7b3c4eac89e0075feb00a3e3e1396751d59d9ab77fc65eb586ecd9c905a4db8",
     "seedAssignmentVersion": 1
   }
 }

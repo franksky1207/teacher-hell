@@ -15,14 +15,82 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "80746e8f88103548a8eff1e9b5f58f2b6887aedd4280fbd2237e9e829a40939e",
+      "checkedAt": "2026-11-28T02:35:01.871Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他拆解舊圖怎麼換了標題，不再做一遍必要產品查核。",
+            "action": "有限公開資訊辨讀，保留真實特定查核結論，不捏造通用安全。",
+            "tradeoff": "花課間、學生可能仍怕。"
+          },
+          {
+            "id": 2,
+            "text": "我另給全班一般正確用具資料，不展示恐嚇圖。",
+            "action": "額外公平資訊說明，必要衛生與安全原就維持。",
+            "tradeoff": "教師多整理、可能反而引好奇。"
+          },
+          {
+            "id": 3,
+            "text": "我不加禁令或新活動，依核實資訊正常使用與支持。",
+            "action": "拒絕非必要新管制，必要異常接續不放掉。",
+            "tradeoff": "學生可能覺得老師沒動作。"
+          },
+          {
+            "id": 4,
+            "text": "若他願意，我陪他練怎麼把正式來源回給朋友，不嘲笑害怕的人。",
+            "action": "額外自願溝通演練，不要求他當教師代言或蒐群組私事。",
+            "tradeoff": "教師時間、學生怕被笑倒戈。"
+          },
+          {
+            "id": 5,
+            "text": "我邀有權者在可行時間作一般文具使用問答，不當本班驗毒。",
+            "action": "提出合法有限專業說明邀請，未答應不宣布、不保證無任何風險。",
+            "tradeoff": "多協調、可能無場次。"
+          },
+          {
+            "id": 6,
+            "text": "若本人想自願改用別種合法文具，我協助查可行使用條件，不叫全班跟。",
+            "action": "額外個人消費資訊協助，必要學習可及照常，不保證替代品絕對無刺激。",
+            "tradeoff": "查詢時間、學生可能覺得只顧自己。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕自己一句放心說太滿；我願把我這次確知和不知道的界線額外寫成短說明，讓他拿去問，而不是要他只信我。",
+          "action": "承認成人也怕判錯，額外書面整理已核實資料範圍與不確定，不造檢驗、不把必要澄清限定此分支。",
+          "tradeoff": "教師多時間、可能引來更多追問。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1693483665
+        },
+        "selectedIds": [
+          3,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "b9698377a1b9b53e744d54a219737a0a3a5568fe5372c3e99202da17e96b16fe"
+      },
+      "consequenceDirections": {
+        "A": "可承接保護同學和不擴大謠言的取捨。",
+        "B": "可發展認同規範者對不禁也是決定的理解。",
+        "C": "可發展學生學到保護人不只靠喊禁，也包含容忍尚未知，教師也接受被檢視。",
+        "D": "可發展信任規範的人願否等具體解釋。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f2eaa186b7bcd8a412b65ee9e004d703985d6610c175d724de5c2de5f44cd3f5",
+    "draftSha256": "80746e8f88103548a8eff1e9b5f58f2b6887aedd4280fbd2237e9e829a40939e",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "74ec46731469493472d38d60a64b11f657b718be082fb2ce00f1b2dee9e60371",
+      "checkedAt": "2026-11-28T02:35:01.867Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他梳理自己親見的經過，依法補充可用事實。",
+            "action": "有限協助目擊表達，不誘導證詞或加傳聞，必要通報已成立。",
+            "tradeoff": "教師時間、可能再次生氣。"
+          },
+          {
+            "id": 2,
+            "text": "經對方願意，我陪他作一次簡短自願慰問，不要求受驚者表態。",
+            "action": "額外人際支持，必要照護原已維持，不讓學生代照護或逼談驚嚇。",
+            "tradeoff": "花時間、對方可能不想再談。"
+          },
+          {
+            "id": 3,
+            "text": "我不加私人追懲處服務，正常合法反映與必要支持仍在。",
+            "action": "婉拒非必要他班進度窺看，不以停止抱怨換處理。",
+            "tradeoff": "他可能覺得老師不夠硬。"
+          },
+          {
+            "id": 4,
+            "text": "我額外提出一般樓梯安全使用討論，不點別班誰做了什麼。",
+            "action": "有限班務安全教育，不把必要現場處理留此、不教學生糾察。",
+            "tradeoff": "占班務、可能被說只會宣導。"
+          },
+          {
+            "id": 5,
+            "text": "我陪他依正式管道表達對一般動線改善的建議，不要求他提出工程方案。",
+            "action": "額外合法學生表意協助，不入工區或保證採用。",
+            "tradeoff": "教師多陪同、可能沒有快結果。"
+          },
+          {
+            "id": 6,
+            "text": "我另邀他談剛才最怕的那一下，不把怒氣當無理取鬧。",
+            "action": "額外自願有限情緒交流，不診斷、不要求先冷靜才有支持。",
+            "tradeoff": "教師課間、可能仍很氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想立刻去罵對方一頓；我願多留一段合法空檔，和有權成人當面談一般安全接續，親口承受回覆可能不是我想聽的，不借學生的怒氣去越權。",
+          "action": "承認護班衝動，提出有限成人安全協作出席，不索他班個案懲處、不保證成會或校方採取特定措施，必要通報已共同辦。",
+          "tradeoff": "教師時間與可能被認為不放心同事，不能拿回公開處罰。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 63673042
+        },
+        "selectedIds": [
+          1,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "1a6dc23bfc335b286e8bfd59d82c7b00b1aedea38cdf9afacfa3421b990f8726"
+      },
+      "consequenceDirections": {
+        "A": "可承接同理他人也會讓自己受驚。",
+        "B": "可發展學生看見導師也不甘仍守邊界，正義感未必就被安撫。",
+        "C": "可承接憤怒想討公道與本人想安靜不同。",
+        "D": "可發展同理和安全關注轉為真實資訊而非求公開罰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c87a47c4fcded536556f08014d4a5c75c0828a2ad2e9f66369b8d391009fe0c7",
+    "draftSha256": "74ec46731469493472d38d60a64b11f657b718be082fb2ce00f1b2dee9e60371",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bae09803d80d03e177eaef49753dec6aa2a10cdba35e2953e61108f7a69c37fd",
+      "checkedAt": "2026-11-28T02:35:01.859Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我依法免掉今天非必要班務，讓他照護下休息，不要求補一份。",
+            "action": "合理停止額外參與，必要照護已接好，不讓同學私加懲罰補量。",
+            "tradeoff": "需成人重排，學生可能沒面子。"
+          },
+          {
+            "id": 2,
+            "text": "確認適任且本人願意，我提出座位上的有限紙本清點，不做也能休息。",
+            "action": "提供低負荷可隨停的真實現有工作，不以工作換休息或拿傷身當榮耀。",
+            "tradeoff": "教師需看負荷、同學可能不理解。"
+          },
+          {
+            "id": 3,
+            "text": "我額外詢問合法搬運人力與工具，別由其他疲累同學硬補。",
+            "action": "提出合規成人資源需求，必要安全先維持，不預設手推車或人力已得。",
+            "tradeoff": "多協調、可能要延後。"
+          },
+          {
+            "id": 4,
+            "text": "我調整自己可管的非急物資搬運時程，今天不拼全部移完。",
+            "action": "依法延後非必要工作，安全通道與必要學習供應不撤。",
+            "tradeoff": "教師另日再接、進度變慢。"
+          },
+          {
+            "id": 5,
+            "text": "經必要同意，我另邀家長和學生談本週真實負荷，不怪家風。",
+            "action": "有限自願親師生協調，不擅退賽或推定家長逼迫。",
+            "tradeoff": "教師多聯繫、學生可能怕被禁所有活動。"
+          },
+          {
+            "id": 6,
+            "text": "我額外作一般公平分工說明，不披其健康細節、不讓誰多搬就比較好。",
+            "action": "有限班務價值說明，必要不歧視原就維持，不全班連坐。",
+            "tradeoff": "佔班務、學生可能覺得被影射。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也依賴他總是最快；我願親自多花一段合法工作時間，把確可安全少量搬的普通書冊分趟處理，不拿他休息當人手少的藉口。",
+          "action": "承認自己愛用能者，自願在成人合格安全範圍有限分批搬普通資料，不搬危重、不請學生硬補或假稱已全部完成。",
+          "tradeoff": "教師多體力時間、速度可能比學生慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1356502380
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "890b370c23cc68884caa26660f12cb7d4a7c90518658ebd867ea5a362c43a0a8"
+      },
+      "consequenceDirections": {
+        "A": "可承接熱心出力不一定都用力氣證明。",
+        "B": "可發展學生看到教師承受自己休息的實際工作成本，仍可能想回來幫。",
+        "C": "可發展家庭支持是否也能包括說今天先休息。",
+        "D": "可承接願意出力和身體適任的差別。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "588ea284d9a88aba89ccdb970faa145b207ca087f31ee705c58782a2fabd2a63",
+    "draftSha256": "bae09803d80d03e177eaef49753dec6aa2a10cdba35e2953e61108f7a69c37fd",
     "seedAssignmentVersion": 1
   }
 }

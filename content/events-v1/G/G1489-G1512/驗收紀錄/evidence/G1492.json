@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "17b776e762893f5de4060ed9852f7121013969421ea225a933fb1d41c0abf07c",
+      "checkedAt": "2026-11-28T02:35:01.854Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在原作者同意且可安全拆的範圍，我協調他參與合理復原。",
+            "action": "提出合法自願合理修復協作，不再硬扯損壞材料或以罰作代責任。",
+            "tradeoff": "教師多協調、學生掃興。"
+          },
+          {
+            "id": 2,
+            "text": "若每位相關作者真願意，我協調保留混搭，不替不笑的人點頭。",
+            "action": "提出自願修改作品方案，不以多數逼少數或假稱已同意。",
+            "tradeoff": "作者可能覺得要重說心意、教師多溝通。"
+          },
+          {
+            "id": 3,
+            "text": "我先協助記錄各人的原設計，另談可恢復與不能恢復的部分。",
+            "action": "額外有限整理合法作品脈絡，不擅公開照片或保證可原樣救回。",
+            "tradeoff": "花時間、可能失去當日完工。"
+          },
+          {
+            "id": 4,
+            "text": "我邀全組短談往後借物與幫忙先問誰，不把他當笑柄。",
+            "action": "額外自願一般合作界線交流，必要作品尊重原就成立。",
+            "tradeoff": "佔製作時間、學生可能覺得太嚴。"
+          },
+          {
+            "id": 5,
+            "text": "我不再追求本次展示準時，與作者協調延後非必要張貼。",
+            "action": "依法調整可控展示時程，不保證別組同意或擅改正式評量。",
+            "tradeoff": "失去原定完整畫面。"
+          },
+          {
+            "id": 6,
+            "text": "若材料確需補，我協助問合法公用餘料，不擅拿他組或叫無關者付。",
+            "action": "額外資源查詢，未取得不宣稱已有可修材料，必要責任仍依法處理。",
+            "tradeoff": "教師多聯絡、可能無料。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也差點跟著笑，現在有點心虛；我願多留一段合法課間親自協助原作者處理可安全的修補，不再只叫手快的那個收尾。",
+          "action": "承認被氣氛帶動，提出教師額外有限安全修復勞力，須物主同意、不代作正式評量或免除學生合理責任，未確認能修不保證救回。",
+          "tradeoff": "教師多體力時間，原作者可能不想讓老師碰。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1220186146
+        },
+        "selectedIds": [
+          5,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "e85c7427fc6f83c2c453e0b41bb42f1167ad8fc6a4cf7980b84cd67494021313"
+      },
+      "consequenceDirections": {
+        "A": "可承接從眾跟著幫不代表已獲作者同意。",
+        "B": "可發展學生看見成人也承認被笑聲帶走，而作品未必回得去。",
+        "C": "可發展開朗出力者接受因自己烏龍造成的等待。",
+        "D": "可發展快速動手與慢慢聽原意的不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c61a26f45d5b43fde5954552d5204d339cfbb363b4e8ed52fe3cf021169d5e30",
+    "draftSha256": "17b776e762893f5de4060ed9852f7121013969421ea225a933fb1d41c0abf07c",
     "seedAssignmentVersion": 1
   }
 }

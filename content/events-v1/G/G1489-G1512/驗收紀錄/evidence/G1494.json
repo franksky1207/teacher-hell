@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fd5c24734efba81d654477b9b41e74c9ef99e1066181e23c8299557d1a3d6626",
+      "checkedAt": "2026-11-28T02:35:01.857Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我當次多留一段，具體說明上次送件時序，也聽他的版本。",
+            "action": "額外有限成人舊事對話，必要更正共同維持，不以解釋要求原諒。",
+            "tradeoff": "占課間、氣氛可能變嚴。"
+          },
+          {
+            "id": 2,
+            "text": "我先收這次合法協作，不追加舊事談話，正常道謝。",
+            "action": "不承包非必要關係處理，不假稱舊怨已解或抹必要事實。",
+            "tradeoff": "那根刺仍可能留著。"
+          },
+          {
+            "id": 3,
+            "text": "我另約一個自願成人時段談，別把調換和道歉綁在一起。",
+            "action": "提出有限未來關係會談，不視為已約成或拿對方協助作交換。",
+            "tradeoff": "需排程、可能被認為又拖。"
+          },
+          {
+            "id": 4,
+            "text": "我額外把未來需先對齊的送件環節提出共同協議，不自認他永遠有空。",
+            "action": "提出合法可行工作約定，未同意不當新制度、不要求每件都等無限。",
+            "tradeoff": "增加確認工作。"
+          },
+          {
+            "id": 5,
+            "text": "若有合法替代，我不再額外求這次調換，自己承擔原時段。",
+            "action": "在不斷照看的正式接續下撤非必要私人求助，未有替代不任意失約。",
+            "tradeoff": "教師失去本來要做其他事的時間。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權者協調往後一般調換規則，別都靠彼此記人情。",
+            "action": "正式有限工作提案，不重判舊事或保證採用。",
+            "tradeoff": "行政更繁、同事可能嫌小題大作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也很想酸回去，但不想每次借課都付這種利息；我願提出一次具體合法互換，自己多接他也想調的一段，先問清意願，不用空泛欠你一個。",
+          "action": "承認不服帶刺人情，提出有權核可且本人可負擔的實際成人對等調換協商，不預設對方有特定已要取消安排，需求由其自願提出，不保證成約。",
+          "tradeoff": "教師多讓一段可支配時間、可能仍解不了舊怨。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3392689513
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "4da250ffae66abedc8e3f77c2435fd64bd07b72b2e9cfae723729b2e60496ae4"
+      },
+      "consequenceDirections": {
+        "A": "可發展笑容與不滿不必互相抵消。",
+        "B": "可承接舊不滿若能成具體需求也有代價。",
+        "C": "可發展愉悅合作不必等同私人和好，具體交換也可能被看成太算。",
+        "D": "可發展不想欠帶刺人情與現實工作需要的拉扯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "565c4b7949198187187fdfda86a2b22719c1fb35a25f04892d16d3ca58a635d2",
+    "draftSha256": "fd5c24734efba81d654477b9b41e74c9ef99e1066181e23c8299557d1a3d6626",
     "seedAssignmentVersion": 1
   }
 }

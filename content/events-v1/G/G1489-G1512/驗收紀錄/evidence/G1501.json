@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e2f911264fff52e01a82633ae60a5bab86a0afeda5aa1bbe1a60fd6a2686d309",
+      "checkedAt": "2026-11-28T02:35:01.868Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不追加舞台調整，維持合法推舉，正常支持照常。",
+            "action": "拒絕非必要加額，不剝原代表或該生未來公平機會。",
+            "tradeoff": "家長可能更不滿。"
+          },
+          {
+            "id": 2,
+            "text": "我邀家長額外談沒被注意的感受，不把孩子名額當補償。",
+            "action": "有限自願成人交流，不披他生或保證和解。",
+            "tradeoff": "教師時間、可能聽更多舊怨。"
+          },
+          {
+            "id": 3,
+            "text": "經適當同意，我邀孩子自己談想怎麼參與，不替家長說服他。",
+            "action": "有限學生自願對話，不預設他失落或想上台。",
+            "tradeoff": "多時間、可能與家長期待相反。"
+          },
+          {
+            "id": 4,
+            "text": "我提出未來活動可用的一般公平自願發表時段，不回改本次名額。",
+            "action": "額外有限全班機會提案，須真實時程權限，不保證未來有特定名額。",
+            "tradeoff": "教師多準備、家長嫌只是下次。"
+          },
+          {
+            "id": 5,
+            "text": "我額外提供可公開的推舉流程說明，避免靠誰私下說來決定。",
+            "action": "一般真實資訊整理，不公開同學投誰或私人評語。",
+            "tradeoff": "文書負擔、家長可能仍覺偏心。"
+          },
+          {
+            "id": 6,
+            "text": "若孩子願意，我提供公平可選的表達練習，不把練過當保送。",
+            "action": "額外合法有限教學指導，對同等需求可及、不強迫。",
+            "tradeoff": "教師多時間，無當選保證。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想加個位置讓電話快結束；我願額外到正式親師面談把拒絕親口說完，不叫原代表替我付和氣。",
+          "action": "承認想逃不滿的私心，提出有限合法面對面成人說明，不讓孩子站台或撤權，未同意不當已會談。",
+          "tradeoff": "教師花接待時間、可能失去一家的好評。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3994034802
+        },
+        "selectedIds": [
+          4,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "56006eacdb6ab217af33f04d5952c4d216f97bcbe6532b8e532819f9f3f95d57"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長遇到被認真面對卻仍不獲加額，舊怨可能更明。",
+        "B": "可發展被肯定需求與不因配合取得指定機會。",
+        "C": "可承接公平參與不等於每次如願。",
+        "D": "可發展程序透明不必然填滿認可需要。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7d112de63e01b889522fea612288f5bcc37f64c17ad5ce33b9b3a355afae2984",
+    "draftSha256": "e2f911264fff52e01a82633ae60a5bab86a0afeda5aa1bbe1a60fd6a2686d309",
     "seedAssignmentVersion": 1
   }
 }

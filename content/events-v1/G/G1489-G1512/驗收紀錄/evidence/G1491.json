@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0f3c0763ca1d33b39703d125a9e7f95e1a34c15b0f97e6013574ec42755d850f",
+      "checkedAt": "2026-11-28T02:35:01.852Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持核定主餐，不再追加贊助程序，正常飲食支持照常。",
+            "action": "拒絕非必要升級，不使學生因家庭未加碼受不同待遇。",
+            "tradeoff": "家長面子受挫。"
+          },
+          {
+            "id": 2,
+            "text": "若家長仍願無條件，我協助問合法簡易餐後品受贈，不保證收。",
+            "action": "額外詢問公平合規資源可能，食安與壓力核實，不改主餐合約或再集資。",
+            "tradeoff": "多行政、仍可能讓其他家庭有壓力。"
+          },
+          {
+            "id": 3,
+            "text": "我另約這位家長談為什麼平價讓他心疼，不披其他家庭反應。",
+            "action": "有限自願成人交流，不以談過就當他代表全體。",
+            "tradeoff": "教師時間、可能仍不理解。"
+          },
+          {
+            "id": 4,
+            "text": "我邀有權餐食承辦共同說明供應限制，不讓自己私下保證。",
+            "action": "提出正式有限回覆需求，不預設已成會或可換餐。",
+            "tradeoff": "多排程、可能被覺得推責。"
+          },
+          {
+            "id": 5,
+            "text": "我額外提供原核定餐點的實際資訊給全班家庭，不比誰吃得高級。",
+            "action": "核實一般供餐說明，不將必要過敏安全只留此分支。",
+            "tradeoff": "教師多文字、可能引更多選菜要求。"
+          },
+          {
+            "id": 6,
+            "text": "若物主想支持公共需求，我只提供正式校方提案入口，不替班上拉捐。",
+            "action": "有限合法資源資訊協助，不承諾採納或改款項用途。",
+            "tradeoff": "多查詢，家長可能不願。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很怕被說寒酸，也想全班吃得漂亮；我願自己照原平價方案正常吃，額外陪學生談一次真正期待的午餐體驗，不拿家長套餐替我撐面子。",
+          "action": "承認教師面子與消費期待，選擇本人按原合法費用正常參與並額外提出不涉家計的自願學生意見交流，不逼大家說普通好或改合約。",
+          "tradeoff": "教師付正常本人餐費與額外交流時間，可能聽見學生也想升級。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3034454239
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "be32a8d19c9fd050ef3b564d3a1a4fa9bbb0e4f59a2a119dc48e185c2736ae85"
+      },
+      "consequenceDirections": {
+        "A": "可發展支持教師和接受拒絕並不相同。",
+        "B": "可承接私募便捷與集體活動真實契約。",
+        "C": "可發展教師正視自己的體面焦慮，並不保證便宜方案會贏得所有人認同。",
+        "D": "可承接支持這次行程與支持公共需求的不同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a00ef7ff370cf3878bf808921ed62fd50c56c360809150a23dde9d6f178f513a",
+    "draftSha256": "0f3c0763ca1d33b39703d125a9e7f95e1a34c15b0f97e6013574ec42755d850f",
     "seedAssignmentVersion": 1
   }
 }

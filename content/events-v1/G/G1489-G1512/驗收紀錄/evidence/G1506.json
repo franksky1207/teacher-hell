@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f0a78d1d201eb0238fd5965dc3d684b8a1d2535a15c1614b1d24d1f14bdb0e4c",
+      "checkedAt": "2026-11-28T02:35:01.876Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他練一個真實休息說法，不要求他保證明天一定成功。",
+            "action": "額外有限自願同儕界線演練，不撤基本支持。",
+            "tradeoff": "教師時間、仍可能怕。"
+          },
+          {
+            "id": 2,
+            "text": "我額外給全班一般午休安排說明，不點他是原因。",
+            "action": "合規低干擾公共提醒，不強制睡眠或取消合理需求。",
+            "tradeoff": "班務時間、可能被猜出。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他自願盤點晚上真實作息，不先把全部問題怪午休朋友。",
+            "action": "有限生活對話，不翻私人手機或假定玩到幾點。",
+            "tradeoff": "課間成本、學生可能不願說。"
+          },
+          {
+            "id": 4,
+            "text": "經必要同意，我邀家長討論可行休息支持，不拿老師命令替他拒友。",
+            "action": "提出有限親師生協調，不把家庭當懲罰窗口。",
+            "tradeoff": "多聯繫、學生怕被管。"
+          },
+          {
+            "id": 5,
+            "text": "我不再追加作業或特別訓話，正常合法休息和學習接續照辦。",
+            "action": "拒絕非必要再加負荷，不放掉必要健康評估或合理支持。",
+            "tradeoff": "同儕氣氛可能不變。"
+          },
+          {
+            "id": 6,
+            "text": "若場地照看允許，我詢問可否自願選低干擾休息位置，不趕他離群。",
+            "action": "提出合規適性環境需求，不預設已有空位或當作隔離懲處。",
+            "tradeoff": "多協調、可能感到被特別對待。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也常怕掃別人的興，才不敢說自己要停；我願多留一段正常課間，陪他親口向願意談的朋友說一次有限界線，不借處罰當藉口。",
+          "action": "承認成人也難拒絕，提出合規可見場合的有限自願同儕協商陪同，雙方可拒、不公開病況或逼友人保證。",
+          "tradeoff": "教師付時間、學生可能更尷尬或不願被陪。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1346895347
+        },
+        "selectedIds": [
+          1,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "9b87598ec4c98882f656dc2ab40ed0703a8ece45f792df9b1b43024ec1c0df6a"
+      },
+      "consequenceDirections": {
+        "A": "可發展尊重教師與朋友眼光之間的選擇。",
+        "B": "可發展敬重導師者看到老師也會緊張，仍得由自己決定如何和朋友相處。",
+        "C": "可發展教師不靠把認錯變一套新任務來表示重視。",
+        "D": "可承接從眾習慣和家庭可提供的空檔。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdeabf5644c3dc862fc99bc7a460137ecbf46d3cd6750eabdc9d10240434f099",
+    "draftSha256": "f0a78d1d201eb0238fd5965dc3d684b8a1d2535a15c1614b1d24d1f14bdb0e4c",
     "seedAssignmentVersion": 1
   }
 }

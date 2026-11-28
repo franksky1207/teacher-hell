@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6505c182919a0becbc3c23e56b60f68533e89884a555c0f3cac85c074a60c277",
+      "checkedAt": "2026-11-28T02:35:01.870Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "核可後由全部有意願且符合條件者公平抽籤，先到不保留。",
+            "action": "安排合法自願公平分配，必要資訊已清楚，不手挑或保證實際參觀。",
+            "tradeoff": "教師多組織、落選者失望。"
+          },
+          {
+            "id": 2,
+            "text": "我不收這次額外票券，請物主依法自行處理，不把學生推去搶。",
+            "action": "婉拒非必要資源，不擅轉售或代物主承諾另給誰。",
+            "tradeoff": "同事下不了台、學生少機會。"
+          },
+          {
+            "id": 3,
+            "text": "我先徵集實際可用與意願再定公平分配，不用口頭想去就填滿。",
+            "action": "有限真實使用需求確認，不蒐不必要家庭資訊、未同意不當已報名。",
+            "tradeoff": "花聯絡、可能票快到期。"
+          },
+          {
+            "id": 4,
+            "text": "我邀同事親自額外向大家說明四張的限制，別只由我當壞人。",
+            "action": "提出物主自願有限公開一般說明，教師仍維持必要公平，不保證同事接受。",
+            "tradeoff": "教師協調時間、對方可能覺得被怪罪。"
+          },
+          {
+            "id": 5,
+            "text": "若規則與校規允許，我協助問是否有正式公平團體優惠資訊，不額外收款。",
+            "action": "有限公開資源查詢，不假設有票或票價可負擔，不以自費者優先分免費票。",
+            "tradeoff": "多聯絡、可能增經濟比較。"
+          },
+          {
+            "id": 6,
+            "text": "我另和同事談往後先問教師再預告，不把今天變成報復。",
+            "action": "額外有限成人合作界線交流，必要當下票務照常處理。",
+            "tradeoff": "花時間、可能讓熱心變冷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也想看，但不能拿學生票解我饞；我願自費另查自己的正常票，班上的四張仍照公平程序，不用老師那份先扣。",
+          "action": "承認私人興趣，自願核對本人合法正常購票選擇，確認後才支付，不占學生資源或保證票已買，不構成帶隊。",
+          "tradeoff": "教師可能付個人票費和私人時間，學生可能誤認老師會陪。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1386393555
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 5
+        },
+        "optionsDigest": "08769a33fd779b1c9c5de243463d1a8652006f7f3bae713231eb521f86b5b3d9"
+      },
+      "consequenceDirections": {
+        "A": "可發展分享好康的人看見教師也想去，仍得分清學生分配和成人自己安排。",
+        "B": "可承接主動傳訊的人是否願承接造成的期待。",
+        "C": "可發展社交預告和真正能使用不是同一事。",
+        "D": "可發展四張贈票和全班能去的距離。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6eff5868a5a4c9bc25a4a2294c8c76dc940e8e2a5fe4f2a5cb32bee12a57a179",
+    "draftSha256": "6505c182919a0becbc3c23e56b60f68533e89884a555c0f3cac85c074a60c277",
     "seedAssignmentVersion": 1
   }
 }

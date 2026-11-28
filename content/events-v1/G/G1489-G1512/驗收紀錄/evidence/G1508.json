@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "42f598535a2dcdf41b131b46db44e2d77abcda562a55b6a273175922184f3737",
+      "checkedAt": "2026-11-28T02:35:01.879Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外當場說明一般教學理由，不用個案來證明自己。",
+            "action": "有限成人公開一般專業交流，必要規則已說清、不披學生資料。",
+            "tradeoff": "可能讓資深者沒面子。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他另找有限時段私下談，不在眾人前爭完。",
+            "action": "提出自願成人會談，未同意不當已約成、必要權益仍接。",
+            "tradeoff": "教師多時間、旁觀者可能以為理虧。"
+          },
+          {
+            "id": 3,
+            "text": "我額外整理真實既有評量與補測安排，交合法專業窗口釐清。",
+            "action": "有限事實整理，不虛造資料或以漂亮比例取代學生權益。",
+            "tradeoff": "文書時間、事情正式化。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問是否有合規共同工作支援可分擔，不改學生必要機會換省工。",
+            "action": "提出成人合法支援需求，不保證人力、預算已得或代批他科。",
+            "tradeoff": "多協調、可能無解。"
+          },
+          {
+            "id": 5,
+            "text": "我不加公開辯論，必要說明完成後回原課務，保留正常協商。",
+            "action": "婉拒非必要當眾交鋒，不假稱已同意或認輸、不封正當質疑。",
+            "tradeoff": "教師得忍住旁觀印象。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權者主持一般評量工作交流，讓不同做法有共同說明處。",
+            "action": "提出正式有限專業交流，不用票數剝合法權利、不預設已有會議。",
+            "tradeoff": "多排程、可能被看成找主管壓人。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想拿資歷頂回去；我願額外把本人可以承擔的一次合法補測監督時段拿出來支援，批改和評量仍依本科權責，不拿學生怕不怕當交換。",
+          "action": "承認受傷與想自證，提出本人合格可行的有限成人支援，需正式核定與對方同意，不擅改分、不保證已排成。",
+          "tradeoff": "教師少空堂，前輩可能仍不認同做法。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4173302622
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "b1d84043c38e3cf59dc31311109f0ee34c1592918e56291cdff609405d089666"
+      },
+      "consequenceDirections": {
+        "A": "可發展願出力不等於接受質疑全部正確，信任和專業分歧仍可並存。",
+        "B": "可承接批改負荷需要處理但不能由學生失權付帳。",
+        "C": "可發展個人疲勞不是規則真偽的依據。",
+        "D": "可發展影響力和信任能否容納不同意。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "00242d8226900c423de485a91368d9d763bc896275ab47b461562fe970fa7d88",
+    "draftSha256": "42f598535a2dcdf41b131b46db44e2d77abcda562a55b6a273175922184f3737",
     "seedAssignmentVersion": 1
   }
 }

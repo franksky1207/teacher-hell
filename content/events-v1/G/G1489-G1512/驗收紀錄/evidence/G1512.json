@@ -15,14 +15,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3536830a2014de82b01755ce9aab242807857376f4a836be531f65397828339a",
+      "checkedAt": "2026-11-28T02:35:01.883Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持原先可行邀談時程，不為兩天期限擠掉其他必要工作。",
+            "action": "回覆實際有限安排，必要風險處理不延誤，不保證邀談必被接受。",
+            "tradeoff": "家長可能覺得老師不急。"
+          },
+          {
+            "id": 2,
+            "text": "我調一段本人可調的課間，提前提出兩人的自願邀談，不承諾和好。",
+            "action": "額外投入本人可用時間安排邀請，未同意不宣稱已談完。",
+            "tradeoff": "減少休息與備課彈性。"
+          },
+          {
+            "id": 3,
+            "text": "我先協調報告必要分工能否分開接續，和好不用當完成作業的條件。",
+            "action": "在權責內安排合理學習支持與可行協作方式，不剝任一學生學習權。",
+            "tradeoff": "多協調、可能被當成默許不和。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問合格校內人員是否有可行協作時段，不把兩天當主管交辦。",
+            "action": "提出有限合法支援需求，未答應不宣稱有人接手。",
+            "tradeoff": "協調時間、增加必要知情者。"
+          },
+          {
+            "id": 5,
+            "text": "我和家長另談他能如何支持自己的旁觀孩子，不讓孩子替兩人傳話。",
+            "action": "額外有限親師對話，內容限其子女與一般支持，不要求調查或站邊。",
+            "tradeoff": "多通話、家長可能認為仍沒處理主題。"
+          },
+          {
+            "id": 6,
+            "text": "我婉拒額外逐次私報，但提出有實質影響其子女時再依必要範圍告知。",
+            "action": "不承接非必要私人追蹤承諾，必要一般告知與學生支持不撤。",
+            "tradeoff": "需承受冷淡評價。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想證明自己不是拖；我額外把本週確實有的工作重新排過，犧牲一段本人私人空檔準備這次邀談，不拿準備完冒充兩個孩子談妥。",
+          "action": "承認想獲認可，實際投入非必要個案談話準備及真實排程，限合法可調私人時間，不捏造工時或取消他人應有支持，不擅自提前未同意的面談。",
+          "tradeoff": "教師少私人時間、準備可能暫用不上。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 948867971
+        },
+        "selectedIds": [
+          5,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "9cad466eba51f7bc662f33beef9c7e395d8eb0b39a297b1333093481e9c73287"
+      },
+      "consequenceDirections": {
+        "A": "可發展穩定支持的家庭也能先處理自己的焦慮。",
+        "B": "可承接教師願加速一次接觸，卻不把關係當可交件的工作。",
+        "C": "可發展把效率壓力變自己的加班，是否真值得，而學生的心情仍不受行事曆控制。",
+        "D": "可承接效率要求是否真的有資源可支撐。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "35df3e2f9d8305bbac5f371794fce50a38c3d403388c85a8256844562a2593e7",
+    "draftSha256": "3536830a2014de82b01755ce9aab242807857376f4a836be531f65397828339a",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "21f5f5fc5d67cbf61763232707966324f92a32131f25501b3ec9a241a8f0a29b",
+      "checkedAt": "2026-11-28T02:35:01.874Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我按廠商安全方式收妥，今晚不再試，把時間還給正常休息。",
+            "action": "妥善停用並安全收存合法用品，非必要測試停止。",
+            "tradeoff": "新東西暫無用途、花錢懊惱。"
+          },
+          {
+            "id": 2,
+            "text": "我只讀完整原說明，確認正常可用模式，不再發聲測試。",
+            "action": "有限查閱原廠資訊，不臆測能停某功能或進行不當改裝。",
+            "tradeoff": "多私人時間、可能仍不敢用。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問原廠客服正常操作與故障判別，未答覆先不再用。",
+            "action": "提出合法有限產品諮詢，不自拆或宣稱已修好。",
+            "tradeoff": "聯繫時間、未必當晚有回。"
+          },
+          {
+            "id": 4,
+            "text": "我查真實合法退換條件，不把拆封當一定可退或完全不能退。",
+            "action": "核實消費入口再決定是否申請，不假稱款已回。",
+            "tradeoff": "多聯絡、可能損失。"
+          },
+          {
+            "id": 5,
+            "text": "我整理原配件和購買憑證，之後若要送檢或退換不再手忙腳亂。",
+            "action": "實際有限收整本人合法物件，不額外試鳴或保證之後受理。",
+            "tradeoff": "花私人時間、尚未解決使用用途。"
+          },
+          {
+            "id": 6,
+            "text": "我重新盤點本人真正要的照明和警報需求，暫不加買任何神器。",
+            "action": "有限私人需求整理，不代作居家安全專業認證或宣稱原品無效。",
+            "tradeoff": "時間與承認自己沒想清楚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服自己輸給一個開關；我願多花一段時間把原廠正常停用步驟另抄在收納袋外，讓下次的我先看，不再靠勇敢亂按。",
+          "action": "承認面子和急性子，依核實原說明製作本人使用提醒與合規收納，不改裝設備或新增鳴笛測試，不宣稱已驗證永不誤觸。",
+          "tradeoff": "多時間、袋子變醜還提醒自己出糗。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2651420763
+        },
+        "selectedIds": [
+          5,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 5
+        },
+        "optionsDigest": "0d6d9c7262e56e45962280e73ec4856fff54379adcb4598855d0a1c4b893d44b"
+      },
+      "consequenceDirections": {
+        "A": "可發展想安心的成年人接受留一張自己的笨拙提醒，比買回來立刻全會更實在。",
+        "B": "可發展好心情被打斷後能否容許等待。",
+        "C": "可承接保障需求和特價衝動的落差。",
+        "D": "可發展執行力用在善後而非按遍開關。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c30f01225ab5e861e10b224a7b698060fcd448ace647a7113ca50f939cc1c2f0",
+    "draftSha256": "21f5f5fc5d67cbf61763232707966324f92a32131f25501b3ec9a241a8f0a29b",
     "seedAssignmentVersion": 1
   }
 }

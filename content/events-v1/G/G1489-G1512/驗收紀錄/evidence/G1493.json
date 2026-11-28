@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "28ca599956b24d302606ab68b5e5ad5d78b92fa3023c0b514c87dbd42a07ec84",
+      "checkedAt": "2026-11-28T02:35:01.855Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪學生整理真實疑問，依正式管道提出，不求交情。",
+            "action": "有限協助合法表意，基本申覆權與事實處理本來維持。",
+            "tradeoff": "教師多時間、職員可能不滿。"
+          },
+          {
+            "id": 2,
+            "text": "我不加私人關說，按真實合法認定接續，正常支持照常。",
+            "action": "婉拒非必要熟人代求，不抹合法異議或替未核實扣點背書。",
+            "tradeoff": "學生可能覺得老師不挺。"
+          },
+          {
+            "id": 3,
+            "text": "我額外帶全班看合法暫放位置，少靠每次當場說一下。",
+            "action": "有限一般環境使用說明，不把必要安全處理單獨留此。",
+            "tradeoff": "占班務、學生可能嫌囉嗦。"
+          },
+          {
+            "id": 4,
+            "text": "我提出改善實際收納空間的需求，核可和資源有了才改。",
+            "action": "額外合法環境提案，不擅占逃生空間或假設櫃已到。",
+            "tradeoff": "多協調、可能沒預算。"
+          },
+          {
+            "id": 5,
+            "text": "我另邀職員談這陣子的工作負荷，不用學生事件換私交。",
+            "action": "有限成人自願關懷，不代減正式勤務或要求撤件。",
+            "tradeoff": "教師情緒時間、可能被拒。"
+          },
+          {
+            "id": 6,
+            "text": "我邀有權者一般說明暫放界線，讓規則別只靠路過那支筆。",
+            "action": "提出合規公開一般資訊需求，不公審當事職員或保證改規。",
+            "tradeoff": "多排程、事情可能更正式。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也覺得沒面子被當場開單；我願額外在本人合法課間接一趟可安全分散搬的普通資料，把教室真正可用空間騰好，不叫孩子再拿走廊當方便。",
+          "action": "承認護班面子，提出教師有限合法一般整理搬運，僅處理本人有權配置的班級資料，不搬危重、不撤必要安全或強迫學生加勞。",
+          "tradeoff": "教師多體力時間、可騰空間有限，扣點仍依法處理。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2596947634
+        },
+        "selectedIds": [
+          3,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "e1a39f0c8cfe06f272e697668d666ac046c27e5d0c7a4fb9a357cb2720e9c0a4"
+      },
+      "consequenceDirections": {
+        "A": "可承接熟絡和職務界線的落差。",
+        "B": "可發展學生見教師也願付便利代價，職員未必因此改觀。",
+        "C": "可發展高負荷者的嚴格不是必然惡意。",
+        "D": "可發展安全原則能否轉成可行日常。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "062f288146a7700c497a3fa72b72c3d3185c7704b0bd214880e7976c08b32449",
+    "draftSha256": "28ca599956b24d302606ab68b5e5ad5d78b92fa3023c0b514c87dbd42a07ec84",
     "seedAssignmentVersion": 1
   }
 }

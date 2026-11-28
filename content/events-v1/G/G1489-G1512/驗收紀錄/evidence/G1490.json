@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "408b3514cdad056fc352cee8f4498ca52e151d414eeeaedbb7c0d2b574e83b83",
+      "checkedAt": "2026-11-28T02:35:01.846Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我約一個有限看稿時段，其餘非必要美感決定先由組內做。",
+            "action": "設定額外回饋節奏，必要問題正常接，不要求所有細節等教師。",
+            "tradeoff": "學生可能焦慮，教師仍需回饋。"
+          },
+          {
+            "id": 2,
+            "text": "我這次陪他比較兩個真實版本，選的理由由他自己說。",
+            "action": "額外有限美感討論，不代選或把偏好變評分。",
+            "tradeoff": "花課間，可能又問第三版。"
+          },
+          {
+            "id": 3,
+            "text": "我邀組員自願各講一個建議，不讓這位學生只當傳話者。",
+            "action": "有限公平組內協商，教師仍負必要要求，不以票壓少數。",
+            "tradeoff": "教師多時間、學生可能失去掌控。"
+          },
+          {
+            "id": 4,
+            "text": "我明確不再提供非必要逐筆審美背書，照基本標準正常完成。",
+            "action": "婉拒額外細節確認，不以不滿語氣羞辱或取消必要支持。",
+            "tradeoff": "學生可能覺得老師不在乎。"
+          },
+          {
+            "id": 5,
+            "text": "我另談他到底想達到什麼，不替不存在的第一名設比賽。",
+            "action": "有限自願目標交流，真實牆報無新增排名。",
+            "tradeoff": "花時間、他可能說只是想讓老師滿意。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我額外提供可公開的不同風格例子，只看差異不挑標準答案。",
+            "action": "核實合法適切視覺資料，不抄他人作品或保證更漂亮。",
+            "tradeoff": "查資料時間、可能讓選擇更多更難。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想看到完美牆報，難怪一直讓他猜；我願把自己原本想插手的非必要配色意見收回，讓成果真的有我不喜歡的地方也照樣接受。",
+          "action": "承認教師審美私心，停止本人額外美感修正要求並依已明確基本標準接受合理作品，不取消安全清晰度、不假設學生已完稿。",
+          "tradeoff": "教師放棄控制畫面與展示面子，學生可能一時更不敢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 723817061
+        },
+        "selectedIds": [
+          1,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "ee75f3f28c8795d5b209d848b72bc0aa1eb54710eceb94b1fd7f15d688d0165b"
+      },
+      "consequenceDirections": {
+        "A": "可發展協作熱心是否容許不同意見。",
+        "B": "可承接關注反應者面對少回饋的失落。",
+        "C": "可發展配合者是否敢暫時不看老師眼神。",
+        "D": "可發展真正交出決定權比說你做主更難，學生仍可能來找肯定。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b3fe3bd5674b62fcfefd7e7e8bfe871fa3ae6178b71a2851b60ade1118c57e5d",
+    "draftSha256": "408b3514cdad056fc352cee8f4498ca52e151d414eeeaedbb7c0d2b574e83b83",
     "seedAssignmentVersion": 1
   }
 }

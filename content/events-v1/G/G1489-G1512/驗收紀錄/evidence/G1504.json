@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2412f304d8a7b2e7b0fb5059c6bdd208a80c99902b01571921f6bd5d21d8ea35",
+      "checkedAt": "2026-11-28T02:35:01.872Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我和全組確認合理小區塊，讓每人自願選並承擔明確範圍。",
+            "action": "提出公平合法重分工，不單挑此生羞辱或以重活懲罰。",
+            "tradeoff": "協調時間、有人不滿重談。"
+          },
+          {
+            "id": 2,
+            "text": "我私下額外談上次分歧，不要求他先承認賭氣才有支持。",
+            "action": "有限自願關係交流，合理當次責任另依法辦。",
+            "tradeoff": "教師情緒時間、可能一直說沒事。"
+          },
+          {
+            "id": 3,
+            "text": "我有限陪他做一段現有分類，教完方法便讓他自己接。",
+            "action": "額外適切指導，不代包全部或強制追加勞動。",
+            "tradeoff": "教師多時間、可能發現他其實會但不想做。"
+          },
+          {
+            "id": 4,
+            "text": "若各人願意，我協調真實互換工作，別讓一方只被迫接難的。",
+            "action": "提出公平自願交換，不預設同學接受或欠人情。",
+            "tradeoff": "多人協調，可能換不成。"
+          },
+          {
+            "id": 5,
+            "text": "我允許他依法退出這次非必要自願協助，由成人接回未妥部分，不要求笑著演幫忙。",
+            "action": "提出可行自願退出安排，必要既有權益與真實交接照常，不強塞他人或免其他合法義務。",
+            "tradeoff": "教師多工作、學生可能覺得被趕。"
+          },
+          {
+            "id": 6,
+            "text": "我另邀全組一般回饋合作負擔，不投票定誰最混。",
+            "action": "有限自願事實交流，不公開學生私怨。",
+            "tradeoff": "花時間、可能說出不和。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想當場拆穿他的笑；我願自己接一段可安全處理的既有分類，把對他生氣的事留到另談，不叫其他同學替我維持和氣。",
+          "action": "承認怒意，額外自願有限成人實作，仍維持學生合理協商與必要公平，不幫他假記已完成或以此買親近。",
+          "tradeoff": "教師多時間、可能被學生看成混也有人收。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1137683282
+        },
+        "selectedIds": [
+          6,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "5e3473fe634889d830c21f7cf600612bc874c081c6794f4cbcaca882bc42746d"
+      },
+      "consequenceDirections": {
+        "A": "可發展舊不滿能否被允許存在而不用消極出力表達。",
+        "B": "可發展熱心名義和真實投入的落差。",
+        "C": "可發展導師願承接當下缺口不等於原諒舊事，對方也可能更不願開口。",
+        "D": "可承接其他同學也有不願再多做的界線。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "62f3c73646e4ebd66d7535712f4df386d47d202d4576de4042217a04cef0b40d",
+    "draftSha256": "2412f304d8a7b2e7b0fb5059c6bdd208a80c99902b01571921f6bd5d21d8ea35",
     "seedAssignmentVersion": 1
   }
 }

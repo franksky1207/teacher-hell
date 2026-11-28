@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9d3f069cb7731084000fd56b4f0f5907594991b404b2afc1f41c8b73c0bf24f7",
+      "checkedAt": "2026-11-28T02:35:01.843Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外用一段真實練習示例說明方法，讓他問不同意的地方。",
+            "action": "提供有限具體教學理由，不編未測成效或以耐心取代必要說明。",
+            "tradeoff": "占教師時間，家長可能更緊張。"
+          },
+          {
+            "id": 2,
+            "text": "我提供適切可選的另一種整理路徑，公平條件下由孩子依法選。",
+            "action": "評估合宜等值路徑，不讓家族替全班決定、不預設學生喜歡。",
+            "tradeoff": "備課批改增加。"
+          },
+          {
+            "id": 3,
+            "text": "我邀親子共同談使用經驗，不讓家長替孩子猜全部。",
+            "action": "提出有限自願交流，不以出席換正常支持。",
+            "tradeoff": "多排程、學生可能不願。"
+          },
+          {
+            "id": 4,
+            "text": "我另給一份可公開的簡短說明，讓他回家不必靠記憶轉述。",
+            "action": "額外有限文字整理，不公開他生或承諾每題都另做版本。",
+            "tradeoff": "多文書，家族可能逐字再問。"
+          },
+          {
+            "id": 5,
+            "text": "我不加私人顧問服務，正常教學和必要說明照常接。",
+            "action": "婉拒非必要無限延談，不把客氣當已認同。",
+            "tradeoff": "問題未必消失、家長可能收回疑問。"
+          },
+          {
+            "id": 6,
+            "text": "我提出一次全班自願一般使用回饋，讓不同經驗都進來。",
+            "action": "額外蒐實際感受，不以多數投票取代專業或揭提問家庭。",
+            "tradeoff": "教師整理成本、可能看到自己的盲點。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也怕被質疑，才一直想接他的稱讚；我願多留一次正式空檔，請他先把真正不放心的一件寫給我，再由我直接回這一件，不繼續互說客氣話。",
+          "action": "承認想躲在讚美裡，提出有限自願具體書面問題與直接回覆安排，不要求家長簽認同、不以禮貌交換放棄疑問。",
+          "tradeoff": "教師付額外回覆時間、接受可被追問的明確問題。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1882137731
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 2,
+          "D": 6
+        },
+        "optionsDigest": "75cea652c20496856f61f12b34cdea44be320b63f10e1a152c5b5c3c231d834b"
+      },
+      "consequenceDirections": {
+        "A": "可發展雙方都怕衝突卻開始把真正分歧放進溝通，未必達成共識。",
+        "B": "可發展溫和表達和真實教學疑慮能否同時存在。",
+        "C": "可承接家庭支持與孩子實際學習選擇。",
+        "D": "可承接一家討論與全班學習現況不必相同。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f833ca2934555fb7ddb70401702543173f2cc32ab02bce8e608fe3790cba9872",
+    "draftSha256": "9d3f069cb7731084000fd56b4f0f5907594991b404b2afc1f41c8b73c0bf24f7",
     "seedAssignmentVersion": 1
   }
 }

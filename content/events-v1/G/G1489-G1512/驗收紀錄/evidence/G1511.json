@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "92c229d847e1f8b35321b5c2d4626e9af67a1f3a2dc4fd072dfe5b94bfac1979",
+      "checkedAt": "2026-11-28T02:35:01.882Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我暫停這次學生代收，自己逐一接收週記，另外釐清兩人的責任。",
+            "action": "教師收回本次非必要代收安排，親自完成有限收取；必要隱私處理仍共同進行。",
+            "tradeoff": "教師時間、幫手可能像被撤職。"
+          },
+          {
+            "id": 2,
+            "text": "我保留他之後自願幫忙的可能，但先一起改成只接收主動交出的週記。",
+            "action": "與本人釐清可行未來有限協助界線，未同意不宣稱合作成立，拒交由教師處理。",
+            "tradeoff": "需重新教與督導、其他人可能不信任。"
+          },
+          {
+            "id": 3,
+            "text": "我邀兩人在願意時談互相挑釁造成的影響，不拿和好換免處理。",
+            "action": "額外有限自願修復對話，隱私責任及必要程序不免除。",
+            "tradeoff": "多時間、可能拒談或更生氣。"
+          },
+          {
+            "id": 4,
+            "text": "我額外向全班說清幫忙收東西不是取得搜查權，不拿個生細節當教材。",
+            "action": "提供一般班務角色說明，不披週記內容或讓全班審判。",
+            "tradeoff": "班務時間、當事人可能覺得大家都知道在說誰。"
+          },
+          {
+            "id": 5,
+            "text": "我另留有限課間聽他的委屈，也明講親近不會讓我替翻包找理由。",
+            "action": "額外個別關係對話，不撤必要對另一學生支持或允諾偏袒。",
+            "tradeoff": "教師時間、學生可能更失望。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問合適校內專業人員是否能協助後續關係支持，不交出自己的督導責任。",
+            "action": "提出合規有限協助需求，依法必要知情，不假稱支援已到或轉介已被接受。",
+            "tradeoff": "協調成本、學生怕被貼標籤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得少掉這個快手，可是不能一直靠他替我扛討人厭的工作；我取消本人原先請他固定代收的額外差事，往後這部分由我承擔。",
+          "action": "承認依賴學生效率，終止確實存在的本人非必要固定代收委託，教師承接後續例行工作，非以停職羞辱學生且仍保留普通參與權。",
+          "tradeoff": "教師長期多工作、學生可能覺得被嫌棄。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3080373046
+        },
+        "selectedIds": [
+          6,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "bf1f7490c8f37355e246a32882be67126f934d881ef2f702ff2eff21521c69d4"
+      },
+      "consequenceDirections": {
+        "A": "可承接效率高的學生重新學不把同學當工作障礙。",
+        "B": "可發展一段師生親近之外仍可有別的支持來源。",
+        "C": "可發展導師放掉方便後，親近關係能否不靠幫忙維持。",
+        "D": "可發展支持老師的人能否接受老師不同意自己。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "78bf0d317086937d2be0ed4308a1b9775343b37b7cef1f78aaf6cc92245b3924",
+    "draftSha256": "92c229d847e1f8b35321b5c2d4626e9af67a1f3a2dc4fd072dfe5b94bfac1979",
     "seedAssignmentVersion": 1
   }
 }

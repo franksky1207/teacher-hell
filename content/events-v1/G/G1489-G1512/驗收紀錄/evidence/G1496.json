@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b45f4c9e27db3d321bd4e61241d83c63fcff81a9723be446edc4c89f79179218",
+      "checkedAt": "2026-11-28T02:35:01.861Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外給核實一般流程說明，不提供每日個別照片。",
+            "action": "有限一般資訊整理，必要清潔原已維持、不偽稱全部消毒完美。",
+            "tradeoff": "文書與追問可能增加。"
+          },
+          {
+            "id": 2,
+            "text": "我提出固定有限非急迫回覆時段，不早中晚即時陪問。",
+            "action": "建立本人額外工作界線，必要健康訊息不延誤。",
+            "tradeoff": "家長可能更不安。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他向有權健康中心提出一般疑問，由專業定資訊範圍。",
+            "action": "有限合規成人諮詢邀請，不保證已預約或可詢他生病情。",
+            "tradeoff": "多排程、可能被覺得轉走。"
+          },
+          {
+            "id": 4,
+            "text": "我額外發不指個案的一般換季衛教給全體，提醒不以猜測互查。",
+            "action": "核實公平公開資訊，不製造群聚暗示或取代必要通知。",
+            "tradeoff": "教師多工作、原不擔心者也可能緊張。"
+          },
+          {
+            "id": 5,
+            "text": "我不加專屬回報服務，正常求助照管道接續。",
+            "action": "婉拒非必要客服式回覆，不撤必要健康支持或合理說明。",
+            "tradeoff": "可能被說不體諒。"
+          },
+          {
+            "id": 6,
+            "text": "我邀家長另談最怕什麼，限本人願分享的部分，不做診斷。",
+            "action": "自願有限成人交流，不要求交代家庭病史或拿心理說法打發衛生疑慮。",
+            "tradeoff": "教師情緒時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕一漏回就被當成沒做；我願記清自己這週真正多花的非必要回覆時間，向有權主管提出資訊回覆分工需求，不拿未發生工時湊苦勞。",
+          "action": "承認工作焦慮，額外據現有訊息時序與本人真實記錄整理可核實的工作負擔，提出合法分工申請，不捏造全日耗時、不洩病家、不改必要回覆義務。",
+          "tradeoff": "教師多整理、可能被認為小題大作且申請未必准。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3505139282
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "45fb97d9749a6bc6b3fc0b3893b55279b868de0c9ca759448cebc45e8ee9c4ac"
+      },
+      "consequenceDirections": {
+        "A": "可承接規則認同背後仍有不確定忍受的難處。",
+        "B": "可發展家長個別安心與教師持續被督問的制度成本，並不保證界線被理解。",
+        "C": "可發展安全需求不是多一張照片就解。",
+        "D": "可發展認同規範仍想看即時證據的焦慮。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b47d5af10288920789fb920364838cf52116d4f100de8ad6afe45285a49ad663",
+    "draftSha256": "b45f4c9e27db3d321bd4e61241d83c63fcff81a9723be446edc4c89f79179218",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6f247e4068cfcdb91ed2126fc39a37567851f2bdcc6634babc66024097162a1c",
+      "checkedAt": "2026-11-28T02:35:01.863Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先不加安慰舞台，按既有公平程序接續，正常尊重照常。",
+            "action": "婉拒非必要特殊安排，不撤任何人合法參與。",
+            "tradeoff": "他可能當場失落。"
+          },
+          {
+            "id": 2,
+            "text": "我私下額外謝他願意站出來，也聽沒選中最怕什麼。",
+            "action": "有限自願關係交流，不承諾名額或以肯定買其不反對。",
+            "tradeoff": "教師多時間、可能更依賴評價。"
+          },
+          {
+            "id": 3,
+            "text": "若規則允許且雙方自願，我協調搭檔提案，不為他硬加一個人。",
+            "action": "提出合規公平組隊可能，不保證入選或對方接受。",
+            "tradeoff": "需協調、他可能不想分舞台。"
+          },
+          {
+            "id": 4,
+            "text": "我提供所有有興趣者同等自願的短練習機會，不先挑贏家。",
+            "action": "額外公平指導，學生自行決定是否參與，不強迫留校。",
+            "tradeoff": "教師多時間、名額仍不保證。"
+          },
+          {
+            "id": 5,
+            "text": "我邀全班一般討論代表需要做什麼，不投票評誰比較值得被喜歡。",
+            "action": "額外合宜班務討論，必要程序原已維持。",
+            "tradeoff": "花班務、可能有人藉機酸他。"
+          },
+          {
+            "id": 6,
+            "text": "我另給他自願回想剛才插話造成什麼的空間，不逼公開道歉。",
+            "action": "有限師生反思對話，不把認錯換參與權或班級評價。",
+            "tradeoff": "教師情緒時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想趕快有個肯扛的人；我願自己接回這次成人該做的申請統籌，不把『全包』當省事，讓他只做依法自願且真有興趣的部分。",
+          "action": "承認教師想省力，調整本人可控非必要委託，額外承擔一般成人聯繫整理，不代學生參賽或保他入選，不假稱已完成。",
+          "tradeoff": "教師增加工作，學生可能覺得信任被收回。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2148526151
+        },
+        "selectedIds": [
+          1,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "1cafb94c5c6d8d5db81438948fdd5b927ba2d33ff8c479ddcb31bfb9a54ca21b"
+      },
+      "consequenceDirections": {
+        "A": "可發展信任導師與不一定被特選的矛盾。",
+        "B": "可發展衝動介入者聽見他人意願。",
+        "C": "可承接衝動大話背後要被認可的需要。",
+        "D": "可發展導師不靠衝動承諾解決人力，仍無法滿足每個人的表現期待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "629c50556f5d03702939eb570b5bd954afb6ee4ddc017936d4c0b6650b11a63c",
+    "draftSha256": "6f247e4068cfcdb91ed2126fc39a37567851f2bdcc6634babc66024097162a1c",
     "seedAssignmentVersion": 1
   }
 }

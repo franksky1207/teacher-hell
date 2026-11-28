@@ -15,14 +15,155 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "92ad2712f4f50eca55c6eecfd9b675545f1b5b2b55b3387c9d9cd39b403b4600",
+      "checkedAt": "2026-11-28T00:57:41.619Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我正常道謝就收尾，不追這句話。",
+            "action": "完成收件後不新增非必要會談，正常後續管道保留。",
+            "tradeoff": "心結可能未解，教師也可能掛心。"
+          },
+          {
+            "id": 2,
+            "text": "若你願意坐五分鐘，我想確認你指的是哪件事。",
+            "action": "提出限定合法工作短談邀請，不要求對方一定留下。",
+            "tradeoff": "可能拖長，需控時。"
+          },
+          {
+            "id": 3,
+            "text": "我另約正式時間談，現在不在收件桌上翻舊帳。",
+            "action": "提出自願後續預約，不因願談延遲有效收件。",
+            "tradeoff": "增加未來排程，家長可能覺得小題大作。"
+          },
+          {
+            "id": 4,
+            "text": "我提供上次可公開的分組原則，細節不談他人。",
+            "action": "額外整理一般規則供其自行閱讀，不保證認同。",
+            "tradeoff": "花整理時間，可能被嫌制式。"
+          },
+          {
+            "id": 5,
+            "text": "如果你有未來分組建議，可依規提出，我願看但不先答應。",
+            "action": "開放既有合法建議管道並額外承諾有限閱讀，不承諾特定孩子安排。",
+            "tradeoff": "多閱讀與回覆工作。"
+          },
+          {
+            "id": 6,
+            "text": "我徵詢是否由必要第三方陪同談，免得互相猜話。",
+            "action": "提出依法最小知情的自願協調邀約，未同意不拉人評理。",
+            "tradeoff": "協調時間與關係升高風險。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想每次收到酸話都私下猜；我願多做一次正式回覆，以後額外班務建議就走這個窗口。",
+          "action": "因不願反覆猜測暗示，額外以正式合法管道整理一次可公開的分組原則及本人可回覆範圍，向家長提出今後非必要班務建議集中於約定工作窗口處理的聯絡約定，不阻擋正常申訴、新資訊或緊急聯絡，也不以同意約定影響孩子。",
+          "tradeoff": "需正式書寫並承受被認為生分的反應，減少私人隨時補談的彈性。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2779469818
+        },
+        "selectedIds": [
+          3,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "762d6ad65bbf308d260c248e28eae74e4408485cabe3f62d7ea33cfc33a727f2"
+      },
+      "consequenceDirections": {
+        "A": "可發展肯定教師專業卻私人不滿的家長是否接受更清楚的往來範圍，教師不再以無限私人解釋換和氣。",
+        "B": "可發展有界線的溝通能否讓暗示轉成明確問題。",
+        "C": "可發展配合與不滿同時維持的微妙關係。",
+        "D": "可承接家長只想發牢騷與正式溝通不是同一期待。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "情緒只是帶不舒服語氣追問，與普通2立即短談過近；改為教師願明訂未來額外聯絡界線，具實際工作安排。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "我正常道謝就收尾，不追這句話。",
+                "action": "完成收件後不新增非必要會談，正常後續管道保留。",
+                "tradeoff": "心結可能未解，教師也可能掛心。"
+              },
+              {
+                "id": 2,
+                "text": "若你願意坐五分鐘，我想確認你指的是哪件事。",
+                "action": "提出限定合法工作短談邀請，不要求對方一定留下。",
+                "tradeoff": "可能拖長，需控時。"
+              },
+              {
+                "id": 3,
+                "text": "我另約正式時間談，現在不在收件桌上翻舊帳。",
+                "action": "提出自願後續預約，不因願談延遲有效收件。",
+                "tradeoff": "增加未來排程，家長可能覺得小題大作。"
+              },
+              {
+                "id": 4,
+                "text": "我提供上次可公開的分組原則，細節不談他人。",
+                "action": "額外整理一般規則供其自行閱讀，不保證認同。",
+                "tradeoff": "花整理時間，可能被嫌制式。"
+              },
+              {
+                "id": 5,
+                "text": "如果你有未來分組建議，可依規提出，我願看但不先答應。",
+                "action": "開放既有合法建議管道並額外承諾有限閱讀，不承諾特定孩子安排。",
+                "tradeoff": "多閱讀與回覆工作。"
+              },
+              {
+                "id": 6,
+                "text": "我徵詢是否由必要第三方陪同談，免得互相猜話。",
+                "action": "提出依法最小知情的自願協調邀約，未同意不拉人評理。",
+                "tradeoff": "協調時間與關係升高風險。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我也會被酸到；我直接說這句讓我難受，請把不滿說具體，不拿孩子當籌碼。",
+              "action": "坦承個人感受並邀家長以具體事項表達，不指控其已脅迫、不要求撤回合法意見。",
+              "tradeoff": "暴露情緒且可能換來更尖銳回應。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2838874195
+            },
+            "selectedIds": [
+              1,
+              2,
+              3
+            ],
+            "finalChoiceMap": {
+              "A": 1,
+              "B": 2,
+              "C": "emotional",
+              "D": 3
+            },
+            "optionsDigest": "bf38890191de08542eb818b416c99cb525adb19455c9232030f6f89629062833"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展配合與不滿同時維持的微妙關係。",
+            "B": "可承接好意配合與舊怨是否能具體說開。",
+            "C": "可發展教師不永遠笑著吞下軟釘子的關係代價。",
+            "D": "可發展有界線的溝通能否讓暗示轉成明確問題。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +184,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a83875e88adf39bf60723e61aa7614b814958b96ac62e95f612f440eb7fdec06",
+    "draftSha256": "92ad2712f4f50eca55c6eecfd9b675545f1b5b2b55b3387c9d9cd39b403b4600",
     "seedAssignmentVersion": 1
   }
 }

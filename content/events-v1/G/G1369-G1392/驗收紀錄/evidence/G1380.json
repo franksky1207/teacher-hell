@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b5d4ba590e8a62b1c8a1078fc85ce5126b167f275cae0d09f575bec0e89f0d60",
+      "checkedAt": "2026-11-28T00:57:41.604Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "現在安全可走就折返，核對後當面補款。",
+            "action": "在路況安全下返回原攤核對並補付本人差額，不要求對方感謝。",
+            "tradeoff": "多走路提重物、可能淋濕。"
+          },
+          {
+            "id": 2,
+            "text": "先循收據聯絡，問有沒有本人可核實的合法轉帳方式。",
+            "action": "聯絡原攤確認差額及收款身分後再依同意方式補付，不先付不明帳號。",
+            "tradeoff": "花核對時間且未必回覆。"
+          },
+          {
+            "id": 3,
+            "text": "我請主辦協助聯絡攤商，不把錢直接丟給不明代收。",
+            "action": "查詢正式主辦窗口協助聯繫，須核實授權才付款，無法成立另循合法方式。",
+            "tradeoff": "增加聯絡與等待。"
+          },
+          {
+            "id": 4,
+            "text": "我先把需冷藏的帶回，再在安全可行時折返補付。",
+            "action": "依食品保存需要先回家安置，再確認攤位仍營業與安全往返，補款不放棄。",
+            "tradeoff": "多一趟行程，也可能趕不上收攤。"
+          },
+          {
+            "id": 5,
+            "text": "先聯絡說明，約他同意的下次合法交付款，不自說明天就有攤。",
+            "action": "向原攤提出延期補付請求，待對方同意時地，不假定隔日營業。",
+            "tradeoff": "延後掛念且需再安排時間。"
+          },
+          {
+            "id": 6,
+            "text": "如果正式代收點確認可用，我詢問能否走有憑證的代付。",
+            "action": "透過核實的主辦或攤商授權管道詢問有憑據代付，未獲准不交錢給第三人。",
+            "tradeoff": "需確認規範與可能費用，未必有服務。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我懶得提著繞，願意花自己的交通費，先叫合法車載我回攤位。",
+          "action": "因想減輕手重仍立刻補款，提出自費合法交通到原攤，確認安全上下車與可停靠才搭，差額照實核對付清。",
+          "tradeoff": "交通費可能比想像高，也可能叫不到車。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 438494296
+        },
+        "selectedIds": [
+          6,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "d3288461869367a43c771c929a6fc0b775f4570792ca5148669ac4452ccb4321"
+      },
+      "consequenceDirections": {
+        "A": "可發展便利代付不等於把錢放下就完成的責任。",
+        "B": "可發展手頭寬裕用花錢解決自己的懶，與單純步行折返不同的私人取捨。",
+        "C": "可承接省折返與收款安全的取捨。",
+        "D": "可發展即時結清的安心與體力代價。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f92d7813a1f4cb8fc52f442a730ca349610fc095e284eef0e0d91a155f6815a5",
+    "draftSha256": "b5d4ba590e8a62b1c8a1078fc85ce5126b167f275cae0d09f575bec0e89f0d60",
     "seedAssignmentVersion": 1
   }
 }

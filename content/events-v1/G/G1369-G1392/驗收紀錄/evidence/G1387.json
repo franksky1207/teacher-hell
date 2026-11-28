@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8e2e9e2b9bd07e28cb9986e2f744a7b9b57371ed463b6591f9fb9b6ac9d71150",
+      "checkedAt": "2026-11-28T00:57:41.615Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我自願各聯絡一次確認狀況，資料照實，不替你承諾收齊。",
+            "action": "於合法工作時段有限聯絡家長，真實紀錄不冒簽或代本科結案。",
+            "tradeoff": "失去一段休息，可能仍缺。"
+          },
+          {
+            "id": 2,
+            "text": "這次由你本科直接追，我不再另開一條聯絡。",
+            "action": "婉拒額外代催，正常學生支持與正式缺件接續不變。",
+            "tradeoff": "同事可能覺得交情不夠用。"
+          },
+          {
+            "id": 3,
+            "text": "我陪你問主管合法補件怎麼列，不自己幫你改規則。",
+            "action": "額外共同詢問正式統計缺件流程，未回覆不自行稱結案。",
+            "tradeoff": "多協調與等候。"
+          },
+          {
+            "id": 4,
+            "text": "我給學生一段合法課間自行確認帶回狀態，不影響上課。",
+            "action": "提供一次有限自願聯絡協助，家長不方便仍依原程序。",
+            "tradeoff": "教師須控時，學生可能也聯絡不到。"
+          },
+          {
+            "id": 5,
+            "text": "未來收件窗口直接由你設，我協助一次說明後就不轉傳。",
+            "action": "提出後續合法分工調整，必要權益與原責任接續先維持。",
+            "tradeoff": "初期需說明，好友可能覺得退回工作。"
+          },
+          {
+            "id": 6,
+            "text": "我替你整理已知缺件一般原因供科內未來討論，不叫家長再趕。",
+            "action": "額外去識別彙整實際已知資訊，不捏造原因或代填同意。",
+            "tradeoff": "整理耗時，今天仍不能全齊。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我午休真的不想再接電話；我願把自己可合法做的空白回條裝袋工作接走，你來負責和家長說。",
+          "action": "坦承想保護休息，提出本人合法工作段額外承擔已存在本科回條的普通文書準備，必要個資最小化，家長聯絡仍由科任，不代簽或結案。",
+          "tradeoff": "增加手工瑣務，科任可能不接受交換。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1233446692
+        },
+        "selectedIds": [
+          5,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "08e4d17090790254b6917d14ab4153ac08f71bbf6ce6d2d44892831d3dcf2b17"
+      },
+      "consequenceDirections": {
+        "A": "可發展親近好友是否願承認真正不想做的是聯絡，而非只差紙張。",
+        "B": "可發展好友對盡力與完整不是同一件事的反應。",
+        "C": "可承接密切注意導師行程不再等於隨時找得到代辦。",
+        "D": "可承接原則與友情邊界。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b9e1805b15f97eac9d3fada624d78df5ca6c833460f8710e1b2119dfe4260741",
+    "draftSha256": "8e2e9e2b9bd07e28cb9986e2f744a7b9b57371ed463b6591f9fb9b6ac9d71150",
     "seedAssignmentVersion": 1
   }
 }

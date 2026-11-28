@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b5e5394fee3b12cf6b3b9c35bf826e46d08fa9f49948590ad1470bd75d1aabec",
+      "checkedAt": "2026-11-28T00:57:41.613Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次直接帶回，別再為它多跑程序。",
+            "action": "婉拒新增受贈協助，物主帶回，不擅使用。",
+            "tradeoff": "承受拒絕敬意的尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "你願意，我陪問總務實際需求與正式捐贈可行性。",
+            "action": "提出合法公共受贈查詢，未核可不收物或保證用途。",
+            "tradeoff": "多一段行政工作。"
+          },
+          {
+            "id": 3,
+            "text": "我把正式管道給你，自行提案，我不當私人中介。",
+            "action": "提供現有合法受贈資訊，教師不額外代辦或背書。",
+            "tradeoff": "家長需自己處理，可能感到疏遠。"
+          },
+          {
+            "id": 4,
+            "text": "若你考慮退貨，我幫你核對未拆封狀態與原賣方資訊。",
+            "action": "徵其意願協助查消費退貨條件，不保證退款或代決。",
+            "tradeoff": "額外聯絡，可能有期限。"
+          },
+          {
+            "id": 5,
+            "text": "你可先寫使用需求建議，不送這支，我依法轉給設備評估。",
+            "action": "經同意轉交不含不必要個資的一般功能需求，不代承諾採購。",
+            "tradeoff": "需整理，心意從實物轉文字。"
+          },
+          {
+            "id": 6,
+            "text": "如果你想支持其他合法單位，我協助查公開需求，不替你轉物。",
+            "action": "依本人意願查正式受贈資訊，未同意不交付。",
+            "tradeoff": "花查詢與可能運送時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也喜歡這功能，可不想用敬意付帳；我請你教我怎麼判讀公開規格，東西仍帶回。",
+          "action": "坦承被產品吸引，邀家長自願用公開資料向成人說明一般規格，不拆物、不作購買承諾或洩學生資料。",
+          "tradeoff": "花私人交流時間，可能讓家長覺得教師想用卻拒收更生分。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1096936540
+        },
+        "selectedIds": [
+          6,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "b6ccaf2e903a831eb704b26ba3940f9d91b3a71d61b85c64512f8aba22926980"
+      },
+      "consequenceDirections": {
+        "A": "可發展尊重其數位專業與不接受昂貴物品能否同時成立。",
+        "B": "可承接精心選物後接受未被使用的損失。",
+        "C": "可發展熱心資源提供者對簡單退回的失落。",
+        "D": "可發展只想幫這位教師與公共支援不同的情感。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "990b073855cf421131373fa5c97f4537d65fc71d0b2cc7d18dd1a574badd4e90",
+    "draftSha256": "b5e5394fee3b12cf6b3b9c35bf826e46d08fa9f49948590ad1470bd75d1aabec",
     "seedAssignmentVersion": 1
   }
 }

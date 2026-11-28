@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "be5f00fb1bfeef75456159aea2df5a6c8053c40916f8922a056d40a862f0d20e",
+      "checkedAt": "2026-11-28T00:57:41.600Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "先問每個人，真都願意也有安全餘裕才照原規則打完。",
+            "action": "提出自願繼續原局的意向，逐一確認雙方成人與場館許可，不足條件即停止。",
+            "tradeoff": "可能繼續耗體力，也可能被拒。"
+          },
+          {
+            "id": 2,
+            "text": "同意記平手，今晚就停。",
+            "action": "徵求雙方合意如實以未分勝負結束，不假報勝利。",
+            "tradeoff": "心裡留未完成的氣。"
+          },
+          {
+            "id": 3,
+            "text": "我自己退出，其他人要不要換合法自願替手由他們決定。",
+            "action": "結束本人參與，依共同規則讓其他成人自行決定是否續玩或停止。",
+            "tradeoff": "放棄親自贏球機會，可能錯過結局。"
+          },
+          {
+            "id": 4,
+            "text": "不爭那球，問大家願不願另定一個短決勝方式，不同意就平手。",
+            "action": "提出合意重設休閒決勝方式，規則先清楚且可自由拒絕，不宣稱原判已改。",
+            "tradeoff": "新方式可能被認為不公平。"
+          },
+          {
+            "id": 5,
+            "text": "這局先保留未完，改天有空再約，不要求別人一定回來。",
+            "action": "提出自願另日續局邀約，記錄真實未完狀態，不保證後續一定成行。",
+            "tradeoff": "掛念延長、再約時間可能更麻煩。"
+          },
+          {
+            "id": 6,
+            "text": "先短休一次，再各自決定，不把休息當答應續打。",
+            "action": "在場館允許下提出限定安全休息，雙方之後自選是否結束。",
+            "tradeoff": "多花等候，熱身冷下來也未必適合再打。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不甘心，但不想再靠全隊陪我撐；今晚自己退場，另向場館問私人練習時段。",
+          "action": "坦白勝負執念並結束本人本局，另查詢本人自願、自費安全練習的合法時段，未預約不稱成立、不要求隊友陪。",
+          "tradeoff": "失去本局勝負並可能增加未來費用與時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 339128601
+        },
+        "selectedIds": [
+          2,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "cb80d526dcb31e01e9ad307688b48984d301f9979f43e58b0ee9e77b01dd8fb8"
+      },
+      "consequenceDirections": {
+        "A": "可承接原則與休息在沒有贏家的晚上怎麼共存。",
+        "B": "可發展執著一局的教師是否能接受無法圓滿。",
+        "C": "可發展好勝心由動員眾人轉自己承擔的代價，與單純退出不同。",
+        "D": "可承接講原則的人是否願意在事前同意後改尺度。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1b972403e8eecb563bda39cabb602ce02152580676a16e56e71566a59f2bd132",
+    "draftSha256": "be5f00fb1bfeef75456159aea2df5a6c8053c40916f8922a056d40a862f0d20e",
     "seedAssignmentVersion": 1
   }
 }

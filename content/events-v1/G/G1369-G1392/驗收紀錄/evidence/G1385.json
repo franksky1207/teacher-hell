@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b6688c14618256cc8a74cb7dfc399a6d0a29368c024fb576cc612bae7c21b91b",
+      "checkedAt": "2026-11-28T00:57:41.612Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依議事時間公開反對，說具體風險而非他人小氣。",
+            "action": "以合法住戶發言資格提出反對理由，不代全棟表決。",
+            "tradeoff": "可能得罪鄰居。"
+          },
+          {
+            "id": 2,
+            "text": "我寫意見單，今晚不當場辯。",
+            "action": "將本人具名意見依正式管道交付，不假定提案已撤。",
+            "tradeoff": "書寫時間與未說出口的悶氣。"
+          },
+          {
+            "id": 3,
+            "text": "我請管委公開可提供的費用與安全評估，再談節省。",
+            "action": "提出合法資訊說明需求，不索取保全個資或機密契約。",
+            "tradeoff": "需等待且可能資料有限。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問有沒有不減安全服務的其他節費選項，願意另做功課。",
+            "action": "自願蒐合法公開節費資訊供有權者評估，不保證節省額。",
+            "tradeoff": "花私人時間，可能無替代方案。"
+          },
+          {
+            "id": 5,
+            "text": "散會後若他願意，我私下問省一百對他卡在哪。",
+            "action": "提出尊重的成人交流，不探不願透露的財務或拿私人資助換支持。",
+            "tradeoff": "可能被拒或被視為居高臨下。"
+          },
+          {
+            "id": 6,
+            "text": "我先離席冷靜，保留之後合法提出書面意見。",
+            "action": "停止本人非必要即時辯論，不擅離正式義務或假定表決權。",
+            "tradeoff": "可能錯過後續討論，怒氣仍在。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我火大到想自己多付，但不拿錢堵人嘴；我詢問是否有依法自願補助公共安全的正式機制。",
+          "action": "因不願砍安全而提出本人可能自願額外負擔的合法機制查詢，未核可不付款、不購買表決影響或承包僱用。",
+          "tradeoff": "可能多花私人款且引發公平爭論，機制未必存在。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3040335762
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "ac6b3b519782bbeaaf23bdc3a649a535eba12a016ab312115c859439d7c34328"
+      },
+      "consequenceDirections": {
+        "A": "可發展怒氣如何在公開關係中留下痕跡。",
+        "B": "可承接經濟寬裕者是否願承擔不只說反對的勞動。",
+        "C": "可發展責任感與理解不同經濟處境的困難。",
+        "D": "可發展用自身資力處理公共分歧是否真有幫助，不能把願付錢等同較有道德。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "98cff19e84c131b7ab8bab551baa32d488f14d6f92905cecfb025e0c843510d1",
+    "draftSha256": "b6688c14618256cc8a74cb7dfc399a6d0a29368c024fb576cc612bae7c21b91b",
     "seedAssignmentVersion": 1
   }
 }

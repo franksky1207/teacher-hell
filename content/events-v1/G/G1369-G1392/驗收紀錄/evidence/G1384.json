@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e86e6e9c620931a7ee0288d44c0ae2f75957fb396148228a50c31191ed432e80",
+      "checkedAt": "2026-11-28T00:57:41.611Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "維持下午，但在核准班務範圍內早五分鐘準備。",
+            "action": "提出不侵占正課與休息的合法收尾調整，核實可用才採行。",
+            "tradeoff": "壓縮其他非必要班務。"
+          },
+          {
+            "id": 2,
+            "text": "午前只移走今天不用的，下午用書留好。",
+            "action": "提出自願按實際課務分段整理，保留安全存放與所有物主權益。",
+            "tradeoff": "需多次整理與說明。"
+          },
+          {
+            "id": 3,
+            "text": "我先讓全班提出各自課本收放需求，再談改期。",
+            "action": "於合法時段自願收集一般需求，不點名嘲笑凌亂者。",
+            "tradeoff": "占班務且未必一致。"
+          },
+          {
+            "id": 4,
+            "text": "不先換時段，我陪你看一次真實收尾是哪裡卡。",
+            "action": "額外觀察一個合法清掃收尾，不蒐不必要個資、不把尚未觀察當證據。",
+            "tradeoff": "教師少課間，未必代表每次。"
+          },
+          {
+            "id": 5,
+            "text": "我請權責單位看有沒有合規存放改善，不先叫大家加買箱。",
+            "action": "詢問現有場地設備選項，未取得不預設空間。",
+            "tradeoff": "增加協調且可能無資源。"
+          },
+          {
+            "id": 6,
+            "text": "這週不試新法，我們保留原收尾並明確不要趕車前才臨時加工作。",
+            "action": "不新增試辦，在既定合法流程內限制教師非必要臨時加項，必要清掃與返程照常。",
+            "tradeoff": "幹部可能覺得計畫沒被用。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常把桌上越清越高；我願先把自己帶進班的非必要紙本減一疊，別只要求你們騰空。",
+          "action": "承認自身收納壓力，在不減必要教材下減少本人非必要紙張進班，額外重整教學攜帶方式。",
+          "tradeoff": "花教師整理時間，失去隨手紙本便利。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4077349273
+        },
+        "selectedIds": [
+          5,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 6,
+          "D": 1
+        },
+        "optionsDigest": "27b0328a14e5973ab5cc688af763285693e12bf4eb0e433aac3de180c19c62a8"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師也承擔空間取捨時，幹部是否重新看待清空效率。",
+        "B": "可發展程序更動未必只靠挪時間的理解。",
+        "C": "可承接支持整潔與不把完美加在最後一刻的不同期待。",
+        "D": "可發展幹部是否接受小改而非自己完整方案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3f549da7a3ec643caf7b3b8a25de74b439388979ff9a5bbb2090ede83cb26c26",
+    "draftSha256": "e86e6e9c620931a7ee0288d44c0ae2f75957fb396148228a50c31191ed432e80",
     "seedAssignmentVersion": 1
   }
 }

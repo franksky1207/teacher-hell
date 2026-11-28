@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4c64a43892d0d62785ce4ce418589740bff405fcdaa2e12e21c6a0fa4e08a7f8",
+      "checkedAt": "2026-11-28T00:57:41.590Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "今天全帶回，等正式申請和照顧條件談妥再說。",
+            "action": "婉拒當日交付，協調安全合法領回，不預約必收。",
+            "tradeoff": "家長白跑且搬運負擔大。"
+          },
+          {
+            "id": 2,
+            "text": "若所有條件核准，只收補齊底盤的小盆，其餘帶回。",
+            "action": "提出少量受贈申請，須安全位置、自願照顧及底盤齊備才交付。",
+            "tradeoff": "需整理與追蹤，未必獲准。"
+          },
+          {
+            "id": 3,
+            "text": "我陪你問校方正式植栽區是否有需求，不先擺花台。",
+            "action": "詢問有權單位接受條件，物主同意與核可後才移交。",
+            "tradeoff": "額外協調，可能沒合適位置。"
+          },
+          {
+            "id": 4,
+            "text": "我先讓班上自願談照顧意願，不把你送來當大家答應。",
+            "action": "於合法班務徵詢一般植栽照護意願，未成立不收物、不交家長他生資料。",
+            "tradeoff": "討論耗時，可能沒人願。"
+          },
+          {
+            "id": 5,
+            "text": "你願意的話，先留下照片讓大家認識，植物今天不留。",
+            "action": "經物主同意以不含個資的照片供班內合法自願觀察，不將照片當實體受贈。",
+            "tradeoff": "需整理分享，家長可能嫌只看不收。"
+          },
+          {
+            "id": 6,
+            "text": "若只是想幫忙美化，我請你先提一份不占窗台的構想，核可再談。",
+            "action": "徵詢家長自願提出一般合法空間構想供評估，無現成安全位置不假定有。",
+            "tradeoff": "增加提案與等待，也可能被否決。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想收又怕自己養死；我坦白不接照顧責任，願幫你安全把自己的盆送回校門交接點。",
+          "action": "承認自己的私人喜歡與懶得長期養護，婉拒由導師承擔照顧，額外於可安全負荷及校規許可下協助物主搬到核准交接處，不擅搬去別處寄放。",
+          "tradeoff": "多花時間體力，家長仍可能覺得好意退回。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1096032506
+        },
+        "selectedIds": [
+          6,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "af087dac29ac2739409811675403f2c9876e9b0d134266fe4f919d8ffdab7ab2"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師承認沒有園藝熱情卻願幫眼前一小段的人情尷尬。",
+        "B": "可發展想一次美化與實際容量的取捨。",
+        "C": "可發展信任教師與學生不一定想養的差異。",
+        "D": "可發展強執行者能否接受尚未動手的合作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "24435715b289706eb71e9afe5f6202bc745585e8fc37320186d2fec4ce04e310",
+    "draftSha256": "4c64a43892d0d62785ce4ce418589740bff405fcdaa2e12e21c6a0fa4e08a7f8",
     "seedAssignmentVersion": 1
   }
 }

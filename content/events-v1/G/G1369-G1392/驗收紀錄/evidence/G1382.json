@@ -16,14 +16,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "12644e3cf0848b59d62afdf634dfde2c05815f67d35170df3b2c42e12741261c",
+      "checkedAt": "2026-11-28T00:57:41.607Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我再留十分鐘，提供你可自行選用的公開作息工具資訊。",
+            "action": "額外說明一般裝置提醒與家庭自願約定資訊，不代設密碼或強斷緊急網路。",
+            "tradeoff": "延後離校，未必適用設備。"
+          },
+          {
+            "id": 2,
+            "text": "今天不追加方案，先讓你休息，正常管道仍在。",
+            "action": "完成必要說明後結束非緊急通話，不承諾私人催睡。",
+            "tradeoff": "家長可能感孤單。"
+          },
+          {
+            "id": 3,
+            "text": "我白天問孩子願不願談自己的作息，不替你監督。",
+            "action": "提出合法自願一般作息談話，必要支持照常，不回報私密對話。",
+            "tradeoff": "增加個別時間，孩子可能猜家長來電。"
+          },
+          {
+            "id": 4,
+            "text": "若家裡有願意的照顧成人，你們先自願協調，我只提供一般說法。",
+            "action": "額外協助家長想家庭溝通問題，不假定已有其他成人或強派照顧。",
+            "tradeoff": "多一段解說，可能無人可分擔。"
+          },
+          {
+            "id": 5,
+            "text": "我替你查正式家庭支持資訊，不先替你找人介入。",
+            "action": "核對公開一般支持管道，依法保護個資，不保證取得服務。",
+            "tradeoff": "查詢時間與可能不適用。"
+          },
+          {
+            "id": 6,
+            "text": "我們約正常工作時間再談一個可持續的小目標，不今晚一次全做。",
+            "action": "提出自願有限後續通話邀約，不無限追蹤或保證家庭改變。",
+            "tradeoff": "增加未來聯絡，眼前仍無立刻解方。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想早睡；我願公開把自己的夜間非緊急回訊時段收回，不再讓孩子看到老師也一直在線。",
+          "action": "因不願說一套做一套，額外調整本人非緊急回訊習慣並向必要聯絡對象說明，保留緊急管道，不宣稱自己過去每晚必在線。",
+          "tradeoff": "白天需承接累積訊息，家長可能覺得更難找人。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1289044781
+        },
+        "selectedIds": [
+          5,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "71511ef1f6641ac765c0073392b18cda3278bc13a711435ef51c59e3e88ed335"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師保護自己作息與家長盼即時威嚴介入的落差。",
+        "B": "可承接疲勞家長對慢慢協商的耐心。",
+        "C": "可發展家長期待教師威嚴卻收到其他資源的失望或安心。",
+        "D": "可承接平時安穩家庭遇到臨時失衡的現實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7c12860fca4ae8e5406a8f44ed0b75e73fac30d746fe0a763f622b75c2c42614",
+    "draftSha256": "12644e3cf0848b59d62afdf634dfde2c05815f67d35170df3b2c42e12741261c",
     "seedAssignmentVersion": 1
   }
 }

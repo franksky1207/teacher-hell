@@ -16,14 +16,82 @@
     "G03",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1243ab0450742ee111aa69cbff609a25a823a718f1e7fd1f9addb63416c79c3f",
+      "checkedAt": "2026-11-28T00:57:41.599Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "輪流先留著，我額外準備每次交接的簡單支持。",
+            "action": "在合法班務內增加適量交接提示，不把內向者標為問題。",
+            "tradeoff": "教師增加準備，未必立刻提速。"
+          },
+          {
+            "id": 2,
+            "text": "我先聽各組實際卡點，不從家長聊天直接換制。",
+            "action": "徵詢學生自願去識別使用經驗，必要支持照常。",
+            "tradeoff": "占班務整理，家長可能嫌慢。"
+          },
+          {
+            "id": 3,
+            "text": "我提出自願雙人分工，不把統籌全壓一位。",
+            "action": "依校規公平討論自願協作角色，尚未同意不任命。",
+            "tradeoff": "需重新分工，可能協作更慢。"
+          },
+          {
+            "id": 4,
+            "text": "若要選舉，我把包含負荷與參與保障的方案交全班正式討論。",
+            "action": "將合法固定組長提案與必要權益保障一起討論，未定案不實施，不強迫當選者。",
+            "tradeoff": "準備討論與可能分裂意見。"
+          },
+          {
+            "id": 5,
+            "text": "我另和你談你家孩子希望扮演什麼角色，不替其他家長代問。",
+            "action": "提出自願親師對話，學生自身意願需另徵詢，不洩他生資料。",
+            "tradeoff": "額外時間，家長可能覺得公共建議被縮小。"
+          },
+          {
+            "id": 6,
+            "text": "這期先不改，我把未來檢討時間說明，不接受即時換人。",
+            "action": "維持合法原安排與必要支持，提出合理下一次制度檢討時點。",
+            "tradeoff": "家長可能持續串聯，教師承受等待壓力。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也常把事交給快手省麻煩；這次我願自己陪一輪新組長，不讓孩子替成人效率買單。",
+          "action": "承認省事私心，額外於合法可用時段提供一輪新任組長一般統籌陪做，不代其決策、不假定其無能或需要診斷。",
+          "tradeoff": "教師少工作餘裕且可能仍進度慢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1539814730
+        },
+        "selectedIds": [
+          2,
+          1,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 2,
+          "D": 1
+        },
+        "optionsDigest": "ac78e4717102f0c8823ba34d2cda877818f02987cdf228bfc9720622c2eacee9"
+      },
+      "consequenceDirections": {
+        "A": "可發展固定能者論是否容納互補而非競選。",
+        "B": "可發展家長是否看見教育選擇由教師也付出實際代價。",
+        "C": "可承接社交共識與真實學生需求不同。",
+        "D": "可發展家長是否接受練習需要成本。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "721611db47ebf739aa00c01d390a8780ea5c08e9fa0e6726dc1f9b63b1321535",
+    "draftSha256": "1243ab0450742ee111aa69cbff609a25a823a718f1e7fd1f9addb63416c79c3f",
     "seedAssignmentVersion": 1
   }
 }

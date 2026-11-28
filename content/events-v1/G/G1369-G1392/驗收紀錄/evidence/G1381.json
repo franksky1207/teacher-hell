@@ -15,14 +15,82 @@
     "G01",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "29aa7ec18c909628e884e758be0455dc02d7d2de3a8c25f4624406592ed7a376",
+      "checkedAt": "2026-11-28T00:57:41.606Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另約一段照原規準讀本人可分享的表現，不看他組私資。",
+            "action": "額外提供有限原評比解讀，不保證變更。",
+            "tradeoff": "多花說明時間。"
+          },
+          {
+            "id": 2,
+            "text": "你有具體疑問就循正式查核，我不額外開私人評獎。",
+            "action": "維持正常查核申復，婉拒非必要私下重新比較。",
+            "tradeoff": "家長可能認為敷衍。"
+          },
+          {
+            "id": 3,
+            "text": "若孩子願意，我們先聽他對這次的感受。",
+            "action": "邀合法自願親師生討論，不代學生表態或洩私談。",
+            "tradeoff": "多方時間，孩子可能不想再看影片。"
+          },
+          {
+            "id": 4,
+            "text": "座位那件事我另外約你談，不和獎項一起結帳。",
+            "action": "提出成人自願舊事會談，必要評比處理不等待和解。",
+            "tradeoff": "需面對反感與情緒成本。"
+          },
+          {
+            "id": 5,
+            "text": "我願寫一份具體努力回饋，但不另給名次。",
+            "action": "額外就可核實的該生努力作文字回饋，不捏造或比較。",
+            "tradeoff": "書寫耗時，可能被嫌安慰獎。"
+          },
+          {
+            "id": 6,
+            "text": "未來評比要怎麼說更清楚，我徵詢全班意見再提調整。",
+            "action": "於合法班務自願討論未來公開規準，不回改本次或只依單家提議。",
+            "tradeoff": "占班務整理，也可能沒有共識。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也不想每次小獎都像被告；我請主管陪同下一次正式說明，自己不再加私人辯論場。",
+          "action": "因被指報復而壓力大，額外向主管提出依法陪同說明需求，必要受理與支持照常。",
+          "tradeoff": "暴露自己的難處並可能升高關係緊張。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3899617940
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "6300f370588dda16c8a9a10dac46fcba47aca78fb652e912fe42f6020d78e8b1"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長競爭期待與孩子真正在意之處。",
+        "B": "可承接願配合卻一直沒消失的不滿。",
+        "C": "可承接家長認為自己受損與全體制度需要的差別。",
+        "D": "可發展家長對教師尋求成人支援的反應，不以主管出席保證結案。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d95c44a06eab39f980b913e96e0f388a11ffae88e84d9796479da260a78a7c8f",
+    "draftSha256": "29aa7ec18c909628e884e758be0455dc02d7d2de3a8c25f4624406592ed7a376",
     "seedAssignmentVersion": 1
   }
 }

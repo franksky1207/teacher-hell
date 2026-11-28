@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "02fddc3daa81aa4ae72c17697b3e055c9e4f52dd3f0e44f7cd5715b38dd14d30",
+      "checkedAt": "2026-11-28T00:57:41.617Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "這次不補送，請孩子依現有合法穿著參加。",
+            "action": "婉拒非必要中午送物，必要健康與活動支持不變。",
+            "tradeoff": "家長可能更覺得針對。"
+          },
+          {
+            "id": 2,
+            "text": "先問孩子真想換嗎，願意再查合法收件時段。",
+            "action": "徵詢該生意願並核對正常管道，不保證有下午接收。",
+            "tradeoff": "增加聯絡，可能白忙。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問有權者能否在非交接時段合法交付，不先叫你出門。",
+            "action": "提出正式時段詢問，未核可不安排或占警衛工作。",
+            "tradeoff": "多協調與等待。"
+          },
+          {
+            "id": 4,
+            "text": "我提供現有社團服裝規定，讓你自己判斷是否還需要。",
+            "action": "額外核對合法公開服裝資訊，不替社團教師放寬或限制權益。",
+            "tradeoff": "花查詢時間，家長可能嫌岔題。"
+          },
+          {
+            "id": 5,
+            "text": "遲到那件事我另約你談，不用衣服當互相試探。",
+            "action": "提出成人自願合法溝通邀約，記錄必要真實不改。",
+            "tradeoff": "面對不滿與額外時間。"
+          },
+          {
+            "id": 6,
+            "text": "如果家長本人和校方都同意，我詢問可否由合法成人在核准點親交，不代收存物。",
+            "action": "查詢合規有權成人直接交付的可能，無許可不行動，不讓學生出校門自取。",
+            "tradeoff": "需要多方同意，可能不值得。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕被說記仇，但不想拿同事休息換清白；我具名請主管說明這套收件界線。",
+          "action": "坦承被針對指控的壓力，額外請有權主管協助公開可分享的一般收件規則，不揭個案、不交換舊紀錄。",
+          "tradeoff": "增加正式溝通，家長可能覺得小事被放大。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1707133010
+        },
+        "selectedIds": [
+          2,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "108934d5efb157680bd83dc10a4d67b68d9c4751ec1232a753734b5b111249a9"
+      },
+      "consequenceDirections": {
+        "A": "可發展家長願不願把舊怨直接說而非透過通融測試。",
+        "B": "可承接家長有空與孩子實際需求不一定相同。",
+        "C": "可發展教師寧承受不被喜歡也不拿別人休息做人情的代價。",
+        "D": "可承接非必要便利會占用多少成人時間的現實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "447b4543fc38fc5aeb3d44f52148d4df337898c50c2ff1b6a5ca32810dcfa7c0",
+    "draftSha256": "02fddc3daa81aa4ae72c17697b3e055c9e4f52dd3f0e44f7cd5715b38dd14d30",
     "seedAssignmentVersion": 1
   }
 }

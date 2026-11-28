@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1dbfefc7a687f243c707063488d5cac4d7d62486d88329089bf4c44f66ee507f",
+      "checkedAt": "2026-11-28T00:57:41.622Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "前面不改，若你願意，提案放到後方核准區。",
+            "action": "徵詢本人意願改用合法後方展示位置，必要校產與安全確認後才貼。",
+            "tradeoff": "失去原想裝飾時鐘的效果。"
+          },
+          {
+            "id": 2,
+            "text": "我先問有權者能否短期試貼安全範圍，不答應一定放寬。",
+            "action": "依法提出前牆有限裝飾評估，未獲准不施工。",
+            "tradeoff": "協調耗時且可能遭拒。"
+          },
+          {
+            "id": 3,
+            "text": "先聽全班對前方視線的感受，不靠誰嗓門大。",
+            "action": "於合法班務自願討論視覺需求，安全與既定規則不由多數任意撤除。",
+            "tradeoff": "占班務，可能有人嫌花邊。"
+          },
+          {
+            "id": 4,
+            "text": "你可以先畫紙上模型，我額外看設計，不當准貼。",
+            "action": "提出自願原創模型回饋，非強制新增作業，不帶學生攀高。",
+            "tradeoff": "教師多閱讀回饋，實體未必成。"
+          },
+          {
+            "id": 5,
+            "text": "這次不加裝飾，我正常謝謝你分享，保留原牆面。",
+            "action": "婉拒非必要改規與活動，不阻止合法私下創作。",
+            "tradeoff": "學生可能失落，教師保留時間。"
+          },
+          {
+            "id": 6,
+            "text": "若你願意，我詢問可否做成合規自願桌面小卡，不貼公牆。",
+            "action": "查核校規及使用者自願後提出不干擾教學的小卡形式，不強派或要求購買。",
+            "tradeoff": "增加材料與分發安排，可能沒人想要。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實也喜歡可愛的；我自願畫一個不掛上牆的老師時鐘給你挑錯。",
+          "action": "因不想只用規定結束聊天，額外畫本人原創紙上造型請學生自願給意見，不宣稱取代正式時鐘或批准前牆裝飾。",
+          "tradeoff": "花私人餘裕且可能被笑畫得醜，原提案仍可能不准。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2308563611
+        },
+        "selectedIds": [
+          1,
+          6,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "979590276ab632a04677c1eea6485fdc6a282deab0f0b9eaddaa87f7080df7a7"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師也想參一腳卻須守公共空間界線的輕鬆尷尬。",
+        "B": "可承接公共裝飾變個人可選作品的趣味差異。",
+        "C": "可發展親近互動不必每次換來答應。",
+        "D": "可發展開朗提案者對換位置的失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "09698dd9119b3b56795c43bace463b2a4fbf7650b698e09b1aae9956c13516b6",
+    "draftSha256": "1dbfefc7a687f243c707063488d5cac4d7d62486d88329089bf4c44f66ee507f",
     "seedAssignmentVersion": 1
   }
 }

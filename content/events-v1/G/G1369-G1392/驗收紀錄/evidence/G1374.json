@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8e71618e1d8da9f761f185f86d668bce1ec34e89a1082d607f651f9642c0244f",
+      "checkedAt": "2026-11-28T00:57:41.594Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "她願意的話，我額外陪她整理正式事實說明，不要求你一定改分。",
+            "action": "依法協助學生書寫真實借物經過，正式申復由權責者處理。",
+            "tradeoff": "增加書寫與同事情面壓力。"
+          },
+          {
+            "id": 2,
+            "text": "必要說明完成後，我不另代辦，請她自行用既有管道。",
+            "action": "維持正常申復與支持，婉拒額外代理工作，不阻擋學生詢問。",
+            "tradeoff": "學生可能覺得不被挺，導師保留時間。"
+          },
+          {
+            "id": 3,
+            "text": "我邀你和她自願談一次各自怎麼理解規定。",
+            "action": "提出合法知情自願會談，不交換改分或強迫道歉。",
+            "tradeoff": "多方時間，也可能談得更僵。"
+          },
+          {
+            "id": 4,
+            "text": "我向教學窗口詢問一般程序說明，讓全班知道如何合法借物。",
+            "action": "額外詢問一般考場借用文具流程的公開說明，不就個案預斷違規。",
+            "tradeoff": "花協調與班務，仍無法消除本次委屈。"
+          },
+          {
+            "id": 5,
+            "text": "未來這類規準的合理性，我另提出教學討論，不回改本次。",
+            "action": "以教師一般意見提出未來評量規則討論，必要個案申復另循規。",
+            "tradeoff": "具名專業摩擦與準備時間。"
+          },
+          {
+            "id": 6,
+            "text": "我先陪她練下次需要文具時怎麼舉手，不把這當她不能難過。",
+            "action": "額外提供自願情境練習，必要支持與申復不因此取消。",
+            "tradeoff": "少課間餘裕，學生可能覺得被檢討。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不服氣看眼淚就像站錯邊；我直接告訴同事，我會照顧她，但不替任何人預答分數。",
+          "action": "坦白被要求站隊的壓力，額外與科任建立個案溝通邊界，說明導師可承擔情緒支持但不背書評分結果，不免其必要說明。",
+          "tradeoff": "可能傷信任，需面對不再獲完全支持的失落。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2167879468
+        },
+        "selectedIds": [
+          4,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "9f9e529ec20a939b6f291dd78fbfa5c3efc5f33c4a8bd2f505f65255ed5ab14a"
+      },
+      "consequenceDirections": {
+        "A": "可發展同事能否區分相信導師為人與要求其認同所有尺度。",
+        "B": "可發展規範接受與同理生活小失誤的張力。",
+        "C": "可承接制度可理解性與同事認為多此一舉的反應。",
+        "D": "可承接情緒照顧不等於替其爭到結果的失望。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "29fe379943d762b89ecfac37f5bfd2dd41267f3f0c8ea7628cec8cf9973e794c",
+    "draftSha256": "8e71618e1d8da9f761f185f86d668bce1ec34e89a1082d607f651f9642c0244f",
     "seedAssignmentVersion": 1
   }
 }

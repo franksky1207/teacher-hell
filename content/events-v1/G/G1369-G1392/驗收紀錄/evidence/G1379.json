@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9e967edcd0bdc5ae180800888a008dbcba9dfdd503bd792d6a3c143994401376",
+      "checkedAt": "2026-11-28T00:57:41.603Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "照抽籤認真打，不另外約輸贏交換。",
+            "action": "向朋友表明依法公平參賽，保留友情但不保證結果。",
+            "tradeoff": "可能親手淘汰對方而尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "先約賽後自願一起吃飯，各自付錢，勝負不綁請客。",
+            "action": "提出不影響公平參賽的私人餐敘邀約，未接受不算成行。",
+            "tradeoff": "增加私人時間費用，對方可能不想。"
+          },
+          {
+            "id": 3,
+            "text": "我先向主辦詢問合法退賽條件，再自己決定，不要求朋友讓。",
+            "action": "查詢退賽及費用規範，不謊造原因或保證退款。",
+            "tradeoff": "可能損失報名費與競賽機會。"
+          },
+          {
+            "id": 4,
+            "text": "我邀他賽前正常練一場，不藏招但正式賽仍認真。",
+            "action": "提出自願安全練習邀約，時間依法另約，不交換比賽結果。",
+            "tradeoff": "多一段練習與戰術揭露。"
+          },
+          {
+            "id": 5,
+            "text": "我先問他在意的是打幾場還是一起出門，不替他先難過。",
+            "action": "主動私下徵詢朋友實際期待，不承諾改賽程。",
+            "tradeoff": "需面對自己自作多情或對方真失望。"
+          },
+          {
+            "id": 6,
+            "text": "我向主辦問出局後有沒有合法自願交流桌，不要求特權。",
+            "action": "查詢既有賽後交流機會，沒有則接受，不自行占場。",
+            "tradeoff": "多詢問與等待，可能沒有。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想贏得很坦白，也想說對不起；我自願負擔我們合意的共同交通費，不買他的輸球。",
+          "action": "因自己推坑而不好意思，提出經朋友自願同意的合法共同交通支出贈與，不以讓賽、回報或友誼為條件，不保證對方接受。",
+          "tradeoff": "增加私人費用，可能被笑成賽前賄賂而更尷尬，仍公平參賽。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1797369086
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "655333cb5347daec6a245bec356f13c469dd9e376f16434995a4786b99959855"
+      },
+      "consequenceDirections": {
+        "A": "可發展友情交流與好勝心被看穿的尷尬。",
+        "B": "可發展高執行力報名後面對自己真正想要什麼。",
+        "C": "可承接熱心通報不等於替別人安排感受。",
+        "D": "可發展慷慨帶著心虛與好勝同時成立的私人關係，不預定誰淘汰誰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bfc49644aca16aaffa426615b28695de9af5a812cb5d9b96c1591b8c784a4a72",
+    "draftSha256": "9e967edcd0bdc5ae180800888a008dbcba9dfdd503bd792d6a3c143994401376",
     "seedAssignmentVersion": 1
   }
 }

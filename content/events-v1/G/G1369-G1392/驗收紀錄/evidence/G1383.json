@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0cc86fbc642dc84b0f7fe45d396e7f0484eb71670113fd25bb5daafd59392e94",
+      "checkedAt": "2026-11-28T00:57:41.609Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "你先依法完成撥發欄，我額外列印、簽自己那行再送回。",
+            "action": "待正式合法文件送達後代做本人可做的列印及交件，不代簽撥發。",
+            "tradeoff": "花課間與紙張處理。"
+          },
+          {
+            "id": 2,
+            "text": "今天不急領，照核准保管，約下一合法時段交付。",
+            "action": "在必要醫材足夠及規範許可下不新增當日跑件，正式程序完成才領。",
+            "tradeoff": "補充延後，仍須排後續。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問有權成人是否能合法代送文件，不代任何人簽。",
+            "action": "提出正式文書運送協助需求，未同意不宣稱有人接。",
+            "tradeoff": "增加協調，可能無人有空。"
+          },
+          {
+            "id": 4,
+            "text": "若校方有合法電子流程，我陪你問能否使用，不拿聊天截圖代單。",
+            "action": "向正式窗口查電子領用規範，未核定前維持原程序。",
+            "tradeoff": "詢問耗時，未必適用。"
+          },
+          {
+            "id": 5,
+            "text": "我去健康中心依法簽領並帶回，先確認你自己的欄已完成。",
+            "action": "在合法可行時段由本人到處室完成自身領用與搬運，程序未齊不先拿。",
+            "tradeoff": "多走往返，壓縮休息。"
+          },
+          {
+            "id": 6,
+            "text": "本次照接續，我另提出今後送物前確認單據的分工建議。",
+            "action": "額外與校護協商未來交付前核對提醒，維持各人欄位責任。",
+            "tradeoff": "需溝通且可能被認為責備失誤。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點怕友情變成每次代跑；我請主管把我這次能額外代送的範圍講清楚，再接非必要差事。",
+          "action": "因不願默默累積人情負擔，額外向有權者提出合法分工釐清，不延誤必要保管、急救或本人簽領。",
+          "tradeoff": "花正式協調並可能讓好友覺得小事被升高。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3553183338
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "348c516fee0c97e090b8435bff3a57f481d66320f7cdd5a9d62e772adf97bf42"
+      },
+      "consequenceDirections": {
+        "A": "可發展資源送到門口又改回自己走的尷尬。",
+        "B": "可發展親近同事對界線明說而非私下吞下的反應。",
+        "C": "可發展好友對有限幫忙的感激或仍嫌麻煩。",
+        "D": "可承接親近與便利需要正式制度支撐。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f356173b53666b0d77fd3ba6e0410490d9b3138cafcba8aa652a381fcd35fc2b",
+    "draftSha256": "0cc86fbc642dc84b0f7fe45d396e7f0484eb71670113fd25bb5daafd59392e94",
     "seedAssignmentVersion": 1
   }
 }

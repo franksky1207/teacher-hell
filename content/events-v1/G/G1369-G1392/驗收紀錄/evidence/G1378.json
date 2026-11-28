@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b2be095478a0be5fc890c6a1d1c3f89cddcb029ecaf04301849f1d52deda7d4c",
+      "checkedAt": "2026-11-28T00:57:41.602Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另排一段合法測試，請你親眼看，不用真學生資料。",
+            "action": "自願配合授權測試案例重現問題，由專業者判讀，不把故障舉證作必要申報條件。",
+            "tradeoff": "多花測試時間。"
+          },
+          {
+            "id": 2,
+            "text": "正式切換先不加碼，我照核准備援完成本週。",
+            "action": "在權責允許範圍維持有效申報，不接受非必要立即停紙本要求。",
+            "tradeoff": "可能被認為保守，後續仍需轉換。"
+          },
+          {
+            "id": 3,
+            "text": "我向主管申請分段導入，不一次把所有週報搬上去。",
+            "action": "提出可控合法遷移方案，核准前不擅減必要資料。",
+            "tradeoff": "增加協調與可能雙份工作。"
+          },
+          {
+            "id": 4,
+            "text": "先問可否依法借合適設備做這次填報，不拿自己的私機補。",
+            "action": "詢問核准設備與權限，未取得不稱已可切換。",
+            "tradeoff": "要借還與排程，可能沒有設備。"
+          },
+          {
+            "id": 5,
+            "text": "我提供已實際發生的操作紀錄，請你送正式技術窗口。",
+            "action": "額外整理不含敏感資料的錯誤時序與畫面，依法送處理，不捏造測試結論。",
+            "tradeoff": "花紀錄時間且可能被要求補資料。"
+          },
+          {
+            "id": 6,
+            "text": "我先請你說明究竟哪份紙本可以合法停，不用一句都改了。",
+            "action": "額外逐項核對正式停用授權與資料承接，不阻擋必要新制。",
+            "tradeoff": "多一段溝通，職員可能覺得刁鑽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我不想再被『你一定最快』綁住；我具名申請退出非必要示範用戶，正常工作照做。",
+          "action": "因不願用私人重打工時換稱讚，提出停止本人非必要示範角色的正式請求，核定前後均維持必要有效申報。",
+          "tradeoff": "可能失去表現機會並傷同事期待，仍需正常使用依法核定系統。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3587355083
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "c0a8ea87de3e08522120ce38fa2cad168197d81935fe3774cc466bf3619a9630"
+      },
+      "consequenceDirections": {
+        "A": "可承接尊重專業與要求具體權限的界線。",
+        "B": "可承接資源限制是否被數位熟手真正看見。",
+        "C": "可發展催進度轉為承接修復流程的責任。",
+        "D": "可發展專業認可與不願承擔第一名壓力的衝突。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dc09f4a60d6564d0b0e94f88270c3f6ce3e1b2764227e48301188aa04c697c8f",
+    "draftSha256": "b2be095478a0be5fc890c6a1d1c3f89cddcb029ecaf04301849f1d52deda7d4c",
     "seedAssignmentVersion": 1
   }
 }

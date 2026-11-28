@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e0f74cb5b65f0506341582da51b23d75bb79a72e093fccafc1ca4b18bc030964",
+      "checkedAt": "2026-11-28T00:57:41.595Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我照原輪值，不參加這次小會。",
+            "action": "明確婉拒額外邀約，履行原合法出席安排。",
+            "tradeoff": "失去小圈交流機會，好友可能嫌無聊。"
+          },
+          {
+            "id": 2,
+            "text": "先取得同組自願與主管核可，再申請合法分流。",
+            "action": "依法提出換派需求，未核准維持原安排，不施壓同事。",
+            "tradeoff": "協調耗時且可能被拒。"
+          },
+          {
+            "id": 3,
+            "text": "我邀你改到另一段雙方可用的合法時間。",
+            "action": "提出不撞必要出席的新邀約，不預設其他讀書會成員可配合。",
+            "tradeoff": "增加私人或備課時間，可能不成立。"
+          },
+          {
+            "id": 4,
+            "text": "我問主辦是否能把你們的題目納入正式分組，不私下偷跑。",
+            "action": "提出依法議程建議，未獲准不宣稱讀書會已列入。",
+            "tradeoff": "多一段行政協調，好友可能覺得被收編。"
+          },
+          {
+            "id": 5,
+            "text": "你願意分享一頁紀要，我會另讀，不要求你替我上課。",
+            "action": "徵求其有權分享的自願摘要，不要求違反研習或著作權。",
+            "tradeoff": "自己仍花閱讀時間，無現場咖啡氣氛。"
+          },
+          {
+            "id": 6,
+            "text": "這週我去大會，下次輪派我願先承擔，讓同組再選。",
+            "action": "提出未來依法輪派的對等分工意向，待他人同意，不以此逃本次。",
+            "tradeoff": "承擔可能較多正式出席，回報不一定是小會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實想喝咖啡多過想讀書；我約你下班再聊，別替偷懶包成精品研習。",
+          "action": "坦承私人放鬆動機，提出合法下班成人自願咖啡邀約各自付費，正式出席照原規定，未同意不當安排。",
+          "tradeoff": "花私人時間與費用，也可能被好友嫌掃興。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2742293563
+        },
+        "selectedIds": [
+          4,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "0947e57b8eb5d3ff6534253480676a25ef420c62f4fbfaa9702f5999921997ca"
+      },
+      "consequenceDirections": {
+        "A": "可發展好友對教師拆穿彼此自我包裝的玩笑或不快。",
+        "B": "可發展好友是否在意一起討論還是一起退出大會。",
+        "C": "可承接特立獨行與正式專業交流的矛盾。",
+        "D": "可發展親近是否容得下不一起反骨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "df1d1fb0e5c7b290896700dca782641d6a088c0dde0c7869e698c0dca3b49455",
+    "draftSha256": "e0f74cb5b65f0506341582da51b23d75bb79a72e093fccafc1ca4b18bc030964",
     "seedAssignmentVersion": 1
   }
 }

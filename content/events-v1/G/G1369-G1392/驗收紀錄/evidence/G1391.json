@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cf9f03b51af642304cc20819905260f474ff88354312272247ef2f2523d0375d",
+      "checkedAt": "2026-11-28T00:57:41.620Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我申請由自己有限承接一週合法延後鎖門，不叫值日生等。",
+            "action": "向校方提出具人力與安全安排的短期延時申請，未核可維持原規，必要取書照常。",
+            "tradeoff": "教師多留時間，不一定獲准。"
+          },
+          {
+            "id": 2,
+            "text": "維持原時間，我額外把既有合法取書方式說清楚。",
+            "action": "提供不擴張警衛職責的具體流程說明，不把必要協助只有此分支才有。",
+            "tradeoff": "花說明時間，學生仍嫌不便。"
+          },
+          {
+            "id": 3,
+            "text": "放學前我多留一段讓大家自願檢查隔日用物，不占正課。",
+            "action": "在合法班務時間額外提供提醒及自主檢查機會，不代翻書包。",
+            "tradeoff": "壓縮其他可調班務，仍有人會忘。"
+          },
+          {
+            "id": 4,
+            "text": "我先徵詢全班實際需求，再向有權者提適量人力方案。",
+            "action": "自願蒐一般取物需求，不公布誰常忘，必要支持先維持。",
+            "tradeoff": "多整理與等待。"
+          },
+          {
+            "id": 5,
+            "text": "我替你問能否有合法成人集中協助時段，不拿學生代班。",
+            "action": "詢問有權成人勤務可否調整，未核可不承諾開門。",
+            "tradeoff": "可能無人力，導師多協調。"
+          },
+          {
+            "id": 6,
+            "text": "上週被念的事，我另外願聽你說，不用拿鎖門時間替我們吵。",
+            "action": "額外邀合法自願個別會談，釐清私人不滿與必要鎖窗責任不同。",
+            "tradeoff": "承受被批評與個別時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕明天沒教材；我願把自己可合法分享的那份借給真正需要的人，但不亂開教室。",
+          "action": "因同感忘物焦慮，提出教師確有且有權外借的普通課程參考材料作有限自願支援，不保證涵蓋所有學科、不取代必要取書或校方支持。",
+          "tradeoff": "私人教材借還管理與損耗，可能不適用。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1399309278
+        },
+        "selectedIds": [
+          1,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "cdf925bdb36af1081f279899ee599c227f665a847c234e69fac99e58696bf9dc"
+      },
+      "consequenceDirections": {
+        "A": "可承接同理心與公共安全時間界線。",
+        "B": "可發展學生是否理解較方便會由另一個人付出。",
+        "C": "可承接單一急事是否足以改全班時間的不同看法。",
+        "D": "可發展學生對教師另付資源卻不改鎖門的矛盾感受。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ba3f5e00daae9d7b067562246113a67bf8eab8f28b35e5131aa264700f13ba00",
+    "draftSha256": "cf9f03b51af642304cc20819905260f474ff88354312272247ef2f2523d0375d",
     "seedAssignmentVersion": 1
   }
 }

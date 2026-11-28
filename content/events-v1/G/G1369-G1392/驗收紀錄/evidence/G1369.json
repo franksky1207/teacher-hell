@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ed2616ffe12308a851c565eba09c7c9fbde1cd6ba381229fd097a538b17dd581",
+      "checkedAt": "2026-11-28T00:57:41.580Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提供自願親交機會，不想親交仍可不交。",
+            "action": "詢問作者是否願在合法時段親自交付，拒絕不失權益，不承諾有人來。",
+            "tradeoff": "需協調，科任可能仍等不到。"
+          },
+          {
+            "id": 2,
+            "text": "維持幹部代送，也保留不具名，不改成表態測驗。",
+            "action": "維持合法自願代送方式，作者可撤回或選不具名，不把交法當真心證明。",
+            "tradeoff": "科任可能覺得失落沒被理解。"
+          },
+          {
+            "id": 3,
+            "text": "我先問學生願意用哪種方式，再把選項帶給你談。",
+            "action": "額外收集自願交付偏好，不要求說明私人感謝內容。",
+            "tradeoff": "花班務與整理時間。"
+          },
+          {
+            "id": 4,
+            "text": "若你願意，我們另談被認錯那一下，不讓卡片替所有人補面子。",
+            "action": "邀科任於合法成人交流時段自願談失落，卡片更正與學生權益照常。",
+            "tradeoff": "教師要承受聽批評的情緒工作。"
+          },
+          {
+            "id": 5,
+            "text": "卡片先不辦統一交付，各人自己選合法時機。",
+            "action": "在作者意願及校規內停止本次非必要統一代送，保留個人自主表達。",
+            "tradeoff": "導師失去統整便利，部分卡可能不送。"
+          },
+          {
+            "id": 6,
+            "text": "你願不願先挑一段可公開的課堂記憶，和學生自願交流？",
+            "action": "邀科任於合法班級時段分享本人可公開經驗，非強制致謝或作辨認測驗。",
+            "tradeoff": "需準備與挪時段，也可能無人回應。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕哪天被換個名字；我願自己寫一張真實的同事致謝，但不替孩子湊。",
+          "action": "因同感可被替換的失落，額外撰寫本人真實合作經驗的私人致謝，不冒學生名義、不改其卡片。",
+          "tradeoff": "花私人時間並暴露自己也在意被記住，對方可能覺得只是安慰。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2578226839
+        },
+        "selectedIds": [
+          4,
+          6,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "21e18899e56e924ff5f6a767c3a4d1a449535ec1f73adac106874574c3837ce3"
+      },
+      "consequenceDirections": {
+        "A": "可承接想被看見的教師願否先讓學生認識自己。",
+        "B": "可承接其對導師專業引導的疑慮是否能變具體。",
+        "C": "可發展同事情誼如何承接學生未必回應的空缺，不保證填補失落。",
+        "D": "可發展其希望真實被記得與學生害羞的落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4c3148d2bac940065d0c313d925534f07b001db7187364cf22d91719bf0953b1",
+    "draftSha256": "ed2616ffe12308a851c565eba09c7c9fbde1cd6ba381229fd097a538b17dd581",
     "seedAssignmentVersion": 1
   }
 }

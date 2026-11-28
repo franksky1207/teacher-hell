@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8431168d08beb1250720ef5e21cef468780e16c25db07d04bd1029dcc7a832e3",
+      "checkedAt": "2026-11-28T00:57:41.592Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另陪你向兩位說清楚怎麼動的，但不代他們原諒。",
+            "action": "在必要查核外邀各方自願說明與傾聽，尊重不參與。",
+            "tradeoff": "增加協調，可能更尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "以後只排架子不重插別人傘，我重新說清委託範圍。",
+            "action": "額外調整本人班務交辦方式，不把越權禁令當只有此分支成立。",
+            "tradeoff": "教師需明確指示，學生少了自行整頓的空間。"
+          },
+          {
+            "id": 3,
+            "text": "想避免再混，我徵詢全班自願用不傷傘的既有辨識方法。",
+            "action": "提出不需另購、不公開敏感個資的可逆辨識方案，物主同意才用。",
+            "tradeoff": "需說明整理，仍不保證無誤。"
+          },
+          {
+            "id": 4,
+            "text": "我先不新增傘架工作，讓你暫時只做自己份內班務。",
+            "action": "停止本次額外整理委託，保留正常參與，不懲罰性禁做所有事。",
+            "tradeoff": "學生可能覺得被否定，教師少一個幫手。"
+          },
+          {
+            "id": 5,
+            "text": "我向校方詢問是否有合規分格傘架，不叫你私下買來賠。",
+            "action": "提出公共收納資源詢問，不推定有預算或受贈成立。",
+            "tradeoff": "增加聯絡且可能無資源。"
+          },
+          {
+            "id": 6,
+            "text": "你若願意，畫一張大家自己放的分區草圖，先讓物主提意見。",
+            "action": "提出自願非個資分區構想，未確認前不移物或實施。",
+            "tradeoff": "多花討論時間，學生可能嫌不如直接排。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也有份，是我隨口一句就想事情會變整齊；今天這排我自己多花時間收尾。",
+          "action": "坦承模糊交辦，額外在合法工作餘裕整理自己可有權處理的傘架公物與地面收尾，不再動任何私傘，不取代必要清潔安全。",
+          "tradeoff": "少一段下班餘裕，也可能仍覺得沒整理得漂亮。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4223119345
+        },
+        "selectedIds": [
+          2,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "e787953e8d1f4c27f8b37db2fb7863ac06193c689ee7ce7f9b03a343011f6446"
+      },
+      "consequenceDirections": {
+        "A": "可承接高執行力轉向讓別人參與決定的困難。",
+        "B": "可發展教師不把好心學生當免費快手的關係改變。",
+        "C": "可承接快手配合與理解授權的耐心。",
+        "D": "可承接支持與信任不等於一直委派額外工作。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十二輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "bdad3562ecca38cde4a712e34d149e3ed2da54e32d81a3687253206a5345b06c",
+    "draftSha256": "8431168d08beb1250720ef5e21cef468780e16c25db07d04bd1029dcc7a832e3",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "461f429c4182c62f8e1eb94b5730138394d7c3e21d74ce9b8e2109980b475bde",
+      "checkedAt": "2026-11-28T03:29:49.036Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我用自己的名義直接更正下一堂的小組任務只留單一版本，不讓同事在學生面前難堪。",
+            "action": "由導師出面統一澄清下一堂任務規格並擦除錯誤版本，維護同事顏面並保留課時。",
+            "tradeoff": "學生可能會誤以為是導師自己原本沒講清楚才改版。"
+          },
+          {
+            "id": 2,
+            "text": "我請teacher_a留兩分鐘跟我當場一起示範怎麼核對這兩版、現場拍板留哪一版給學生看。",
+            "action": "邀請同事共同於下堂課前現場核對兩版差異並向學生統一說明正確任務。",
+            "tradeoff": "多耗用一點課間或下一節開頭的練習時間，累壞的他站著有點窘。"
+          },
+          {
+            "id": 3,
+            "text": "我先誇他把兩版寫出來很清楚，再私下在講桌邊跟他對好確定只做「全組交一張」，隨即由我擦掉另一行。",
+            "action": "課間私下與同事確認單一版本後擦除白板多餘選項，避免學生無所適從。",
+            "tradeoff": "沒留時間一起面對，同事心裡還是怕自己是不是又搞砸共用規範。"
+          },
+          {
+            "id": 4,
+            "text": "我把白板上這兩行留著，直接問剛才在台下的學生「你們聽到的是哪一版？」，順勢再統一重講一次正確要求。",
+            "action": "以現場互動確認學生實際接收狀況後，統一更正為單一明確任務。",
+            "tradeoff": "當場一問發現下面果然分成兩派吵成一團，還得多花兩分鐘壓秩序。"
+          },
+          {
+            "id": 5,
+            "text": "我先請累壞的teacher_a趕快回去坐著喝水休息，白板這邊我接手幫他講完並跟他說下次有衝突直接敲我訊息就好。",
+            "action": "體諒同事連堂疲勞讓其先行休息，由導師接手更正任務並鼓勵私下直接溝通。",
+            "tradeoff": "自己承接全部更正說明，同事雖然鬆口氣卻還是不敢直白提意見。"
+          },
+          {
+            "id": 6,
+            "text": "我乾脆把原本的規定微調成「這堂先全組交一張，個人那張下週再單獨做」，把兩版都消化掉。",
+            "action": "保留兩項任務但錯開繳交時程，讓白板上的兩種理解各有所歸。",
+            "tradeoff": "等於幫學生多加了下週的工作，也模糊了原本共用示範該對齊的重點。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他累到靠在講桌邊還像在交選單一樣緊張地看我，笑著拿起板擦擦掉其中一行說「你累壞了啦，還幫我出選擇題喔？這行我擦掉，等一下我講就好，你快去喝水」。",
+          "action": "以幽默語氣接住同事疲勞並擦除衝突選項，讓同事先行休息、由導師統一說明。",
+          "tradeoff": "雖然瞬間化解他的緊張，他回辦公室時還是覺得自己給導師添了麻煩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 929003686
+        },
+        "selectedIds": [
+          3,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "46c51f655b105ba11dea62f8ea6d76e99b47ccf4c8ff33f8888e0f3a8ba4f237"
+      },
+      "consequenceDirections": {
+        "A": "可發展私下在講桌邊對好單一版本再擦掉另一行後，同事心裡仍怕自己搞砸共用規範。",
+        "B": "可發展拿起板擦擦掉一行笑問還幫我出選擇題後，同事回辦公室仍覺得給導師添了麻煩。",
+        "C": "可發展把兩行留著問學生聽到哪一版再統一重講後，台下分成兩派吵成一團得多壓秩序。",
+        "D": "可發展請teacher_a留兩分鐘當場一起核對拍板給學生看後，累壞的他站著有點窘。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b28a0c1b9a6eda90d83b80ea5081af7d05042d7efaa3f1250b31880ddae1c010",
+    "draftSha256": "461f429c4182c62f8e1eb94b5730138394d7c3e21d74ce9b8e2109980b475bde",
     "seedAssignmentVersion": 1
   }
 }

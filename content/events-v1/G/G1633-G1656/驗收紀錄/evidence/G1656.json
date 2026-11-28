@@ -15,14 +15,82 @@
     "G01",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b29be00e0ad3033c2bcc5513d251e79e983d2e4be55da8ce75a410f1711f6182",
+      "checkedAt": "2026-11-28T03:29:49.040Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我同意他照改過的新題寫食物細節，但請他把朋友幫忙想的煽情句全刪掉，只留真正想說的那一句。",
+            "action": "維持食物細節題目並要求刪除他人代筆的煽情套語，保留學生本人真實短句。",
+            "tradeoff": "刪完之後這份稿子的篇幅會遠短於原本大家交的規格。"
+          },
+          {
+            "id": 2,
+            "text": "我保留全班原題目的學習目標，改讓他這篇寫一個完全虛構的人物便當，先不碰他自己家的事。",
+            "action": "調整為虛構人物自述寫作以達成學習目標，保護student_a免於他人的同情壓力。",
+            "tradeoff": "放掉了他這次原本想試著用食物細節寫自己家的機會。"
+          },
+          {
+            "id": 3,
+            "text": "我直接拿鉛筆把「荷包蛋有點焦」那七個字圈起來給他看，問他願不願意只從這七個字開始重新往下寫兩行。",
+            "action": "圈出稿中唯一屬於學生本人的真實細節，引導其捨棄代筆套話重寫短段。",
+            "tradeoff": "寫出來大概很平淡、沒有朋友幫忙寫的那麼像作文比賽佳作。"
+          },
+          {
+            "id": 4,
+            "text": "我先問他今天寫作課這張是不是一定要給小組互讀？若他怕朋友又來亂加戲，我准許他這篇只交給我一個人改。",
+            "action": "解除該篇同儕互評揭露要求，保障student_a獨立書寫真實生活細節的空間。",
+            "tradeoff": "少了一次小組互讀交流，朋友可能發現他這篇突然不給大家看了。"
+          },
+          {
+            "id": 5,
+            "text": "我請他把那些「冰冷的燈光」全劃掉，教他一個最簡單的標準：只准寫眼睛真的看到、嘴巴真的吃到的味道。",
+            "action": "指導具體感官寫作原則並要求移除他人代想之抽象煽情詞彙。",
+            "tradeoff": "他得把昨天朋友熱心幫他湊出來的半頁紙全部重來一遍。"
+          },
+          {
+            "id": 6,
+            "text": "我告訴他不管朋友怎麼替你感動，這張紙上只能留你自己的聲音，哪怕只有兩行老師也照收。",
+            "action": "明確肯定極短篇真實書寫的價值，不以字數多寡強迫湊滿煽情篇幅。",
+            "tradeoff": "他怕交兩行字被別的同學笑寫太少，眼神還是有點猶豫。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著那句「蘊含著無盡的辛酸」差點把筆掉在桌上，笑著把朋友寫的那段框起來說「這幾句一看就不是你講的人話啦！我只想看你那個有點焦的荷包蛋，其他全刪掉」。",
+          "action": "以直爽幽默語氣劃除同儕代筆之煽情句子，鼓勵student_a只寫自己真實的荷包蛋細節。",
+          "tradeoff": "他聽完噗哧笑出來鬆了口氣，只是回座位還得跟那幾個熱心朋友解釋為什麼全刪了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3549493288
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "34355d0ad011af0af7de292147e604d4465882c5a97017c310a1b1c0e44623b2"
+      },
+      "consequenceDirections": {
+        "A": "可發展笑著把朋友寫的煽情段框起來說非人話、全刪後，他鬆口氣回座跟朋友解釋。",
+        "B": "可發展教他劃掉抽象煽情只准寫眼睛嘴巴真實感受到的味道，半頁草稿得全部重寫。",
+        "C": "可發展拿鉛筆圈出「荷包蛋有點焦」七字引導往下寫兩行，成品平淡卻是真實的自己。",
+        "D": "可發展改讓他寫完全虛構人物便當達成目標後，放掉這次用食物細節寫自己家的機會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "94195964b3ee78b0f2102ffb99455d30a0b00cdac4c0ffa9b93d9ac9c2b206c8",
+    "draftSha256": "b29be00e0ad3033c2bcc5513d251e79e983d2e4be55da8ce75a410f1711f6182",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "70a2cd7df77983056633e4b4d3fc6f7b5bdbc5e924d7733b040ff4218592215c",
+      "checkedAt": "2026-11-28T03:29:48.991Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我當場加一題「只靠第二段關鍵轉折才能解」的反例讓全組試做，直接讓他看清捷徑會怎麼翻車。",
+            "action": "即時補充反例題目讓學生親身驗證跳讀風險，打破論壇捷徑迷思。",
+            "tradeoff": "原定的課堂閱讀練習進度得跟著往後延幾分鐘。"
+          },
+          {
+            "id": 2,
+            "text": "我先保留這次結果，約好下一節課讓全班對照「跳讀」和「完整讀」兩種做法的命中率差異。",
+            "action": "維持今日進度，規劃下節課堂進行兩種閱讀策略之實證對照教學。",
+            "tradeoff": "他今天一整天還得被同組繼續奉為高手，心裡懸著不安。"
+          },
+          {
+            "id": 3,
+            "text": "我直接拿他剛答對那題的第二段指給他看「這裡其實有一個反證條件，今天只是題目剛好沒考到那裡」。",
+            "action": "就原題直接點出第二段被略過之關鍵線索，說明本次答對屬運氣巧合。",
+            "tradeoff": "同組聽不到，他自己知道是猜對的卻不知怎麼跟組員解釋。"
+          },
+          {
+            "id": 4,
+            "text": "我老實告訴他沒有永遠有效的跳段規則，真正省時間的是先看題幹問什麼再回全文找答案，不是閉眼跳段。",
+            "action": "明確否定論壇偏方有效性，簡短指導正確的題幹定位閱讀方法。",
+            "tradeoff": "對正焦慮的他來說，少了一套保證速成的口訣還是覺得心裡不踏實。"
+          },
+          {
+            "id": 5,
+            "text": "我問他這組剛剛是不是大家都在比誰寫最快？提醒他非計分練習本來是練讀懂，不是比抽獎手速。",
+            "action": "引導student_a反思同儕競速文化，將焦點拉回閱讀理解本身。",
+            "tradeoff": "好勝的他嘴上說知道，心裡還是放不下「在組裡當第一名」。"
+          },
+          {
+            "id": 6,
+            "text": "我請他下課自己把那篇的第二段完整重讀一遍，看看能不能找出原本差點漏掉的一個小伏筆當自我練習。",
+            "action": "要求student_a課後自行補讀漏看段落並檢視遺漏資訊，維持當堂進度。",
+            "tradeoff": "沒在組員面前拆解那套跳段法，同組其他同學可能下週照樣跳。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他明明猜對還緊張到一直追問，忍不住笑著拿紅筆在第二段畫個大問號說「你猜對一次自己心虛吼？來，這題要是考我剛圈的這個轉折詞你就直接陣亡囉」。",
+          "action": "以幽默語氣當場點破運氣成分並標出第二段致命陷阱，提醒勿迷信捷徑。",
+          "tradeoff": "被老師一語戳中「自己心虛」，student_a吐了吐舌頭趕快翻回第二段看。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1739646045
+        },
+        "selectedIds": [
+          4,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "5940252eb63cbd4abcfd4f0513e7607325698daed65f7c622a5e625a177ad042"
+      },
+      "consequenceDirections": {
+        "A": "可發展當場加一題第二段轉折反例讓全組試做後，捷徑翻車與原練習進度延後的現場。",
+        "B": "可發展用紅筆在第二段畫大問號點破猜對心虛後，student_a吐舌頭趕快翻回去讀。",
+        "C": "可發展保留結果並約下節課全班對照兩種讀法後，他今天繼續被組員奉為高手的不安。",
+        "D": "可發展直接告訴他沒有永遠有效的跳段口訣後，焦慮的他少了速成保證依然不踏實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "44d5f2d4a6b6f04936a1235524c0fd3a8b263be10fc27774cad082c533ee5740",
+    "draftSha256": "70a2cd7df77983056633e4b4d3fc6f7b5bdbc5e924d7733b040ff4218592215c",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "43da4dd19d4cf6bdee5a77c24d05691848cf8bae0124a871cceadb9d7ee1c0c7",
+      "checkedAt": "2026-11-28T03:29:49.006Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持原本口才最流利的人選，但在旁邊多加一張半成品的過程照片，兩邊都顧到。",
+            "action": "維持原流利示範生主講，補充半成品過程照片以呈現真實製作脈絡。",
+            "tradeoff": "導覽節奏比較穩，卻少了製作半成品的學生親口講述的溫度。"
+          },
+          {
+            "id": 2,
+            "text": "我先去問過小陳本人意願，若他願意，就換掉原定最漂亮那段、讓他現場講自己卡住的步驟。",
+            "action": "徵得當事學生同意後，調整示範人選由半成品製作者親述真實卡關過程。",
+            "tradeoff": "講卡關步驟可能講得結結巴巴，換掉最流利的那段讓校方看來沒那麼光鮮。"
+          },
+          {
+            "id": 3,
+            "text": "我提議兩位都留著：先讓原本流利的同學講兩分鐘主軸，最後留一分鐘請小陳自願補一句自己還在改哪裡。",
+            "action": "徵詢兩生同意採接力方式展示，兼顧完整框架與真實半成品反思。",
+            "tradeoff": "短時參觀時間很緊，兩個人接力講容易超時。"
+          },
+          {
+            "id": 4,
+            "text": "我先提醒teacher_a這場時間很短、還沒問過小陳願不願意當眾講半成品，今天先照原名單、半成品擺在旁邊桌當實物參考。",
+            "action": "以時間緊迫與未經當事學生同意為由維持原人選，半成品僅作靜態陳列。",
+            "tradeoff": "力勸換人的同事覺得導師最後還是向校方門面低頭了。"
+          },
+          {
+            "id": 5,
+            "text": "我跟teacher_a分頭先去問兩位學生各自的想法，確認誰今天狀態比較自在再排進輪流引導裡。",
+            "action": "優先確認兩位當事學生的意願與自在度，再與同事定案最終示範順序。",
+            "tradeoff": "只剩半小時還要兩頭跑去問學生，交接準備時間被切得很急。"
+          },
+          {
+            "id": 6,
+            "text": "我直接把那兩件半成品拿給原定流利示範生先看一遍，請他在導覽最後順口介紹「這組還在試第二版」而不硬換人。",
+            "action": "維持原示範人選並請其如實代為簡介他組進行中作品，不強迫半成品作者上台。",
+            "tradeoff": "別人代講的卡關過程終究隔了一層，沒有本人講得真實。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他難得這麼敢拆門面講實話也有點心動，笑著說「你比我還敢耶！好啊，只要小陳自己點頭不覺得丟臉，等一下我陪他講那兩件半成品，校方那邊我來扛」。",
+          "action": "認同真實展示方向並承諾於徵得小陳同意後陪同上場講述半成品，自願承擔校方觀感壓力。",
+          "tradeoff": "把校方可能嫌不夠漂亮的責任先攬在自己身上，等一下還得看小陳敢不敢答應。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2878742663
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 2,
+          "D": 4
+        },
+        "optionsDigest": "2812c38ef15c6d5d1c1a67e3a739a651d187932880c48bd9441cdb6b4ef25b6c"
+      },
+      "consequenceDirections": {
+        "A": "可發展認同真實展示並承諾若小陳點頭就陪他講半成品，導師自己扛下校方觀感的風險。",
+        "B": "可發展維持原流利示範生並多加半成品過程照片後，導覽較穩卻少了製作者親述的溫度。",
+        "C": "可發展徵得小陳同意換掉最流利段落講卡關步驟後，講得結巴卻讓來訪者記住真實過程。",
+        "D": "可發展以時間緊迫與未經當事人同意維持原人選後，力勸換人的同事覺得導師向門面低頭。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8b534586b33e2d273d23f00942b03c9817388bcd6c7a774aa75dec0b3bd3fc84",
+    "draftSha256": "43da4dd19d4cf6bdee5a77c24d05691848cf8bae0124a871cceadb9d7ee1c0c7",
     "seedAssignmentVersion": 1
   }
 }

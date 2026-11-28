@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "858066510147690d8f58465952d88dd58460188872bc41e260caa7aa22dd0dda",
+      "checkedAt": "2026-11-28T03:29:49.038Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我確認校方許可的暫放處後和他在現場點清接手，讓他立刻依規趕去搭車，明天我再跟材料室補交接。",
+            "action": "導師現場點清展示板並妥置校方許可之安全暫放處，讓student_a準時搭車離校。",
+            "tradeoff": "導師自己得扛著明天去材料室補交接的事，student_a也覺得沒親自交清。"
+          },
+          {
+            "id": 2,
+            "text": "我先依既有管道聯繫還在學校的材料室或總務承辦，確認當天能簽收後讓他自己選擇留到交還並通知家人改搭下一班。",
+            "action": "確認當日尚有權責人員可簽收後，將是否留校交清並改搭下班車之決定權交由student_a。",
+            "tradeoff": "若他選擇留下完成交清，今天家裡的晚餐採買就得被打亂。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先把板子搬進我的導師室或班級許可鎖櫃放好、拍照留存交接單給我看，立刻衝去搭車，明早我們再一起送材料室。",
+            "action": "指導student_a將展示板妥善鎖存於安全室內空間並拍照存證後立即趕車。",
+            "tradeoff": "明早早自習前他還得再陪老師跑一趟材料室補簽名。"
+          },
+          {
+            "id": 4,
+            "text": "我跟他說「找到而且沒放走廊你就已經負完責任了」，請他立刻去搭車、這塊板明天第一節下課再請公假或總務股長補還。",
+            "action": "肯定其找回物品的盡責表現，由導師接管安全暫放並另派日間時段歸還。",
+            "tradeoff": "他走的時候一直回頭看著那塊還沒蓋歸還章的板子，心裡有點掛記。"
+          },
+          {
+            "id": 5,
+            "text": "我先確認警衛室或總務值班櫃檯今天能不能代為暫收這塊板並給一張收據，若能代收他就可以親自交清再走。",
+            "action": "查詢校內值班窗口是否具合法代收資格，協助student_a現場完成替代交接後趕車。",
+            "tradeoff": "跑去問警衛室再拿回來可能花掉五分鐘，他得用百米衝刺趕車。"
+          },
+          {
+            "id": 6,
+            "text": "我直接陪他把板子扛進辦公室安全角落靠妥，當場在他的交接單上簽名寫「導師已點收」，讓他安心回家。",
+            "action": "導師當場點收並於學生交接單簽認接管保管責任，準時放行student_a返家。",
+            "tradeoff": "自己明天得記得把這張簽了導師名字的板子送回材料室核銷。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他滿頭大汗抱著大板子還死不肯亂放走廊、眼睛卻一直瞄手錶，立刻把板子接過來說「這塊算我手上！你超負責任的，快點去趕車買菜，明天再一起還」。",
+          "action": "立即接管展示板並妥置校內安全處，催促student_a準時趕車返家處理家務。",
+          "tradeoff": "看他一邊道謝一邊狂奔出校門，自己抱著這塊大板子在辦公室找地方塞。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3173427380
+        },
+        "selectedIds": [
+          3,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "4585adf1252966995832949001fcb6624abb970efe3d5d9b61b3f6f867777078"
+      },
+      "consequenceDirections": {
+        "A": "可發展確認校方暫放處點清接手讓student_a準時搭車後，導師明天還得去材料室補交接。",
+        "B": "可發展鎖存導師室或安全櫃並拍照存證後立即趕車，明早早自習前還得一起跑材料室。",
+        "C": "可發展查詢警衛室或總務值班櫃檯能否代收給收據後，跑去問再回來讓他百米衝刺趕車。",
+        "D": "可發展接過大板子催他快去趕車買菜後，看他道謝狂奔出校門而自己找地方塞大板子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "4fc5553225560abccede98fc60b7d99273f663c05a141a6a9b414fef48237030",
+    "draftSha256": "858066510147690d8f58465952d88dd58460188872bc41e260caa7aa22dd0dda",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d05b7c068ebbc7f23707940d3f47fafbe90f8a3324e63a19a90749b22100e87f",
+      "checkedAt": "2026-11-28T03:29:49.022Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我尊重他的決定不播錄音，改徵得他同意後由導師親自重讀他寫下的那段文字示範。",
+            "action": "嚴守不公開播放錄音承諾，經學生同意僅由教師口頭代讀其文字範例。",
+            "tradeoff": "雖然保住他的安全感，技巧示範少了原本那股生動的語氣。"
+          },
+          {
+            "id": 2,
+            "text": "我完全封存這段錄音不播也不轉述，改拿另一本教材來練同一個朗讀修稿技巧。",
+            "action": "絕對保密學生錄音與文字草稿，改以其他公開教材完成課堂教學目標。",
+            "tradeoff": "放棄了學生最珍惜也最精準的一份實作範例。"
+          },
+          {
+            "id": 3,
+            "text": "我明確保證絕不播放他的聲音，但問他願不願意我只把這句「怎麼靠回聽發現問題的筆記」不具名寫上黑板。",
+            "action": "絕不播音，徵詢student_a同意以匿名純文字方式分享其修稿思考過程。",
+            "tradeoff": "文字看不出聲音重音差別，還是得靠老師自己用力演一遍。"
+          },
+          {
+            "id": 4,
+            "text": "我當場把這段音檔移進我電腦的個人不公開資料夾鎖起來讓他安心，今天進班改由我用自己現場錄一段笨拙示範帶大家練。",
+            "action": "封存學生音檔並保證不播，教師現場自錄示範範例進行課堂教學。",
+            "tradeoff": "老師現場錄自己聲音給學生聽，自己也有點小尷尬。"
+          },
+          {
+            "id": 5,
+            "text": "我告訴他「作者有權說不，我一定守約」，另外問他自己以後想不想找一個只放給一對一夥伴聽的練習法就好。",
+            "action": "堅守不播承諾，並與student_a討論後續適合其安全感的低曝光練習模式。",
+            "tradeoff": "進班示範還是得另外再想材料，眼前這節課得立刻補洞。"
+          },
+          {
+            "id": 6,
+            "text": "我先誇他這句錄得超好，問他如果真的想幫大家學會，要不要找一位聲音比較大方的好朋友照他的標記重錄一版？",
+            "action": "嚴守不播其本人錄音，詢問是否同意由其他自願同學依其文字標記重錄範例。",
+            "tradeoff": "雖然保護了他的聲音，朋友重錄未必抓得到他原本那個精準語氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他像護著寶貝一樣盯著我電腦喇叭也有點好笑，立刻當著他面拔掉喇叭線說「放心啦！我現在就把線拔掉，說好只能我聽就只能我聽，等一下進班我自己用講的」。",
+          "action": "以拔掉外接喇叭線的具體動作保證絕不播放其錄音，改由教師口頭自編或經同意文字示範。",
+          "tradeoff": "他聽完鬆了一大口氣笑出來，進班前我還得趕快自己再想一個口頭範例。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3590820028
+        },
+        "selectedIds": [
+          3,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "e2ea08ab98c31915e295cd469baae7a13e39beb5e9f05c874f5fb048f316b375"
+      },
+      "consequenceDirections": {
+        "A": "可發展堅守不播承諾並討論日後低曝光一對一夥伴練習法，眼前示範材料仍須立刻補洞。",
+        "B": "可發展問他願不願意找聲音大方的好朋友照標記重錄一版，朋友未必抓得到原精準語氣。",
+        "C": "可發展當場拔掉喇叭線保證只能我聽後，student_a鬆口氣而老師急著自想口頭範例。",
+        "D": "可發展絕對不播音只問能否把「回聽筆記」匿名寫黑板後，仍需老師用力演一遍重音。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d59c6f6d7956122f06edb44da0189d0bc9bec9e2fcb3c7508cf1a8a8b0a29c8d",
+    "draftSha256": "d05b7c068ebbc7f23707940d3f47fafbe90f8a3324e63a19a90749b22100e87f",
     "seedAssignmentVersion": 1
   }
 }

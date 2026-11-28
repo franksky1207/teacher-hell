@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "123951f434827e03a0a8631010d0559988fe14803ba32e7019cc37c7829685ef",
+      "checkedAt": "2026-11-28T03:29:48.997Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我保留組裡原本藏人的驚喜走位，但改由另一名自願的同學登場，讓他專心負責原本的道具控場。",
+            "action": "維持原設計驚喜動線，徵詢自願同學替換末位登場角色以解除student_a焦慮。",
+            "tradeoff": "原本很期待亮相的他少掉了最想要的壓軸出場。"
+          },
+          {
+            "id": 2,
+            "text": "我跟組裡溝通改成讓student_a坐在前側看得到大家的位子準備上場，犧牲一點驚喜、保住本人安心。",
+            "action": "調整等候位置至前側可見座位以確保student_a心理安全感，保留其本人演出。",
+            "tradeoff": "組員原本設計的「突然從後面蹦出來」笑點整個沒了。"
+          },
+          {
+            "id": 3,
+            "text": "我提議讓他站在教室側門看得到講台角落的地方等，同時找一位組員明確給他揮手暗號，兼顧一點意外感。",
+            "action": "折衷安排側邊具視線接觸之待機點與專人視覺提示，降低盲等不安。",
+            "tradeoff": "旁邊前排同學多少還是會先看到他站在側門，驚喜打對折。"
+          },
+          {
+            "id": 4,
+            "text": "我先問組長有沒有辦法把驚喜改成「他先坐在最前排裝路人甲、輪到時突然站起來接話」，這樣他全程都看得到。",
+            "action": "協助小組改編登場方式為前排反轉式驚喜，兼顧視線安全與戲劇效果。",
+            "tradeoff": "剩沒幾分鐘要微調兩句前面台詞的接話方向，組員有點趕。"
+          },
+          {
+            "id": 5,
+            "text": "我先把他手上另一組的道具先接過來放我腳邊替他減負，再讓他跟組長當面談自己到底能不能站後面。",
+            "action": "先減輕其道具雙重負荷，再促成student_a與組長直接協商等候位置。",
+            "tradeoff": "現場只剩幾分鐘，兩個人當面談未必談得攏。"
+          },
+          {
+            "id": 6,
+            "text": "我請組裡照原位，但我自己拿著倒數手勢牌站在他旁邊陪他等那一分鐘，輪到時我直接拍他肩膀。",
+            "action": "維持原藏人走位，由導師本人於後方陪同並給予明確人工提示。",
+            "tradeoff": "導師得站去後排陪他當人形提示機，有點滑稽。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱著兩組道具還急得像小動物一樣，直接拿過一張椅子放到講台側邊說「別怕，老師把椅子搬來這裡給你坐，驚喜沒那麼重要，你看得見比較安心」。",
+          "action": "立即於前側擺放可見等候座位優先照顧student_a安全感，放棄後方隱藏驚喜。",
+          "tradeoff": "直接幫組裡拍板砍掉驚喜設計，組長在台上看了只能苦笑點頭。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 971632397
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "9d971e33629a8866da423649c6bdfcd87d4aea995ef7a731c98472adf933b6b1"
+      },
+      "consequenceDirections": {
+        "A": "可發展先接過他另一組道具減負再讓他跟組長直接談後，剩沒幾分鐘兩人當面談不談得攏。",
+        "B": "可發展保留藏人驚喜走位並改由另一名自願者登場後，student_a失去最想要亮相的失落。",
+        "C": "可發展折衷安排側門具視線接觸點與揮手暗號後，前排先看到而驚喜感打對折的妥協。",
+        "D": "可發展搬椅子放講台側邊優先照顧他安全感後，組長在台上只能苦笑砍掉驚喜設計。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f4f5f59bcead117e6b14f36171bb2c041b67c44128744c495a0e48683feebad9",
+    "draftSha256": "123951f434827e03a0a8631010d0559988fe14803ba32e7019cc37c7829685ef",
     "seedAssignmentVersion": 1
   }
 }

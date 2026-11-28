@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "dfec7668b83ef2d7baac2b1cbc3345ccd34b6b8aef3270eff242012d7d40b344",
+      "checkedAt": "2026-11-28T03:29:48.980Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻收回全部樣張承認自己裁切判斷錯誤，直接改用空教室照片重排封面，今天先不傳閱。",
+            "action": "立即收回試印樣張並坦承疏失，改以空教室景觀照重排封面，不勞煩student_a重找圖。",
+            "tradeoff": "錯過今天班內傳閱進度，且封面看起來比較冷清。"
+          },
+          {
+            "id": 2,
+            "text": "我收回樣張並親自對班說明是自己裁圖疏失，再請student_a自願從已核可作品挑一張替代封面。",
+            "action": "立即收回樣張與公開致歉誤裁，在student_a自願下由其從已授權圖庫另選替代圖。",
+            "tradeoff": "成品較快恢復，但student_a得再次站到全班注意的位置重選照片。"
+          },
+          {
+            "id": 3,
+            "text": "我收回樣張並公開承認誤裁後，請student_a把所有已核可檔案先收回去，由他重新確認一遍清單我再動手。",
+            "action": "收回樣張並交還授權圖檔檢核權予攝影股長，待其複核無誤後再重新排版。",
+            "tradeoff": "班刊延後一天以上，student_a也覺得多一道複檢有點累。"
+          },
+          {
+            "id": 4,
+            "text": "我收回全部樣張並當場跟他說清楚「背影可辨識就不算匿名，是我疏忽」，今天改先只發內頁文字校對。",
+            "action": "立即收回問題封面樣張並釐清可辨識影像標準，今日僅進行純文字內頁校對。",
+            "tradeoff": "少了封面視覺，大家翻起來覺得這份試印缺一塊。"
+          },
+          {
+            "id": 5,
+            "text": "我收回樣張致歉後，請原本有簽同意入鏡的那幾位同學來選一張他們自己授權的團體正面照當封面。",
+            "action": "收回錯版樣張並向student_a致歉，徵詢已授權入鏡同學另選合規封面照。",
+            "tradeoff": "得再多問一輪已授權同學，封面風格跟原本走廊感完全不同。"
+          },
+          {
+            "id": 6,
+            "text": "我收回樣張並問student_a願不願意我把封面改成純文字標題加同學手繪小邊框，以後所有人物背影一律不用。",
+            "action": "收回樣張並提議改採無人物之純文字手繪邊框封面，杜絕日後辨識爭議。",
+            "tradeoff": "他辛辛苦苦幫班上拍的那些走廊風景照就完全派不上封面了。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他按住樣張質問得耳根發熱，立刻把整疊抱回來對他和旁邊同學說「是我太偷懶以為沒露臉就沒事，算我錯！封面重排，我絕對不會讓你難做人」。",
+          "action": "當眾坦率承認自身偷懶誤判並收回全部試印樣張，以空景或純字重排封面。",
+          "tradeoff": "在學生面前直接承認自己偷懶有點掛不住，但student_a緊繃的肩膀總算放下來。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2441871752
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "f4f6dd0fdbf48e3f7847cd175fafd3eb31d4d86a8d1e6997312da65af284e647"
+      },
+      "consequenceDirections": {
+        "A": "可發展收回錯版後改純文字標題加同學手繪邊框，攝影股長苦心拍的走廊風景卻都沒用上。",
+        "B": "可發展當眾坦承偷懶誤判並收回樣張後，student_a緊繃肩膀放下、師生信任修補的轉折。",
+        "C": "可發展請已簽同意入鏡的同學另選正面照後，風格大改且再多問一輪的繁瑣收尾。",
+        "D": "可發展公開承認裁切判斷錯並請股長自願挑替代圖後，他再次站到全班焦點裡的壓力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "76e3f95b6f0d0c7a9628af10bd6ed6edcabde34eb3129f39856d09b2e2f50acc",
+    "draftSha256": "dfec7668b83ef2d7baac2b1cbc3345ccd34b6b8aef3270eff242012d7d40b344",
     "seedAssignmentVersion": 1
   }
 }

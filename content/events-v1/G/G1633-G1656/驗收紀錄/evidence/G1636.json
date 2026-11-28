@@ -16,14 +16,82 @@
     "G03",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "08b38b24ec67f145b76df6c5b8a077367d18ab516576a29f2317b7b7ca0a1f52",
+      "checkedAt": "2026-11-28T03:29:48.989Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我趁午休前這段自由時間把杯套全部攤開讓大家認領，不佔用午休一分鐘。",
+            "action": "利用午休前剩餘自由時間攤開洗淨杯套供原繪者認領，午休鐘響即停止。",
+            "tradeoff": "大家少了一段午休前自由活動時間，手忙腳亂翻桌子。"
+          },
+          {
+            "id": 2,
+            "text": "我請有先拍照的同學把能認出的照片給student_a對出來先拿走，其餘依全班同意處置。",
+            "action": "依既有照片線索優先歸還可辨識繪作，其餘杯套經全班同意統一處理。",
+            "tradeoff": "沒先拍照的同學可能認不回原本自己畫的那一張。"
+          },
+          {
+            "id": 3,
+            "text": "我先讓大家回座準備午休，請student_a自己利用下節大下課一疊一疊拿到旁邊桌子讓原主來挑。",
+            "action": "不壓縮午休前準備時間，責成發起人student_a於下節課間主持現場認領。",
+            "tradeoff": "得等兩節課，畫了杯套的同學整下午都擔心被收去回收。"
+          },
+          {
+            "id": 4,
+            "text": "我問清楚大概有幾個人混進去，直接讓student_a拿著那疊去講台邊唸圖案特徵、誰舉手就誰領回。",
+            "action": "由student_a現場唱名畫作特徵加速歸還，確保在午休前準時結束。",
+            "tradeoff": "有些同學畫得很隨意或不好意思舉手認，現場一陣尷尬笑聲。"
+          },
+          {
+            "id": 5,
+            "text": "我叫大家先把這疊整齊放進失物盒，放學前自由來挑，順便當場提醒student_a下次揪團要先查清楚活動條文。",
+            "action": "暫時集中保存至課後自由認領，同時對student_a進行查證提醒，不動午休。",
+            "tradeoff": "放學大家急著走，留在盒裡的杯套最後還是得有人收。"
+          },
+          {
+            "id": 6,
+            "text": "我請全班在剩餘七分鐘內按排數輪流上來抽回自己的，沒被領走的純白舊款就照正常紙類回收。",
+            "action": "以分排快速認領方式於午休前清點完畢，未認領之普通杯套依規回收。",
+            "tradeoff": "動作稍微急了一點，有兩位去上廁所的同學回來發現桌面已經收空。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他內疚得站在那疊杯套前面像做錯事的團長，笑著搖頭說「免運的原來是全班的手工喔？快！剩八分鐘，你當拍賣官一個一個舉起來讓大家認領，別耽誤午休」。",
+          "action": "以幽默語氣緩解其愧疚並令其於午休前八分鐘內主持公開認領，準時收尾。",
+          "tradeoff": "教室瞬間變成杯套認領拍賣會，笑鬧聲太大差點壓不住午休鐘前的靜心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 332740624
+        },
+        "selectedIds": [
+          6,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "5226708f4827b9d5de39d24686bcbba42eb9bd122dc2bde96edf5d4f2d36437c"
+      },
+      "consequenceDirections": {
+        "A": "可發展分排在剩七分鐘內快速抽回自己杯套後，上廁所回來的同學發現桌面收空的錯愕。",
+        "B": "可發展笑著叫他當拍賣官在八分鐘內公開認領後，教室變成拍賣會且笑鬧聲壓不住午休。",
+        "C": "可發展利用午休前自由時間攤開讓大家認領後，少了自由時間卻各自找回畫作的收尾。",
+        "D": "可發展由student_a唱名畫作特徵加速歸還後，畫得隨意不好意思舉手認的尷尬笑聲。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cd086f7af1ec22930094ba5cb1811c95903c81aa93188eed2d0e1e139a5ca727",
+    "draftSha256": "08b38b24ec67f145b76df6c5b8a077367d18ab516576a29f2317b7b7ca0a1f52",
     "seedAssignmentVersion": 1
   }
 }

@@ -14,14 +14,82 @@
   "plannedTags": [
     "G01"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "38b975ed5529ce7eb808d5ed7faa9ff3a11f8120d0731943c9c5b909f791e409",
+      "checkedAt": "2026-11-28T03:29:49.020Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我讓student_a親手刪掉前面一題重複操作，保住能辨認新概念的末題。",
+            "action": "指導student_a刪減前面重複題型以縮短總作答時間，保留末頁新概念關鍵題。",
+            "tradeoff": "成品少了原本他最想展示的一種漂亮解法，他心裡很捨不得。"
+          },
+          {
+            "id": 2,
+            "text": "我建議把新概念那題抽出來變成單獨短題，下一節進班先試，原本大部分習題照舊不動。",
+            "action": "維持原習題本多數結構，將新概念題拆出為獨立前測短題。",
+            "tradeoff": "他得接受這本成品沒辦法在同一次練習裡測出兩種能力。"
+          },
+          {
+            "id": 3,
+            "text": "我請他把前面兩題重複操作的其中一題改成「只看步驟填空」而不重算一遍，幫寫慢的同學省出五分鐘碰新概念。",
+            "action": "將重複題型改寫為局部填空以減少機械運算耗時，保留原本解法展示與末題。",
+            "tradeoff": "他得重新改寫那一題的題幹與版面，不能原封不動留著。"
+          },
+          {
+            "id": 4,
+            "text": "我先問剛才試寫那位同學自己覺得前面哪一題最像鬼打牆重複，讓使用者親自指出最該刪的那一題。",
+            "action": "依試寫者實際卡關回饋定位冗餘題目，輔助作者判斷刪減取捨。",
+            "tradeoff": "當著作者面講他最得意的一題像鬼打牆，student_a聽了有點心痛。"
+          },
+          {
+            "id": 5,
+            "text": "我建議他在這本習題的最後一頁寫明「新概念必做」，前面重複練習標成「熟了可跳過」，兩題都留著。",
+            "action": "保留全部題目，增設分流跳題指引讓不同速度學生皆能觸及新概念。",
+            "tradeoff": "乖學生通常還是會從第一題傻傻寫到最後，不見得真的敢跳過。"
+          },
+          {
+            "id": 6,
+            "text": "我請他先把這份試寫計時結果帶回去冷靜一晚，明天再拿他決定要砍掉哪一題的版本來找我看。",
+            "action": "提供實證時間數據後給予一晚沉澱期，由學生自主決策刪題版本。",
+            "tradeoff": "他今天本來等著老師幫他下刀，帶著兩難回去反而更糾結。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他盯著那題最得意的重複解法捨不得劃掉，笑著把紅筆遞過去說「捨不得刪自己寫的題目吼？但你編這本是要教會別人，不是展示你多會寫！閉著眼睛劃掉一題吧」。",
+          "action": "以直白點破教學初衷鼓勵student_a親手刪減冗餘題目，保住新概念關鍵題。",
+          "tradeoff": "他咬著嘴唇親手劃掉那題時，臉上的不甘心寫得一清二楚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 327810018
+        },
+        "selectedIds": [
+          4,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "002ff28fae12d90687242221dd990804883dec270245ff63f82d3f062306483e"
+      },
+      "consequenceDirections": {
+        "A": "可發展把前面重複題改成只看步驟填空省五分鐘後，得重新改寫題幹與版面。",
+        "B": "可發展讓試寫同學親自指出哪題最像鬼打牆重複後，當著作者面講讓他聽了有點心痛。",
+        "C": "可發展遞紅筆鼓勵他閉著眼睛劃掉一題重複解法後，他咬唇劃掉時滿臉的不甘心。",
+        "D": "可發展給計時數據讓他帶回去冷靜一晚明天再交刪題版，原本等老師下刀的他更糾結。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3255883a4342d93c53169449247d92df7f81f238d43a91d57bb18dd51460ec6b",
+    "draftSha256": "38b975ed5529ce7eb808d5ed7faa9ff3a11f8120d0731943c9c5b909f791e409",
     "seedAssignmentVersion": 1
   }
 }

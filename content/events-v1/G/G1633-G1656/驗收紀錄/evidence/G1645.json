@@ -15,14 +15,82 @@
     "G01",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b5790a99f7d3c56acd82e49f1642d31ae0e9b39a04f312a16770551a08219d63",
+      "checkedAt": "2026-11-28T03:29:49.017Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我讓他們全組立刻停下來口頭逐人核對哪幾頁還沒好，今天這節先不強求排完版。",
+            "action": "暫停排版並要求全組逐一口頭核對實際完成度，確認缺漏後再行收尾。",
+            "tradeoff": "這節課肯定排不完版，得另外找課間補齊。"
+          },
+          {
+            "id": 2,
+            "text": "我讓他們仍用同一份表，但改成每人補填回自己那部分的實際狀態句，省下口頭時間。",
+            "action": "保留原進度表架構並將勾選欄位改為具名狀態短句填報，要求重做現有勾選紀錄。",
+            "tradeoff": "雖然省了口頭開會，但每個組員都得重新回來補填這張表。"
+          },
+          {
+            "id": 3,
+            "text": "我先把「綠色勾勾」當成無效，直接請student_a現場把另外三個組員叫來講桌前兩分鐘講清楚各自缺哪一塊。",
+            "action": "作廢現行打勾紀錄並召集該組進行兩分鐘快速缺漏盤點。",
+            "tradeoff": "其他組員原本以為寫完了可以喘口氣，突然被叫上來有點錯愕。"
+          },
+          {
+            "id": 4,
+            "text": "我問清楚他自己那頁到底差多少，先讓已確定完成的人正常排版，他還沒做好的兩頁標紅字留白。",
+            "action": "區分已完工與未完工頁面，將未完成部分明確標註留白以防誤交。",
+            "tradeoff": "整份簡報紅字留白掛在那裡，組員看了反而催他趕快補。"
+          },
+          {
+            "id": 5,
+            "text": "我順便提醒全班其他組別也檢查一下各自的打勾表，免得也有別組把「開了檔案」當成「已經完成」。",
+            "action": "在協助該組改用具體狀態說明之餘，向全班發布一致的進度標示釐清。",
+            "tradeoff": "全班突然停下來重對一次進度，原本進度超前的組覺得被拖累。"
+          },
+          {
+            "id": 6,
+            "text": "我准許他們這組延後半天交件，條件是每個人都要在交件前補上一句能被同伴追問的完成說明。",
+            "action": "給予有限交件緩衝並採納student_a所提具名確認機制。",
+            "tradeoff": "對準時交件的其他組來說，得說明清楚這是因為實質盤點而非放水。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他指著那個綠色勾勾懊惱到快抓狂，笑著拿紅筆把他的勾畫掉說「誰叫你跟論壇學偷懶！現在快回去跟組員老實說你那頁還沒好，大家補寫一句實話比較實在」。",
+          "action": "畫掉無效勾選並督促student_a立即向組員坦白實際未完成進度，改採實話短句確認。",
+          "tradeoff": "要他當場向組員自首這頁其實還沒寫好，他走回去時臉上一陣青一陣白。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3732628423
+        },
+        "selectedIds": [
+          6,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 6,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "13e9e460cf4f8bcb64101857c0387be1a58205bad18f0a0825926bb5b7ad60a4"
+      },
+      "consequenceDirections": {
+        "A": "可發展作廢打勾並召集該組兩分鐘講清各自缺哪一塊，原本以為完工組員的錯愕反應。",
+        "B": "可發展准許延後半天條件是每人補一句可被追問說明，需向準時交件組別說明非放水。",
+        "C": "可發展全組停下來口頭逐人核對實際完成度後，這節排不完版且得另找課間補齊。",
+        "D": "可發展笑著畫掉他的勾要他向組員自首這頁沒寫好後，student_a走回去時臉上一陣青白。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fa32e43f0bcb28f40e4ba8fad808cae5b1253840a1eafdd60add3c022569688d",
+    "draftSha256": "b5790a99f7d3c56acd82e49f1642d31ae0e9b39a04f312a16770551a08219d63",
     "seedAssignmentVersion": 1
   }
 }

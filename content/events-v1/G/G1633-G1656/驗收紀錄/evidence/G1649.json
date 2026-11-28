@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1df4a7122d1a43235279fac8adc151c6cad5322a9cc0f1f75992f640656ac89f",
+      "checkedAt": "2026-11-28T03:29:49.027Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請他改用無聲舉牌預告，並讓超時者自己決定停在哪一個完整句子收尾。",
+            "action": "改採無聲視覺倒數提示，允許報告者於合理緩衝內自行完成當前完整語句。",
+            "tradeoff": "每組都多講十幾秒，整體報告節奏會有點浮動延後。"
+          },
+          {
+            "id": 2,
+            "text": "我把「時間到喊停」的任務接回我自己手上，請student_a只負責安靜記錄各組實際用時。",
+            "action": "由導師接手計時終止發號權，調整student_a僅擔任客觀計時紀錄。",
+            "tradeoff": "示範壓力的黑臉仍由老師自己扛，student_a也少了練習控時的機會。"
+          },
+          {
+            "id": 3,
+            "text": "我教他看講者的換氣點——剩十秒時先點頭示意，等講者那口氣講完再輕聲說「謝謝這組」。",
+            "action": "肯定其對語氣停頓的觀察，指導其依換氣節點進行溫和收尾提示。",
+            "tradeoff": "萬一遇到一口氣講超長不換氣的組別，還是會一直超時。"
+          },
+          {
+            "id": 4,
+            "text": "我告訴全班「牌子舉起來代表剩最後一句的時間，講完那句就自然收」，免得大家怕被突襲。",
+            "action": "向全班明訂最後一句緩衝規則，消除報告者對突兀斷話的恐懼。",
+            "tradeoff": "有些同學的「最後一句」會越接越長，用逗號接成五句。"
+          },
+          {
+            "id": 5,
+            "text": "我請他先拿「剩30秒」的牌子只對台上微笑舉起來當提醒，不喊出聲也不急著揮手。",
+            "action": "簡化計時動作為單純微笑舉牌提醒，降低對講者與計時者的衝突壓力。",
+            "tradeoff": "太專心看稿的報告者根本沒抬頭看到牌子，照樣講超過。"
+          },
+          {
+            "id": 6,
+            "text": "我決定先讓接下來兩組照自然段落停看時間會多多久，下課再跟大家討論正式報告該怎麼設安全緩衝。",
+            "action": "暫時放寬計時喊停，觀察自然段落收尾耗時後再行訂定正式規則。",
+            "tradeoff": "後面幾組可能時間不夠上台，得留到下一節課。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他抱著計時牌手抖得比台上的人還緊張，笑著接過牌子說「好啦！你這麼懂人家的換氣點，那你幫我看哪裡該停，黑臉我來當，輪到你們組我也留半句給你收」。",
+          "action": "接回喊停黑臉權責並採納其換氣觀察點，同時承諾給予合理收句緩衝。",
+          "tradeoff": "自己一邊聽報告還要一邊看他眼神暗號決定幾秒喊停，一心二用有點累。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 429400722
+        },
+        "selectedIds": [
+          1,
+          4,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 2,
+          "C": 4,
+          "D": "emotional"
+        },
+        "optionsDigest": "6c6e2b35c65483ec1d1f88e36c94ef39d544cf3373fcfc9eda9cae67f5e36b00"
+      },
+      "consequenceDirections": {
+        "A": "可發展改用無聲舉牌並讓超時者停在完整句子後，每組多講十幾秒使整體報告浮動延後。",
+        "B": "可發展導師接回喊停黑臉權並讓student_a只當客觀計時員，少了一次練習控時的機會。",
+        "C": "可發展告訴全班舉牌代表剩最後一句時間後，同學用逗號越接越長變成五句的現場趣事。",
+        "D": "可發展笑著接過牌子採納他看換氣點的暗號後，導師一邊聽報告一邊盯他眼神的心力。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0317804065c3b1fbd4a2cd6c3af1a6927bcd0f2dc9129e385fe676d9cd5ed181",
+    "draftSha256": "1df4a7122d1a43235279fac8adc151c6cad5322a9cc0f1f75992f640656ac89f",
     "seedAssignmentVersion": 1
   }
 }

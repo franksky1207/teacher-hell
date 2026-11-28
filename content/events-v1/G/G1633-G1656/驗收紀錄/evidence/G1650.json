@@ -16,14 +16,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a248b605763ee0d9fdeee1503e5bbcdbef8cacf3c125b6138ecd6657a28f5daa",
+      "checkedAt": "2026-11-28T03:29:49.029Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持原本定好的展示段落，但在課內單獨留給他試說一次「比較放鬆、不用裝鎮定」的版本。",
+            "action": "維持正式練習走位版本，於課堂額外撥出一次空間讓student_a試演真實情緒版。",
+            "tradeoff": "課堂時間只夠留這一次，他得在全班面前猶豫要不要真的放開來演。"
+          },
+          {
+            "id": 2,
+            "text": "我把決定權交還給他自己，由他親自挑選上台前到底要演裝鎮定版還是難過版。",
+            "action": "將最終演出版本選擇權完全交還student_a本人決定。",
+            "tradeoff": "若他臨時換版本，會打亂同組其他同學對排練走位與接詞的預期。"
+          },
+          {
+            "id": 3,
+            "text": "我先單獨請他就在辦公室或走廊念這兩版給我聽，給他比「過了」更仔細的具體回饋，再看他想上台演哪一版。",
+            "action": "先進行一對一深度聆聽與情緒肯定，不急著在全班面前迫使他切換版本。",
+            "tradeoff": "課間只剩幾分鐘，一對一聽完兩版獨白差點趕不上進教室。"
+          },
+          {
+            "id": 4,
+            "text": "我肯定外婆問得好，建議他把那段真正難過的情緒留三分放進原本這版的尾音裡，不用整段打掉重排。",
+            "action": "保留原版主架構與走位，指導其於語氣尾端融入真實情緒層次。",
+            "tradeoff": "兩全其美的微調很難拿捏，對一般高中生演技來說有點吃力。"
+          },
+          {
+            "id": 5,
+            "text": "我問他如果同組組員也同意微調接話，要不要把今天這節排練當成「實驗版」先試演難過的那一段看看感覺。",
+            "action": "徵詢同組組員同意後，開放於本節練習嘗試不同情緒版本。",
+            "tradeoff": "把他的個人脆弱攤在同組面前商量，他可能反而縮回去說算了。"
+          },
+          {
+            "id": 6,
+            "text": "我告訴他昨天其實我就有感覺他在硬撐鎮定，只是怕他不想在大家面前哭才沒點破，現在由他自己選舒服的演法。",
+            "action": "向student_a坦承已察覺其壓抑情緒並解釋先前尊重考量，交由其決定呈現方式。",
+            "tradeoff": "聽完「老師其實早看出來了」，他反而鼻頭一酸差點當場落淚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽完外婆那句話也有點被觸動，合上本子對他說「原來你也在等我聽出來喔？對不起昨天講太快了，今天上台你想演哪一版都行，台下我專心看」。",
+          "action": "誠懇致歉先前評語過於簡略，開放student_a依真實意願選擇版本並承諾專注聆聽。",
+          "tradeoff": "同組原本對好的排練走位等一下可能得現場臨機應變。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1030871129
+        },
+        "selectedIds": [
+          2,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 3,
+          "D": 2
+        },
+        "optionsDigest": "5f2ad1b5a7168c49ea79b6928f88def971b28891299942cee789bd017adfba77"
+      },
+      "consequenceDirections": {
+        "A": "可發展被外婆那句話觸動並致歉昨天講太快後，開放他自選版本與同組臨時應變走位。",
+        "B": "可發展建議把真實難過情緒留三分放進原本這版尾音後，高中生演技拿捏微調的吃力。",
+        "C": "可發展先在走廊一對一聽完兩版給予具體回饋後，課間時間緊迫差點趕不上進教室。",
+        "D": "可發展完全交還他自己選演哪版後，若臨時更換將打亂同組其他同學排練預期與接詞。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d0fcbbb33d4bc97830c9ec90905a908fe486106a829136ea7ffc2e5486240877",
+    "draftSha256": "a248b605763ee0d9fdeee1503e5bbcdbef8cacf3c125b6138ecd6657a28f5daa",
     "seedAssignmentVersion": 1
   }
 }

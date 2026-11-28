@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9f5f8d37a4be02080eb6fbda869243afb42883bba7b30da43bac29a8c72f8171",
+      "checkedAt": "2026-11-28T03:29:49.033Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我讓他帶著版面變更紀錄回小組，依「已做排版與待做文字」重新公平分配，不怕露臉。",
+            "action": "提供版面修改與排版紀錄佐證，要求該組依實際已付出與未完成工作量重新分工。",
+            "tradeoff": "會當場暴露他昨天主動讓位縮稿的事，組員氣氛可能有一點尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我先出面把剩下兩頁拆給還沒負責收尾的人接手，繼續替他把版面讓位的低調守住。",
+            "action": "由導師出面將剩餘兩頁分配給工作量較少組員，不公開student_a先前讓位細節。",
+            "tradeoff": "組員對他「到底做了多少」的誤解很可能一直留到作品送出。"
+          },
+          {
+            "id": 3,
+            "text": "我當場進小組問清楚「這兩頁的美術排版是誰從頭排到尾的」，不讓他們把排版當成沒做事。",
+            "action": "由導師公開點出排版工作量並要求小組重新評估收尾人力分配。",
+            "tradeoff": "組員聽完才驚覺搞錯，但可能嘴硬說「我們以為排版拖進去很快」。"
+          },
+          {
+            "id": 4,
+            "text": "我請student_a不必忍氣吞聲，直接把昨天和老師協調縮版面的原因用平常語氣告訴組員，「我昨天排完兩組真的沒空再寫兩頁」。",
+            "action": "支持student_a主動向組員說明自身實際工作量並拒絕不合理加派。",
+            "tradeoff": "渴望被肯定的他很怕講出來會被同學覺得愛計較。"
+          },
+          {
+            "id": 5,
+            "text": "我在這份試印本的版權頁或工作分配欄當場幫他補上一行「全刊雙組版面統籌」，再請組員重分剩下兩頁。",
+            "action": "於試印本明確補登排版統籌署名後，引導小組重議最後兩頁負責人。",
+            "tradeoff": "多這行署名雖還他公道，但原本只寫一句的誤會還是得現場講開。"
+          },
+          {
+            "id": 6,
+            "text": "我先幫他跟這組約定「排版的人不兼寫收尾兩頁」的原則，剩下兩頁由全組（含他自己）抽籤決定誰補一篇、老師幫改格式。",
+            "action": "設立排版與收尾互斥原則或重新平均分攤剩餘頁數，減輕student_a獨扛壓力。",
+            "tradeoff": "萬一抽籤又抽到他自己，這場公道好像白討了。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他被誤會成偷懶只寫一句還不敢講，心裡替他抱不平，直接拿起試印本說「走，我跟你去跟組員講！排版排到眼花還被當成最有空，這口氣老師幫你出」。",
+          "action": "陪同student_a向同組組員公開說明其雙組排版貢獻，要求重新分配剩餘兩頁。",
+          "tradeoff": "老師親自出馬撐腰雖然解氣，組員瞬間安靜下來有點被嚇到。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 978036064
+        },
+        "selectedIds": [
+          1,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 4,
+          "D": 5
+        },
+        "optionsDigest": "d73a4123f644324dee9b814f36ff860bbc656fd82209fc34a4403e429cd22328"
+      },
+      "consequenceDirections": {
+        "A": "可發展抱不平陪他去跟組員公開雙組排版貢獻後，組員瞬間安靜下來有點被嚇到。",
+        "B": "可發展帶版面變更紀錄回小組依實際工時重分後，暴露他主動讓位縮稿與組員微尷尬。",
+        "C": "可發展支持他用平常語氣自己告訴組員真的沒空再寫兩頁，渴望肯定的他怕被當愛計較。",
+        "D": "可發展在試印本補上一行「全刊雙組版面統籌」後，仍須現場講開只寫一句的誤會。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6afdc559f9cd75e536f8f3d6db3b48e5e6a9e6170bfb6218e8ce192a90d3dac9",
+    "draftSha256": "9f5f8d37a4be02080eb6fbda869243afb42883bba7b30da43bac29a8c72f8171",
     "seedAssignmentVersion": 1
   }
 }

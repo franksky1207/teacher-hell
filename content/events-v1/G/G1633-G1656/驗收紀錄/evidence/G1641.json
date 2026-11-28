@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "656decfb0d2193fd3d6a586a26e2e292c322fbab98d64591c3565e2d9fc86ecd",
+      "checkedAt": "2026-11-28T03:29:49.008Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我保留他的原版，在自願的同學面前試讀一小段，讓他依實際聽到的歧義自己決定怎麼微調。",
+            "action": "恢復學生原版稿件並安排小範圍自願同學試聽，由student_a依聽眾反應自主修訂。",
+            "tradeoff": "得額外撥出一次短段試讀練習時間，進度稍微慢一點。"
+          },
+          {
+            "id": 2,
+            "text": "我不改他原本的句子，但教他在開頭先用一句口頭前情交代角色關係，讓第一次聽的人也抓得住。",
+            "action": "保留原版口語停頓節奏，僅於開頭補一句口頭前情提示以確保語意清楚。",
+            "tradeoff": "朗讀現場可照常進行，但他得接受這段文字離開現場單獨閱讀時效果會打折。"
+          },
+          {
+            "id": 3,
+            "text": "我當場承認剛剛修得太書面語了，把決定權還給他，只請他在原版裡用斜線標出哪裡是故意留給聽眾插話的停頓。",
+            "action": "坦承過度書面修訂並交還版本決定權，指導student_a標註口語停頓記號。",
+            "tradeoff": "雖然保住他的節奏，但沒另外找沒聽過的新聽眾測試會不會歧義。"
+          },
+          {
+            "id": 4,
+            "text": "我把兩個版本並排唸一遍給現場還沒聽過的兩名同學聽，聽完看大家在哪裡懂、在哪裡接得上，再讓student_a自己拍板。",
+            "action": "以現場新聽眾盲測雙版本效果後，將最終定稿權交由student_a。",
+            "tradeoff": "現場唸兩遍比對花了不少課間時間。"
+          },
+          {
+            "id": 5,
+            "text": "我跟他說「這篇是班內口語練習不是投稿作文」，照原版上台沒問題，只要其中一句主詞不漏掉就好。",
+            "action": "區分口語練習與書面投稿標準，僅確認必要主詞完整後採用學生原版。",
+            "tradeoff": "對原本挑出兩處語氣差別的他來說，老師突然退讓得太快有點意外。"
+          },
+          {
+            "id": 6,
+            "text": "我請他把那句被我連起來的停頓自己用原本的口吻重念一遍，我照他的氣口直接把標點改回原版。",
+            "action": "依學生實際朗讀氣口重定標點停頓，恢復原版互動節奏。",
+            "tradeoff": "書面稿子上會出現不符合傳統文法標點的斷句，別科老師看到可能問。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我把兩張紙對比看了一眼忍不住自嘲「哎呀，我這國文／教師職業病又發作了，把你留給朋友插話的呼吸全修沒了！拿回去照你原版念，這句我幫你畫掉」。",
+          "action": "自嘲承認過度修改之職業病並當場退回修訂稿，支持student_a沿用原版口語節奏。",
+          "tradeoff": "痛快認錯讓student_a笑出來，但自己剛才紅筆改半天的心血全作廢。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3731674191
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 5,
+          "D": 2
+        },
+        "optionsDigest": "2934797788db233dd446b98ea875f9f2a56ebec3814252bba34cc4cf1a17a6fd"
+      },
+      "consequenceDirections": {
+        "A": "可發展自嘲教師職業病發作並退回修訂稿後，student_a笑著拿回原版與紅筆心血作廢。",
+        "B": "可發展保留原版並在自願同學面前試讀微調後，實際聽見歧義並多撥短段練習的過程。",
+        "C": "可發展區分口語練習與書面作文只補確認主詞後，student_a對老師退讓太快的意外。",
+        "D": "可發展不改稿只教他在開頭補一句口頭前情後，朗讀照常但離開現場單看效果會打折。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a06949aca64f0762f007c43979052aa38ec9acb67bed33c55ab4ff4e7dd6d815",
+    "draftSha256": "656decfb0d2193fd3d6a586a26e2e292c322fbab98d64591c3565e2d9fc86ecd",
     "seedAssignmentVersion": 1
   }
 }

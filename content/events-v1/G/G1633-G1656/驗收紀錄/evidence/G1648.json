@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "40cac26cb41c5ad462beb15dd380ae5fdc62d0628f67be1af805e06aafa8bcb1",
+      "checkedAt": "2026-11-28T03:29:49.025Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我在下一次確定有空的班內分享時段，徵得作者與那兩位聽眾同意先留一個完整段落，讓原本兩人當場選結尾。",
+            "action": "預留確定可用的下輪班內完整分享時段並確認三方在場，保障原有聽眾回饋。",
+            "tradeoff": "會壓縮下一輪其他自願分享同學的名額。"
+          },
+          {
+            "id": 2,
+            "text": "我協助三人在共同有空的課間做一次小範圍試讀，完整保留原聽眾與結尾挑選回饋。",
+            "action": "於三名當事學生共同同意之課間空檔安排小範圍專場試讀。",
+            "tradeoff": "作者失去在全班面前讀完的機會，三個人也得各自挪出下課空檔。"
+          },
+          {
+            "id": 3,
+            "text": "我先幫student_a把這三個人約在講桌前問清楚：作者到底想等下次全班聽、還是今天放學前先念給這兩人聽。",
+            "action": "尊重作者與原聽眾意願，現場先確認其偏好公開補讀或私下即時試讀。",
+            "tradeoff": "剛下課大家各自有事，未必三個人能馬上湊在一起決定。"
+          },
+          {
+            "id": 4,
+            "text": "我請student_a先把作者的兩版結尾紙本轉交給那兩位約好的同學先看過，等下次公開補讀時再當場投票。",
+            "action": "先以紙本傳遞維持原聽眾連結，保留下次正式公開朗讀機會。",
+            "tradeoff": "少了現場念出來的聲音節奏，先看紙本會沖淡朗讀的驚喜。"
+          },
+          {
+            "id": 5,
+            "text": "我承認剛才我只說「改天再念」太敷衍，現在立刻在黑板角落記下「下週班內分享第一位補讀＋原聽眾在場」。",
+            "action": "立即將具體補讀承諾明確排入下次議程並告知三方，取代模糊的改天。",
+            "tradeoff": "到下週之前作者還得把這份沒念完的緊張感掛在心上。"
+          },
+          {
+            "id": 6,
+            "text": "我先問今天下午最後一節自習或下課十分鐘，那兩位聽眾跟作者有沒有空借教室後面安靜讀完這五分鐘。",
+            "action": "主動查詢當日可用零碎合法空檔，促成三方即時完成原定試讀約定。",
+            "tradeoff": "五分鐘很趕，念完可能連好好討論為什麼選那個結尾的時間都不夠。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽他拿家裡留飯菜的比喻點醒我，忍不住笑著點頭說「被你講得我好愧疚喔！說『改天』確實太隨便了，走，趁那兩個還沒跑遠，我們現在先去敲定什麼時候把這頓補回來」。",
+          "action": "坦承「改天」過度敷衍，立即陪同student_a向作者與兩位聽眾當面敲定確定補讀時段。",
+          "tradeoff": "為了這四個人的約定，下課原本要喝口水的休息時間又貢獻出去了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3063462493
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "859a794b651c3fcf0d956655dd360be741fa3b61aecf85a89833ad5087911344"
+      },
+      "consequenceDirections": {
+        "A": "可發展被家裡留飯比喻點醒、趁兩聽眾沒跑遠去敲定補讀時段，賠掉課間喝水時間。",
+        "B": "可發展問清作者與兩聽眾想等下次全班聽還是放學前先念後，剛下課三方能否湊齊決定。",
+        "C": "可發展立刻在黑板角落記下「下週分享第一位＋原聽眾在場」後，作者這週仍掛心等待。",
+        "D": "可發展詢問今日最後一節自習或下課借教室後面念五分鐘後，時間趕到未必能好好選結尾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "481e609503459415cd180f75666a4174b10884450285ec0c05b0b38a98cfa074",
+    "draftSha256": "40cac26cb41c5ad462beb15dd380ae5fdc62d0628f67be1af805e06aafa8bcb1",
     "seedAssignmentVersion": 1
   }
 }

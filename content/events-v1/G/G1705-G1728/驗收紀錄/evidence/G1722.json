@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6b728b9201d5698d76b7d9f98fee5696df94736a3e4a3077a764ee2eae1c74cc",
+      "checkedAt": "2026-11-28T04:20:56.194Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「別急，還沒公開前這張我直接撤下來，你現在另換一個不署名的版本交給我。」",
+            "action": "於公開展示前立即撤下署名版作品，讓student_a另行提交適當版本。",
+            "tradeoff": "徹底保護學生不被公開調侃，但課堂此刻少掉原先準備當開頭的例子。"
+          },
+          {
+            "id": 2,
+            "text": "「把名字這張拿回去改成匿名重抄一次交來，我重新核對編號再放進去。」",
+            "action": "退回署名版由student_a親自改為匿名版重交，導師再行核對並排入展示。",
+            "tradeoff": "保住原本好笑的開場例子與匿名規範，但費一輪核對且全班得等一下。"
+          },
+          {
+            "id": 3,
+            "text": "「這張署名版我收起來只當老師自己看的小彩蛋，台上開場改用你同桌原本寫的那份匿名句。」",
+            "action": "私下保留student_a署名版不再公開展示，改採同桌之匿名短句作為課堂開場。",
+            "tradeoff": "既不用現場重抄又兩邊不得罪，但少了student_a自己那張的完整笑點。"
+          },
+          {
+            "id": 4,
+            "text": "「抱歉，剛才沒先跟你確認能不能公開署名是我疏忽。這張還你，你自己決定要用修正帶貼掉名字重放上來，還是直接收回。」",
+            "action": "導師承認未先核對同意之疏忽並退還原件，由student_a自行決定遮名展出或撤回。",
+            "tradeoff": "把完整處分權與尊嚴都交還作者本人，但現場決定得花一分鐘。"
+          },
+          {
+            "id": 5,
+            "text": "「今天我們先展示其他組的正經短文，這張署名雙關句先放我這兒，讓你整節課慢慢決定要不要拿回來。」",
+            "action": "暫時擱置該雙關作品展示，改先進行其他組別正經作品展示以給student_a緩衝時間。",
+            "tradeoff": "不用在慌張中倉促做決定，但原本輕鬆活潑的開場氣氛變平了。"
+          },
+          {
+            "id": 6,
+            "text": "「如果你不介意這句話本身，我只用嘴巴唸出內容當開場、完全不秀出紙上的作者名字，可以嗎？」",
+            "action": "徵詢student_a同意採純口頭不具名方式唸出其雙關短句，不展示原紙本。",
+            "tradeoff": "保留了最好的開場效果又不露本名，但台下同桌還是可能聽得出是誰寫的。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他明明自己衝動送上講桌、此刻卻急著追問我怎麼排進展示，我心裡有點好笑又感謝他這麼信我會拿捏場合，直接把那張署名版抽出來反扣進教案夾：「放心啦，老師哪會把你的私房笑話拿去公審！這張我私藏，開場我另外想一句！」",
+          "action": "因體諒學生懊惱又感念其信任，導師立刻將署名版反扣進教案夾私藏，決定當場另行發想新開場。",
+          "tradeoff": "瞬間給足student_a安全感並接住他的信任，但老師自己得硬擠出一個新開場。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2335070982
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "aaf29ddaea80062dcacd4dc4101f51655e49305fb9393c24234e556f59fc30c2"
+      },
+      "consequenceDirections": {
+        "A": "可發展私下保留student_a署名版不再公開展示、改採同桌之匿名短句作為課堂開場後，既不用重抄又兩邊不得罪，但少了student_a自己那張的完整笑點。",
+        "B": "可發展導師承認未先核對同意之疏忽並退還原件、由student_a決定遮名展出或撤回後，把處分權與尊嚴交還作者本人，但現場決定得花一分鐘。",
+        "C": "可發展於公開展示前立即撤下署名版讓student_a另換版本後，徹底保護學生不被公開調侃，但課堂此刻少掉原先準備當開頭的例子。",
+        "D": "可發展導師立刻將署名版反扣進教案夾私藏並當場另行發想新開場後，瞬間給足student_a安全感並接住他的信任，但老師得硬擠出新開場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b45317ab24b45fcd5bf4b570e4ea1eae827f6b14862810f7a5b91ac3a53c90b9",
+    "draftSha256": "6b728b9201d5698d76b7d9f98fee5696df94736a3e4a3077a764ee2eae1c74cc",
     "seedAssignmentVersion": 1
   }
 }

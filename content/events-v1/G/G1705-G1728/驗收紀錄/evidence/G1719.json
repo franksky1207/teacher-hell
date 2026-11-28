@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9658d72f59a146313ea132178171e1ce28c93f1749fcace2cab5b9fe7f04555c",
+      "checkedAt": "2026-11-28T04:20:56.178Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「我們一起改坐到教室側邊大家都看得到的位置吧，至少不像在背後盯著。」",
+            "action": "請subject_teacher與導師一同移坐至學生視線可及之教室側邊桌位進行觀察。",
+            "tradeoff": "消除背後監考的壓迫感，但老師在側邊仍會多少影響自然討論。"
+          },
+          {
+            "id": 2,
+            "text": "「不然我們兩個都回到平常教師活動的位置或講台，等這輪聊完請幾位自願學生口述剛才真實討論情況。」",
+            "action": "兩位教師退回原教師位置不再貼近觀察，改於課後由學生自願口述討論歷程。",
+            "tradeoff": "徹底把空間還給學生自在講話，但教師掌握到的現場細節少了一層。"
+          },
+          {
+            "id": 3,
+            "text": "「乾脆別坐在外面看了，你直接拉張椅子坐進其中一組當普通組員一起聊，我也找一組坐進去。」",
+            "action": "兩位教師改為各自加入一組擔任平等參與成員共同討論，取消旁觀席次。",
+            "tradeoff": "打破高高在上的觀察者距離，但那兩組學生放不放得開全看老師怎麼收斂發言。"
+          },
+          {
+            "id": 4,
+            "text": "「我們先講好只看前五分鐘開場怎麼切入，五分鐘一到我們兩個就先退回辦公室，後面完全留給他們自己聊。」",
+            "action": "縮短同堂觀察為前五分鐘，期滿兩位教師共同離場將教室空間交還學生自由討論。",
+            "tradeoff": "學生後半段能徹底放鬆，但老師就看不到中後段真正深入交鋒的部分。"
+          },
+          {
+            "id": 5,
+            "text": "我起身笑著向全班說清楚：「大家別回頭了，subject_teacher老師坐後面是怕擋住你們看黑板，這輪討論完全不計分！」",
+            "action": "維持後排觀察位置，由導師公開澄清坐後排原因與不計分原則以降低監考聯想。",
+            "tradeoff": "試圖用一句解釋直接化解緊張，但習慣被評分的學生未必馬上信。"
+          },
+          {
+            "id": 6,
+            "text": "「我們讓學生自己舉手投票，今天這輪他們希望老師坐前面、坐側邊，還是先去走廊等。」",
+            "action": "將兩位教師本輪觀察位置之決定權交由學生公開表決選擇。",
+            "tradeoff": "把空間主導權真正交還說話的人，但現場投票又多花一分鐘。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看同事為了配合我的建議一路退到最後一排、學生卻僵得像被教官巡堂，我又荒謬又過意不去，拍拍同事肩膀：「得，咱們倆越想裝透明反而越像監考！走，陪我一起站回講台邊去翻課本假裝備課，讓他們自己聊！」",
+          "action": "因覺得兩人行為反成監考壓力既荒謬又抱歉，導師拉著subject_teacher一同退回講台假裝忙備課，不再刻意旁觀。",
+          "tradeoff": "幽默化解了全班的緊繃感，但原本想做的細部觀察也就跟著泡湯了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2947949990
+        },
+        "selectedIds": [
+          2,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "f9d77a6af41c84e65566ebb210d14c6d031af5325204c790aa780722f98ffd95"
+      },
+      "consequenceDirections": {
+        "A": "可發展兩位教師退回原教師位置不再貼近觀察、改於課後由學生自願口述討論歷程後，把空間還給學生自在講話，但教師掌握到的現場細節少了一層。",
+        "B": "可發展請subject_teacher與導師一同移坐至視線可及之教室側邊桌位後，消除背後監考的壓迫感，但老師在側邊仍會多少影響自然討論。",
+        "C": "可發展維持後排位置並由導師公開澄清坐後排原因與不計分原則後，試圖直接化解緊張，但習慣被評分的學生未必馬上放得開。",
+        "D": "可發展導師拉著subject_teacher一同退回講台假裝忙備課、不再刻意旁觀後，幽默化解全班緊繃感，但原本想做的細部觀察也就跟著泡湯。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "227cf94cf4ba31a9b8ef8a66a79ca9e9fedc491b5f3c2c5a45537693ea34d839",
+    "draftSha256": "9658d72f59a146313ea132178171e1ce28c93f1749fcace2cab5b9fe7f04555c",
     "seedAssignmentVersion": 1
   }
 }

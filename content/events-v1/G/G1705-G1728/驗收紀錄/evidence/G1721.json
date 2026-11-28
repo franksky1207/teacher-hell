@@ -15,14 +15,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "511c96f982567ded83e3d00020a5e0ca908f3f242db3815afbbc6d11b28e9892",
+      "checkedAt": "2026-11-28T04:20:56.192Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「當然不能跨過去，我現在去向鄰場老師協調把球拿回來。至於剛才為什麼喊停，等一下由你自己去跟隊友講清楚。」",
+            "action": "由導師依程序向鄰場成人取回球後，讓student_a自行向隊友說明暫停撿球的安全理由。",
+            "tradeoff": "讓學生親自替自己的安全判斷發聲，但得當面承受隊友的追問與不解。"
+          },
+          {
+            "id": 2,
+            "text": "「別急，我去協調拿球順便幫全班示範一次為什麼現在必須停等成人處理，幫你把話講開。」",
+            "action": "導師親自取回球並當眾向全班示範跨場風險與停等成人處理規範。",
+            "tradeoff": "立刻替學生解開鬧脾氣的誤會，但student_a少了自己向同伴說明行動理由的機會。"
+          },
+          {
+            "id": 3,
+            "text": "「我去拿球，這兩分鐘你先帶隊友用旁邊備用球練一下傳接，別讓大家乾站在原地起鬨。」",
+            "action": "導師前往協調取球期間，請student_a帶領隊友以備用球維持基本傳接練習。",
+            "tradeoff": "迅速轉移隊友「被耽誤時間」的怨氣，但沒有當場把安全界線再說透。"
+          },
+          {
+            "id": 4,
+            "text": "「等一下我叫那位說你鬧脾氣的隊友一起跟我們站在安全線外看十秒隔壁場，看完再由我去拿球。」",
+            "action": "取球前先帶誤解的隊友與student_a於安全線外實際觀察鄰場高速活動風險，再由導師取球。",
+            "tradeoff": "讓懷疑的隊友親眼看懂為什麼不能過去，但多花半分鐘現場才拿球。"
+          },
+          {
+            "id": 5,
+            "text": "「球我先去拿回來，不過拿回來後你們隊暫停兩分鐘，大家一起訂好以後球飛出去誰喊停、誰叫老師。」",
+            "action": "導師取球歸還後暫停練習兩分鐘，引導全隊共同確立跨場停等與通報默契。",
+            "tradeoff": "把安全界線變成全隊共識而非student_a一人的固執，但會占用一點練習時間。"
+          },
+          {
+            "id": 6,
+            "text": "「我現在去拿球，拿回來就繼續打。至於隊友那邊要不要私下解釋，下課後你自己決定。」",
+            "action": "導師僅完成安全取球程序不介入隊友間誤會，將後續溝通保留給student_a自行處理。",
+            "tradeoff": "不把小摩擦放大成公開訓話，但這場剩下的時間隊友心裡可能還帶著疙瘩。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他明明是為了安全才堅持不跨過去、眼眶卻委屈得有點紅，怕被隊友當成突然不配合的怪人，我心裡一陣心疼又想替這份負責撐腰，直接先去把球拿回來再拍拍他肩膀：「這顆球老師親自去撿的！誰再說他鬧脾氣，先問問自己敢不敢對著隔壁衝刺的人跑過去！」",
+          "action": "因心疼負責的學生反受委屈，導師取球歸來後當眾高調替student_a背書反駁隊友質疑。",
+          "tradeoff": "強烈護住了student_a渴望的可靠形象，但剛才嘴快的隊友當場有點被訓到掛不住面子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1342500641
+        },
+        "selectedIds": [
+          2,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 5,
+          "C": 3,
+          "D": "emotional"
+        },
+        "optionsDigest": "b78dd345499fadda5923c5b5f653df9140bfeb9c377a93c20966b6414e26911f"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師親自取回球並當眾向全班示範跨場風險與停等成人處理規範後，立刻替學生解開鬧脾氣誤會，但student_a少了自己向同伴說明行動理由的機會。",
+        "B": "可發展導師取球歸還後暫停練習兩分鐘引導全隊共同確立跨場停等與通報默契後，把安全界線變成全隊共識，但會占用一點練習時間。",
+        "C": "可發展導師取球期間請student_a帶領隊友以備用球維持傳接練習後，迅速轉移隊友怨氣，但沒有當場把安全界線再說透。",
+        "D": "可發展導師取球歸來後當眾高調替student_a背書反駁隊友質疑後，強烈護住了student_a渴望的可靠形象，但剛才嘴快的隊友當場有點掛不住面子。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "ddf40755b4f533c06dcaacf36df2e603ddc6fc6e1e17733e84db522a3a23c970",
+    "draftSha256": "511c96f982567ded83e3d00020a5e0ca908f3f242db3815afbbc6d11b28e9892",
     "seedAssignmentVersion": 1
   }
 }

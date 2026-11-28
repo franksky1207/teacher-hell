@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ba4c94fcc4b24628af34d7003682d0ff5b820969337a425af029630d3515abde",
+      "checkedAt": "2026-11-28T04:17:52.902Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「先回去找原作者認錯，請他挑出要重寫的段落，你留下來照他的意思幫他抄寫補回。」",
+            "action": "請student_a向原作者坦承誤擦並依對方指示協助抄寫補回缺漏段落。",
+            "tradeoff": "讓原作者真正找回原本要寫的內容，但兩人得當面盯著被擦花的草稿回看。"
+          },
+          {
+            "id": 2,
+            "text": "「把被擦過的殘片留在原處當紀錄，另開一張空白草稿請原作者決定要接續寫還是從頭來。」",
+            "action": "保留現有殘片並提供新草稿紙，由原作者自行決定接續或重頭撰寫。",
+            "tradeoff": "減少兩人在殘稿上硬擠的尷尬，但原作者可能得花更多心力重頭構思。"
+          },
+          {
+            "id": 3,
+            "text": "「走吧，我陪你過去跟原作者把經過講清楚，我們三個人一起憑印象把那截拼回來。」",
+            "action": "由導師陪同student_a向原作者說明誤擦經過，並共同協助回想拼補內容。",
+            "tradeoff": "有老師在旁緩衝衝突降低student_a恐懼，但看起來有點像老師出面替他撐腰。"
+          },
+          {
+            "id": 4,
+            "text": "「你先去問一下同組或剛才看過這張草稿的同學，把大家記得的句子先寫成備份，再拿去向原作者道歉。」",
+            "action": "要求student_a先行訪詢曾閱覽該草稿之同儕拼出記憶備份，再攜備份向原作者致歉交付。",
+            "tradeoff": "減輕原作者從零重想的負擔，但student_a得先跑一圈向同學坦承自己擦錯了。"
+          },
+          {
+            "id": 5,
+            "text": "「你提的『擦前先畫可刪區』我們今天先貼在共用區，至於缺的那段請原作者先略過，到時候用口頭補講。」",
+            "action": "採納student_a提議於共用區張貼可刪區標示規範，並協調原作者以口頭補充替代書面缺段。",
+            "tradeoff": "立刻補上防錯機制又省下重抄時間，但那份共用草稿少了一段完整書面紀錄。"
+          },
+          {
+            "id": 6,
+            "text": "「你自己用鉛筆把剛才擦掉的範圍框起來寫上『誤擦待確認』，然後親自拿去交給原作者。」",
+            "action": "要求student_a自行標註誤擦範圍並親自向原作者交付說明，導師不代為出面。",
+            "tradeoff": "讓他練習自己面對朋友的不滿，但原作者當場可能會氣得直接開罵。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他攥著那塊大橡皮急得快哭出來、嘴裡還一直念著以後要先畫可刪區，我有點好笑又無奈，乾脆伸手把他那塊大橡皮「暫押」進我筆筒裡：「橡皮今天先歸老師管！你現在乖乖跟我去跟原作者認錯，缺什麼字你幫人家抄回來！」",
+          "action": "因無奈又覺得學生慌張模樣可笑，導師暫時收管其大橡皮並親自押著student_a前往向原作者致歉補抄。",
+          "tradeoff": "幽默化解了他的畏懼並確保有人負責補寫，但暫押橡皮讓他感覺像小學生被管束。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4075776153
+        },
+        "selectedIds": [
+          5,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "25bad21681bb3fb3644b02e4ee01a1ba4fc1f344de28fad275cb55c0b2857b9d"
+      },
+      "consequenceDirections": {
+        "A": "可發展採納student_a提議於共用區貼上可刪區規範、協調原作者以口頭補充替代書面缺段後，立刻補上防錯機制又省下重抄時間，但共用草稿少了一段完整書面紀錄。",
+        "B": "可發展導師暫時收管大橡皮並親自押著student_a前往向原作者致歉補抄後，幽默化解他的畏懼並確保有人補寫，但暫押橡皮讓他感覺像小學生被管束。",
+        "C": "可發展要求student_a先訪詢曾看過草稿的同學拼出記憶備份再向原作者致歉交付後，減輕原作者從零重想的負擔，但student_a得先跑一圈向同學坦承誤擦。",
+        "D": "可發展要求student_a自行標註誤擦範圍並親自向原作者交付說明後，讓他練習自己面對朋友不滿，但原作者當場可能會氣得直接開罵。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "6731ba218719784c6352b5343246519b1c5ee124bde8b301f32cb52ce35f44d3",
+    "draftSha256": "ba4c94fcc4b24628af34d7003682d0ff5b820969337a425af029630d3515abde",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "abb7d5358aa59600115fb4b4bfe21cdee420008df5bc0f1d738a3f5ee98e8760",
+      "checkedAt": "2026-11-28T04:19:25.308Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「好啊，這十分鐘先讓新人照盒上標記自己歸位一類，你只負責在結束前核對一次。」",
+            "action": "調整正常時段分工，由新人實際按標記歸位一類教具，student_a僅於結束前核對。",
+            "tradeoff": "真正把有辨認價值的步驟交給新人試做，但當日整體整理速度會變慢。"
+          },
+          {
+            "id": 2,
+            "text": "「今天正式這箱先維持原本分工收完，另外拿一箱最近不急用的教具讓你們兩個找課間並排練習。」",
+            "action": "維持今日正式收納分工以保進度，另撥一箱非急用教具供兩人利用可用課間並排練習。",
+            "tradeoff": "新人有了不會弄亂進度的試錯空間，但兩人得另外多找一段可用課間。"
+          },
+          {
+            "id": 3,
+            "text": "「就照你剛說的，現在這箱立刻開始：請新人先挑一件輕小件分類，我在旁邊看五分鐘確保沒放錯，你別搶手。」",
+            "action": "當場試行student_a所提先由新人自選一件分類之新規程，導師在旁協助把關五分鐘。",
+            "tradeoff": "立刻把流程改過來不拖到明天，但導師得現場多看五分鐘。"
+          },
+          {
+            "id": 4,
+            "text": "「你先手寫一張『這箱怎麼分』的三步驟小卡給新人，今天一人收一半，照小卡做完再互相對。」",
+            "action": "請student_a寫出三步驟分類小卡交予新人，今日採各收一半並互相核對的方式完成。",
+            "tradeoff": "把熟手腦中的分類規則變成新人看得到的步驟，但寫小卡得花幾分鐘。"
+          },
+          {
+            "id": 5,
+            "text": "「這節下課我們角色對調十分鐘，所有小件全交給新人去分，student_a你站旁邊負責收盒蓋體驗一下。」",
+            "action": "安排兩人角色互換，由新人主導全部小件分類、student_a僅負責收盒蓋。",
+            "tradeoff": "讓熟手親身體會只拿盒蓋插不上手的感受，但過程中可能因為速度慢讓他急得想插手。"
+          },
+          {
+            "id": 6,
+            "text": "「今天最後一次由你一邊收一邊講出為什麼這樣分，明天起整箱正式交給新人自己動手。」",
+            "action": "今日由student_a示範並口頭說明分類邏輯，約定明日起由新人正式獨立接手整箱。",
+            "tradeoff": "先讓新人聽懂邏輯再動手較穩妥，但今天新人還是只能先看著。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他明明在家有人陪練才會得這麼快、現場卻把好玩的分類全攬在自己手上只分給人家盒蓋，我有點好笑又替新人抱不平，走過去直接把所有盒蓋收進我懷裡：「盒蓋老師抱著！今天沒盒蓋可收了，你站旁邊當顧問，所有小件全部交給新同學挑著收！」",
+          "action": "因覺得熟手捨不得放手的模樣既好笑又讓新人無奈，導師親自抱走全部盒蓋，迫使student_a退居顧問、將分類工作交給新人。",
+          "tradeoff": "輕鬆幽默地逼出交棒空間，但熟手站在旁邊看著新人慢吞吞分類時手癢得要命。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2986704689
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "b07b6d392e3ad8ff3a0114bc63ddaf699efb60c56d875ee809992258623a99f7"
+      },
+      "consequenceDirections": {
+        "A": "可發展維持今日正式收納分工並另撥一箱非急用教具供兩人找可用課間並排練習後，新人有了不會弄亂進度的試錯空間，但兩人得另外多找一段可用課間。",
+        "B": "可發展今日由student_a示範並口頭說明分類邏輯、明日起由新人獨立接手整箱後，先讓新人聽懂邏輯再動手較穩妥，但今天新人還是只能先看著。",
+        "C": "可發展導師親自抱走全部盒蓋迫使student_a退居顧問、將小件分類交給新人後，輕鬆幽默地逼出交棒空間，但熟手站在旁邊看著新人慢吞吞分類時手癢得要命。",
+        "D": "可發展安排兩人角色互換由新人主導全部小件分類、student_a僅收盒蓋後，讓熟手親身體會只拿盒蓋的感受，但過程中可能因速度慢讓他急得想插手。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdfcbb320b1e2c14f0a0f57b4f2edb4784b98d7d2affefb76027c2a9fc014a54",
+    "draftSha256": "abb7d5358aa59600115fb4b4bfe21cdee420008df5bc0f1d738a3f5ee98e8760",
     "seedAssignmentVersion": 1
   }
 }

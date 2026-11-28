@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "edb6893676b3e65324555672ceda18b92a3350f5ab693ee6c899cec6d7e8817b",
+      "checkedAt": "2026-11-28T04:19:25.284Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「好，把你前面那疊一起收進來，我們當著大家面徹底重洗再發一次。」",
+            "action": "接受重洗提議並要求student_a公開收回預擺牌疊，全體公平重洗發牌。",
+            "tradeoff": "保住了這一局的真正公平起手，但student_a得在大家面前暗自吞下收牌的心虛。"
+          },
+          {
+            "id": 2,
+            "text": "「這副牌先不比輸贏了，我們直接拿這手牌面做一輪『好牌跟壞牌怎麼開局』的分析練習吧。」",
+            "action": "將本局轉為不計勝敗的開局策略分析教學，避開直接揭穿偷擺手牌。",
+            "tradeoff": "讓新手學到觀念也不傷氣氛，但student_a今天贏不回上次被說運氣的評語。"
+          },
+          {
+            "id": 3,
+            "text": "「不用重洗啊，你不是在家練得很熟嗎？你跟新手這兩副手牌直接互換來打打看！」",
+            "action": "保留現有牌面但要求student_a與抽到差牌之新手互換手牌開局，以實戰證明實力。",
+            "tradeoff": "如果他能把爛牌打回來全場都服氣，但當場換牌讓他一時騎虎難下。"
+          },
+          {
+            "id": 4,
+            "text": "我低聲叫student_a到桌邊補問一句：「你是不是偷擺牌了？自己去跟大家說剛剛拿錯預練疊、全部重洗。」",
+            "action": "私下點破預擺事實並給予台階，讓student_a自行向同儕提出錯拿練習牌疊而重洗。",
+            "tradeoff": "保住了他在同學面前的自尊，卻也等於老師替他遮了一半的錯。"
+          },
+          {
+            "id": 5,
+            "text": "「這副先當熱身示範打完兩回合，接下來我們打三局兩勝，後兩局一律由新手親自洗牌發牌。」",
+            "action": "將現行牌局定調為示範熱身，後續正式兩局改由新手負責洗發牌。",
+            "tradeoff": "顧全了開局順暢與後續公平，但第一局預擺的事就這樣被輕輕放過。"
+          },
+          {
+            "id": 6,
+            "text": "「既然這疊是你原本在家練的固定牌型，你先公開拿來示範一輪給新手看，看完再全部重洗正式打。」",
+            "action": "要求student_a將預擺牌疊轉為公開示範教材講解一輪後，再全員重洗正式開賽。",
+            "tradeoff": "把作弊邊緣直接轉成教學示範，但新手可能覺得等示範完才開始有點拖。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他明明在家苦練了好多開局就想證明不是運氣、結果太怕輸反而先擺好了牌，我心裡有點五味雜陳，乾脆伸手把整疊牌推散在桌上：「上次是我嘴快說那是運氣，對不起。可是你練得這麼熟，還怕一張爛起手嗎？來，老師親自幫你重洗，咱們真刀真槍打一局！」",
+          "action": "導師先為先前失言向student_a致歉，再親手推散預擺牌疊徹底重洗，鼓勵其以真實力對局。",
+          "tradeoff": "同時解開了他的心結與不公平起手，但直球點破讓場面瞬間安靜了兩秒。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4276359207
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 3,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "32f46a9376714c4b0e5d78c8948db8c1245b0e373ed2ccb3072df34e8da01e1e"
+      },
+      "consequenceDirections": {
+        "A": "可發展要求student_a將預擺牌疊轉為公開開局示範講解一輪後再全員重洗正式開賽後，把作弊邊緣轉成教學示範，但新手可能覺得等示範完才開始有點拖。",
+        "B": "可發展保留現有牌面但要求student_a與抽到差牌新手互換手牌開局後，若他能把爛牌打回來全場都服氣，但當場換牌讓他一時騎虎難下。",
+        "C": "可發展導師先為先前失言致歉再親手推散預擺牌疊徹底重洗後，同時解開他的心結與不公平起手，但直球點破讓場面瞬間安靜了兩秒。",
+        "D": "可發展將本局轉為不計勝敗的開局策略分析教學後，讓新手學到觀念也不傷氣氛，但student_a今天贏不回上次被說運氣的評語。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "120d4614883937cb8cb0a477352380d4cceb49e5d9eb736246544fa961787ea6",
+    "draftSha256": "edb6893676b3e65324555672ceda18b92a3350f5ab693ee6c899cec6d7e8817b",
     "seedAssignmentVersion": 1
   }
 }

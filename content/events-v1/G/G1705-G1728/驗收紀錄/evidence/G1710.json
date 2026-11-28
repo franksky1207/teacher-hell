@@ -16,14 +16,82 @@
     "G03",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "8a6ffc95c20b983dfdb1c4e67576a7f00955e60d5a5533b990143b7556a96373",
+      "checkedAt": "2026-11-28T04:17:52.922Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「安全第一，聽我的照student_a剛才說的兩批分流過門，少打一輪就少一輪。」",
+            "action": "維持並執行兩批分流通過窄門之安全安排，寧可縮短場上練習輪次。",
+            "tradeoff": "徹底守住窄門通行安全，但場上少了一輪而壓縮到他想拿到的成績機會。"
+          },
+          {
+            "id": 2,
+            "text": "「大家先離開窄門那邊，我們改去單一側的安全空區做定點安全練習。」",
+            "action": "將全體移離窄門換邊動線，改於單一區域進行安全定點練習。",
+            "tradeoff": "完全消除相向人流衝突，但這項練習的成績就失去原定可比較的條件。"
+          },
+          {
+            "id": 3,
+            "text": "「既然這幾位熟手急著要打，先讓他們那組這輪過去打完，student_a你們先在安全區暖身等三分鐘。」",
+            "action": "錯開兩組進出時間，先放急於上場之熟手組通行完成一輪，student_a組暫留安全區等候。",
+            "tradeoff": "避免人群同時擠門又能各自完整比完，但得讓急躁的同學先上場。"
+          },
+          {
+            "id": 4,
+            "text": "「我去請場地管理人員確認一下，看能不能暫時打開旁邊另一側備用門改單向進出。」",
+            "action": "洽請場地權責人員評估開放另一側備用通道作為單向分流，未獲核可前全員停於安全區等候。",
+            "tradeoff": "有機會兼顧安全與原本的練習輪次，但得花時間等場地人員到場確認。"
+          },
+          {
+            "id": 5,
+            "text": "「為了不擠在門口，今天兩組上場人數減半、輪流記時，場邊過門的人維持安全上限。」",
+            "action": "縮減單次上場人數為輪流制，嚴格控制同時通過窄門的人流密度。",
+            "tradeoff": "保住正式可比較成績與通行安全，但每位同學輪到上場的間隔變長。"
+          },
+          {
+            "id": 6,
+            "text": "「student_a你直接跟那幾位熟手講明剛才差點撞到的位置，大家約好過門前先喊一聲再批批過。」",
+            "action": "引導student_a向熟手同學說明窄門碰撞風險，共同約定口頭預警後分批通過。",
+            "tradeoff": "讓熟悉球場的人自己看清安全界線，但student_a得直接頂住熟手的抱怨。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽那幾個熟手還在場邊嫌他拖時間，明明他好不容易約來這麼多人又聽話注意安全，我心裡一陣護短又有點火氣上來，直接吹兩聲哨子站到窄門口：「嫌慢的先看這扇門有多窄！今天老師親自站這兒當交通警衛，喊一組過一組，誰搶快就旁邊罰站看球！」",
+          "action": "因護短不滿熟手嘲諷注意安全的學生，導師親自吹哨站至窄門口擔任人工分流管制，確保分批安全通過。",
+          "tradeoff": "強力替student_a撐腰並守住安全界線，但導師整輪都得站在門口喊人過門。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 779719672
+        },
+        "selectedIds": [
+          5,
+          1,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "02a58c9190f1ea68cc5a369afaae31d3b101fac62007fff8dfa8d08c250af7b9"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師親自吹哨站至窄門口擔任人工分流管制後，強力替student_a撐腰並守住安全界線，但導師整輪都得站在門口喊人過門。",
+        "B": "可發展縮減單次上場人數為輪流制以控制過門人流密度後，保住正式可比較成績與通行安全，但每位同學輪到上場的間隔變長。",
+        "C": "可發展維持兩批分流通過窄門、寧可少打一輪後，徹底守住窄門通行安全，但場上少了一輪而壓縮到他想拿到的成績機會。",
+        "D": "可發展引導student_a向熟手同學說明窄門風險並約定口頭預警分批通過後，讓熟悉球場的人自己看清安全界線，但student_a得直接頂住熟手的抱怨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c7c9e23db76f4de8158534a8acfc1577e14f376a7266e60a6de62a1c18efefca",
+    "draftSha256": "8a6ffc95c20b983dfdb1c4e67576a7f00955e60d5a5533b990143b7556a96373",
     "seedAssignmentVersion": 1
   }
 }

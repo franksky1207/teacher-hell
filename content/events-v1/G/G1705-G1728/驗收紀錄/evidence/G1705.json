@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "767d2e261ffaa0081e63f0960245d4a725fdc6902fadb0fc67d86d57c819286d",
+      "checkedAt": "2026-11-28T04:17:52.894Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「我把我聽到的學生口訣先整理給你，建議你保留原紙，下堂課直接讓班上找一個能推翻那句口訣的反例。」",
+            "action": "由導師私下轉交學生流傳之口訣，建議subject_teacher於親自勘誤時保留原紙並以反例引導學生自行推翻誤解。",
+            "tradeoff": "把錯誤歸納變成很有力的教學契機，但會用掉科任原定講新例題的時間。"
+          },
+          {
+            "id": 2,
+            "text": "「我進班先提醒大家下堂務必帶回原紙，你這邊可以先用已核對好的短例逐一確認勘誤，先把依據對齊。」",
+            "action": "導師協助提醒學生攜回原紙，建議subject_teacher於課堂親自勘誤時改用已核對短例逐一更正。",
+            "tradeoff": "確保全班先拿到一致且正確的依據，但不利用這節重現學生怎麼把空白變成規則。"
+          },
+          {
+            "id": 3,
+            "text": "「如果你先手寫一張勘誤短條，我可以幫你交給各組長先夾進班上聯絡欄，請同學下堂課帶回原紙對照。」",
+            "action": "導師協助轉發subject_teacher親撰之勘誤短條並提醒學生帶回原紙，由科任於課堂完成正式講解更正。",
+            "tradeoff": "減輕同事多跑一趟班級的體力負擔，但導師得多花工夫幫忙分發提醒。"
+          },
+          {
+            "id": 4,
+            "text": "「這節要是來不及細講，你課堂先點破口訣不能用並發勘誤說明，我聽到的誤解細節留待你下次小練習前再拆。」",
+            "action": "建議subject_teacher當堂先完成必要勘誤止血，將學生誤歸納脈絡延至下次練習前再行深入釐清。",
+            "tradeoff": "不打亂科任原本這節的進度，但學生這兩天可能還是對著那個空圈納悶。"
+          },
+          {
+            "id": 5,
+            "text": "「趁現在下課五分鐘，我拿兩本沒記名的講義給你看他們怎麼筆記的，你親眼看過再決定下堂怎麼改。」",
+            "action": "利用課間五分鐘向subject_teacher展示學生對假口訣的實際筆記狀況，供其自行評估課堂勘誤教法。",
+            "tradeoff": "讓科任精準掌握學生到底誤會到哪裡，但占用兩人寶貴的五分鐘下課休息。"
+          },
+          {
+            "id": 6,
+            "text": "「我把學生誤會的狀況如實轉告你了，下堂課怎麼勘誤跟補充，全部照你原本的教學節奏來就好。」",
+            "action": "導師僅完成學生誤解反應回報，不額外提出教法建議，全權尊重subject_teacher課堂專業安排。",
+            "tradeoff": "最尊重科任自主權與專業邊界，但科任未必能及時接住班上剛傳開的細節。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他連著三班待批累成這樣、剛才還差點硬撐著重印，我有點捨不得同事這麼折騰，先幫他倒了杯熱茶把整理好的口訣小紙條塞過去：「別重印了太傷神！課堂你自己去改，我等一下進班順便幫你叮嚀大家帶原紙、不准再背那個假口訣！」",
+          "action": "因心疼同事連批過勞，導師主動泡茶安撫並承擔進班叮嚀學生帶回原紙與停背誤傳口訣的傳話協助，課堂勘誤仍交由subject_teacher親自執行。",
+          "tradeoff": "暖心減輕了同事的煩躁與負擔，但導師自己多了一項進班叮嚀傳話的工作。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 497502953
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 3,
+          "D": 4
+        },
+        "optionsDigest": "70496ef4627eae07e16de83267a44e59e4471daeedb024e79046bbfcb0a502a9"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師僅如實轉告學生誤歸納狀況並全權尊重subject_teacher課堂節奏後，守住科任專業自主權，但科任未必能及時接住班上剛傳開的細節。",
+        "B": "可發展導師心疼同事過勞而主動泡茶安撫並承擔進班叮嚀帶原紙與停背假口訣的傳話協助後，暖心減輕同事煩躁，但導師自己多了一項進班叮嚀工作。",
+        "C": "可發展導師協助轉發subject_teacher親撰勘誤短條並提醒學生帶回原紙後，減輕同事多跑一趟班級的負擔，但導師得多花工夫幫忙分發提醒。",
+        "D": "可發展建議subject_teacher當堂先完成必要勘誤止血、將誤歸納脈絡延至下次練習前再拆後，不打亂科任這節進度，但學生這兩天可能還是對著那個空圈納悶。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "2b38954457bf476f047aebe4f89a614405d688f9418f744299c0e8c6b1ed09be",
+    "draftSha256": "767d2e261ffaa0081e63f0960245d4a725fdc6902fadb0fc67d86d57c819286d",
     "seedAssignmentVersion": 1
   }
 }

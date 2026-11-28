@@ -15,14 +15,82 @@
     "G02",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cba1cc51a79faee2be066ced89b5b2566fe0d907e9ec909266e729674f9c69e7",
+      "checkedAt": "2026-11-28T04:19:25.291Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「通道確定淨空了，到場外畫線安全區就只短播最有辨識度的副歌一段，讓站好的人聽完就進場。」",
+            "action": "確認安全區與通道淨空後，改於場外畫線安全處短播原曲副歌段落，確保人群站定後進場。",
+            "tradeoff": "保住了大家最想聽的副歌與安全動線，但沒辦法照他原訂從頭把整首歌播完。"
+          },
+          {
+            "id": 2,
+            "text": "「音箱先收起來別用了，你直接站在場外安全線那邊帶大家拍手喊短節拍暖身。」",
+            "action": "於通道淨空後停用音箱播放，改由student_a在場外安全區帶領無擴音短節拍歡呼。",
+            "tradeoff": "動線完全不靠音箱聚集最安全，但student_a失去最想讓大家聽見的原曲段落。"
+          },
+          {
+            "id": 3,
+            "text": "「把音箱抱到球場最內側遠離入口的核可角落，音量轉小播完這首，別讓入口再聚人。」",
+            "action": "確認入口淨空後將音箱移至遠離出入口之核可角落低音量播放完畢。",
+            "tradeoff": "讓他把整首歌放完，但音量調小後剛進門的晚到同學未必聽得清楚。"
+          },
+          {
+            "id": 4,
+            "text": "「現在先讓兩隊正常進場無音樂暖身，你這首熱身歌留到最後收操時在安全區完整播完。」",
+            "action": "先行展開無音樂練習，將student_a所選歌曲改於收操時段在安全區完整播放。",
+            "tradeoff": "既不耽誤開打動線又能整首播完，但收操才聽就少了開場熱身的氣氛。"
+          },
+          {
+            "id": 5,
+            "text": "「你先挑好副歌那三十秒，等最後兩位晚到同學走進安全線裡站好，我們再按下去播那一段。」",
+            "action": "暫緩播放並請student_a預備三十秒副歌精華，待晚到同學進入安全區站定後再行播放。",
+            "tradeoff": "精準送到他最想給晚到朋友聽的時刻，但得請早到的同學先配合等一下。"
+          },
+          {
+            "id": 6,
+            "text": "「這首別用大音箱放給全場了，音箱放安全區桌邊轉成低音量，想聽的同學經過時自己靠過去聽一下。」",
+            "action": "將音箱改為安全區桌邊定點低音量播放，不集合人群而由學生分散經過聆聽。",
+            "tradeoff": "徹底避免人群同時聚攏，但少了大家一起聽歌歡呼的群體感。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看他乖乖先按停清空通道、抱著小音箱卻一臉失落，明明只是想讓晚到的朋友也聽見那段副歌，我有點捨不得這份熱情被澆熄，乾脆先站到場外畫線後面拍兩下手：「線後面劃好了！老師幫你盯門口不准堵人，副歌放下去，我們在這條線後面一起歡呼！」",
+          "action": "因不捨學生熱心被潑冷水，導師親自站至場外安全畫線處擔任門口動線把關並帶頭鼓掌，讓student_a安心播放副歌。",
+          "tradeoff": "成全了學生想共有歡呼的心意又守住通道安全，但導師得全程站在畫線旁盯人。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4161535090
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "a50ef04965bd8e8a2ca887d629969b23362fbe28afadc0289fb93ead0fda7bed"
+      },
+      "consequenceDirections": {
+        "A": "可發展暫緩播放並預備三十秒副歌精華、待晚到同學進入安全區站定後再播放後，精準送到他最想給晚到朋友聽的時刻，但早到同學得先配合等一下。",
+        "B": "可發展於通道淨空後停用音箱、改由student_a在場外安全區帶領無擴音短節拍歡呼後，動線完全不靠音箱聚集最安全，但student_a失去最想讓大家聽見的原曲段。",
+        "C": "可發展將音箱改為安全區桌邊定點低音量播放由學生分散經過聆聽後，徹底避免人群同時聚攏，但少了大家一起聽歌歡呼的群體感。",
+        "D": "可發展導師親自站至場外安全畫線處把關門口動線並帶頭鼓掌讓student_a播放副歌後，成全學生想共有歡呼的心意，但導師得全程站在畫線旁盯人。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "b5d6ae5b31d86f0cd9a808b22e34a70c933e90a26df5f2aeb414c075a8e8ba9a",
+    "draftSha256": "cba1cc51a79faee2be066ced89b5b2566fe0d907e9ec909266e729674f9c69e7",
     "seedAssignmentVersion": 1
   }
 }

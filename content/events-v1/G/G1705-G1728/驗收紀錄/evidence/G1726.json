@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7a6e16f7fa5ecd8a63b1f4cb7e9ccb5e22ce181811abb82db3b5c3049fa11de0",
+      "checkedAt": "2026-11-28T04:22:28.783Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「別從頭念稿，你直接用你的慢法指給大家看『快法省掉的是哪一步』就好，其餘步驟留在參考稿。」",
+            "action": "請student_a聚焦於以慢法指出快法所省略之關鍵步驟，省略其餘冗長驗算過程。",
+            "tradeoff": "最精準點出快慢兩法的核心差異，但犧牲了他想完整講完的首次亮相。"
+          },
+          {
+            "id": 2,
+            "text": "「先等一下，我先在黑板出一個『直接套快法會算錯』的陷阱變體，讓student_a用他的慢法在裡面驗算給大家看。」",
+            "action": "導師先補充一道快法易誤用之變體例題，讓student_a以慢法實作驗算展示其價值。",
+            "tradeoff": "讓全班親眼看出這套細法什麼時候值得用，但須另外多留幾分鐘課時。"
+          },
+          {
+            "id": 3,
+            "text": "「我們拆成雙人講解：快法組派一位花兩分鐘講怎麼算最快，接著student_a接棒講哪一步最容易出事要靠慢法查。」",
+            "action": "將講解拆分為快法組展示速度與student_a補充慢法檢核兩個短棒次合作呈現。",
+            "tradeoff": "同時肯定兩組的貢獻也不冷場，但student_a的個人舞台變成了半段合作。"
+          },
+          {
+            "id": 4,
+            "text": "「不用縮短，今天是你第一次公開講題，照你準備的完整慢法講一遍；快法組聽完一起找裡面哪一步最保險。」",
+            "action": "支持student_a依原定完整慢法進行首次公開講解，並邀請快法組協助檢視其中關鍵保險步驟。",
+            "tradeoff": "保住了學生第一次完整講題的成就感，但早算完的快法組得耐著性子聽完。"
+          },
+          {
+            "id": 5,
+            "text": "「課堂時間有限，你今天只在黑板上寫下『快法跳過的那一步條件』提醒大家就好，整份慢法驗算我幫你貼在教室學習欄。」",
+            "action": "當堂僅由student_a標註快法跳過之條件提醒，完整慢法手稿改張貼於班級學習欄供參閱。",
+            "tradeoff": "省下最多課堂時間，但貼在牆上的手稿未必能換來像上台一樣的成就感。"
+          },
+          {
+            "id": 6,
+            "text": "「這次講台是你的，你想完整講完你準備的慢法、還是只講快法漏掉的那一步當壓軸補充，你自己決定。」",
+            "action": "將採用完整講解或精簡對照的主導權交還給講台上的student_a自行決定。",
+            "tradeoff": "尊重講者自己的節奏判斷，但在台下催促聲中他可能壓力更大。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽台下問「幹嘛講那麼長」，看他捏著寫滿驗算的稿子手心冒汗不敢上台，我心裡有點替這份踏實抱不平，直接拿起粉筆在黑板寫下大大的「為什麼」三個字：「快法對答案很快沒錯，但今天老師想聽student_a從頭到尾講一遍『為什麼』——慢的人先把路走穩！」",
+          "action": "因心疼踏實學生受質疑，導師在黑板寫下「為什麼」力挺student_a依原定完整慢法從頭講解。",
+          "tradeoff": "給足了student_a上台的底氣與肯定，但台下早就算完的快法組一時有點坐不住。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 44432039
+        },
+        "selectedIds": [
+          1,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "c54f47ab98c64f57196f1d0a2e8d53da5df67c6dce097a533d4a020589b89e81"
+      },
+      "consequenceDirections": {
+        "A": "可發展導師在黑板寫下「為什麼」力挺student_a依原定完整慢法從頭講解後，給足他上台的底氣與肯定，但台下早就算完的快法組一時有點坐不住。",
+        "B": "可發展將採用完整講解或精簡對照的主導權交還講台上的student_a自行決定後，尊重講者自己的節奏判斷，但在台下催促聲中他可能壓力更大。",
+        "C": "可發展請student_a聚焦於以慢法指出快法所省略之關鍵步驟、其餘留在參考稿後，最精準點出兩法核心差異，但犧牲了他想完整講完的首次亮相。",
+        "D": "可發展導師先補充一道快法易誤用之變體例題讓student_a以慢法實作驗算後，讓全班親眼看出這套細法何時值得用，但須另外多留幾分鐘課時。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e1c4e798bfea36ae60eda9b2e15ec82e6fc876110947edb6a02a2ea0e860585",
+    "draftSha256": "7a6e16f7fa5ecd8a63b1f4cb7e9ccb5e22ce181811abb82db3b5c3049fa11de0",
     "seedAssignmentVersion": 1
   }
 }

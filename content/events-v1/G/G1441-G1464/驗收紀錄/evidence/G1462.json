@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3071b98d323ec31715d278dda660d05c5f59013b9756a3974a0281e6151034df",
+      "checkedAt": "2026-11-28T02:14:38.871Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我不追加聯絡病家，讓承辦按真實狀態正式報送。",
+            "action": "婉拒非必要催填，必要真實報表已共同維持。",
+            "tradeoff": "承辦可能不滿、回收率不到目標。"
+          },
+          {
+            "id": 2,
+            "text": "若依法可自願延填，我協助問有權者可行期限，恢復後再邀學生自己決定。",
+            "action": "額外查合法補填選擇，不先承諾延期或以自願問卷懲罰缺件。",
+            "tradeoff": "多協調、結果仍不確定。"
+          },
+          {
+            "id": 3,
+            "text": "我邀承辦一起向主管說真實未齊原因，不讓他一人扛百分百壓力。",
+            "action": "提出有限成人共同說明，不以洩學生病情細節換核准。",
+            "tradeoff": "教師多正式出席、可能也被問責。"
+          },
+          {
+            "id": 4,
+            "text": "經必要同意且不影響休養，我只轉一次正式自願入口，不追收。",
+            "action": "提供合法可用方式，學生未回不當已填，不要求家長代答。",
+            "tradeoff": "多聯絡且仍可能無回覆。"
+          },
+          {
+            "id": 5,
+            "text": "我額外提出未來統計同列應答資格與實到數的建議，不回改這次紀錄。",
+            "action": "正式提案清楚區分缺席與拒答，須有權者決定，不自行美化百分比。",
+            "tradeoff": "增加文書，可能被嫌多事。"
+          },
+          {
+            "id": 6,
+            "text": "我請承辦把未來同類額外請求以正式管道提出，不再私訊我勾選。",
+            "action": "建立非必要協商方式，必要通報與正常聯絡仍維持，不阻合法求助。",
+            "tradeoff": "關係更正式僵硬。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的生氣被叫去冒名；我願現在親自打電話把拒絕和我能幫的範圍說完，不讓一句『你想辦法』又落回我這邊。",
+          "action": "承認怒氣，額外提出當次有限直接成人對話，不辱罵、不拿學生出氣，必要真實拒冒名已共同成立。",
+          "tradeoff": "耗本人時間、可能正面衝突。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1735719597
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 5,
+          "D": 1
+        },
+        "optionsDigest": "834e00078257289a471168cabf9252fcb7f27395662353b0d02293259a60dbf3"
+      },
+      "consequenceDirections": {
+        "A": "可發展承辦對問責被反問具體合法需求的反應，教師仍可能得不到理解。",
+        "B": "可承接願意幫找路不保證幫滿格的落差。",
+        "C": "可發展行政成就標準是否容納真實資格差異。",
+        "D": "可發展成就壓力下對教師不幫忙的解讀。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8c76f0b7ef836d341e8687d2937018a0d054cc983977815d478a5b695ee35d73",
+    "draftSha256": "3071b98d323ec31715d278dda660d05c5f59013b9756a3974a0281e6151034df",
     "seedAssignmentVersion": 1
   }
 }

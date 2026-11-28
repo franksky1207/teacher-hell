@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9f9a074496423668365b4ed1d29177b2989177db493107d0657711323c12d8a8",
+      "checkedAt": "2026-11-28T02:14:38.842Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持學生主區原案，額外私下謝他，不追加工作。",
+            "action": "接回合法現場分工，另作有限成人致謝，不只在此分支才停止混亂。",
+            "tradeoff": "助教可能覺得心意無用。"
+          },
+          {
+            "id": 2,
+            "text": "我提出他自願獨立協助既有海報區，主區由學生照原案。",
+            "action": "就實際展示工作提出合法分區合作，須本人接受與場地許可，不假定已分派。",
+            "tradeoff": "教師多跨區銜接。"
+          },
+          {
+            "id": 3,
+            "text": "我留一段時間讓他和學生各說設計，再由有權者選可行版本。",
+            "action": "提出有限自願設計討論，不以口才大聲壓學生或票選安全。",
+            "tradeoff": "佔佈置時間，仍有人失望。"
+          },
+          {
+            "id": 4,
+            "text": "我額外邀他當學生提出問題時的技術支援，不再先下指令。",
+            "action": "提出有限合法諮詢協助，學生與助教可拒絕，教師仍主責。",
+            "tradeoff": "助教可能覺得存在感變弱。"
+          },
+          {
+            "id": 5,
+            "text": "我和他另約班後短談認可與工作範圍，這次先完成既定展示。",
+            "action": "額外成人自願界線對話，不以解讀動機羞辱或診斷。",
+            "tradeoff": "教師多時間、對方可能防衛。"
+          },
+          {
+            "id": 6,
+            "text": "若原案確有更好調整，我承擔重排分工的工作，再徵學生合理意見。",
+            "action": "在安全與合法學習下評估真實提案，教師自負改圖銜接，不宣稱已證實新案較好。",
+            "tradeoff": "教師重工、學生可能覺得努力白費。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也想要漂亮場面，卻不想再叫學生猜我；我願親自多留一段收尾，請他和我一起搬成人可搬的部分，讓幹部照自己的主區做完。",
+          "action": "承認想把展示辦好，提出教師與助教有限自願成人收尾協作，不搬重危物、不強迫對方、不撤學生主區自主。",
+          "tradeoff": "教師多體力時間，助教可能仍想指導主區。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4068205891
+        },
+        "selectedIds": [
+          1,
+          3,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "2e238d1650db3b1173b3127d9704cea727085eb2b1d54248b5fe50885a3a729a"
+      },
+      "consequenceDirections": {
+        "A": "可發展合作不只是把自己的好點子說贏。",
+        "B": "可發展求認可者面對沒被採用的失落。",
+        "C": "可發展好幫忙和想不可或缺的複雜情感。",
+        "D": "可發展求肯定的成人是否能接受與導師一起出力而非獨自領場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d36c56bdea1f919bcc22dcd9049658837184413af1159411de7c623708c5caf3",
+    "draftSha256": "9f9a074496423668365b4ed1d29177b2989177db493107d0657711323c12d8a8",
     "seedAssignmentVersion": 1
   }
 }

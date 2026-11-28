@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6785cdb6f03c4e0868dfd37e0056071dd5d5b110f7cfa1b913e65dde5ea9cd3b",
+      "checkedAt": "2026-11-28T02:14:38.832Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他自願練一次不點名的簡短提醒，不要求明天一定說出口。",
+            "action": "提供有限同儕溝通演練，成人責任與正常反映權不轉交學生。",
+            "tradeoff": "花課間且仍可能不敢。"
+          },
+          {
+            "id": 2,
+            "text": "若本人同意，我依合法分工協調轉為不需糾舉的工作。",
+            "action": "提出公平自願職務調整，未接妥不假設已有代替者，不污名怕衝突。",
+            "tradeoff": "重排人力，學生可能覺得失敗。"
+          },
+          {
+            "id": 3,
+            "text": "我額外拿自己一段可用時間進班看實際回收使用，不只等他的紙條。",
+            "action": "有限成人現場觀察，不讓學生蒐證或暗藏攝影，必要環境處理照常。",
+            "tradeoff": "教師增加值看時間。"
+          },
+          {
+            "id": 4,
+            "text": "我提出全班一般回收操作練習，不公布誰告誰。",
+            "action": "額外教學示範正確分類，不以全班罰洗替個案處理。",
+            "tradeoff": "占班務，可能被猜測來源。"
+          },
+          {
+            "id": 5,
+            "text": "我不承包每天逐名回電，約定一段有限非急迫資訊整理時間。",
+            "action": "設定額外例行回報界線，危險及必要求助立即接續，不封口。",
+            "tradeoff": "學生可能認為老師不想聽。"
+          },
+          {
+            "id": 6,
+            "text": "我邀班級依法討論檢查工作的範圍，只檢查環境、不要求追人。",
+            "action": "提出一般職責釐清，必要分工由教師依法決定，不投票揭密。",
+            "tradeoff": "多協調，其他幹部可能覺得工作又變。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕當壞人，卻不想一直借他的紙條壯膽；我自願帶一次全班的實際回收收尾，當場由我回應普通問題，不叫他替我盯人。",
+          "action": "承認自己也迴避摩擦，額外在合法時段親自主持一次一般整理，不代必要查證或公開指責未證實者，學生不額外留校受罰。",
+          "tradeoff": "教師花現場時間、可能被同學嫌囉嗦。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 576582294
+        },
+        "selectedIds": [
+          6,
+          4,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "bedb59a6634be5c7be7aa1318d0c9867a1ca4c91739376b4e28946fb0ccb8dbc"
+      },
+      "consequenceDirections": {
+        "A": "可承接接受規範不代表每個學生都得當黑臉。",
+        "B": "可承接規範被理解和被執行仍有落差。",
+        "C": "可發展學生看見老師也不輕鬆，仍能把成人責任接回而不逼其練膽。",
+        "D": "可發展盡責者如何把傳訊和替教師判罰分開。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f3c5131aa4dcf29e970a656c277e369cbe10f1c19f4f22a9875ce66b84feacda",
+    "draftSha256": "6785cdb6f03c4e0868dfd37e0056071dd5d5b110f7cfa1b913e65dde5ea9cd3b",
     "seedAssignmentVersion": 1
   }
 }

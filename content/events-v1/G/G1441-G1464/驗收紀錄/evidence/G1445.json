@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "99a3ea44f11872c48e5282a530a61c29887221de4334c34978532d8ab6bd8905",
+      "checkedAt": "2026-11-28T02:14:38.840Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他和承辦談一次可行親接方案，不自己替學校簽責任。",
+            "action": "提出有限正式協調，必要申請依法受理，不保證核准。",
+            "tradeoff": "占教師排程與可能的舊怨。"
+          },
+          {
+            "id": 2,
+            "text": "我另外整理核實後的接送程序說明，讓他按真實條件選。",
+            "action": "提供非必要易讀整理，必要權益告知照常，不改官方文件或擅加免責。",
+            "tradeoff": "多文書，家長可能仍逐字要求。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問可否依法改為家長全程接送，實際核可和學生意願再確認。",
+            "action": "提出另一合法交通方案評估，不擅退團費、保證省錢或視為已核准。",
+            "tradeoff": "家庭多交通，教師需重新協調。"
+          },
+          {
+            "id": 4,
+            "text": "我提出隨團返校再親接的既有合法選擇，不另設特例服務。",
+            "action": "在保留正常親接申請權下婉拒非必要代辦，合法方案由家庭選擇。",
+            "tradeoff": "對方可能覺得被推回最不方便路線。"
+          },
+          {
+            "id": 5,
+            "text": "我另約把上次證明認定的分歧說完，不拿這次回條當和解條件。",
+            "action": "額外自願成人舊事交流，必要申請仍獨立辦。",
+            "tradeoff": "花時間且可能重燃怨氣。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我先協調一段成人路線核對，別到現場才發現接送點不合法。",
+            "action": "額外核對可公開交通條件，正式安全與交接原就維持，不認定現地已可停車。",
+            "tradeoff": "增加聯絡，可能仍無合適接點。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想說不用談這麼細；但我願自己額外參加出發前的成人接送說明，把我能答、不能答的親口說清楚。",
+          "action": "承認怕麻煩仍提出有限正式成人說明出席，不保證已成會，不把所有必要交接壓在此分支。",
+          "tradeoff": "多付時間與當面被追問的壓力。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1313639148
+        },
+        "selectedIds": [
+          6,
+          3,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "4f1837efee5cd24808233f9c6ec9dadf6f8a4284db86a108df0977f5520bd494"
+      },
+      "consequenceDirections": {
+        "A": "可承接願白紙黑字與教師不想多造版本的負擔。",
+        "B": "可發展冷靜精算者面對全程成本是否願調整。",
+        "C": "可發展家長是否接受教師不再躲在統一回條後，也不保證特別待遇。",
+        "D": "可發展便捷安排不能用一張切結買來的現實。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "60043d7553d5b624632acf4a597e8739a87aff398603a65fc642a57943569e55",
+    "draftSha256": "99a3ea44f11872c48e5282a530a61c29887221de4334c34978532d8ab6bd8905",
     "seedAssignmentVersion": 1
   }
 }

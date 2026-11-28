@@ -15,14 +15,82 @@
     "G01",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "d97e38e2be747e1308b15f09b5d08db521a8cbb68a88868b9a471354ed964184",
+      "checkedAt": "2026-11-28T02:14:38.849Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我提議他主講架構，其他人各自準備真正理解的段落。",
+            "action": "協商合規真實共同參與，不以一句心得取代未曾理解，不保證能立刻學會。",
+            "tradeoff": "教師多核對，組長得放掉部分掌控。"
+          },
+          {
+            "id": 2,
+            "text": "在公平規則內，我給可核可的練習緩衝，再依真實分工發表。",
+            "action": "提出適用同等情況的合法調整，不偷偷給特殊評分優勢。",
+            "tradeoff": "重排時間與其他組可能詢問。"
+          },
+          {
+            "id": 3,
+            "text": "我安排全組一次有限當面協商，逐人說自己能承擔哪部分。",
+            "action": "提出自願工作協商但既有學習要求仍在，不讓組長代答全員意願。",
+            "tradeoff": "占教師課間，可能談出分歧。"
+          },
+          {
+            "id": 4,
+            "text": "我提供全班可用的一般短彩排機會，不只替這組救場。",
+            "action": "額外公平自願演練，不代學生寫稿或保證分數。",
+            "tradeoff": "教師增加時間。"
+          },
+          {
+            "id": 5,
+            "text": "我維持原時程和共同參與要求，不再加私人排演服務。",
+            "action": "婉拒非必要額外投入，必要學習協助與評量公平照常。",
+            "tradeoff": "學生可能覺得自己的通宵沒被看見。"
+          },
+          {
+            "id": 6,
+            "text": "若符合評量規則，我提出個人學習證據與團隊成果分開呈現。",
+            "action": "在本科權責內評估公平真實證據方式，不追認假的合作歷程或新增懲罰。",
+            "tradeoff": "批改更複雜，學生仍需補足理解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想看一場順暢漂亮的報告；我願多留一段時間陪全組把這份成品拆開重分，接受明天沒那麼流利。",
+          "action": "承認自己也愛效率，額外提出教師主持有限實際分工練習，由學生自己重整與理解，不代作、不強迫非合法留校。",
+          "tradeoff": "教師多陪練，漂亮成品可能得改。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2971823353
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "b436604bf6cfef719ea0c44b0bb5987cb22de6f8c6075ae5eaea6b3b2b4d4b6d"
+      },
+      "consequenceDirections": {
+        "A": "可發展協商彈性仍有不能談掉的學習條件。",
+        "B": "可發展教師也放棄表面完美，組長未必能立刻跟著放手。",
+        "C": "可發展強執行力與焦慮願否讓別人真的做。",
+        "D": "可承接害怕被拖累能否在真實證據上得到有限保障。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "7510f079b09bf590b4c4097ac73b75f351bbccf3e365f577a5a056e91ebb4d4e",
+    "draftSha256": "d97e38e2be747e1308b15f09b5d08db521a8cbb68a88868b9a471354ed964184",
     "seedAssignmentVersion": 1
   }
 }

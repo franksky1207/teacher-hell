@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "79c8f4c189ed3228591f15f8dcc24b511995bcd6ce9a90b7490612dc2edc544b",
+      "checkedAt": "2026-11-28T02:14:38.867Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我收起非急件，在場清醒安靜坐一段，真的不工作。",
+            "action": "停止本人非必要批閱，維持可即時應對的合法監督，不承諾入睡。",
+            "tradeoff": "工作延後、休息不像離班自在。"
+          },
+          {
+            "id": 2,
+            "text": "我照常在旁批閱，但誠實說今天想先完成，不把它說成休息。",
+            "action": "選擇在合法照看下處理可中斷工作，必要學生需求優先。",
+            "tradeoff": "失去私人休息，學生可能失望。"
+          },
+          {
+            "id": 3,
+            "text": "我先把剩下的正常午餐吃好，暫放批改。",
+            "action": "在可合法照看與衛生範圍內完成本人飲食，不讓學生購買或代看。",
+            "tradeoff": "批閱延後，仍不是午睡。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問是否有合格成人依法短暫接替，確認才離開休息。",
+            "action": "提出正式人力需求，不預設有人或要求學生等無人照看。",
+            "tradeoff": "增加協調，可能根本無法離開。"
+          },
+          {
+            "id": 5,
+            "text": "我提議非急文件按既有合法期限分批處理，這段先不全簽。",
+            "action": "調整本人可管工作排序，必要急件不延誤，不把學生整理好的紙丟回。",
+            "tradeoff": "之後另花時間，學生可能以為白整理。"
+          },
+          {
+            "id": 6,
+            "text": "我另向他確認是否願意讓這次行動到此為止，不變每天替我看精神的任務。",
+            "action": "有限自願師生交流，教師自負健康安排，不以學生停止關心為條件。",
+            "tradeoff": "花課間，可能掃了溫馨氣氛。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也貪心想要這二十分鐘；我把手機的非必要通知關掉，留好必要聯絡，在場讀自己原本帶來的閒書，不拿新考卷填滿它。",
+          "action": "承認想偷一點私人快樂，在校規可行且可即時照看下選擇低干擾私人閱讀，必要狀況立即中止，不隔絕緊急聯絡。",
+          "tradeoff": "批改延後，學生可能覺得老師怎麼不照他們安排睡。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 316056496
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 1,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "dc3787bd9d414538d649d1b9e31901e100987566b2e85c44497f72a932474531"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師用自己的方式接住好意，學生的自主不等於能替老師規劃休息。",
+        "B": "可發展學生看見教師肯收下暖意又不卸責。",
+        "C": "可承接自主學生對自己好意被設界線的感受。",
+        "D": "可承接專業肯定與不同人認為的好好休息。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fbcb6fd3bccf91fdbbddaa97e85b371ab936932fd9cc97499f23ec290c9c9138",
+    "draftSha256": "79c8f4c189ed3228591f15f8dcc24b511995bcd6ce9a90b7490612dc2edc544b",
     "seedAssignmentVersion": 1
   }
 }

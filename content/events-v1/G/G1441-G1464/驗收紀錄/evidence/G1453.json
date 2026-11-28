@@ -15,14 +15,82 @@
     "G05",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1610497da461831c4a050d5267364fdf574edbb457ce383d16e949714437d4ac",
+      "checkedAt": "2026-11-28T02:14:38.856Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我這次收合法的一箱，另發真實需求與暫不加收的決定，不列捐贈排行。",
+            "action": "依法接收一次適量公用物資，必要自願說明照常，合法停止非必要新增收受。",
+            "tradeoff": "家長可能覺得自己的號召被擋。"
+          },
+          {
+            "id": 2,
+            "text": "我請家長自願把號召改成自己的個人心意，原文受壓力者仍有一般說明可看。",
+            "action": "額外私下邀措辭調整，不以他是否改文作維護他人權益條件。",
+            "tradeoff": "教師花說明時間，家長可能下不了台。"
+          },
+          {
+            "id": 3,
+            "text": "這箱也婉謝，請家長帶回，班上以正式既有資源安排。",
+            "action": "不接受非必要私人物資，必要供應依法接續，不倒欠人情。",
+            "tradeoff": "少了現成便利、拒收場面尷尬。"
+          },
+          {
+            "id": 4,
+            "text": "若物主願意，我協助問正式公共受贈管道，不在本班繼續號召。",
+            "action": "查詢合法實需媒合，未接受不轉物或宣稱已捐成。",
+            "tradeoff": "增加行政和運送協調。"
+          },
+          {
+            "id": 5,
+            "text": "我提議未來班內非必要備品先走公開需求與既有合法預算討論。",
+            "action": "提出一般公平資源規劃，不擅動班費或要求捐贈，不假設程序已改。",
+            "tradeoff": "多溝通，可能失去即時便利。"
+          },
+          {
+            "id": 6,
+            "text": "我額外與他談那句一起響應對不同家庭可能造成什麼，不提私訊者。",
+            "action": "有限成人自願交流，不把寬裕直接等同不體貼。",
+            "tradeoff": "占時間且可能被認為想太多。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很怕讓他以為只有送東西才值得被謝；我願另寫一段只給他的真實致謝，群裡仍不把他立成捐贈榜樣。",
+          "action": "因珍惜心意，額外私人書面致謝合法實際出力，不換取新物資、不轉家計資訊，不以此取代共同反施壓說明。",
+          "tradeoff": "教師花文字斟酌，家長可能仍想公開分享。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 221747656
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "1399d50cef110eb5cc54ee4c1de5b77a81af6a5fdaf7ed8050acdeedb0fa2d67"
+      },
+      "consequenceDirections": {
+        "A": "可發展敬重教師與想帶動大家的熱心衝突。",
+        "B": "可發展家長人脈號召與可預期制度的取捨。",
+        "C": "可發展受敬重的人願回應心意，卻不願把他人的壓力拿來當掌聲。",
+        "D": "可承接善意和隱形壓力可同時存在。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "c8b809acece39402e8f4acf8265cf808173826cd6fb94c77442a74537f90fabf",
+    "draftSha256": "1610497da461831c4a050d5267364fdf574edbb457ce383d16e949714437d4ac",
     "seedAssignmentVersion": 1
   }
 }

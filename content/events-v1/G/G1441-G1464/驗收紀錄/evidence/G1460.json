@@ -16,14 +16,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0ba078416919ee646366d50b6420eed0be305ed0b0be164733f3aa74725790ae",
+      "checkedAt": "2026-11-28T02:14:38.869Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外開一次不點名的全班一般問答，讓疑問直接來。",
+            "action": "公平自願公開釐清一般教學安排，不揭個案或要求大家認錯。",
+            "tradeoff": "占課程外可用時間，可能質問更尖。"
+          },
+          {
+            "id": 2,
+            "text": "我先邀他私下談最近最沒保障的地方，不要他代表所有人。",
+            "action": "額外自願個別交流，其他學生必要支持不等待。",
+            "tradeoff": "教師多時間，班級疑問仍可能存在。"
+          },
+          {
+            "id": 3,
+            "text": "我另備公平可選的同概念練習，不承諾分數一定回來。",
+            "action": "投入額外適切教材，必要補救共同維持，不以做選題交換好評。",
+            "tradeoff": "教師多備課、學生可能嫌又多題。"
+          },
+          {
+            "id": 4,
+            "text": "我在本人可調課內安排一段短檢核，依實際吸收再調速度。",
+            "action": "提出合宜低壓教學診斷，公平不加新排名，不假設已證明誰對。",
+            "tradeoff": "犧牲部分原教學內容時間。"
+          },
+          {
+            "id": 5,
+            "text": "我不追加特別活動，按原課程與必要支持接續，不用贏回好感當目標。",
+            "action": "婉拒非必要額外投入，必要更正及答疑照常，不封口。",
+            "tradeoff": "同學可能繼續失望。"
+          },
+          {
+            "id": 6,
+            "text": "我邀全班自願提供具體跟不上之處，不蒐誰支持哪一方。",
+            "action": "額外蒐集一般學習回饋並據實整理，不以票數改答案或評分。",
+            "tradeoff": "教師多整理，匿名仍可能被猜測。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被『不在乎』弄得很火；我願當面另留一段時間聽他把舊事講完，自己也說清楚哪句傷人，不急著買全班的喜歡。",
+          "action": "承認受傷與怒氣，額外提出有限直接關係對話，保持成人責任與學生表意權，不要求撤抱怨換正常待遇。",
+          "tradeoff": "教師付情緒時間，可能衝突更明白。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 261703492
+        },
+        "selectedIds": [
+          6,
+          2,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "5ab937661557b1c3ddb5760ee18303e9a6c51707f36357270b78bfba0ee42b11"
+      },
+      "consequenceDirections": {
+        "A": "可承接舊不滿與成績焦慮彼此糾纏。",
+        "B": "可發展學生看見教師也有感受但不等於必須安慰教師，關係未必立即和好。",
+        "C": "可發展想要成績安全感和真正練習的落差。",
+        "D": "可承接有影響力者是否容許同學說不同經驗。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "557d277625af866c3583ea32819d228263eda3e90c1d56dd3d40e01984076fd9",
+    "draftSha256": "0ba078416919ee646366d50b6420eed0be305ed0b0be164733f3aa74725790ae",
     "seedAssignmentVersion": 1
   }
 }

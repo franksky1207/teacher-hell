@@ -15,14 +15,82 @@
     "G04",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "46446f1385fc8d345afc0a3d6fafe7c9dda5931e8f6b325701f38aef72b7b8dd",
+      "checkedAt": "2026-11-28T02:14:38.863Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我只取確定不涉他人的當日一般待辦內容，額外讓他核對，不攤整本。",
+            "action": "確認本人有權公開後有限展示真實非個資資訊，不創造以後任意查本權。",
+            "tradeoff": "教師需篩選，可能引更多自證要求。"
+          },
+          {
+            "id": 2,
+            "text": "我維持不展示工作本，另外給一般紀錄用途的具體說明。",
+            "action": "拒絕非必要閱本，必要真實說明及本人合法查詢權照常。",
+            "tradeoff": "學生可能更不信。"
+          },
+          {
+            "id": 3,
+            "text": "我額外和他逐項看那篇公開文章的證據，不去搜發文者私事。",
+            "action": "有限自願媒體查證交流，不把傳言當本校確案。",
+            "tradeoff": "花課間，學生可能覺得被上課。"
+          },
+          {
+            "id": 4,
+            "text": "我另邀他談上次糾正哪一句讓他不舒服，這次不用本子當代替。",
+            "action": "提出自願有限關係對話，不以和好換必要權益。",
+            "tradeoff": "教師可能得聽刺耳感受。"
+          },
+          {
+            "id": 5,
+            "text": "我提供本人資料依法查詢的正式入口，額外疑義請有權者處理。",
+            "action": "有限核實正式資訊，未申請不算已取得紀錄，不封正常師生提問。",
+            "tradeoff": "可能使小事變正式案件。"
+          },
+          {
+            "id": 6,
+            "text": "我額外在可用班務說明一般觀察與評量依據，不指出提問者。",
+            "action": "提出一般公開資訊說明，不用匿名個案當反面教材。",
+            "tradeoff": "佔班務、可能有人猜來源。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的很不舒服被當成記仇的人；我願把這次自己說過的澄清寫成一段給他，讓他能回看和追問，不靠吵贏證明清白。",
+          "action": "承認受傷，額外書面記錄本人真實說明與可問的正式範圍，不披他人資料、不要求學生簽認同或停止質疑。",
+          "tradeoff": "花時間、留下可被逐字挑戰的文字。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3160568577
+        },
+        "selectedIds": [
+          1,
+          2,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 1,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "76124bb8cbb0f0bc08ccb67b7f9a27dc69be81188d295cdd2bb032afcce7bc2a"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生想掌握自己被如何記錄與程序門檻。",
+        "B": "可發展自主學生是否接受有限透明而非全權翻看。",
+        "C": "可承接舊不滿讓界線被讀成心虛。",
+        "D": "可發展教師願承受正式說清楚的代價，學生仍可能對其行為保留不滿。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1d0585f542ef8d6dfac8ecdac11caf51c077ea716bd73b49e0304d117d1c32d5",
+    "draftSha256": "46446f1385fc8d345afc0a3d6fafe7c9dda5931e8f6b325701f38aef72b7b8dd",
     "seedAssignmentVersion": 1
   }
 }

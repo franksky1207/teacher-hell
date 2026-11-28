@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "301db5eb88ff156725052f73af9be959972524ca60c54f68f9a6607c62cbbac8",
+      "checkedAt": "2026-11-28T02:14:38.855Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他和承辦確認家備餐的合規交付，符合才安排。",
+            "action": "協調安全合法家庭自備方案，未核可不收食物，按實退未用餐費。",
+            "tradeoff": "教師多聯繫與保存確認，家長仍可能不放心。"
+          },
+          {
+            "id": 2,
+            "text": "我陪他比較實際合格的外購替代，差額先讓家庭明確決定。",
+            "action": "提出符合真實過敏與保存條件的店家核對，不推定外店一定安全，不以他人班費付。",
+            "tradeoff": "增加聯絡配送，家長可能不願再信外店。"
+          },
+          {
+            "id": 3,
+            "text": "我讓家長自行提出可行餐源，再由有權窗口按相同安全規範確認。",
+            "action": "不額外代選食物，必要審查與學生支持照常，不讓家長說安全就跳過規範。",
+            "tradeoff": "教師少選餐工作，但可能來回補資訊。"
+          },
+          {
+            "id": 4,
+            "text": "若合規可行，我提出家長親送到合法交接點的時間方案，不讓他擅入班。",
+            "action": "協調成人安全交付時程，必要餐食權益不以此為唯一取得方式，未確認不當已可送。",
+            "tradeoff": "教師多接待，家長需挪時間。"
+          },
+          {
+            "id": 5,
+            "text": "我另約談上次溝通落差，這次餐食不要再替舊事背鍋。",
+            "action": "提出有限自願成人舊事對話，餐食安全與退款仍獨立完成。",
+            "tradeoff": "花時間且未必能和解。"
+          },
+          {
+            "id": 6,
+            "text": "我額外詢問同類自願活動未來能否提前作不含個資的一般飲食需求確認。",
+            "action": "提出可行制度改善，不公示過敏生或虛稱已改流程，當次必要資訊已核對。",
+            "tradeoff": "新增協調工作，家長可能覺得太晚。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被『別再替我挑』弄得有點難受；我願親自多留一段正式時間，和他一起把可行方案的每個疑問問到窗口，不再靠一句我確認過。",
+          "action": "承認專業被不信任的刺痛，額外提出本人陪同成人核對，必要安全仍共通，不保證所有疑問即解或家長接受。",
+          "tradeoff": "教師多時間與當面被質疑，沒有買到信任的保證。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 536256236
+        },
+        "selectedIds": [
+          5,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 5,
+          "D": 6
+        },
+        "optionsDigest": "94d14c45323d16d51ff36092a655e93d376b2d24fb98bc5764d5a82dd9e247d8"
+      },
+      "consequenceDirections": {
+        "A": "可承接資源寬裕能付差額但仍在意控制權。",
+        "B": "可發展財力寬裕但重實際安全的家長會否逐步容許合作。",
+        "C": "可發展有理性協商也有私人不滿的家長。",
+        "D": "可承接家長要安全可預期而不只是多付錢。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "115cd01dfc1124404f84ea10e64c74109b55ae76eb504951d4b64faf22be81e5",
+    "draftSha256": "301db5eb88ff156725052f73af9be959972524ca60c54f68f9a6607c62cbbac8",
     "seedAssignmentVersion": 1
   }
 }

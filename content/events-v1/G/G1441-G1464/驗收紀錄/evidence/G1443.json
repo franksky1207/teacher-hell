@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bb7a51a3f3ab4a0f9f9103f9cffae8e32a03d0be0284890e79983b426422c504",
+      "checkedAt": "2026-11-28T02:14:38.835Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我維持既有合法交付，不另做他專用轉檔。",
+            "action": "婉拒非必要重工，正常應交資料與期限照常。",
+            "tradeoff": "被認為不配合，關係更冷。"
+          },
+          {
+            "id": 2,
+            "text": "只做這次必要之外的合規欄位轉換，先核實格式再交。",
+            "action": "自願增加合法可交資料的格式服務，不上傳未核系統或承諾相容成功。",
+            "tradeoff": "多重工且可能成為以後常態。"
+          },
+          {
+            "id": 3,
+            "text": "我邀他用虛構資料比較一次真實流程，不拿學生當測試品。",
+            "action": "提出自願有限合法離線／核可環境的格式測試，不宣稱已節時或驗證資安。",
+            "tradeoff": "占雙方空檔、可能測出我的方法較慢。"
+          },
+          {
+            "id": 4,
+            "text": "我請有權資料窗口協調共同交付格式，不由誰大聲決定。",
+            "action": "提出正式合規格式協調，未核定不宣稱全校統一。",
+            "tradeoff": "增加等待與人際摩擦。"
+          },
+          {
+            "id": 5,
+            "text": "我另約一次談上次排課不滿，不讓每次資料都變同一場架。",
+            "action": "額外邀成人處理既有關係，不要求以和好換正常交付。",
+            "tradeoff": "需面對自己先前安排。"
+          },
+          {
+            "id": 6,
+            "text": "我願額外學他用的公開操作說明，但不答應換系統。",
+            "action": "投入本人有限工作餘裕閱讀合規資訊，不購買或輸入真資料、不宣稱已學會。",
+            "tradeoff": "教師時間成本，對方可能嫌只看不做。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很想當場反嗆，改成親自邀他去小會議處把話講完；我願少休息，但不接受在全辦公室被喊懶。",
+          "action": "承認憤怒，提出當次有限適當場所的直接成人對話，保持必要工作和尊重，不攔人、不要求對方已接受。",
+          "tradeoff": "犧牲休息並可能正面衝突，無法用轉檔立刻消氣。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2210194695
+        },
+        "selectedIds": [
+          2,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 1,
+          "D": 2
+        },
+        "optionsDigest": "ec6f4167b0f259d5e321e58d29e182c6e383bc72b89a7dced7d0087be72b4fa3"
+      },
+      "consequenceDirections": {
+        "A": "可發展私人不滿與真正效率問題能否拆開。",
+        "B": "可發展對方的怒氣與導師不再忍受公開羞辱的關係變化。",
+        "C": "可發展跟風效率標準與原有方法的真實衝突。",
+        "D": "可承接同事是否把額外協助視為承認落後。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1b961e48884ae1b0b789e4b0fb4321a86f3ebc988828a789c2f48176ab7717b8",
+    "draftSha256": "bb7a51a3f3ab4a0f9f9103f9cffae8e32a03d0be0284890e79983b426422c504",
     "seedAssignmentVersion": 1
   }
 }

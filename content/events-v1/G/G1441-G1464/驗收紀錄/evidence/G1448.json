@@ -15,14 +15,82 @@
     "G04",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "7213119551fda7178b60a3fb2a038afed65c91581ce3dcad298150e59b89b8c5",
+      "checkedAt": "2026-11-28T02:14:38.846Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "條件安全且他願意，我陪他先看核可的隔離位置，再依法回課。",
+            "action": "額外提出成人陪同熟悉安全動線，不強迫冒險或把看一眼當治療。",
+            "tradeoff": "教師陪同時間，學生可能更焦慮。"
+          },
+          {
+            "id": 2,
+            "text": "我協調一個合規低刺激座位，保留參與正課，不私放去圖書館。",
+            "action": "提出經任課者核定的適性位置，不預設有空位、不犧牲他人必要需求。",
+            "tradeoff": "多協調，學生可能仍拒進。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問有權者能否短暫在可照看的核可位置觀課，再評估接回。",
+            "action": "提出有限適性學習安排，須合法照看與教學等值，不擅記正常到課。",
+            "tradeoff": "增加人力與教師銜接。"
+          },
+          {
+            "id": 4,
+            "text": "我另邀他談新聞讓他想到什麼，不要求立刻說服自己不怕。",
+            "action": "額外自願關懷，必要焦慮支持照常，不替專業診斷。",
+            "tradeoff": "課間時間，可能談不出原因。"
+          },
+          {
+            "id": 5,
+            "text": "若他願意，我協助向正式輔導窗口提出額外諮詢需求。",
+            "action": "依法必要同意下提出支援，不把邀請說成已完成諮商或必須去才有課。",
+            "tradeoff": "排程且學生可能嫌事情被放大。"
+          },
+          {
+            "id": 6,
+            "text": "我不再追加私人巡看，正常課務與必要支持由有權者接續。",
+            "action": "婉拒非必要反覆確認服務，設備必要追蹤與合理學習安排照常。",
+            "tradeoff": "學生可能覺得不被理解。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也被那則新聞嚇到，不想只說別怕；我願多留一段合法工作時間，陪他和有權者面談哪些能自己選、哪些不能自己改。",
+          "action": "承認本人也怕，額外提出有限師生與權責者的協商出席，不以親近壓學生或保證改教室，必要安全先維持。",
+          "tradeoff": "教師花時間、學生可能認為又是說規矩。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3533436942
+        },
+        "selectedIds": [
+          5,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 6,
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "05b34ae04cd5e64dbbd837445a84fe951e2b1ae2549fa7b32e01520fa4fd48a1"
+      },
+      "consequenceDirections": {
+        "A": "可發展教師願承認恐懼但不讓恐懼取代實際資格與課務判斷。",
+        "B": "可發展成人不能提供絕對安心與學生自主期待。",
+        "C": "可發展安全意識強者對心理支持的接受。",
+        "D": "可發展餘裕學生願否把自行退出改為正式協商。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "59c14fdd390d858be7baa058f1085c01fe6baa0d411f9328080ef801a0274cd9",
+    "draftSha256": "7213119551fda7178b60a3fb2a038afed65c91581ce3dcad298150e59b89b8c5",
     "seedAssignmentVersion": 1
   }
 }

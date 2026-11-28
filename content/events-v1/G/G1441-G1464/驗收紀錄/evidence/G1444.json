@@ -15,14 +15,82 @@
     "G01",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fdbe0f91e33661a8ae2153e931a0e03e66a0bd45844aec0963ddf0377d318a76",
+      "checkedAt": "2026-11-28T02:14:38.838Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外編一份合宜進階題，給所有願意的人選做。",
+            "action": "增加本人備課，核實題目適切後公平提供，不加必交或甄選優勢。",
+            "tradeoff": "教師多工作，學生仍可能需指導。"
+          },
+          {
+            "id": 2,
+            "text": "我保留一段有限公開提問時段，讓想深究的人來談。",
+            "action": "提出公平自願額外答疑機會，必要支持照常、不承諾無限陪讀。",
+            "tradeoff": "占教師休息，可能排不下所有問題。"
+          },
+          {
+            "id": 3,
+            "text": "我在本科權限內設同目標的不同挑戰路徑，不讓他只等別人。",
+            "action": "調整可行課內任務，必要共同概念仍教、評量公平，不宣稱已完成差異化成效。",
+            "tradeoff": "備課批改更複雜。"
+          },
+          {
+            "id": 4,
+            "text": "我陪他核對校內可用進階館藏，借閱仍按資格與實際可借。",
+            "action": "額外有限資源查詢，不保證館藏在架或把必要教學全推給自讀。",
+            "tradeoff": "花查詢時間，學生可能仍覺得沒被教。"
+          },
+          {
+            "id": 5,
+            "text": "必要支持照常，我不再加私人專班，現有課程先維持。",
+            "action": "婉拒額外個別加課，不否認其正常學習權益與提問。",
+            "tradeoff": "學生可能對專業重心更失望。"
+          },
+          {
+            "id": 6,
+            "text": "我邀他提出自己真想研究的一題，先協商一個有限探索範圍。",
+            "action": "提出自願有限主題探索引導，不要求做成競賽或代表班級。",
+            "tradeoff": "教師需引導、題目可能超出可支援範圍。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被『我也想被教』說得有點不服；我願額外準備一堂可公平選聽的短深化課，讓自己真的試一次，不叫他替我帶其他人。",
+          "action": "承認想證明教得起，提出在合法核可時段的自願公平短深化教學，未備妥核定不當已上成，不犧牲基礎支持或強迫留校。",
+          "tradeoff": "教師多備課與授課，也可能發現自己準備不足。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2948709346
+        },
+        "selectedIds": [
+          4,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 1,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "0b1c6925525b49bc06066ffee95049c641a06d9ee3036bedd0e9674a143d3928"
+      },
+      "consequenceDirections": {
+        "A": "可承接想深究者對資源和師生互動的不同需要。",
+        "B": "可發展成就需求被接住與自主探索的真實難度。",
+        "C": "可發展教師時間有限與同理的好學生仍有不滿。",
+        "D": "可發展學生尊重教師又質疑重心的關係，實際挑戰課未必符合期待。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ee9b4c6df6070e6702256b1065d126eefc3074eb73145ec113c3d94bfa950b9",
+    "draftSha256": "fdbe0f91e33661a8ae2153e931a0e03e66a0bd45844aec0963ddf0377d318a76",
     "seedAssignmentVersion": 1
   }
 }

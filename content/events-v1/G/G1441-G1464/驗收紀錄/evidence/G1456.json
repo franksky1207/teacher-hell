@@ -15,14 +15,82 @@
     "G01",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "eaab987c9e667d49c7945702902ff302ababb86b35d578defa3dbc4f99838c28",
+      "checkedAt": "2026-11-28T02:14:38.861Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外轉發他確認好的簡短教學預告，清楚標示本科窗口。",
+            "action": "提供一次有限合法資訊轉達，不代授課者保證監督成果。",
+            "tradeoff": "增加家長回問與誤讀擔保的可能。"
+          },
+          {
+            "id": 2,
+            "text": "我不另發班群背書，讓他從既有正式本科管道說明。",
+            "action": "婉拒額外代言，必要學生與家長知情照規完成，不阻合規教學。",
+            "tradeoff": "同事可能猶豫或取消原提案。"
+          },
+          {
+            "id": 3,
+            "text": "我陪他核對一次真實收放流程與非手機替代，不接手他堂課。",
+            "action": "額外成人有限準備協作，必要公平與安全原就維持，不當已驗證零風險。",
+            "tradeoff": "雙方多花時間。"
+          },
+          {
+            "id": 4,
+            "text": "若有權者與課務允許，我額外旁觀一次教學，回饋實際看見的問題。",
+            "action": "提出有限合規成人觀課邀請，不代監督責任、不假設已進班或學生表現。",
+            "tradeoff": "占教師空堂，可能被讀成查勤。"
+          },
+          {
+            "id": 5,
+            "text": "我邀有權資訊承辦回覆一般合規疑問，別把我當設備保險。",
+            "action": "提出正式有限諮詢，不假設已獲核定或所有平台皆安全。",
+            "tradeoff": "多協調與等待。"
+          },
+          {
+            "id": 6,
+            "text": "我協助他準備一般家長問答的公開說法，由他自己決定回覆。",
+            "action": "額外有限措辭協作，不造假的核准或把偷滑全歸學生。",
+            "tradeoff": "花備課餘裕，仍可能被投訴。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我也怕電話都來找我；我願和他現在就談清楚誰回哪類問題，讓我自己不再下意識全接，仍不拿公告當免責。",
+          "action": "承認自保，提出當次有限成人實際分工約定，雙方同意才成立，必要緊急與正當家長求助不踢皮球。",
+          "tradeoff": "教師得面對說不的尷尬，對方可能仍想要全包背書。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2008344867
+        },
+        "selectedIds": [
+          2,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "e78b1cc55046a97cc42f0aac144091705e926269a2e9a508913a0817898ebb01"
+      },
+      "consequenceDirections": {
+        "A": "可承接規範認同與風險恐懼對新教法的拉扯。",
+        "B": "可發展兩個求安穩的老師如何談真實工作分攤而不是互相保證。",
+        "C": "可承接合作與不想被監看同時存在。",
+        "D": "可發展重保障者獲協作後會否要求更多保護。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9ef033c8138deb9e34e2eeaebf31d16bf0a298fa6018c4cfb4aa07c625c6b433",
+    "draftSha256": "eaab987c9e667d49c7945702902ff302ababb86b35d578defa3dbc4f99838c28",
     "seedAssignmentVersion": 1
   }
 }

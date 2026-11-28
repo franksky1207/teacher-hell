@@ -15,14 +15,82 @@
     "G06",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "b493ea636c7b8ca803c6c036655375040cfda08a24beaa410d701d8f65d2ff4b",
+      "checkedAt": "2026-11-28T02:14:38.828Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外在班群預告這次討論期與正式入口，不提誰來問。",
+            "action": "提供全班一般提醒，必要告知已共同完成，不披個案、不改原同意效力。",
+            "tradeoff": "多文字和可能的群組追問。"
+          },
+          {
+            "id": 2,
+            "text": "我提案以後自費項目先作線上提醒，核可後才採用。",
+            "action": "向有權者提出事前提醒的流程建議，不宣稱已變全校規定。",
+            "tradeoff": "後續工作增加，未必獲准。"
+          },
+          {
+            "id": 3,
+            "text": "我另外約他談上次那句話，費用問題不拿來抵掉私人疙瘩。",
+            "action": "提出有限成人關係對話，不要求放棄正當疑問或當場和解。",
+            "tradeoff": "花時間並得聽不舒服的話。"
+          },
+          {
+            "id": 4,
+            "text": "經他意願，我核對正式減免資訊，只讓家庭自己選，不替孩子勸報。",
+            "action": "最小知情查核合法支持條件，未核定不保證費用減少。",
+            "tradeoff": "查詢時間與可能傷自尊。"
+          },
+          {
+            "id": 5,
+            "text": "我維持原有親簽機制，不承諾額外逐戶雙重確認。",
+            "action": "婉拒非必要第二次確認服務，必要真實權益說明仍完整。",
+            "tradeoff": "可能被覺得只會守原流程。"
+          },
+          {
+            "id": 6,
+            "text": "若他願意，我邀承辦一起回覆實際流程，避免由我一人包答。",
+            "action": "提出合法有限成人共同回覆需求，未取得同意不算已會談。",
+            "tradeoff": "多排程，可能被認為把事情推走。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被那句口氣又刺到，想一次講清楚；我願親自出席正式限時面談，不躲在訊息後面，也不拿孩子報不報名換和氣。",
+          "action": "承認不服與怕再被誤會，額外提出面對面成人釐清，需雙方合法時段與意願，不代家長決定、不保證消除舊怨。",
+          "tradeoff": "付接待時間並承受直接不滿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 186148099
+        },
+        "selectedIds": [
+          6,
+          4,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "0eea94331637c15d4f476b22ed6ea1d2ca5310d3802e4b88ab2333d3a06be29c"
+      },
+      "consequenceDirections": {
+        "A": "可承接經濟敏感不等於否定教師教學。",
+        "B": "可發展教師親口回應問責仍可能被讀成辯解，而非靠其他私人活動逃開當次人情。",
+        "C": "可發展專業肯定和私人不滿可同時保留。",
+        "D": "可承接家長要求導師負責與權責分工的摩擦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0a2758dbceffbbaaf567d8addada4e0068e5a25dcff346962e40ae87096fb272",
+    "draftSha256": "b493ea636c7b8ca803c6c036655375040cfda08a24beaa410d701d8f65d2ff4b",
     "seedAssignmentVersion": 1
   }
 }

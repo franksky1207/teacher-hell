@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "14a376fc46e661733c74df25ee9441b4555780ef33b224df466902337f0a1cd5",
+      "checkedAt": "2026-11-28T02:14:38.853Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我接受今晚損失，回去正常休息，不再用熬夜追回它。",
+            "action": "放棄當晚追加非必要進修，必要工作準備照常。",
+            "tradeoff": "學費與成長期待落空。"
+          },
+          {
+            "id": 2,
+            "text": "我限時讀一小段合法相關書目，到點就停。",
+            "action": "用本人既有或合法可得公開資料作有限自學，不假稱補回整堂或侵權索錄影。",
+            "tradeoff": "少私人休息，內容仍不完整。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問主辦是否有可合法購得的公開教材，沒有就接受。",
+            "action": "提出教材資訊查詢，不要求違反既有無補課條件或保證取得。",
+            "tradeoff": "多聯繫，可能另花費須再決定。"
+          },
+          {
+            "id": 4,
+            "text": "我重新安排下一個真有空的自學時段，不今晚再塞。",
+            "action": "調整本人未來非必要私人時間，不假設新課已報名或工作可改。",
+            "tradeoff": "其他私人安排得讓位。"
+          },
+          {
+            "id": 5,
+            "text": "我向老友提議未來固定短時聯絡，讓彼此不用靠街角無限加時。",
+            "action": "提出成人自願有限聯絡約定，不以其接受補償學費或換友誼。",
+            "tradeoff": "多維繫時間，對方可能覺得被設限。"
+          },
+          {
+            "id": 6,
+            "text": "我把今晚已傳的資訊整理成短索引給他，明說後續由他自己選，不再逐一代辦。",
+            "action": "額外整理本人已分享的合法公開入口，不保證就業或代求職，不傳他人私聯絡。",
+            "tradeoff": "多一段私人時間，自己學習仍未補。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我捨不得那堂課，今晚也不想再裝大度；我願另外自費預留一場真正可行的新學習機會，先查條件，這次把那段時間留給自己。",
+          "action": "承認肉痛與不甘，查核本人可負擔、合法可行的未來成人學習機會，確認後才自願報名付款，不假設名額已得、不向失業友人討損失。",
+          "tradeoff": "可能再付費並縮減其他非必要消費，也可能查不到合適課。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2491931667
+        },
+        "selectedIds": [
+          6,
+          1,
+          5
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "a7033c910a30fdeeb4b27d69c89354446d1e444a64ecb7caf47179e1597bd3f6"
+      },
+      "consequenceDirections": {
+        "A": "可發展同理付出後仍有遺憾，不靠自我說服消失。",
+        "B": "可發展主動分享者也需保留自己的生活節奏。",
+        "C": "可承接同理與資訊主動性如何不擴成全職協助。",
+        "D": "可發展教師允許自己仍想成長而非一律把陪伴說成最值得，資源不會消除失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "40d1c573b46b1626688c4f7f1510d84d912d19825ae61701f148a492ed71edde",
+    "draftSha256": "14a376fc46e661733c74df25ee9441b4555780ef33b224df466902337f0a1cd5",
     "seedAssignmentVersion": 1
   }
 }

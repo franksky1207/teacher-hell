@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "632aa433ea26a04d8787b8c42f41a7d60e42428dc997c2158b8b062effeb5060",
+      "checkedAt": "2026-11-28T02:14:38.857Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪他練一句真實婉拒，是否傳出去由他自己選。",
+            "action": "提供有限自願拒絕演練，不代造理由、不把演練當休息條件。",
+            "tradeoff": "教師時間，學生仍可能怕。"
+          },
+          {
+            "id": 2,
+            "text": "經他意願，我陪在旁邊，讓他自己發出真實回覆。",
+            "action": "提出有限現場支持，不看無關私訊或替其按送出，不假設已拒成。",
+            "tradeoff": "占教師課間、學生可能改變主意。"
+          },
+          {
+            "id": 3,
+            "text": "若雙方願意，我當面協助說明這次可用時間，朋友仍可不同意。",
+            "action": "提出合法可見場合的自願簡短協商，不假扮懲處或介入無關私事。",
+            "tradeoff": "教師承受人情，學生可能覺得幼稚。"
+          },
+          {
+            "id": 4,
+            "text": "我額外和他盤已有承諾，讓他自己選一件先重新協商。",
+            "action": "有限真實負荷整理，不擅取消正式課業、家長合約或別人的邀約。",
+            "tradeoff": "花時間且可能仍捨不得放。"
+          },
+          {
+            "id": 5,
+            "text": "經必要同意，我邀家長一起討論留下固定空檔。",
+            "action": "提出有限親師生協調，不把父母支持說成過錯、不保證減掉項目。",
+            "tradeoff": "家庭可能擔心，學生怕被管更多。"
+          },
+          {
+            "id": 6,
+            "text": "我不接手朋友間的拒絕，保留正常支持，讓他按自己選擇回覆。",
+            "action": "婉拒非必要代言，不撤必要照護或用冷淡教育其自立。",
+            "tradeoff": "學生可能覺得最信任的人也不幫。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我其實很想替他擋一次；我願把自己今天可調的一小段休息用來陪他安靜歇著，不加作業也不替他說謊，邀約就由他誠實回。",
+          "action": "承認心軟，提出有限合法可見場所的自願休息陪伴，不構成假留校、必要照護不限此分支、不扣返家交通。",
+          "tradeoff": "教師少休息，學生可能仍得承受朋友失望。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1438443995
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 6
+        },
+        "optionsDigest": "3db850b00bb7fac26d0c588a71fc8ead8857695c67bdea453c791271bd84c209"
+      },
+      "consequenceDirections": {
+        "A": "可承接家庭支持和高社交如何一起把日程填滿。",
+        "B": "可發展他不用有藉口也能被支持，但教師不能替他買下所有人的喜歡。",
+        "C": "可發展信任和社交熱情面對被冷落的風險。",
+        "D": "可承接教師界線與青春友誼面子的真實落差。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "da49534d0ed96e6621e203ddae9cf7f00f78cf3c6822ac8d55e34f984326090f",
+    "draftSha256": "632aa433ea26a04d8787b8c42f41a7d60e42428dc997c2158b8b062effeb5060",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "86912660aac24fb5c16cfc4fefdde89f0edffe086a4fe245baba4a9d383554e0",
+      "checkedAt": "2026-11-28T02:14:38.865Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我另找真正有空且自願的同學，協商公平輪流，不動副手補強。",
+            "action": "提出合法有限共同分工需求，未找到不假稱接妥，必要成人接續照常。",
+            "tradeoff": "教師多媒合與交接。"
+          },
+          {
+            "id": 2,
+            "text": "我刪減本人要求的非必要重複登記，必要欄位仍由成人核實。",
+            "action": "調整真實現有表務中的可免重複項，不虛報必要資訊或保證瞬間做完。",
+            "tradeoff": "教師少了偏好的整齊細節，仍需核對。"
+          },
+          {
+            "id": 3,
+            "text": "我提出暫由成人接回一段，他只保留實際可負擔的工作。",
+            "action": "教師自願增加合法工作，與學生確認合理範圍，不把基本照護當獨有優惠。",
+            "tradeoff": "導師多零碎任務，學生可能失落。"
+          },
+          {
+            "id": 4,
+            "text": "若本人願意，我協調短期輪休職責，之後是否回任再依法談。",
+            "action": "提出合規暫調，未核定不宣布撤職，不要求以辭職證明焦慮。",
+            "tradeoff": "需要人力，學生怕位置不保。"
+          },
+          {
+            "id": 5,
+            "text": "我和他實際走一次既有工作流程，哪些卡住就據實停下看，不叫他再加速。",
+            "action": "額外成人有限陪做觀察，不蒐新個資或重做已完成必要點名。",
+            "tradeoff": "教師付陪同時間，可能看出自己要求太多。"
+          },
+          {
+            "id": 6,
+            "text": "我邀全體幹部自願討論合理工作範圍，不公開他的焦慮。",
+            "action": "提出一般分工對話，教師依權責決定，不投票硬塞他人。",
+            "tradeoff": "佔班務時間，可能衍生其他要求。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我有點捨不得少掉這個可靠幫手；我願先停自己額外要的精美彙整，把原稿留在合法範圍自己看，不再要他替我做漂亮。",
+          "action": "承認喜歡整齊省事，在本人權限內取消既有非必要美化彙整要求，必要紀錄與學生可承擔工作另依法接續，不銷資料。",
+          "tradeoff": "教師須自己閱讀較分散的真實原稿。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1309953207
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 3,
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "de300d30c61ac6e8fcfe6596cc2e57f70b55503ce899056f735d2f4dd26f592f"
+      },
+      "consequenceDirections": {
+        "A": "可發展學生看到導師也放掉便利，但未必立刻相信少做仍受尊重。",
+        "B": "可發展敬重老師的人也可能不願把麻煩交回。",
+        "C": "可發展高參與度不應成為所有工作都往他身上放的理由。",
+        "D": "可承接想繼續班務和需要一段空白的矛盾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "0c1456d979097769cec0e57835aeca3d0427273cad04033b7c839e8426d392fc",
+    "draftSha256": "86912660aac24fb5c16cfc4fefdde89f0edffe086a4fe245baba4a9d383554e0",
     "seedAssignmentVersion": 1
   }
 }

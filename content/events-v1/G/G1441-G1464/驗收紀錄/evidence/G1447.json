@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "183ac6552c44c21b65ffbd8d50259e3148059332bd6b28fd3ee8a21be22d5277",
+      "checkedAt": "2026-11-28T02:14:38.844Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外發一般核實資訊給全班家庭，不提轉傳者。",
+            "action": "公平提供公開真實定位，不洩個案，不讓必要錯誤澄清只在此分支成立。",
+            "tradeoff": "花整理時間，仍可能讓家長覺得被影射。"
+          },
+          {
+            "id": 2,
+            "text": "我邀他自己轉發正式來源給原收件者，願不願做由他決定。",
+            "action": "提出自願補充資訊邀請，教師不以其配合為停止錯訊息必要處理條件。",
+            "tradeoff": "家長可能難啟齒，教師需斟酌回應。"
+          },
+          {
+            "id": 3,
+            "text": "若他願意，我陪他看原課程合約的公開退費入口，不代他退。",
+            "action": "額外核對消費資訊，未認定可退或費用已追回，不把繳費當參賽必要。",
+            "tradeoff": "時間與可能發現已過期限。"
+          },
+          {
+            "id": 4,
+            "text": "我邀親子談本人真的想學什麼，不以單張證照定義升學。",
+            "action": "提出有限自願共同交流，學生可不同意家長期望，不擅終止合約。",
+            "tradeoff": "排程與家庭可能爭執。"
+          },
+          {
+            "id": 5,
+            "text": "我不再加班級活動，相關一般檢定資訊走正式輔導管道。",
+            "action": "婉拒額外代辦，必要正確資訊與正常求助仍可用。",
+            "tradeoff": "家長覺得熱心未被接住。"
+          },
+          {
+            "id": 6,
+            "text": "我詢問正式輔導者能否提供全體自願一般諮詢，不為這家開推薦會。",
+            "action": "提出公平有限專業支援需求，未同意不算場次已成。",
+            "tradeoff": "多協調、可能來不及他的截止日。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我很怕他把我的客氣當團報默許；我願現在親自打限時電話，說明我不當召集人，也讓他有機會把付錢後的難堪說完。",
+          "action": "承認不想當壞人的顧慮，額外提出當次成人直接對話，必要拒背書已共同成立，不羞辱或要求撤回合法消費。",
+          "tradeoff": "教師花即時空檔並承受家長失望。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1454071736
+        },
+        "selectedIds": [
+          5,
+          2,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": "emotional",
+          "C": 4,
+          "D": 2
+        },
+        "optionsDigest": "d0f22d47114c1a89ac93a3540c1a6f8944fa1ef74cdf6f2934dd650f62fe2072"
+      },
+      "consequenceDirections": {
+        "A": "可發展敬重教師不代表能要求替商業課程拉人。",
+        "B": "可發展被敬重的教師親口不領情，與家長可能終於承認自己怕買錯。",
+        "C": "可承接催團報背後已投入的家庭焦慮。",
+        "D": "可承接能精算日期的人面對判斷起點不正確。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "897543a1026195b2d7daaeb057e595c781cf8261a548db16a553d1bba32e5490",
+    "draftSha256": "183ac6552c44c21b65ffbd8d50259e3148059332bd6b28fd3ee8a21be22d5277",
     "seedAssignmentVersion": 1
   }
 }

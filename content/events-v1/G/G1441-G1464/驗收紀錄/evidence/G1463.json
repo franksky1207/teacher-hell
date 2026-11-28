@@ -14,14 +14,155 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "1727979c43606555dd0b066a005ee65a2c8a74dfd5ce505a4f1fba00cad6570e",
+      "checkedAt": "2026-11-28T02:14:38.873Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "依法可部分退就申請退出，接受真實可核實的損失。",
+            "action": "依實際合法條件提出退課申請，未核准不宣稱款已回。",
+            "tradeoff": "可能損費與半途放下的挫折。"
+          },
+          {
+            "id": 2,
+            "text": "我只選一個真能放進生活的單元，設有限自學時間，其餘不追。",
+            "action": "保留合法已付使用權，縮小本人學習目標，不保證全部回本。",
+            "tradeoff": "已付多數內容用不到。"
+          },
+          {
+            "id": 3,
+            "text": "我詢問能否依法轉較小方案，確認價差和權利後再決定。",
+            "action": "查詢合法方案調整，不假設已有名額、退款或已換成。",
+            "tradeoff": "多聯絡，可能無此方案。"
+          },
+          {
+            "id": 4,
+            "text": "我詢問能否合法暫停使用期，沒有就不拿未成的延長當安慰。",
+            "action": "提出權利期限調整詢問，不假定客服同意或可以無限延期。",
+            "tradeoff": "需追聯絡、問題可能只是延後。"
+          },
+          {
+            "id": 5,
+            "text": "我暫不新增追課，先在合法退費期限內核對課綱與自己真正用途。",
+            "action": "有限評估既有購買，記清真實期限不任其過期，不聲稱已有效使用。",
+            "tradeoff": "多私人時間，評估後可能更失望。"
+          },
+          {
+            "id": 6,
+            "text": "我保留課程但明確放棄直播，僅用合法錄影作零散參考。",
+            "action": "在契約實際提供錄影的範圍使用，不假定可下載或取得未授權資料。",
+            "tradeoff": "少互動、進度可能很慢。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我一看別人又學什麼就想刷卡，這次先把進修群和課程促銷通知靜音一週，課先不追，也不再加購證明自己。",
+          "action": "承認比較與促銷觸發衝動，自行調整確有的同儕群與課程推播的非必要通知，保留必要聯絡並記清合法退費期限，不冒稱已退費或離群、不要求他人改貼文。",
+          "tradeoff": "暫時少了學習交流即時訊息，已付學費仍會肉痛，也可能焦慮錯過資訊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4015847210
+        },
+        "selectedIds": [
+          1,
+          6,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 6,
+          "D": 3
+        },
+        "optionsDigest": "c3fce8157a5f905f44b0b5cf3634cccac7b11fdcaeebdc400606cb79875c8c72"
+      },
+      "consequenceDirections": {
+        "A": "可發展成就焦慮願不願以金錢換回時間。",
+        "B": "可發展資源寬裕卻難忍落後感的人願否承受少看消息，而非再以購買或追課填滿焦慮。",
+        "C": "可承接成就期待從追完整班級轉成接受不完整利用。",
+        "D": "可發展不甘全退和不願再塞滿的折衷。"
+      },
+      "semanticReviewed": true,
+      "selectionRevisionHistory": [
+        {
+          "reason": "原情緒候選以逛網頁時間換有限實作，仍與普通候選2有限單元自學實質近；改直接處理此次既有群組比較與行銷推播的具體資訊取捨。",
+          "previousSelection": {
+            "ordinaryCandidates": [
+              {
+                "id": 1,
+                "text": "依法可部分退就申請退出，接受真實可核實的損失。",
+                "action": "依實際合法條件提出退課申請，未核准不宣稱款已回。",
+                "tradeoff": "可能損費與半途放下的挫折。"
+              },
+              {
+                "id": 2,
+                "text": "我只選一個真能放進生活的單元，設有限自學時間，其餘不追。",
+                "action": "保留合法已付使用權，縮小本人學習目標，不保證全部回本。",
+                "tradeoff": "已付多數內容用不到。"
+              },
+              {
+                "id": 3,
+                "text": "我詢問能否依法轉較小方案，確認價差和權利後再決定。",
+                "action": "查詢合法方案調整，不假設已有名額、退款或已換成。",
+                "tradeoff": "多聯絡，可能無此方案。"
+              },
+              {
+                "id": 4,
+                "text": "我詢問能否合法暫停使用期，沒有就不拿未成的延長當安慰。",
+                "action": "提出權利期限調整詢問，不假定客服同意或可以無限延期。",
+                "tradeoff": "需追聯絡、問題可能只是延後。"
+              },
+              {
+                "id": 5,
+                "text": "我暫不新增追課，先在合法退費期限內核對課綱與自己真正用途。",
+                "action": "有限評估既有購買，記清真實期限不任其過期，不聲稱已有效使用。",
+                "tradeoff": "多私人時間，評估後可能更失望。"
+              },
+              {
+                "id": 6,
+                "text": "我保留課程但明確放棄直播，僅用合法錄影作零散參考。",
+                "action": "在契約實際提供錄影的範圍使用，不假定可下載或取得未授權資料。",
+                "tradeoff": "少互動、進度可能很慢。"
+              }
+            ],
+            "emotionalCandidate": {
+              "text": "我不服這筆衝動要吞掉一年；我願撤掉自己接下來幾次非必要滑購物頁的時間，固定拿一段學一個真有用的小功能，不再買新方案。",
+              "action": "承認不甘與衝動，調整本人確有的非必要手機瀏覽習慣為有限實作，僅用合法已取得內容，不壓必要休息或保證成果。",
+              "tradeoff": "放棄輕鬆逛網頁的快樂，可能仍發現不適用。"
+            },
+            "rng": {
+              "algorithm": "mulberry32",
+              "version": 1,
+              "seed": 2587947686
+            },
+            "selectedIds": [
+              3,
+              5,
+              1
+            ],
+            "finalChoiceMap": {
+              "A": 5,
+              "B": 3,
+              "C": 1,
+              "D": "emotional"
+            },
+            "optionsDigest": "025265dd7c4bd5f2934a740ac40990d203f261326a2898b13bbdac9a9a14e9c6"
+          },
+          "previousConsequenceDirections": {
+            "A": "可發展衝動成交後才做需求判斷的成本。",
+            "B": "可發展不甘全退和不願再塞滿的折衷。",
+            "C": "可發展成就焦慮願不願以金錢換回時間。",
+            "D": "可發展教師不想認賠的賭氣如何變成有限行動，也可能最後接受沉沒成本。"
+          }
+        }
+      ],
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +183,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "fd056dabb940cee643a50a5b706e99002074186e924ae53a87a1a82fee406582",
+    "draftSha256": "1727979c43606555dd0b066a005ee65a2c8a74dfd5ce505a4f1fba00cad6570e",
     "seedAssignmentVersion": 1
   }
 }

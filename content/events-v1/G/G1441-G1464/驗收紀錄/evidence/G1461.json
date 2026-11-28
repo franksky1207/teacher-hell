@@ -16,14 +16,82 @@
     "G08",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "928de900145570a86507158c93a35abd6020d74f669678f5c5b5438367f64cba",
+      "checkedAt": "2026-11-28T02:14:38.870Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我額外陪他按核定範圍現場閱覽，真實問題當場記給承辦。",
+            "action": "自願增加合法接待，必要閱覽權不因其他選項撤除，不准未授權者旁看個資。",
+            "tradeoff": "教師多時間、可能逐張被問。"
+          },
+          {
+            "id": 2,
+            "text": "我另整理遮蔽他生資料的合法分類索引，供有權者確認可提供範圍。",
+            "action": "增加易讀資料協助，不以索引替代依法應提供原件資訊，不自印未授權憑證。",
+            "tradeoff": "多文書，仍可能被懷疑過濾。"
+          },
+          {
+            "id": 3,
+            "text": "我不加私人先看服務，讓申請走正式共同標準。",
+            "action": "婉拒非必要特別接待，必要依法受理與資訊提供照常。",
+            "tradeoff": "家長可能把等待視作拖延。"
+          },
+          {
+            "id": 4,
+            "text": "我邀有權帳務者共同說明，不讓自己同時當被質疑者和唯一解釋者。",
+            "action": "提出有限成人共同回覆，未同意不當已有會議，不轉嫁原應負責事實。",
+            "tradeoff": "多排程，事件更正式。"
+          },
+          {
+            "id": 5,
+            "text": "我額外和他看網路範本哪些是建議、哪些需依法確認，不判貼文全是假。",
+            "action": "有限公開資訊辨讀，必要帳務權益不以其接受解釋為條件。",
+            "tradeoff": "時間與可能被認為轉移話題。"
+          },
+          {
+            "id": 6,
+            "text": "我另約釐清舊班規認定的誤會，查帳仍依正式程序獨立辦。",
+            "action": "提出自願有限舊事交流，不要求撤申請或和好。",
+            "tradeoff": "情緒時間與舊怨可能更明。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被懷疑得很不舒服；我願額外申請一場全體可自願參加的帳務說明，由有權者定資料範圍，不讓我只對一個家長反覆自證。",
+          "action": "承認壓力，提出公平公開一般說明的有限正式申請，保留個別合法申請權，不披個資、不保證核准或帳目零誤差。",
+          "tradeoff": "教師增加準備與面對多人提問的負擔。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1027360026
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 4,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "dd614eadf3f7826b08c0f8b6b5ab48755247046c09bdfcd84d9338eecab7aaf2"
+      },
+      "consequenceDirections": {
+        "A": "可承接高原則與誤信一份網路格式的差別。",
+        "B": "可承接不滿教師的人是否更信別的合法窗口。",
+        "C": "可發展講原則者想私核全套和教師希望公共可問的不同取捨。",
+        "D": "可發展舊怨讓合法一般時程也難被信任。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8b701678f8cfa56c8ada47e332cd75850c38dca2d47606824cf64dd190d3e256",
+    "draftSha256": "928de900145570a86507158c93a35abd6020d74f669678f5c5b5438367f64cba",
     "seedAssignmentVersion": 1
   }
 }

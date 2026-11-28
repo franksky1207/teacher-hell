@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "ad5b754e1692a44398b012c465a23fd8114f965ffd146d36fadf00a6d9f1c6c5",
+      "checkedAt": "2026-11-28T02:14:38.851Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "在合法交通條件下，我接回剩下可行的短整理，由我留場，不要他鎖門。",
+            "action": "依權限完成適量合法措施，必要家長告知與返程不受害，不追回已交接離校學生。",
+            "tradeoff": "同事當場可能尷尬，教師多留時間。"
+          },
+          {
+            "id": 2,
+            "text": "我依法調整今天剩餘部分，改約正常校內時間談真實責任。",
+            "action": "在可調權責內停止當晚非必要追加，依法告知接續，不把往後談話說成已完成。",
+            "tradeoff": "原即時效果失去、需另排時間。"
+          },
+          {
+            "id": 3,
+            "text": "我額外私下約同事談今後如何先問，不在學生前清算他。",
+            "action": "提出成人界線會談，當下合法安排先處理，不以會談取代必要釐清。",
+            "tradeoff": "多情緒工作，可能被覺得不領情。"
+          },
+          {
+            "id": 4,
+            "text": "我請有權者協調本班合宜管教的成人分工，不再靠路過一句話。",
+            "action": "提出有限正式工作協調，不擴大學生懲處或假設已有新制度。",
+            "tradeoff": "更多行政和職場摩擦。"
+          },
+          {
+            "id": 5,
+            "text": "我不再請這位同事做額外留場支援，後續本人依法安排。",
+            "action": "調整未來非必要成人協助邀請，不剝奪其本科職權或阻其正常關心。",
+            "tradeoff": "教師少了方便人力，同事可能被疏遠。"
+          },
+          {
+            "id": 6,
+            "text": "我額外聽兩名學生對這次指令變動的感受，不要求評哪位老師對。",
+            "action": "提出自願有限學生回饋，不以拒談扣分或讓其捲成人站隊。",
+            "tradeoff": "花課間，可能聽到教師不愛聽的意見。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真的覺得被拆台；我願當下請同事到合適的一旁直接說清楚，學生由合法成人接好，我不再笑著吞下去。",
+          "action": "承認生氣，提出當次有限成人直接界線對話，不攔人羞辱或轉嫁學生，不延誤必要交通。",
+          "tradeoff": "耗本人時間、可能破壞一向互挺的感覺。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2635544615
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": "emotional",
+          "D": 2
+        },
+        "optionsDigest": "4e175b493911a515261635f1f69cbfb8b3c336497b9d59fcd829df75ca7e2bcd"
+      },
+      "consequenceDirections": {
+        "A": "可承接同理與一致性不只是成人互相保面子。",
+        "B": "可發展支持與實際可投入的負荷如何分開。",
+        "C": "可發展疲累心軟的人面對導師直說不舒服，仍不保證道歉或恢復默契。",
+        "D": "可承接同事心軟被採用與學生對界線的理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Codex／第十三輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "a7b52c85aa5eb244aa34efee950d645a53790246a667c9783d0855becb633773",
+    "draftSha256": "ad5b754e1692a44398b012c465a23fd8114f965ffd146d36fadf00a6d9f1c6c5",
     "seedAssignmentVersion": 1
   }
 }

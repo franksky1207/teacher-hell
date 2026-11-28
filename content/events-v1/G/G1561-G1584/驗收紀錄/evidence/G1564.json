@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "a2fe80b82d2493d9ddd9a38735e04093df9b7103a39e07e6f174ae3112d0d575",
+      "checkedAt": "2026-11-28T03:15:29.979Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先確認走廊只是便當盒掉落、沒有危險，笑一句安撫全班坐好，下課再單獨提醒他。",
+            "action": "確認現場安全並簡短安撫全班恢復秩序，課後私下指導student_a先觀察再呼喊。",
+            "tradeoff": "被嚇醒的同學覺得他太誇張，私下難免拿這件事虧他。"
+          },
+          {
+            "id": 2,
+            "text": "我當場把辨識異常聲響和避免製造踩踏講清楚，並請他去跟隔壁班說聲不好意思。",
+            "action": "現場完成安全應變說明，並要求student_a向受驚擾的隔壁班同學致意。",
+            "tradeoff": "本來就很敬重老師的他當場臉紅到耳根，自信有點受挫。"
+          },
+          {
+            "id": 3,
+            "text": "我請他跟幾位受驚的同學午休結束後一起確認教室桌椅都歸位，順便深呼吸穩住。",
+            "action": "確認安全無虞後，帶student_a整理被推歪的桌椅並緩和現場氣氛。",
+            "tradeoff": "會耽誤到下一節課前幾分鐘的收心準備。"
+          },
+          {
+            "id": 4,
+            "text": "我藉這個機會花兩分鐘帶全班順一次真正的地震與異常聲響分辨流程。",
+            "action": "利用午休末段進行簡短的正確防災辨識教學，不針對個人責備。",
+            "tradeoff": "全班原本想多趴兩分鐘補眠的同學有點無奈。"
+          },
+          {
+            "id": 5,
+            "text": "我先請隔壁班老師或同學回班，關上門只讓本班自己消化這場烏龍。",
+            "action": "先隔開隔壁班圍觀視線，在班內單獨處理秩序與student_a的情緒。",
+            "tradeoff": "隔壁班還是會把這件糗事傳開，且未正式向鄰班致意。"
+          },
+          {
+            "id": 6,
+            "text": "我請班長記下今天這件烏龍當班會安全案例，當下先不追究。",
+            "action": "現場確認安全後先恢復作息，將冷靜判斷議題排入下次班會。",
+            "tradeoff": "student_a當下心裡懸著一顆石頭，不知老師到底生不生氣。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我差點也被他那聲大喊嚇到心臟停拍，乾脆當場扶著講桌喘一口氣說「你這嗓門可以去當防災廣播了，下次先看一眼好不好」。",
+          "action": "導師當場以自嘲語氣緩和驚嚇並口頭提醒student_a下次先確認狀況再呼喊。",
+          "tradeoff": "全班笑成一團後要花更多力氣收心上第五節課。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3231003564
+        },
+        "selectedIds": [
+          2,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 6,
+          "D": 4
+        },
+        "optionsDigest": "ace704db5a90706e464b5c9a7d6240d7903936c991cc9f618f02a6c1638df150"
+      },
+      "consequenceDirections": {
+        "A": "可發展student_a在隔壁班面前致歉的自尊壓力，與往後對安全警覺的拿捏。",
+        "B": "可發展全班大笑收場後，導師如何收心上課及同學對student_a的調侃。",
+        "C": "可發展把烏龍排入班會案例後，student_a等待處理期間的不安與反思。",
+        "D": "可發展午休末段順勢帶過防災辨識後，學生對安全與誤報的實際理解。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cdf728dc4ac4d908b9e99c1cebab3e4bb331e7f2851d39f5cf98a0832b8e5825",
+    "draftSha256": "a2fe80b82d2493d9ddd9a38735e04093df9b7103a39e07e6f174ae3112d0d575",
     "seedAssignmentVersion": 1
   }
 }

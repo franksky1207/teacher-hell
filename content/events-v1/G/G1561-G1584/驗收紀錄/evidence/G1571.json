@@ -15,14 +15,82 @@
     "G07",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "55a0a4b5731aa9ffcfee85e564765d536213a4a0f6034a3d1ede5d607e1478d9",
+      "checkedAt": "2026-11-28T03:15:30.004Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著但堅定地回絕改標題交舊稿，告訴他我們班有幾篇真有意願寫就交幾篇。",
+            "action": "明確拒絕要求學生拿舊稿重複投稿，維持依真實意願交件。",
+            "tradeoff": "拚業績的同事當場笑容僵掉，明天可能換別的話術再來。"
+          },
+          {
+            "id": 2,
+            "text": "我接住他的進度焦慮，答應回班再口頭鼓勵一次真想寫新題目的同學，絕不湊數。",
+            "action": "拒絕舊稿灌水，承諾於班上再行口頭宣導真實投稿意願。",
+            "tradeoff": "維持了職場禮貌，但最後交件數還是未必達得到他要的五篇。"
+          },
+          {
+            "id": 3,
+            "text": "我把話攤開說，舊稿改標題萬一被查重出事反而是整個學校難看，請他別用這招。",
+            "action": "以學術倫理與校譽風險為由正式拒絕灌水提議。",
+            "tradeoff": "在辦公室講得這麼白，同事面子掛不住。"
+          },
+          {
+            "id": 4,
+            "text": "我先請他把目前全校真實統計的截止日和最低門檻拿給我看，再決定要不要幫他多催。",
+            "action": "拒絕舊稿湊數，僅確認正式截止時程以評估是否再向學生提醒新稿投稿。",
+            "tradeoff": "同事可能覺得導師在挑他行政數字的毛病。"
+          },
+          {
+            "id": 5,
+            "text": "我建議他把徵件說明改成「可交短篇新觀察」，降低門檻吸引真正的新稿而不是改舊題。",
+            "action": "在拒絕舊稿重複交件前提下，向承辦人提出調整合法徵件門檻的建議；未經核准前不代表已改制。",
+            "tradeoff": "同事嫌改公告太麻煩，覺得還是改標題最快。"
+          },
+          {
+            "id": 6,
+            "text": "我請他直接把這班的真實意願人數報上去，不另做額外動員。",
+            "action": "拒絕湊數與額外催繳，依目前實際完成件數回報。",
+            "tradeoff": "同事覺得導師完全不挺他這項全校推廣工作。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他連催三天也有點煩，乾脆拿自己桌上一張空白報名表推過去說「你這麼缺數字，不如我下班幫你寫一篇教師隨筆算了，學生那邊真的別造假」。",
+          "action": "嚴正拒絕學生舊稿湊數，以半玩笑語氣表態自己絕不配合灌水。",
+          "tradeoff": "話裡帶著刺，同事當場笑不出來，辦公室氣氛瞬間冷掉。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2576281634
+        },
+        "selectedIds": [
+          3,
+          2,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 2,
+          "C": "emotional",
+          "D": 1
+        },
+        "optionsDigest": "167ac46235bb3039c15921ffcb6e2a83beb376489434063baa2f4b85dceab4e2"
+      },
+      "consequenceDirections": {
+        "A": "可發展當眾點破查重與校譽風險後，同事在辦公室被潑冷水後的互動。",
+        "B": "可發展答應再口頭鼓勵新稿後，最終交件數仍不足時同事的失望。",
+        "C": "可發展導師半開玩笑拒絕學生造假後，辦公室冷場與同事後續態度。",
+        "D": "可發展堅定回絕舊稿改標題後，拚業績同事隔天是否還會換方式來磨。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3fc7f1a8df41c6521a578bed535676cd7d2b05aac9131e0ba783315351d06ce3",
+    "draftSha256": "55a0a4b5731aa9ffcfee85e564765d536213a4a0f6034a3d1ede5d607e1478d9",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G02",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "2e4e768000814d9c166de334ee997c5fb1defe5d4be0fee67f0092dd8479beb9",
+      "checkedAt": "2026-11-28T03:15:30.000Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先把他做好的一半紙樣妥善收進櫃子，等明天有空的同學自願接手。",
+            "action": "立即停止工作並完成成人照看與健康評估聯繫，將其已完成紙樣保留供日後其他同學自願接手。",
+            "tradeoff": "得另外協調接手人選與交接時間，公佈欄今天先空著。"
+          },
+          {
+            "id": 2,
+            "text": "我直接宣布今天佈置取消，讓現場同學先照原安排放學，我陪他等健康中心確認。",
+            "action": "立即中止佈置並完成安全與健康評估聯繫，取消今日施作、讓其餘學生依時放學。",
+            "tradeoff": "半成品得先撤下，好勝又怕失望的他可能覺得自己害大家白忙。"
+          },
+          {
+            "id": 3,
+            "text": "我先帶他去健康中心交由護理師評估，同時請沒走遠的學藝股長先幫忙把桌面工具收乾淨。",
+            "action": "立即停工並陪同就診評估，請在場幹部協助收拾散落紙材與剪刀（不讓當事人繼續操作）。",
+            "tradeoff": "學藝股長可能也急著放學，臨時被留下收尾有點無奈。"
+          },
+          {
+            "id": 4,
+            "text": "我等健康評估與家人接送確認後，明確告訴他「老師沒失望，累了本來就要說不」。",
+            "action": "完成必要停工與健康評估聯繫後，單獨安撫其怕讓老師失望的心理壓力。",
+            "tradeoff": "這個高認同依賴的孩子聽完還是會擔心下次自己派不上用場。"
+          },
+          {
+            "id": 5,
+            "text": "我請在場另外兩名精神不錯的自願同學接手貼完剩餘部分，自己專心照看他到評估完成。",
+            "action": "立即停工並照看student_a完成健康評估，由現場自願同學接續完成公佈欄。",
+            "tradeoff": "student_a看著別人接手自己沒做完的事，心裡難免過意不去。"
+          },
+          {
+            "id": 6,
+            "text": "我把公佈欄進度往後延一週，先跟學生確認這幾天補習作息是不是排太滿。",
+            "action": "完成必要停工與健康評估後，延後班級佈置期限並關懷其近期作息負荷。",
+            "tradeoff": "公佈欄空窗期拉長，得向班上說明延後原因。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他手滑那一下嚇得手心都涼了，收走剪刀後板起臉說「誰准你硬撐著幫我搶這份工的，現在乖乖坐好去檢查」。",
+          "action": "立即停工收走工具並以嚴肅口吻制止逞強，親自陪同前往健康中心評估與聯繫家長。",
+          "tradeoff": "口氣比平常兇了些，本來就怕被討厭的student_a當場眼眶紅了一圈。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 261698276
+        },
+        "selectedIds": [
+          3,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 3,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "ce1d0d57661d5775b3340257d2ed89bc71dddcee5337bd599890923c6a7cf091"
+      },
+      "consequenceDirections": {
+        "A": "可發展陪診評估與臨時請學藝股長收尾後，student_a的愧疚與後續作息。",
+        "B": "可發展健康確認後單獨談「可以說不」，對高認同依賴學生的實際影響。",
+        "C": "可發展導師罕見板起臉制止逞強後，student_a眼眶紅卻終於停下休息。",
+        "D": "可發展別人接手完成公佈欄時，student_a在旁看著半成品被接走的失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "3a601126e04cf4ee6237a9456159f05319259bbe51723c50f0aaaf9c2f26b2a9",
+    "draftSha256": "2e4e768000814d9c166de334ee997c5fb1defe5d4be0fee67f0092dd8479beb9",
     "seedAssignmentVersion": 1
   }
 }

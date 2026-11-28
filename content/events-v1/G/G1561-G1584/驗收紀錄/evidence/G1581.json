@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "03276a14d6d19d957e84f470887c5e45fd2b2b7fd4bece607e857074068716ca",
+      "checkedAt": "2026-11-28T03:15:30.023Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我看他平時配合又秒認錯，只口頭嚴肅警告，並請他下課把那幾個起鬨的同學一起叫來問清楚。",
+            "action": "收回學習單後暫不單獨記罰，課後約談student_a及所有起鬨參與者釐清責任。",
+            "tradeoff": "student_a壓力很大，怕被那幾個朋友罵說是他出賣大家。"
+          },
+          {
+            "id": 2,
+            "text": "我直接就他私自藏整排作業這件事依班規請他午休幫忙整理教室十分鐘，對全班簡單重申別亂開玩笑。",
+            "action": "依班規對實際藏匿者執行十分鐘教室整理提醒並口頭宣導全班。",
+            "tradeoff": "雖然快速結案，起鬨的主謀卻全身而退、他算半個背鍋者。"
+          },
+          {
+            "id": 3,
+            "text": "我當場把這疊學習單點齊確認沒少，讓剛剛一起起鬨的那幾個自己站起來承認再一起談。",
+            "action": "清點無誤後當場要求集體起鬨者共同面對責任，待承認後一同處理。",
+            "tradeoff": "那幾個男生可能裝傻不認，教室氣氛當場僵住。"
+          },
+          {
+            "id": 4,
+            "text": "我先收齊作業去上課，跟他說這件事放學前他跟那幾個人自己商量好誰來找我講清楚。",
+            "action": "先恢復正課秩序，要求當事幾人於放學前主動說明責任歸屬。",
+            "tradeoff": "給他們半天私下串供或內鬨的時間，student_a整下午心神不寧。"
+          },
+          {
+            "id": 5,
+            "text": "我念在他考完累昏頭又主動交出來，這次不記班規，但罰他這週負責收齊全排作業。",
+            "action": "免予班規登記，指派student_a本週負責核點該排作業交齊。",
+            "tradeoff": "他已經夠累了還多一份收作業的差事，起鬨的人也沒受罰。"
+          },
+          {
+            "id": 6,
+            "text": "我請他先坐下把睡意洗掉，只私下問他最近熬夜狀況，整排起鬨的事當堂就先口頭壓過。",
+            "action": "收回學習單並口頭制止全班後，僅私下關懷student_a過度疲勞問題。",
+            "tradeoff": "幾乎沒追究藏作業的行為，調皮同學可能覺得老師很好糊弄。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看見旁邊那幾個裝死的傢伙就有點氣他傻，直接嘆口氣對全班說「敢起鬨不敢站出來喔？student_a，你自己先回去趴五分鐘醒醒腦，等一下那幾個自己來找我」。",
+          "action": "先讓疲勞認錯的student_a休息平復，公開要求其餘起鬨同學下課主動赴辦公室說明。",
+          "tradeoff": "語氣帶火直接點出同儕推卸責任，下課辦公室那場對話氣氛肯定很硬。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3153870780
+        },
+        "selectedIds": [
+          3,
+          4,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 4,
+          "D": 3
+        },
+        "optionsDigest": "ae6c1bfebcf99e46d5fa02f27e1a3282c69bcc8eddb923b11186b3963c6b2ff3"
+      },
+      "consequenceDirections": {
+        "A": "可發展課後要他叫來全部起鬨者後，student_a夾在朋友與老師間的壓力。",
+        "B": "可發展先讓疲勞認錯的他趴五分鐘、單獨叫那幾個起鬨者來談的硬仗。",
+        "C": "可發展限放學前由他們自己商量誰來說明後，整下午的串供或內鬨。",
+        "D": "可發展當場點齊要求起鬨者自己站出來後，教室裡死寂僵持的瞬間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "40f214e2ec242717ee6fd61bea8e0499561472e29c90b7b071c20517dc49628a",
+    "draftSha256": "03276a14d6d19d957e84f470887c5e45fd2b2b7fd4bece607e857074068716ca",
     "seedAssignmentVersion": 1
   }
 }

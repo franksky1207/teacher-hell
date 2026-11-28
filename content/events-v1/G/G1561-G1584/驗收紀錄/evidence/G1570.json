@@ -15,14 +15,82 @@
     "G02",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "cd1ed81470263052deea0e964e399fd837ae8c4e555ce39c57003833394ed5ce",
+      "checkedAt": "2026-11-28T03:15:30.002Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我肯定他老實告訴我，但明確退回這張大人打稿的作品，請他用課間重畫純手繪版。",
+            "action": "退回含親戚代筆之海報，要求student_a於剩餘時間內重新獨立完成原創作品。",
+            "tradeoff": "好勝又老實的他當場急得眼眶紅，時間也只剩今天幾個課間。"
+          },
+          {
+            "id": 2,
+            "text": "我退回代筆稿，但讓他參考這張的配色想法，在教室裡從頭畫一張給我看過再交。",
+            "action": "不收代筆稿，允許參考色彩方向但須由學生本人在校獨立重繪並經確認後送件。",
+            "tradeoff": "導師得額外花課間盯著他重畫，進度還是很趕。"
+          },
+          {
+            "id": 3,
+            "text": "我請他打電話跟爸媽說明學校原創規定，今天來不及重畫就先撤回代表名額。",
+            "action": "拒收非原創作品並與家長說明競賽規則，若學生無法獨立重製則不送件。",
+            "tradeoff": "班上這張海報可能開天窗，學生覺得誠實反而害自己沒得比。"
+          },
+          {
+            "id": 4,
+            "text": "我請他把純學生原創與否的規則看清楚，自己決定是要今天趕一張簡版還是不交。",
+            "action": "明確拒收代筆稿並告知原創底線，將是否趕製簡易原創或放棄參賽交由學生決定。",
+            "tradeoff": "好勝心強的他當場卡在時間不夠和不想認輸之間。"
+          },
+          {
+            "id": 5,
+            "text": "我詢問原本班上另一位也會畫畫的同學願不願意自願接力，先不勉強他一人硬趕。",
+            "action": "退回代筆稿，徵詢班上其他學生是否自願以原創稿遞補班級代表。",
+            "tradeoff": "student_a覺得自己原本的熱心和第一名夢都被換掉了。"
+          },
+          {
+            "id": 6,
+            "text": "我把這張親戚畫的草稿退還他帶回家作紀念，當下先跟他講清楚「誠實跟公平是兩件事」。",
+            "action": "當場退件並說明誠實不代表可破例參賽，其餘班級代表事宜另行處理。",
+            "tradeoff": "話講得太直，信任老師的他一時覺得很委屈。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我真怕他以後學乖反而不跟老師講實話，先用力誇他「還好你有講」，再忍痛把那張漂亮海報蓋起來叫他拿白紙重畫。",
+          "action": "肯定誠實後正式退回代筆稿，提供空白紙張要求其親自重畫。",
+          "tradeoff": "先捧後退讓他情緒落差更大，看著那張漂亮廢稿兩個人都有點捨不得。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 759042497
+        },
+        "selectedIds": [
+          6,
+          5,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "872a3daa614b64f3e5d74ce2f5d73c0dafc53ddcfe940ee064c79d3d19dae1c8"
+      },
+      "consequenceDirections": {
+        "A": "可發展student_a在僅剩課間硬著頭皮從頭手繪，與誠實卻吃虧的掙扎。",
+        "B": "可發展徵詢另一位同學遞補代表後，student_a與家長對原創規則的反應。",
+        "C": "可發展先讚許誠實再蓋掉漂亮海報的落差，師生如何一起面對廢稿。",
+        "D": "可發展把親戚稿退回當紀念並直說誠實不破例後，學生的委屈與成長。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e9bdb43bdb81756a654b7bea122f7db04e4357a5f829636bee66b5d17d4b73d",
+    "draftSha256": "cd1ed81470263052deea0e964e399fd837ae8c4e555ce39c57003833394ed5ce",
     "seedAssignmentVersion": 1
   }
 }

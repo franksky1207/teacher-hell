@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4e9b399804df380b4627cc83626835d5a64dc2d6b6da93ca675bb0a65e0c90f6",
+      "checkedAt": "2026-11-28T03:15:29.998Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請他坐下來好好談一次，清楚告訴他老師會顧好自己，他在學校專心當學生就好。",
+            "action": "溫和明確畫出師生照顧界線，請student_a停止追蹤導師個人作息。",
+            "tradeoff": "習慣靠照顧別人獲得安全感的他，當場眼神有點落寞。"
+          },
+          {
+            "id": 2,
+            "text": "我順著他的心意只留一項固定收發班務給他，每次交件時順勢反問他昨晚睡得好不好。",
+            "action": "保留既定單一班務接觸點，將互動焦點轉回關心學生自身的睡眠與家庭負荷。",
+            "tradeoff": "界線畫得比較軟，得小心別讓他繼續過度操心導師。"
+          },
+          {
+            "id": 3,
+            "text": "我現場就把咖啡杯推遠一點給他看，笑著約法三章以後午休各自回教室和休息室睡覺。",
+            "action": "當場約定各自午休、不在午休前來辦公室盯作息，並把話題拉回他自己的休息。",
+            "tradeoff": "口頭約法未必能馬上改掉他早熟的習慣。"
+          },
+          {
+            "id": 4,
+            "text": "我感謝他幫忙收聯絡簿，但告訴他下午起這項收發改回原定值日股長處理。",
+            "action": "收回額外非必要跑腿接觸，讓班務依既定幹部職責運作。",
+            "tradeoff": "他可能誤以為自己做錯了什麼，突然被老師推開。"
+          },
+          {
+            "id": 5,
+            "text": "我私下聯繫輔導室了解一下他最近家裡的照顧壓力，同時這週找空檔跟他單獨聊。",
+            "action": "在合法輔導關懷程序下了解其家庭負荷，並安排適當時間與學生晤談。",
+            "tradeoff": "若學生發覺老師去問了家裡狀況，可能會更防備。"
+          },
+          {
+            "id": 6,
+            "text": "我請他把今天幫忙拿來的東西放下就先去吃飯，約好下週班級活動再看他想不想聊聊。",
+            "action": "當下先支開他去用餐休息，不延續作息監督對話。",
+            "tradeoff": "問題只是被往後擺，明天中午他可能又準時出現。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽著他像個小大人一樣唸我，鼻子有點酸，乾脆直接反問他「那你昨晚幾點睡？你管我喝幾杯，今天中午換你回座位趴著不准看書」。",
+          "action": "當面把關心反問回student_a自身睡眠，要求他午休確實休息且不再盯導師。",
+          "tradeoff": "語氣像家人互虧一樣重，不小心踩進太親近的距離，自己也得當場放下咖啡。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3206706275
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 5,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "0d670f39b8d58042ddcb76098b4d4e74aea451ae5782ee1af09ef77e08892031"
+      },
+      "consequenceDirections": {
+        "A": "可發展畫清師生照顧界線後，習慣靠照顧人獲得安全感的student_a如何調適。",
+        "B": "可發展輔導室介入力量後，學生是否願意卸下早熟盔甲或更防備。",
+        "C": "可發展導師反問回去並要求他午休睡覺後，兩人亦師亦親界的拿捏。",
+        "D": "可發展收回非必要跑腿接觸後，student_a對突然被拉開距離的失落。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "dc98940a2fec07b910ac9717205085645be8549820f655d6063937a72c00ebec",
+    "draftSha256": "4e9b399804df380b4627cc83626835d5a64dc2d6b6da93ca675bb0a65e0c90f6",
     "seedAssignmentVersion": 1
   }
 }

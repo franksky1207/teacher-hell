@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3207a15107ef7db6ff9bdeb010c8a2dea03ad73aeeadf97ed8694b34f1566fc3",
+      "checkedAt": "2026-11-28T03:15:30.012Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我裝作沒聽見外班起鬨，笑著順手接過一疊說「還差最後十步，一起搬進去放好」。",
+            "action": "給予台階並陪同student_a及同組同學將剩餘講義搬進教室安置妥當。",
+            "tradeoff": "沒當場點破他因為面子差點丟包隊友的問題。"
+          },
+          {
+            "id": 2,
+            "text": "我請大家先把書箱搬進教室，再私下問他「被笑兩句就跑，對另外兩個還在搬的同學公平嗎」。",
+            "action": "完成搬運後私下約談student_a，釐清同組分工責任與同儕眼光壓力。",
+            "tradeoff": "本來就滿臉通紅的他當場羞愧到無地自容。"
+          },
+          {
+            "id": 3,
+            "text": "我直接把書箱指給他看，語氣平靜地說「你剛剛分好工的，帶頭搬完最後這段才算收工」。",
+            "action": "不代搬也不訓話，要求student_a自己把已承接的搬運分工完成。",
+            "tradeoff": "他硬著頭皮搬進去，心裡又窘又怕外面別班的還沒走。"
+          },
+          {
+            "id": 4,
+            "text": "我等三個搬書的同學都進教室放好講義後，當場跟三人一起道謝並各自給個肯定。",
+            "action": "維持搬運完成要求，在教室內公開肯定三名同學的分工付出。",
+            "tradeoff": "另兩名沒跑掉的組員心裡可能覺得「剛剛他差點落跑耶」。"
+          },
+          {
+            "id": 5,
+            "text": "我先讓另外兩位先回座休息，最後門口這兩疊由我跟student_a兩個人自己搬完。",
+            "action": "由導師與student_a共同完成門口剩餘講義搬運，不讓其他組員多等。",
+            "tradeoff": "讓另外兩位組員先走，等於幫他遮掩了剛剛的臨陣退縮。"
+          },
+          {
+            "id": 6,
+            "text": "我把門口這箱拆成小疊交給他跟剛好經過的兩名班上同學一起拿進去，下課再提醒他。",
+            "action": "調度現場本班同學協助迅速清淨轉角動線，課後再簡短提醒。",
+            "tradeoff": "走廊上人來人往，反而讓更多本班同學看到他臉紅的樣子。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽到外面那幾個外班生還在嘻嘻哈哈也有點護短，故意放大音量笑著對裡面喊「誰說苦力，這叫班上最有義氣的搬運隊長！來，最後一箱」。",
+          "action": "導師故意提高音量正面稱讚student_a並催促其完成最後搬運，替他在外班同學面前撐場面。",
+          "tradeoff": "聽起來有點刻意護短，student_a反而更尷尬地低頭抱起箱子。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 252490072
+        },
+        "selectedIds": [
+          6,
+          5,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 5,
+          "D": 4
+        },
+        "optionsDigest": "343ced033055996e93c6217d0504c7e4ec1571fe112720f64e58b9c9b07612b6"
+      },
+      "consequenceDirections": {
+        "A": "可發展叫其他同學分擔清點轉角後，student_a面對更多同學目光的窘迫。",
+        "B": "可發展導師大聲撐場喊「最有義氣搬運隊長」後，外班起鬨與他本人的尷尬。",
+        "C": "可發展只留student_a與導師兩人搬完最後兩疊時，私下的無聲默契或愧疚。",
+        "D": "可發展教室內一視同仁道謝肯定三人後，同組另兩位同學的真實反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "1e7df2de9a468649914b5224a73f2a5a624d42a70a3a4baa0eddf9f5ed9374ab",
+    "draftSha256": "3207a15107ef7db6ff9bdeb010c8a2dea03ad73aeeadf97ed8694b34f1566fc3",
     "seedAssignmentVersion": 1
   }
 }

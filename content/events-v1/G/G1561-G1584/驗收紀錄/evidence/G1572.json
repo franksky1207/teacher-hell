@@ -15,14 +15,82 @@
     "G02",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "4622cea0cf463720a00854b1257f14aca3817b4d90cdd1bf6a13535bbce20eca",
+      "checkedAt": "2026-11-28T03:15:30.006Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻叫兩個學生當場壓扁紙箱、沖洗乾淨並向他致謝致歉，順便拍拍他肩膀體諒幾句。",
+            "action": "監督當事學生現場完成回收善後與致歉，同時私下安撫並體諒staff_a負荷。",
+            "tradeoff": "剛失控吼完的職員反而覺得超級不好意思。"
+          },
+          {
+            "id": 2,
+            "text": "我先請staff_a放手先去忙別樓層好準時下班，這邊由我帶學生自己清乾淨。",
+            "action": "讓趕著回家顧長輩的職員先行離開，由導師現場監督學生完成清潔與壓箱。",
+            "tradeoff": "走廊上那股火藥味與尷尬得靠導師自己對全班消化。"
+          },
+          {
+            "id": 3,
+            "text": "我請總務窗口確認最近人手請假期間能不能先調整清運順序，這邊照樣帶學生清完。",
+            "action": "監督學生現場清理完畢後，向總務反映職員近期一人兼兩份的負荷狀況；未獲核調前不稱已減量。",
+            "tradeoff": "職員未必希望被主管知道自己在走廊對學生發火。"
+          },
+          {
+            "id": 4,
+            "text": "我先把兩個學生叫去拿抹布和清水，現場不幫職員找藉口，也不讓職員覺得白受氣。",
+            "action": "明確要求學生依規定徹底重做回收與擦淨地面，現場不與職員多做客套。",
+            "tradeoff": "職員低著頭搬完離開，心裡可能還覺得老師在怪他太兇。"
+          },
+          {
+            "id": 5,
+            "text": "我帶學生清乾淨後，請衛生股長本週放學前固定多檢查一次回收桶才准去倒。",
+            "action": "完成現場善後並強化本班放學前回收檢查分工。",
+            "tradeoff": "衛生股長工作變多，當下還沒照顧到職員的緊繃情緒。"
+          },
+          {
+            "id": 6,
+            "text": "我請學生先去洗手拿掃具，自己先走過去低聲問職員家裡長輩這兩天還好嗎。",
+            "action": "指派學生開始善後清理，同時簡短私下關懷職員家庭狀況。",
+            "tradeoff": "原本硬撐著不哭不惱的職員突然被問家裡，差點更繃不住。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他忍著氣低頭搬箱子的背影心裡揪了一下，直接搶過他手裡的推車把柄說「這車我帶學生推下去，你趕快去收一收準時回家啦」。",
+          "action": "在監督學生壓箱清理後，導師親自協助將該車回收推至集中點，讓staff_a提早抽身。",
+          "tradeoff": "自己多推一趟回收車還弄髒手，職員也因為被老師代勞更愧疚。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1480254534
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 4,
+          "D": 1
+        },
+        "optionsDigest": "91ed807835c137ac7ea06065049575a69f7eea3e65656e873b342414bd90fb04"
+      },
+      "consequenceDirections": {
+        "A": "可發展監督學生善後時順勢問候家中長輩，讓緊繃職員意外鬆動情緒。",
+        "B": "可發展導師親自推車下去後，職員從尷尬愧疚到卸下壓力的轉折。",
+        "C": "可發展公事公辦帶學生重做卻不客套後，職員獨自離開時的複雜心情。",
+        "D": "可發展當場要求學生壓箱道歉並私下拍肩體諒後，師生與職員的三方收尾。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "40824f4db7d50131f6bc4fc7f680f4feb7344f2e2bf711b5bda6be4ac91f6fbb",
+    "draftSha256": "4622cea0cf463720a00854b1257f14aca3817b4d90cdd1bf6a13535bbce20eca",
     "seedAssignmentVersion": 1
   }
 }

@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "347135a5606f46e76c8b75f4f453d66208e9cc1beca95f8b9ee3b9527930a24a",
+      "checkedAt": "2026-11-28T03:15:30.029Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我私下逐條致謝並點出那兩處去年改制的新規定，請他先別外傳，我另外貼出輔導室官方最新版。",
+            "action": "婉拒轉貼含過時資訊之圖卡，私下澄清錯誤條文並改於班群發布官方最新升學資料。",
+            "tradeoff": "忙了一整天想幫忙的家長當場有點挫敗，心血沒能貼出來。"
+          },
+          {
+            "id": 2,
+            "text": "我先大力肯定他的排版用心，請他依官方最新文件改掉那兩條錯處後，再以家長分享供參考名義貼出。",
+            "action": "要求依正式官方資料更正兩處過時規定後方可分享，並註明僅供參考。",
+            "tradeoff": "給足他成就感與台階，但導師得花時間幫他逐字校對整份圖卡。"
+          },
+          {
+            "id": 3,
+            "text": "我感謝他的熱心，但說明升學規定涉及全班權益，班群一律只轉貼輔導室正式公告圖檔。",
+            "action": "以班級資訊單一官方口徑原則婉拒轉貼家長自製懶人包。",
+            "tradeoff": "講得太公事公辦，原本很挺老師的家長覺得一片真心被冷處理。"
+          },
+          {
+            "id": 4,
+            "text": "我先把輔導室官方最新版連結回傳給他看，問他有沒有興趣改把官方重點重新排成那種好看版型。",
+            "action": "拒絕直接轉貼舊版，邀請家長依官方最新文本重新校訂版型（須經導師複核後才決定是否發布）。",
+            "tradeoff": "等於請他把昨天花一整天的工打掉重練。"
+          },
+          {
+            "id": 5,
+            "text": "我請他先把那兩條過時規則塗掉、只留還正確的一般提醒再給自己家參考，班群先不貼。",
+            "action": "明確告知過時規定並拒絕班群轉貼，避免該家庭本身繼續誤用舊規則。",
+            "tradeoff": "家長覺得自己做的完整版被拆掉，熱情一下子涼了一半。"
+          },
+          {
+            "id": 6,
+            "text": "我直接約他這週親師通話或短談十分鐘，把新舊制差在哪裡一次講清楚。",
+            "action": "婉拒立即轉貼，安排短時親師通話逐一核對新舊升學制度差異。",
+            "tradeoff": "原本只想省老師時間的他，反而佔了老師額外通話時間。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他排得比學校公告還漂亮卻用錯舊法規，忍不住回了一句「天啊這美編太強了吧！可惜裡面的規定已經改兩年了，老師真的不敢貼出去害到大家」。",
+          "action": "以真誠讚美美編搭配直白拒絕轉貼，明確告知兩條規定已過時。",
+          "tradeoff": "捧完馬上潑冷水，家長可能自己對著這張精美廢圖哭笑不得。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 788897522
+        },
+        "selectedIds": [
+          3,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 2,
+          "C": 3,
+          "D": 1
+        },
+        "optionsDigest": "b031b2441986d74436d99d091399f3c4c49bcd7cf4ec217b14504079424e5b9a"
+      },
+      "consequenceDirections": {
+        "A": "可發展先大讚美編再潑冷水說規定舊了兩年，家長對著精美廢圖的無奈。",
+        "B": "可發展請他依官方文件改好兩處再以參考名義分享，導師額外校對的工時。",
+        "C": "可發展以單一官方口徑婉拒後，最挺老師的家長熱情被冷處理的失落。",
+        "D": "可發展私下點出改制處並另貼官方版後，家長對自己忙整天的挫敗感。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "8e44964e23141b45fa50e0851f6345502f2fd5d3ba2b67024cf8994282aa3bfe",
+    "draftSha256": "347135a5606f46e76c8b75f4f453d66208e9cc1beca95f8b9ee3b9527930a24a",
     "seedAssignmentVersion": 1
   }
 }

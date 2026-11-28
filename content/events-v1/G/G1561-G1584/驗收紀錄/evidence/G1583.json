@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "0ab80f5264893902d54fc26b81be10fba3ca4fac43bc6bbade67ec8393f031a5",
+      "checkedAt": "2026-11-28T03:15:30.027Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我守住對老友的承諾明天照樣去北海岸一整天，週記留到週日晚上硬著頭皮熬夜趕完。",
+            "action": "履行週六整日陪同散心承諾，將四十本週記批改延後至週日夜間趕工。",
+            "tradeoff": "週末完全失去獨處充電時間，週日晚上累翻還會影響週一精神。"
+          },
+          {
+            "id": 2,
+            "text": "我傳訊誠實跟老友商量把整天北海岸改成「明天中午吃頓飯聊兩小時」，下午準時回家改週記。",
+            "action": "主動與老友協商縮減週六行程為兩小時午餐陪伴，保留下午批改週記與獨處時間。",
+            "tradeoff": "重義氣的自己心裡還是有點內疚，怕失戀的老友覺得被放鳥。"
+          },
+          {
+            "id": 3,
+            "text": "我今晚先熬兩小時把週記衝掉一半，明天只陪老友去近一點的咖啡廳坐半天就好。",
+            "action": "當晚先提前批改部分週記並與老友改約半日市區行程，兼顧承諾與工作。",
+            "tradeoff": "今晚睡覺時間被砍掉，明天狀態也沒多好。"
+          },
+          {
+            "id": 4,
+            "text": "我問老友願不願意把北海岸延到下週六，明天晚上改由我拎兩瓶飲料去他家客廳聽他罵主管。",
+            "action": "提出將整日遠行延至下週，改以週六晚間短時居家陪伴取代。",
+            "tradeoff": "老友原本已經期待明天去看海透氣，臨時改期可能有點悶。"
+          },
+          {
+            "id": 5,
+            "text": "我咬牙把四十本週記帶進明天早上的高鐵或客運？不行，去北海岸沒法改，我乾脆誠實說自己忘了工作量、改成明天傍晚陪吃晚餐。",
+            "action": "坦承評估疏漏並改約週六傍晚晚餐陪伴，日間留給獨處休息與批改週記。",
+            "tradeoff": "白天海邊吹風的約定徹底取消，朋友得自己撐過整個週六白天。"
+          },
+          {
+            "id": 6,
+            "text": "我先傳訊把「週一要交週記」的實況告訴他，問他明天是想改去安靜看海三小時、還是改約週日下午茶。",
+            "action": "向老友坦白自身工作與休息限制，提供兩個縮短時數方案由對方選擇。",
+            "tradeoff": "把自己的難處直接攤給正在失戀哭的朋友挑，多少有點煞風景。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我對著那兩疊週記煩到想抓頭髮，乾脆現在就打開第一本怒改十本，心想「明天照去北海岸，我絕對不要當那個講話不算話的假朋友」。",
+          "action": "當晚立即開始批改部分週記，維持週六整日陪老友赴北海岸散心之約定。",
+          "tradeoff": "今晚被迫犧牲睡眠先啃作業，明天還要強打精神聽朋友哭訴一整天。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1302710175
+        },
+        "selectedIds": [
+          5,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 5,
+          "C": 2,
+          "D": "emotional"
+        },
+        "optionsDigest": "e0d89d38b9d73b664887a75b82a07fc9f8558c35b94ece7a820eb60eacd101ff"
+      },
+      "consequenceDirections": {
+        "A": "可發展把限制攤開讓失戀老友挑短時方案後，對方體諒或更覺得煞風景。",
+        "B": "可發展坦承疏漏改成週六晚餐後，失戀朋友獨自撐過整個週六白天的心情。",
+        "C": "可發展協商成週六中午吃飯兩小時後，下午回家改週記時心裡的微薄內疚。",
+        "D": "可發展當晚熬夜先怒改十本週記守約後，隔天頂著黑眼圈去北海岸吹海風。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f6a0ebfd5233de6a5034c971ffe4c99b9876dec21a83e2a8bb96f65104154248",
+    "draftSha256": "0ab80f5264893902d54fc26b81be10fba3ca4fac43bc6bbade67ec8393f031a5",
     "seedAssignmentVersion": 1
   }
 }

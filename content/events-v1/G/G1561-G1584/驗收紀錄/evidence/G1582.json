@@ -15,14 +15,82 @@
     "G02",
     "G08"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "01eb619e52879f7ec25cb08ae1b5c1f655ae56b5a7c39236fda8bb831c23e85a",
+      "checkedAt": "2026-11-28T03:15:30.025Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我立刻在教室和班群公開澄清參訪原本還在申請階段、因名額已滿沒過，再私下嚴肅提醒他保密紀律。",
+            "action": "立即公開澄清未核准事實以止損，課後私下對student_a進行未定案資訊發布紀律指導。",
+            "tradeoff": "滿懷熱忱的他當場在全班和已經聽信的爸媽面前超丟臉。"
+          },
+          {
+            "id": 2,
+            "text": "我先公開澄清原參訪沒過，同時自己另找一個校內或鄰近免費合規小活動，不讓全班完全撲空。",
+            "action": "立即澄清原申請未通過，並由導師額外申請或籌備校內合規替代活動（未核准前不預稱已成立）。",
+            "tradeoff": "保住了全班士氣和他的台階，導師自己卻平白多出一堆籌備工時。"
+          },
+          {
+            "id": 3,
+            "text": "我當場先請他自己去跟已經準備排假的爸媽解釋清楚，我則在班群貼出行政處室的正式結果。",
+            "action": "由導師在班群正式公告申請未過，並要求student_a親自向其家長更正誤傳訊息。",
+            "tradeoff": "他回家面對已經排好假的家長時肯定被唸一頓。"
+          },
+          {
+            "id": 4,
+            "text": "我澄清原參訪沒過後，順便帶全班投票決定下個月班會要不要改辦一場校內純班級同樂活動。",
+            "action": "立即澄清原案未成行，將是否改辦校內簡易替代活動交由全班在合法範圍內討論。",
+            "tradeoff": "本來期待校外大展館的同學覺得落差還是太大。"
+          },
+          {
+            "id": 5,
+            "text": "我先請student_a在班群自己發一則更正說明「剛剛太興奮搶先講了」，我再跟著補上正式說明。",
+            "action": "要求student_a主動在班群更正自身誤傳，導師隨後補齊行政申請結果說明。",
+            "tradeoff": "公開自打臉對這個熱心幹部來說需要很大的勇氣。"
+          },
+          {
+            "id": 6,
+            "text": "我澄清完後決定這兩週班級活動的提案討論先停在幹部小圈，不再讓未核准的消息流出。",
+            "action": "完成公開澄清後，收緊班務未定案討論的參與與揭露範圍。",
+            "tradeoff": "student_a覺得自己以後再也不敢主動幫忙宣傳班上好事。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他眼睛亮成那樣實在不忍心直接當眾潑冰水，先把他拉到走廊低聲說「名額滿了沒過，你先冷靜，進教室我幫你一起跟大家宣布」，再進門直接擔下說明。",
+          "action": "先私下告知並安撫student_a，隨即進教室由導師本人公開澄清申請未過並重申未定案不可外傳。",
+          "tradeoff": "把所有失落眼神都攬到自己身上，也怕學生沒真正記住搶先暴雷的後果。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1986631050
+        },
+        "selectedIds": [
+          1,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 6,
+          "C": "emotional",
+          "D": 4
+        },
+        "optionsDigest": "dc53d4a14a9de008f19ce19b35b4b2b99319bacdb91b0c067a022390ed5a4a55"
+      },
+      "consequenceDirections": {
+        "A": "可發展公開澄清並私下提醒保密後，熱心學生在全班與爸媽面前的羞愧。",
+        "B": "可發展收緊幹部小圈未定案討論後，student_a再也不敢積極宣傳班務的退縮。",
+        "C": "可發展先在走廊低聲安撫再進門替他擔下說明後，student_a的愧疚與感激。",
+        "D": "可發展順勢帶全班討論校內替代活動後，同學從大展館落差回神的轉折。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cacf36e43f9fbec4c796570629bb06c300142834e755e28048bc9227b5a243d2",
+    "draftSha256": "01eb619e52879f7ec25cb08ae1b5c1f655ae56b5a7c39236fda8bb831c23e85a",
     "seedAssignmentVersion": 1
   }
 }

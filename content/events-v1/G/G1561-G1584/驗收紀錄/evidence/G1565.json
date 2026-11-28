@@ -16,14 +16,82 @@
     "G07",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "485274bc47f1c572c73f1620f067fc55d2745013be2d6533aa9b1983f0a28826",
+      "checkedAt": "2026-11-28T03:15:29.982Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我體諒他累，但明確婉拒早自習發回私人手機，建議維持紙本收卷再由小老師對選擇題。",
+            "action": "維持早自習手機集中保管規範，提供傳統小老師協助核對選擇題的合法替代建議。",
+            "tradeoff": "快累垮的同事當場垮下臉，覺得導師不近人情。"
+          },
+          {
+            "id": 2,
+            "text": "我拒絕動用學生私人手機，改主動幫他用學校公務平板在講台掃描收齊的考卷。",
+            "action": "不發回學生手機且不使用未授權App上傳個資，改以公務平板離線或校內核可方式協助掃卷。",
+            "tradeoff": "導師自己早自習得額外花時間站在講台幫忙掃描。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先把今天小考改採當堂交換批改簡答，手機保管規定不動。",
+            "action": "維持手機保管制度，建議本節改用課堂同儕互改選擇題減輕教師負擔。",
+            "tradeoff": "手寫題還是得他自己改，且學生互改可能有爭議。"
+          },
+          {
+            "id": 4,
+            "text": "我提醒他免費App可能有個資與辨識錯誤風險，陪他去問教務處有沒有校內核可的閱卷機。",
+            "action": "婉拒手機拍照方案，陪同或建議向教務處詢問既有合規讀卡機或閱卷設備可用時段。",
+            "tradeoff": "得等教務處設備排程，今天這疊考卷來不及馬上省力。"
+          },
+          {
+            "id": 5,
+            "text": "我先接過他這疊考卷的選擇題部分幫忙劃掉兩成，換他不要動早自習手機規範。",
+            "action": "守住手機保管與個資規定，由導師自願分擔部分非主觀題核對工作。",
+            "tradeoff": "導師自己平白多出一份改卷工作量。"
+          },
+          {
+            "id": 6,
+            "text": "我直接請他先把這次小考延後一天收分數，別在過勞下硬找未驗證工具。",
+            "action": "婉拒發回手機，建議科任依自身教學權責調整出分時程。",
+            "tradeoff": "同事可能覺得成績進度被拖住，焦慮沒減反增。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他累到連話都講得有點發抖，忍不住直接塞給他一包掛耳咖啡，笑著說「手機絕對不能發，這包拿去提神，選擇題我下課幫你對」。",
+          "action": "明確拒絕早自習發回手機，贈與個人備用咖啡並承諾下課協助核對本班選擇題。",
+          "tradeoff": "自己少一包咖啡還多一份課間勞務，且沒能解決他整個學期的過勞。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3815695816
+        },
+        "selectedIds": [
+          1,
+          4,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": "emotional",
+          "C": 1,
+          "D": 4
+        },
+        "optionsDigest": "efe7ec8e3aea96023a9742ffd8854e8d2d7b9814b702087804961b91870bf77f"
+      },
+      "consequenceDirections": {
+        "A": "可發展拒絕手機捷徑並建議延後出分後，過勞科任的壓力與配合度變化。",
+        "B": "可發展一杯咖啡與協助對答案的人情溫度，能否撐住科任後續教學節奏。",
+        "C": "可發展維持紙本與小老師核對後，teacher_a對導師守規態度的反應。",
+        "D": "可發展向教務處詢問合規閱卷設備的結果，及科任等待排程的無奈。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "f37dcf64d3dd90dd899dd3a915a0735dc59a382666b3cdc7cb947d38102b5d8f",
+    "draftSha256": "485274bc47f1c572c73f1620f067fc55d2745013be2d6533aa9b1983f0a28826",
     "seedAssignmentVersion": 1
   }
 }

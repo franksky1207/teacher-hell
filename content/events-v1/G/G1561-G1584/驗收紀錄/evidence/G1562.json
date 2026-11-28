@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fc9818912be37770c9cf5cf5f68478e283d360b9c697a971c889431f44ad5e2d",
+      "checkedAt": "2026-11-28T03:15:29.972Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我公開宣布這次抽籤全部照抽定案，不准私下交易或拿東西換區。",
+            "action": "確立本學期外掃區依公開抽籤結果執行，禁止私下對價交換。",
+            "tradeoff": "原本私下講好要互換的同學怨聲載道，覺得老師太硬。"
+          },
+          {
+            "id": 2,
+            "text": "我讓守規則的他留著掃水溝，另訂「雙方自願且報備班長」才准換區。",
+            "action": "維持student_a原籤區，並建立公開報備的有限換區規則。",
+            "tradeoff": "student_a可能覺得規則又替想偷懶的人開了一道門。"
+          },
+          {
+            "id": 3,
+            "text": "我先叫停爭執，改讓想換區的人另外公開重抽一次他們那幾組。",
+            "action": "排除student_a已定籤區，針對有爭議的數組提案公開重抽，需先徵得相關組別同意。",
+            "tradeoff": "沒爭議的組別覺得浪費課間時間，流程變長。"
+          },
+          {
+            "id": 4,
+            "text": "我把這題留到本週班會，讓全班自己表決要不要開放互調機制。",
+            "action": "今日先依原籤清掃，將是否允許互調的班規交由班會公開討論表決。",
+            "tradeoff": "今天放學前這幾組得先頂著不情願去掃。"
+          },
+          {
+            "id": 5,
+            "text": "我私下跟student_a聊一下，確認他不是被同學反話激到才硬撐。",
+            "action": "私下確認student_a真實意願與情緒狀態，其餘組別暫按原籤執行。",
+            "tradeoff": "外頭吵架的幾位同學還沒得到明確裁示。"
+          },
+          {
+            "id": 6,
+            "text": "我直接派股長這週先陪著最臭的水溝區一起收尾，降低大家排斥感。",
+            "action": "維持原籤結果，請衛生股長本週加強督導與協助水溝區收尾流程。",
+            "tradeoff": "衛生股長工作量變重，其他區同學未必領情。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他笑得那麼欠揍又可愛，乾脆跟他說這週五外掃完我留十分鐘陪他去倒那桶最重的垃圾。",
+          "action": "維持原籤結果，導師自願本週五放學後留十分鐘實際陪同並協助student_a清運垃圾。",
+          "tradeoff": "多耗自己的下班時間，還可能被其他組說導師偏心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2780645501
+        },
+        "selectedIds": [
+          2,
+          3,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "92268ab2e1e8b7c14ca86872e6cd337638dfb871246eb03e50f751f3ecd94fb3"
+      },
+      "consequenceDirections": {
+        "A": "可發展公開報備換區成立後，student_a對規則鬆動的反應與班務秩序。",
+        "B": "可發展導師親自陪倒垃圾帶來的師生互動，及其他組是否覺得偏心。",
+        "C": "可發展爭議組別重抽後的新不滿，與student_a堅持原則的對比。",
+        "D": "可發展衛生股長協助水溝區收尾的負荷，與同學對原籤態度的轉變。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "cc38fd03b85d235089c2f6d4842bc040b62809d6e77eaf3850887f90b6a24107",
+    "draftSha256": "fc9818912be37770c9cf5cf5f68478e283d360b9c697a971c889431f44ad5e2d",
     "seedAssignmentVersion": 1
   }
 }

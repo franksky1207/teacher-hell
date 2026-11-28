@@ -15,14 +15,82 @@
     "G03",
     "G04"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "fae3f462c52465ff61b5c3f14ddb2ae8d6b25e4b2c52ed44dc4e250fbd298bf4",
+      "checkedAt": "2026-11-28T03:15:30.018Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我關上門私下笑著拆穿他袖口壓痕，規定他這週午休乖乖趴著補眠、不准再陪朋友打球。",
+            "action": "確認無病痛後私下給予台階並要求其本週午休確實休息，不當眾點破。",
+            "tradeoff": "死要面子的他還是很怕中午拒絕打球會被朋友笑弱。"
+          },
+          {
+            "id": 2,
+            "text": "我直接依班規記一次上課打瞌睡提醒，同時打算班會時不點名談運動和午休分配。",
+            "action": "確認無急症後依既定班規登記課堂瞌睡提醒，並將作息管理納入班會宣導。",
+            "tradeoff": "這名高人氣學生被記提醒後顯得有點懊惱，覺得班規沒留情面。"
+          },
+          {
+            "id": 3,
+            "text": "我先請他去洗把臉喝口水，並要求他下午自己去跟那位任課老師誠實道個歉。",
+            "action": "確認身體無礙後，要求student_a主動向受影響之任課教師致歉。",
+            "tradeoff": "愛面子的他去向科任認錯時硬著頭皮走得極慢。"
+          },
+          {
+            "id": 4,
+            "text": "我只盯著那條壓痕問他是不是中午又去打球撐面子，提醒他下次再趴睡就得通知家長確認作息。",
+            "action": "點破過勞原因並設下明確觀察底線，本次先予口頭警告。",
+            "tradeoff": "搬出通知家長讓他瞬間緊繃，走出辦公室時臉色不太好看。"
+          },
+          {
+            "id": 5,
+            "text": "我約他先自己調整這週社團或打球頻率，下週一再來看他下午精神有沒有回來。",
+            "action": "確認無病症後將作息調整自主權交還student_a，約定下週檢視狀態。",
+            "tradeoff": "若他還是撐著面子去打球，明天下午可能照睡不誤。"
+          },
+          {
+            "id": 6,
+            "text": "我問他要不要讓我用班上統一規定「本週午休全班禁球類」當擋箭牌，幫他對朋友有個交代。",
+            "action": "提議以班級統一午休規範作為緩衝（須依班規權限與實際可行性執行），不對外揭露其嘴硬細節。",
+            "tradeoff": "其他沒睡死又想打球的同學會莫名跟著被禁球類。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著他額頭那道紅印差點笑出來，乾脆拿桌上的小鏡子照給他看說「想數學會想到印出袖子紋身喔？這週中午乖乖睡覺，我幫你跟兄弟說是我扣留你背單字的」。",
+          "action": "以幽默拆穿嘴硬並要求本週午休補眠，主動替他向同儕找好下台階。",
+          "tradeoff": "幫他圓謊雖保住面子，他那幾個兄弟可能會以為導師中午硬留人。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 340250883
+        },
+        "selectedIds": [
+          6,
+          5,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 5,
+          "B": 2,
+          "C": 6,
+          "D": "emotional"
+        },
+        "optionsDigest": "1b20cd5f67b301e464ce6f6abb5faf8cb8cdab57f116c4e54c1fa92c8e6b1d94"
+      },
+      "consequenceDirections": {
+        "A": "可發展把調整球局與社團交給他自己管後，下週一精神到底有沒有回來。",
+        "B": "可發展依班規記瞌睡提醒並排入班會宣導後，高人氣學生對扣分的懊惱。",
+        "C": "可發展用全班禁球當擋箭牌後，其他無辜愛打球同學對班規的反彈。",
+        "D": "可發展笑著亮出小鏡子並幫他向兄弟圓謊後，student_a又窘又領情的反應。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "d1e0facbc6750bad2bcafdc68da4d2d5e177fc332bfd80a1db4cc112eb20a709",
+    "draftSha256": "fae3f462c52465ff61b5c3f14ddb2ae8d6b25e4b2c52ed44dc4e250fbd298bf4",
     "seedAssignmentVersion": 1
   }
 }

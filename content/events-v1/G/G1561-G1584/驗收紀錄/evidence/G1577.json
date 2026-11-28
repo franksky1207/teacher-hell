@@ -16,14 +16,82 @@
     "G03",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "62599e36a27434affdc819afaf4f2611906848d558521dfc8080343b86d207d8",
+      "checkedAt": "2026-11-28T03:15:30.016Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我先穩住他，明確說我現在要進教室上課，請他把圖檔傳給同組能留校的組員或大下課再印。",
+            "action": "維持教師準時上課節奏，要求student_a與組員協調後續輸出與接手分工。",
+            "tradeoff": "好勝又急著回家的他當場焦慮得直跺腳。"
+          },
+          {
+            "id": 2,
+            "text": "我咬牙趁這剩五分鐘課間趕緊衝去影印室幫他印出來，交給他帶回教室開工。",
+            "action": "立即利用課間五分鐘協助彩色輸出海報圖檔並交付student_a。",
+            "tradeoff": "導師自己連喝口水上廁所的時間都沒了，進教室還可能小遲到。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先把能剪的底紙和標題字卡帶回去做，我中午吃完飯前一定幫他印好放講桌。",
+            "action": "與student_a約定明確的午間交件時點，引導他先進行非圖檔部分的剪貼作業。",
+            "tradeoff": "他怕中午才拿到還是比隔壁組慢半拍，嘴上一直問老師不會忘記吧。"
+          },
+          {
+            "id": 4,
+            "text": "我當場幫他把組員叫來門口對一下，確認下午四點半到五點之間由哪位組員接手印貼。",
+            "action": "現場促成該組組員確認放學前銜接分工，不讓student_a獨自扛全部進度焦慮。",
+            "tradeoff": "課間只剩幾分鐘，急忙拉組員對接把氣氛弄得很趕。"
+          },
+          {
+            "id": 5,
+            "text": "我點出他一個上午跑三次已經影響我備課，請他先回座冷靜，午休前拿單子依學校申請流程印。",
+            "action": "設下辦公室催促界線並導回正常學校列印申請流程。",
+            "tradeoff": "他覺得老師不懂他五點必須趕回家的急迫，臉色立刻沉下來。"
+          },
+          {
+            "id": 6,
+            "text": "我問他能不能先用校內影印卡請沒課的同組同學去印，我先幫他寫張使用同意條。",
+            "action": "提供合法公用輸出授權便條，交由其同組組員於空檔協助印製。",
+            "tradeoff": "同組組員未必有空檔立刻跑影印室，還是得協調。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被他連催三次催到太陽穴直跳，直接把鑰匙和紙條塞給他跟另一個組員「我先去上課，你們自己先剪背景，下節大下課我帶你們去印，再衝進來一次就扣一分鐘」。",
+          "action": "口頭制止反覆催促並約定大下課親自帶往輸出，先令其回教室準備背景材料。",
+          "tradeoff": "話講得有點兇，student_a委屈地抓著剪刀跑回教室，自己大下課也確定泡湯。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1541755820
+        },
+        "selectedIds": [
+          6,
+          1,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 6,
+          "B": 2,
+          "C": 1,
+          "D": "emotional"
+        },
+        "optionsDigest": "b761c63a5c60a4fd252016b4f7e4458ecb888335758059550c15faa434d06de2"
+      },
+      "consequenceDirections": {
+        "A": "可發展給了合法影印便條請沒課組員去印後，student_a對組員進度的焦慮。",
+        "B": "可發展趕在五分鐘課間衝去印好交給他後，導師進教室遲到與他的感激。",
+        "C": "可發展守住上課時間要他等大下課或傳給留校組員後，他急著趕回家的焦躁。",
+        "D": "可發展板起臉塞鑰匙約定大下課帶去印後，student_a委屈卻暫時穩住的現場。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "42441299c2eb5951dc1cdca766edf82849004e5a3ece7c581b7299df371983d0",
+    "draftSha256": "62599e36a27434affdc819afaf4f2611906848d558521dfc8080343b86d207d8",
     "seedAssignmentVersion": 1
   }
 }

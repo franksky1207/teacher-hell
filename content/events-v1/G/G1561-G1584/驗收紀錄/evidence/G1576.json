@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "12cc70f03e292fd7570e0b57e33d065baa1e7864d5ee91239046d72a45ccb571",
+      "checkedAt": "2026-11-28T03:15:30.014Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我趁大家還沒排細項，立刻在群組笑著婉拒，說自己平常上班已經夠忙、總召讓時間多的大哥大姊來。",
+            "action": "立即於私人社團群組明確婉拒擔任總召與簡報製作，恢復普通團員身分。",
+            "tradeoff": "剛主動刷滿存在感又馬上推辭，怕團友覺得前後反差太大。"
+          },
+          {
+            "id": 2,
+            "text": "我咬牙接下總召，但先講明「我只負責聯絡場地，簡報跟點心請大家認領分工」。",
+            "action": "有條件接任活動總召，僅承擔場地聯絡、拒絕獨攬簡報整理。",
+            "tradeoff": "雖然砍掉一半工作，下班私人時間還是得操一份心。"
+          },
+          {
+            "id": 3,
+            "text": "我提議這次先不要做正式簡報，改成大家帶著成品圍一桌自由聊天就好，真要聯絡我可搭把手。",
+            "action": "建議簡化私人社團成果聚會形式為無簡報自由交流，僅願擔任一般協助者。",
+            "tradeoff": "已經興致勃勃想看成果簡報的團友可能覺得掃興。"
+          },
+          {
+            "id": 4,
+            "text": "我把這週末先拿出來對一下自己要改的考卷，老實回訊說這兩個月真的抽不出完整週末當總召。",
+            "action": "以自身實際忙碌時程為由婉拒總召職務，改約下次活動再幫忙。",
+            "tradeoff": "等於把「其實我很忙」攤在原本想純粹交朋友的圈子裡。"
+          },
+          {
+            "id": 5,
+            "text": "我問上次提議辦成果聚會的那位大哥願不願意當主召，我只當旁邊幫忙催大家傳照片的副手。",
+            "action": "推辭總召主責並邀請原提案團友出任，自願退居有限度照片彙整協助。",
+            "tradeoff": "最後如果主召放空，搞不好還是得自己收尾。"
+          },
+          {
+            "id": 6,
+            "text": "我先已讀不回半小時洗完澡冷靜一下，再在群組簡短回「謝謝大家抬愛，但我報名時真的只想當小廢物團員啦」。",
+            "action": "冷靜後以幽默自嘲方式明確婉拒所有活動幹部職務。",
+            "tradeoff": "雖然好笑，群組氣氛瞬間冷了幾秒沒人接話。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我被誇那句「有你在進度最快」其實心裡還真有點爽，乾脆順水推舟回「好啦我接，但大家聚會要負責請我喝一杯飲料喔」。",
+          "action": "接受團友推舉接下總召與簡報整理，並半開玩笑要求聚會飲料慰勞。",
+          "tradeoff": "為了那點虛榮感，下個月私人休息時間確定要拿來加班做簡報了。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3037333878
+        },
+        "selectedIds": [
+          5,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": 4,
+          "C": "emotional",
+          "D": 5
+        },
+        "optionsDigest": "1a10193a94d51117b9129a8e473e5230e053ba3ca0128a45dd2e95cad33cb497"
+      },
+      "consequenceDirections": {
+        "A": "可發展立刻在群組笑著推辭總召後，團友對老師前後反差的反應與私人喘息。",
+        "B": "可發展以忙碌實況婉拒兩個月職務後，自己在社區社團的新相處距離。",
+        "C": "可發展為了那句誇獎順水推舟接下總召後，下個月私人時間被簡報吃掉的後悔。",
+        "D": "可發展推回給原提案大哥並只當副手後，對方放空或配合的不同後續。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "528d3937e3aa6a6ad0ce32004a0460f253c377a10054d81160b3d57c39ab4900",
+    "draftSha256": "12cc70f03e292fd7570e0b57e33d065baa1e7864d5ee91239046d72a45ccb571",
     "seedAssignmentVersion": 1
   }
 }

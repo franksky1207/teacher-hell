@@ -15,14 +15,82 @@
     "G02",
     "G03"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "6791e72316ce4155497c5da85ea75a0067b0796138206b3ba40af9727ea3d11d",
+      "checkedAt": "2026-11-28T03:15:30.010Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我當場先壓住起鬨、配合安全人員把所有項目查完，下課再單獨叫他來辦公室講清楚。",
+            "action": "先恢復秩序完成全部安全檢查，課後單獨約談student_a處理公假餘怨與不當起鬨。",
+            "tradeoff": "旁邊起鬨的另外兩個同學當下以為老師沒生氣。"
+          },
+          {
+            "id": 2,
+            "text": "我當場冷靜但嚴肅點出安全檢查不能拿來開玩笑，請他親手把剛剛亂動的物品歸位再繼續。",
+            "action": "當場制止戲謔行為，要求student_a立即恢復走道與器材位置並完成檢查。",
+            "tradeoff": "心懷不滿的他當場在同學面前超沒面子，怨氣更深。"
+          },
+          {
+            "id": 3,
+            "text": "我請安全人員照標準繼續逐項核對，自己站到他旁邊安靜看著他，直到檢查結束。",
+            "action": "以導師在場壓陣完成安全檢查，當下不當眾爭辯，留待事後視狀況處理。",
+            "tradeoff": "氣氛瞬間凍住，安全人員也察覺這班師生之間有火藥味。"
+          },
+          {
+            "id": 4,
+            "text": "檢查完送走安全人員後，我留在教室花兩分鐘對全班講明「對我有氣別拿安全開玩笑」。",
+            "action": "完成安全檢查後，對全班（含起鬨同學）重申安全檢查紀律與私怨界線。",
+            "tradeoff": "全班無辜同學跟著聽了一頓訓，student_a也覺得被隱晦點名。"
+          },
+          {
+            "id": 5,
+            "text": "我配合完成檢查後，照班規記他一次干擾公共檢查秩序提醒，不另外私下說教。",
+            "action": "完成安全檢查並依既有班規登記本次干擾秩序行為。",
+            "tradeoff": "公假的不滿還沒解開，又多一筆班規紀錄，他更賭氣。"
+          },
+          {
+            "id": 6,
+            "text": "我先把安全檢查順利做完，再把另外兩個一起起鬨的同學和student_a分開問清楚。",
+            "action": "完成安全檢查後，分別了解從眾起鬨同學與student_a的責任歸屬。",
+            "tradeoff": "要多花兩段課間分別談話，時間被切得很碎。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那副故意氣我的欠揍樣子火也上來，檢查完直接把他叫到走廊說「公假是我駁回的，有本事找我吵，別拿全班逃生動線演戲」。",
+          "action": "完成安全檢查後立即將student_a帶離教室，直白點破其公假私怨與安全底線。",
+          "tradeoff": "語氣太衝把兩人的不滿直接攤在走廊上，師生關係當場更緊繃。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 4103734441
+        },
+        "selectedIds": [
+          3,
+          2,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "b7ded5e04d9da2877630adf968f1495d106ccea4d5effd17e83d71400a1be789"
+      },
+      "consequenceDirections": {
+        "A": "可發展當場要求歸位後，student_a在同學面前失了面子、公假怨氣更深。",
+        "B": "可發展檢查後分開約談從眾同學與student_a，釐清起鬨責任的過程。",
+        "C": "可發展在走廊直白攤開公假私怨後，師生衝突表面化與後續修補空間。",
+        "D": "可發展導師站著無聲壓陣完成檢查後，事後這段冷戰要怎麼開口破冰。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9929cd3e96d278be3b01902e7ae13ac143f4bc26df0ed467afbb74266ea9c969",
+    "draftSha256": "6791e72316ce4155497c5da85ea75a0067b0796138206b3ba40af9727ea3d11d",
     "seedAssignmentVersion": 1
   }
 }

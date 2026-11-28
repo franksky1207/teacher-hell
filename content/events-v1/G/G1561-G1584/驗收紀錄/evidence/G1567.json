@@ -15,14 +15,82 @@
     "G03",
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3e72856d94ab0691707169101142eee7dedbeeb838eb9f1a9d69ed1cb1d03a9d",
+      "checkedAt": "2026-11-28T03:15:29.995Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我笑著接過話把自家組員叫回來，說這幾組拿好工具要先趕這區，剩下的再配合。",
+            "action": "在現場以動線分工為由婉轉調回本班內向學生，不當眾指責同事。",
+            "tradeoff": "現場動線得重新講一遍，同事還以為只是工具先後問題。"
+          },
+          {
+            "id": 2,
+            "text": "等兩班學生散開各自去掃後，我私下找他笑著講清楚本班慢熟生的分組需求。",
+            "action": "先讓本輪現場迅速穩定並保留原部分混編，事後私下向同事明確溝通分組主導權。",
+            "tradeoff": "當下那幾個內向學生還是得硬著頭皮先跟別班撐過這節。"
+          },
+          {
+            "id": 3,
+            "text": "我直接走過去笑著說「我這邊名單都對好了，今天先各掃各的，下次再揪」。",
+            "action": "當場禮貌喊停混編，恢復本班原本已排定的分組名單。",
+            "tradeoff": "已經喊過去站隊的同事當場有點下不了台。"
+          },
+          {
+            "id": 4,
+            "text": "我提議兩班只在外圍搬運區混一組外向自願生，其餘維持原本各班分組。",
+            "action": "徵詢少數外向學生自願支援跨班搬運，保護多數原本分組不動。",
+            "tradeoff": "得現場多問一輪誰自願，收工具時人數也容易亂。"
+          },
+          {
+            "id": 5,
+            "text": "我乾脆站在那兩個慢熟學生旁邊一起掃，等於把老師自己插進這一組。",
+            "action": "維持同事既定混編喊法，由導師親自陪同本班內向組員完成區域整理。",
+            "tradeoff": "自己多做一份掃除，也沒點出同事不該直接改別人分組。"
+          },
+          {
+            "id": 6,
+            "text": "我請班長把本班原本的區域清點表拿出來，讓同事看過後照原本區域走。",
+            "action": "以既定班級區域紀錄為準，請同事配合本班原定動線。",
+            "tradeoff": "拿表格出來對，場面突然變得有點公事公辦。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看他那麼愛熱鬧又搞亂我排半天的名單，乾脆笑著把他拉到樓梯口自己先掃的那區說「你要熱鬧我陪你掃這條，放過我班上那幾個I人啦」。",
+          "action": "幽默將teacher_a拉離本班內向學生組別，兩人單獨分擔樓梯口清潔，本班恢復原組。",
+          "tradeoff": "自己得拿著掃把陪他聊完這節掃除，同事也聽出老師在護短。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 1425555693
+        },
+        "selectedIds": [
+          4,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 4,
+          "C": 6,
+          "D": 2
+        },
+        "optionsDigest": "7b0d2972b5747a74ee6a31cf97424f349a799d2e5b58499462a6387bbaaa9735"
+      },
+      "consequenceDirections": {
+        "A": "可發展兩人一起掃樓梯口時，隔壁班導師如何接住這記幽默護短。",
+        "B": "可發展只讓少數外向生支援跨班搬運後，現場動線與慢熟生的安全感。",
+        "C": "可發展亮出班級區域清點表後，熱情同事的尷尬與後續跨班互動。",
+        "D": "可發展課後私下談開慢熟生需求後，隔壁班導師下次還會不會熱情過頭。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "24e8ab83dd2040b1257a80321485119161476859c6cd67aba3102a2125e189ef",
+    "draftSha256": "3e72856d94ab0691707169101142eee7dedbeeb838eb9f1a9d69ed1cb1d03a9d",
     "seedAssignmentVersion": 1
   }
 }

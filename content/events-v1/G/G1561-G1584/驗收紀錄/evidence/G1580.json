@@ -15,14 +15,82 @@
     "G04",
     "G05"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "bcf937cd9c0987ded86d73acd5e7ae397135e340fd35e9f76bec4727812cc5aa",
+      "checkedAt": "2026-11-28T03:15:30.022Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我溫和但堅定畫下五點半準時收書包離校的界線，同時幫他轉介學校輔導室正規晤談。",
+            "action": "要求依門禁與下班時間於五點半前離校，並協助轉介輔導室提供專業支持。",
+            "tradeoff": "依賴導師的他當場有點被推開的失落。"
+          },
+          {
+            "id": 2,
+            "text": "我今天再陪他多聊十五分鐘了解家裡近況，約好明天午休再聊，五點半一到一起關燈走人。",
+            "action": "給予有限度十五分鐘陪伴並約定改至日間午休接觸，準時共同結束離校。",
+            "tradeoff": "導師今天還是晚了十幾分鐘下班，且明天午休又被佔走。"
+          },
+          {
+            "id": 3,
+            "text": "我請他先把書包收好，我陪他邊走去校門口邊聊五分鐘，順便確認他安全搭車。",
+            "action": "結束辦公室滯留，以陪同步行至校門口的短談方式送student_a準時安全離校。",
+            "tradeoff": "走到校門口話題還沒講完就得揮手再見，他回頭的眼神有點孤單。"
+          },
+          {
+            "id": 4,
+            "text": "我先問他除了學校，附近有沒有公共圖書館或安全去處可以先寫完功課再回家。",
+            "action": "明確規範五點半離校時間，並引導其規劃放學後合法安全的自主去處。",
+            "tradeoff": "他其實只是想找個熟的大人講話，去圖書館還是一個人。"
+          },
+          {
+            "id": 5,
+            "text": "我跟他說今天我真的要趕著回家，改約明天早上早自習前十分鐘在辦公室等他。",
+            "action": "堅守今日準時下班界線，將正式關懷對話挪至隔日合法日間空檔。",
+            "tradeoff": "今晚回家面對沉重氣氛前，他還是沒能說上想說的話。"
+          },
+          {
+            "id": 6,
+            "text": "我先撥一通電話或傳訊確認家人知道他幾點出發回家，再請他五點半前離開辦公室。",
+            "action": "確認返家接應安全後，執行五點半前離校規定。",
+            "tradeoff": "打給家裡反而讓他緊張家人是不是又會碎念。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著暗下來的走廊心軟了一秒，直接把筆蓋蓋上說「今天不改了，陪你坐到整點五點半，時間一到我們兩個一起逃離學校」。",
+          "action": "放下手邊批改工作專心陪伴對話至五點半，準時共同關燈離校。",
+          "tradeoff": "沒改完的考卷得帶回家或明早趕，也怕他更依賴每天這段專屬時間。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3261523258
+        },
+        "selectedIds": [
+          5,
+          3,
+          1
+        ],
+        "finalChoiceMap": {
+          "A": 1,
+          "B": "emotional",
+          "C": 5,
+          "D": 3
+        },
+        "optionsDigest": "fe7dda083e35d2f4f539197b7c16c027f7fd5a6cf4f0c892f1d1a6fc062897f7"
+      },
+      "consequenceDirections": {
+        "A": "可發展畫下五點半界線並轉介輔導室後，student_a失落卻接觸到專業資源。",
+        "B": "可發展蓋上筆蓋陪聊到五點半一起關燈離校後，考卷帶回家與他的依賴。",
+        "C": "可發展約到明早早自習前再談後，他今晚獨自回家面對沉重氣氛的夜晚。",
+        "D": "可發展邊走去校門口邊聊五分鐘後，在校門口分別時他回頭的孤單與守界。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "414493046ae1060c97f3e14a436f38072b56687aed438ff05d996140d6f02abd",
+    "draftSha256": "bcf937cd9c0987ded86d73acd5e7ae397135e340fd35e9f76bec4727812cc5aa",
     "seedAssignmentVersion": 1
   }
 }

@@ -16,14 +16,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "3f4a52639b4acaf31122ca23c692a78102983aa86d64a60e4401103fc37ce9d3",
+      "checkedAt": "2026-11-28T03:15:29.966Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我陪孩子先私下跟家長講清楚看不清小字的實情，再討論座位。",
+            "action": "在學生同意下安排親師生三方私下說明真實視線需求，不對全班公開。",
+            "tradeoff": "孩子得對家人說出原先沒提的困擾，家長也可能一時尷尬。"
+          },
+          {
+            "id": 2,
+            "text": "我先保留他原本的前排座位，同時請家長抽空帶去眼科確認度數。",
+            "action": "維持現有前排安排並建議正規醫療檢查，不依網文調後排。",
+            "tradeoff": "家長覺得導師沒接納護眼顧慮，心裡不太痛快。"
+          },
+          {
+            "id": 3,
+            "text": "我先問任課教師能否另外給他大字紙本，讓他暫時照家長意思試坐後排。",
+            "action": "向任課教師提出大字紙本協助詢問，並於學生同意後暫調後排觀察；未獲任課同意前不稱已取得。",
+            "tradeoff": "任課未必都能配合印製，且可能拖延他看清黑板的節奏。"
+          },
+          {
+            "id": 4,
+            "text": "我請家長先傳那篇護眼文章給我，約好下班前再回電討論座位。",
+            "action": "先收下家長參考資料並約定課後正式通話，不當場承諾換位。",
+            "tradeoff": "白天這幾節課他還是得面對家長叮囑與座位拉扯。"
+          },
+          {
+            "id": 5,
+            "text": "我直接約家長傍晚來校門或會談室看教室距離，讓他眼見為憑。",
+            "action": "提出校內實地看座位距離的會談邀約，待家長同意與門禁登記後方成行。",
+            "tradeoff": "多花導師下班後時間，家長也不一定有空跑一趟。"
+          },
+          {
+            "id": 6,
+            "text": "我暫不改座位，先請健康中心協助做一次常規視力篩檢再回報家長。",
+            "action": "依學校既有健康程序轉請健康中心常規量測，取得客觀紀錄後再與家長溝通。",
+            "tradeoff": "需等篩檢排程，家長這兩天可能繼續追問。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我聽了那篇沒根據的文章有點無奈，乾脆拿自己當年坐後排瞇眼抄筆記的糗事在電話裡勸家長別急著換。",
+          "action": "導師以個人親身經驗在電話中勸說家長暫緩要求換去後排，維持原座位。",
+          "tradeoff": "家長未必買單個人經驗，還可能覺得老師輕忽長輩的關心。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2946764035
+        },
+        "selectedIds": [
+          4,
+          5,
+          3
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": 5,
+          "D": "emotional"
+        },
+        "optionsDigest": "08e9ebd231cd52fe16bb74a5e5679ab0ef91d2258dd4b51b53508e210dd623fe"
+      },
+      "consequenceDirections": {
+        "A": "可發展親師通話後，家長對網文護眼執念與孩子實情之間的拉鋸。",
+        "B": "可發展任課教師是否配合大字版面，及學生在後排仍須面對視力檢查。",
+        "C": "可發展家長實地看過教室距離後，是否放下誤解並與孩子談開。",
+        "D": "可發展導師自嘲經驗能否打動家長，或反讓對方覺得未受重視。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "99ec011ccd3e35fa7fd86996e645775644a75666186f81e2d82072ee60540a68",
+    "draftSha256": "3f4a52639b4acaf31122ca23c692a78102983aa86d64a60e4401103fc37ce9d3",
     "seedAssignmentVersion": 1
   }
 }

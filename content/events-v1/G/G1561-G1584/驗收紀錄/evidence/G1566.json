@@ -15,14 +15,82 @@
     "G06",
     "G10"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "9147adb5472498b89777e3444a02513a36bcb440c832fc7392a2afe545b701b9",
+      "checkedAt": "2026-11-28T03:15:29.988Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我感謝他的心意，但說明校內耗材須有安全標示且班上有過敏體質同學，請他整箱取回。",
+            "action": "依校內耗材與防過敏規定婉拒使用校外清潔組，請家長領回自用。",
+            "tradeoff": "責任感滿滿又一片好意的家長覺得學校不知變通。"
+          },
+          {
+            "id": 2,
+            "text": "我只確認檢驗合格的白板筆能否當備品，成分不明的精油噴霧則明確退回。",
+            "action": "區分耗材標示，退回無中文標示之精油噴霧；白板筆須經總務處確認合規後方可留作備品。",
+            "tradeoff": "得花時間跟總務處確認標示，且只收一半還是會讓家長疑惑。"
+          },
+          {
+            "id": 3,
+            "text": "我先請家長傳來那組清潔劑的購買頁面或廠商檢驗報告，確認合規前暫放警衛室。",
+            "action": "暫不將物資搬進教室，先向家長索取完整中文成分與檢驗證明以便向總務處核實。",
+            "tradeoff": "箱子暫佔警衛室，且多數網購精油未必拿得出完整檢驗。"
+          },
+          {
+            "id": 4,
+            "text": "我向家長說明教室現用白板筆是學校統一採購的合格低味款，請他放心不必額外破費。",
+            "action": "提供學校現行耗材採購規格說明並婉拒替換，請家長領回該箱物品。",
+            "tradeoff": "家長已經買單整箱了，聽完反而更尷尬不知怎麼處理。"
+          },
+          {
+            "id": 5,
+            "text": "我問家長要不要先帶孩子去門診確認過敏原，再決定教室環境需不需要特別調整。",
+            "action": "婉拒未核可噴霧進班，建議家長以正規醫療評估取代網路文章擔憂。",
+            "tradeoff": "家長本來是擔心大家中毒，覺得導師把焦點轉成他家孩子有病。"
+          },
+          {
+            "id": 6,
+            "text": "我請總務處人員直接出面跟家長說明校內化學品與清潔劑的統一管理規定。",
+            "action": "轉由總務處依正式規定向家長說明並辦理未收受物品退領。",
+            "tradeoff": "把熱心家長推去對行政窗口，親師距離感變重。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我想到教室開冷氣後滿室精油味自己先頭暈，忍不住在電話裡老實跟他說「老師自己聞到濃精油就會打噴嚏，這箱真的先別進教室」。",
+          "action": "以自身對濃烈氣味不適為由坦白婉拒精油清潔組進教室，請家長領回。",
+          "tradeoff": "用個人體質擋下來雖快，卻沒正面幫他釐清網文迷思。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2415192783
+        },
+        "selectedIds": [
+          6,
+          3,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": 3,
+          "C": "emotional",
+          "D": 6
+        },
+        "optionsDigest": "c644b7595d249b50757f63b399bf1a1caeff95cdb844945c07e33bb5369daa65"
+      },
+      "consequenceDirections": {
+        "A": "可發展說明校內低味耗材後，責任感強的家長如何處理整箱未拆清潔組。",
+        "B": "可發展索取中文成分與檢驗報告期間，家長對網購說法與校規的認知落差。",
+        "C": "可發展導師坦白自身對濃烈精油過敏後，家長轉而體諒或仍感困惑的反應。",
+        "D": "可發展總務處出面說明規定後，親師關係是否因此變得公事公辦。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "5ae439c0d08a52fb1df2efebc44da8e3c3841fc28b4ecab278b158a7d6e00822",
+    "draftSha256": "9147adb5472498b89777e3444a02513a36bcb440c832fc7392a2afe545b701b9",
     "seedAssignmentVersion": 1
   }
 }

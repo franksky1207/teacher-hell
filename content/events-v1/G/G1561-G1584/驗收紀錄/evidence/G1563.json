@@ -15,14 +15,82 @@
     "G02",
     "G06"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "e180dfbee229ba3f22e5a23bce8c1abb6a87c515eb1a603aaa2c6cf937c88725",
+      "checkedAt": "2026-11-28T03:15:29.975Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "我請警衛室先別簽收進教室，立刻回電致謝並請家長聯繫物流退回。",
+            "action": "依受贈與空間規定婉拒代收大宗物資，請家長聯繫物流退貨或自行領回。",
+            "tradeoff": "執行力滿點又一片好心的家長當場傻眼，覺得學校太死板。"
+          },
+          {
+            "id": 2,
+            "text": "我先問總務處能否暫借儲藏角放一兩天，同時發通知問各家是否願意領作個人備品。",
+            "action": "向總務處申請短期暫存並徵詢各家庭受贈意願，未獲同意與受領前不留置教室。",
+            "tradeoff": "多了跨處室協調與發調查表、核對領取的行政麻煩。"
+          },
+          {
+            "id": 3,
+            "text": "我婉拒放教室，但問家長願不願意改以個人名義轉捐校外社福機構。",
+            "action": "說明教室無法收納與清洗，建議家長自行將物資轉捐合適公益單位，不經手代轉。",
+            "tradeoff": "家長原本想給本班孩子用的期待落空。"
+          },
+          {
+            "id": 4,
+            "text": "我跟家長溝通只留兩三條放健康中心或辦公室備用，其餘請他帶回。",
+            "action": "向校方確認少量備用物資收受可行性，其餘大宗物資請家長領回。",
+            "tradeoff": "校方未必收受校外織品，且家長仍得處理剩下三十幾條。"
+          },
+          {
+            "id": 5,
+            "text": "我先打電話跟他好好聊十分鐘，說明班群提醒只是叮嚀孩子自帶外套。",
+            "action": "先透過電話致意並釐清班群日常提醒的本意，請他暫緩讓箱子進教室。",
+            "tradeoff": "紙箱還卡在警衛室，去留還是得馬上決定。"
+          },
+          {
+            "id": 6,
+            "text": "我請家長下班後自己來警衛室先拿回去，順便當面把這份好意謝過。",
+            "action": "請警衛暫放當日待領區並約家長放學後親領，不收進班級保管。",
+            "tradeoff": "警衛室得佔著空間放到傍晚，家長也要多跑一趟。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "我看著那兩大箱哭笑不得，乾脆先拍一張自己在箱子旁邊比讚的照片傳給他致謝，再硬著頭皮拜託他叫貨運載走。",
+          "action": "傳訊誠實感謝並婉拒代收，請家長自行聯繫貨運撤回兩箱毛毯。",
+          "tradeoff": "拍照致謝又立刻退貨，家長可能一時轉不過來覺得有點被耍。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2384884015
+        },
+        "selectedIds": [
+          4,
+          5,
+          6
+        ],
+        "finalChoiceMap": {
+          "A": "emotional",
+          "B": 5,
+          "C": 4,
+          "D": 6
+        },
+        "optionsDigest": "9f071adb6c82d8fc8a7a1a840f8cd6ecfa17bb183817a6198a0b3e4eee330785"
+      },
+      "consequenceDirections": {
+        "A": "可發展拍照致謝後仍退貨的反差，家長如何消化這份沒送出去的執行力。",
+        "B": "可發展釐清班群日常提醒本意後，家長後續對導師訊息的解讀與物資去留。",
+        "C": "可發展少量備品留校審核的進度，以及家長處理剩餘毛毯的反應。",
+        "D": "可發展放學後警衛室親領見面時，親師如何收尾這場四十條毛毯烏龍。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十四輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -43,7 +111,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "9bd2cb7b90f946a845ead748c807bcebdeb1e965844b02f1f04913d2d765c7e2",
+    "draftSha256": "e180dfbee229ba3f22e5a23bce8c1abb6a87c515eb1a603aaa2c6cf937c88725",
     "seedAssignmentVersion": 1
   }
 }

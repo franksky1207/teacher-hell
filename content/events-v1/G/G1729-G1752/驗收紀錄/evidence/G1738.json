@@ -16,14 +16,82 @@
     "G05",
     "G09"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "5883ed9f978dea78793900ae875cd50bb8a70150cdb4af24ebae4129ac8e4311",
+      "checkedAt": "2026-11-28T04:26:17.359Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "動線已安全調好後，我請student_a站出來：「你跟大家講清楚剛才那排椅子到底錯在哪裡，我們花兩分鐘看懂再開始。」",
+            "action": "確認安全動線暢通後，請student_a向全班說明先前堆椅阻塞出口之安全盲點。",
+            "tradeoff": "讓全班真正聽懂為什麼整齊不能犧牲出口，但會損失一點原訂練習時間。"
+          },
+          {
+            "id": 2,
+            "text": "確認逃生路線都淨空了：「沒事，現在椅子位子對了，我們直接照安全位置開始今天的練習吧。」",
+            "action": "確認安全位置無誤後不再追究先前拆隊形過程，直接展開原訂課堂活動。",
+            "tradeoff": "student_a不用當眾出聲解釋又省時，但起初跟風堵門的錯誤不會被討論。"
+          },
+          {
+            "id": 3,
+            "text": "動線確認安全後，我拿粉筆請student_a在黑板畫一個三十秒的出口動線簡圖：「讓大家用看的記住哪一塊永遠不能放椅子。」",
+            "action": "確認安全後請student_a於黑板繪製簡易出口禁放區示意圖，建立視覺記憶。",
+            "tradeoff": "用圖示取代碎念最快記牢，但畫圖與擦黑板多花了一點時間。"
+          },
+          {
+            "id": 4,
+            "text": "「安全先過關了！我要先誇獎student_a敢帶大家拆掉堵門的隊形——那剛才一起排門口的那幾位，以後誰負責最後檢查出口線？」",
+            "action": "先公開肯定student_a修正安全動線之判斷，並指派原先堆椅同儕輪流負責出口淨空檢查。",
+            "tradeoff": "把原本跟風堆椅的人拉進安全把關責任裡，但點名時那幾位同學有點緊張。"
+          },
+          {
+            "id": 5,
+            "text": "「以後進班不要再比『誰先排好整齊』了，我們改成『所有人先走過安全出口線再搬椅子』，口號換掉。」",
+            "action": "確認安全後取消門口整齊排椅慣例，改立先淨空出口線再就座之班級新順序。",
+            "tradeoff": "從活動習慣根治堵門問題，但原本想給老師看的整齊儀式感沒了。"
+          },
+          {
+            "id": 6,
+            "text": "動線安全後我先照常上課，下課再單獨留student_a兩句：「謝謝你把家裡練出來的敏感度帶進班上。」",
+            "action": "現場僅依安全座位正常進行課程，課後私下肯定student_a源自家庭照護經驗之安全警覺。",
+            "tradeoff": "不把他的家庭照護背景公開當教材，但全班少了這次安全學習的機會。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "看見剛才還喊著要整齊排隊的student_a正在拆隊形、一聽是因為怕堵住出口才趕緊搬開，我心裡一陣欣慰又怕同學誤會他搗亂，直接走過去陪他把最後一張輕椅拖進安全線內：「拆得好！排得再整齊，堵到出口都不算數——這張老師跟你一起搬！」",
+          "action": "因欣慰學生重視逃生安全又怕其被誤解，導師親自彎腰協助將最後一張輕椅移入安全線內並當眾肯定。",
+          "tradeoff": "立刻替「拆隊形」正名並給足學生肯定，但現場氣氛一下子變得有點熱血過頭。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 2431975941
+        },
+        "selectedIds": [
+          3,
+          1,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 1,
+          "D": 3
+        },
+        "optionsDigest": "187d4e716c870a56a7ecf89ea0db018f469b797b1b1372e6a63a6d6cdeb0d164"
+      },
+      "consequenceDirections": {
+        "A": "可發展先公開肯定student_a修正安全動線之判斷並指派原先堆椅同儕輪流負責出口淨空檢查後，把跟風堆椅的人拉進安全把關責任，但點名時那幾位同學有點緊張。",
+        "B": "可發展導師親自彎腰協助將最後一張輕椅移入安全線內並當眾肯定後，立刻替「拆隊形」正名並給足學生肯定，但現場氣氛一下子變得有點熱血過頭。",
+        "C": "可發展確認安全動線暢通後請student_a向全班說明先前堆椅阻塞出口之盲點後，讓大家聽懂為什麼整齊不能犧牲出口，但會損失一點原訂練習時間。",
+        "D": "可發展確認安全後請student_a於黑板繪製簡易出口禁放區示意圖後，用圖示取代碎念最快記牢，但畫圖與擦黑板多花了一點時間。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -44,7 +112,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "be04a5cd360e88649c080b03ac9404246953e541b5a1571efdc97a2d8435ca9b",
+    "draftSha256": "5883ed9f978dea78793900ae875cd50bb8a70150cdb4af24ebae4129ac8e4311",
     "seedAssignmentVersion": 1
   }
 }

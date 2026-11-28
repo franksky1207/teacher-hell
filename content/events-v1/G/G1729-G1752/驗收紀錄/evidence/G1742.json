@@ -14,14 +14,82 @@
   "plannedTags": [
     "G11"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "528a0ecf786f2ad36b7a0cb20a97486df97bffc2d6aab1dfa6ac704d5af65675",
+      "checkedAt": "2026-11-28T04:27:49.023Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「好啊，共讀照留但今天改規矩：全場只准講讀後感、嚴禁任何修改意見，你就念你帶來的那篇笑話。」",
+            "action": "保留共讀形式但禁止任何修改評論，改請subject_teacher自選朗讀所帶之輕鬆笑話。",
+            "tradeoff": "保住了不用動腦改稿的輕鬆共讀，但其他想認真切磋修改的朋友得忍住不挑錯。"
+          },
+          {
+            "id": 2,
+            "text": "「那大家把紙本全收起來，今天不共讀了，我們改玩即席一人接一句編故事！」",
+            "action": "取消原定作品共讀，徵得參與者同意改為輕鬆之即席接句聊天遊戲。",
+            "tradeoff": "讓沒讀稿的人也玩得很開心，但原本準備認真朗讀作品的人失去登場機會。"
+          },
+          {
+            "id": 3,
+            "text": "「先照你說的念那篇不用改的笑話開場，念完我們就把桌上所有紙本反扣起來，誰再講出『修改』兩字就罰喝一杯！」",
+            "action": "改以subject_teacher笑話開場後將所有文稿反扣置旁，設下禁止提及修改之聚會遊戲規則。",
+            "tradeoff": "既讓他的笑話登場又用趣味規則擋掉職業病，但有帶稿來問的朋友今天問不到了。"
+          },
+          {
+            "id": 4,
+            "text": "「我跟大家講明今天不是教研會，紅筆藍筆全收進包裡；你不想念自己的沒關係，換聽其他朋友念他們的故事當聽眾。」",
+            "action": "免除subject_teacher本人朗讀與備稿任務，僅讓其作為純聽眾參與其他友人之故事分享。",
+            "tradeoff": "徹底替疲倦同事減壓又沒取消別人的共讀，但同事自己帶來的笑話就沒機會念。"
+          },
+          {
+            "id": 5,
+            "text": "「乾脆今晚徹底休兵不看任何字了，我們就純喝茶聊這週各自遇到的生活糗事跟電影！」",
+            "action": "提議全場暫停文字閱讀活動，改以純日常聊天度過本次私人聚會。",
+            "tradeoff": "讓兩位在學校看了一整天字的老師真正讓眼睛休息，但偏離了原本共讀聚會的主題。"
+          },
+          {
+            "id": 6,
+            "text": "「你不用自己念，把你那篇笑話借給旁邊還沒發言的朋友大聲念出來，你只要坐著喝茶笑一笑就好。」",
+            "action": "將subject_teacher帶來之笑話交由其他友人代為朗讀分享，使其專心休息聆聽。",
+            "tradeoff": "讓大家聽到他想分享的趣味又不用他撐著精神自己講，但代念未必抓得到他原本的笑點。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽他委屈承認「本來只想帶一篇不用改的笑話來笑一笑」，我一陣心疼又好笑我們倆職業病這麼重，直接站起來把大家桌上的筆全收進我包包裡：「行了，今天誰也不准當老師！筆沒收！現在請你只管念笑話，敢挑錯字的人罰請客！」",
+          "action": "因體諒同事疲倦又自嘲職業病太重，導師親自沒收桌上所有筆並禁止挑錯字，專心讓subject_teacher念笑話紓壓。",
+          "tradeoff": "瞬間把辦公室加班感趕出聚會，但原本想認真請教修改意見的朋友只好收起筆記。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 133162308
+        },
+        "selectedIds": [
+          3,
+          6,
+          2
+        ],
+        "finalChoiceMap": {
+          "A": 2,
+          "B": 6,
+          "C": "emotional",
+          "D": 3
+        },
+        "optionsDigest": "a48d41beea2113c744898560c8d877f499897eedd85cb1ae642045b1f14cd2f9"
+      },
+      "consequenceDirections": {
+        "A": "可發展取消原定作品共讀、徵得參與者同意改為輕鬆之即席接句聊天遊戲後，讓沒讀稿的人也玩得很開心，但原本準備認真朗讀作品的人失去登場機會。",
+        "B": "可發展將subject_teacher帶來之笑話交由其他友人代為朗讀分享、使其專心休息聆聽後，讓大家聽到他想分享的趣味又不用撐著精神自己講，但代念未必抓得到原本笑點。",
+        "C": "可發展導師親自沒收桌上所有筆並禁止挑錯字、專心讓subject_teacher念笑話紓壓後，瞬間把辦公室加班感趕出聚會，但原本想認真請教修改意見的朋友只好收起筆記。",
+        "D": "可發展改以subject_teacher笑話開場後將所有文稿反扣置旁、設下禁止提及修改之規則後，既讓他的笑話登場又用趣味規則擋掉職業病，但有帶稿來問的朋友今天問不到了。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "58b73db52d690ae1df76aae16df2f30cec3593cc3ab487abfdf962c801e5e12c",
+    "draftSha256": "528a0ecf786f2ad36b7a0cb20a97486df97bffc2d6aab1dfa6ac704d5af65675",
     "seedAssignmentVersion": 1
   }
 }

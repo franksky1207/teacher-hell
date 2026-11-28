@@ -14,14 +14,82 @@
   "plannedTags": [
     "G07"
   ],
-  "status": "prebuild-unstarted",
+  "status": "stage1-passed",
   "stages": {
     "stage1": {
-      "status": "not_started",
-      "sourceVersion": null,
-      "checkedAt": null,
-      "ordinaryChoiceSelection": null,
-      "consequenceDirections": null
+      "status": "passed",
+      "sourceVersion": "f80df2936dbc3819d79b8b5918a5fa7013058ac8b11b9dac77861add869704ec",
+      "checkedAt": "2026-11-28T04:26:17.349Z",
+      "ordinaryChoiceSelection": {
+        "ordinaryCandidates": [
+          {
+            "id": 1,
+            "text": "「抱歉，我跟你一起看一下現在的動線，我現在坐回外頭走道可見的位置分擔這一輪。」",
+            "action": "在subject_teacher同意下共同檢視辦公動線，導師主動坐回走道可見處分擔學生詢問與收件。",
+            "tradeoff": "立刻還給同事應有的清靜空檔，但導師自己讓出了隔板後的安靜休息。"
+          },
+          {
+            "id": 2,
+            "text": "「我位置先不移，我去向校方既有窗口確認以後公用材料改交哪裡，現在也立刻去跟來過的學生講清楚別堆你桌上。」",
+            "action": "保留隔板後座位但向校方既有窗口確認正式交件處，並親自向已來過學生澄清勿再放置於同事桌面。",
+            "tradeoff": "移除了對同事空檔的默認占據，但學生以後不一定能找熟悉教師即問即交。"
+          },
+          {
+            "id": 3,
+            "text": "「是我疏忽沒發現擋住視線，我現在立刻把你桌上那疊全抱進來，並在走廊貼一張『交本班材料請找導師這桌』。」",
+            "action": "立即將同事桌上的學生材料全數搬回導師座位並於走道張貼明確指引標示。",
+            "tradeoff": "最直接清空同事桌面，但現場得趕緊補貼一張指示牌。"
+          },
+          {
+            "id": 4,
+            "text": "「對不起，是我害你這段空檔變成服務台。你去休息不用管外面了，我在隔板外頭放個暫存收件籃統一收。」",
+            "action": "向subject_teacher致歉並釋放其自主空檔，於隔板外側設置暫存收件籃承接材料。",
+            "tradeoff": "保住了兩位老師各自需要的安靜與休息，但學生放下就走少了當面詢問機會。"
+          },
+          {
+            "id": 5,
+            "text": "「今天這段我們都各自休息不收件，另外約下節下課十分鐘我們兩個一起站走廊口把它一次收齊。」",
+            "action": "暫停午間即席收件以維護雙方休息空檔，另約下節課間共同於走道口集中收齊。",
+            "tradeoff": "徹底把休息時間跟協作收件分開，但得兩人下節下課多站十分鐘。"
+          },
+          {
+            "id": 6,
+            "text": "「你先去茶水間喘口氣，剩下還沒交來的學生我直接進班一趟收齊，不讓他們再跑來辦公區。」",
+            "action": "請subject_teacher先行離開休息，由導師直接入班收齊剩餘材料以中止辦公區干擾。",
+            "tradeoff": "最快還給辦公區安靜，但導師得自己多跑一趟教室收件。"
+          }
+        ],
+        "emotionalCandidate": {
+          "text": "聽他氣急地問「你是要幫他們聽得清楚，還是你自己想安靜」，我猛然意識到自己圖清靜躲去隔板後卻害他整段空檔被學生淹沒，一陣愧疚直接站起來把椅子拉回走道邊：「對不起，是我只想躲清靜害你變櫃檯！現在換我坐外面接，這疊我來！」",
+          "action": "因愧疚自己逃避噪音反累及同事，導師立刻起身將椅子移回走道邊第一線位置承接全部材料與詢問。",
+          "tradeoff": "痛快認錯並把同事的午間空檔還給他，但導師自己得坐在最吵的走道邊。"
+        },
+        "rng": {
+          "algorithm": "mulberry32",
+          "version": 1,
+          "seed": 3977334947
+        },
+        "selectedIds": [
+          3,
+          6,
+          4
+        ],
+        "finalChoiceMap": {
+          "A": 4,
+          "B": "emotional",
+          "C": 3,
+          "D": 6
+        },
+        "optionsDigest": "8734b70d6ea2cb23e23a05390b8f3ae4e04897799ae0bf1ea65d3e48eae72b6b"
+      },
+      "consequenceDirections": {
+        "A": "可發展向subject_teacher致歉並釋放其自主空檔、於隔板外側設置暫存收件籃後，保住兩位老師各自需要的安靜與休息，但學生放下就走少了當面詢問機會。",
+        "B": "可發展導師立刻起身將椅子移回走道邊第一線位置承接全部材料與詢問後，痛快認錯並把同事的午間空檔還給他，但導師自己得坐在最吵的走道邊。",
+        "C": "可發展立即將同事桌上材料全數搬回導師座位並於走道張貼明確指引後，最直接清空同事桌面，但現場得趕緊補貼一張指示牌。",
+        "D": "可發展請subject_teacher先行離開休息、由導師直接入班一趟收齊剩餘材料後，最快還給辦公區安靜，但導師得自己多跑一趟教室收件。"
+      },
+      "semanticReviewed": true,
+      "reviewer": "Antigravity／第十五輪施工者逐篇核讀開場、七候選與代價、人物時段、共同責任、候選ID至A～D及後果；非獨立審查"
     },
     "stage2": {
       "status": "not_started",
@@ -42,7 +110,7 @@
     }
   },
   "sourceVersion": {
-    "draftSha256": "e9d23d79a71e441ea7fb3b94ecd06cc2a745eca35c79a13ca28345a56ad4f9ba",
+    "draftSha256": "f80df2936dbc3819d79b8b5918a5fa7013058ac8b11b9dac77861add869704ec",
     "seedAssignmentVersion": 1
   }
 }
